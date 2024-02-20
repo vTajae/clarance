@@ -1,0 +1,49 @@
+.outer {
+    display: flex;
+    border-bottom: 1px solid #9f9d9d;
+}
+
+.logo {
+    display: flex;
+    width: 101px;
+    height: 48px;
+    margin: 20px;
+}
+
+.tagline {
+    display: flex;
+    align-items: center;
+    padding: 30px 10px 0 0;
+    font-family: Arial, sans-serif;
+    font-size: large;
+    color: #666666;
+    min-width: 240px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.bobble {
+    display: flex;
+    align-items: center;
+    margin:0 20px 0 0;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 150px;
+}
+
+.clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+    padding: 0 20px 0 20px;
+}

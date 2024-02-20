@@ -1,0 +1,3 @@
+KV Setup:
+
+https://javascript.plainenglish.io/using-cloudflare-kv-store-in-cloudflare-workers-d796d68834ce

@@ -1,0 +1,15 @@
+.error-outer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.error-heading {
+    display: flex;
+    flex-direction: row;
+}
+
+.error-logo {
+    height: 60px;
+    padding: 10px;
+}

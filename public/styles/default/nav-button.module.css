@@ -1,0 +1,13 @@
+.outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2f76b8;
+    color: white;
+    min-width: 80px;
+    min-height: 60px;
+    border-radius: 5px;
+    box-shadow: 7px 7px 7px #939798;
+    margin: 5px 10px 5px 5px;
+    padding: 0 10px;
+}

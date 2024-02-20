@@ -1,0 +1,48 @@
+.outer {
+    display: flex;
+    width: 50%;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #939798;
+    margin: 10px;
+}
+
+.caption {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 20px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.regions {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.combo {
+    width: 200px;
+    height: 30px;
+    background:#e8e8e8 ;
+}
+
+.loading {
+    display: none;
+}
+
+.loaded {
+    display: show;
+}
+
+.chart {
+    display: flex;
+    min-width: 400px;
+    min-height: 400px;
+    justify-content: center;
+    align-items: center;
+}

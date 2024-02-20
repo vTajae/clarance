@@ -1,0 +1,63 @@
+.outer {
+    display: flex;
+    width: 100%;
+}
+
+.caption {
+    display: flex;
+    font-weight: bold;
+    font-size: large;
+    justify-content: left;
+    padding: 20px 0 0 10px;
+}
+
+.combo {
+    width: 200px;
+    height: 30px;
+    background:#e8e8e8 ;
+}
+
+.input {
+    width: 190px;
+    height: 20px;
+}
+
+.form {
+    display: flex;
+    width:370px;
+    flex-direction: column;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+}
+
+.label{
+    font-weight: bold;
+    padding: 10px;
+    width: 150px;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.comments{
+    padding: 10px;
+    margin: 10px 0 0 10px;
+}
+
+.button {
+    margin: 20px 10px 0 10px;
+    padding: 10px 0;
+    width: 150px;
+    border: 1px solid #666666;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+}

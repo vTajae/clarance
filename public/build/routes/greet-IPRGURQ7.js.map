@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/routes/greet.tsx"],
+  "sourcesContent": ["// REMIX HMR BEGIN\nimport * as __hmr__ from \"remix:hmr\";\nif (import.meta) {\nimport.meta.hot = __hmr__.createHotContext(\n//@ts-expect-error\n\"app/routes/greet.tsx\"\n);\nimport.meta.hot.lastModified = \"1708411300596.8313\";\n}\n// REMIX HMR END\n\nimport React from 'react'\n\nconst greet = () => {\n  return (\n    <div>greet</div>\n  )\n}\n\nexport default greet"],
+  "mappings": ";;;;;;;;;;;;;AAeI;AAbJ,IAAI,aAAa;AACjB,cAAY,MAAc;AAAA;AAAA,IAE1B;AAAA,EACA;AACA,cAAY,IAAI,eAAe;AAC/B;AAKA,IAAM,QAAQ,MAAM;AAClB,SACE,mDAAC,SAAI,qBAAL;AAAA;AAAA;AAAA;AAAA,SAAU;AAEd;AAEA,IAAO,gBAAQ;",
+  "names": []
+}
