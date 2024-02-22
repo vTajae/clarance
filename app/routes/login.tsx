@@ -1,65 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useActionData } from "@remix-run/react";
-import { json, redirect, ActionFunction } from "@remix-run/cloudflare";
-import { AuthCookie } from "~/utils/auth/auth";
 import { UserService } from "../../api/services/user_service";
-import { LoginResponse } from "api/models/user";
 
 interface ActionData {
   error?: string;
 }
 
-async function loginUser(username: string, password: string) {
-  try {
-    return await UserService.loginUser(username, password);
-  } catch (error) {
-    console.error("Login failed:", error);
-    throw new Error("Login failed");
-  }
-}
-
-async function serializeCookie(user: LoginResponse, env: any) {
-  const { access_token, refresh_token } = user.tokens;
-  const cookieValue = JSON.stringify({
-    username: user.user.username,
-    userId: user.user.id,
-    accessToken: access_token,
-    refreshToken: refresh_token,
-  });
-
-  const authCookie = AuthCookie(env);
-  return await authCookie.serialize(cookieValue);
-}
-
-export const action: ActionFunction = async ({ request, context }) => {
-  const formData = await request.formData();
-  const username = formData.get("username");
-  const password = formData.get("password");
-
-  if (typeof username === "string" && typeof password === "string") {
-    try {
-      const user = await loginUser(username, password);
-      const serializedCookie = await serializeCookie(user, context.env);
-      // console.log(user , "Login User")
-      return new Response(null, {
-        status: 303,
-        headers: {
-          "Set-Cookie": serializedCookie,
-          "Location": "/dashboard",
-        }
-      });
-    } catch (error) {
-      // Return a more informative error message to the client
-      return json(
-        { error: "Login failed: Invalid credentials" },
-        { status: 401 }
-      );
-    }
-  } else {
-    // Handle missing username or password
-    return json({ error: "Missing username or password" }, { status: 400 });
-  }
-};
 
 const Login = () => {
   const [username, setUsername] = useState("");

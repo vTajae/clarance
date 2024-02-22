@@ -39,23 +39,23 @@ var require_cookie = __commonJS({
     function parse2(str, options) {
       if (typeof str != "string")
         throw new TypeError("argument str must be a string");
-      for (var obj = {}, opt = options || {}, dec = opt.decode || decode, index = 0; index < str.length; ) {
-        var eqIdx = str.indexOf("=", index);
+      for (var obj = {}, opt = options || {}, dec = opt.decode || decode, index2 = 0; index2 < str.length; ) {
+        var eqIdx = str.indexOf("=", index2);
         if (eqIdx === -1)
           break;
-        var endIdx = str.indexOf(";", index);
+        var endIdx = str.indexOf(";", index2);
         if (endIdx === -1)
           endIdx = str.length;
         else if (endIdx < eqIdx) {
-          index = str.lastIndexOf(";", eqIdx - 1) + 1;
+          index2 = str.lastIndexOf(";", eqIdx - 1) + 1;
           continue;
         }
-        var key = str.slice(index, eqIdx).trim();
+        var key = str.slice(index2, eqIdx).trim();
         if (obj[key] === void 0) {
           var val = str.slice(eqIdx + 1, endIdx).trim();
           val.charCodeAt(0) === 34 && (val = val.slice(1, -1)), obj[key] = tryDecode(val, dec);
         }
-        index = endIdx + 1;
+        index2 = endIdx + 1;
       }
       return obj;
     }
@@ -184,9 +184,9 @@ function decodeData(value) {
   }
 }
 function myEscape(value) {
-  let str = value.toString(), result = "", index = 0, chr, code;
-  for (; index < str.length; )
-    chr = str.charAt(index++), /[\w*+\-./@]/.exec(chr) ? result += chr : (code = chr.charCodeAt(0), code < 256 ? result += "%" + hex(code, 2) : result += "%u" + hex(code, 4).toUpperCase());
+  let str = value.toString(), result = "", index2 = 0, chr, code;
+  for (; index2 < str.length; )
+    chr = str.charAt(index2++), /[\w*+\-./@]/.exec(chr) ? result += chr : (code = chr.charCodeAt(0), code < 256 ? result += "%" + hex(code, 2) : result += "%u" + hex(code, 4).toUpperCase());
   return result;
 }
 function hex(code, length) {
@@ -196,16 +196,16 @@ function hex(code, length) {
   return result;
 }
 function myUnescape(value) {
-  let str = value.toString(), result = "", index = 0, chr, part;
-  for (; index < str.length; ) {
-    if (chr = str.charAt(index++), chr === "%") {
-      if (str.charAt(index) === "u") {
-        if (part = str.slice(index + 1, index + 5), /^[\da-f]{4}$/i.exec(part)) {
-          result += String.fromCharCode(parseInt(part, 16)), index += 5;
+  let str = value.toString(), result = "", index2 = 0, chr, part;
+  for (; index2 < str.length; ) {
+    if (chr = str.charAt(index2++), chr === "%") {
+      if (str.charAt(index2) === "u") {
+        if (part = str.slice(index2 + 1, index2 + 5), /^[\da-f]{4}$/i.exec(part)) {
+          result += String.fromCharCode(parseInt(part, 16)), index2 += 5;
           continue;
         }
-      } else if (part = str.slice(index, index + 2), /^[\da-f]{2}$/i.exec(part)) {
-        result += String.fromCharCode(parseInt(part, 16)), index += 2;
+      } else if (part = str.slice(index2, index2 + 2), /^[\da-f]{2}$/i.exec(part)) {
+        result += String.fromCharCode(parseInt(part, 16)), index2 += 2;
         continue;
       }
     }
@@ -292,7 +292,7 @@ var init_utils = __esm({
 
 // node_modules/@web3-storage/multipart-parser/esm/src/search.js
 function coerce(a) {
-  return a instanceof Uint8Array ? (index) => a[index] : a;
+  return a instanceof Uint8Array ? (index2) => a[index2] : a;
 }
 function jsmemcmp(buf1, pos1, buf2, pos2, len) {
   let fn1 = coerce(buf1), fn2 = coerce(buf2);
@@ -666,13 +666,13 @@ function createMemoryHistory(options) {
     initialIndex,
     v5Compat = !1
   } = options, entries;
-  entries = initialEntries.map((entry2, index2) => createMemoryLocation(entry2, typeof entry2 == "string" ? null : entry2.state, index2 === 0 ? "default" : void 0));
-  let index = clampIndex(initialIndex ?? entries.length - 1), action3 = Action.Pop, listener2 = null;
+  entries = initialEntries.map((entry2, index3) => createMemoryLocation(entry2, typeof entry2 == "string" ? null : entry2.state, index3 === 0 ? "default" : void 0));
+  let index2 = clampIndex(initialIndex ?? entries.length - 1), action = Action.Pop, listener2 = null;
   function clampIndex(n) {
     return Math.min(Math.max(n, 0), entries.length - 1);
   }
   function getCurrentLocation() {
-    return entries[index];
+    return entries[index2];
   }
   function createMemoryLocation(to, state, key) {
     state === void 0 && (state = null);
@@ -684,10 +684,10 @@ function createMemoryHistory(options) {
   }
   return {
     get index() {
-      return index;
+      return index2;
     },
     get action() {
-      return action3;
+      return action;
     },
     get location() {
       return getCurrentLocation();
@@ -705,28 +705,28 @@ function createMemoryHistory(options) {
       };
     },
     push(to, state) {
-      action3 = Action.Push;
+      action = Action.Push;
       let nextLocation = createMemoryLocation(to, state);
-      index += 1, entries.splice(index, entries.length, nextLocation), v5Compat && listener2 && listener2({
-        action: action3,
+      index2 += 1, entries.splice(index2, entries.length, nextLocation), v5Compat && listener2 && listener2({
+        action,
         location: nextLocation,
         delta: 1
       });
     },
     replace(to, state) {
-      action3 = Action.Replace;
+      action = Action.Replace;
       let nextLocation = createMemoryLocation(to, state);
-      entries[index] = nextLocation, v5Compat && listener2 && listener2({
-        action: action3,
+      entries[index2] = nextLocation, v5Compat && listener2 && listener2({
+        action,
         location: nextLocation,
         delta: 0
       });
     },
     go(delta) {
-      action3 = Action.Pop;
-      let nextIndex = clampIndex(index + delta), nextLocation = entries[nextIndex];
-      index = nextIndex, listener2 && listener2({
-        action: action3,
+      action = Action.Pop;
+      let nextIndex = clampIndex(index2 + delta), nextLocation = entries[nextIndex];
+      index2 = nextIndex, listener2 && listener2({
+        action,
         location: nextLocation,
         delta
       });
@@ -812,11 +812,11 @@ function warning(cond, message) {
 function createKey() {
   return Math.random().toString(36).substr(2, 8);
 }
-function getHistoryState(location, index) {
+function getHistoryState(location, index2) {
   return {
     usr: location.state,
     key: location.key,
-    idx: index
+    idx: index2
   };
 }
 function createLocation(current2, to, state, key) {
@@ -856,9 +856,9 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   let {
     window: window2 = document.defaultView,
     v5Compat = !1
-  } = options, globalHistory = window2.history, action3 = Action.Pop, listener2 = null, index = getIndex();
-  index == null && (index = 0, globalHistory.replaceState(_extends({}, globalHistory.state, {
-    idx: index
+  } = options, globalHistory = window2.history, action = Action.Pop, listener2 = null, index2 = getIndex();
+  index2 == null && (index2 = 0, globalHistory.replaceState(_extends({}, globalHistory.state, {
+    idx: index2
   }), ""));
   function getIndex() {
     return (globalHistory.state || {
@@ -866,19 +866,19 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
     }).idx;
   }
   function handlePop() {
-    action3 = Action.Pop;
-    let nextIndex = getIndex(), delta = nextIndex == null ? null : nextIndex - index;
-    index = nextIndex, listener2 && listener2({
-      action: action3,
+    action = Action.Pop;
+    let nextIndex = getIndex(), delta = nextIndex == null ? null : nextIndex - index2;
+    index2 = nextIndex, listener2 && listener2({
+      action,
       location: history.location,
       delta
     });
   }
   function push(to, state) {
-    action3 = Action.Push;
+    action = Action.Push;
     let location = createLocation(history.location, to, state);
-    validateLocation && validateLocation(location, to), index = getIndex() + 1;
-    let historyState = getHistoryState(location, index), url = history.createHref(location);
+    validateLocation && validateLocation(location, to), index2 = getIndex() + 1;
+    let historyState = getHistoryState(location, index2), url = history.createHref(location);
     try {
       globalHistory.pushState(historyState, "", url);
     } catch (error) {
@@ -887,18 +887,18 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
       window2.location.assign(url);
     }
     v5Compat && listener2 && listener2({
-      action: action3,
+      action,
       location: history.location,
       delta: 1
     });
   }
   function replace(to, state) {
-    action3 = Action.Replace;
+    action = Action.Replace;
     let location = createLocation(history.location, to, state);
-    validateLocation && validateLocation(location, to), index = getIndex();
-    let historyState = getHistoryState(location, index), url = history.createHref(location);
+    validateLocation && validateLocation(location, to), index2 = getIndex();
+    let historyState = getHistoryState(location, index2), url = history.createHref(location);
     globalHistory.replaceState(historyState, "", url), v5Compat && listener2 && listener2({
-      action: action3,
+      action,
       location: history.location,
       delta: 0
     });
@@ -909,7 +909,7 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   }
   let history = {
     get action() {
-      return action3;
+      return action;
     },
     get location() {
       return getLocation(window2, globalHistory);
@@ -945,8 +945,8 @@ function isIndexRoute(route) {
   return route.index === !0;
 }
 function convertRoutesToDataRoutes(routes2, mapRouteProperties2, parentPath, manifest) {
-  return parentPath === void 0 && (parentPath = []), manifest === void 0 && (manifest = {}), routes2.map((route, index) => {
-    let treePath = [...parentPath, index], id = typeof route.id == "string" ? route.id : treePath.join("-");
+  return parentPath === void 0 && (parentPath = []), manifest === void 0 && (manifest = {}), routes2.map((route, index2) => {
+    let treePath = [...parentPath, index2], id = typeof route.id == "string" ? route.id : treePath.join("-");
     if (invariant(route.index !== !0 || !route.children, "Cannot specify children on an index route"), invariant(!manifest[id], 'Found a route id collision on id "' + id + `".  Route id's must be globally unique within Data Router usages`), isIndexRoute(route)) {
       let indexRoute = _extends({}, route, mapRouteProperties2(route), {
         id
@@ -998,15 +998,15 @@ function convertRouteMatchToUiMatch(match, loaderData) {
 }
 function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
   branches === void 0 && (branches = []), parentsMeta === void 0 && (parentsMeta = []), parentPath === void 0 && (parentPath = "");
-  let flattenRoute = (route, index, relativePath) => {
-    let meta2 = {
+  let flattenRoute = (route, index2, relativePath) => {
+    let meta = {
       relativePath: relativePath === void 0 ? route.path || "" : relativePath,
       caseSensitive: route.caseSensitive === !0,
-      childrenIndex: index,
+      childrenIndex: index2,
       route
     };
-    meta2.relativePath.startsWith("/") && (invariant(meta2.relativePath.startsWith(parentPath), 'Absolute route path "' + meta2.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes."), meta2.relativePath = meta2.relativePath.slice(parentPath.length));
-    let path = joinPaths([parentPath, meta2.relativePath]), routesMeta = parentsMeta.concat(meta2);
+    meta.relativePath.startsWith("/") && (invariant(meta.relativePath.startsWith(parentPath), 'Absolute route path "' + meta.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes."), meta.relativePath = meta.relativePath.slice(parentPath.length));
+    let path = joinPaths([parentPath, meta.relativePath]), routesMeta = parentsMeta.concat(meta);
     route.children && route.children.length > 0 && (invariant(
       // Our types know better, but runtime JS may not!
       // @ts-expect-error
@@ -1018,13 +1018,13 @@ function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
       routesMeta
     });
   };
-  return routes2.forEach((route, index) => {
+  return routes2.forEach((route, index2) => {
     var _route$path;
     if (route.path === "" || !((_route$path = route.path) != null && _route$path.includes("?")))
-      flattenRoute(route, index);
+      flattenRoute(route, index2);
     else
       for (let exploded of explodeOptionalSegments(route.path))
-        flattenRoute(route, index, exploded);
+        flattenRoute(route, index2, exploded);
   }), branches;
 }
 function explodeOptionalSegments(path) {
@@ -1038,11 +1038,11 @@ function explodeOptionalSegments(path) {
   return result.push(...restExploded.map((subpath) => subpath === "" ? required : [required, subpath].join("/"))), isOptional && result.push(...restExploded), result.map((exploded) => path.startsWith("/") && exploded === "" ? "/" : exploded);
 }
 function rankRouteBranches(branches) {
-  branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta2) => meta2.childrenIndex), b.routesMeta.map((meta2) => meta2.childrenIndex)));
+  branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta) => meta.childrenIndex), b.routesMeta.map((meta) => meta.childrenIndex)));
 }
-function computeScore(path, index) {
+function computeScore(path, index2) {
   let segments = path.split("/"), initialScore = segments.length;
-  return segments.some(isSplat) && (initialScore += splatPenalty), index && (initialScore += indexRouteValue), segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+  return segments.some(isSplat) && (initialScore += splatPenalty), index2 && (initialScore += indexRouteValue), segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
 }
 function compareIndexes(a, b) {
   return a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]) ? (
@@ -1062,15 +1062,15 @@ function matchRouteBranch(branch, pathname) {
     routesMeta
   } = branch, matchedParams = {}, matchedPathname = "/", matches2 = [];
   for (let i = 0; i < routesMeta.length; ++i) {
-    let meta2 = routesMeta[i], end = i === routesMeta.length - 1, remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/", match = matchPath({
-      path: meta2.relativePath,
-      caseSensitive: meta2.caseSensitive,
+    let meta = routesMeta[i], end = i === routesMeta.length - 1, remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/", match = matchPath({
+      path: meta.relativePath,
+      caseSensitive: meta.caseSensitive,
       end
     }, remainingPathname);
     if (!match)
       return null;
     Object.assign(matchedParams, match.params);
-    let route = meta2.route;
+    let route = meta.route;
     matches2.push({
       // TODO: Can this as be avoided?
       params: matchedParams,
@@ -1085,8 +1085,8 @@ function generatePath(originalPath, params) {
   params === void 0 && (params = {});
   let path = originalPath;
   path.endsWith("*") && path !== "*" && !path.endsWith("/*") && (warning(!1, 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".')), path = path.replace(/\*$/, "/*"));
-  let prefix = path.startsWith("/") ? "/" : "", stringify = (p) => p == null ? "" : typeof p == "string" ? p : String(p), segments = path.split(/\/+/).map((segment, index, array) => {
-    if (index === array.length - 1 && segment === "*")
+  let prefix = path.startsWith("/") ? "/" : "", stringify = (p) => p == null ? "" : typeof p == "string" ? p : String(p), segments = path.split(/\/+/).map((segment, index2, array) => {
+    if (index2 === array.length - 1 && segment === "*")
       return stringify(params["*"]);
     let keyMatch = segment.match(/^:(\w+)(\??)$/);
     if (keyMatch) {
@@ -1108,16 +1108,16 @@ function matchPath(pattern, pathname) {
     return null;
   let matchedPathname = match[0], pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1"), captureGroups = match.slice(1);
   return {
-    params: compiledParams.reduce((memo, _ref, index) => {
+    params: compiledParams.reduce((memo, _ref, index2) => {
       let {
         paramName,
         isOptional
       } = _ref;
       if (paramName === "*") {
-        let splatValue = captureGroups[index] || "";
+        let splatValue = captureGroups[index2] || "";
         pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
       }
-      let value = captureGroups[index];
+      let value = captureGroups[index2];
       return isOptional && !value ? memo[paramName] = void 0 : memo[paramName] = safelyDecodeURIComponent(value || "", paramName), memo;
     }, {}),
     pathname: matchedPathname,
@@ -1180,7 +1180,7 @@ function getInvalidPathError(char, field, dest, path) {
   return "Cannot include a '" + char + "' character in a manually specified " + ("`to." + field + "` field [" + JSON.stringify(path) + "].  Please separate it out to the ") + ("`to." + dest + "` field. Alternatively you may provide the full path as ") + 'a string in <Link to="..."> and the router will parse it for you.';
 }
 function getPathContributingMatches(matches2) {
-  return matches2.filter((match, index) => index === 0 || match.route.path && match.route.path.length > 0);
+  return matches2.filter((match, index2) => index2 === 0 || match.route.path && match.route.path.length > 0);
 }
 function getResolveToMatches(matches2, v7_relativeSplatPath) {
   let pathMatches = getPathContributingMatches(matches2);
@@ -1615,13 +1615,13 @@ function createRouter(init) {
         shortCircuited: !0
       };
     pendingNavigationController && pendingNavigationController.signal.removeEventListener("abort", abortPendingFetchRevalidations), revalidatingFetchers.forEach((rf) => fetchControllers.delete(rf.key));
-    let redirect7 = findRedirect(results);
-    if (redirect7) {
-      if (redirect7.idx >= matchesToLoad.length) {
-        let fetcherKey = revalidatingFetchers[redirect7.idx - matchesToLoad.length].key;
+    let redirect5 = findRedirect(results);
+    if (redirect5) {
+      if (redirect5.idx >= matchesToLoad.length) {
+        let fetcherKey = revalidatingFetchers[redirect5.idx - matchesToLoad.length].key;
         fetchRedirectIds.add(fetcherKey);
       }
-      return await startRedirectNavigation(state, redirect7.result, {
+      return await startRedirectNavigation(state, redirect5.result, {
         replace
       }), {
         shortCircuited: !0
@@ -1767,13 +1767,13 @@ function createRouter(init) {
     if (abortController.signal.aborted)
       return;
     abortController.signal.removeEventListener("abort", abortPendingFetchRevalidations), fetchReloadIds.delete(key), fetchControllers.delete(key), revalidatingFetchers.forEach((r) => fetchControllers.delete(r.key));
-    let redirect7 = findRedirect(results);
-    if (redirect7) {
-      if (redirect7.idx >= matchesToLoad.length) {
-        let fetcherKey = revalidatingFetchers[redirect7.idx - matchesToLoad.length].key;
+    let redirect5 = findRedirect(results);
+    if (redirect5) {
+      if (redirect5.idx >= matchesToLoad.length) {
+        let fetcherKey = revalidatingFetchers[redirect5.idx - matchesToLoad.length].key;
         fetchRedirectIds.add(fetcherKey);
       }
-      return startRedirectNavigation(state, redirect7.result);
+      return startRedirectNavigation(state, redirect5.result);
     }
     let {
       loaderData,
@@ -1822,28 +1822,28 @@ function createRouter(init) {
       invariant(!isDeferredResult(result), "Unhandled fetcher deferred data"), updateFetcherState(key, getDoneFetcher(result.data));
     }
   }
-  async function startRedirectNavigation(state2, redirect7, _temp2) {
+  async function startRedirectNavigation(state2, redirect5, _temp2) {
     let {
       submission,
       fetcherSubmission,
       replace
     } = _temp2 === void 0 ? {} : _temp2;
-    redirect7.revalidate && (isRevalidationRequired = !0);
-    let redirectLocation = createLocation(state2.location, redirect7.location, {
+    redirect5.revalidate && (isRevalidationRequired = !0);
+    let redirectLocation = createLocation(state2.location, redirect5.location, {
       _isRedirect: !0
     });
     if (invariant(redirectLocation, "Expected a location on the redirect navigation"), isBrowser2) {
       let isDocumentReload = !1;
-      if (redirect7.reloadDocument)
+      if (redirect5.reloadDocument)
         isDocumentReload = !0;
-      else if (ABSOLUTE_URL_REGEX.test(redirect7.location)) {
-        let url = init.history.createURL(redirect7.location);
+      else if (ABSOLUTE_URL_REGEX.test(redirect5.location)) {
+        let url = init.history.createURL(redirect5.location);
         isDocumentReload = // Hard reload if it's an absolute URL to a new origin
         url.origin !== routerWindow.location.origin || // Hard reload if it's an absolute URL that does not match our basename
         stripBasename(url.pathname, basename) == null;
       }
       if (isDocumentReload) {
-        replace ? routerWindow.location.replace(redirect7.location) : routerWindow.location.assign(redirect7.location);
+        replace ? routerWindow.location.replace(redirect5.location) : routerWindow.location.assign(redirect5.location);
         return;
       }
     }
@@ -1855,10 +1855,10 @@ function createRouter(init) {
     } = state2.navigation;
     !submission && !fetcherSubmission && formMethod && formAction && formEncType && (submission = getSubmissionFromNavigation(state2.navigation));
     let activeSubmission = submission || fetcherSubmission;
-    if (redirectPreserveMethodStatusCodes.has(redirect7.status) && activeSubmission && isMutationMethod(activeSubmission.formMethod))
+    if (redirectPreserveMethodStatusCodes.has(redirect5.status) && activeSubmission && isMutationMethod(activeSubmission.formMethod))
       await startNavigation(redirectHistoryAction, redirectLocation, {
         submission: _extends({}, activeSubmission, {
-          formAction: redirect7.location
+          formAction: redirect5.location
         }),
         // Preserve this flag across redirects
         preventScrollReset: pendingPreventScrollReset
@@ -2389,7 +2389,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
       if (!isMutationMethod(formMethod))
         return getInvalidBodyError();
       try {
-        let json6 = typeof opts.body == "string" ? JSON.parse(opts.body) : opts.body;
+        let json5 = typeof opts.body == "string" ? JSON.parse(opts.body) : opts.body;
         return {
           path,
           submission: {
@@ -2397,7 +2397,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
             formAction,
             formEncType: opts.formEncType,
             formData: void 0,
-            json: json6,
+            json: json5,
             text: void 0
           }
         };
@@ -2444,13 +2444,13 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
 function getLoaderMatchesUntilBoundary(matches2, boundaryId) {
   let boundaryMatches = matches2;
   if (boundaryId) {
-    let index = matches2.findIndex((m) => m.route.id === boundaryId);
-    index >= 0 && (boundaryMatches = matches2.slice(0, index));
+    let index2 = matches2.findIndex((m) => m.route.id === boundaryId);
+    index2 >= 0 && (boundaryMatches = matches2.slice(0, index2));
   }
   return boundaryMatches;
 }
 function getMatchesToLoad(history, state, matches2, submission, location, isInitialLoad, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, deletedFetchers, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionData, pendingError) {
-  let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : void 0, currentUrl = history.createURL(state.location), nextUrl = history.createURL(location), boundaryId = pendingError ? Object.keys(pendingError)[0] : void 0, navigationMatches = getLoaderMatchesUntilBoundary(matches2, boundaryId).filter((match, index) => {
+  let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : void 0, currentUrl = history.createURL(state.location), nextUrl = history.createURL(location), boundaryId = pendingError ? Object.keys(pendingError)[0] : void 0, navigationMatches = getLoaderMatchesUntilBoundary(matches2, boundaryId).filter((match, index2) => {
     let {
       route
     } = match;
@@ -2461,9 +2461,9 @@ function getMatchesToLoad(history, state, matches2, submission, location, isInit
     if (isInitialLoad)
       return route.loader.hydrate ? !0 : state.loaderData[route.id] === void 0 && // Don't re-run if the loader ran and threw an error
       (!state.errors || state.errors[route.id] === void 0);
-    if (isNewLoader(state.loaderData, state.matches[index], match) || cancelledDeferredRoutes.some((id) => id === match.route.id))
+    if (isNewLoader(state.loaderData, state.matches[index2], match) || cancelledDeferredRoutes.some((id) => id === match.route.id))
       return !0;
-    let currentRouteMatch = state.matches[index], nextRouteMatch = match;
+    let currentRouteMatch = state.matches[index2], nextRouteMatch = match;
     return shouldRevalidateLoader(match, _extends({
       currentUrl,
       currentParams: currentRouteMatch.params,
@@ -2705,8 +2705,8 @@ function convertSearchParamsToFormData(searchParams) {
 }
 function processRouteLoaderData(matches2, matchesToLoad, results, pendingError, activeDeferreds) {
   let loaderData = {}, errors2 = null, statusCode, foundError = !1, loaderHeaders = {};
-  return results.forEach((result, index) => {
-    let id = matchesToLoad[index].route.id;
+  return results.forEach((result, index2) => {
+    let id = matchesToLoad[index2].route.id;
     if (invariant(!isRedirectResult(result), "Cannot handle redirect results in processLoaderData"), isErrorResult(result)) {
       let boundaryMatch = findNearestBoundary(matches2, id), error = result.error;
       pendingError && (error = Object.values(pendingError)[0], pendingError = void 0), errors2 = errors2 || {}, errors2[boundaryMatch.route.id] == null && (errors2[boundaryMatch.route.id] = error), loaderData[id] = void 0, foundError || (foundError = !0, statusCode = isRouteErrorResponse(result.error) ? result.error.status : 500), result.headers && (loaderHeaders[id] = result.headers);
@@ -2724,14 +2724,14 @@ function processLoaderData(state, matches2, matchesToLoad, results, pendingError
     loaderData,
     errors: errors2
   } = processRouteLoaderData(matches2, matchesToLoad, results, pendingError, activeDeferreds);
-  for (let index = 0; index < revalidatingFetchers.length; index++) {
+  for (let index2 = 0; index2 < revalidatingFetchers.length; index2++) {
     let {
       key,
       match,
       controller
-    } = revalidatingFetchers[index];
-    invariant(fetcherResults !== void 0 && fetcherResults[index] !== void 0, "Did not find corresponding fetcher result");
-    let result = fetcherResults[index];
+    } = revalidatingFetchers[index2];
+    invariant(fetcherResults !== void 0 && fetcherResults[index2] !== void 0, "Did not find corresponding fetcher result");
+    let result = fetcherResults[index2];
     if (!(controller && controller.signal.aborted))
       if (isErrorResult(result)) {
         let boundaryMatch = findNearestBoundary(state.matches, match?.route.id);
@@ -2838,15 +2838,15 @@ function isMutationMethod(method) {
   return validMutationMethods.has(method.toLowerCase());
 }
 async function resolveDeferredResults(currentMatches, matchesToLoad, results, signals, isFetcher, currentLoaderData) {
-  for (let index = 0; index < results.length; index++) {
-    let result = results[index], match = matchesToLoad[index];
+  for (let index2 = 0; index2 < results.length; index2++) {
+    let result = results[index2], match = matchesToLoad[index2];
     if (!match)
       continue;
     let currentMatch = currentMatches.find((m) => m.route.id === match.route.id), isRevalidatingLoader = currentMatch != null && !isNewRouteInstance(currentMatch, match) && (currentLoaderData && currentLoaderData[match.route.id]) !== void 0;
     if (isDeferredResult(result) && (isFetcher || isRevalidatingLoader)) {
-      let signal = signals[index];
+      let signal = signals[index2];
       invariant(signal, "Expected an AbortSignal for revalidating fetcher deferred result"), await resolveDeferredData(result, signal, isFetcher).then((result2) => {
-        result2 && (results[index] = result2 || results[index]);
+        result2 && (results[index2] = result2 || results[index2]);
       });
     }
   }
@@ -2888,7 +2888,7 @@ function getSubmissionFromNavigation(navigation) {
     formEncType,
     text,
     formData,
-    json: json6
+    json: json5
   } = navigation;
   if (!(!formMethod || !formAction || !formEncType)) {
     if (text != null)
@@ -2909,13 +2909,13 @@ function getSubmissionFromNavigation(navigation) {
         json: void 0,
         text: void 0
       };
-    if (json6 !== void 0)
+    if (json5 !== void 0)
       return {
         formMethod,
         formAction,
         formEncType,
         formData: void 0,
-        json: json6,
+        json: json5,
         text: void 0
       };
   }
@@ -3002,8 +3002,8 @@ function restoreAppliedTransitions(_window, transitions) {
   try {
     let sessionPositions = _window.sessionStorage.getItem(TRANSITIONS_STORAGE_KEY);
     if (sessionPositions) {
-      let json6 = JSON.parse(sessionPositions);
-      for (let [k, v] of Object.entries(json6 || {}))
+      let json5 = JSON.parse(sessionPositions);
+      for (let [k, v] of Object.entries(json5 || {}))
         v && Array.isArray(v) && transitions.set(k, new Set(v || []));
     }
   } catch {
@@ -3011,11 +3011,11 @@ function restoreAppliedTransitions(_window, transitions) {
 }
 function persistAppliedTransitions(_window, transitions) {
   if (transitions.size > 0) {
-    let json6 = {};
+    let json5 = {};
     for (let [k, v] of transitions)
-      json6[k] = [...v];
+      json5[k] = [...v];
     try {
-      _window.sessionStorage.setItem(TRANSITIONS_STORAGE_KEY, JSON.stringify(json6));
+      _window.sessionStorage.setItem(TRANSITIONS_STORAGE_KEY, JSON.stringify(json5));
     } catch (error) {
       warning(!1, "Failed to save applied view transitions in sessionStorage (" + error + ").");
     }
@@ -3472,12 +3472,12 @@ var init_routeMatching = __esm({
 // node_modules/@remix-run/server-runtime/dist/esm/data.js
 async function callRouteActionRR({
   loadContext,
-  action: action3,
+  action,
   params,
   request,
   routeId
 }) {
-  let result = await action3({
+  let result = await action({
     request: stripDataParam(stripIndexParam(request)),
     context: loadContext,
     params
@@ -4102,7 +4102,7 @@ var require_crypto = __commonJS({
       let key = await createKey2(secret, ["sign"]), data = encoder.encode(value), signature = await crypto.subtle.sign("HMAC", key, data), hash = btoa(String.fromCharCode(...new Uint8Array(signature))).replace(/=+$/, "");
       return value + "." + hash;
     }, unsign = async (signed, secret) => {
-      let index = signed.lastIndexOf("."), value = signed.slice(0, index), hash = signed.slice(index + 1), key = await createKey2(secret, ["verify"]), data = encoder.encode(value), signature = byteStringToUint8Array(atob(hash));
+      let index2 = signed.lastIndexOf("."), value = signed.slice(0, index2), hash = signed.slice(index2 + 1), key = await createKey2(secret, ["verify"]), data = encoder.encode(value), signature = byteStringToUint8Array(atob(hash));
       return await crypto.subtle.verify("HMAC", key, signature, data) ? value : !1;
     };
     async function createKey2(secret, usages) {
@@ -4684,8 +4684,8 @@ var require_react_development = __commonJS({
       function escapeUserProvidedKey(text) {
         return text.replace(userProvidedKeyEscapeRegex, "$&/");
       }
-      function getElementKey(element, index) {
-        return typeof element == "object" && element !== null && element.key != null ? (checkKeyStringCoercion(element.key), escape2("" + element.key)) : index.toString(36);
+      function getElementKey(element, index2) {
+        return typeof element == "object" && element !== null && element.key != null ? (checkKeyStringCoercion(element.key), escape2("" + element.key)) : index2.toString(36);
       }
       function mapIntoArray(children, array, escapedPrefix, nameSoFar, callback) {
         var type = typeof children;
@@ -5006,7 +5006,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         var dispatcher = resolveDispatcher();
         return dispatcher.useRef(initialValue);
       }
-      function useEffect6(create, deps) {
+      function useEffect5(create, deps) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useEffect(create, deps);
       }
@@ -5535,7 +5535,7 @@ Check the top-level render call using <` + parentName + ">.");
         toArray,
         only: onlyChild
       };
-      exports.Children = Children2, exports.Component = Component3, exports.Fragment = REACT_FRAGMENT_TYPE2, exports.Profiler = REACT_PROFILER_TYPE2, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE2, exports.Suspense = REACT_SUSPENSE_TYPE2, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext4, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef3, exports.isValidElement = isValidElement2, exports.lazy = lazy, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext4, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect6, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo5, exports.useReducer = useReducer, exports.useRef = useRef4, exports.useState = useState6, exports.useSyncExternalStore = useSyncExternalStore3, exports.useTransition = useTransition, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+      exports.Children = Children2, exports.Component = Component3, exports.Fragment = REACT_FRAGMENT_TYPE2, exports.Profiler = REACT_PROFILER_TYPE2, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE2, exports.Suspense = REACT_SUSPENSE_TYPE2, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext4, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef3, exports.isValidElement = isValidElement2, exports.lazy = lazy, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext4, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect5, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo5, exports.useReducer = useReducer, exports.useRef = useRef4, exports.useState = useState6, exports.useSyncExternalStore = useSyncExternalStore3, exports.useTransition = useTransition, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
     })();
   }
 });
@@ -5557,8 +5557,8 @@ var require_scheduler_development = __commonJS({
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
       var enableSchedulerDebugging = !1, enableProfiling = !1, frameYieldMs = 5;
       function push(heap, node) {
-        var index = heap.length;
-        heap.push(node), siftUp(heap, node, index);
+        var index2 = heap.length;
+        heap.push(node), siftUp(heap, node, index2);
       }
       function peek2(heap) {
         return heap.length === 0 ? null : heap[0];
@@ -5570,21 +5570,21 @@ var require_scheduler_development = __commonJS({
         return last !== first && (heap[0] = last, siftDown(heap, last, 0)), first;
       }
       function siftUp(heap, node, i) {
-        for (var index = i; index > 0; ) {
-          var parentIndex = index - 1 >>> 1, parent = heap[parentIndex];
+        for (var index2 = i; index2 > 0; ) {
+          var parentIndex = index2 - 1 >>> 1, parent = heap[parentIndex];
           if (compare(parent, node) > 0)
-            heap[parentIndex] = node, heap[index] = parent, index = parentIndex;
+            heap[parentIndex] = node, heap[index2] = parent, index2 = parentIndex;
           else
             return;
         }
       }
       function siftDown(heap, node, i) {
-        for (var index = i, length = heap.length, halfLength = length >>> 1; index < halfLength; ) {
-          var leftIndex = (index + 1) * 2 - 1, left = heap[leftIndex], rightIndex = leftIndex + 1, right = heap[rightIndex];
+        for (var index2 = i, length = heap.length, halfLength = length >>> 1; index2 < halfLength; ) {
+          var leftIndex = (index2 + 1) * 2 - 1, left = heap[leftIndex], rightIndex = leftIndex + 1, right = heap[rightIndex];
           if (compare(left, node) < 0)
-            rightIndex < length && compare(right, left) < 0 ? (heap[index] = right, heap[rightIndex] = node, index = rightIndex) : (heap[index] = left, heap[leftIndex] = node, index = leftIndex);
+            rightIndex < length && compare(right, left) < 0 ? (heap[index2] = right, heap[rightIndex] = node, index2 = rightIndex) : (heap[index2] = left, heap[leftIndex] = node, index2 = leftIndex);
           else if (rightIndex < length && compare(right, node) < 0)
-            heap[index] = right, heap[rightIndex] = node, index = rightIndex;
+            heap[index2] = right, heap[rightIndex] = node, index2 = rightIndex;
           else
             return;
         }
@@ -5839,7 +5839,7 @@ var require_react_dom_development = __commonJS({
     (function() {
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-      var React12 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
+      var React10 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
       function setSuppressWarning(newSuppressWarning) {
         suppressWarning = newSuppressWarning;
       }
@@ -5867,7 +5867,7 @@ var require_react_dom_development = __commonJS({
           argsWithFormat.unshift("Warning: " + format), Function.prototype.apply.call(console[level], console, argsWithFormat);
         }
       }
-      var FunctionComponent = 0, ClassComponent = 1, IndeterminateComponent = 2, HostRoot = 3, HostPortal = 4, HostComponent = 5, HostText = 6, Fragment7 = 7, Mode = 8, ContextConsumer = 9, ContextProvider = 10, ForwardRef2 = 11, Profiler = 12, SuspenseComponent = 13, MemoComponent = 14, SimpleMemoComponent = 15, LazyComponent = 16, IncompleteClassComponent = 17, DehydratedFragment = 18, SuspenseListComponent = 19, ScopeComponent = 21, OffscreenComponent = 22, LegacyHiddenComponent = 23, CacheComponent = 24, TracingMarkerComponent = 25, enableClientRenderFallbackOnTextMismatch = !0, enableNewReconciler = !1, enableLazyContextPropagation = !1, enableLegacyHidden = !1, enableSuspenseAvoidThisFallback = !1, disableCommentsAsDOMContainers = !0, enableCustomElementPropertySupport = !1, warnAboutStringRefs = !1, enableSchedulingProfiler = !0, enableProfilerTimer = !0, enableProfilerCommitHooks = !0, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {};
+      var FunctionComponent = 0, ClassComponent = 1, IndeterminateComponent = 2, HostRoot = 3, HostPortal = 4, HostComponent = 5, HostText = 6, Fragment4 = 7, Mode = 8, ContextConsumer = 9, ContextProvider = 10, ForwardRef2 = 11, Profiler = 12, SuspenseComponent = 13, MemoComponent = 14, SimpleMemoComponent = 15, LazyComponent = 16, IncompleteClassComponent = 17, DehydratedFragment = 18, SuspenseListComponent = 19, ScopeComponent = 21, OffscreenComponent = 22, LegacyHiddenComponent = 23, CacheComponent = 24, TracingMarkerComponent = 25, enableClientRenderFallbackOnTextMismatch = !0, enableNewReconciler = !1, enableLazyContextPropagation = !1, enableLegacyHidden = !1, enableSuspenseAvoidThisFallback = !1, disableCommentsAsDOMContainers = !0, enableCustomElementPropertySupport = !1, warnAboutStringRefs = !1, enableSchedulingProfiler = !0, enableProfilerTimer = !0, enableProfilerCommitHooks = !0, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {};
       function registerTwoPhaseEvent(registrationName, dependencies) {
         registerDirectEvent(registrationName, dependencies), registerDirectEvent(registrationName + "Capture", dependencies);
       }
@@ -6717,7 +6717,7 @@ Error generating stack: ` + x.message + `
             return "DehydratedFragment";
           case ForwardRef2:
             return getWrappedName$1(type, type.render, "ForwardRef");
-          case Fragment7:
+          case Fragment4:
             return "Fragment";
           case HostComponent:
             return type;
@@ -6961,7 +6961,7 @@ Error generating stack: ` + x.message + `
       }
       var didWarnSelectedSetOnOption = !1, didWarnInvalidChild = !1, didWarnInvalidInnerHTML = !1;
       function validateProps(element, props) {
-        props.value == null && (typeof props.children == "object" && props.children !== null ? React12.Children.forEach(props.children, function(child) {
+        props.value == null && (typeof props.children == "object" && props.children !== null ? React10.Children.forEach(props.children, function(child) {
           child != null && (typeof child == "string" || typeof child == "number" || didWarnInvalidChild || (didWarnInvalidChild = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }) : props.dangerouslySetInnerHTML != null && (didWarnInvalidInnerHTML || (didWarnInvalidInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.")))), props.selected != null && !didWarnSelectedSetOnOption && (error("Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>."), didWarnSelectedSetOnOption = !0);
       }
@@ -8520,7 +8520,7 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       function getLaneLabelMap() {
         {
-          for (var map = /* @__PURE__ */ new Map(), lane = 1, index2 = 0; index2 < TotalLanes; index2++) {
+          for (var map = /* @__PURE__ */ new Map(), lane = 1, index3 = 0; index3 < TotalLanes; index3++) {
             var label = getLabelForLane(lane);
             map.set(lane, label), lane *= 2;
           }
@@ -8843,14 +8843,14 @@ Check the render method of \`` + ownerName + "`." : "";
         var entangledLanes = root2.entangledLanes;
         if (entangledLanes !== NoLanes)
           for (var entanglements = root2.entanglements, lanes = nextLanes & entangledLanes; lanes > 0; ) {
-            var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
-            nextLanes |= entanglements[index2], lanes &= ~lane;
+            var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
+            nextLanes |= entanglements[index3], lanes &= ~lane;
           }
         return nextLanes;
       }
       function getMostRecentEventTime(root2, lanes) {
         for (var eventTimes = root2.eventTimes, mostRecentEventTime = NoTimestamp; lanes > 0; ) {
-          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2, eventTime = eventTimes[index2];
+          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3, eventTime = eventTimes[index3];
           eventTime > mostRecentEventTime && (mostRecentEventTime = eventTime), lanes &= ~lane;
         }
         return mostRecentEventTime;
@@ -8898,8 +8898,8 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       function markStarvedLanesAsExpired(root2, currentTime) {
         for (var pendingLanes = root2.pendingLanes, suspendedLanes = root2.suspendedLanes, pingedLanes = root2.pingedLanes, expirationTimes = root2.expirationTimes, lanes = pendingLanes; lanes > 0; ) {
-          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2, expirationTime = expirationTimes[index2];
-          expirationTime === NoTimestamp ? ((lane & suspendedLanes) === NoLanes || (lane & pingedLanes) !== NoLanes) && (expirationTimes[index2] = computeExpirationTime(lane, currentTime)) : expirationTime <= currentTime && (root2.expiredLanes |= lane), lanes &= ~lane;
+          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3, expirationTime = expirationTimes[index3];
+          expirationTime === NoTimestamp ? ((lane & suspendedLanes) === NoLanes || (lane & pingedLanes) !== NoLanes) && (expirationTimes[index3] = computeExpirationTime(lane, currentTime)) : expirationTime <= currentTime && (root2.expiredLanes |= lane), lanes &= ~lane;
         }
       }
       function getHighestPriorityPendingLanes(root2) {
@@ -8983,14 +8983,14 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       function markRootUpdated(root2, updateLane, eventTime) {
         root2.pendingLanes |= updateLane, updateLane !== IdleLane && (root2.suspendedLanes = NoLanes, root2.pingedLanes = NoLanes);
-        var eventTimes = root2.eventTimes, index2 = laneToIndex(updateLane);
-        eventTimes[index2] = eventTime;
+        var eventTimes = root2.eventTimes, index3 = laneToIndex(updateLane);
+        eventTimes[index3] = eventTime;
       }
       function markRootSuspended(root2, suspendedLanes) {
         root2.suspendedLanes |= suspendedLanes, root2.pingedLanes &= ~suspendedLanes;
         for (var expirationTimes = root2.expirationTimes, lanes = suspendedLanes; lanes > 0; ) {
-          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
-          expirationTimes[index2] = NoTimestamp, lanes &= ~lane;
+          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
+          expirationTimes[index3] = NoTimestamp, lanes &= ~lane;
         }
       }
       function markRootPinged(root2, pingedLanes, eventTime) {
@@ -9000,16 +9000,16 @@ Check the render method of \`` + ownerName + "`." : "";
         var noLongerPendingLanes = root2.pendingLanes & ~remainingLanes;
         root2.pendingLanes = remainingLanes, root2.suspendedLanes = NoLanes, root2.pingedLanes = NoLanes, root2.expiredLanes &= remainingLanes, root2.mutableReadLanes &= remainingLanes, root2.entangledLanes &= remainingLanes;
         for (var entanglements = root2.entanglements, eventTimes = root2.eventTimes, expirationTimes = root2.expirationTimes, lanes = noLongerPendingLanes; lanes > 0; ) {
-          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
-          entanglements[index2] = NoLanes, eventTimes[index2] = NoTimestamp, expirationTimes[index2] = NoTimestamp, lanes &= ~lane;
+          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
+          entanglements[index3] = NoLanes, eventTimes[index3] = NoTimestamp, expirationTimes[index3] = NoTimestamp, lanes &= ~lane;
         }
       }
       function markRootEntangled(root2, entangledLanes) {
         for (var rootEntangledLanes = root2.entangledLanes |= entangledLanes, entanglements = root2.entanglements, lanes = rootEntangledLanes; lanes; ) {
-          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
+          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
           // Is this one of the newly entangled lanes?
           lane & entangledLanes | // Is this lane transitively entangled with the newly entangled lanes?
-          entanglements[index2] & entangledLanes && (entanglements[index2] |= entangledLanes), lanes &= ~lane;
+          entanglements[index3] & entangledLanes && (entanglements[index3] |= entangledLanes), lanes &= ~lane;
         }
       }
       function getBumpedLaneForHydration(root2, renderLanes2) {
@@ -9056,14 +9056,14 @@ Check the render method of \`` + ownerName + "`." : "";
       function addFiberToLanesMap(root2, fiber, lanes) {
         if (isDevToolsPresent)
           for (var pendingUpdatersLaneMap = root2.pendingUpdatersLaneMap; lanes > 0; ) {
-            var index2 = laneToIndex(lanes), lane = 1 << index2, updaters = pendingUpdatersLaneMap[index2];
+            var index3 = laneToIndex(lanes), lane = 1 << index3, updaters = pendingUpdatersLaneMap[index3];
             updaters.add(fiber), lanes &= ~lane;
           }
       }
       function movePendingFibersToMemoized(root2, lanes) {
         if (isDevToolsPresent)
           for (var pendingUpdatersLaneMap = root2.pendingUpdatersLaneMap, memoizedUpdaters = root2.memoizedUpdaters; lanes > 0; ) {
-            var index2 = laneToIndex(lanes), lane = 1 << index2, updaters = pendingUpdatersLaneMap[index2];
+            var index3 = laneToIndex(lanes), lane = 1 << index3, updaters = pendingUpdatersLaneMap[index3];
             updaters.size > 0 && (updaters.forEach(function(fiber) {
               var alternate = fiber.alternate;
               (alternate === null || !memoizedUpdaters.has(alternate)) && memoizedUpdaters.add(fiber);
@@ -11621,21 +11621,21 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       var valueStack = [], fiberStack;
       fiberStack = [];
-      var index = -1;
+      var index2 = -1;
       function createCursor(defaultValue) {
         return {
           current: defaultValue
         };
       }
       function pop(cursor, fiber) {
-        if (index < 0) {
+        if (index2 < 0) {
           error("Unexpected pop.");
           return;
         }
-        fiber !== fiberStack[index] && error("Unexpected Fiber popped."), cursor.current = valueStack[index], valueStack[index] = null, fiberStack[index] = null, index--;
+        fiber !== fiberStack[index2] && error("Unexpected Fiber popped."), cursor.current = valueStack[index2], valueStack[index2] = null, fiberStack[index2] = null, index2--;
       }
       function push(cursor, value, fiber) {
-        index++, valueStack[index] = cursor.current, fiberStack[index] = fiber, cursor.current = value;
+        index2++, valueStack[index2] = cursor.current, fiberStack[index2] = fiber, cursor.current = value;
       }
       var warnedAboutMissingGetChildContext;
       warnedAboutMissingGetChildContext = {};
@@ -11796,9 +11796,9 @@ Check the render method of \`` + ownerName + "`." : "";
       function pushTreeFork(workInProgress2, totalChildren) {
         warnIfNotHydrating(), forkStack[forkStackIndex++] = treeForkCount, forkStack[forkStackIndex++] = treeForkProvider, treeForkProvider = workInProgress2, treeForkCount = totalChildren;
       }
-      function pushTreeId(workInProgress2, totalChildren, index2) {
+      function pushTreeId(workInProgress2, totalChildren, index3) {
         warnIfNotHydrating(), idStack[idStackIndex++] = treeContextId, idStack[idStackIndex++] = treeContextOverflow, idStack[idStackIndex++] = treeContextProvider, treeContextProvider = workInProgress2;
-        var baseIdWithLeadingBit = treeContextId, baseOverflow = treeContextOverflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index2 + 1, length = getBitLength(totalChildren) + baseLength;
+        var baseIdWithLeadingBit = treeContextId, baseOverflow = treeContextOverflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index3 + 1, length = getBitLength(totalChildren) + baseLength;
         if (length > 30) {
           var numberOfOverflowBits = baseLength - baseLength % 5, newOverflowBits = (1 << numberOfOverflowBits) - 1, newOverflow = (baseId & newOverflowBits).toString(32), restOfBaseId = baseId >> numberOfOverflowBits, restOfBaseLength = baseLength - numberOfOverflowBits, restOfLength = getBitLength(totalChildren) + restOfBaseLength, restOfNewBits = slot << restOfBaseLength, id = restOfNewBits | restOfBaseId, overflow = newOverflow + baseOverflow;
           treeContextId = 1 << restOfLength | id, treeContextOverflow = overflow;
@@ -12657,7 +12657,7 @@ Learn more about this warning here: https://reactjs.org/link/legacy-context`, so
             callback !== null && (effect.callback = null, callCallback(callback, instance));
           }
       }
-      var fakeInternalInstance = {}, emptyRefsObject = new React12.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
+      var fakeInternalInstance = {}, emptyRefsObject = new React10.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
       {
         didWarnAboutStateAssignmentForComponent = /* @__PURE__ */ new Set(), didWarnAboutUninitializedState = /* @__PURE__ */ new Set(), didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = /* @__PURE__ */ new Set(), didWarnAboutLegacyLifecyclesAndDerivedState = /* @__PURE__ */ new Set(), didWarnAboutDirectlyAssigningPropsToState = /* @__PURE__ */ new Set(), didWarnAboutUndefinedDerivedState = /* @__PURE__ */ new Set(), didWarnAboutContextTypeAndContextTypes = /* @__PURE__ */ new Set(), didWarnAboutInvalidateContextType = /* @__PURE__ */ new Set();
         var didWarnOnInvalidCallback = /* @__PURE__ */ new Set();
@@ -13046,7 +13046,7 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
           }
         }
         function updateFragment2(returnFiber, current3, fragment, lanes, key) {
-          if (current3 === null || current3.tag !== Fragment7) {
+          if (current3 === null || current3.tag !== Fragment4) {
             var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
             return created.return = returnFiber, created;
           } else {
@@ -13274,7 +13274,7 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
             if (child.key === key) {
               var elementType = element.type;
               if (elementType === REACT_FRAGMENT_TYPE2) {
-                if (child.tag === Fragment7) {
+                if (child.tag === Fragment4) {
                   deleteRemainingChildren(returnFiber, child.sibling);
                   var existing = useFiber(child, element.props.children);
                   return existing.return = returnFiber, existing._debugSource = element._source, existing._debugOwner = element._owner, existing;
@@ -13608,8 +13608,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           stores: null
         };
       }
-      function basicStateReducer(state, action3) {
-        return typeof action3 == "function" ? action3(state) : action3;
+      function basicStateReducer(state, action) {
+        return typeof action == "function" ? action(state) : action;
       }
       function mountReducer(reducer, initialArg, init) {
         var hook = mountWorkInProgressHook(), initialState2;
@@ -13660,8 +13660,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
               if (update.hasEagerState)
                 newState = update.eagerState;
               else {
-                var action3 = update.action;
-                newState = reducer(newState, action3);
+                var action = update.action;
+                newState = reducer(newState, action);
               }
             } else {
               var clone = {
@@ -13699,8 +13699,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           queue.pending = null;
           var firstRenderPhaseUpdate = lastRenderPhaseUpdate.next, update = firstRenderPhaseUpdate;
           do {
-            var action3 = update.action;
-            newState = reducer(newState, action3), update = update.next;
+            var action = update.action;
+            newState = reducer(newState, action), update = update.next;
           } while (update !== firstRenderPhaseUpdate);
           objectIs(newState, hook.memoizedState) || markWorkInProgressReceivedUpdate(), hook.memoizedState = newState, hook.baseQueue === null && (hook.baseState = newState), queue.lastRenderedState = newState;
         }
@@ -14011,11 +14011,11 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         var hook = updateWorkInProgressHook(), id = hook.memoizedState;
         return id;
       }
-      function dispatchReducerAction(fiber, queue, action3) {
+      function dispatchReducerAction(fiber, queue, action) {
         typeof arguments[3] == "function" && error("State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().");
         var lane = requestUpdateLane(fiber), update = {
           lane,
-          action: action3,
+          action,
           hasEagerState: !1,
           eagerState: null,
           next: null
@@ -14031,11 +14031,11 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         }
         markUpdateInDevTools(fiber, lane);
       }
-      function dispatchSetState(fiber, queue, action3) {
+      function dispatchSetState(fiber, queue, action) {
         typeof arguments[3] == "function" && error("State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().");
         var lane = requestUpdateLane(fiber), update = {
           lane,
-          action: action3,
+          action,
           hasEagerState: !1,
           eagerState: null,
           next: null
@@ -14050,7 +14050,7 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
               var prevDispatcher;
               prevDispatcher = ReactCurrentDispatcher$1.current, ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                var currentState = queue.lastRenderedState, eagerState = lastRenderedReducer(currentState, action3);
+                var currentState = queue.lastRenderedState, eagerState = lastRenderedReducer(currentState, action);
                 if (update.hasEagerState = !0, update.eagerState = eagerState, objectIs(eagerState, currentState)) {
                   enqueueConcurrentHookUpdateAndEagerlyBailout(fiber, queue, update, lane);
                   return;
@@ -14086,7 +14086,7 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           queue.lanes = newQueueLanes, markRootEntangled(root2, newQueueLanes);
         }
       }
-      function markUpdateInDevTools(fiber, lane, action3) {
+      function markUpdateInDevTools(fiber, lane, action) {
         markStateUpdateScheduled(fiber, lane);
       }
       var ContextOnlyDispatcher = {
@@ -15574,12 +15574,12 @@ Check the render method of \`` + ownerName + "`.");
       function validateTailOptions(tailMode, revealOrder) {
         tailMode !== void 0 && !didWarnAboutTailOptions[tailMode] && (tailMode !== "collapsed" && tailMode !== "hidden" ? (didWarnAboutTailOptions[tailMode] = !0, error('"%s" is not a supported value for tail on <SuspenseList />. Did you mean "collapsed" or "hidden"?', tailMode)) : revealOrder !== "forwards" && revealOrder !== "backwards" && (didWarnAboutTailOptions[tailMode] = !0, error('<SuspenseList tail="%s" /> is only valid if revealOrder is "forwards" or "backwards". Did you mean to specify revealOrder="forwards"?', tailMode)));
       }
-      function validateSuspenseListNestedChild(childSlot, index2) {
+      function validateSuspenseListNestedChild(childSlot, index3) {
         {
           var isAnArray = isArray(childSlot), isIterable = !isAnArray && typeof getIteratorFn(childSlot) == "function";
           if (isAnArray || isIterable) {
             var type = isAnArray ? "array" : "iterable";
-            return error("A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>", type, index2, type), !1;
+            return error("A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>", type, index3, type), !1;
           }
         }
         return !0;
@@ -15864,7 +15864,7 @@ Check the render method of \`` + ownerName + "`.");
             var type = workInProgress2.type, _unresolvedProps2 = workInProgress2.pendingProps, _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
             return updateForwardRef(current3, workInProgress2, type, _resolvedProps2, renderLanes2);
           }
-          case Fragment7:
+          case Fragment4:
             return updateFragment(current3, workInProgress2, renderLanes2);
           case Mode:
             return updateMode(current3, workInProgress2, renderLanes2);
@@ -16016,7 +16016,7 @@ Check the render method of \`` + ownerName + "`.");
           case SimpleMemoComponent:
           case FunctionComponent:
           case ForwardRef2:
-          case Fragment7:
+          case Fragment4:
           case Mode:
           case Profiler:
           case ContextConsumer:
@@ -18573,7 +18573,7 @@ Check the render method of \`` + ownerName + "`.");
         return fiber._debugSource = element._source, fiber._debugOwner = element._owner, fiber;
       }
       function createFiberFromFragment(elements, mode2, lanes, key) {
-        var fiber = createFiber(Fragment7, elements, key, mode2);
+        var fiber = createFiber(Fragment4, elements, key, mode2);
         return fiber.lanes = lanes, fiber;
       }
       function createFiberFromProfiler(pendingProps, mode2, lanes, key) {
@@ -18815,15 +18815,15 @@ Check the render method of %s.`, getComponentNameFromFiber(current2) || "Unknown
       }
       var overrideHookState = null, overrideHookStateDeletePath = null, overrideHookStateRenamePath = null, overrideProps = null, overridePropsDeletePath = null, overridePropsRenamePath = null, scheduleUpdate = null, setErrorHandler = null, setSuspenseHandler = null;
       {
-        var copyWithDeleteImpl = function(obj, path, index2) {
-          var key = path[index2], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
-          return index2 + 1 === path.length ? (isArray(updated) ? updated.splice(key, 1) : delete updated[key], updated) : (updated[key] = copyWithDeleteImpl(obj[key], path, index2 + 1), updated);
+        var copyWithDeleteImpl = function(obj, path, index3) {
+          var key = path[index3], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
+          return index3 + 1 === path.length ? (isArray(updated) ? updated.splice(key, 1) : delete updated[key], updated) : (updated[key] = copyWithDeleteImpl(obj[key], path, index3 + 1), updated);
         }, copyWithDelete = function(obj, path) {
           return copyWithDeleteImpl(obj, path, 0);
-        }, copyWithRenameImpl = function(obj, oldPath, newPath, index2) {
-          var oldKey = oldPath[index2], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
-          if (index2 + 1 === oldPath.length) {
-            var newKey = newPath[index2];
+        }, copyWithRenameImpl = function(obj, oldPath, newPath, index3) {
+          var oldKey = oldPath[index3], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
+          if (index3 + 1 === oldPath.length) {
+            var newKey = newPath[index3];
             updated[newKey] = updated[oldKey], isArray(updated) ? updated.splice(oldKey, 1) : delete updated[oldKey];
           } else
             updated[oldKey] = copyWithRenameImpl(
@@ -18831,7 +18831,7 @@ Check the render method of %s.`, getComponentNameFromFiber(current2) || "Unknown
               obj[oldKey],
               oldPath,
               newPath,
-              index2 + 1
+              index3 + 1
             );
           return updated;
         }, copyWithRename = function(obj, oldPath, newPath) {
@@ -18845,11 +18845,11 @@ Check the render method of %s.`, getComponentNameFromFiber(current2) || "Unknown
                 return;
               }
           return copyWithRenameImpl(obj, oldPath, newPath, 0);
-        }, copyWithSetImpl = function(obj, path, index2, value) {
-          if (index2 >= path.length)
+        }, copyWithSetImpl = function(obj, path, index3, value) {
+          if (index3 >= path.length)
             return value;
-          var key = path[index2], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
-          return updated[key] = copyWithSetImpl(obj[key], path, index2 + 1, value), updated;
+          var key = path[index3], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
+          return updated[key] = copyWithSetImpl(obj[key], path, index3 + 1, value), updated;
         }, copyWithSet = function(obj, path, value) {
           return copyWithSetImpl(obj, path, 0, value);
         }, findHook = function(fiber, id) {
@@ -19525,10 +19525,10 @@ function _renderMatches(matches2, parentMatches, dataRouterState, future2) {
         }
       }
     }
-  return renderedMatches.reduceRight((outlet, match, index) => {
+  return renderedMatches.reduceRight((outlet, match, index2) => {
     let error, shouldRenderHydrateFallback = !1, errorElement = null, hydrateFallbackElement = null;
-    dataRouterState && (error = errors2 && match.route.id ? errors2[match.route.id] : void 0, errorElement = match.route.errorElement || defaultErrorElement, renderFallback && (fallbackIndex < 0 && index === 0 ? (warningOnce("route-fallback", !1, "No `HydrateFallback` element provided to render during initial hydration"), shouldRenderHydrateFallback = !0, hydrateFallbackElement = null) : fallbackIndex === index && (shouldRenderHydrateFallback = !0, hydrateFallbackElement = match.route.hydrateFallbackElement || null)));
-    let matches3 = parentMatches.concat(renderedMatches.slice(0, index + 1)), getChildren = () => {
+    dataRouterState && (error = errors2 && match.route.id ? errors2[match.route.id] : void 0, errorElement = match.route.errorElement || defaultErrorElement, renderFallback && (fallbackIndex < 0 && index2 === 0 ? (warningOnce("route-fallback", !1, "No `HydrateFallback` element provided to render during initial hydration"), shouldRenderHydrateFallback = !0, hydrateFallbackElement = null) : fallbackIndex === index2 && (shouldRenderHydrateFallback = !0, hydrateFallbackElement = match.route.hydrateFallbackElement || null)));
+    let matches3 = parentMatches.concat(renderedMatches.slice(0, index2 + 1)), getChildren = () => {
       let children;
       return error ? children = errorElement : shouldRenderHydrateFallback ? children = hydrateFallbackElement : match.route.Component ? children = /* @__PURE__ */ React.createElement(match.route.Component, null) : match.route.element ? children = match.route.element : children = outlet, /* @__PURE__ */ React.createElement(RenderedRoute, {
         match,
@@ -19540,7 +19540,7 @@ function _renderMatches(matches2, parentMatches, dataRouterState, future2) {
         children
       });
     };
-    return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index === 0) ? /* @__PURE__ */ React.createElement(RenderErrorBoundary, {
+    return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index2 === 0) ? /* @__PURE__ */ React.createElement(RenderErrorBoundary, {
       location: dataRouterState.location,
       revalidation: dataRouterState.revalidation,
       component: errorElement,
@@ -19674,10 +19674,10 @@ function RouterProvider(_ref) {
     future: future2
   } = _ref, [state, setStateImpl] = React.useState(router.state), {
     v7_startTransition
-  } = future2 || {}, setState2 = React.useCallback((newState) => {
+  } = future2 || {}, setState = React.useCallback((newState) => {
     v7_startTransition && startTransitionImpl ? startTransitionImpl(() => setStateImpl(newState)) : setStateImpl(newState);
   }, [setStateImpl, v7_startTransition]);
-  React.useLayoutEffect(() => router.subscribe(setState2), [router, setState2]), React.useEffect(() => {
+  React.useLayoutEffect(() => router.subscribe(setState), [router, setState]), React.useEffect(() => {
     warning(fallbackElement == null || !router.future.v7_partialHydration, "`<RouterProvider fallbackElement>` is deprecated when using `v7_partialHydration`, use a `HydrateFallback` component instead");
   }, []);
   let navigator2 = React.useMemo(() => ({
@@ -19743,10 +19743,10 @@ function MemoryRouter(_ref3) {
     location: history.location
   }), {
     v7_startTransition
-  } = future2 || {}, setState2 = React.useCallback((newState) => {
+  } = future2 || {}, setState = React.useCallback((newState) => {
     v7_startTransition && startTransitionImpl ? startTransitionImpl(() => setStateImpl(newState)) : setStateImpl(newState);
   }, [setStateImpl, v7_startTransition]);
-  return React.useLayoutEffect(() => history.listen(setState2), [history, setState2]), /* @__PURE__ */ React.createElement(Router, {
+  return React.useLayoutEffect(() => history.listen(setState), [history, setState]), /* @__PURE__ */ React.createElement(Router, {
     basename,
     children,
     location: state.location,
@@ -19863,10 +19863,10 @@ function ResolveAwait(_ref8) {
 function createRoutesFromChildren(children, parentPath) {
   parentPath === void 0 && (parentPath = []);
   let routes2 = [];
-  return React.Children.forEach(children, (element, index) => {
+  return React.Children.forEach(children, (element, index2) => {
     if (!/* @__PURE__ */ React.isValidElement(element))
       return;
-    let treePath = [...parentPath, index];
+    let treePath = [...parentPath, index2];
     if (element.type === React.Fragment) {
       routes2.push.apply(routes2, createRoutesFromChildren(element.props.children, treePath));
       return;
@@ -20208,16 +20208,16 @@ function getFormEncType(encType) {
   return encType != null && !supportedFormEncTypes.has(encType) ? (warning(!1, '"' + encType + '" is not a valid `encType` for `<Form>`/`<fetcher.Form>` ' + ('and will default to "' + defaultEncType + '"')), null) : encType;
 }
 function getFormSubmissionInfo(target, basename) {
-  let method, action3, encType, formData, body;
+  let method, action, encType, formData, body;
   if (isFormElement(target)) {
     let attr = target.getAttribute("action");
-    action3 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType, formData = new FormData(target);
+    action = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType, formData = new FormData(target);
   } else if (isButtonElement(target) || isInputElement(target) && (target.type === "submit" || target.type === "image")) {
     let form = target.form;
     if (form == null)
       throw new Error('Cannot submit a <button> or <input type="submit"> without a <form>');
     let attr = target.getAttribute("formaction") || form.getAttribute("action");
-    if (action3 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType, formData = new FormData(form, target), !isFormDataSubmitterSupported()) {
+    if (action = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType, formData = new FormData(form, target), !isFormDataSubmitterSupported()) {
       let {
         name,
         type,
@@ -20232,10 +20232,10 @@ function getFormSubmissionInfo(target, basename) {
   } else {
     if (isHtmlElement(target))
       throw new Error('Cannot submit element that is not <form>, <button>, or <input type="submit|image">');
-    method = defaultMethod, action3 = null, encType = defaultEncType, body = target;
+    method = defaultMethod, action = null, encType = defaultEncType, body = target;
   }
   return formData && encType === "text/plain" && (body = formData, formData = void 0), {
-    action: action3,
+    action,
     method: method.toLowerCase(),
     encType,
     formData,
@@ -20321,7 +20321,7 @@ function RouterProvider2(_ref) {
     v7_startTransition
   } = future2 || {}, optInStartTransition = React2.useCallback((cb) => {
     v7_startTransition ? startTransitionSafe(cb) : cb();
-  }, [v7_startTransition]), setState2 = React2.useCallback((newState, _ref2) => {
+  }, [v7_startTransition]), setState = React2.useCallback((newState, _ref2) => {
     let {
       deletedFetchers,
       unstable_flushSync: flushSync,
@@ -20367,7 +20367,7 @@ function RouterProvider2(_ref) {
       nextLocation: viewTransitionOpts.nextLocation
     }));
   }, [router.window, transition, renderDfd, fetcherData, optInStartTransition]);
-  React2.useLayoutEffect(() => router.subscribe(setState2), [router, setState2]), React2.useEffect(() => {
+  React2.useLayoutEffect(() => router.subscribe(setState), [router, setState]), React2.useEffect(() => {
     vtContext.isTransitioning && !vtContext.flushSync && setRenderDfd(new Deferred());
   }, [vtContext]), React2.useEffect(() => {
     if (renderDfd && pendingState && router.window) {
@@ -20457,10 +20457,10 @@ function BrowserRouter(_ref4) {
     location: history.location
   }), {
     v7_startTransition
-  } = future2 || {}, setState2 = React2.useCallback((newState) => {
+  } = future2 || {}, setState = React2.useCallback((newState) => {
     v7_startTransition && startTransitionImpl2 ? startTransitionImpl2(() => setStateImpl(newState)) : setStateImpl(newState);
   }, [setStateImpl, v7_startTransition]);
-  return React2.useLayoutEffect(() => history.listen(setState2), [history, setState2]), /* @__PURE__ */ React2.createElement(Router, {
+  return React2.useLayoutEffect(() => history.listen(setState), [history, setState]), /* @__PURE__ */ React2.createElement(Router, {
     basename,
     children,
     location: state.location,
@@ -20485,10 +20485,10 @@ function HashRouter(_ref5) {
     location: history.location
   }), {
     v7_startTransition
-  } = future2 || {}, setState2 = React2.useCallback((newState) => {
+  } = future2 || {}, setState = React2.useCallback((newState) => {
     v7_startTransition && startTransitionImpl2 ? startTransitionImpl2(() => setStateImpl(newState)) : setStateImpl(newState);
   }, [setStateImpl, v7_startTransition]);
-  return React2.useLayoutEffect(() => history.listen(setState2), [history, setState2]), /* @__PURE__ */ React2.createElement(Router, {
+  return React2.useLayoutEffect(() => history.listen(setState), [history, setState]), /* @__PURE__ */ React2.createElement(Router, {
     basename,
     children,
     location: state.location,
@@ -20508,10 +20508,10 @@ function HistoryRouter(_ref6) {
     location: history.location
   }), {
     v7_startTransition
-  } = future2 || {}, setState2 = React2.useCallback((newState) => {
+  } = future2 || {}, setState = React2.useCallback((newState) => {
     v7_startTransition && startTransitionImpl2 ? startTransitionImpl2(() => setStateImpl(newState)) : setStateImpl(newState);
   }, [setStateImpl, v7_startTransition]);
-  return React2.useLayoutEffect(() => history.listen(setState2), [history, setState2]), /* @__PURE__ */ React2.createElement(Router, {
+  return React2.useLayoutEffect(() => history.listen(setState), [history, setState]), /* @__PURE__ */ React2.createElement(Router, {
     basename,
     children,
     location: state.location,
@@ -20592,7 +20592,7 @@ function useSubmit() {
   return React2.useCallback(function(target, options) {
     options === void 0 && (options = {}), validateClientSideSubmission();
     let {
-      action: action3,
+      action,
       method,
       encType,
       formData,
@@ -20600,7 +20600,7 @@ function useSubmit() {
     } = getFormSubmissionInfo(target, basename);
     if (options.navigate === !1) {
       let key = options.fetcherKey || getUniqueFetcherId();
-      router.fetch(key, currentRouteId, options.action || action3, {
+      router.fetch(key, currentRouteId, options.action || action, {
         preventScrollReset: options.preventScrollReset,
         formData,
         body,
@@ -20609,7 +20609,7 @@ function useSubmit() {
         unstable_flushSync: options.unstable_flushSync
       });
     } else
-      router.navigate(options.action || action3, {
+      router.navigate(options.action || action, {
         preventScrollReset: options.preventScrollReset,
         formData,
         body,
@@ -20623,22 +20623,22 @@ function useSubmit() {
       });
   }, [router, basename, currentRouteId]);
 }
-function useFormAction(action3, _temp2) {
+function useFormAction(action, _temp2) {
   let {
     relative
   } = _temp2 === void 0 ? {} : _temp2, {
     basename
   } = React2.useContext(NavigationContext), routeContext = React2.useContext(RouteContext);
   routeContext || invariant(!1, "useFormAction must be used inside a RouteContext");
-  let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action3 || ".", {
+  let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action || ".", {
     relative
   })), location = useLocation();
-  if (action3 == null) {
+  if (action == null) {
     path.search = location.search;
     let params = new URLSearchParams(path.search);
     params.has("index") && params.get("index") === "" && (params.delete("index"), path.search = params.toString() ? "?" + params.toString() : "");
   }
-  return (!action3 || action3 === ".") && match.route.index && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
+  return (!action || action === ".") && match.route.index && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
 }
 function useFetcher(_temp3) {
   var _route$matches;
@@ -20909,12 +20909,12 @@ var React2, ReactDOM, defaultMethod, defaultEncType, _formDataSupportsSubmitter,
         replace,
         state,
         method = defaultMethod,
-        action: action3,
+        action,
         onSubmit,
         relative,
         preventScrollReset,
         unstable_viewTransition
-      } = _ref9, props = _objectWithoutPropertiesLoose(_ref9, _excluded3), submit = useSubmit(), formAction = useFormAction(action3, {
+      } = _ref9, props = _objectWithoutPropertiesLoose(_ref9, _excluded3), submit = useSubmit(), formAction = useFormAction(action, {
         relative
       }), formMethod = method.toLowerCase() === "get" ? "get" : "post";
       return /* @__PURE__ */ React2.createElement("form", _extends3({
@@ -20957,7 +20957,7 @@ var require_server = __commonJS({
   "node_modules/react-router-dom/server.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var React12 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
+    var React10 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
     function _interopNamespace(e) {
       if (e && e.__esModule)
         return e;
@@ -20974,7 +20974,7 @@ var require_server = __commonJS({
         }
       }), n.default = e, Object.freeze(n);
     }
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React12);
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React10);
     function StaticRouter({
       basename,
       children,
@@ -20982,7 +20982,7 @@ var require_server = __commonJS({
       future: future2
     }) {
       typeof locationProp == "string" && (locationProp = reactRouterDom.parsePath(locationProp));
-      let action3 = router.Action.Pop, location = {
+      let action = router.Action.Pop, location = {
         pathname: locationProp.pathname || "/",
         search: locationProp.search || "",
         hash: locationProp.hash || "",
@@ -20993,7 +20993,7 @@ var require_server = __commonJS({
         basename,
         children,
         location,
-        navigationType: action3,
+        navigationType: action,
         navigator: staticNavigator,
         future: future2,
         static: !0
@@ -21227,7 +21227,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React12 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React10 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -22472,9 +22472,9 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
         var str = "" + string, match = matchHtmlRegExp.exec(str);
         if (!match)
           return str;
-        var escape2, html = "", index, lastIndex = 0;
-        for (index = match.index; index < str.length; index++) {
-          switch (str.charCodeAt(index)) {
+        var escape2, html = "", index2, lastIndex = 0;
+        for (index2 = match.index; index2 < str.length; index2++) {
+          switch (str.charCodeAt(index2)) {
             case 34:
               escape2 = "&quot;";
               break;
@@ -22493,9 +22493,9 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
             default:
               continue;
           }
-          lastIndex !== index && (html += str.substring(lastIndex, index)), lastIndex = index + 1, html += escape2;
+          lastIndex !== index2 && (html += str.substring(lastIndex, index2)), lastIndex = index2 + 1, html += escape2;
         }
-        return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
+        return lastIndex !== index2 ? html + str.substring(lastIndex, index2) : html;
       }
       function escapeTextForBrowser(text) {
         return typeof text == "boolean" || typeof text == "number" ? "" + text : escapeHtml3(text);
@@ -22721,7 +22721,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React12.Children.forEach(children, function(child) {
+        return React10.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -23781,8 +23781,8 @@ Please update the following components: %s`,
         var overflow = context.overflow, idWithLeadingBit = context.id, id = idWithLeadingBit & ~getLeadingBit(idWithLeadingBit);
         return id.toString(32) + overflow;
       }
-      function pushTreeContext(baseContext, totalChildren, index) {
-        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index + 1, length = getBitLength(totalChildren) + baseLength;
+      function pushTreeContext(baseContext, totalChildren, index2) {
+        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index2 + 1, length = getBitLength(totalChildren) + baseLength;
         if (length > 30) {
           var numberOfOverflowBits = baseLength - baseLength % 5, newOverflowBits = (1 << numberOfOverflowBits) - 1, newOverflow = (baseId & newOverflowBits).toString(32), restOfBaseId = baseId >> numberOfOverflowBits, restOfBaseLength = baseLength - numberOfOverflowBits, restOfLength = getBitLength(totalChildren) + restOfBaseLength, restOfNewBits = slot << restOfBaseLength, id = restOfNewBits | restOfBaseId, overflow = newOverflow + baseOverflow;
           return {
@@ -23866,8 +23866,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useContext4(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
-      function basicStateReducer(state, action3) {
-        return typeof action3 == "function" ? action3(state) : action3;
+      function basicStateReducer(state, action) {
+        return typeof action == "function" ? action(state) : action;
       }
       function useState6(initialState2) {
         return currentHookNameInDev = "useState", useReducer(
@@ -23885,8 +23885,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
               renderPhaseUpdates.delete(queue);
               var newState = workInProgressHook.memoizedState, update = firstRenderPhaseUpdate;
               do {
-                var action3 = update.action;
-                isInHookUserCodeInDev = !0, newState = reducer(newState, action3), isInHookUserCodeInDev = !1, update = update.next;
+                var action = update.action;
+                isInHookUserCodeInDev = !0, newState = reducer(newState, action), isInHookUserCodeInDev = !1, update = update.next;
               } while (update !== null);
               return workInProgressHook.memoizedState = newState, [newState, dispatch];
             }
@@ -23932,13 +23932,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useLayoutEffect3(create, inputs) {
         currentHookNameInDev = "useLayoutEffect", error("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
       }
-      function dispatchAction(componentIdentity, queue, action3) {
+      function dispatchAction(componentIdentity, queue, action) {
         if (numberOfReRenders >= RE_RENDER_LIMIT)
           throw new Error("Too many re-renders. React limits the number of renders to prevent an infinite loop.");
         if (componentIdentity === currentlyRenderingComponent) {
           didScheduleRenderPhaseUpdate = !0;
           var update = {
-            action: action3,
+            action,
             next: null
           };
           renderPhaseUpdates === null && (renderPhaseUpdates = /* @__PURE__ */ new Map());
@@ -24108,12 +24108,12 @@ Error generating stack: ` + x.message + `
         };
         return task.componentStack = null, abortSet.add(task), task;
       }
-      function createPendingSegment(request, index, boundary, formatContext, lastPushedText, textEmbedded) {
+      function createPendingSegment(request, index2, boundary, formatContext, lastPushedText, textEmbedded) {
         return {
           status: PENDING,
           id: -1,
           // lazily assigned later
-          index,
+          index: index2,
           parentFlushed: !1,
           chunks: [],
           children: [],
@@ -24264,8 +24264,8 @@ Error generating stack: ` + x.message + `
           }
           mountClassInstance(value, Component3, props, legacyContext), finishClassComponent(request, task, value, Component3, props);
         } else if (validateFunctionComponentInDev(Component3), hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
           try {
             renderNodeDestructive(request, task, value);
           } finally {
@@ -24300,8 +24300,8 @@ Error generating stack: ` + x.message + `
         pushFunctionComponentStackInDEV(task, type.render);
         var children = renderWithHooks(request, task, type.render, props, ref), hasId = checkDidRenderIdHook();
         if (hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
           try {
             renderNodeDestructive(request, task, children);
           } finally {
@@ -24808,7 +24808,7 @@ var require_react_dom_server_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React12 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React10 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -26064,9 +26064,9 @@ var require_react_dom_server_browser_development = __commonJS({
         var str = "" + string, match = matchHtmlRegExp.exec(str);
         if (!match)
           return str;
-        var escape2, html = "", index, lastIndex = 0;
-        for (index = match.index; index < str.length; index++) {
-          switch (str.charCodeAt(index)) {
+        var escape2, html = "", index2, lastIndex = 0;
+        for (index2 = match.index; index2 < str.length; index2++) {
+          switch (str.charCodeAt(index2)) {
             case 34:
               escape2 = "&quot;";
               break;
@@ -26085,9 +26085,9 @@ var require_react_dom_server_browser_development = __commonJS({
             default:
               continue;
           }
-          lastIndex !== index && (html += str.substring(lastIndex, index)), lastIndex = index + 1, html += escape2;
+          lastIndex !== index2 && (html += str.substring(lastIndex, index2)), lastIndex = index2 + 1, html += escape2;
         }
-        return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
+        return lastIndex !== index2 ? html + str.substring(lastIndex, index2) : html;
       }
       function escapeTextForBrowser(text) {
         return typeof text == "boolean" || typeof text == "number" ? "" + text : escapeHtml3(text);
@@ -26317,7 +26317,7 @@ var require_react_dom_server_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React12.Children.forEach(children, function(child) {
+        return React10.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -27333,8 +27333,8 @@ Please update the following components: %s`,
         var overflow = context.overflow, idWithLeadingBit = context.id, id = idWithLeadingBit & ~getLeadingBit(idWithLeadingBit);
         return id.toString(32) + overflow;
       }
-      function pushTreeContext(baseContext, totalChildren, index) {
-        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index + 1, length = getBitLength(totalChildren) + baseLength;
+      function pushTreeContext(baseContext, totalChildren, index2) {
+        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index2 + 1, length = getBitLength(totalChildren) + baseLength;
         if (length > 30) {
           var numberOfOverflowBits = baseLength - baseLength % 5, newOverflowBits = (1 << numberOfOverflowBits) - 1, newOverflow = (baseId & newOverflowBits).toString(32), restOfBaseId = baseId >> numberOfOverflowBits, restOfBaseLength = baseLength - numberOfOverflowBits, restOfLength = getBitLength(totalChildren) + restOfBaseLength, restOfNewBits = slot << restOfBaseLength, id = restOfNewBits | restOfBaseId, overflow = newOverflow + baseOverflow;
           return {
@@ -27418,8 +27418,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useContext4(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
-      function basicStateReducer(state, action3) {
-        return typeof action3 == "function" ? action3(state) : action3;
+      function basicStateReducer(state, action) {
+        return typeof action == "function" ? action(state) : action;
       }
       function useState6(initialState2) {
         return currentHookNameInDev = "useState", useReducer(
@@ -27437,8 +27437,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
               renderPhaseUpdates.delete(queue);
               var newState = workInProgressHook.memoizedState, update = firstRenderPhaseUpdate;
               do {
-                var action3 = update.action;
-                isInHookUserCodeInDev = !0, newState = reducer(newState, action3), isInHookUserCodeInDev = !1, update = update.next;
+                var action = update.action;
+                isInHookUserCodeInDev = !0, newState = reducer(newState, action), isInHookUserCodeInDev = !1, update = update.next;
               } while (update !== null);
               return workInProgressHook.memoizedState = newState, [newState, dispatch];
             }
@@ -27484,13 +27484,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useLayoutEffect3(create, inputs) {
         currentHookNameInDev = "useLayoutEffect", error("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
       }
-      function dispatchAction(componentIdentity, queue, action3) {
+      function dispatchAction(componentIdentity, queue, action) {
         if (numberOfReRenders >= RE_RENDER_LIMIT)
           throw new Error("Too many re-renders. React limits the number of renders to prevent an infinite loop.");
         if (componentIdentity === currentlyRenderingComponent) {
           didScheduleRenderPhaseUpdate = !0;
           var update = {
-            action: action3,
+            action,
             next: null
           };
           renderPhaseUpdates === null && (renderPhaseUpdates = /* @__PURE__ */ new Map());
@@ -27660,12 +27660,12 @@ Error generating stack: ` + x.message + `
         };
         return task.componentStack = null, abortSet.add(task), task;
       }
-      function createPendingSegment(request, index, boundary, formatContext, lastPushedText, textEmbedded) {
+      function createPendingSegment(request, index2, boundary, formatContext, lastPushedText, textEmbedded) {
         return {
           status: PENDING,
           id: -1,
           // lazily assigned later
-          index,
+          index: index2,
           parentFlushed: !1,
           chunks: [],
           children: [],
@@ -27816,8 +27816,8 @@ Error generating stack: ` + x.message + `
           }
           mountClassInstance(value, Component3, props, legacyContext), finishClassComponent(request, task, value, Component3, props);
         } else if (validateFunctionComponentInDev(Component3), hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
           try {
             renderNodeDestructive(request, task, value);
           } finally {
@@ -27852,8 +27852,8 @@ Error generating stack: ` + x.message + `
         pushFunctionComponentStackInDEV(task, type.render);
         var children = renderWithHooks(request, task, type.render, props, ref), hasId = checkDidRenderIdHook();
         if (hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
           try {
             renderNodeDestructive(request, task, children);
           } finally {
@@ -28380,14 +28380,14 @@ var require_react_jsx_dev_runtime_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React12 = require_react(), REACT_ELEMENT_TYPE2 = Symbol.for("react.element"), REACT_PORTAL_TYPE2 = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE2 = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE2 = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE2 = Symbol.for("react.provider"), REACT_CONTEXT_TYPE2 = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE2 = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE2 = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE2 = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE2 = Symbol.for("react.memo"), REACT_LAZY_TYPE2 = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE2 = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
+      var React10 = require_react(), REACT_ELEMENT_TYPE2 = Symbol.for("react.element"), REACT_PORTAL_TYPE2 = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE2 = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE2 = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE2 = Symbol.for("react.provider"), REACT_CONTEXT_TYPE2 = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE2 = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE2 = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE2 = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE2 = Symbol.for("react.memo"), REACT_LAZY_TYPE2 = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE2 = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
       function getIteratorFn(maybeIterable) {
         if (maybeIterable === null || typeof maybeIterable != "object")
           return null;
         var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
         return typeof maybeIterator == "function" ? maybeIterator : null;
       }
-      var ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function error(format) {
         {
           for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)
@@ -28788,7 +28788,7 @@ var require_react_jsx_dev_runtime_development = __commonJS({
           value: source
         }), Object.freeze && (Object.freeze(element.props), Object.freeze(element)), element;
       };
-      function jsxDEV12(type, config, maybeKey, source, self) {
+      function jsxDEV7(type, config, maybeKey, source, self) {
         {
           var propName, props = {}, key = null, ref = null;
           maybeKey !== void 0 && (checkKeyStringCoercion(maybeKey), key = "" + maybeKey), hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key), hasValidRef(config) && (ref = config.ref, warnIfStringRefCannotBeAutoConverted(config, self));
@@ -28935,7 +28935,7 @@ Check the top-level render call using <` + parentName + ">.");
             var typeString;
             type === null ? typeString = "null" : isArray(type) ? typeString = "array" : type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE2 ? (typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />", info = " Did you accidentally export a JSX literal instead of a component?") : typeString = typeof type, error("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
           }
-          var element = jsxDEV12(type, props, key, source, self);
+          var element = jsxDEV7(type, props, key, source, self);
           if (element == null)
             return element;
           if (validType) {
@@ -28975,11 +28975,11 @@ var require_use_sync_external_store_with_selector_development = __commonJS({
     (function() {
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-      var React12 = require_react();
+      var React10 = require_react();
       function is2(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is2, useSyncExternalStore3 = React12.useSyncExternalStore, useRef4 = React12.useRef, useEffect6 = React12.useEffect, useMemo5 = React12.useMemo, useDebugValue = React12.useDebugValue;
+      var objectIs = typeof Object.is == "function" ? Object.is : is2, useSyncExternalStore3 = React10.useSyncExternalStore, useRef4 = React10.useRef, useEffect5 = React10.useEffect, useMemo5 = React10.useMemo, useDebugValue = React10.useDebugValue;
       function useSyncExternalStoreWithSelector3(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
         var instRef = useRef4(null), inst;
         instRef.current === null ? (inst = {
@@ -29010,7 +29010,7 @@ var require_use_sync_external_store_with_selector_development = __commonJS({
           };
           return [getSnapshotWithSelector, getServerSnapshotWithSelector];
         }, [getSnapshot, getServerSnapshot, selector, isEqual]), getSelection = _useMemo[0], getServerSelection = _useMemo[1], value = useSyncExternalStore3(subscribe, getSelection, getServerSelection);
-        return useEffect6(function() {
+        return useEffect5(function() {
           inst.hasValue = !0, inst.value = value;
         }, [value]), useDebugValue(value), value;
       }
@@ -29028,7 +29028,7 @@ var require_with_selector = __commonJS({
 });
 
 // server.ts
-var import_cloudflare6 = __toESM(require_dist(), 1);
+var import_cloudflare4 = __toESM(require_dist(), 1);
 
 // node_modules/@remix-run/cloudflare-pages/dist/esm/worker.js
 var import_cloudflare = __toESM(require_dist());
@@ -29169,22 +29169,22 @@ async function getKeyedPrefetchLinks(matches2, manifest, routeModules) {
   }));
 }
 function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, location, mode2) {
-  let path = parsePathPatch(page), isNew = (match, index) => currentMatches[index] ? match.route.id !== currentMatches[index].route.id : !0, matchPathChanged = (match, index) => {
+  let path = parsePathPatch(page), isNew = (match, index2) => currentMatches[index2] ? match.route.id !== currentMatches[index2].route.id : !0, matchPathChanged = (match, index2) => {
     var _currentMatches$index;
     return (
       // param change, /users/123 -> /users/456
-      currentMatches[index].pathname !== match.pathname || // splat param changed, which is not present in match.path
+      currentMatches[index2].pathname !== match.pathname || // splat param changed, which is not present in match.path
       // e.g. /files/images/avatar.jpg -> files/finances.xls
-      ((_currentMatches$index = currentMatches[index].route.path) === null || _currentMatches$index === void 0 ? void 0 : _currentMatches$index.endsWith("*")) && currentMatches[index].params["*"] !== match.params["*"]
+      ((_currentMatches$index = currentMatches[index2].route.path) === null || _currentMatches$index === void 0 ? void 0 : _currentMatches$index.endsWith("*")) && currentMatches[index2].params["*"] !== match.params["*"]
     );
   };
   return mode2 === "data" && location.search !== path.search ? (
     // this is really similar to stuff in transition.ts, maybe somebody smarter
     // than me (or in less of a hurry) can share some of it. You're the best.
-    nextMatches.filter((match, index) => {
+    nextMatches.filter((match, index2) => {
       if (!manifest.routes[match.route.id].hasLoader)
         return !1;
-      if (isNew(match, index) || matchPathChanged(match, index))
+      if (isNew(match, index2) || matchPathChanged(match, index2))
         return !0;
       if (match.route.shouldRevalidate) {
         var _currentMatches$;
@@ -29200,9 +29200,9 @@ function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, loca
       }
       return !0;
     })
-  ) : nextMatches.filter((match, index) => {
+  ) : nextMatches.filter((match, index2) => {
     let manifestRoute = manifest.routes[match.route.id];
-    return (mode2 === "assets" || manifestRoute.hasLoader) && (isNew(match, index) || matchPathChanged(match, index));
+    return (mode2 === "assets" || manifestRoute.hasLoader) && (isNew(match, index2) || matchPathChanged(match, index2));
   });
 }
 function getDataLinkHrefs(page, matches2, manifest) {
@@ -29452,7 +29452,7 @@ function Meta() {
     let errorIdx = routerMatches.findIndex((m) => errors2[m.route.id]);
     _matches = routerMatches.slice(0, errorIdx + 1), error = errors2[routerMatches[errorIdx].route.id];
   }
-  let meta2 = [], leafMeta = null, matches2 = [];
+  let meta = [], leafMeta = null, matches2 = [];
   for (let i = 0; i < _matches.length; i++) {
     let _match = _matches[i], routeId = _match.route.id, data = loaderData[routeId], params = _match.params, routeModule = routeModules[routeId], routeMeta = [], match = {
       id: routeId,
@@ -29473,9 +29473,9 @@ function Meta() {
       throw new Error("The route at " + _match.route.path + ` returns an invalid value. All route meta functions must return an array of meta objects.
 
 To reference the meta function API, see https://remix.run/route/meta`);
-    match.meta = routeMeta, matches2[i] = match, meta2 = [...routeMeta], leafMeta = meta2;
+    match.meta = routeMeta, matches2[i] = match, meta = [...routeMeta], leafMeta = meta;
   }
-  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, meta2.flat().map((metaProps) => {
+  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, meta.flat().map((metaProps) => {
     if (!metaProps)
       return null;
     if ("tagName" in metaProps) {
@@ -29498,12 +29498,12 @@ To reference the meta function API, see https://remix.run/route/meta`);
       }) : null;
     if ("script:ld+json" in metaProps)
       try {
-        let json6 = JSON.stringify(metaProps["script:ld+json"]);
+        let json5 = JSON.stringify(metaProps["script:ld+json"]);
         return /* @__PURE__ */ React3.createElement("script", {
-          key: `script:ld+json:${json6}`,
+          key: `script:ld+json:${json5}`,
           type: "application/ld+json",
           dangerouslySetInnerHTML: {
-            __html: json6
+            __html: json5
           }
         });
       } catch {
@@ -29587,9 +29587,9 @@ function Scripts(props) {
     }).join(`
 `) + (deferredScripts.length > 0 ? `__remixContext.a=${deferredScripts.length};` : "") : "";
     let routeModulesScript = isStatic ? `${(_manifest$hmr = manifest.hmr) !== null && _manifest$hmr !== void 0 && _manifest$hmr.runtime ? `import ${JSON.stringify(manifest.hmr.runtime)};` : ""}import ${JSON.stringify(manifest.url)};
-${matches2.map((match, index) => `import * as route${index} from ${JSON.stringify(manifest.routes[match.route.id].module)};`).join(`
+${matches2.map((match, index2) => `import * as route${index2} from ${JSON.stringify(manifest.routes[match.route.id].module)};`).join(`
 `)}
-window.__remixRouteModules = {${matches2.map((match, index) => `${JSON.stringify(match.route.id)}:route${index}`).join(",")}};
+window.__remixRouteModules = {${matches2.map((match, index2) => `${JSON.stringify(match.route.id)}:route${index2}`).join(",")}};
 
 import(${JSON.stringify(manifest.entry.module)});` : " ";
     return /* @__PURE__ */ React3.createElement(React3.Fragment, null, /* @__PURE__ */ React3.createElement("script", _extends4({}, props, {
@@ -29702,9 +29702,6 @@ function useLoaderData2() {
 }
 function useActionData2() {
   return useActionData();
-}
-function useFetcher2(opts = {}) {
-  return useFetcher(opts);
 }
 var LiveReload = function({
   origin = "http://localhost:3001/",
@@ -30169,9 +30166,9 @@ function _classPrivateFieldSet(receiver, privateMap, value) {
   var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set");
   return _classApplyDescriptorSet(receiver, descriptor, value), value;
 }
-function _classExtractFieldDescriptor(receiver, privateMap, action3) {
+function _classExtractFieldDescriptor(receiver, privateMap, action) {
   if (!privateMap.has(receiver))
-    throw new TypeError("attempted to " + action3 + " private field on non-instance");
+    throw new TypeError("attempted to " + action + " private field on non-instance");
   return privateMap.get(receiver);
 }
 function _classApplyDescriptorGet(receiver, descriptor) {
@@ -30396,8 +30393,8 @@ function amend(list2) {
     // Addresses: Yandex Search App
     ["search", "(?<! ya(?:yandex)?)search"]
   ].forEach(function(_ref) {
-    var _ref2 = _slicedToArray(_ref, 2), search = _ref2[0], replace = _ref2[1], index = list2.lastIndexOf(search);
-    ~index && list2.splice(index, 1, replace);
+    var _ref2 = _slicedToArray(_ref, 2), search = _ref2[0], replace = _ref2[1], index2 = list2.lastIndexOf(search);
+    ~index2 && list2.splice(index2, 1, replace);
   }), list2;
 }
 amend(list);
@@ -30505,8 +30502,8 @@ var flags = "i", _list = /* @__PURE__ */ new WeakMap(), _pattern = /* @__PURE__ 
     key: "exclude",
     value: function() {
       for (var filters = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : [], length = filters.length; length--; ) {
-        var index = _classPrivateMethodGet(this, _index, _index2).call(this, filters[length]);
-        index > -1 && _classPrivateFieldGet(this, _list).splice(index, 1);
+        var index2 = _classPrivateMethodGet(this, _index, _index2).call(this, filters[length]);
+        index2 > -1 && _classPrivateFieldGet(this, _list).splice(index2, 1);
       }
       _classPrivateMethodGet(this, _update, _update2).call(this);
     }
@@ -30580,101 +30577,10 @@ function getContext() {
 var ReactReduxContext = /* @__PURE__ */ getContext(), notInitialized = () => {
   throw new Error("uSES not initialized!");
 };
-function createReduxContextHook(context = ReactReduxContext) {
-  return function() {
-    let contextValue = React9.useContext(context);
-    if (!contextValue)
-      throw new Error(
-        "could not find react-redux context value; please ensure the component is wrapped in a <Provider>"
-      );
-    return contextValue;
-  };
-}
-var useReduxContext = /* @__PURE__ */ createReduxContextHook(), useSyncExternalStoreWithSelector = notInitialized, initializeUseSelector = (fn) => {
+var useSyncExternalStoreWithSelector = notInitialized, initializeUseSelector = (fn) => {
   useSyncExternalStoreWithSelector = fn;
-}, refEquality = (a, b) => a === b;
-function createSelectorHook(context = ReactReduxContext) {
-  let useReduxContext2 = context === ReactReduxContext ? useReduxContext : createReduxContextHook(context);
-  return function(selector, equalityFnOrOptions = {}) {
-    let { equalityFn = refEquality, devModeChecks = {} } = typeof equalityFnOrOptions == "function" ? { equalityFn: equalityFnOrOptions } : equalityFnOrOptions;
-    if (!selector)
-      throw new Error("You must pass a selector to useSelector");
-    if (typeof selector != "function")
-      throw new Error("You must pass a function as a selector to useSelector");
-    if (typeof equalityFn != "function")
-      throw new Error(
-        "You must pass a function as an equality function to useSelector"
-      );
-    let {
-      store: store2,
-      subscription,
-      getServerState,
-      stabilityCheck,
-      identityFunctionCheck
-    } = useReduxContext2(), firstRun = React9.useRef(!0), wrappedSelector = React9.useCallback(
-      {
-        [selector.name](state) {
-          let selected = selector(state);
-          {
-            let {
-              identityFunctionCheck: finalIdentityFunctionCheck,
-              stabilityCheck: finalStabilityCheck
-            } = {
-              stabilityCheck,
-              identityFunctionCheck,
-              ...devModeChecks
-            };
-            if (finalStabilityCheck === "always" || finalStabilityCheck === "once" && firstRun.current) {
-              let toCompare = selector(state);
-              if (!equalityFn(selected, toCompare)) {
-                let stack;
-                try {
-                  throw new Error();
-                } catch (e) {
-                  ({ stack } = e);
-                }
-                console.warn(
-                  "Selector " + (selector.name || "unknown") + ` returned a different result when called with the same parameters. This can lead to unnecessary rerenders.
-Selectors that return a new reference (such as an object or an array) should be memoized: https://redux.js.org/usage/deriving-data-selectors#optimizing-selectors-with-memoization`,
-                  {
-                    state,
-                    selected,
-                    selected2: toCompare,
-                    stack
-                  }
-                );
-              }
-            }
-            if ((finalIdentityFunctionCheck === "always" || finalIdentityFunctionCheck === "once" && firstRun.current) && selected === state) {
-              let stack;
-              try {
-                throw new Error();
-              } catch (e) {
-                ({ stack } = e);
-              }
-              console.warn(
-                "Selector " + (selector.name || "unknown") + ` returned the root state when called. This can lead to unnecessary rerenders.
-Selectors that return the entire state are almost certainly a mistake, as they will cause a rerender whenever *anything* in state changes.`,
-                { stack }
-              );
-            }
-            firstRun.current && (firstRun.current = !1);
-          }
-          return selected;
-        }
-      }[selector.name],
-      [selector, stabilityCheck, devModeChecks.stabilityCheck]
-    ), selectedState = useSyncExternalStoreWithSelector(
-      subscription.addNestedSub,
-      store2.getState,
-      getServerState || store2.getState,
-      wrappedSelector,
-      equalityFn
-    );
-    return React9.useDebugValue(selectedState), selectedState;
-  };
-}
-var useSelector = /* @__PURE__ */ createSelectorHook(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_SERVER_CONTEXT_TYPE = Symbol.for("react.server_context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ForwardRef = REACT_FORWARD_REF_TYPE, Memo = REACT_MEMO_TYPE;
+};
+var REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_SERVER_CONTEXT_TYPE = Symbol.for("react.server_context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ForwardRef = REACT_FORWARD_REF_TYPE, Memo = REACT_MEMO_TYPE;
 function defaultNoopBatch(callback) {
   callback();
 }
@@ -30805,30 +30711,6 @@ function Provider({
   return /* @__PURE__ */ React9.createElement(Context.Provider, { value: contextValue }, children);
 }
 var Provider_default = Provider;
-function createStoreHook(context = ReactReduxContext) {
-  let useReduxContext2 = (
-    // @ts-ignore
-    context === ReactReduxContext ? useReduxContext : (
-      // @ts-ignore
-      createReduxContextHook(context)
-    )
-  );
-  return function() {
-    let { store: store2 } = useReduxContext2();
-    return store2;
-  };
-}
-var useStore = /* @__PURE__ */ createStoreHook();
-function createDispatchHook(context = ReactReduxContext) {
-  let useStore2 = (
-    // @ts-ignore
-    context === ReactReduxContext ? useStore : createStoreHook(context)
-  );
-  return function() {
-    return useStore2().dispatch;
-  };
-}
-var useDispatch = /* @__PURE__ */ createDispatchHook();
 initializeUseSelector(import_with_selector.useSyncExternalStoreWithSelector);
 initializeConnect(React22.useSyncExternalStore);
 
@@ -30928,23 +30810,23 @@ function createStore(reducer, preloadedState, enhancer) {
       }
     };
   }
-  function dispatch(action3) {
-    if (!isPlainObject(action3))
-      throw new Error(`Actions must be plain objects. Instead, the actual type was: '${kindOf(action3)}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`);
-    if (typeof action3.type > "u")
+  function dispatch(action) {
+    if (!isPlainObject(action))
+      throw new Error(`Actions must be plain objects. Instead, the actual type was: '${kindOf(action)}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`);
+    if (typeof action.type > "u")
       throw new Error('Actions may not have an undefined "type" property. You may have misspelled an action type string constant.');
-    if (typeof action3.type != "string")
-      throw new Error(`Action "type" property must be a string. Instead, the actual type was: '${kindOf(action3.type)}'. Value was: '${action3.type}' (stringified)`);
+    if (typeof action.type != "string")
+      throw new Error(`Action "type" property must be a string. Instead, the actual type was: '${kindOf(action.type)}'. Value was: '${action.type}' (stringified)`);
     if (isDispatching)
       throw new Error("Reducers may not dispatch actions.");
     try {
-      isDispatching = !0, currentState = currentReducer(currentState, action3);
+      isDispatching = !0, currentState = currentReducer(currentState, action);
     } finally {
       isDispatching = !1;
     }
     return (currentListeners = nextListeners).forEach((listener2) => {
       listener2();
-    }), action3;
+    }), action;
   }
   function replaceReducer(nextReducer) {
     if (typeof nextReducer != "function")
@@ -30997,8 +30879,8 @@ function warning2(message) {
   } catch {
   }
 }
-function getUnexpectedStateShapeWarningMessage(inputState, reducers, action3, unexpectedKeyCache) {
-  let reducerKeys = Object.keys(reducers), argumentName = action3 && action3.type === actionTypes_default.INIT ? "preloadedState argument passed to createStore" : "previous state received by the reducer";
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
+  let reducerKeys = Object.keys(reducers), argumentName = action && action.type === actionTypes_default.INIT ? "preloadedState argument passed to createStore" : "previous state received by the reducer";
   if (reducerKeys.length === 0)
     return "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers.";
   if (!isPlainObject(inputState))
@@ -31006,7 +30888,7 @@ function getUnexpectedStateShapeWarningMessage(inputState, reducers, action3, un
   let unexpectedKeys = Object.keys(inputState).filter((key) => !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key]);
   if (unexpectedKeys.forEach((key) => {
     unexpectedKeyCache[key] = !0;
-  }), !(action3 && action3.type === actionTypes_default.REPLACE) && unexpectedKeys.length > 0)
+  }), !(action && action.type === actionTypes_default.REPLACE) && unexpectedKeys.length > 0)
     return `Unexpected ${unexpectedKeys.length > 1 ? "keys" : "key"} "${unexpectedKeys.join('", "')}" found in ${argumentName}. Expected to find one of the known reducer keys instead: "${reducerKeys.join('", "')}". Unexpected keys will be ignored.`;
 }
 function assertReducerShape(reducers) {
@@ -31036,18 +30918,18 @@ function combineReducers(reducers) {
   } catch (e) {
     shapeAssertionError = e;
   }
-  return function(state = {}, action3) {
+  return function(state = {}, action) {
     if (shapeAssertionError)
       throw shapeAssertionError;
     {
-      let warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action3, unexpectedKeyCache);
+      let warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action, unexpectedKeyCache);
       warningMessage && warning2(warningMessage);
     }
     let hasChanged = !1, nextState = {};
     for (let i = 0; i < finalReducerKeys.length; i++) {
-      let key = finalReducerKeys[i], reducer = finalReducers[key], previousStateForKey = state[key], nextStateForKey = reducer(previousStateForKey, action3);
+      let key = finalReducerKeys[i], reducer = finalReducers[key], previousStateForKey = state[key], nextStateForKey = reducer(previousStateForKey, action);
       if (typeof nextStateForKey > "u") {
-        let actionType = action3 && action3.type;
+        let actionType = action && action.type;
         throw new Error(`When called with an action of type ${actionType ? `"${String(actionType)}"` : "(unknown type)"}, the slice reducer for key "${key}" returned undefined. To ignore an action, you must explicitly return the previous state. If you want this reducer to hold no value, you can return null instead of undefined.`);
       }
       nextState[key] = nextStateForKey, hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
@@ -31064,7 +30946,7 @@ function applyMiddleware(...middlewares) {
       throw new Error("Dispatching while constructing your middleware is not allowed. Other middleware would not be applied to this dispatch.");
     }, middlewareAPI = {
       getState: store2.getState,
-      dispatch: (action3, ...args) => dispatch(action3, ...args)
+      dispatch: (action, ...args) => dispatch(action, ...args)
     }, chain = middlewares.map((middleware) => middleware(middlewareAPI));
     return dispatch = compose(...chain)(store2.dispatch), {
       ...store2,
@@ -31072,8 +30954,8 @@ function applyMiddleware(...middlewares) {
     };
   };
 }
-function isAction(action3) {
-  return isPlainObject(action3) && "type" in action3 && typeof action3.type == "string";
+function isAction(action) {
+  return isPlainObject(action) && "type" in action && typeof action.type == "string";
 }
 
 // node_modules/immer/dist/immer.mjs
@@ -31137,7 +31019,7 @@ function isPlainObject2(value) {
 function each(obj, iter) {
   getArchtype(obj) === 0 ? Object.entries(obj).forEach(([key, value]) => {
     iter(key, value, obj);
-  }) : obj.forEach((entry2, index) => iter(index, entry2, obj));
+  }) : obj.forEach((entry2, index2) => iter(index2, entry2, obj));
 }
 function getArchtype(thing) {
   let state = thing[DRAFT_STATE];
@@ -31732,11 +31614,10 @@ function createSelectorCreator(memoizeOrOptions, ...memoizeOptionsFromArgs) {
     });
   };
 }
-var createSelector = /* @__PURE__ */ createSelectorCreator(weakMapMemoize);
 
 // node_modules/redux-thunk/dist/redux-thunk.mjs
 function createThunkMiddleware(extraArgument) {
-  return ({ dispatch, getState }) => (next) => (action3) => typeof action3 == "function" ? action3(dispatch, getState, extraArgument) : next(action3);
+  return ({ dispatch, getState }) => (next) => (action) => typeof action == "function" ? action(dispatch, getState, extraArgument) : next(action);
 }
 var thunk = createThunkMiddleware(), withExtraArgument = createThunkMiddleware;
 
@@ -31777,11 +31658,11 @@ function createAction(type, prepareAction) {
       payload: args[0]
     };
   }
-  return actionCreator.toString = () => `${type}`, actionCreator.type = type, actionCreator.match = (action3) => isAction(action3) && action3.type === type, actionCreator;
+  return actionCreator.toString = () => `${type}`, actionCreator.type = type, actionCreator.match = (action) => isAction(action) && action.type === type, actionCreator;
 }
-function isActionCreator(action3) {
-  return typeof action3 == "function" && "type" in action3 && // hasMatchFunction only wants Matchers but I don't see the point in rewriting it
-  hasMatchFunction(action3);
+function isActionCreator(action) {
+  return typeof action == "function" && "type" in action && // hasMatchFunction only wants Matchers but I don't see the point in rewriting it
+  hasMatchFunction(action);
 }
 function getMessage(type) {
   let splitType = type ? `${type}`.split("/") : [], actionName = splitType[splitType.length - 1] || "actionCreator";
@@ -31792,7 +31673,7 @@ function createActionCreatorInvariantMiddleware(options = {}) {
   let {
     isActionCreator: isActionCreator2 = isActionCreator
   } = options;
-  return () => (next) => (action3) => (isActionCreator2(action3) && console.warn(getMessage(action3.type)), next(action3));
+  return () => (next) => (action) => (isActionCreator2(action) && console.warn(getMessage(action.type)), next(action));
 }
 function getTimeMeasureUtils(maxDelay, fnName) {
   let elapsed = 0;
@@ -31921,16 +31802,16 @@ function createImmutableStateInvariantMiddleware(options = {}) {
       getState
     }) => {
       let state = getState(), tracker = track(state), result;
-      return (next) => (action3) => {
+      return (next) => (action) => {
         let measureUtils = getTimeMeasureUtils(warnAfter, "ImmutableStateInvariantMiddleware");
         measureUtils.measureTime(() => {
           if (state = getState(), result = tracker.detectMutations(), tracker = track(state), result.wasMutated)
             throw new Error(`A state mutation was detected between dispatches, in the path '${result.path || ""}'.  This may cause incorrect behavior. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
         });
-        let dispatchedAction = next(action3);
+        let dispatchedAction = next(action);
         return measureUtils.measureTime(() => {
           if (state = getState(), result = tracker.detectMutations(), tracker = track(state), result.wasMutated)
-            throw new Error(`A state mutation was detected inside a dispatch, in the path: ${result.path || ""}. Take a look at the reducer(s) handling the action ${stringify2(action3)}. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
+            throw new Error(`A state mutation was detected inside a dispatch, in the path: ${result.path || ""}. Take a look at the reducer(s) handling the action ${stringify2(action)}. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
         }), measureUtils.warnIfExceeded(), dispatchedAction;
       };
     };
@@ -31985,19 +31866,19 @@ function createSerializableStateInvariantMiddleware(options = {}) {
       ignoreActions = !1,
       disableCache = !1
     } = options, cache = !disableCache && WeakSet ? /* @__PURE__ */ new WeakSet() : void 0;
-    return (storeAPI) => (next) => (action3) => {
-      if (!isAction(action3))
-        return next(action3);
-      let result = next(action3), measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
-      return !ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action3.type) !== -1) && measureUtils.measureTime(() => {
-        let foundActionNonSerializableValue = findNonSerializableValue(action3, "", isSerializable, getEntries, ignoredActionPaths, cache);
+    return (storeAPI) => (next) => (action) => {
+      if (!isAction(action))
+        return next(action);
+      let result = next(action), measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
+      return !ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action.type) !== -1) && measureUtils.measureTime(() => {
+        let foundActionNonSerializableValue = findNonSerializableValue(action, "", isSerializable, getEntries, ignoredActionPaths, cache);
         if (foundActionNonSerializableValue) {
           let {
             keyPath,
             value
           } = foundActionNonSerializableValue;
           console.error(`A non-serializable value was detected in an action, in the path: \`${keyPath}\`. Value:`, value, `
-Take a look at the logic that dispatched this action: `, action3, `
+Take a look at the logic that dispatched this action: `, action, `
 (See https://redux.js.org/faq/actions#why-should-type-be-a-string-or-at-least-serializable-why-should-my-action-types-be-constants)`, `
 (To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)`);
         }
@@ -32009,7 +31890,7 @@ Take a look at the logic that dispatched this action: `, action3, `
             value
           } = foundStateNonSerializableValue;
           console.error(`A non-serializable value was detected in the state, in the path: \`${keyPath}\`. Value:`, value, `
-Take a look at the reducer(s) handling this action type: ${action3.type}.
+Take a look at the reducer(s) handling this action type: ${action.type}.
 (See https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)`);
         }
       }), measureUtils.warnIfExceeded()), result;
@@ -32059,9 +31940,9 @@ var createQueueWithTimer = (timeout) => (notify) => {
     },
     // Override the base `store.dispatch` method so that we can check actions
     // for the `shouldAutoBatch` flag and determine if batching is active
-    dispatch(action3) {
+    dispatch(action) {
       try {
-        return notifying = !action3?.meta?.[SHOULD_AUTOBATCH], shouldNotifyAtEndOfTick = !notifying, shouldNotifyAtEndOfTick && (notificationQueued || (notificationQueued = !0, queueCallback(notifyListeners))), store2.dispatch(action3);
+        return notifying = !action?.meta?.[SHOULD_AUTOBATCH], shouldNotifyAtEndOfTick = !notifying, shouldNotifyAtEndOfTick && (notificationQueued || (notificationQueued = !0, queueCallback(notifyListeners))), store2.dispatch(action);
       } finally {
         notifying = !0;
       }
@@ -32158,22 +32039,22 @@ function createReducer(initialState2, mapOrBuilderCallback) {
     let frozenInitialState = freezeDraftable(initialState2);
     getInitialState = () => frozenInitialState;
   }
-  function reducer(state = getInitialState(), action3) {
-    let caseReducers = [actionsMap[action3.type], ...finalActionMatchers.filter(({
+  function reducer(state = getInitialState(), action) {
+    let caseReducers = [actionsMap[action.type], ...finalActionMatchers.filter(({
       matcher
-    }) => matcher(action3)).map(({
+    }) => matcher(action)).map(({
       reducer: reducer2
     }) => reducer2)];
     return caseReducers.filter((cr) => !!cr).length === 0 && (caseReducers = [finalDefaultCaseReducer]), caseReducers.reduce((previousState, caseReducer) => {
       if (caseReducer)
         if (isDraft(previousState)) {
-          let result = caseReducer(previousState, action3);
+          let result = caseReducer(previousState, action);
           return result === void 0 ? previousState : result;
         } else {
           if (isDraftable(previousState))
-            return produce(previousState, (draft) => caseReducer(draft, action3));
+            return produce(previousState, (draft) => caseReducer(draft, action));
           {
-            let result = caseReducer(previousState, action3);
+            let result = caseReducer(previousState, action);
             if (result === void 0) {
               if (previousState === null)
                 return previousState;
@@ -32192,13 +32073,13 @@ var urlAlphabet = "ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXI
   for (; i--; )
     id += urlAlphabet[Math.random() * 64 | 0];
   return id;
-}, matches = (matcher, action3) => hasMatchFunction(matcher) ? matcher.match(action3) : matcher(action3);
+}, matches = (matcher, action) => hasMatchFunction(matcher) ? matcher.match(action) : matcher(action);
 function isAnyOf(...matchers) {
-  return (action3) => matchers.some((matcher) => matches(matcher, action3));
+  return (action) => matchers.some((matcher) => matches(matcher, action));
 }
 var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = class {
-  constructor(payload, meta2) {
-    this.payload = payload, this.meta = meta2;
+  constructor(payload, meta) {
+    this.payload = payload, this.meta = meta;
   }
   /*
   type-only property to distinguish between RejectWithValue and FulfillWithMeta
@@ -32206,8 +32087,8 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   */
   _type;
 }, FulfillWithMeta = class {
-  constructor(payload, meta2) {
-    this.payload = payload, this.meta = meta2;
+  constructor(payload, meta) {
+    this.payload = payload, this.meta = meta;
   }
   /*
   type-only property to distinguish between RejectWithValue and FulfillWithMeta
@@ -32226,27 +32107,27 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   };
 }, createAsyncThunk = /* @__PURE__ */ (() => {
   function createAsyncThunk2(typePrefix, payloadCreator, options) {
-    let fulfilled = createAction(typePrefix + "/fulfilled", (payload, requestId, arg, meta2) => ({
+    let fulfilled = createAction(typePrefix + "/fulfilled", (payload, requestId, arg, meta) => ({
       payload,
       meta: {
-        ...meta2 || {},
+        ...meta || {},
         arg,
         requestId,
         requestStatus: "fulfilled"
       }
-    })), pending = createAction(typePrefix + "/pending", (requestId, arg, meta2) => ({
+    })), pending = createAction(typePrefix + "/pending", (requestId, arg, meta) => ({
       payload: void 0,
       meta: {
-        ...meta2 || {},
+        ...meta || {},
         arg,
         requestId,
         requestStatus: "pending"
       }
-    })), rejected = createAction(typePrefix + "/rejected", (error, requestId, arg, payload, meta2) => ({
+    })), rejected = createAction(typePrefix + "/rejected", (error, requestId, arg, payload, meta) => ({
       payload,
       error: (options && options.serializeError || miniSerializeError)(error || "Rejected"),
       meta: {
-        ...meta2 || {},
+        ...meta || {},
         arg,
         requestId,
         rejectedWithValue: !!payload,
@@ -32290,8 +32171,8 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
               requestId,
               signal: abortController.signal,
               abort,
-              rejectWithValue: (value, meta2) => new RejectWithValue(value, meta2),
-              fulfillWithValue: (value, meta2) => new FulfillWithMeta(value, meta2)
+              rejectWithValue: (value, meta) => new RejectWithValue(value, meta),
+              fulfillWithValue: (value, meta) => new FulfillWithMeta(value, meta)
             })).then((result) => {
               if (result instanceof RejectWithValue)
                 throw result;
@@ -32322,12 +32203,12 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   }
   return createAsyncThunk2.withTypes = () => createAsyncThunk2, createAsyncThunk2;
 })();
-function unwrapResult(action3) {
-  if (action3.meta && action3.meta.rejectedWithValue)
-    throw action3.payload;
-  if (action3.error)
-    throw action3.error;
-  return action3.payload;
+function unwrapResult(action) {
+  if (action.meta && action.meta.rejectedWithValue)
+    throw action.payload;
+  if (action.error)
+    throw action.error;
+  return action.payload;
 }
 function isThenable(value) {
   return value !== null && typeof value == "object" && typeof value.then == "function";
@@ -32405,8 +32286,8 @@ function buildCreateSlice({
     let selectSelf = (state) => state, injectedSelectorCache = /* @__PURE__ */ new WeakMap(), _reducer, slice = {
       name,
       reducerPath,
-      reducer(state, action3) {
-        return _reducer || (_reducer = buildReducer()), _reducer(state, action3);
+      reducer(state, action) {
+        return _reducer || (_reducer = buildReducer()), _reducer(state, action);
       },
       actions: context.actionCreators,
       caseReducers: context.sliceCaseReducersByName,
@@ -32563,8 +32444,8 @@ var initialState = {
     decrement: (state) => {
       state.value -= 1;
     },
-    incrementByAmount: (state, action3) => {
-      state.value += action3.payload;
+    incrementByAmount: (state, action) => {
+      state.value += action.payload;
     }
   },
   extraReducers: (builder) => {
@@ -32572,8 +32453,8 @@ var initialState = {
       console.log("incrementAsync.pending");
     }).addCase(
       incrementAsync.fulfilled,
-      (state, action3) => {
-        state.value += action3.payload;
+      (state, action) => {
+        state.value += action.payload;
       }
     );
   }
@@ -32736,14 +32617,14 @@ var initialStateValue = {
   name: "user",
   initialState: { value: initialStateValue },
   reducers: {
-    setUser: (state, action3) => {
-      state.value.user = action3.payload, state.value.isLoggedIn = !0, state.value.isLoading = !1, state.value.error = null;
+    setUser: (state, action) => {
+      state.value.user = action.payload, state.value.isLoggedIn = !0, state.value.isLoading = !1, state.value.error = null;
     },
     setLogout: (state) => {
       state.value.user = null, state.value.tokens = null, state.value.isLoggedIn = !1;
     },
-    setLoading: (state, action3) => {
-      state.value.isLoading = action3.payload;
+    setLoading: (state, action) => {
+      state.value.isLoading = action.payload;
     },
     // Optionally, you can add a reset action to set the state back to its initial value
     resetState: (state) => {
@@ -32751,9 +32632,9 @@ var initialStateValue = {
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(loginUser.fulfilled, (state, action3) => {
-      state.value.user = action3.payload, state.value.isLoggedIn = !0, state.value.isLoading = !1, state.value.error = null;
-    }).addCase(loginUser.rejected, (state, action3) => {
+    builder.addCase(loginUser.fulfilled, (state, action) => {
+      state.value.user = action.payload, state.value.isLoggedIn = !0, state.value.isLoading = !1, state.value.error = null;
+    }).addCase(loginUser.rejected, (state, action) => {
       state.value.error = "Login failed", state.value.isLoading = !1;
     });
   }
@@ -32768,98 +32649,37 @@ var initialStateValue = {
     }
   }
 );
-var selectIsLoading = (state) => state.user.value.isLoading, { setUser, setLogout, setLoading, resetState } = userSlice.actions, userSlice_default = userSlice.reducer;
-
-// app/state/quickbooks/quickbooksSlice.tsx
-var initialStateValue2 = {
-  isAuthenticated: !1,
-  accessToken: null,
-  refreshToken: null
-}, quickbooksSlice = createSlice({
-  name: "quickbooks",
-  initialState: { value: initialStateValue2 },
-  reducers: {
-    setAuthentication: (state, action3) => {
-      state.value.isAuthenticated = action3.payload.isAuthenticated, state.value.accessToken = action3.payload.accessToken, state.value.refreshToken = action3.payload.refreshToken;
-    },
-    logout: (state) => {
-      state.value = initialStateValue2;
-    }
-  }
-}), selectQuickbooksUserId = createSelector(
-  [(state) => state.user.value.user],
-  (user) => user?.id || ""
-), { setAuthentication, logout } = quickbooksSlice.actions, quickbooksSlice_default = quickbooksSlice.reducer;
-
-// app/state/plaid/plaidSlice.tsx
-var initialStateValue3 = {
-  linkSuccess: !1,
-  isItemAccess: !0,
-  isPaymentInitiation: !1,
-  linkToken: null,
-  accessToken: null,
-  itemId: null,
-  isError: !1,
-  backend: !0,
-  products: ["transactions"],
-  linkTokenError: {
-    error_type: "",
-    error_code: "",
-    error_message: ""
-  }
-}, plaidSlice = createSlice({
-  name: "plaid",
-  initialState: { value: initialStateValue3 },
-  reducers: {
-    setState: (state, action3) => ({ ...state, ...action3.payload }),
-    // Reducer to add the link token
-    addLinkToken: (state, action3) => {
-      state.value.linkToken = action3.payload;
-    },
-    // Reducer to handle link token errors
-    setLinkTokenError: (state, action3) => {
-      state.value.linkTokenError = action3.payload;
-    },
-    setAccessToken: (state, action3) => {
-      state.value.itemId = action3.payload.itemId, state.value.accessToken = action3.payload.accessToken, state.value.isItemAccess = action3.payload.isItemAccess;
-    },
-    setLinkSuccess: (state, action3) => {
-      state.value.linkSuccess = action3.payload;
-    }
-  }
-}), { setState, setLinkTokenError, addLinkToken, setAccessToken, setLinkSuccess } = plaidSlice.actions, plaidSlice_default = plaidSlice.reducer;
+var { setUser, setLogout, setLoading, resetState } = userSlice.actions, userSlice_default = userSlice.reducer;
 
 // app/state/store.ts
 var initializeStore = (preloadedState = {}) => configureStore({
   reducer: {
     user: userSlice_default,
-    counter: counterSlice_default,
-    quickbooks: quickbooksSlice_default,
-    plaid: plaidSlice_default
+    counter: counterSlice_default
   },
   preloadedState
 });
 
 // app/index.css
-var app_default = "/build/_assets/index-ULEZ2RSP.css";
+var app_default = "/build/_assets/index-GMKPFCQ6.css";
 
 // app/root.tsx
 var import_cloudflare3 = __toESM(require_dist(), 1);
 
 // app/utils/session/session.ts
 var import_cloudflare2 = __toESM(require_dist(), 1);
-function createSessionStorage(context) {
+function createSessionStorage(env) {
   let sessionCookie = (0, import_cloudflare2.createCookie)("__session", {
     httpOnly: !0,
     maxAge: 2592e3,
     // 30 days
     path: "/",
     sameSite: "lax",
-    secrets: [context.env.USER_SESSION_SECRET],
+    secrets: [env.USER_SESSION_SECRET],
     // Securely using the session secret from environment variables
     secure: !0
   }), { getSession, commitSession, destroySession } = (0, import_cloudflare2.createWorkersKVSessionStorage)({
-    kv: context.env.theform,
+    kv: env.theform,
     // Using the KV namespace from the environment
     cookie: sessionCookie
   });
@@ -32867,18 +32687,16 @@ function createSessionStorage(context) {
 }
 
 // app/utils/checkAuthentication.ts
-async function checkAuthentication({
-  context,
-  request
-}) {
-  let session = await createSessionStorage(context.env).getSession(
-    request.headers.get("Cookie")
-  );
-  if (session.get("auth"))
+async function checkAuthentication(context) {
+  if (await createSessionStorage(context.env).getSession(context.request.headers.get("Cookie")))
     try {
-      return session.get(
-        "auth"
-      );
+      return {
+        username: "testUser",
+        id: "123456",
+        accessToken: "hardcodedAccessToken",
+        refreshToken: "hardcodedRefreshToken",
+        tokenCreationTime: Date.now()
+      };
     } catch (error) {
       console.error("Error parsing cookie data:", error);
     }
@@ -32888,12 +32706,11 @@ async function checkAuthentication({
 // app/root.tsx
 var import_react3 = __toESM(require_react(), 1), import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1), links = () => [
   ...void 0 ? [{ rel: "stylesheet", href: app_default }] : []
-], store = initializeStore({}), loader = async ({ request, context }) => {
-  let url = new URL(request.url);
-  if (url.pathname === "/login" || url.pathname === "/register")
-    return (0, import_cloudflare3.json)({});
-  console.log(context, "ROOT LOADER CONTEXT");
-  let user = await checkAuthentication({ request, context });
+], store = initializeStore({}), loader = async ({
+  request,
+  context: { context }
+}) => {
+  let url = new URL(request.url), user = await checkAuthentication(context);
   try {
     return console.log(user, "user"), user ? (0, import_cloudflare3.json)({ user }) : (0, import_cloudflare3.redirect)("/login");
   } catch {
@@ -32908,368 +32725,201 @@ function App() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 72,
+        lineNumber: 82,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 73,
+        lineNumber: 83,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Meta, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 74,
+        lineNumber: 84,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Links, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 75,
+        lineNumber: 85,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.tsx",
-      lineNumber: 71,
+      lineNumber: 81,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Provider_default, { store, children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Outlet, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 79,
+        lineNumber: 89,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 80,
+        lineNumber: 90,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Scripts, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 81,
+        lineNumber: 91,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(LiveReload, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 82,
+        lineNumber: 92,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.tsx",
-      lineNumber: 78,
+      lineNumber: 88,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/root.tsx",
-      lineNumber: 77,
+      lineNumber: 87,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/root.tsx",
-    lineNumber: 70,
-    columnNumber: 5
-  }, this);
-}
-
-// app/routes/auth._index.tsx
-var auth_index_exports = {};
-
-// app/routes/api._index.tsx
-var api_index_exports = {};
-
-// app/routes/auth.login.tsx
-var auth_login_exports = {};
-
-// app/routes/dashboard.tsx
-var dashboard_exports = {};
-__export(dashboard_exports, {
-  default: () => dashboard
-});
-
-// app/state/hooks/user.tsx
-var useTypedSelector = useSelector, useDispatch2 = () => useDispatch();
-
-// app/components/navigation.tsx
-var import_react4 = __toESM(require_react(), 1);
-var import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1);
-function Navigation() {
-  let user = useTypedSelector((state) => state.user.value), [date, setDate] = (0, import_react4.useState)(""), [time, setTime] = (0, import_react4.useState)("");
-  return (0, import_react4.useEffect)(() => {
-    let setClock = (now) => {
-      if (user.locale) {
-        let date2 = now.toLocaleDateString(user.locale), time2 = now.toLocaleTimeString(user.locale);
-        setDate(date2), setTime(time2);
-      }
-    };
-    setClock(/* @__PURE__ */ new Date());
-    let interval = setInterval(() => setClock(/* @__PURE__ */ new Date()), 1e3);
-    return () => clearInterval(interval);
-  }, [user.locale]), /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "max-w-lg mx-auto p-6 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-lg", children: user.isLoggedIn && user ? /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_jsx_dev_runtime3.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "text-lg font-semibold text-white", children: [
-      "Welcome, ",
-      user.user?.username
-    ] }, void 0, !0, {
-      fileName: "app/components/navigation.tsx",
-      lineNumber: 33,
-      columnNumber: 9
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mt-2 text-sm text-gray-400", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: date }, void 0, !1, {
-        fileName: "app/components/navigation.tsx",
-        lineNumber: 35,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: time }, void 0, !1, {
-        fileName: "app/components/navigation.tsx",
-        lineNumber: 36,
-        columnNumber: 11
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/components/navigation.tsx",
-      lineNumber: 34,
-      columnNumber: 9
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/components/navigation.tsx",
-    lineNumber: 32,
-    columnNumber: 7
-  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_jsx_dev_runtime3.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "text-lg font-semibold text-red-600", children: "Not logged in" }, void 0, !1, {
-      fileName: "app/components/navigation.tsx",
-      lineNumber: 41,
-      columnNumber: 9
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mt-2 text-sm text-gray-400", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: date }, void 0, !1, {
-        fileName: "app/components/navigation.tsx",
-        lineNumber: 43,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: time }, void 0, !1, {
-        fileName: "app/components/navigation.tsx",
-        lineNumber: 44,
-        columnNumber: 11
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/components/navigation.tsx",
-      lineNumber: 42,
-      columnNumber: 9
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/components/navigation.tsx",
-    lineNumber: 40,
-    columnNumber: 7
-  }, this) }, void 0, !1, {
-    fileName: "app/components/navigation.tsx",
-    lineNumber: 30,
-    columnNumber: 5
-  }, this);
-}
-var navigation_default = Navigation;
-
-// app/components/header.tsx
-var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime(), 1);
-function MyHeader({ children }) {
-  let fetcher = useFetcher2(), user = useTypedSelector((state) => state.user.value), isLoggedIn = useTypedSelector((state) => state.user.value.isLoggedIn), isLoading = useTypedSelector(selectIsLoading), dispatch = useDispatch2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_jsx_dev_runtime4.Fragment, { children: isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "flex justify-center items-center h-screen bg-gray-200", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { className: "text-xl font-medium text-gray-600", children: "Loading..." }, void 0, !1, {
-    fileName: "app/components/header.tsx",
-    lineNumber: 30,
-    columnNumber: 11
-  }, this) }, void 0, !1, {
-    fileName: "app/components/header.tsx",
-    lineNumber: 29,
-    columnNumber: 9
-  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_jsx_dev_runtime4.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("nav", { className: "bg-white shadow-md py-4 px-5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { className: "flex space-x-4", children: isLoggedIn ? /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_jsx_dev_runtime4.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-        Link2,
-        {
-          className: "text-blue-600 hover:text-blue-800 font-semibold",
-          to: "/dashboard",
-          prefetch: "intent",
-          children: "Dashboard"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/header.tsx",
-          lineNumber: 69,
-          columnNumber: 21
-        },
-        this
-      ) }, void 0, !1, {
-        fileName: "app/components/header.tsx",
-        lineNumber: 68,
-        columnNumber: 19
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-        Link2,
-        {
-          className: "text-blue-600 hover:text-blue-800 font-semibold",
-          to: "/api/plaid",
-          prefetch: "intent",
-          children: "plaid"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/header.tsx",
-          lineNumber: 78,
-          columnNumber: 21
-        },
-        this
-      ) }, void 0, !1, {
-        fileName: "app/components/header.tsx",
-        lineNumber: 77,
-        columnNumber: 19
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-        Link2,
-        {
-          className: "text-blue-600 hover:text-blue-800 font-semibold",
-          to: "/api/quickbooks",
-          prefetch: "intent",
-          children: "quickbooks"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/header.tsx",
-          lineNumber: 87,
-          columnNumber: 21
-        },
-        this
-      ) }, void 0, !1, {
-        fileName: "app/components/header.tsx",
-        lineNumber: 86,
-        columnNumber: 19
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-        "button",
-        {
-          className: "text-red-600 hover:text-red-800 font-semibold",
-          onClick: () => {
-            dispatch(setLogout()), fetcher.submit({}, { method: "post", action: "/logout" });
-          },
-          children: "Logout"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/header.tsx",
-          lineNumber: 96,
-          columnNumber: 21
-        },
-        this
-      ) }, void 0, !1, {
-        fileName: "app/components/header.tsx",
-        lineNumber: 95,
-        columnNumber: 19
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/components/header.tsx",
-      lineNumber: 67,
-      columnNumber: 17
-    }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_jsx_dev_runtime4.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-        Link2,
-        {
-          className: "text-blue-600 hover:text-blue-800 font-semibold",
-          to: "/login",
-          prefetch: "intent",
-          children: "Login"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/header.tsx",
-          lineNumber: 48,
-          columnNumber: 21
-        },
-        this
-      ) }, void 0, !1, {
-        fileName: "app/components/header.tsx",
-        lineNumber: 47,
-        columnNumber: 19
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-        Link2,
-        {
-          className: "text-blue-600 hover:text-blue-800 font-semibold",
-          to: "/register",
-          prefetch: "intent",
-          children: "Register"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/header.tsx",
-          lineNumber: 57,
-          columnNumber: 21
-        },
-        this
-      ) }, void 0, !1, {
-        fileName: "app/components/header.tsx",
-        lineNumber: 56,
-        columnNumber: 19
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/components/header.tsx",
-      lineNumber: 46,
-      columnNumber: 17
-    }, this) }, void 0, !1, {
-      fileName: "app/components/header.tsx",
-      lineNumber: 35,
-      columnNumber: 13
-    }, this) }, void 0, !1, {
-      fileName: "app/components/header.tsx",
-      lineNumber: 34,
-      columnNumber: 11
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("main", { className: "p-6", children }, void 0, !1, {
-      fileName: "app/components/header.tsx",
-      lineNumber: 107,
-      columnNumber: 11
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/components/header.tsx",
-    lineNumber: 33,
-    columnNumber: 9
-  }, this) }, void 0, !1, {
-    fileName: "app/components/header.tsx",
-    lineNumber: 27,
-    columnNumber: 5
-  }, this);
-}
-var header_default = MyHeader;
-
-// app/routes/dashboard.tsx
-var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1);
-function dashboard() {
-  let data = useLoaderData2(), user = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(header_default, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(navigation_default, {}, void 0, !1, {
-    fileName: "app/routes/dashboard.tsx",
-    lineNumber: 63,
-    columnNumber: 9
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/dashboard.tsx",
-    lineNumber: 62,
-    columnNumber: 7
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/dashboard.tsx",
-    lineNumber: 61,
+    lineNumber: 80,
     columnNumber: 5
   }, this);
 }
 
 // app/routes/register.tsx
 var register_exports = {};
+__export(register_exports, {
+  default: () => register_default
+});
+var import_react4 = __toESM(require_react(), 1), import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1), Register = () => {
+  let [username, setUsername] = (0, import_react4.useState)(""), [password, setPassword] = (0, import_react4.useState)("");
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
+    "form",
+    {
+      action: "/register",
+      method: "post",
+      className: "max-w-lg mx-auto mt-10 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mb-4", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
+            "label",
+            {
+              className: "block text-gray-300 text-base font-semibold mb-2",
+              htmlFor: "username",
+              children: "Email"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/register.tsx",
+              lineNumber: 14,
+              columnNumber: 9
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
+            "input",
+            {
+              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
+              id: "username",
+              type: "text",
+              name: "username",
+              value: username,
+              placeholder: "Enter your email",
+              onChange: (e) => setUsername(e.target.value)
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/register.tsx",
+              lineNumber: 20,
+              columnNumber: 9
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/routes/register.tsx",
+          lineNumber: 13,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mb-4", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
+            "label",
+            {
+              className: "block text-gray-300 text-base font-semibold mb-2",
+              htmlFor: "password",
+              children: "Password"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/register.tsx",
+              lineNumber: 32,
+              columnNumber: 9
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
+            "input",
+            {
+              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
+              id: "password",
+              type: "password",
+              name: "password",
+              value: password,
+              placeholder: "Enter your password",
+              onChange: (e) => setPassword(e.target.value)
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/register.tsx",
+              lineNumber: 38,
+              columnNumber: 9
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/routes/register.tsx",
+          lineNumber: 31,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
+          "button",
+          {
+            type: "submit",
+            className: "bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50",
+            children: "Register"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/register.tsx",
+            lineNumber: 49,
+            columnNumber: 7
+          },
+          this
+        )
+      ]
+    },
+    void 0,
+    !0,
+    {
+      fileName: "app/routes/register.tsx",
+      lineNumber: 8,
+      columnNumber: 5
+    },
+    this
+  );
+}, register_default = Register;
 
 // app/routes/welcome.tsx
 var welcome_exports = {};
 __export(welcome_exports, {
   default: () => welcome
 });
-var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
+var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime(), 1);
 function welcome() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { children: "welcome" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: "welcome" }, void 0, !1, {
     fileName: "app/routes/welcome.tsx",
     lineNumber: 5,
     columnNumber: 5
@@ -33279,112 +32929,38 @@ function welcome() {
 // app/routes/_index.tsx
 var index_exports = {};
 __export(index_exports, {
-  default: () => Index,
-  meta: () => meta
+  default: () => index_default
 });
-var import_jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime(), 1), meta = () => [
-  { title: "New Remix App" },
-  { name: "description", content: "Welcome to Remix!" }
-];
-function Index() {
-  let user = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(import_jsx_dev_runtime7.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(header_default, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(navigation_default, {}, void 0, !1, {
-    fileName: "app/routes/_index.tsx",
-    lineNumber: 77,
-    columnNumber: 7
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/_index.tsx",
-    lineNumber: 76,
-    columnNumber: 5
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/_index.tsx",
-    lineNumber: 75,
-    columnNumber: 5
-  }, this);
-}
+var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1), index = () => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Outlet, {}, void 0, !1, {
+  fileName: "app/routes/_index.tsx",
+  lineNumber: 7,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/routes/_index.tsx",
+  lineNumber: 6,
+  columnNumber: 5
+}, this), index_default = index;
 
 // app/routes/logout.tsx
 var logout_exports = {};
-__export(logout_exports, {
-  action: () => action
-});
-var import_cloudflare4 = __toESM(require_dist(), 1);
-var action = async ({ request, context }) => {
-  let env = context.env, expiredCookie = await (void 0)(env).serialize("", { maxAge: -1 });
-  return (0, import_cloudflare4.redirect)("/", {
-    headers: {
-      "Set-Cookie": expiredCookie
-    }
-  });
-};
-
-// app/routes/greet.tsx
-var greet_exports = {};
-__export(greet_exports, {
-  default: () => greet_default
-});
-var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime(), 1), greet = () => /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { children: "greet" }, void 0, !1, {
-  fileName: "app/routes/greet.tsx",
-  lineNumber: 5,
-  columnNumber: 5
-}, this), greet_default = greet;
 
 // app/routes/login.tsx
 var login_exports = {};
 __export(login_exports, {
-  action: () => action2,
   default: () => login_default
 });
-var import_react8 = __toESM(require_react(), 1);
-var import_cloudflare5 = __toESM(require_dist(), 1);
-var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime(), 1);
-async function loginUser2(username, password) {
-  try {
-    return await UserService.loginUser(username, password);
-  } catch (error) {
-    throw console.error("Login failed:", error), new Error("Login failed");
-  }
-}
-async function serializeCookie(user, env) {
-  let { access_token, refresh_token } = user.tokens, cookieValue = JSON.stringify({
-    username: user.user.username,
-    userId: user.user.id,
-    accessToken: access_token,
-    refreshToken: refresh_token
-  });
-  return await (void 0)(env).serialize(cookieValue);
-}
-var action2 = async ({ request, context }) => {
-  let formData = await request.formData(), username = formData.get("username"), password = formData.get("password");
-  if (typeof username == "string" && typeof password == "string")
-    try {
-      let user = await loginUser2(username, password), serializedCookie = await serializeCookie(user, context.env);
-      return new Response(null, {
-        status: 303,
-        headers: {
-          "Set-Cookie": serializedCookie,
-          Location: "/dashboard"
-        }
-      });
-    } catch {
-      return (0, import_cloudflare5.json)(
-        { error: "Login failed: Invalid credentials" },
-        { status: 401 }
-      );
-    }
-  else
-    return (0, import_cloudflare5.json)({ error: "Missing username or password" }, { status: 400 });
-}, Login = () => {
-  let [username, setUsername] = (0, import_react8.useState)(""), [password, setPassword] = (0, import_react8.useState)(""), actionData = useActionData2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
+var import_react6 = __toESM(require_react(), 1);
+var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1), Login = () => {
+  let [username, setUsername] = (0, import_react6.useState)(""), [password, setPassword] = (0, import_react6.useState)(""), actionData = useActionData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
     "form",
     {
       action: "/login",
       method: "post",
       className: "max-w-lg mx-auto mt-10 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
             "label",
             {
               className: "block text-gray-300 text-base font-semibold mb-2",
@@ -33395,12 +32971,12 @@ var action2 = async ({ request, context }) => {
             !1,
             {
               fileName: "app/routes/login.tsx",
-              lineNumber: 75,
+              lineNumber: 21,
               columnNumber: 9
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
             "input",
             {
               className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
@@ -33415,18 +32991,18 @@ var action2 = async ({ request, context }) => {
             !1,
             {
               fileName: "app/routes/login.tsx",
-              lineNumber: 81,
+              lineNumber: 27,
               columnNumber: 9
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/login.tsx",
-          lineNumber: 74,
+          lineNumber: 20,
           columnNumber: 7
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
             "label",
             {
               className: "block text-gray-300 text-base font-semibold mb-2",
@@ -33437,12 +33013,12 @@ var action2 = async ({ request, context }) => {
             !1,
             {
               fileName: "app/routes/login.tsx",
-              lineNumber: 93,
+              lineNumber: 39,
               columnNumber: 9
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
             "input",
             {
               className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 mb-3 leading-tight focus:outline-none focus:border-blue-500",
@@ -33457,22 +33033,22 @@ var action2 = async ({ request, context }) => {
             !1,
             {
               fileName: "app/routes/login.tsx",
-              lineNumber: 99,
+              lineNumber: 45,
               columnNumber: 9
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/login.tsx",
-          lineNumber: 92,
+          lineNumber: 38,
           columnNumber: 7
         }, this),
-        actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
+        actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
           fileName: "app/routes/login.tsx",
-          lineNumber: 111,
+          lineNumber: 57,
           columnNumber: 9
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex items-center justify-between", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex items-center justify-between", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
           "button",
           {
             className: "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50",
@@ -33483,13 +33059,13 @@ var action2 = async ({ request, context }) => {
           !1,
           {
             fileName: "app/routes/login.tsx",
-            lineNumber: 115,
+            lineNumber: 61,
             columnNumber: 9
           },
           this
         ) }, void 0, !1, {
           fileName: "app/routes/login.tsx",
-          lineNumber: 114,
+          lineNumber: 60,
           columnNumber: 7
         }, this)
       ]
@@ -33498,54 +33074,15 @@ var action2 = async ({ request, context }) => {
     !0,
     {
       fileName: "app/routes/login.tsx",
-      lineNumber: 69,
+      lineNumber: 15,
       columnNumber: 5
     },
     this
   );
 }, login_default = Login;
 
-// app/routes/auth.tsx
-var auth_exports = {};
-__export(auth_exports, {
-  default: () => auth
-});
-var import_jsx_dev_runtime10 = __toESM(require_jsx_dev_runtime(), 1);
-function auth() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(Outlet, {}, void 0, !1, {
-    fileName: "app/routes/auth.tsx",
-    lineNumber: 6,
-    columnNumber: 9
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/auth.tsx",
-    lineNumber: 5,
-    columnNumber: 5
-  }, this);
-}
-
-// app/routes/home.tsx
-var home_exports = {};
-
-// app/routes/api.tsx
-var api_exports = {};
-__export(api_exports, {
-  default: () => API
-});
-var import_jsx_dev_runtime11 = __toESM(require_jsx_dev_runtime(), 1);
-function API() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Outlet, {}, void 0, !1, {
-    fileName: "app/routes/api.tsx",
-    lineNumber: 5,
-    columnNumber: 10
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/api.tsx",
-    lineNumber: 5,
-    columnNumber: 5
-  }, this);
-}
-
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-6NSCHMYG.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-5KZFI7EJ.js", "/build/_shared/chunk-3VF2BKVT.js", "/build/_shared/chunk-XXQJOG4O.js", "/build/_shared/chunk-JSTWQ2ZC.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-6OUMGZ45.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-IBW3BF3T.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-LJS5DMRQ.js", imports: ["/build/_shared/chunk-JDQT74M6.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/api": { id: "routes/api", parentId: "root", path: "api", index: void 0, caseSensitive: void 0, module: "/build/routes/api-AJVPLFBK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/api._index": { id: "routes/api._index", parentId: "routes/api", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/api._index-UULWJV3X.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/auth": { id: "routes/auth", parentId: "root", path: "auth", index: void 0, caseSensitive: void 0, module: "/build/routes/auth-CDCRGAVW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/auth._index": { id: "routes/auth._index", parentId: "routes/auth", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/auth._index-VUGD2DFV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/auth.login": { id: "routes/auth.login", parentId: "routes/auth", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/auth.login-YX7RXJUH.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/dashboard": { id: "routes/dashboard", parentId: "root", path: "dashboard", index: void 0, caseSensitive: void 0, module: "/build/routes/dashboard-OI7M2V7V.js", imports: ["/build/_shared/chunk-JDQT74M6.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/greet": { id: "routes/greet", parentId: "root", path: "greet", index: void 0, caseSensitive: void 0, module: "/build/routes/greet-IPRGURQ7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/home": { id: "routes/home", parentId: "root", path: "home", index: void 0, caseSensitive: void 0, module: "/build/routes/home-OJU6YWEN.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/login": { id: "routes/login", parentId: "root", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/login-ROMKFN5F.js", imports: void 0, hasAction: !0, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/logout": { id: "routes/logout", parentId: "root", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/logout-FACVNVNY.js", imports: void 0, hasAction: !0, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/register": { id: "routes/register", parentId: "root", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/register-5G3Y3RIM.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-H3GUMRNC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "0fc861fc", hmr: { runtime: "/build/_shared/chunk-6OUMGZ45.js", timestamp: 1708468005261 }, url: "/build/manifest-0FC861FC.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-433DKAX6.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-VRWZAJPC.js", "/build/_shared/chunk-AX36ETJU.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-COJOTNSP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-XI65JAAE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/login": { id: "routes/login", parentId: "root", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/login-UOMI6VOR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/logout": { id: "routes/logout", parentId: "root", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/logout-FACVNVNY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/register": { id: "routes/register", parentId: "root", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/register-UT7HIW5P.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-SG2FFPT5.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "e07fa3ac", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708562563961 }, url: "/build/manifest-E07FA3AC.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -33556,38 +33093,6 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     index: void 0,
     caseSensitive: void 0,
     module: root_exports
-  },
-  "routes/auth._index": {
-    id: "routes/auth._index",
-    parentId: "routes/auth",
-    path: void 0,
-    index: !0,
-    caseSensitive: void 0,
-    module: auth_index_exports
-  },
-  "routes/api._index": {
-    id: "routes/api._index",
-    parentId: "routes/api",
-    path: void 0,
-    index: !0,
-    caseSensitive: void 0,
-    module: api_index_exports
-  },
-  "routes/auth.login": {
-    id: "routes/auth.login",
-    parentId: "routes/auth",
-    path: "login",
-    index: void 0,
-    caseSensitive: void 0,
-    module: auth_login_exports
-  },
-  "routes/dashboard": {
-    id: "routes/dashboard",
-    parentId: "root",
-    path: "dashboard",
-    index: void 0,
-    caseSensitive: void 0,
-    module: dashboard_exports
   },
   "routes/register": {
     id: "routes/register",
@@ -33621,14 +33126,6 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     caseSensitive: void 0,
     module: logout_exports
   },
-  "routes/greet": {
-    id: "routes/greet",
-    parentId: "root",
-    path: "greet",
-    index: void 0,
-    caseSensitive: void 0,
-    module: greet_exports
-  },
   "routes/login": {
     id: "routes/login",
     parentId: "root",
@@ -33636,43 +33133,20 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     index: void 0,
     caseSensitive: void 0,
     module: login_exports
-  },
-  "routes/auth": {
-    id: "routes/auth",
-    parentId: "root",
-    path: "auth",
-    index: void 0,
-    caseSensitive: void 0,
-    module: auth_exports
-  },
-  "routes/home": {
-    id: "routes/home",
-    parentId: "root",
-    path: "home",
-    index: void 0,
-    caseSensitive: void 0,
-    module: home_exports
-  },
-  "routes/api": {
-    id: "routes/api",
-    parentId: "root",
-    path: "api",
-    index: void 0,
-    caseSensitive: void 0,
-    module: api_exports
   }
 };
 
 // server.ts
-(0, import_cloudflare6.logDevReady)(server_build_exports);
-async function onRequest(context, env) {
-  let { getSession, commitSession, destroySession } = createSessionStorage(context), session = await getSession(
+(0, import_cloudflare4.logDevReady)(server_build_exports);
+async function onRequest(context) {
+  console.log(context, "context in SERVER");
+  let { getSession, commitSession, destroySession } = createSessionStorage(context.env), session = await getSession(
     context.request.headers.get("Cookie")
   ), response = await createPagesFunctionHandler({
     build: server_build_exports,
     mode,
     getLoadContext(context2) {
-      return { env: context2, session };
+      return { context: context2, session };
     }
   })(context);
   return response.headers.append(

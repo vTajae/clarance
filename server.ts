@@ -9,10 +9,12 @@ if (process.env.NODE_ENV === "development") {
 }
 
 
-export async function onRequest(context: any, env: EnvWithKV) {
+export async function onRequest(context: any) {
+
+  console.log(context, "context in SERVER")
   
 
-  const { getSession, commitSession, destroySession } = createSessionStorage(context);
+  const { getSession, commitSession, destroySession } = createSessionStorage(context.env);
   
   
   let session = await getSession(
@@ -24,7 +26,7 @@ export async function onRequest(context: any, env: EnvWithKV) {
     build,
     mode: build.mode,
     getLoadContext(context) {
-      return { env:context, session };
+      return { context, session };
     },
   });
 

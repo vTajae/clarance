@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Standard Form 86</title>
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="\src\styles\styles.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+    </style>
+    </head>
+    <body>
+      <!-- nav menu -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
+            <div class="container">
+              <a href="https://icm-consulting.us" class="navbar-brand"
+                >ICM Consulting</a
+              >
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navmenu"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a href="#learn" class="nav-link">What You'll learn</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#questions" class="nav-link">Questions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#instructors" class="nav-link">Instructors</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- Showcase -->
+    <section class="p-5 text-center text-sm-start">
+      <div class="container">                                       
+                    <p>Do you currently possess a US Passport?</p>                            
+                <div class="radio1">
+            
+            <p><input id="Section8Applicant_95550" type="Radio" name="PassportPossessed" value=0 Class="Section8 HasEntry1"></input>Yes		<!--9555-->
+                <label for=Section8Applicant_95550 Class="Section8" ></label></p>
+        
+                <p>	<input id="Section8Applicant_95541" type="Radio" name="PassportPossessed" value=1 Class="Section8 NoEntry1"></input>No	<!--9554-->
+                <label for=Section8Applicant_95541 Class="Section8" ></label></p>
+            <label for=No1 Class="Section4" ></label></p>
+        </div>
+        
+        <div hidden Class="Entry1">
+
+            <p>Provide the following information for the most recent U.S. passport you currently possess.</p>
+            <p> Passport number</p>
+            <input type="Text" id="Section8Applicant_9553" Class="Section8"><!--9553-->
+    
+            <p>Issue date (Month/Day/Year)</p>
+            <input type="Date" id="Section8Applicant_9551" Class="Section8 FullDate"><!--9551-->
+
+            <p>This date was an estimate and may not be correct<input type= "checkbox" id="Section8Applicant_9523" Class="Section8"></p><!--9523-->
+    
+            <p>Expiration date (Month/Day/Year)</p>
+            <input type="Date" id="Section8Applicant_9550" Class="Section8 FullDate"><!--9550-->
+            
+            <p>This date was an estimate and may not be correct <input type= "checkbox" id="Section8Applicant_9549" Class="Section8"></p><!--9549-->
+    
+            <p>Provide the name in which passport was first issued.</p> 
+            <p>Last name</p>
+            <input type="Text" id="Section8ApplicantLastName_9547" Class="Section8 IDLastName"><!--9547-->
+    
+            <p>First name</p>
+            <input type="Text" id="Section8ApplicantFirstName_9546" Class="Section8 IDFirstName"><!--9546-->
+    
+            <p>Middle name</p>
+            <input type="Text" id="Section8ApplicantMiddleName_9548" Class="Section8 IDMiddleName"><!--9548-->
+    
+            <p>Suffix</p>
+            <select id="Section8ApplicantSuffix_9545" Class="Section8 IDSuffix" ><!--9545-->
+
+<option value="None"></option>
+            <option value="Jr">Jr.</option>
+            <option value="Sr">Sr.</option>
+            <option value="II">II</option>
+            <option value="III">III</option>
+            <option value="IV">IV</option>
+            <option value="IV">V</option>
+            <option value="IV">VI</option>
+            <option value="IV">VII</option>
+            <option value="IV">IX</option>
+            <option value="IV">X</option>
+            <option value="Other">Other</option></select>		
+            
+
+            </div>
+                
+            </section>
+          
+            <footer class="foot foot-expand-lg text-light fixed-bottom bg-dark foot-dark py-3">      
+        
+        <form>
+            <input
+              type="button"
+              value="Back"
+              class="backButton"
+              onclick="history.back()"
+            />
+          </form>
+          <button id="sendDataButton"><a href="http://localhost:5173/pages/section9">Next</a></button>
+        <label for="ProgressBar">21% Complete</label>
+        <progress id="ProgressBar" value="6" max="28"> 21% Complete </progress>
+        </footer> 
+           
+        </div>   
+        		<script>
+
+
+        SSNhtml= localStorage.getItem("SSNNumber")
+        SectionHTML="Section8"              
+
+
+        var radio1 = document.querySelector(".HasEntry1");
+        var radioNo1 = document.querySelector(".NoEntry1");
+
+        var Entry1List = document.querySelectorAll('.Entry1');
+
+        function toggleHidden(isChecked, elementList) {
+    for (var i = 0; i < elementList.length; i++) {
+        if (isChecked) {
+            elementList[i].removeAttribute('hidden');
+        } else {
+            elementList[i].setAttribute('hidden', 'true');
+        }
+    }
+}
+
+
+        radio1.addEventListener('change', function() {
+    var Entry1List = document.querySelectorAll('.Entry1');
+    toggleHidden(radio1.checked, Entry1List);
+
+});
+
+radioNo1.addEventListener('click', function() {
+    var Entry1List = document.querySelectorAll('.Entry1');
+    toggleHidden(!radioNo1.checked, Entry1List);
+});
+
+        var sendDataButton = document.querySelector("#sendDataButton");
+                     function radioValue(radioGroupName){
+            var ele= document.getElementsByName(radioGroupName)
+
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked) {
+                    return ele[i].value
+                    break} }
+                     
+            
+            return ''
+            
+        }
+
+        function checkboxvalue(checkboxname){
+            var checkboxhtml = document.getElementById(checkboxname)
+            
+            if(checkboxhtml.checked ==true){
+                var checkboxAsBit=1}
+            else {
+                var checkboxAsBit=0
+            }
+            console.log(checkboxAsBit)
+            return checkboxAsBit
+
+        }
+
+        function emptydata(PossibleEmpty) {
+            if (document.getElementById(PossibleEmpty).value === undefined) {
+                return '';
+            }
+            }        
+
+            sendDataButton.addEventListener("click", () => {
+                    var Section8Applicant_9555HTML = radioValue("Section8Applicant_9555");
+                    var Section8Applicant_9554HTML = radioValue("Section8Applicant_9554");
+                    var Section8Applicant_9553HTML =document.querySelector(`[id="Section8Applicant_9553"]`).value;
+                    var Section8Applicant_9551HTML =document.querySelector(`[id="Section8Applicant_9551"]`).value;
+                    var Section8Applicant_9550HTML =document.querySelector(`[id="Section8Applicant_9550"]`).value;
+                    var Section8Applicant_9549HTML = checkboxvalue("Section8Applicant_9549");
+                    var Section8ApplicantMiddleName_9548HTML =document.querySelector(`[id="Section8ApplicantMiddleName_9548"]`).value;
+                    var Section8ApplicantLastName_9547HTML =document.querySelector(`[id="Section8ApplicantLastName_9547"]`).value;
+                    var Section8ApplicantFirstName_9546HTML =document.querySelector(`[id="Section8ApplicantFirstName_9546"]`).value;
+                    var Section8ApplicantSuffix_9545HTML =document.querySelector(`[id="Section8ApplicantSuffix_9545"]`).value;
+                    var Section8Applicant_9523HTML = checkboxvalue("Section8Applicant_9523");
+	
+                     
+                     
+                     var obj= {
+
+
+        Table: "Section8",
+        SSN: SSNhtml,
+        Set: 1,
+        Entry: 1,
+        Section8Applicant_95550Column : "Section8Applicant_95550",
+Section8Applicant_95550Value : String(Section8Applicant_95550HTML),
+Section8Applicant_95541Column : "Section8Applicant_95541",
+Section8Applicant_95541Value : String(Section8Applicant_95541HTML),
+Section8Applicant_9553Column : "Section8Applicant_9553",
+Section8Applicant_9553Value : String(Section8Applicant_9553HTML),
+Section8Applicant_9551Column : "Section8Applicant_9551",
+Section8Applicant_9551Value : String(Section8Applicant_9551HTML),
+Section8Applicant_9550Column : "Section8Applicant_9550",
+Section8Applicant_9550Value : String(Section8Applicant_9550HTML),
+Section8Applicant_9549Column : "Section8Applicant_9549",
+Section8Applicant_9549Value : String(Section8Applicant_9549HTML),
+Section8ApplicantMiddleName_9548Column : "Section8ApplicantMiddleName_9548",
+Section8ApplicantMiddleName_9548Value : String(Section8ApplicantMiddleName_9548HTML),
+Section8ApplicantLastName_9547Column : "Section8ApplicantLastName_9547",
+Section8ApplicantLastName_9547Value : String(Section8ApplicantLastName_9547HTML),
+Section8ApplicantFirstName_9546Column : "Section8ApplicantFirstName_9546",
+Section8ApplicantFirstName_9546Value : String(Section8ApplicantFirstName_9546HTML),
+Section8ApplicantSuffix_9545Column : "Section8ApplicantSuffix_9545",
+Section8ApplicantSuffix_9545Value : String(Section8ApplicantSuffix_9545HTML),
+Section8Applicant_9523Column : "Section8Applicant_9523",
+Section8Applicant_9523Value : String(Section8Applicant_9523HTML),
+        
+        
+                  
+        } 
+    
+fetch("/ToSQL", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(obj)
+            })
+            .then((response) => {
+                if (response.ok) {
+                    console.log("Data sent successfully");
+                    alert("Data Sent Properly!")
+                } else {
+                    console.error("Failed to send data");
+                    alert("Something went wrong")
+                }
+            });                     
+                     
+})                     
+		</script>
+
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+crossorigin="anonymous"
+></script>           
+	</body>
+
+</html>
+

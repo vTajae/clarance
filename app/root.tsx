@@ -17,6 +17,12 @@ import { User } from "api/models/user";
 import { json, redirect } from "@remix-run/cloudflare";
 import { checkAuthentication } from "./utils/checkAuthentication";
 import { useEffect } from "react";
+import { EnvWithKV } from "api/schemas/kv";
+
+interface RequestContext {
+  request: Request;
+  env: EnvWithKV;
+}
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: stylesheet }] : []),
@@ -28,16 +34,20 @@ type LoaderData = {
 
 const store = initializeStore({});
 
-export const loader: LoaderFunction = async ({ request, context }) => {
+export const loader: LoaderFunction = async ({
+  request,
+  context: { context },
+}) => {
   const url = new URL(request.url);
 
-  // Exclude login and registration pages from authentication check
-  if (url.pathname === "/login" || url.pathname === "/register") {
-    return json({});
-  }
+  // console.log(context, "ROOT LOADER CONTEXT");
 
-  console.log(context, "ROOT LOADER CONTEXT");
-  const user = await checkAuthentication({ request, context });
+  const user = await checkAuthentication(context as RequestContext);
+
+  // // Exclude login and registration pages from authentication check
+  // if (url.pathname === "/login" || url.pathname === "/register") {
+  //   return json({});
+  // }
 
   try {
     console.log(user, "user");
