@@ -3620,7 +3620,7 @@ var init_serverHandoff = __esm({
 
 // node_modules/@remix-run/server-runtime/dist/esm/dev.js
 async function broadcastDevReady(build, origin) {
-  if (origin ??= "http://localhost:3001/", !origin)
+  if (origin ??= "http://localhost:3002/", !origin)
     throw Error("Dev server origin not set");
   let url = new URL(origin);
   url.pathname = "ping";
@@ -29704,7 +29704,7 @@ function useActionData2() {
   return useActionData();
 }
 var LiveReload = function({
-  origin = "http://localhost:3001/",
+  origin = "http://localhost:3002/",
   port,
   timeoutMs = 1e3,
   nonce = void 0
@@ -33082,7 +33082,7 @@ var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1), Login = () 
 }, login_default = Login;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-433DKAX6.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-VRWZAJPC.js", "/build/_shared/chunk-AX36ETJU.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-COJOTNSP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-XI65JAAE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/login": { id: "routes/login", parentId: "root", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/login-UOMI6VOR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/logout": { id: "routes/logout", parentId: "root", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/logout-FACVNVNY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/register": { id: "routes/register", parentId: "root", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/register-UT7HIW5P.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-SG2FFPT5.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "e07fa3ac", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708562563961 }, url: "/build/manifest-E07FA3AC.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-EOQHKP5I.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-LVVQRFL6.js", "/build/_shared/chunk-YURZJQTD.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-7X5JJGBX.js", imports: void 0, hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-PNYNNW5H.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/login": { id: "routes/login", parentId: "root", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/login-BTP5VK2T.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/logout": { id: "routes/logout", parentId: "root", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/logout-FACVNVNY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/register": { id: "routes/register", parentId: "root", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/register-E5NJG5JU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-SG2FFPT5.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "78c3fc25", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708578737841 }, url: "/build/manifest-78C3FC25.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

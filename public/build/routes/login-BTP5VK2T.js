@@ -1,6 +1,6 @@
 import {
   useActionData
-} from "/build/_shared/chunk-AX36ETJU.js";
+} from "/build/_shared/chunk-YURZJQTD.js";
 import "/build/_shared/chunk-H36SQQE5.js";
 import {
   createHotContext
@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app/routes/login.tsx"
   );
-  import.meta.hot.lastModified = "1708481914441.3132";
+  import.meta.hot.lastModified = "1708567845916.1514";
 }
 var Login = () => {
   _s();
@@ -109,4 +109,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   login_default as default
 };
-//# sourceMappingURL=/build/routes/login-UOMI6VOR.js.map
+//# sourceMappingURL=/build/routes/login-BTP5VK2T.js.map

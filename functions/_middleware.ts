@@ -16,24 +16,40 @@ interface RequestContext {
   // Include other properties from the context model as needed
 }
 
-// In root.ts (Cloudflare Worker)
+// Assuming you have a way to determine the user's intended destination or a default route
+const DEFAULT_AUTHENTICATED_ROUTE = "/";
+
 export async function onRequest(context: any) {
   const { request, env, next } = context;
-
-  // console.log(env, "env in onRequest");
-  // console.log(context, "context in onRequest");
-
   const url = new URL(request.url);
 
-  const isAuthenticated = await checkAuthentication(context); // Use the same function as in root loader
+  // Checking if the user is authenticated
+  const isAuthenticated = await checkAuthentication({ request, env });
 
   if (isAuthenticated) {
-    // Exclude login and registration pages from authentication check
+    // If the user is trying to access /login or /register, redirect them
     if (url.pathname === "/login" || url.pathname === "/register") {
-      return Response.redirect(new URL("/", request.url).toString());
+      // Redirecting to the intended destination or default route for authenticated users
+      return new Response(null, {
+        status: 302,
+        headers: {
+          "Location": DEFAULT_AUTHENTICATED_ROUTE,
+        },
+      });
     }
+    // Proceed to the requested page if it's not /login or /register
     return next(request);
   } else {
-    return Response.redirect(new URL("/login", request.url).toString());
+    // If the user is not authenticated and trying to access a protected route, redirect them to /login
+    if (url.pathname !== "/login" && url.pathname !== "/register") {
+      return new Response(null, {
+        status: 302,
+        headers: {
+          "Location": "/login",
+        },
+      });
+    }
+    // Proceed to /login or /register if the user is not authenticated
+    return next(request);
   }
 }

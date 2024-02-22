@@ -33,7 +33,7 @@ if (import.meta) {
     //@ts-expect-error
     "app/routes/register.tsx"
   );
-  import.meta.hot.lastModified = "1708480146365.1743";
+  import.meta.hot.lastModified = "1708567845916.1514";
 }
 var Register = () => {
   _s();
@@ -93,4 +93,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   register_default as default
 };
-//# sourceMappingURL=/build/routes/register-UT7HIW5P.js.map
+//# sourceMappingURL=/build/routes/register-E5NJG5JU.js.map

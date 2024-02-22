@@ -1,6 +1,6 @@
 import {
   Outlet
-} from "/build/_shared/chunk-AX36ETJU.js";
+} from "/build/_shared/chunk-YURZJQTD.js";
 import "/build/_shared/chunk-H36SQQE5.js";
 import {
   createHotContext
@@ -21,7 +21,7 @@ if (import.meta) {
     //@ts-expect-error
     "app/routes/_index.tsx"
   );
-  import.meta.hot.lastModified = "1708484801448.195";
+  import.meta.hot.lastModified = "1708567845916.1514";
 }
 var index = () => {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Outlet, {}, void 0, false, {
@@ -38,4 +38,4 @@ var index_default = index;
 export {
   index_default as default
 };
-//# sourceMappingURL=/build/routes/_index-XI65JAAE.js.map
+//# sourceMappingURL=/build/routes/_index-PNYNNW5H.js.map
