@@ -34,47 +34,41 @@ type LoaderData = {
 
 const store = initializeStore({});
 
-export const loader: LoaderFunction = async ({
-  request,
-  context: { context },
-}) => {
-  const url = new URL(request.url);
+// export const loader: LoaderFunction = async ({
+//   request,
+//   context: { context },
+// }) => {
+//   const url = new URL(request.url);
 
-  // console.log(context, "ROOT LOADER CONTEXT");
+//   const user = await checkAuthentication(context as RequestContext);
 
-  const user = await checkAuthentication(context as RequestContext);
+//   try {
+//     console.log(user, "user");
 
-  // // Exclude login and registration pages from authentication check
-  // if (url.pathname === "/login" || url.pathname === "/register") {
-  //   return json({});
-  // }
-
-  try {
-    console.log(user, "user");
-
-    if (!user) {
-      return redirect("/login");
-    }
-    return json({ user });
-  } catch (error) {
-    if (url.pathname !== "/login") {
-      return redirect("/login");
-    }
-    return json({ error: "User is not authenticated" });
-  }
-};
+//     if (!user) {
+//       return redirect("/login");
+//     }
+//     return json({ user });
+//   } catch (error) {
+//     if (url.pathname !== "/login" || "/register") {
+//       return redirect("/login");
+//     }
+//     return json({ error: "User is not authenticated" });
+//   }
+// };
 
 export default function App() {
-  const data = useLoaderData<LoaderData>();
+  // const { user } = useLoaderData<LoaderData>();
+  // const dispatch = store.dispatch;
 
-  useEffect(() => {
-    // Handle user state update after component is mounted
-    if (data.user) {
-      store.dispatch(setUser(data.user));
-    } else {
-      store.dispatch(setLogout());
-    }
-  }, [data.user]);
+  // useEffect(() => {
+  //   // Handle user state update after component is mounted
+  //   if (user) {
+  //     dispatch(setUser(user));
+  //   } else {
+  //     dispatch(setLogout());
+  //   }
+  // }, [user]);
 
   return (
     <html lang="en">

@@ -39,23 +39,23 @@ var require_cookie = __commonJS({
     function parse2(str, options) {
       if (typeof str != "string")
         throw new TypeError("argument str must be a string");
-      for (var obj = {}, opt = options || {}, dec = opt.decode || decode, index2 = 0; index2 < str.length; ) {
-        var eqIdx = str.indexOf("=", index2);
+      for (var obj = {}, opt = options || {}, dec = opt.decode || decode, index = 0; index < str.length; ) {
+        var eqIdx = str.indexOf("=", index);
         if (eqIdx === -1)
           break;
-        var endIdx = str.indexOf(";", index2);
+        var endIdx = str.indexOf(";", index);
         if (endIdx === -1)
           endIdx = str.length;
         else if (endIdx < eqIdx) {
-          index2 = str.lastIndexOf(";", eqIdx - 1) + 1;
+          index = str.lastIndexOf(";", eqIdx - 1) + 1;
           continue;
         }
-        var key = str.slice(index2, eqIdx).trim();
+        var key = str.slice(index, eqIdx).trim();
         if (obj[key] === void 0) {
           var val = str.slice(eqIdx + 1, endIdx).trim();
           val.charCodeAt(0) === 34 && (val = val.slice(1, -1)), obj[key] = tryDecode(val, dec);
         }
-        index2 = endIdx + 1;
+        index = endIdx + 1;
       }
       return obj;
     }
@@ -184,9 +184,9 @@ function decodeData(value) {
   }
 }
 function myEscape(value) {
-  let str = value.toString(), result = "", index2 = 0, chr, code;
-  for (; index2 < str.length; )
-    chr = str.charAt(index2++), /[\w*+\-./@]/.exec(chr) ? result += chr : (code = chr.charCodeAt(0), code < 256 ? result += "%" + hex(code, 2) : result += "%u" + hex(code, 4).toUpperCase());
+  let str = value.toString(), result = "", index = 0, chr, code;
+  for (; index < str.length; )
+    chr = str.charAt(index++), /[\w*+\-./@]/.exec(chr) ? result += chr : (code = chr.charCodeAt(0), code < 256 ? result += "%" + hex(code, 2) : result += "%u" + hex(code, 4).toUpperCase());
   return result;
 }
 function hex(code, length) {
@@ -196,16 +196,16 @@ function hex(code, length) {
   return result;
 }
 function myUnescape(value) {
-  let str = value.toString(), result = "", index2 = 0, chr, part;
-  for (; index2 < str.length; ) {
-    if (chr = str.charAt(index2++), chr === "%") {
-      if (str.charAt(index2) === "u") {
-        if (part = str.slice(index2 + 1, index2 + 5), /^[\da-f]{4}$/i.exec(part)) {
-          result += String.fromCharCode(parseInt(part, 16)), index2 += 5;
+  let str = value.toString(), result = "", index = 0, chr, part;
+  for (; index < str.length; ) {
+    if (chr = str.charAt(index++), chr === "%") {
+      if (str.charAt(index) === "u") {
+        if (part = str.slice(index + 1, index + 5), /^[\da-f]{4}$/i.exec(part)) {
+          result += String.fromCharCode(parseInt(part, 16)), index += 5;
           continue;
         }
-      } else if (part = str.slice(index2, index2 + 2), /^[\da-f]{2}$/i.exec(part)) {
-        result += String.fromCharCode(parseInt(part, 16)), index2 += 2;
+      } else if (part = str.slice(index, index + 2), /^[\da-f]{2}$/i.exec(part)) {
+        result += String.fromCharCode(parseInt(part, 16)), index += 2;
         continue;
       }
     }
@@ -292,7 +292,7 @@ var init_utils = __esm({
 
 // node_modules/@web3-storage/multipart-parser/esm/src/search.js
 function coerce(a) {
-  return a instanceof Uint8Array ? (index2) => a[index2] : a;
+  return a instanceof Uint8Array ? (index) => a[index] : a;
 }
 function jsmemcmp(buf1, pos1, buf2, pos2, len) {
   let fn1 = coerce(buf1), fn2 = coerce(buf2);
@@ -666,13 +666,13 @@ function createMemoryHistory(options) {
     initialIndex,
     v5Compat = !1
   } = options, entries;
-  entries = initialEntries.map((entry2, index3) => createMemoryLocation(entry2, typeof entry2 == "string" ? null : entry2.state, index3 === 0 ? "default" : void 0));
-  let index2 = clampIndex(initialIndex ?? entries.length - 1), action = Action.Pop, listener2 = null;
+  entries = initialEntries.map((entry2, index2) => createMemoryLocation(entry2, typeof entry2 == "string" ? null : entry2.state, index2 === 0 ? "default" : void 0));
+  let index = clampIndex(initialIndex ?? entries.length - 1), action3 = Action.Pop, listener2 = null;
   function clampIndex(n) {
     return Math.min(Math.max(n, 0), entries.length - 1);
   }
   function getCurrentLocation() {
-    return entries[index2];
+    return entries[index];
   }
   function createMemoryLocation(to, state, key) {
     state === void 0 && (state = null);
@@ -684,10 +684,10 @@ function createMemoryHistory(options) {
   }
   return {
     get index() {
-      return index2;
+      return index;
     },
     get action() {
-      return action;
+      return action3;
     },
     get location() {
       return getCurrentLocation();
@@ -705,28 +705,28 @@ function createMemoryHistory(options) {
       };
     },
     push(to, state) {
-      action = Action.Push;
+      action3 = Action.Push;
       let nextLocation = createMemoryLocation(to, state);
-      index2 += 1, entries.splice(index2, entries.length, nextLocation), v5Compat && listener2 && listener2({
-        action,
+      index += 1, entries.splice(index, entries.length, nextLocation), v5Compat && listener2 && listener2({
+        action: action3,
         location: nextLocation,
         delta: 1
       });
     },
     replace(to, state) {
-      action = Action.Replace;
+      action3 = Action.Replace;
       let nextLocation = createMemoryLocation(to, state);
-      entries[index2] = nextLocation, v5Compat && listener2 && listener2({
-        action,
+      entries[index] = nextLocation, v5Compat && listener2 && listener2({
+        action: action3,
         location: nextLocation,
         delta: 0
       });
     },
     go(delta) {
-      action = Action.Pop;
-      let nextIndex = clampIndex(index2 + delta), nextLocation = entries[nextIndex];
-      index2 = nextIndex, listener2 && listener2({
-        action,
+      action3 = Action.Pop;
+      let nextIndex = clampIndex(index + delta), nextLocation = entries[nextIndex];
+      index = nextIndex, listener2 && listener2({
+        action: action3,
         location: nextLocation,
         delta
       });
@@ -812,11 +812,11 @@ function warning(cond, message) {
 function createKey() {
   return Math.random().toString(36).substr(2, 8);
 }
-function getHistoryState(location, index2) {
+function getHistoryState(location, index) {
   return {
     usr: location.state,
     key: location.key,
-    idx: index2
+    idx: index
   };
 }
 function createLocation(current2, to, state, key) {
@@ -856,9 +856,9 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   let {
     window: window2 = document.defaultView,
     v5Compat = !1
-  } = options, globalHistory = window2.history, action = Action.Pop, listener2 = null, index2 = getIndex();
-  index2 == null && (index2 = 0, globalHistory.replaceState(_extends({}, globalHistory.state, {
-    idx: index2
+  } = options, globalHistory = window2.history, action3 = Action.Pop, listener2 = null, index = getIndex();
+  index == null && (index = 0, globalHistory.replaceState(_extends({}, globalHistory.state, {
+    idx: index
   }), ""));
   function getIndex() {
     return (globalHistory.state || {
@@ -866,19 +866,19 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
     }).idx;
   }
   function handlePop() {
-    action = Action.Pop;
-    let nextIndex = getIndex(), delta = nextIndex == null ? null : nextIndex - index2;
-    index2 = nextIndex, listener2 && listener2({
-      action,
+    action3 = Action.Pop;
+    let nextIndex = getIndex(), delta = nextIndex == null ? null : nextIndex - index;
+    index = nextIndex, listener2 && listener2({
+      action: action3,
       location: history.location,
       delta
     });
   }
   function push(to, state) {
-    action = Action.Push;
+    action3 = Action.Push;
     let location = createLocation(history.location, to, state);
-    validateLocation && validateLocation(location, to), index2 = getIndex() + 1;
-    let historyState = getHistoryState(location, index2), url = history.createHref(location);
+    validateLocation && validateLocation(location, to), index = getIndex() + 1;
+    let historyState = getHistoryState(location, index), url = history.createHref(location);
     try {
       globalHistory.pushState(historyState, "", url);
     } catch (error) {
@@ -887,18 +887,18 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
       window2.location.assign(url);
     }
     v5Compat && listener2 && listener2({
-      action,
+      action: action3,
       location: history.location,
       delta: 1
     });
   }
   function replace(to, state) {
-    action = Action.Replace;
+    action3 = Action.Replace;
     let location = createLocation(history.location, to, state);
-    validateLocation && validateLocation(location, to), index2 = getIndex();
-    let historyState = getHistoryState(location, index2), url = history.createHref(location);
+    validateLocation && validateLocation(location, to), index = getIndex();
+    let historyState = getHistoryState(location, index), url = history.createHref(location);
     globalHistory.replaceState(historyState, "", url), v5Compat && listener2 && listener2({
-      action,
+      action: action3,
       location: history.location,
       delta: 0
     });
@@ -909,7 +909,7 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   }
   let history = {
     get action() {
-      return action;
+      return action3;
     },
     get location() {
       return getLocation(window2, globalHistory);
@@ -945,8 +945,8 @@ function isIndexRoute(route) {
   return route.index === !0;
 }
 function convertRoutesToDataRoutes(routes2, mapRouteProperties2, parentPath, manifest) {
-  return parentPath === void 0 && (parentPath = []), manifest === void 0 && (manifest = {}), routes2.map((route, index2) => {
-    let treePath = [...parentPath, index2], id = typeof route.id == "string" ? route.id : treePath.join("-");
+  return parentPath === void 0 && (parentPath = []), manifest === void 0 && (manifest = {}), routes2.map((route, index) => {
+    let treePath = [...parentPath, index], id = typeof route.id == "string" ? route.id : treePath.join("-");
     if (invariant(route.index !== !0 || !route.children, "Cannot specify children on an index route"), invariant(!manifest[id], 'Found a route id collision on id "' + id + `".  Route id's must be globally unique within Data Router usages`), isIndexRoute(route)) {
       let indexRoute = _extends({}, route, mapRouteProperties2(route), {
         id
@@ -998,15 +998,15 @@ function convertRouteMatchToUiMatch(match, loaderData) {
 }
 function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
   branches === void 0 && (branches = []), parentsMeta === void 0 && (parentsMeta = []), parentPath === void 0 && (parentPath = "");
-  let flattenRoute = (route, index2, relativePath) => {
-    let meta = {
+  let flattenRoute = (route, index, relativePath) => {
+    let meta5 = {
       relativePath: relativePath === void 0 ? route.path || "" : relativePath,
       caseSensitive: route.caseSensitive === !0,
-      childrenIndex: index2,
+      childrenIndex: index,
       route
     };
-    meta.relativePath.startsWith("/") && (invariant(meta.relativePath.startsWith(parentPath), 'Absolute route path "' + meta.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes."), meta.relativePath = meta.relativePath.slice(parentPath.length));
-    let path = joinPaths([parentPath, meta.relativePath]), routesMeta = parentsMeta.concat(meta);
+    meta5.relativePath.startsWith("/") && (invariant(meta5.relativePath.startsWith(parentPath), 'Absolute route path "' + meta5.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes."), meta5.relativePath = meta5.relativePath.slice(parentPath.length));
+    let path = joinPaths([parentPath, meta5.relativePath]), routesMeta = parentsMeta.concat(meta5);
     route.children && route.children.length > 0 && (invariant(
       // Our types know better, but runtime JS may not!
       // @ts-expect-error
@@ -1018,13 +1018,13 @@ function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
       routesMeta
     });
   };
-  return routes2.forEach((route, index2) => {
+  return routes2.forEach((route, index) => {
     var _route$path;
     if (route.path === "" || !((_route$path = route.path) != null && _route$path.includes("?")))
-      flattenRoute(route, index2);
+      flattenRoute(route, index);
     else
       for (let exploded of explodeOptionalSegments(route.path))
-        flattenRoute(route, index2, exploded);
+        flattenRoute(route, index, exploded);
   }), branches;
 }
 function explodeOptionalSegments(path) {
@@ -1038,11 +1038,11 @@ function explodeOptionalSegments(path) {
   return result.push(...restExploded.map((subpath) => subpath === "" ? required : [required, subpath].join("/"))), isOptional && result.push(...restExploded), result.map((exploded) => path.startsWith("/") && exploded === "" ? "/" : exploded);
 }
 function rankRouteBranches(branches) {
-  branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta) => meta.childrenIndex), b.routesMeta.map((meta) => meta.childrenIndex)));
+  branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta5) => meta5.childrenIndex), b.routesMeta.map((meta5) => meta5.childrenIndex)));
 }
-function computeScore(path, index2) {
+function computeScore(path, index) {
   let segments = path.split("/"), initialScore = segments.length;
-  return segments.some(isSplat) && (initialScore += splatPenalty), index2 && (initialScore += indexRouteValue), segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+  return segments.some(isSplat) && (initialScore += splatPenalty), index && (initialScore += indexRouteValue), segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
 }
 function compareIndexes(a, b) {
   return a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]) ? (
@@ -1062,15 +1062,15 @@ function matchRouteBranch(branch, pathname) {
     routesMeta
   } = branch, matchedParams = {}, matchedPathname = "/", matches2 = [];
   for (let i = 0; i < routesMeta.length; ++i) {
-    let meta = routesMeta[i], end = i === routesMeta.length - 1, remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/", match = matchPath({
-      path: meta.relativePath,
-      caseSensitive: meta.caseSensitive,
+    let meta5 = routesMeta[i], end = i === routesMeta.length - 1, remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/", match = matchPath({
+      path: meta5.relativePath,
+      caseSensitive: meta5.caseSensitive,
       end
     }, remainingPathname);
     if (!match)
       return null;
     Object.assign(matchedParams, match.params);
-    let route = meta.route;
+    let route = meta5.route;
     matches2.push({
       // TODO: Can this as be avoided?
       params: matchedParams,
@@ -1085,8 +1085,8 @@ function generatePath(originalPath, params) {
   params === void 0 && (params = {});
   let path = originalPath;
   path.endsWith("*") && path !== "*" && !path.endsWith("/*") && (warning(!1, 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".')), path = path.replace(/\*$/, "/*"));
-  let prefix = path.startsWith("/") ? "/" : "", stringify = (p) => p == null ? "" : typeof p == "string" ? p : String(p), segments = path.split(/\/+/).map((segment, index2, array) => {
-    if (index2 === array.length - 1 && segment === "*")
+  let prefix = path.startsWith("/") ? "/" : "", stringify = (p) => p == null ? "" : typeof p == "string" ? p : String(p), segments = path.split(/\/+/).map((segment, index, array) => {
+    if (index === array.length - 1 && segment === "*")
       return stringify(params["*"]);
     let keyMatch = segment.match(/^:(\w+)(\??)$/);
     if (keyMatch) {
@@ -1108,16 +1108,16 @@ function matchPath(pattern, pathname) {
     return null;
   let matchedPathname = match[0], pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1"), captureGroups = match.slice(1);
   return {
-    params: compiledParams.reduce((memo, _ref, index2) => {
+    params: compiledParams.reduce((memo, _ref, index) => {
       let {
         paramName,
         isOptional
       } = _ref;
       if (paramName === "*") {
-        let splatValue = captureGroups[index2] || "";
+        let splatValue = captureGroups[index] || "";
         pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
       }
-      let value = captureGroups[index2];
+      let value = captureGroups[index];
       return isOptional && !value ? memo[paramName] = void 0 : memo[paramName] = safelyDecodeURIComponent(value || "", paramName), memo;
     }, {}),
     pathname: matchedPathname,
@@ -1180,7 +1180,7 @@ function getInvalidPathError(char, field, dest, path) {
   return "Cannot include a '" + char + "' character in a manually specified " + ("`to." + field + "` field [" + JSON.stringify(path) + "].  Please separate it out to the ") + ("`to." + dest + "` field. Alternatively you may provide the full path as ") + 'a string in <Link to="..."> and the router will parse it for you.';
 }
 function getPathContributingMatches(matches2) {
-  return matches2.filter((match, index2) => index2 === 0 || match.route.path && match.route.path.length > 0);
+  return matches2.filter((match, index) => index === 0 || match.route.path && match.route.path.length > 0);
 }
 function getResolveToMatches(matches2, v7_relativeSplatPath) {
   let pathMatches = getPathContributingMatches(matches2);
@@ -1615,13 +1615,13 @@ function createRouter(init) {
         shortCircuited: !0
       };
     pendingNavigationController && pendingNavigationController.signal.removeEventListener("abort", abortPendingFetchRevalidations), revalidatingFetchers.forEach((rf) => fetchControllers.delete(rf.key));
-    let redirect5 = findRedirect(results);
-    if (redirect5) {
-      if (redirect5.idx >= matchesToLoad.length) {
-        let fetcherKey = revalidatingFetchers[redirect5.idx - matchesToLoad.length].key;
+    let redirect9 = findRedirect(results);
+    if (redirect9) {
+      if (redirect9.idx >= matchesToLoad.length) {
+        let fetcherKey = revalidatingFetchers[redirect9.idx - matchesToLoad.length].key;
         fetchRedirectIds.add(fetcherKey);
       }
-      return await startRedirectNavigation(state, redirect5.result, {
+      return await startRedirectNavigation(state, redirect9.result, {
         replace
       }), {
         shortCircuited: !0
@@ -1767,13 +1767,13 @@ function createRouter(init) {
     if (abortController.signal.aborted)
       return;
     abortController.signal.removeEventListener("abort", abortPendingFetchRevalidations), fetchReloadIds.delete(key), fetchControllers.delete(key), revalidatingFetchers.forEach((r) => fetchControllers.delete(r.key));
-    let redirect5 = findRedirect(results);
-    if (redirect5) {
-      if (redirect5.idx >= matchesToLoad.length) {
-        let fetcherKey = revalidatingFetchers[redirect5.idx - matchesToLoad.length].key;
+    let redirect9 = findRedirect(results);
+    if (redirect9) {
+      if (redirect9.idx >= matchesToLoad.length) {
+        let fetcherKey = revalidatingFetchers[redirect9.idx - matchesToLoad.length].key;
         fetchRedirectIds.add(fetcherKey);
       }
-      return startRedirectNavigation(state, redirect5.result);
+      return startRedirectNavigation(state, redirect9.result);
     }
     let {
       loaderData,
@@ -1822,28 +1822,28 @@ function createRouter(init) {
       invariant(!isDeferredResult(result), "Unhandled fetcher deferred data"), updateFetcherState(key, getDoneFetcher(result.data));
     }
   }
-  async function startRedirectNavigation(state2, redirect5, _temp2) {
+  async function startRedirectNavigation(state2, redirect9, _temp2) {
     let {
       submission,
       fetcherSubmission,
       replace
     } = _temp2 === void 0 ? {} : _temp2;
-    redirect5.revalidate && (isRevalidationRequired = !0);
-    let redirectLocation = createLocation(state2.location, redirect5.location, {
+    redirect9.revalidate && (isRevalidationRequired = !0);
+    let redirectLocation = createLocation(state2.location, redirect9.location, {
       _isRedirect: !0
     });
     if (invariant(redirectLocation, "Expected a location on the redirect navigation"), isBrowser2) {
       let isDocumentReload = !1;
-      if (redirect5.reloadDocument)
+      if (redirect9.reloadDocument)
         isDocumentReload = !0;
-      else if (ABSOLUTE_URL_REGEX.test(redirect5.location)) {
-        let url = init.history.createURL(redirect5.location);
+      else if (ABSOLUTE_URL_REGEX.test(redirect9.location)) {
+        let url = init.history.createURL(redirect9.location);
         isDocumentReload = // Hard reload if it's an absolute URL to a new origin
         url.origin !== routerWindow.location.origin || // Hard reload if it's an absolute URL that does not match our basename
         stripBasename(url.pathname, basename) == null;
       }
       if (isDocumentReload) {
-        replace ? routerWindow.location.replace(redirect5.location) : routerWindow.location.assign(redirect5.location);
+        replace ? routerWindow.location.replace(redirect9.location) : routerWindow.location.assign(redirect9.location);
         return;
       }
     }
@@ -1855,10 +1855,10 @@ function createRouter(init) {
     } = state2.navigation;
     !submission && !fetcherSubmission && formMethod && formAction && formEncType && (submission = getSubmissionFromNavigation(state2.navigation));
     let activeSubmission = submission || fetcherSubmission;
-    if (redirectPreserveMethodStatusCodes.has(redirect5.status) && activeSubmission && isMutationMethod(activeSubmission.formMethod))
+    if (redirectPreserveMethodStatusCodes.has(redirect9.status) && activeSubmission && isMutationMethod(activeSubmission.formMethod))
       await startNavigation(redirectHistoryAction, redirectLocation, {
         submission: _extends({}, activeSubmission, {
-          formAction: redirect5.location
+          formAction: redirect9.location
         }),
         // Preserve this flag across redirects
         preventScrollReset: pendingPreventScrollReset
@@ -2389,7 +2389,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
       if (!isMutationMethod(formMethod))
         return getInvalidBodyError();
       try {
-        let json5 = typeof opts.body == "string" ? JSON.parse(opts.body) : opts.body;
+        let json9 = typeof opts.body == "string" ? JSON.parse(opts.body) : opts.body;
         return {
           path,
           submission: {
@@ -2397,7 +2397,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
             formAction,
             formEncType: opts.formEncType,
             formData: void 0,
-            json: json5,
+            json: json9,
             text: void 0
           }
         };
@@ -2444,13 +2444,13 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
 function getLoaderMatchesUntilBoundary(matches2, boundaryId) {
   let boundaryMatches = matches2;
   if (boundaryId) {
-    let index2 = matches2.findIndex((m) => m.route.id === boundaryId);
-    index2 >= 0 && (boundaryMatches = matches2.slice(0, index2));
+    let index = matches2.findIndex((m) => m.route.id === boundaryId);
+    index >= 0 && (boundaryMatches = matches2.slice(0, index));
   }
   return boundaryMatches;
 }
 function getMatchesToLoad(history, state, matches2, submission, location, isInitialLoad, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, deletedFetchers, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionData, pendingError) {
-  let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : void 0, currentUrl = history.createURL(state.location), nextUrl = history.createURL(location), boundaryId = pendingError ? Object.keys(pendingError)[0] : void 0, navigationMatches = getLoaderMatchesUntilBoundary(matches2, boundaryId).filter((match, index2) => {
+  let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : void 0, currentUrl = history.createURL(state.location), nextUrl = history.createURL(location), boundaryId = pendingError ? Object.keys(pendingError)[0] : void 0, navigationMatches = getLoaderMatchesUntilBoundary(matches2, boundaryId).filter((match, index) => {
     let {
       route
     } = match;
@@ -2461,9 +2461,9 @@ function getMatchesToLoad(history, state, matches2, submission, location, isInit
     if (isInitialLoad)
       return route.loader.hydrate ? !0 : state.loaderData[route.id] === void 0 && // Don't re-run if the loader ran and threw an error
       (!state.errors || state.errors[route.id] === void 0);
-    if (isNewLoader(state.loaderData, state.matches[index2], match) || cancelledDeferredRoutes.some((id) => id === match.route.id))
+    if (isNewLoader(state.loaderData, state.matches[index], match) || cancelledDeferredRoutes.some((id) => id === match.route.id))
       return !0;
-    let currentRouteMatch = state.matches[index2], nextRouteMatch = match;
+    let currentRouteMatch = state.matches[index], nextRouteMatch = match;
     return shouldRevalidateLoader(match, _extends({
       currentUrl,
       currentParams: currentRouteMatch.params,
@@ -2705,8 +2705,8 @@ function convertSearchParamsToFormData(searchParams) {
 }
 function processRouteLoaderData(matches2, matchesToLoad, results, pendingError, activeDeferreds) {
   let loaderData = {}, errors2 = null, statusCode, foundError = !1, loaderHeaders = {};
-  return results.forEach((result, index2) => {
-    let id = matchesToLoad[index2].route.id;
+  return results.forEach((result, index) => {
+    let id = matchesToLoad[index].route.id;
     if (invariant(!isRedirectResult(result), "Cannot handle redirect results in processLoaderData"), isErrorResult(result)) {
       let boundaryMatch = findNearestBoundary(matches2, id), error = result.error;
       pendingError && (error = Object.values(pendingError)[0], pendingError = void 0), errors2 = errors2 || {}, errors2[boundaryMatch.route.id] == null && (errors2[boundaryMatch.route.id] = error), loaderData[id] = void 0, foundError || (foundError = !0, statusCode = isRouteErrorResponse(result.error) ? result.error.status : 500), result.headers && (loaderHeaders[id] = result.headers);
@@ -2724,14 +2724,14 @@ function processLoaderData(state, matches2, matchesToLoad, results, pendingError
     loaderData,
     errors: errors2
   } = processRouteLoaderData(matches2, matchesToLoad, results, pendingError, activeDeferreds);
-  for (let index2 = 0; index2 < revalidatingFetchers.length; index2++) {
+  for (let index = 0; index < revalidatingFetchers.length; index++) {
     let {
       key,
       match,
       controller
-    } = revalidatingFetchers[index2];
-    invariant(fetcherResults !== void 0 && fetcherResults[index2] !== void 0, "Did not find corresponding fetcher result");
-    let result = fetcherResults[index2];
+    } = revalidatingFetchers[index];
+    invariant(fetcherResults !== void 0 && fetcherResults[index] !== void 0, "Did not find corresponding fetcher result");
+    let result = fetcherResults[index];
     if (!(controller && controller.signal.aborted))
       if (isErrorResult(result)) {
         let boundaryMatch = findNearestBoundary(state.matches, match?.route.id);
@@ -2838,15 +2838,15 @@ function isMutationMethod(method) {
   return validMutationMethods.has(method.toLowerCase());
 }
 async function resolveDeferredResults(currentMatches, matchesToLoad, results, signals, isFetcher, currentLoaderData) {
-  for (let index2 = 0; index2 < results.length; index2++) {
-    let result = results[index2], match = matchesToLoad[index2];
+  for (let index = 0; index < results.length; index++) {
+    let result = results[index], match = matchesToLoad[index];
     if (!match)
       continue;
     let currentMatch = currentMatches.find((m) => m.route.id === match.route.id), isRevalidatingLoader = currentMatch != null && !isNewRouteInstance(currentMatch, match) && (currentLoaderData && currentLoaderData[match.route.id]) !== void 0;
     if (isDeferredResult(result) && (isFetcher || isRevalidatingLoader)) {
-      let signal = signals[index2];
+      let signal = signals[index];
       invariant(signal, "Expected an AbortSignal for revalidating fetcher deferred result"), await resolveDeferredData(result, signal, isFetcher).then((result2) => {
-        result2 && (results[index2] = result2 || results[index2]);
+        result2 && (results[index] = result2 || results[index]);
       });
     }
   }
@@ -2888,7 +2888,7 @@ function getSubmissionFromNavigation(navigation) {
     formEncType,
     text,
     formData,
-    json: json5
+    json: json9
   } = navigation;
   if (!(!formMethod || !formAction || !formEncType)) {
     if (text != null)
@@ -2909,13 +2909,13 @@ function getSubmissionFromNavigation(navigation) {
         json: void 0,
         text: void 0
       };
-    if (json5 !== void 0)
+    if (json9 !== void 0)
       return {
         formMethod,
         formAction,
         formEncType,
         formData: void 0,
-        json: json5,
+        json: json9,
         text: void 0
       };
   }
@@ -3002,8 +3002,8 @@ function restoreAppliedTransitions(_window, transitions) {
   try {
     let sessionPositions = _window.sessionStorage.getItem(TRANSITIONS_STORAGE_KEY);
     if (sessionPositions) {
-      let json5 = JSON.parse(sessionPositions);
-      for (let [k, v] of Object.entries(json5 || {}))
+      let json9 = JSON.parse(sessionPositions);
+      for (let [k, v] of Object.entries(json9 || {}))
         v && Array.isArray(v) && transitions.set(k, new Set(v || []));
     }
   } catch {
@@ -3011,11 +3011,11 @@ function restoreAppliedTransitions(_window, transitions) {
 }
 function persistAppliedTransitions(_window, transitions) {
   if (transitions.size > 0) {
-    let json5 = {};
+    let json9 = {};
     for (let [k, v] of transitions)
-      json5[k] = [...v];
+      json9[k] = [...v];
     try {
-      _window.sessionStorage.setItem(TRANSITIONS_STORAGE_KEY, JSON.stringify(json5));
+      _window.sessionStorage.setItem(TRANSITIONS_STORAGE_KEY, JSON.stringify(json9));
     } catch (error) {
       warning(!1, "Failed to save applied view transitions in sessionStorage (" + error + ").");
     }
@@ -3472,12 +3472,12 @@ var init_routeMatching = __esm({
 // node_modules/@remix-run/server-runtime/dist/esm/data.js
 async function callRouteActionRR({
   loadContext,
-  action,
+  action: action3,
   params,
   request,
   routeId
 }) {
-  let result = await action({
+  let result = await action3({
     request: stripDataParam(stripIndexParam(request)),
     context: loadContext,
     params
@@ -3488,12 +3488,12 @@ async function callRouteActionRR({
 }
 async function callRouteLoaderRR({
   loadContext,
-  loader: loader2,
+  loader: loader6,
   params,
   request,
   routeId
 }) {
-  let result = await loader2({
+  let result = await loader6({
     request: stripDataParam(stripIndexParam(request)),
     context: loadContext,
     params
@@ -3620,7 +3620,7 @@ var init_serverHandoff = __esm({
 
 // node_modules/@remix-run/server-runtime/dist/esm/dev.js
 async function broadcastDevReady(build, origin) {
-  if (origin ??= "http://localhost:3002/", !origin)
+  if (origin ??= "http://localhost:3001/", !origin)
     throw Error("Dev server origin not set");
   let url = new URL(origin);
   url.pathname = "ping";
@@ -4102,7 +4102,7 @@ var require_crypto = __commonJS({
       let key = await createKey2(secret, ["sign"]), data = encoder.encode(value), signature = await crypto.subtle.sign("HMAC", key, data), hash = btoa(String.fromCharCode(...new Uint8Array(signature))).replace(/=+$/, "");
       return value + "." + hash;
     }, unsign = async (signed, secret) => {
-      let index2 = signed.lastIndexOf("."), value = signed.slice(0, index2), hash = signed.slice(index2 + 1), key = await createKey2(secret, ["verify"]), data = encoder.encode(value), signature = byteStringToUint8Array(atob(hash));
+      let index = signed.lastIndexOf("."), value = signed.slice(0, index), hash = signed.slice(index + 1), key = await createKey2(secret, ["verify"]), data = encoder.encode(value), signature = byteStringToUint8Array(atob(hash));
       return await crypto.subtle.verify("HMAC", key, signature, data) ? value : !1;
     };
     async function createKey2(secret, usages) {
@@ -4684,8 +4684,8 @@ var require_react_development = __commonJS({
       function escapeUserProvidedKey(text) {
         return text.replace(userProvidedKeyEscapeRegex, "$&/");
       }
-      function getElementKey(element, index2) {
-        return typeof element == "object" && element !== null && element.key != null ? (checkKeyStringCoercion(element.key), escape2("" + element.key)) : index2.toString(36);
+      function getElementKey(element, index) {
+        return typeof element == "object" && element !== null && element.key != null ? (checkKeyStringCoercion(element.key), escape2("" + element.key)) : index.toString(36);
       }
       function mapIntoArray(children, array, escapedPrefix, nameSoFar, callback) {
         var type = typeof children;
@@ -4994,9 +4994,9 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         }
         return dispatcher.useContext(Context);
       }
-      function useState6(initialState2) {
+      function useState9(initialState) {
         var dispatcher = resolveDispatcher();
-        return dispatcher.useState(initialState2);
+        return dispatcher.useState(initialState);
       }
       function useReducer(reducer, initialArg, init) {
         var dispatcher = resolveDispatcher();
@@ -5006,7 +5006,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         var dispatcher = resolveDispatcher();
         return dispatcher.useRef(initialValue);
       }
-      function useEffect5(create, deps) {
+      function useEffect8(create, deps) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useEffect(create, deps);
       }
@@ -5535,7 +5535,7 @@ Check the top-level render call using <` + parentName + ">.");
         toArray,
         only: onlyChild
       };
-      exports.Children = Children2, exports.Component = Component3, exports.Fragment = REACT_FRAGMENT_TYPE2, exports.Profiler = REACT_PROFILER_TYPE2, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE2, exports.Suspense = REACT_SUSPENSE_TYPE2, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext4, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef3, exports.isValidElement = isValidElement2, exports.lazy = lazy, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext4, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect5, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo5, exports.useReducer = useReducer, exports.useRef = useRef4, exports.useState = useState6, exports.useSyncExternalStore = useSyncExternalStore3, exports.useTransition = useTransition, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+      exports.Children = Children2, exports.Component = Component3, exports.Fragment = REACT_FRAGMENT_TYPE2, exports.Profiler = REACT_PROFILER_TYPE2, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE2, exports.Suspense = REACT_SUSPENSE_TYPE2, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext4, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef3, exports.isValidElement = isValidElement2, exports.lazy = lazy, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext4, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect8, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo5, exports.useReducer = useReducer, exports.useRef = useRef4, exports.useState = useState9, exports.useSyncExternalStore = useSyncExternalStore3, exports.useTransition = useTransition, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
     })();
   }
 });
@@ -5557,8 +5557,8 @@ var require_scheduler_development = __commonJS({
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
       var enableSchedulerDebugging = !1, enableProfiling = !1, frameYieldMs = 5;
       function push(heap, node) {
-        var index2 = heap.length;
-        heap.push(node), siftUp(heap, node, index2);
+        var index = heap.length;
+        heap.push(node), siftUp(heap, node, index);
       }
       function peek2(heap) {
         return heap.length === 0 ? null : heap[0];
@@ -5570,21 +5570,21 @@ var require_scheduler_development = __commonJS({
         return last !== first && (heap[0] = last, siftDown(heap, last, 0)), first;
       }
       function siftUp(heap, node, i) {
-        for (var index2 = i; index2 > 0; ) {
-          var parentIndex = index2 - 1 >>> 1, parent = heap[parentIndex];
+        for (var index = i; index > 0; ) {
+          var parentIndex = index - 1 >>> 1, parent = heap[parentIndex];
           if (compare(parent, node) > 0)
-            heap[parentIndex] = node, heap[index2] = parent, index2 = parentIndex;
+            heap[parentIndex] = node, heap[index] = parent, index = parentIndex;
           else
             return;
         }
       }
       function siftDown(heap, node, i) {
-        for (var index2 = i, length = heap.length, halfLength = length >>> 1; index2 < halfLength; ) {
-          var leftIndex = (index2 + 1) * 2 - 1, left = heap[leftIndex], rightIndex = leftIndex + 1, right = heap[rightIndex];
+        for (var index = i, length = heap.length, halfLength = length >>> 1; index < halfLength; ) {
+          var leftIndex = (index + 1) * 2 - 1, left = heap[leftIndex], rightIndex = leftIndex + 1, right = heap[rightIndex];
           if (compare(left, node) < 0)
-            rightIndex < length && compare(right, left) < 0 ? (heap[index2] = right, heap[rightIndex] = node, index2 = rightIndex) : (heap[index2] = left, heap[leftIndex] = node, index2 = leftIndex);
+            rightIndex < length && compare(right, left) < 0 ? (heap[index] = right, heap[rightIndex] = node, index = rightIndex) : (heap[index] = left, heap[leftIndex] = node, index = leftIndex);
           else if (rightIndex < length && compare(right, node) < 0)
-            heap[index2] = right, heap[rightIndex] = node, index2 = rightIndex;
+            heap[index] = right, heap[rightIndex] = node, index = rightIndex;
           else
             return;
         }
@@ -5839,7 +5839,7 @@ var require_react_dom_development = __commonJS({
     (function() {
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-      var React10 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
+      var React13 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
       function setSuppressWarning(newSuppressWarning) {
         suppressWarning = newSuppressWarning;
       }
@@ -5867,7 +5867,7 @@ var require_react_dom_development = __commonJS({
           argsWithFormat.unshift("Warning: " + format), Function.prototype.apply.call(console[level], console, argsWithFormat);
         }
       }
-      var FunctionComponent = 0, ClassComponent = 1, IndeterminateComponent = 2, HostRoot = 3, HostPortal = 4, HostComponent = 5, HostText = 6, Fragment4 = 7, Mode = 8, ContextConsumer = 9, ContextProvider = 10, ForwardRef2 = 11, Profiler = 12, SuspenseComponent = 13, MemoComponent = 14, SimpleMemoComponent = 15, LazyComponent = 16, IncompleteClassComponent = 17, DehydratedFragment = 18, SuspenseListComponent = 19, ScopeComponent = 21, OffscreenComponent = 22, LegacyHiddenComponent = 23, CacheComponent = 24, TracingMarkerComponent = 25, enableClientRenderFallbackOnTextMismatch = !0, enableNewReconciler = !1, enableLazyContextPropagation = !1, enableLegacyHidden = !1, enableSuspenseAvoidThisFallback = !1, disableCommentsAsDOMContainers = !0, enableCustomElementPropertySupport = !1, warnAboutStringRefs = !1, enableSchedulingProfiler = !0, enableProfilerTimer = !0, enableProfilerCommitHooks = !0, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {};
+      var FunctionComponent = 0, ClassComponent = 1, IndeterminateComponent = 2, HostRoot = 3, HostPortal = 4, HostComponent = 5, HostText = 6, Fragment9 = 7, Mode = 8, ContextConsumer = 9, ContextProvider = 10, ForwardRef2 = 11, Profiler = 12, SuspenseComponent = 13, MemoComponent = 14, SimpleMemoComponent = 15, LazyComponent = 16, IncompleteClassComponent = 17, DehydratedFragment = 18, SuspenseListComponent = 19, ScopeComponent = 21, OffscreenComponent = 22, LegacyHiddenComponent = 23, CacheComponent = 24, TracingMarkerComponent = 25, enableClientRenderFallbackOnTextMismatch = !0, enableNewReconciler = !1, enableLazyContextPropagation = !1, enableLegacyHidden = !1, enableSuspenseAvoidThisFallback = !1, disableCommentsAsDOMContainers = !0, enableCustomElementPropertySupport = !1, warnAboutStringRefs = !1, enableSchedulingProfiler = !0, enableProfilerTimer = !0, enableProfilerCommitHooks = !0, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {};
       function registerTwoPhaseEvent(registrationName, dependencies) {
         registerDirectEvent(registrationName, dependencies), registerDirectEvent(registrationName + "Capture", dependencies);
       }
@@ -6717,7 +6717,7 @@ Error generating stack: ` + x.message + `
             return "DehydratedFragment";
           case ForwardRef2:
             return getWrappedName$1(type, type.render, "ForwardRef");
-          case Fragment4:
+          case Fragment9:
             return "Fragment";
           case HostComponent:
             return type;
@@ -6961,7 +6961,7 @@ Error generating stack: ` + x.message + `
       }
       var didWarnSelectedSetOnOption = !1, didWarnInvalidChild = !1, didWarnInvalidInnerHTML = !1;
       function validateProps(element, props) {
-        props.value == null && (typeof props.children == "object" && props.children !== null ? React10.Children.forEach(props.children, function(child) {
+        props.value == null && (typeof props.children == "object" && props.children !== null ? React13.Children.forEach(props.children, function(child) {
           child != null && (typeof child == "string" || typeof child == "number" || didWarnInvalidChild || (didWarnInvalidChild = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }) : props.dangerouslySetInnerHTML != null && (didWarnInvalidInnerHTML || (didWarnInvalidInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.")))), props.selected != null && !didWarnSelectedSetOnOption && (error("Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>."), didWarnSelectedSetOnOption = !0);
       }
@@ -8520,7 +8520,7 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       function getLaneLabelMap() {
         {
-          for (var map = /* @__PURE__ */ new Map(), lane = 1, index3 = 0; index3 < TotalLanes; index3++) {
+          for (var map = /* @__PURE__ */ new Map(), lane = 1, index2 = 0; index2 < TotalLanes; index2++) {
             var label = getLabelForLane(lane);
             map.set(lane, label), lane *= 2;
           }
@@ -8843,14 +8843,14 @@ Check the render method of \`` + ownerName + "`." : "";
         var entangledLanes = root2.entangledLanes;
         if (entangledLanes !== NoLanes)
           for (var entanglements = root2.entanglements, lanes = nextLanes & entangledLanes; lanes > 0; ) {
-            var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
-            nextLanes |= entanglements[index3], lanes &= ~lane;
+            var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
+            nextLanes |= entanglements[index2], lanes &= ~lane;
           }
         return nextLanes;
       }
       function getMostRecentEventTime(root2, lanes) {
         for (var eventTimes = root2.eventTimes, mostRecentEventTime = NoTimestamp; lanes > 0; ) {
-          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3, eventTime = eventTimes[index3];
+          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2, eventTime = eventTimes[index2];
           eventTime > mostRecentEventTime && (mostRecentEventTime = eventTime), lanes &= ~lane;
         }
         return mostRecentEventTime;
@@ -8898,8 +8898,8 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       function markStarvedLanesAsExpired(root2, currentTime) {
         for (var pendingLanes = root2.pendingLanes, suspendedLanes = root2.suspendedLanes, pingedLanes = root2.pingedLanes, expirationTimes = root2.expirationTimes, lanes = pendingLanes; lanes > 0; ) {
-          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3, expirationTime = expirationTimes[index3];
-          expirationTime === NoTimestamp ? ((lane & suspendedLanes) === NoLanes || (lane & pingedLanes) !== NoLanes) && (expirationTimes[index3] = computeExpirationTime(lane, currentTime)) : expirationTime <= currentTime && (root2.expiredLanes |= lane), lanes &= ~lane;
+          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2, expirationTime = expirationTimes[index2];
+          expirationTime === NoTimestamp ? ((lane & suspendedLanes) === NoLanes || (lane & pingedLanes) !== NoLanes) && (expirationTimes[index2] = computeExpirationTime(lane, currentTime)) : expirationTime <= currentTime && (root2.expiredLanes |= lane), lanes &= ~lane;
         }
       }
       function getHighestPriorityPendingLanes(root2) {
@@ -8983,14 +8983,14 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       function markRootUpdated(root2, updateLane, eventTime) {
         root2.pendingLanes |= updateLane, updateLane !== IdleLane && (root2.suspendedLanes = NoLanes, root2.pingedLanes = NoLanes);
-        var eventTimes = root2.eventTimes, index3 = laneToIndex(updateLane);
-        eventTimes[index3] = eventTime;
+        var eventTimes = root2.eventTimes, index2 = laneToIndex(updateLane);
+        eventTimes[index2] = eventTime;
       }
       function markRootSuspended(root2, suspendedLanes) {
         root2.suspendedLanes |= suspendedLanes, root2.pingedLanes &= ~suspendedLanes;
         for (var expirationTimes = root2.expirationTimes, lanes = suspendedLanes; lanes > 0; ) {
-          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
-          expirationTimes[index3] = NoTimestamp, lanes &= ~lane;
+          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
+          expirationTimes[index2] = NoTimestamp, lanes &= ~lane;
         }
       }
       function markRootPinged(root2, pingedLanes, eventTime) {
@@ -9000,16 +9000,16 @@ Check the render method of \`` + ownerName + "`." : "";
         var noLongerPendingLanes = root2.pendingLanes & ~remainingLanes;
         root2.pendingLanes = remainingLanes, root2.suspendedLanes = NoLanes, root2.pingedLanes = NoLanes, root2.expiredLanes &= remainingLanes, root2.mutableReadLanes &= remainingLanes, root2.entangledLanes &= remainingLanes;
         for (var entanglements = root2.entanglements, eventTimes = root2.eventTimes, expirationTimes = root2.expirationTimes, lanes = noLongerPendingLanes; lanes > 0; ) {
-          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
-          entanglements[index3] = NoLanes, eventTimes[index3] = NoTimestamp, expirationTimes[index3] = NoTimestamp, lanes &= ~lane;
+          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
+          entanglements[index2] = NoLanes, eventTimes[index2] = NoTimestamp, expirationTimes[index2] = NoTimestamp, lanes &= ~lane;
         }
       }
       function markRootEntangled(root2, entangledLanes) {
         for (var rootEntangledLanes = root2.entangledLanes |= entangledLanes, entanglements = root2.entanglements, lanes = rootEntangledLanes; lanes; ) {
-          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
+          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
           // Is this one of the newly entangled lanes?
           lane & entangledLanes | // Is this lane transitively entangled with the newly entangled lanes?
-          entanglements[index3] & entangledLanes && (entanglements[index3] |= entangledLanes), lanes &= ~lane;
+          entanglements[index2] & entangledLanes && (entanglements[index2] |= entangledLanes), lanes &= ~lane;
         }
       }
       function getBumpedLaneForHydration(root2, renderLanes2) {
@@ -9056,14 +9056,14 @@ Check the render method of \`` + ownerName + "`." : "";
       function addFiberToLanesMap(root2, fiber, lanes) {
         if (isDevToolsPresent)
           for (var pendingUpdatersLaneMap = root2.pendingUpdatersLaneMap; lanes > 0; ) {
-            var index3 = laneToIndex(lanes), lane = 1 << index3, updaters = pendingUpdatersLaneMap[index3];
+            var index2 = laneToIndex(lanes), lane = 1 << index2, updaters = pendingUpdatersLaneMap[index2];
             updaters.add(fiber), lanes &= ~lane;
           }
       }
       function movePendingFibersToMemoized(root2, lanes) {
         if (isDevToolsPresent)
           for (var pendingUpdatersLaneMap = root2.pendingUpdatersLaneMap, memoizedUpdaters = root2.memoizedUpdaters; lanes > 0; ) {
-            var index3 = laneToIndex(lanes), lane = 1 << index3, updaters = pendingUpdatersLaneMap[index3];
+            var index2 = laneToIndex(lanes), lane = 1 << index2, updaters = pendingUpdatersLaneMap[index2];
             updaters.size > 0 && (updaters.forEach(function(fiber) {
               var alternate = fiber.alternate;
               (alternate === null || !memoizedUpdaters.has(alternate)) && memoizedUpdaters.add(fiber);
@@ -11621,21 +11621,21 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       var valueStack = [], fiberStack;
       fiberStack = [];
-      var index2 = -1;
+      var index = -1;
       function createCursor(defaultValue) {
         return {
           current: defaultValue
         };
       }
       function pop(cursor, fiber) {
-        if (index2 < 0) {
+        if (index < 0) {
           error("Unexpected pop.");
           return;
         }
-        fiber !== fiberStack[index2] && error("Unexpected Fiber popped."), cursor.current = valueStack[index2], valueStack[index2] = null, fiberStack[index2] = null, index2--;
+        fiber !== fiberStack[index] && error("Unexpected Fiber popped."), cursor.current = valueStack[index], valueStack[index] = null, fiberStack[index] = null, index--;
       }
       function push(cursor, value, fiber) {
-        index2++, valueStack[index2] = cursor.current, fiberStack[index2] = fiber, cursor.current = value;
+        index++, valueStack[index] = cursor.current, fiberStack[index] = fiber, cursor.current = value;
       }
       var warnedAboutMissingGetChildContext;
       warnedAboutMissingGetChildContext = {};
@@ -11796,9 +11796,9 @@ Check the render method of \`` + ownerName + "`." : "";
       function pushTreeFork(workInProgress2, totalChildren) {
         warnIfNotHydrating(), forkStack[forkStackIndex++] = treeForkCount, forkStack[forkStackIndex++] = treeForkProvider, treeForkProvider = workInProgress2, treeForkCount = totalChildren;
       }
-      function pushTreeId(workInProgress2, totalChildren, index3) {
+      function pushTreeId(workInProgress2, totalChildren, index2) {
         warnIfNotHydrating(), idStack[idStackIndex++] = treeContextId, idStack[idStackIndex++] = treeContextOverflow, idStack[idStackIndex++] = treeContextProvider, treeContextProvider = workInProgress2;
-        var baseIdWithLeadingBit = treeContextId, baseOverflow = treeContextOverflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index3 + 1, length = getBitLength(totalChildren) + baseLength;
+        var baseIdWithLeadingBit = treeContextId, baseOverflow = treeContextOverflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index2 + 1, length = getBitLength(totalChildren) + baseLength;
         if (length > 30) {
           var numberOfOverflowBits = baseLength - baseLength % 5, newOverflowBits = (1 << numberOfOverflowBits) - 1, newOverflow = (baseId & newOverflowBits).toString(32), restOfBaseId = baseId >> numberOfOverflowBits, restOfBaseLength = baseLength - numberOfOverflowBits, restOfLength = getBitLength(totalChildren) + restOfBaseLength, restOfNewBits = slot << restOfBaseLength, id = restOfNewBits | restOfBaseId, overflow = newOverflow + baseOverflow;
           treeContextId = 1 << restOfLength | id, treeContextOverflow = overflow;
@@ -12657,7 +12657,7 @@ Learn more about this warning here: https://reactjs.org/link/legacy-context`, so
             callback !== null && (effect.callback = null, callCallback(callback, instance));
           }
       }
-      var fakeInternalInstance = {}, emptyRefsObject = new React10.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
+      var fakeInternalInstance = {}, emptyRefsObject = new React13.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
       {
         didWarnAboutStateAssignmentForComponent = /* @__PURE__ */ new Set(), didWarnAboutUninitializedState = /* @__PURE__ */ new Set(), didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = /* @__PURE__ */ new Set(), didWarnAboutLegacyLifecyclesAndDerivedState = /* @__PURE__ */ new Set(), didWarnAboutDirectlyAssigningPropsToState = /* @__PURE__ */ new Set(), didWarnAboutUndefinedDerivedState = /* @__PURE__ */ new Set(), didWarnAboutContextTypeAndContextTypes = /* @__PURE__ */ new Set(), didWarnAboutInvalidateContextType = /* @__PURE__ */ new Set();
         var didWarnOnInvalidCallback = /* @__PURE__ */ new Set();
@@ -13046,7 +13046,7 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
           }
         }
         function updateFragment2(returnFiber, current3, fragment, lanes, key) {
-          if (current3 === null || current3.tag !== Fragment4) {
+          if (current3 === null || current3.tag !== Fragment9) {
             var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
             return created.return = returnFiber, created;
           } else {
@@ -13274,7 +13274,7 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
             if (child.key === key) {
               var elementType = element.type;
               if (elementType === REACT_FRAGMENT_TYPE2) {
-                if (child.tag === Fragment4) {
+                if (child.tag === Fragment9) {
                   deleteRemainingChildren(returnFiber, child.sibling);
                   var existing = useFiber(child, element.props.children);
                   return existing.return = returnFiber, existing._debugSource = element._source, existing._debugOwner = element._owner, existing;
@@ -13608,19 +13608,19 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           stores: null
         };
       }
-      function basicStateReducer(state, action) {
-        return typeof action == "function" ? action(state) : action;
+      function basicStateReducer(state, action3) {
+        return typeof action3 == "function" ? action3(state) : action3;
       }
       function mountReducer(reducer, initialArg, init) {
-        var hook = mountWorkInProgressHook(), initialState2;
-        init !== void 0 ? initialState2 = init(initialArg) : initialState2 = initialArg, hook.memoizedState = hook.baseState = initialState2;
+        var hook = mountWorkInProgressHook(), initialState;
+        init !== void 0 ? initialState = init(initialArg) : initialState = initialArg, hook.memoizedState = hook.baseState = initialState;
         var queue = {
           pending: null,
           interleaved: null,
           lanes: NoLanes,
           dispatch: null,
           lastRenderedReducer: reducer,
-          lastRenderedState: initialState2
+          lastRenderedState: initialState
         };
         hook.queue = queue;
         var dispatch = queue.dispatch = dispatchReducerAction.bind(null, currentlyRenderingFiber$1, queue);
@@ -13660,8 +13660,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
               if (update.hasEagerState)
                 newState = update.eagerState;
               else {
-                var action = update.action;
-                newState = reducer(newState, action);
+                var action3 = update.action;
+                newState = reducer(newState, action3);
               }
             } else {
               var clone = {
@@ -13699,8 +13699,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           queue.pending = null;
           var firstRenderPhaseUpdate = lastRenderPhaseUpdate.next, update = firstRenderPhaseUpdate;
           do {
-            var action = update.action;
-            newState = reducer(newState, action), update = update.next;
+            var action3 = update.action;
+            newState = reducer(newState, action3), update = update.next;
           } while (update !== firstRenderPhaseUpdate);
           objectIs(newState, hook.memoizedState) || markWorkInProgressReceivedUpdate(), hook.memoizedState = newState, hook.baseQueue === null && (hook.baseState = newState), queue.lastRenderedState = newState;
         }
@@ -13788,25 +13788,25 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         var root2 = enqueueConcurrentRenderForLane(fiber, SyncLane);
         root2 !== null && scheduleUpdateOnFiber(root2, fiber, SyncLane, NoTimestamp);
       }
-      function mountState(initialState2) {
+      function mountState(initialState) {
         var hook = mountWorkInProgressHook();
-        typeof initialState2 == "function" && (initialState2 = initialState2()), hook.memoizedState = hook.baseState = initialState2;
+        typeof initialState == "function" && (initialState = initialState()), hook.memoizedState = hook.baseState = initialState;
         var queue = {
           pending: null,
           interleaved: null,
           lanes: NoLanes,
           dispatch: null,
           lastRenderedReducer: basicStateReducer,
-          lastRenderedState: initialState2
+          lastRenderedState: initialState
         };
         hook.queue = queue;
         var dispatch = queue.dispatch = dispatchSetState.bind(null, currentlyRenderingFiber$1, queue);
         return [hook.memoizedState, dispatch];
       }
-      function updateState(initialState2) {
+      function updateState(initialState) {
         return updateReducer(basicStateReducer);
       }
-      function rerenderState(initialState2) {
+      function rerenderState(initialState) {
         return rerenderReducer(basicStateReducer);
       }
       function pushEffect(tag, create, destroy, deps) {
@@ -14011,11 +14011,11 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         var hook = updateWorkInProgressHook(), id = hook.memoizedState;
         return id;
       }
-      function dispatchReducerAction(fiber, queue, action) {
+      function dispatchReducerAction(fiber, queue, action3) {
         typeof arguments[3] == "function" && error("State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().");
         var lane = requestUpdateLane(fiber), update = {
           lane,
-          action,
+          action: action3,
           hasEagerState: !1,
           eagerState: null,
           next: null
@@ -14031,11 +14031,11 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         }
         markUpdateInDevTools(fiber, lane);
       }
-      function dispatchSetState(fiber, queue, action) {
+      function dispatchSetState(fiber, queue, action3) {
         typeof arguments[3] == "function" && error("State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().");
         var lane = requestUpdateLane(fiber), update = {
           lane,
-          action,
+          action: action3,
           hasEagerState: !1,
           eagerState: null,
           next: null
@@ -14050,7 +14050,7 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
               var prevDispatcher;
               prevDispatcher = ReactCurrentDispatcher$1.current, ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                var currentState = queue.lastRenderedState, eagerState = lastRenderedReducer(currentState, action);
+                var currentState = queue.lastRenderedState, eagerState = lastRenderedReducer(currentState, action3);
                 if (update.hasEagerState = !0, update.eagerState = eagerState, objectIs(eagerState, currentState)) {
                   enqueueConcurrentHookUpdateAndEagerlyBailout(fiber, queue, update, lane);
                   return;
@@ -14086,7 +14086,7 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           queue.lanes = newQueueLanes, markRootEntangled(root2, newQueueLanes);
         }
       }
-      function markUpdateInDevTools(fiber, lane, action) {
+      function markUpdateInDevTools(fiber, lane, action3) {
         markStateUpdateScheduled(fiber, lane);
       }
       var ContextOnlyDispatcher = {
@@ -14160,12 +14160,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", mountHookTypesDev(), mountRef(initialValue);
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", mountHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
             try {
-              return mountState(initialState2);
+              return mountState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14234,12 +14234,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", updateHookTypesDev(), mountRef(initialValue);
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", updateHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
             try {
-              return mountState(initialState2);
+              return mountState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14308,12 +14308,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", updateHookTypesDev(), updateRef();
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", updateHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
             try {
-              return updateState(initialState2);
+              return updateState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14382,12 +14382,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", updateHookTypesDev(), updateRef();
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", updateHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnRerenderInDEV;
             try {
-              return rerenderState(initialState2);
+              return rerenderState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14456,12 +14456,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", warnInvalidHookAccess(), mountHookTypesDev(), mountRef(initialValue);
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", warnInvalidHookAccess(), mountHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
             try {
-              return mountState(initialState2);
+              return mountState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14530,12 +14530,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", warnInvalidHookAccess(), updateHookTypesDev(), updateRef();
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", warnInvalidHookAccess(), updateHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
             try {
-              return updateState(initialState2);
+              return updateState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14604,12 +14604,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", warnInvalidHookAccess(), updateHookTypesDev(), updateRef();
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", warnInvalidHookAccess(), updateHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
             try {
-              return rerenderState(initialState2);
+              return rerenderState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -15574,12 +15574,12 @@ Check the render method of \`` + ownerName + "`.");
       function validateTailOptions(tailMode, revealOrder) {
         tailMode !== void 0 && !didWarnAboutTailOptions[tailMode] && (tailMode !== "collapsed" && tailMode !== "hidden" ? (didWarnAboutTailOptions[tailMode] = !0, error('"%s" is not a supported value for tail on <SuspenseList />. Did you mean "collapsed" or "hidden"?', tailMode)) : revealOrder !== "forwards" && revealOrder !== "backwards" && (didWarnAboutTailOptions[tailMode] = !0, error('<SuspenseList tail="%s" /> is only valid if revealOrder is "forwards" or "backwards". Did you mean to specify revealOrder="forwards"?', tailMode)));
       }
-      function validateSuspenseListNestedChild(childSlot, index3) {
+      function validateSuspenseListNestedChild(childSlot, index2) {
         {
           var isAnArray = isArray(childSlot), isIterable = !isAnArray && typeof getIteratorFn(childSlot) == "function";
           if (isAnArray || isIterable) {
             var type = isAnArray ? "array" : "iterable";
-            return error("A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>", type, index3, type), !1;
+            return error("A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>", type, index2, type), !1;
           }
         }
         return !0;
@@ -15864,7 +15864,7 @@ Check the render method of \`` + ownerName + "`.");
             var type = workInProgress2.type, _unresolvedProps2 = workInProgress2.pendingProps, _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
             return updateForwardRef(current3, workInProgress2, type, _resolvedProps2, renderLanes2);
           }
-          case Fragment4:
+          case Fragment9:
             return updateFragment(current3, workInProgress2, renderLanes2);
           case Mode:
             return updateMode(current3, workInProgress2, renderLanes2);
@@ -16016,7 +16016,7 @@ Check the render method of \`` + ownerName + "`.");
           case SimpleMemoComponent:
           case FunctionComponent:
           case ForwardRef2:
-          case Fragment4:
+          case Fragment9:
           case Mode:
           case Profiler:
           case ContextConsumer:
@@ -18573,7 +18573,7 @@ Check the render method of \`` + ownerName + "`.");
         return fiber._debugSource = element._source, fiber._debugOwner = element._owner, fiber;
       }
       function createFiberFromFragment(elements, mode2, lanes, key) {
-        var fiber = createFiber(Fragment4, elements, key, mode2);
+        var fiber = createFiber(Fragment9, elements, key, mode2);
         return fiber.lanes = lanes, fiber;
       }
       function createFiberFromProfiler(pendingProps, mode2, lanes, key) {
@@ -18815,15 +18815,15 @@ Check the render method of %s.`, getComponentNameFromFiber(current2) || "Unknown
       }
       var overrideHookState = null, overrideHookStateDeletePath = null, overrideHookStateRenamePath = null, overrideProps = null, overridePropsDeletePath = null, overridePropsRenamePath = null, scheduleUpdate = null, setErrorHandler = null, setSuspenseHandler = null;
       {
-        var copyWithDeleteImpl = function(obj, path, index3) {
-          var key = path[index3], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
-          return index3 + 1 === path.length ? (isArray(updated) ? updated.splice(key, 1) : delete updated[key], updated) : (updated[key] = copyWithDeleteImpl(obj[key], path, index3 + 1), updated);
+        var copyWithDeleteImpl = function(obj, path, index2) {
+          var key = path[index2], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
+          return index2 + 1 === path.length ? (isArray(updated) ? updated.splice(key, 1) : delete updated[key], updated) : (updated[key] = copyWithDeleteImpl(obj[key], path, index2 + 1), updated);
         }, copyWithDelete = function(obj, path) {
           return copyWithDeleteImpl(obj, path, 0);
-        }, copyWithRenameImpl = function(obj, oldPath, newPath, index3) {
-          var oldKey = oldPath[index3], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
-          if (index3 + 1 === oldPath.length) {
-            var newKey = newPath[index3];
+        }, copyWithRenameImpl = function(obj, oldPath, newPath, index2) {
+          var oldKey = oldPath[index2], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
+          if (index2 + 1 === oldPath.length) {
+            var newKey = newPath[index2];
             updated[newKey] = updated[oldKey], isArray(updated) ? updated.splice(oldKey, 1) : delete updated[oldKey];
           } else
             updated[oldKey] = copyWithRenameImpl(
@@ -18831,7 +18831,7 @@ Check the render method of %s.`, getComponentNameFromFiber(current2) || "Unknown
               obj[oldKey],
               oldPath,
               newPath,
-              index3 + 1
+              index2 + 1
             );
           return updated;
         }, copyWithRename = function(obj, oldPath, newPath) {
@@ -18845,11 +18845,11 @@ Check the render method of %s.`, getComponentNameFromFiber(current2) || "Unknown
                 return;
               }
           return copyWithRenameImpl(obj, oldPath, newPath, 0);
-        }, copyWithSetImpl = function(obj, path, index3, value) {
-          if (index3 >= path.length)
+        }, copyWithSetImpl = function(obj, path, index2, value) {
+          if (index2 >= path.length)
             return value;
-          var key = path[index3], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
-          return updated[key] = copyWithSetImpl(obj[key], path, index3 + 1, value), updated;
+          var key = path[index2], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
+          return updated[key] = copyWithSetImpl(obj[key], path, index2 + 1, value), updated;
         }, copyWithSet = function(obj, path, value) {
           return copyWithSetImpl(obj, path, 0, value);
         }, findHook = function(fiber, id) {
@@ -19525,10 +19525,10 @@ function _renderMatches(matches2, parentMatches, dataRouterState, future2) {
         }
       }
     }
-  return renderedMatches.reduceRight((outlet, match, index2) => {
+  return renderedMatches.reduceRight((outlet, match, index) => {
     let error, shouldRenderHydrateFallback = !1, errorElement = null, hydrateFallbackElement = null;
-    dataRouterState && (error = errors2 && match.route.id ? errors2[match.route.id] : void 0, errorElement = match.route.errorElement || defaultErrorElement, renderFallback && (fallbackIndex < 0 && index2 === 0 ? (warningOnce("route-fallback", !1, "No `HydrateFallback` element provided to render during initial hydration"), shouldRenderHydrateFallback = !0, hydrateFallbackElement = null) : fallbackIndex === index2 && (shouldRenderHydrateFallback = !0, hydrateFallbackElement = match.route.hydrateFallbackElement || null)));
-    let matches3 = parentMatches.concat(renderedMatches.slice(0, index2 + 1)), getChildren = () => {
+    dataRouterState && (error = errors2 && match.route.id ? errors2[match.route.id] : void 0, errorElement = match.route.errorElement || defaultErrorElement, renderFallback && (fallbackIndex < 0 && index === 0 ? (warningOnce("route-fallback", !1, "No `HydrateFallback` element provided to render during initial hydration"), shouldRenderHydrateFallback = !0, hydrateFallbackElement = null) : fallbackIndex === index && (shouldRenderHydrateFallback = !0, hydrateFallbackElement = match.route.hydrateFallbackElement || null)));
+    let matches3 = parentMatches.concat(renderedMatches.slice(0, index + 1)), getChildren = () => {
       let children;
       return error ? children = errorElement : shouldRenderHydrateFallback ? children = hydrateFallbackElement : match.route.Component ? children = /* @__PURE__ */ React.createElement(match.route.Component, null) : match.route.element ? children = match.route.element : children = outlet, /* @__PURE__ */ React.createElement(RenderedRoute, {
         match,
@@ -19540,7 +19540,7 @@ function _renderMatches(matches2, parentMatches, dataRouterState, future2) {
         children
       });
     };
-    return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index2 === 0) ? /* @__PURE__ */ React.createElement(RenderErrorBoundary, {
+    return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index === 0) ? /* @__PURE__ */ React.createElement(RenderErrorBoundary, {
       location: dataRouterState.location,
       revalidation: dataRouterState.revalidation,
       component: errorElement,
@@ -19863,10 +19863,10 @@ function ResolveAwait(_ref8) {
 function createRoutesFromChildren(children, parentPath) {
   parentPath === void 0 && (parentPath = []);
   let routes2 = [];
-  return React.Children.forEach(children, (element, index2) => {
+  return React.Children.forEach(children, (element, index) => {
     if (!/* @__PURE__ */ React.isValidElement(element))
       return;
-    let treePath = [...parentPath, index2];
+    let treePath = [...parentPath, index];
     if (element.type === React.Fragment) {
       routes2.push.apply(routes2, createRoutesFromChildren(element.props.children, treePath));
       return;
@@ -20208,16 +20208,16 @@ function getFormEncType(encType) {
   return encType != null && !supportedFormEncTypes.has(encType) ? (warning(!1, '"' + encType + '" is not a valid `encType` for `<Form>`/`<fetcher.Form>` ' + ('and will default to "' + defaultEncType + '"')), null) : encType;
 }
 function getFormSubmissionInfo(target, basename) {
-  let method, action, encType, formData, body;
+  let method, action3, encType, formData, body;
   if (isFormElement(target)) {
     let attr = target.getAttribute("action");
-    action = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType, formData = new FormData(target);
+    action3 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType, formData = new FormData(target);
   } else if (isButtonElement(target) || isInputElement(target) && (target.type === "submit" || target.type === "image")) {
     let form = target.form;
     if (form == null)
       throw new Error('Cannot submit a <button> or <input type="submit"> without a <form>');
     let attr = target.getAttribute("formaction") || form.getAttribute("action");
-    if (action = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType, formData = new FormData(form, target), !isFormDataSubmitterSupported()) {
+    if (action3 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType, formData = new FormData(form, target), !isFormDataSubmitterSupported()) {
       let {
         name,
         type,
@@ -20232,10 +20232,10 @@ function getFormSubmissionInfo(target, basename) {
   } else {
     if (isHtmlElement(target))
       throw new Error('Cannot submit element that is not <form>, <button>, or <input type="submit|image">');
-    method = defaultMethod, action = null, encType = defaultEncType, body = target;
+    method = defaultMethod, action3 = null, encType = defaultEncType, body = target;
   }
   return formData && encType === "text/plain" && (body = formData, formData = void 0), {
-    action,
+    action: action3,
     method: method.toLowerCase(),
     encType,
     formData,
@@ -20592,7 +20592,7 @@ function useSubmit() {
   return React2.useCallback(function(target, options) {
     options === void 0 && (options = {}), validateClientSideSubmission();
     let {
-      action,
+      action: action3,
       method,
       encType,
       formData,
@@ -20600,7 +20600,7 @@ function useSubmit() {
     } = getFormSubmissionInfo(target, basename);
     if (options.navigate === !1) {
       let key = options.fetcherKey || getUniqueFetcherId();
-      router.fetch(key, currentRouteId, options.action || action, {
+      router.fetch(key, currentRouteId, options.action || action3, {
         preventScrollReset: options.preventScrollReset,
         formData,
         body,
@@ -20609,7 +20609,7 @@ function useSubmit() {
         unstable_flushSync: options.unstable_flushSync
       });
     } else
-      router.navigate(options.action || action, {
+      router.navigate(options.action || action3, {
         preventScrollReset: options.preventScrollReset,
         formData,
         body,
@@ -20623,22 +20623,22 @@ function useSubmit() {
       });
   }, [router, basename, currentRouteId]);
 }
-function useFormAction(action, _temp2) {
+function useFormAction(action3, _temp2) {
   let {
     relative
   } = _temp2 === void 0 ? {} : _temp2, {
     basename
   } = React2.useContext(NavigationContext), routeContext = React2.useContext(RouteContext);
   routeContext || invariant(!1, "useFormAction must be used inside a RouteContext");
-  let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action || ".", {
+  let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action3 || ".", {
     relative
   })), location = useLocation();
-  if (action == null) {
+  if (action3 == null) {
     path.search = location.search;
     let params = new URLSearchParams(path.search);
     params.has("index") && params.get("index") === "" && (params.delete("index"), path.search = params.toString() ? "?" + params.toString() : "");
   }
-  return (!action || action === ".") && match.route.index && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
+  return (!action3 || action3 === ".") && match.route.index && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
 }
 function useFetcher(_temp3) {
   var _route$matches;
@@ -20909,12 +20909,12 @@ var React2, ReactDOM, defaultMethod, defaultEncType, _formDataSupportsSubmitter,
         replace,
         state,
         method = defaultMethod,
-        action,
+        action: action3,
         onSubmit,
         relative,
         preventScrollReset,
         unstable_viewTransition
-      } = _ref9, props = _objectWithoutPropertiesLoose(_ref9, _excluded3), submit = useSubmit(), formAction = useFormAction(action, {
+      } = _ref9, props = _objectWithoutPropertiesLoose(_ref9, _excluded3), submit = useSubmit(), formAction = useFormAction(action3, {
         relative
       }), formMethod = method.toLowerCase() === "get" ? "get" : "post";
       return /* @__PURE__ */ React2.createElement("form", _extends3({
@@ -20957,7 +20957,7 @@ var require_server = __commonJS({
   "node_modules/react-router-dom/server.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var React10 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
+    var React13 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
     function _interopNamespace(e) {
       if (e && e.__esModule)
         return e;
@@ -20974,7 +20974,7 @@ var require_server = __commonJS({
         }
       }), n.default = e, Object.freeze(n);
     }
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React10);
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React13);
     function StaticRouter({
       basename,
       children,
@@ -20982,7 +20982,7 @@ var require_server = __commonJS({
       future: future2
     }) {
       typeof locationProp == "string" && (locationProp = reactRouterDom.parsePath(locationProp));
-      let action = router.Action.Pop, location = {
+      let action3 = router.Action.Pop, location = {
         pathname: locationProp.pathname || "/",
         search: locationProp.search || "",
         hash: locationProp.hash || "",
@@ -20993,7 +20993,7 @@ var require_server = __commonJS({
         basename,
         children,
         location,
-        navigationType: action,
+        navigationType: action3,
         navigator: staticNavigator,
         future: future2,
         static: !0
@@ -21227,7 +21227,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React10 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React13 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -22472,9 +22472,9 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
         var str = "" + string, match = matchHtmlRegExp.exec(str);
         if (!match)
           return str;
-        var escape2, html = "", index2, lastIndex = 0;
-        for (index2 = match.index; index2 < str.length; index2++) {
-          switch (str.charCodeAt(index2)) {
+        var escape2, html = "", index, lastIndex = 0;
+        for (index = match.index; index < str.length; index++) {
+          switch (str.charCodeAt(index)) {
             case 34:
               escape2 = "&quot;";
               break;
@@ -22493,9 +22493,9 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
             default:
               continue;
           }
-          lastIndex !== index2 && (html += str.substring(lastIndex, index2)), lastIndex = index2 + 1, html += escape2;
+          lastIndex !== index && (html += str.substring(lastIndex, index)), lastIndex = index + 1, html += escape2;
         }
-        return lastIndex !== index2 ? html + str.substring(lastIndex, index2) : html;
+        return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
       }
       function escapeTextForBrowser(text) {
         return typeof text == "boolean" || typeof text == "number" ? "" + text : escapeHtml3(text);
@@ -22721,7 +22721,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React10.Children.forEach(children, function(child) {
+        return React13.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -23758,8 +23758,8 @@ Please update the following components: %s`,
       }
       function mountClassInstance(instance, ctor, newProps, maskedLegacyContext) {
         checkClassInstance(instance, ctor, newProps);
-        var initialState2 = instance.state !== void 0 ? instance.state : null;
-        instance.updater = classComponentUpdater, instance.props = newProps, instance.state = initialState2;
+        var initialState = instance.state !== void 0 ? instance.state : null;
+        instance.updater = classComponentUpdater, instance.props = newProps, instance.state = initialState;
         var internalInstance = {
           queue: [],
           replace: !1
@@ -23771,7 +23771,7 @@ Please update the following components: %s`,
           didWarnAboutDirectlyAssigningPropsToState.has(componentName) || (didWarnAboutDirectlyAssigningPropsToState.add(componentName), error("%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.", componentName));
         }
         var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
-        typeof getDerivedStateFromProps == "function" && (instance.state = applyDerivedStateFromProps(instance, ctor, getDerivedStateFromProps, initialState2, newProps)), typeof ctor.getDerivedStateFromProps != "function" && typeof instance.getSnapshotBeforeUpdate != "function" && (typeof instance.UNSAFE_componentWillMount == "function" || typeof instance.componentWillMount == "function") && (callComponentWillMount(ctor, instance), processUpdateQueue(internalInstance, instance, newProps, maskedLegacyContext));
+        typeof getDerivedStateFromProps == "function" && (instance.state = applyDerivedStateFromProps(instance, ctor, getDerivedStateFromProps, initialState, newProps)), typeof ctor.getDerivedStateFromProps != "function" && typeof instance.getSnapshotBeforeUpdate != "function" && (typeof instance.UNSAFE_componentWillMount == "function" || typeof instance.componentWillMount == "function") && (callComponentWillMount(ctor, instance), processUpdateQueue(internalInstance, instance, newProps, maskedLegacyContext));
       }
       var emptyTreeContext = {
         id: 1,
@@ -23781,8 +23781,8 @@ Please update the following components: %s`,
         var overflow = context.overflow, idWithLeadingBit = context.id, id = idWithLeadingBit & ~getLeadingBit(idWithLeadingBit);
         return id.toString(32) + overflow;
       }
-      function pushTreeContext(baseContext, totalChildren, index2) {
-        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index2 + 1, length = getBitLength(totalChildren) + baseLength;
+      function pushTreeContext(baseContext, totalChildren, index) {
+        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index + 1, length = getBitLength(totalChildren) + baseLength;
         if (length > 30) {
           var numberOfOverflowBits = baseLength - baseLength % 5, newOverflowBits = (1 << numberOfOverflowBits) - 1, newOverflow = (baseId & newOverflowBits).toString(32), restOfBaseId = baseId >> numberOfOverflowBits, restOfBaseLength = baseLength - numberOfOverflowBits, restOfLength = getBitLength(totalChildren) + restOfBaseLength, restOfNewBits = slot << restOfBaseLength, id = restOfNewBits | restOfBaseId, overflow = newOverflow + baseOverflow;
           return {
@@ -23866,14 +23866,14 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useContext4(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
-      function basicStateReducer(state, action) {
-        return typeof action == "function" ? action(state) : action;
+      function basicStateReducer(state, action3) {
+        return typeof action3 == "function" ? action3(state) : action3;
       }
-      function useState6(initialState2) {
+      function useState9(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
-          initialState2
+          initialState
         );
       }
       function useReducer(reducer, initialArg, init) {
@@ -23885,8 +23885,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
               renderPhaseUpdates.delete(queue);
               var newState = workInProgressHook.memoizedState, update = firstRenderPhaseUpdate;
               do {
-                var action = update.action;
-                isInHookUserCodeInDev = !0, newState = reducer(newState, action), isInHookUserCodeInDev = !1, update = update.next;
+                var action3 = update.action;
+                isInHookUserCodeInDev = !0, newState = reducer(newState, action3), isInHookUserCodeInDev = !1, update = update.next;
               } while (update !== null);
               return workInProgressHook.memoizedState = newState, [newState, dispatch];
             }
@@ -23894,8 +23894,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
           return [workInProgressHook.memoizedState, dispatch];
         } else {
           isInHookUserCodeInDev = !0;
-          var initialState2;
-          reducer === basicStateReducer ? initialState2 = typeof initialArg == "function" ? initialArg() : initialArg : initialState2 = init !== void 0 ? init(initialArg) : initialArg, isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = initialState2;
+          var initialState;
+          reducer === basicStateReducer ? initialState = typeof initialArg == "function" ? initialArg() : initialArg : initialState = init !== void 0 ? init(initialArg) : initialArg, isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = initialState;
           var _queue = workInProgressHook.queue = {
             last: null,
             dispatch: null
@@ -23932,13 +23932,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useLayoutEffect3(create, inputs) {
         currentHookNameInDev = "useLayoutEffect", error("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
       }
-      function dispatchAction(componentIdentity, queue, action) {
+      function dispatchAction(componentIdentity, queue, action3) {
         if (numberOfReRenders >= RE_RENDER_LIMIT)
           throw new Error("Too many re-renders. React limits the number of renders to prevent an infinite loop.");
         if (componentIdentity === currentlyRenderingComponent) {
           didScheduleRenderPhaseUpdate = !0;
           var update = {
-            action,
+            action: action3,
             next: null
           };
           renderPhaseUpdates === null && (renderPhaseUpdates = /* @__PURE__ */ new Map());
@@ -23989,7 +23989,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         useMemo: useMemo5,
         useReducer,
         useRef: useRef4,
-        useState: useState6,
+        useState: useState9,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
         useCallback: useCallback3,
@@ -24108,12 +24108,12 @@ Error generating stack: ` + x.message + `
         };
         return task.componentStack = null, abortSet.add(task), task;
       }
-      function createPendingSegment(request, index2, boundary, formatContext, lastPushedText, textEmbedded) {
+      function createPendingSegment(request, index, boundary, formatContext, lastPushedText, textEmbedded) {
         return {
           status: PENDING,
           id: -1,
           // lazily assigned later
-          index: index2,
+          index,
           parentFlushed: !1,
           chunks: [],
           children: [],
@@ -24264,8 +24264,8 @@ Error generating stack: ` + x.message + `
           }
           mountClassInstance(value, Component3, props, legacyContext), finishClassComponent(request, task, value, Component3, props);
         } else if (validateFunctionComponentInDev(Component3), hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
           try {
             renderNodeDestructive(request, task, value);
           } finally {
@@ -24300,8 +24300,8 @@ Error generating stack: ` + x.message + `
         pushFunctionComponentStackInDEV(task, type.render);
         var children = renderWithHooks(request, task, type.render, props, ref), hasId = checkDidRenderIdHook();
         if (hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
           try {
             renderNodeDestructive(request, task, children);
           } finally {
@@ -24808,7 +24808,7 @@ var require_react_dom_server_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React10 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React13 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -26064,9 +26064,9 @@ var require_react_dom_server_browser_development = __commonJS({
         var str = "" + string, match = matchHtmlRegExp.exec(str);
         if (!match)
           return str;
-        var escape2, html = "", index2, lastIndex = 0;
-        for (index2 = match.index; index2 < str.length; index2++) {
-          switch (str.charCodeAt(index2)) {
+        var escape2, html = "", index, lastIndex = 0;
+        for (index = match.index; index < str.length; index++) {
+          switch (str.charCodeAt(index)) {
             case 34:
               escape2 = "&quot;";
               break;
@@ -26085,9 +26085,9 @@ var require_react_dom_server_browser_development = __commonJS({
             default:
               continue;
           }
-          lastIndex !== index2 && (html += str.substring(lastIndex, index2)), lastIndex = index2 + 1, html += escape2;
+          lastIndex !== index && (html += str.substring(lastIndex, index)), lastIndex = index + 1, html += escape2;
         }
-        return lastIndex !== index2 ? html + str.substring(lastIndex, index2) : html;
+        return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
       }
       function escapeTextForBrowser(text) {
         return typeof text == "boolean" || typeof text == "number" ? "" + text : escapeHtml3(text);
@@ -26317,7 +26317,7 @@ var require_react_dom_server_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React10.Children.forEach(children, function(child) {
+        return React13.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -27310,8 +27310,8 @@ Please update the following components: %s`,
       }
       function mountClassInstance(instance, ctor, newProps, maskedLegacyContext) {
         checkClassInstance(instance, ctor, newProps);
-        var initialState2 = instance.state !== void 0 ? instance.state : null;
-        instance.updater = classComponentUpdater, instance.props = newProps, instance.state = initialState2;
+        var initialState = instance.state !== void 0 ? instance.state : null;
+        instance.updater = classComponentUpdater, instance.props = newProps, instance.state = initialState;
         var internalInstance = {
           queue: [],
           replace: !1
@@ -27323,7 +27323,7 @@ Please update the following components: %s`,
           didWarnAboutDirectlyAssigningPropsToState.has(componentName) || (didWarnAboutDirectlyAssigningPropsToState.add(componentName), error("%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.", componentName));
         }
         var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
-        typeof getDerivedStateFromProps == "function" && (instance.state = applyDerivedStateFromProps(instance, ctor, getDerivedStateFromProps, initialState2, newProps)), typeof ctor.getDerivedStateFromProps != "function" && typeof instance.getSnapshotBeforeUpdate != "function" && (typeof instance.UNSAFE_componentWillMount == "function" || typeof instance.componentWillMount == "function") && (callComponentWillMount(ctor, instance), processUpdateQueue(internalInstance, instance, newProps, maskedLegacyContext));
+        typeof getDerivedStateFromProps == "function" && (instance.state = applyDerivedStateFromProps(instance, ctor, getDerivedStateFromProps, initialState, newProps)), typeof ctor.getDerivedStateFromProps != "function" && typeof instance.getSnapshotBeforeUpdate != "function" && (typeof instance.UNSAFE_componentWillMount == "function" || typeof instance.componentWillMount == "function") && (callComponentWillMount(ctor, instance), processUpdateQueue(internalInstance, instance, newProps, maskedLegacyContext));
       }
       var emptyTreeContext = {
         id: 1,
@@ -27333,8 +27333,8 @@ Please update the following components: %s`,
         var overflow = context.overflow, idWithLeadingBit = context.id, id = idWithLeadingBit & ~getLeadingBit(idWithLeadingBit);
         return id.toString(32) + overflow;
       }
-      function pushTreeContext(baseContext, totalChildren, index2) {
-        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index2 + 1, length = getBitLength(totalChildren) + baseLength;
+      function pushTreeContext(baseContext, totalChildren, index) {
+        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index + 1, length = getBitLength(totalChildren) + baseLength;
         if (length > 30) {
           var numberOfOverflowBits = baseLength - baseLength % 5, newOverflowBits = (1 << numberOfOverflowBits) - 1, newOverflow = (baseId & newOverflowBits).toString(32), restOfBaseId = baseId >> numberOfOverflowBits, restOfBaseLength = baseLength - numberOfOverflowBits, restOfLength = getBitLength(totalChildren) + restOfBaseLength, restOfNewBits = slot << restOfBaseLength, id = restOfNewBits | restOfBaseId, overflow = newOverflow + baseOverflow;
           return {
@@ -27418,14 +27418,14 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useContext4(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
-      function basicStateReducer(state, action) {
-        return typeof action == "function" ? action(state) : action;
+      function basicStateReducer(state, action3) {
+        return typeof action3 == "function" ? action3(state) : action3;
       }
-      function useState6(initialState2) {
+      function useState9(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
-          initialState2
+          initialState
         );
       }
       function useReducer(reducer, initialArg, init) {
@@ -27437,8 +27437,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
               renderPhaseUpdates.delete(queue);
               var newState = workInProgressHook.memoizedState, update = firstRenderPhaseUpdate;
               do {
-                var action = update.action;
-                isInHookUserCodeInDev = !0, newState = reducer(newState, action), isInHookUserCodeInDev = !1, update = update.next;
+                var action3 = update.action;
+                isInHookUserCodeInDev = !0, newState = reducer(newState, action3), isInHookUserCodeInDev = !1, update = update.next;
               } while (update !== null);
               return workInProgressHook.memoizedState = newState, [newState, dispatch];
             }
@@ -27446,8 +27446,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
           return [workInProgressHook.memoizedState, dispatch];
         } else {
           isInHookUserCodeInDev = !0;
-          var initialState2;
-          reducer === basicStateReducer ? initialState2 = typeof initialArg == "function" ? initialArg() : initialArg : initialState2 = init !== void 0 ? init(initialArg) : initialArg, isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = initialState2;
+          var initialState;
+          reducer === basicStateReducer ? initialState = typeof initialArg == "function" ? initialArg() : initialArg : initialState = init !== void 0 ? init(initialArg) : initialArg, isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = initialState;
           var _queue = workInProgressHook.queue = {
             last: null,
             dispatch: null
@@ -27484,13 +27484,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useLayoutEffect3(create, inputs) {
         currentHookNameInDev = "useLayoutEffect", error("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
       }
-      function dispatchAction(componentIdentity, queue, action) {
+      function dispatchAction(componentIdentity, queue, action3) {
         if (numberOfReRenders >= RE_RENDER_LIMIT)
           throw new Error("Too many re-renders. React limits the number of renders to prevent an infinite loop.");
         if (componentIdentity === currentlyRenderingComponent) {
           didScheduleRenderPhaseUpdate = !0;
           var update = {
-            action,
+            action: action3,
             next: null
           };
           renderPhaseUpdates === null && (renderPhaseUpdates = /* @__PURE__ */ new Map());
@@ -27541,7 +27541,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         useMemo: useMemo5,
         useReducer,
         useRef: useRef4,
-        useState: useState6,
+        useState: useState9,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
         useCallback: useCallback3,
@@ -27660,12 +27660,12 @@ Error generating stack: ` + x.message + `
         };
         return task.componentStack = null, abortSet.add(task), task;
       }
-      function createPendingSegment(request, index2, boundary, formatContext, lastPushedText, textEmbedded) {
+      function createPendingSegment(request, index, boundary, formatContext, lastPushedText, textEmbedded) {
         return {
           status: PENDING,
           id: -1,
           // lazily assigned later
-          index: index2,
+          index,
           parentFlushed: !1,
           chunks: [],
           children: [],
@@ -27816,8 +27816,8 @@ Error generating stack: ` + x.message + `
           }
           mountClassInstance(value, Component3, props, legacyContext), finishClassComponent(request, task, value, Component3, props);
         } else if (validateFunctionComponentInDev(Component3), hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
           try {
             renderNodeDestructive(request, task, value);
           } finally {
@@ -27852,8 +27852,8 @@ Error generating stack: ` + x.message + `
         pushFunctionComponentStackInDEV(task, type.render);
         var children = renderWithHooks(request, task, type.render, props, ref), hasId = checkDidRenderIdHook();
         if (hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
           try {
             renderNodeDestructive(request, task, children);
           } finally {
@@ -28380,14 +28380,14 @@ var require_react_jsx_dev_runtime_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React10 = require_react(), REACT_ELEMENT_TYPE2 = Symbol.for("react.element"), REACT_PORTAL_TYPE2 = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE2 = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE2 = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE2 = Symbol.for("react.provider"), REACT_CONTEXT_TYPE2 = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE2 = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE2 = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE2 = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE2 = Symbol.for("react.memo"), REACT_LAZY_TYPE2 = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE2 = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
+      var React13 = require_react(), REACT_ELEMENT_TYPE2 = Symbol.for("react.element"), REACT_PORTAL_TYPE2 = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE2 = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE2 = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE2 = Symbol.for("react.provider"), REACT_CONTEXT_TYPE2 = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE2 = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE2 = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE2 = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE2 = Symbol.for("react.memo"), REACT_LAZY_TYPE2 = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE2 = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
       function getIteratorFn(maybeIterable) {
         if (maybeIterable === null || typeof maybeIterable != "object")
           return null;
         var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
         return typeof maybeIterator == "function" ? maybeIterator : null;
       }
-      var ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function error(format) {
         {
           for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)
@@ -28788,7 +28788,7 @@ var require_react_jsx_dev_runtime_development = __commonJS({
           value: source
         }), Object.freeze && (Object.freeze(element.props), Object.freeze(element)), element;
       };
-      function jsxDEV7(type, config, maybeKey, source, self) {
+      function jsxDEV33(type, config, maybeKey, source, self) {
         {
           var propName, props = {}, key = null, ref = null;
           maybeKey !== void 0 && (checkKeyStringCoercion(maybeKey), key = "" + maybeKey), hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key), hasValidRef(config) && (ref = config.ref, warnIfStringRefCannotBeAutoConverted(config, self));
@@ -28935,7 +28935,7 @@ Check the top-level render call using <` + parentName + ">.");
             var typeString;
             type === null ? typeString = "null" : isArray(type) ? typeString = "array" : type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE2 ? (typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />", info = " Did you accidentally export a JSX literal instead of a component?") : typeString = typeof type, error("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
           }
-          var element = jsxDEV7(type, props, key, source, self);
+          var element = jsxDEV33(type, props, key, source, self);
           if (element == null)
             return element;
           if (validType) {
@@ -28975,11 +28975,11 @@ var require_use_sync_external_store_with_selector_development = __commonJS({
     (function() {
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-      var React10 = require_react();
+      var React13 = require_react();
       function is2(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is2, useSyncExternalStore3 = React10.useSyncExternalStore, useRef4 = React10.useRef, useEffect5 = React10.useEffect, useMemo5 = React10.useMemo, useDebugValue = React10.useDebugValue;
+      var objectIs = typeof Object.is == "function" ? Object.is : is2, useSyncExternalStore3 = React13.useSyncExternalStore, useRef4 = React13.useRef, useEffect8 = React13.useEffect, useMemo5 = React13.useMemo, useDebugValue = React13.useDebugValue;
       function useSyncExternalStoreWithSelector3(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
         var instRef = useRef4(null), inst;
         instRef.current === null ? (inst = {
@@ -29010,7 +29010,7 @@ var require_use_sync_external_store_with_selector_development = __commonJS({
           };
           return [getSnapshotWithSelector, getServerSnapshotWithSelector];
         }, [getSnapshot, getServerSnapshot, selector, isEqual]), getSelection = _useMemo[0], getServerSelection = _useMemo[1], value = useSyncExternalStore3(subscribe, getSelection, getServerSelection);
-        return useEffect5(function() {
+        return useEffect8(function() {
           inst.hasValue = !0, inst.value = value;
         }, [value]), useDebugValue(value), value;
       }
@@ -29028,7 +29028,7 @@ var require_with_selector = __commonJS({
 });
 
 // server.ts
-var import_cloudflare4 = __toESM(require_dist(), 1);
+var import_cloudflare9 = __toESM(require_dist(), 1);
 
 // node_modules/@remix-run/cloudflare-pages/dist/esm/worker.js
 var import_cloudflare = __toESM(require_dist());
@@ -29169,22 +29169,22 @@ async function getKeyedPrefetchLinks(matches2, manifest, routeModules) {
   }));
 }
 function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, location, mode2) {
-  let path = parsePathPatch(page), isNew = (match, index2) => currentMatches[index2] ? match.route.id !== currentMatches[index2].route.id : !0, matchPathChanged = (match, index2) => {
+  let path = parsePathPatch(page), isNew = (match, index) => currentMatches[index] ? match.route.id !== currentMatches[index].route.id : !0, matchPathChanged = (match, index) => {
     var _currentMatches$index;
     return (
       // param change, /users/123 -> /users/456
-      currentMatches[index2].pathname !== match.pathname || // splat param changed, which is not present in match.path
+      currentMatches[index].pathname !== match.pathname || // splat param changed, which is not present in match.path
       // e.g. /files/images/avatar.jpg -> files/finances.xls
-      ((_currentMatches$index = currentMatches[index2].route.path) === null || _currentMatches$index === void 0 ? void 0 : _currentMatches$index.endsWith("*")) && currentMatches[index2].params["*"] !== match.params["*"]
+      ((_currentMatches$index = currentMatches[index].route.path) === null || _currentMatches$index === void 0 ? void 0 : _currentMatches$index.endsWith("*")) && currentMatches[index].params["*"] !== match.params["*"]
     );
   };
   return mode2 === "data" && location.search !== path.search ? (
     // this is really similar to stuff in transition.ts, maybe somebody smarter
     // than me (or in less of a hurry) can share some of it. You're the best.
-    nextMatches.filter((match, index2) => {
+    nextMatches.filter((match, index) => {
       if (!manifest.routes[match.route.id].hasLoader)
         return !1;
-      if (isNew(match, index2) || matchPathChanged(match, index2))
+      if (isNew(match, index) || matchPathChanged(match, index))
         return !0;
       if (match.route.shouldRevalidate) {
         var _currentMatches$;
@@ -29200,9 +29200,9 @@ function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, loca
       }
       return !0;
     })
-  ) : nextMatches.filter((match, index2) => {
+  ) : nextMatches.filter((match, index) => {
     let manifestRoute = manifest.routes[match.route.id];
-    return (mode2 === "assets" || manifestRoute.hasLoader) && (isNew(match, index2) || matchPathChanged(match, index2));
+    return (mode2 === "assets" || manifestRoute.hasLoader) && (isNew(match, index) || matchPathChanged(match, index));
   });
 }
 function getDataLinkHrefs(page, matches2, manifest) {
@@ -29452,7 +29452,7 @@ function Meta() {
     let errorIdx = routerMatches.findIndex((m) => errors2[m.route.id]);
     _matches = routerMatches.slice(0, errorIdx + 1), error = errors2[routerMatches[errorIdx].route.id];
   }
-  let meta = [], leafMeta = null, matches2 = [];
+  let meta5 = [], leafMeta = null, matches2 = [];
   for (let i = 0; i < _matches.length; i++) {
     let _match = _matches[i], routeId = _match.route.id, data = loaderData[routeId], params = _match.params, routeModule = routeModules[routeId], routeMeta = [], match = {
       id: routeId,
@@ -29473,9 +29473,9 @@ function Meta() {
       throw new Error("The route at " + _match.route.path + ` returns an invalid value. All route meta functions must return an array of meta objects.
 
 To reference the meta function API, see https://remix.run/route/meta`);
-    match.meta = routeMeta, matches2[i] = match, meta = [...routeMeta], leafMeta = meta;
+    match.meta = routeMeta, matches2[i] = match, meta5 = [...routeMeta], leafMeta = meta5;
   }
-  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, meta.flat().map((metaProps) => {
+  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, meta5.flat().map((metaProps) => {
     if (!metaProps)
       return null;
     if ("tagName" in metaProps) {
@@ -29498,12 +29498,12 @@ To reference the meta function API, see https://remix.run/route/meta`);
       }) : null;
     if ("script:ld+json" in metaProps)
       try {
-        let json5 = JSON.stringify(metaProps["script:ld+json"]);
+        let json9 = JSON.stringify(metaProps["script:ld+json"]);
         return /* @__PURE__ */ React3.createElement("script", {
-          key: `script:ld+json:${json5}`,
+          key: `script:ld+json:${json9}`,
           type: "application/ld+json",
           dangerouslySetInnerHTML: {
-            __html: json5
+            __html: json9
           }
         });
       } catch {
@@ -29587,9 +29587,9 @@ function Scripts(props) {
     }).join(`
 `) + (deferredScripts.length > 0 ? `__remixContext.a=${deferredScripts.length};` : "") : "";
     let routeModulesScript = isStatic ? `${(_manifest$hmr = manifest.hmr) !== null && _manifest$hmr !== void 0 && _manifest$hmr.runtime ? `import ${JSON.stringify(manifest.hmr.runtime)};` : ""}import ${JSON.stringify(manifest.url)};
-${matches2.map((match, index2) => `import * as route${index2} from ${JSON.stringify(manifest.routes[match.route.id].module)};`).join(`
+${matches2.map((match, index) => `import * as route${index} from ${JSON.stringify(manifest.routes[match.route.id].module)};`).join(`
 `)}
-window.__remixRouteModules = {${matches2.map((match, index2) => `${JSON.stringify(match.route.id)}:route${index2}`).join(",")}};
+window.__remixRouteModules = {${matches2.map((match, index) => `${JSON.stringify(match.route.id)}:route${index}`).join(",")}};
 
 import(${JSON.stringify(manifest.entry.module)});` : " ";
     return /* @__PURE__ */ React3.createElement(React3.Fragment, null, /* @__PURE__ */ React3.createElement("script", _extends4({}, props, {
@@ -29703,8 +29703,11 @@ function useLoaderData2() {
 function useActionData2() {
   return useActionData();
 }
+function useFetcher2(opts = {}) {
+  return useFetcher(opts);
+}
 var LiveReload = function({
-  origin = "http://localhost:3002/",
+  origin = "http://localhost:3001/",
   port,
   timeoutMs = 1e3,
   nonce = void 0
@@ -30166,9 +30169,9 @@ function _classPrivateFieldSet(receiver, privateMap, value) {
   var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set");
   return _classApplyDescriptorSet(receiver, descriptor, value), value;
 }
-function _classExtractFieldDescriptor(receiver, privateMap, action) {
+function _classExtractFieldDescriptor(receiver, privateMap, action3) {
   if (!privateMap.has(receiver))
-    throw new TypeError("attempted to " + action + " private field on non-instance");
+    throw new TypeError("attempted to " + action3 + " private field on non-instance");
   return privateMap.get(receiver);
 }
 function _classApplyDescriptorGet(receiver, descriptor) {
@@ -30393,8 +30396,8 @@ function amend(list2) {
     // Addresses: Yandex Search App
     ["search", "(?<! ya(?:yandex)?)search"]
   ].forEach(function(_ref) {
-    var _ref2 = _slicedToArray(_ref, 2), search = _ref2[0], replace = _ref2[1], index2 = list2.lastIndexOf(search);
-    ~index2 && list2.splice(index2, 1, replace);
+    var _ref2 = _slicedToArray(_ref, 2), search = _ref2[0], replace = _ref2[1], index = list2.lastIndexOf(search);
+    ~index && list2.splice(index, 1, replace);
   }), list2;
 }
 amend(list);
@@ -30502,8 +30505,8 @@ var flags = "i", _list = /* @__PURE__ */ new WeakMap(), _pattern = /* @__PURE__ 
     key: "exclude",
     value: function() {
       for (var filters = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : [], length = filters.length; length--; ) {
-        var index2 = _classPrivateMethodGet(this, _index, _index2).call(this, filters[length]);
-        index2 > -1 && _classPrivateFieldGet(this, _list).splice(index2, 1);
+        var index = _classPrivateMethodGet(this, _index, _index2).call(this, filters[length]);
+        index > -1 && _classPrivateFieldGet(this, _list).splice(index, 1);
       }
       _classPrivateMethodGet(this, _update, _update2).call(this);
     }
@@ -30553,8 +30556,7 @@ async function handleRequest(request, responseStatusCode, responseHeaders, remix
 var root_exports = {};
 __export(root_exports, {
   default: () => App,
-  links: () => links,
-  loader: () => loader
+  links: () => links
 });
 
 // node_modules/react-redux/dist/react-redux.mjs
@@ -30577,10 +30579,101 @@ function getContext() {
 var ReactReduxContext = /* @__PURE__ */ getContext(), notInitialized = () => {
   throw new Error("uSES not initialized!");
 };
-var useSyncExternalStoreWithSelector = notInitialized, initializeUseSelector = (fn) => {
+function createReduxContextHook(context = ReactReduxContext) {
+  return function() {
+    let contextValue = React9.useContext(context);
+    if (!contextValue)
+      throw new Error(
+        "could not find react-redux context value; please ensure the component is wrapped in a <Provider>"
+      );
+    return contextValue;
+  };
+}
+var useReduxContext = /* @__PURE__ */ createReduxContextHook(), useSyncExternalStoreWithSelector = notInitialized, initializeUseSelector = (fn) => {
   useSyncExternalStoreWithSelector = fn;
-};
-var REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_SERVER_CONTEXT_TYPE = Symbol.for("react.server_context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ForwardRef = REACT_FORWARD_REF_TYPE, Memo = REACT_MEMO_TYPE;
+}, refEquality = (a, b) => a === b;
+function createSelectorHook(context = ReactReduxContext) {
+  let useReduxContext2 = context === ReactReduxContext ? useReduxContext : createReduxContextHook(context);
+  return function(selector, equalityFnOrOptions = {}) {
+    let { equalityFn = refEquality, devModeChecks = {} } = typeof equalityFnOrOptions == "function" ? { equalityFn: equalityFnOrOptions } : equalityFnOrOptions;
+    if (!selector)
+      throw new Error("You must pass a selector to useSelector");
+    if (typeof selector != "function")
+      throw new Error("You must pass a function as a selector to useSelector");
+    if (typeof equalityFn != "function")
+      throw new Error(
+        "You must pass a function as an equality function to useSelector"
+      );
+    let {
+      store: store2,
+      subscription,
+      getServerState,
+      stabilityCheck,
+      identityFunctionCheck
+    } = useReduxContext2(), firstRun = React9.useRef(!0), wrappedSelector = React9.useCallback(
+      {
+        [selector.name](state) {
+          let selected = selector(state);
+          {
+            let {
+              identityFunctionCheck: finalIdentityFunctionCheck,
+              stabilityCheck: finalStabilityCheck
+            } = {
+              stabilityCheck,
+              identityFunctionCheck,
+              ...devModeChecks
+            };
+            if (finalStabilityCheck === "always" || finalStabilityCheck === "once" && firstRun.current) {
+              let toCompare = selector(state);
+              if (!equalityFn(selected, toCompare)) {
+                let stack;
+                try {
+                  throw new Error();
+                } catch (e) {
+                  ({ stack } = e);
+                }
+                console.warn(
+                  "Selector " + (selector.name || "unknown") + ` returned a different result when called with the same parameters. This can lead to unnecessary rerenders.
+Selectors that return a new reference (such as an object or an array) should be memoized: https://redux.js.org/usage/deriving-data-selectors#optimizing-selectors-with-memoization`,
+                  {
+                    state,
+                    selected,
+                    selected2: toCompare,
+                    stack
+                  }
+                );
+              }
+            }
+            if ((finalIdentityFunctionCheck === "always" || finalIdentityFunctionCheck === "once" && firstRun.current) && selected === state) {
+              let stack;
+              try {
+                throw new Error();
+              } catch (e) {
+                ({ stack } = e);
+              }
+              console.warn(
+                "Selector " + (selector.name || "unknown") + ` returned the root state when called. This can lead to unnecessary rerenders.
+Selectors that return the entire state are almost certainly a mistake, as they will cause a rerender whenever *anything* in state changes.`,
+                { stack }
+              );
+            }
+            firstRun.current && (firstRun.current = !1);
+          }
+          return selected;
+        }
+      }[selector.name],
+      [selector, stabilityCheck, devModeChecks.stabilityCheck]
+    ), selectedState = useSyncExternalStoreWithSelector(
+      subscription.addNestedSub,
+      store2.getState,
+      getServerState || store2.getState,
+      wrappedSelector,
+      equalityFn
+    );
+    return React9.useDebugValue(selectedState), selectedState;
+  };
+}
+var useSelector = /* @__PURE__ */ createSelectorHook(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_SERVER_CONTEXT_TYPE = Symbol.for("react.server_context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ForwardRef = REACT_FORWARD_REF_TYPE, Memo = REACT_MEMO_TYPE;
 function defaultNoopBatch(callback) {
   callback();
 }
@@ -30711,6 +30804,30 @@ function Provider({
   return /* @__PURE__ */ React9.createElement(Context.Provider, { value: contextValue }, children);
 }
 var Provider_default = Provider;
+function createStoreHook(context = ReactReduxContext) {
+  let useReduxContext2 = (
+    // @ts-ignore
+    context === ReactReduxContext ? useReduxContext : (
+      // @ts-ignore
+      createReduxContextHook(context)
+    )
+  );
+  return function() {
+    let { store: store2 } = useReduxContext2();
+    return store2;
+  };
+}
+var useStore = /* @__PURE__ */ createStoreHook();
+function createDispatchHook(context = ReactReduxContext) {
+  let useStore2 = (
+    // @ts-ignore
+    context === ReactReduxContext ? useStore : createStoreHook(context)
+  );
+  return function() {
+    return useStore2().dispatch;
+  };
+}
+var useDispatch = /* @__PURE__ */ createDispatchHook();
 initializeUseSelector(import_with_selector.useSyncExternalStoreWithSelector);
 initializeConnect(React22.useSyncExternalStore);
 
@@ -30810,23 +30927,23 @@ function createStore(reducer, preloadedState, enhancer) {
       }
     };
   }
-  function dispatch(action) {
-    if (!isPlainObject(action))
-      throw new Error(`Actions must be plain objects. Instead, the actual type was: '${kindOf(action)}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`);
-    if (typeof action.type > "u")
+  function dispatch(action3) {
+    if (!isPlainObject(action3))
+      throw new Error(`Actions must be plain objects. Instead, the actual type was: '${kindOf(action3)}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`);
+    if (typeof action3.type > "u")
       throw new Error('Actions may not have an undefined "type" property. You may have misspelled an action type string constant.');
-    if (typeof action.type != "string")
-      throw new Error(`Action "type" property must be a string. Instead, the actual type was: '${kindOf(action.type)}'. Value was: '${action.type}' (stringified)`);
+    if (typeof action3.type != "string")
+      throw new Error(`Action "type" property must be a string. Instead, the actual type was: '${kindOf(action3.type)}'. Value was: '${action3.type}' (stringified)`);
     if (isDispatching)
       throw new Error("Reducers may not dispatch actions.");
     try {
-      isDispatching = !0, currentState = currentReducer(currentState, action);
+      isDispatching = !0, currentState = currentReducer(currentState, action3);
     } finally {
       isDispatching = !1;
     }
     return (currentListeners = nextListeners).forEach((listener2) => {
       listener2();
-    }), action;
+    }), action3;
   }
   function replaceReducer(nextReducer) {
     if (typeof nextReducer != "function")
@@ -30879,8 +30996,8 @@ function warning2(message) {
   } catch {
   }
 }
-function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
-  let reducerKeys = Object.keys(reducers), argumentName = action && action.type === actionTypes_default.INIT ? "preloadedState argument passed to createStore" : "previous state received by the reducer";
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action3, unexpectedKeyCache) {
+  let reducerKeys = Object.keys(reducers), argumentName = action3 && action3.type === actionTypes_default.INIT ? "preloadedState argument passed to createStore" : "previous state received by the reducer";
   if (reducerKeys.length === 0)
     return "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers.";
   if (!isPlainObject(inputState))
@@ -30888,7 +31005,7 @@ function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, une
   let unexpectedKeys = Object.keys(inputState).filter((key) => !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key]);
   if (unexpectedKeys.forEach((key) => {
     unexpectedKeyCache[key] = !0;
-  }), !(action && action.type === actionTypes_default.REPLACE) && unexpectedKeys.length > 0)
+  }), !(action3 && action3.type === actionTypes_default.REPLACE) && unexpectedKeys.length > 0)
     return `Unexpected ${unexpectedKeys.length > 1 ? "keys" : "key"} "${unexpectedKeys.join('", "')}" found in ${argumentName}. Expected to find one of the known reducer keys instead: "${reducerKeys.join('", "')}". Unexpected keys will be ignored.`;
 }
 function assertReducerShape(reducers) {
@@ -30918,18 +31035,18 @@ function combineReducers(reducers) {
   } catch (e) {
     shapeAssertionError = e;
   }
-  return function(state = {}, action) {
+  return function(state = {}, action3) {
     if (shapeAssertionError)
       throw shapeAssertionError;
     {
-      let warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action, unexpectedKeyCache);
+      let warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action3, unexpectedKeyCache);
       warningMessage && warning2(warningMessage);
     }
     let hasChanged = !1, nextState = {};
     for (let i = 0; i < finalReducerKeys.length; i++) {
-      let key = finalReducerKeys[i], reducer = finalReducers[key], previousStateForKey = state[key], nextStateForKey = reducer(previousStateForKey, action);
+      let key = finalReducerKeys[i], reducer = finalReducers[key], previousStateForKey = state[key], nextStateForKey = reducer(previousStateForKey, action3);
       if (typeof nextStateForKey > "u") {
-        let actionType = action && action.type;
+        let actionType = action3 && action3.type;
         throw new Error(`When called with an action of type ${actionType ? `"${String(actionType)}"` : "(unknown type)"}, the slice reducer for key "${key}" returned undefined. To ignore an action, you must explicitly return the previous state. If you want this reducer to hold no value, you can return null instead of undefined.`);
       }
       nextState[key] = nextStateForKey, hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
@@ -30946,7 +31063,7 @@ function applyMiddleware(...middlewares) {
       throw new Error("Dispatching while constructing your middleware is not allowed. Other middleware would not be applied to this dispatch.");
     }, middlewareAPI = {
       getState: store2.getState,
-      dispatch: (action, ...args) => dispatch(action, ...args)
+      dispatch: (action3, ...args) => dispatch(action3, ...args)
     }, chain = middlewares.map((middleware) => middleware(middlewareAPI));
     return dispatch = compose(...chain)(store2.dispatch), {
       ...store2,
@@ -30954,8 +31071,8 @@ function applyMiddleware(...middlewares) {
     };
   };
 }
-function isAction(action) {
-  return isPlainObject(action) && "type" in action && typeof action.type == "string";
+function isAction(action3) {
+  return isPlainObject(action3) && "type" in action3 && typeof action3.type == "string";
 }
 
 // node_modules/immer/dist/immer.mjs
@@ -31019,7 +31136,7 @@ function isPlainObject2(value) {
 function each(obj, iter) {
   getArchtype(obj) === 0 ? Object.entries(obj).forEach(([key, value]) => {
     iter(key, value, obj);
-  }) : obj.forEach((entry2, index2) => iter(index2, entry2, obj));
+  }) : obj.forEach((entry2, index) => iter(index, entry2, obj));
 }
 function getArchtype(thing) {
   let state = thing[DRAFT_STATE];
@@ -31617,7 +31734,7 @@ function createSelectorCreator(memoizeOrOptions, ...memoizeOptionsFromArgs) {
 
 // node_modules/redux-thunk/dist/redux-thunk.mjs
 function createThunkMiddleware(extraArgument) {
-  return ({ dispatch, getState }) => (next) => (action) => typeof action == "function" ? action(dispatch, getState, extraArgument) : next(action);
+  return ({ dispatch, getState }) => (next) => (action3) => typeof action3 == "function" ? action3(dispatch, getState, extraArgument) : next(action3);
 }
 var thunk = createThunkMiddleware(), withExtraArgument = createThunkMiddleware;
 
@@ -31658,11 +31775,11 @@ function createAction(type, prepareAction) {
       payload: args[0]
     };
   }
-  return actionCreator.toString = () => `${type}`, actionCreator.type = type, actionCreator.match = (action) => isAction(action) && action.type === type, actionCreator;
+  return actionCreator.toString = () => `${type}`, actionCreator.type = type, actionCreator.match = (action3) => isAction(action3) && action3.type === type, actionCreator;
 }
-function isActionCreator(action) {
-  return typeof action == "function" && "type" in action && // hasMatchFunction only wants Matchers but I don't see the point in rewriting it
-  hasMatchFunction(action);
+function isActionCreator(action3) {
+  return typeof action3 == "function" && "type" in action3 && // hasMatchFunction only wants Matchers but I don't see the point in rewriting it
+  hasMatchFunction(action3);
 }
 function getMessage(type) {
   let splitType = type ? `${type}`.split("/") : [], actionName = splitType[splitType.length - 1] || "actionCreator";
@@ -31673,7 +31790,7 @@ function createActionCreatorInvariantMiddleware(options = {}) {
   let {
     isActionCreator: isActionCreator2 = isActionCreator
   } = options;
-  return () => (next) => (action) => (isActionCreator2(action) && console.warn(getMessage(action.type)), next(action));
+  return () => (next) => (action3) => (isActionCreator2(action3) && console.warn(getMessage(action3.type)), next(action3));
 }
 function getTimeMeasureUtils(maxDelay, fnName) {
   let elapsed = 0;
@@ -31802,16 +31919,16 @@ function createImmutableStateInvariantMiddleware(options = {}) {
       getState
     }) => {
       let state = getState(), tracker = track(state), result;
-      return (next) => (action) => {
+      return (next) => (action3) => {
         let measureUtils = getTimeMeasureUtils(warnAfter, "ImmutableStateInvariantMiddleware");
         measureUtils.measureTime(() => {
           if (state = getState(), result = tracker.detectMutations(), tracker = track(state), result.wasMutated)
             throw new Error(`A state mutation was detected between dispatches, in the path '${result.path || ""}'.  This may cause incorrect behavior. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
         });
-        let dispatchedAction = next(action);
+        let dispatchedAction = next(action3);
         return measureUtils.measureTime(() => {
           if (state = getState(), result = tracker.detectMutations(), tracker = track(state), result.wasMutated)
-            throw new Error(`A state mutation was detected inside a dispatch, in the path: ${result.path || ""}. Take a look at the reducer(s) handling the action ${stringify2(action)}. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
+            throw new Error(`A state mutation was detected inside a dispatch, in the path: ${result.path || ""}. Take a look at the reducer(s) handling the action ${stringify2(action3)}. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
         }), measureUtils.warnIfExceeded(), dispatchedAction;
       };
     };
@@ -31866,19 +31983,19 @@ function createSerializableStateInvariantMiddleware(options = {}) {
       ignoreActions = !1,
       disableCache = !1
     } = options, cache = !disableCache && WeakSet ? /* @__PURE__ */ new WeakSet() : void 0;
-    return (storeAPI) => (next) => (action) => {
-      if (!isAction(action))
-        return next(action);
-      let result = next(action), measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
-      return !ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action.type) !== -1) && measureUtils.measureTime(() => {
-        let foundActionNonSerializableValue = findNonSerializableValue(action, "", isSerializable, getEntries, ignoredActionPaths, cache);
+    return (storeAPI) => (next) => (action3) => {
+      if (!isAction(action3))
+        return next(action3);
+      let result = next(action3), measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
+      return !ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action3.type) !== -1) && measureUtils.measureTime(() => {
+        let foundActionNonSerializableValue = findNonSerializableValue(action3, "", isSerializable, getEntries, ignoredActionPaths, cache);
         if (foundActionNonSerializableValue) {
           let {
             keyPath,
             value
           } = foundActionNonSerializableValue;
           console.error(`A non-serializable value was detected in an action, in the path: \`${keyPath}\`. Value:`, value, `
-Take a look at the logic that dispatched this action: `, action, `
+Take a look at the logic that dispatched this action: `, action3, `
 (See https://redux.js.org/faq/actions#why-should-type-be-a-string-or-at-least-serializable-why-should-my-action-types-be-constants)`, `
 (To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)`);
         }
@@ -31890,7 +32007,7 @@ Take a look at the logic that dispatched this action: `, action, `
             value
           } = foundStateNonSerializableValue;
           console.error(`A non-serializable value was detected in the state, in the path: \`${keyPath}\`. Value:`, value, `
-Take a look at the reducer(s) handling this action type: ${action.type}.
+Take a look at the reducer(s) handling this action type: ${action3.type}.
 (See https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)`);
         }
       }), measureUtils.warnIfExceeded()), result;
@@ -31940,9 +32057,9 @@ var createQueueWithTimer = (timeout) => (notify) => {
     },
     // Override the base `store.dispatch` method so that we can check actions
     // for the `shouldAutoBatch` flag and determine if batching is active
-    dispatch(action) {
+    dispatch(action3) {
       try {
-        return notifying = !action?.meta?.[SHOULD_AUTOBATCH], shouldNotifyAtEndOfTick = !notifying, shouldNotifyAtEndOfTick && (notificationQueued || (notificationQueued = !0, queueCallback(notifyListeners))), store2.dispatch(action);
+        return notifying = !action3?.meta?.[SHOULD_AUTOBATCH], shouldNotifyAtEndOfTick = !notifying, shouldNotifyAtEndOfTick && (notificationQueued || (notificationQueued = !0, queueCallback(notifyListeners))), store2.dispatch(action3);
       } finally {
         notifying = !0;
       }
@@ -32029,32 +32146,32 @@ function executeReducerBuilderCallback(builderCallback) {
 function isStateFunction(x) {
   return typeof x == "function";
 }
-function createReducer(initialState2, mapOrBuilderCallback) {
+function createReducer(initialState, mapOrBuilderCallback) {
   if (typeof mapOrBuilderCallback == "object")
     throw new Error("The object notation for `createReducer` has been removed. Please use the 'builder callback' notation instead: https://redux-toolkit.js.org/api/createReducer");
   let [actionsMap, finalActionMatchers, finalDefaultCaseReducer] = executeReducerBuilderCallback(mapOrBuilderCallback), getInitialState;
-  if (isStateFunction(initialState2))
-    getInitialState = () => freezeDraftable(initialState2());
+  if (isStateFunction(initialState))
+    getInitialState = () => freezeDraftable(initialState());
   else {
-    let frozenInitialState = freezeDraftable(initialState2);
+    let frozenInitialState = freezeDraftable(initialState);
     getInitialState = () => frozenInitialState;
   }
-  function reducer(state = getInitialState(), action) {
-    let caseReducers = [actionsMap[action.type], ...finalActionMatchers.filter(({
+  function reducer(state = getInitialState(), action3) {
+    let caseReducers = [actionsMap[action3.type], ...finalActionMatchers.filter(({
       matcher
-    }) => matcher(action)).map(({
+    }) => matcher(action3)).map(({
       reducer: reducer2
     }) => reducer2)];
     return caseReducers.filter((cr) => !!cr).length === 0 && (caseReducers = [finalDefaultCaseReducer]), caseReducers.reduce((previousState, caseReducer) => {
       if (caseReducer)
         if (isDraft(previousState)) {
-          let result = caseReducer(previousState, action);
+          let result = caseReducer(previousState, action3);
           return result === void 0 ? previousState : result;
         } else {
           if (isDraftable(previousState))
-            return produce(previousState, (draft) => caseReducer(draft, action));
+            return produce(previousState, (draft) => caseReducer(draft, action3));
           {
-            let result = caseReducer(previousState, action);
+            let result = caseReducer(previousState, action3);
             if (result === void 0) {
               if (previousState === null)
                 return previousState;
@@ -32073,13 +32190,13 @@ var urlAlphabet = "ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXI
   for (; i--; )
     id += urlAlphabet[Math.random() * 64 | 0];
   return id;
-}, matches = (matcher, action) => hasMatchFunction(matcher) ? matcher.match(action) : matcher(action);
+}, matches = (matcher, action3) => hasMatchFunction(matcher) ? matcher.match(action3) : matcher(action3);
 function isAnyOf(...matchers) {
-  return (action) => matchers.some((matcher) => matches(matcher, action));
+  return (action3) => matchers.some((matcher) => matches(matcher, action3));
 }
 var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = class {
-  constructor(payload, meta) {
-    this.payload = payload, this.meta = meta;
+  constructor(payload, meta5) {
+    this.payload = payload, this.meta = meta5;
   }
   /*
   type-only property to distinguish between RejectWithValue and FulfillWithMeta
@@ -32087,8 +32204,8 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   */
   _type;
 }, FulfillWithMeta = class {
-  constructor(payload, meta) {
-    this.payload = payload, this.meta = meta;
+  constructor(payload, meta5) {
+    this.payload = payload, this.meta = meta5;
   }
   /*
   type-only property to distinguish between RejectWithValue and FulfillWithMeta
@@ -32107,27 +32224,27 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   };
 }, createAsyncThunk = /* @__PURE__ */ (() => {
   function createAsyncThunk2(typePrefix, payloadCreator, options) {
-    let fulfilled = createAction(typePrefix + "/fulfilled", (payload, requestId, arg, meta) => ({
+    let fulfilled = createAction(typePrefix + "/fulfilled", (payload, requestId, arg, meta5) => ({
       payload,
       meta: {
-        ...meta || {},
+        ...meta5 || {},
         arg,
         requestId,
         requestStatus: "fulfilled"
       }
-    })), pending = createAction(typePrefix + "/pending", (requestId, arg, meta) => ({
+    })), pending = createAction(typePrefix + "/pending", (requestId, arg, meta5) => ({
       payload: void 0,
       meta: {
-        ...meta || {},
+        ...meta5 || {},
         arg,
         requestId,
         requestStatus: "pending"
       }
-    })), rejected = createAction(typePrefix + "/rejected", (error, requestId, arg, payload, meta) => ({
+    })), rejected = createAction(typePrefix + "/rejected", (error, requestId, arg, payload, meta5) => ({
       payload,
       error: (options && options.serializeError || miniSerializeError)(error || "Rejected"),
       meta: {
-        ...meta || {},
+        ...meta5 || {},
         arg,
         requestId,
         rejectedWithValue: !!payload,
@@ -32171,8 +32288,8 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
               requestId,
               signal: abortController.signal,
               abort,
-              rejectWithValue: (value, meta) => new RejectWithValue(value, meta),
-              fulfillWithValue: (value, meta) => new FulfillWithMeta(value, meta)
+              rejectWithValue: (value, meta5) => new RejectWithValue(value, meta5),
+              fulfillWithValue: (value, meta5) => new FulfillWithMeta(value, meta5)
             })).then((result) => {
               if (result instanceof RejectWithValue)
                 throw result;
@@ -32203,12 +32320,12 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   }
   return createAsyncThunk2.withTypes = () => createAsyncThunk2, createAsyncThunk2;
 })();
-function unwrapResult(action) {
-  if (action.meta && action.meta.rejectedWithValue)
-    throw action.payload;
-  if (action.error)
-    throw action.error;
-  return action.payload;
+function unwrapResult(action3) {
+  if (action3.meta && action3.meta.rejectedWithValue)
+    throw action3.payload;
+  if (action3.error)
+    throw action3.error;
+  return action3.payload;
 }
 function isThenable(value) {
   return value !== null && typeof value == "object" && typeof value.then == "function";
@@ -32286,8 +32403,8 @@ function buildCreateSlice({
     let selectSelf = (state) => state, injectedSelectorCache = /* @__PURE__ */ new WeakMap(), _reducer, slice = {
       name,
       reducerPath,
-      reducer(state, action) {
-        return _reducer || (_reducer = buildReducer()), _reducer(state, action);
+      reducer(state, action3) {
+        return _reducer || (_reducer = buildReducer()), _reducer(state, action3);
       },
       actions: context.actionCreators,
       caseReducers: context.sliceCaseReducersByName,
@@ -32430,38 +32547,6 @@ var {
 var alm = "listenerMiddleware";
 var addListener = createAction(`${alm}/add`), clearAllListeners = createAction(`${alm}/removeAll`), removeListener = createAction(`${alm}/remove`);
 var ORIGINAL_STATE = Symbol.for("rtk-state-proxy-original");
-
-// app/state/counter/counterSlice.tsx
-var initialState = {
-  value: 0
-}, counterSlice = createSlice({
-  name: "counter",
-  initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
-    }
-  },
-  extraReducers: (builder) => {
-    builder.addCase(incrementAsync.pending, () => {
-      console.log("incrementAsync.pending");
-    }).addCase(
-      incrementAsync.fulfilled,
-      (state, action) => {
-        state.value += action.payload;
-      }
-    );
-  }
-}), incrementAsync = createAsyncThunk(
-  "counter/incrementAsync",
-  async (amount) => (await new Promise((resolve) => setTimeout(resolve, 1e3)), amount)
-), { increment, decrement, incrementByAmount } = counterSlice.actions, counterSlice_default = counterSlice.reducer;
 
 // api/models/api-result.ts
 var ApiResult = class {
@@ -32608,23 +32693,24 @@ var UserService = class extends SecureService {
 // app/state/user/userSlice.tsx
 var initialStateValue = {
   user: null,
-  tokens: null,
-  isLoading: !0,
-  isLoggedIn: !1,
-  locale: "en-US",
-  error: null
+  context: {
+    isLoading: !0,
+    isLoggedIn: !1,
+    locale: "en-US",
+    error: null
+  }
 }, userSlice = createSlice({
   name: "user",
   initialState: { value: initialStateValue },
   reducers: {
-    setUser: (state, action) => {
-      state.value.user = action.payload, state.value.isLoggedIn = !0, state.value.isLoading = !1, state.value.error = null;
+    setUser: (state, action3) => {
+      state.value.user = action3.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
     },
     setLogout: (state) => {
-      state.value.user = null, state.value.tokens = null, state.value.isLoggedIn = !1;
+      state.value.user = null, state.value.context.isLoggedIn = !1;
     },
-    setLoading: (state, action) => {
-      state.value.isLoading = action.payload;
+    setLoading: (state, action3) => {
+      state.value.context.isLoading = action3.payload;
     },
     // Optionally, you can add a reset action to set the state back to its initial value
     resetState: (state) => {
@@ -32632,17 +32718,20 @@ var initialStateValue = {
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(loginUser.fulfilled, (state, action) => {
-      state.value.user = action.payload, state.value.isLoggedIn = !0, state.value.isLoading = !1, state.value.error = null;
-    }).addCase(loginUser.rejected, (state, action) => {
-      state.value.error = "Login failed", state.value.isLoading = !1;
+    builder.addCase(loginUser.fulfilled, (state, action3) => {
+      state.value.user = action3.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
+    }).addCase(loginUser.rejected, (state, action3) => {
+      state.value.context.error = "Login failed", state.value.context.isLoading = !1;
     });
   }
 }), loginUser = createAsyncThunk(
   "user/loginUser",
   async (credentials, { dispatch }) => {
     try {
-      let user = (await UserService.loginUser(credentials.username, credentials.password)).user;
+      let user = (await UserService.loginUser(
+        credentials.username,
+        credentials.password
+      )).user;
       return dispatch(setUser(user)), user;
     } catch (error) {
       throw error;
@@ -32654,17 +32743,496 @@ var { setUser, setLogout, setLoading, resetState } = userSlice.actions, userSlic
 // app/state/store.ts
 var initializeStore = (preloadedState = {}) => configureStore({
   reducer: {
-    user: userSlice_default,
-    counter: counterSlice_default
+    user: userSlice_default
   },
   preloadedState
 });
 
 // app/index.css
-var app_default = "/build/_assets/index-GMKPFCQ6.css";
+var app_default = "/build/_assets/index-3SR67L3E.css";
 
 // app/root.tsx
+var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1), links = () => [
+  ...void 0 ? [{ rel: "stylesheet", href: app_default }] : []
+], store = initializeStore({});
+function App() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("html", { lang: "en", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("head", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 76,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 77,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Meta, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 78,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Links, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 79,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/root.tsx",
+      lineNumber: 75,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Provider_default, { store, children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Outlet, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 83,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 84,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Scripts, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 85,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(LiveReload, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 86,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/root.tsx",
+      lineNumber: 82,
+      columnNumber: 9
+    }, this) }, void 0, !1, {
+      fileName: "app/root.tsx",
+      lineNumber: 81,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/root.tsx",
+    lineNumber: 74,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/_public.landingpage.tsx
+var public_landingpage_exports = {};
+__export(public_landingpage_exports, {
+  default: () => dashboard
+});
+var import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1);
+function dashboard() {
+  let data = useLoaderData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "min-h-screen bg-gray-100 p-10", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { className: "text-2xl font-bold text-gray-700 mb-6", children: "Landing Page" }, void 0, !1, {
+      fileName: "app/routes/_public.landingpage.tsx",
+      lineNumber: 22,
+      columnNumber: 9
+    }, this),
+    data.user?.username
+  ] }, void 0, !0, {
+    fileName: "app/routes/_public.landingpage.tsx",
+    lineNumber: 21,
+    columnNumber: 7
+  }, this);
+}
+
+// app/routes/_clearance.landing.tsx
+var clearance_landing_exports = {};
+__export(clearance_landing_exports, {
+  default: () => clearance_landing_default
+});
+var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime(), 1), Clearance = () => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: "Clearance Landing Page" }, void 0, !1, {
+  fileName: "app/routes/_clearance.landing.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_landing_default = Clearance;
+
+// app/routes/_public.dashboard.tsx
+var public_dashboard_exports = {};
+__export(public_dashboard_exports, {
+  default: () => dashboard2
+});
+var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1);
+function dashboard2() {
+  let data = useLoaderData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "min-h-screen bg-gray-100 p-10", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h1", { className: "text-2xl font-bold text-gray-700 mb-6", children: "Dashboard" }, void 0, !1, {
+      fileName: "app/routes/_public.dashboard.tsx",
+      lineNumber: 22,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-4", children: "Plaid" }, void 0, !1, {
+          fileName: "app/routes/_public.dashboard.tsx",
+          lineNumber: 25,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-gray-600 mb-6", children: "Connect your bank accounts securely with Plaid." }, void 0, !1, {
+          fileName: "app/routes/_public.dashboard.tsx",
+          lineNumber: 26,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+          "a",
+          {
+            href: "/plaid",
+            className: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out",
+            children: "Connect to Plaid"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/_public.dashboard.tsx",
+            lineNumber: 30,
+            columnNumber: 13
+          },
+          this
+        )
+      ] }, void 0, !0, {
+        fileName: "app/routes/_public.dashboard.tsx",
+        lineNumber: 24,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-4", children: "QuickBooks" }, void 0, !1, {
+          fileName: "app/routes/_public.dashboard.tsx",
+          lineNumber: 39,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-gray-600 mb-6", children: "Manage your accounting with QuickBooks." }, void 0, !1, {
+          fileName: "app/routes/_public.dashboard.tsx",
+          lineNumber: 42,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+          "a",
+          {
+            href: "/quickbooks",
+            className: "bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out",
+            children: "Connect to QuickBooks"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/_public.dashboard.tsx",
+            lineNumber: 45,
+            columnNumber: 13
+          },
+          this
+        )
+      ] }, void 0, !0, {
+        fileName: "app/routes/_public.dashboard.tsx",
+        lineNumber: 38,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/_public.dashboard.tsx",
+      lineNumber: 23,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/_public.dashboard.tsx",
+    lineNumber: 21,
+    columnNumber: 7
+  }, this);
+}
+
+// app/routes/_clearance.page1.tsx
+var clearance_page1_exports = {};
+__export(clearance_page1_exports, {
+  default: () => clearance_page1_default
+});
+var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1), Clearance2 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { children: "Page 1" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page1.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page1_default = Clearance2;
+
+// app/routes/_clearance.page2.tsx
+var clearance_page2_exports = {};
+__export(clearance_page2_exports, {
+  default: () => clearance_page2_default
+});
+var import_jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime(), 1), Clearance3 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { children: "Page 2" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page2.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page2_default = Clearance3;
+
+// app/routes/_clearance.page3.tsx
+var clearance_page3_exports = {};
+__export(clearance_page3_exports, {
+  default: () => clearance_page3_default
+});
+var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime(), 1), Clearance4 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { children: "Page 3" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page3.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page3_default = Clearance4;
+
+// app/routes/_clearance.page4.tsx
+var clearance_page4_exports = {};
+__export(clearance_page4_exports, {
+  default: () => clearance_page4_default
+});
+var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime(), 1), Clearance5 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { children: "Page 4" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page4.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page4_default = Clearance5;
+
+// app/routes/_clearance.page5.tsx
+var clearance_page5_exports = {};
+__export(clearance_page5_exports, {
+  default: () => clearance_page5_default
+});
+var import_jsx_dev_runtime10 = __toESM(require_jsx_dev_runtime(), 1), Clearance6 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { children: "Page 5" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page5.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page5_default = Clearance6;
+
+// app/routes/_clearance.page6.tsx
+var clearance_page6_exports = {};
+__export(clearance_page6_exports, {
+  default: () => clearance_page6_default
+});
+var import_jsx_dev_runtime11 = __toESM(require_jsx_dev_runtime(), 1), Clearance7 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { children: "Page 6" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page6.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page6_default = Clearance7;
+
+// app/routes/_clearance.page7.tsx
+var clearance_page7_exports = {};
+__export(clearance_page7_exports, {
+  default: () => clearance_page7_default
+});
+var import_jsx_dev_runtime12 = __toESM(require_jsx_dev_runtime(), 1), Clearance8 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { children: "Page 7" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page7.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page7_default = Clearance8;
+
+// app/routes/_clearance.page8.tsx
+var clearance_page8_exports = {};
+__export(clearance_page8_exports, {
+  default: () => clearance_page8_default
+});
+var import_jsx_dev_runtime13 = __toESM(require_jsx_dev_runtime(), 1), Clearance9 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { children: "Page 8" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page8.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page8_default = Clearance9;
+
+// app/routes/_auth.register.tsx
+var auth_register_exports = {};
+__export(auth_register_exports, {
+  action: () => action,
+  default: () => auth_register_default,
+  loader: () => loader
+});
+var import_react6 = __toESM(require_react(), 1);
 var import_cloudflare3 = __toESM(require_dist(), 1);
+
+// app/state/hooks/user.tsx
+var useTypedSelector = useSelector, useDispatch2 = () => useDispatch();
+
+// app/components/base/navigation.tsx
+var import_jsx_dev_runtime14 = __toESM(require_jsx_dev_runtime(), 1), Navigation = ({ context }) => {
+  let fetcher = useFetcher2(), dispatch = useDispatch2(), navigate = useNavigate(), handleLogout = () => {
+    fetcher.submit({}, { method: "post", action: "/logout" }), dispatch(setLogout());
+  };
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_jsx_dev_runtime14.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("nav", { className: "bg-white shadow-md py-4 px-5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("ul", { className: "flex space-x-4", children: context.isLoggedIn ? /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_jsx_dev_runtime14.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
+      Link2,
+      {
+        className: "text-blue-600 hover:text-blue-800 font-semibold",
+        to: "/info",
+        prefetch: "intent",
+        children: "Info"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 61,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 60,
+      columnNumber: 15
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
+      "button",
+      {
+        className: "text-red-600 hover:text-red-800 font-semibold",
+        onClick: handleLogout,
+        children: "Logout"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 69,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 68,
+      columnNumber: 15
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 50,
+    columnNumber: 13
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_jsx_dev_runtime14.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
+      Link2,
+      {
+        className: "text-blue-600 hover:text-blue-800 font-semibold",
+        to: "/login",
+        prefetch: "intent",
+        children: "Login"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 31,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 30,
+      columnNumber: 15
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
+      Link2,
+      {
+        className: "text-blue-600 hover:text-blue-800 font-semibold",
+        to: "/register",
+        prefetch: "intent",
+        children: "Register"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 40,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 39,
+      columnNumber: 15
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 29,
+    columnNumber: 13
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 27,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 26,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 25,
+    columnNumber: 5
+  }, this);
+}, navigation_default = Navigation;
+
+// app/components/base/header.tsx
+var import_jsx_dev_runtime15 = __toESM(require_jsx_dev_runtime(), 1), Header = ({ context }) => /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("header", { className: "header-content", children: /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(navigation_default, { context }, void 0, !1, {
+  fileName: "app/components/base/header.tsx",
+  lineNumber: 19,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/header.tsx",
+  lineNumber: 18,
+  columnNumber: 5
+}, this), header_default = Header;
+
+// app/components/base/footer.tsx
+var import_jsx_dev_runtime16 = __toESM(require_jsx_dev_runtime(), 1), Footer = () => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("footer", { className: "bg-gray-800 text-white p-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "container mx-auto flex justify-between items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("a", { href: "/info/terms", className: "text-white hover:text-gray-300 mr-4", children: "Terms of Service" }, void 0, !1, {
+    fileName: "app/components/base/footer.tsx",
+    lineNumber: 9,
+    columnNumber: 11
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("a", { href: "/info/privacy", className: "text-white hover:text-gray-300", children: "Privacy Policy" }, void 0, !1, {
+    fileName: "app/components/base/footer.tsx",
+    lineNumber: 12,
+    columnNumber: 11
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/base/footer.tsx",
+  lineNumber: 8,
+  columnNumber: 9
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/footer.tsx",
+  lineNumber: 6,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/footer.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), footer_default = Footer;
+
+// app/components/base/pageTemplate.tsx
+var import_jsx_dev_runtime17 = __toESM(require_jsx_dev_runtime(), 1), PageTemplate = ({ children, user, context }) => context.isLoading === !0 || context.isLoading === null ? /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("header", { className: "header-content", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "loader", children: "Loading..." }, void 0, !1, {
+  fileName: "app/components/base/pageTemplate.tsx",
+  lineNumber: 17,
+  columnNumber: 9
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/pageTemplate.tsx",
+  lineNumber: 16,
+  columnNumber: 7
+}, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex flex-col min-h-screen", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(header_default, { user, context }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 24,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 23,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("main", { className: "main-content flex-grow py-8 max-w-7xl px-4 sm:px-6 lg:px-8", children }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 26,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(footer_default, {}, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 30,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 29,
+    columnNumber: 7
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/base/pageTemplate.tsx",
+  lineNumber: 22,
+  columnNumber: 5
+}, this), pageTemplate_default = PageTemplate;
 
 // app/utils/session/session.ts
 var import_cloudflare2 = __toESM(require_dist(), 1);
@@ -32686,6 +33254,1161 @@ function createSessionStorage(env) {
   return { getSession, commitSession, destroySession };
 }
 
+// app/utils/session/sessionUtils.ts
+async function isAuthenticated({ request, env }) {
+  return (await createSessionStorage(env).getSession(request.headers.get("Cookie"))).has("auth");
+}
+
+// app/routes/_auth.register.tsx
+var import_jsx_dev_runtime18 = __toESM(require_jsx_dev_runtime(), 1), loader = async ({ request, context }) => await isAuthenticated({ request, env: context.env }) ? (0, import_cloudflare3.redirect)("/home") : (0, import_cloudflare3.json)({});
+async function registerUser(username, password) {
+  try {
+    return await UserService.registerUser(username, password);
+  } catch (error) {
+    throw console.error("Login failed:", error), new Error("Login failed");
+  }
+}
+var action = async ({ request, context }) => {
+  let formData = await request.formData(), username = formData.get("username"), password = formData.get("password");
+  if (typeof username == "string" && typeof password == "string")
+    try {
+      return await registerUser(username, password), new Response(null, {
+        status: 303,
+        headers: {
+          Location: "/login"
+        }
+      });
+    } catch {
+      return (0, import_cloudflare3.json)({ error: "Registration failed." }, { status: 501 });
+    }
+  else
+    return (0, import_cloudflare3.json)({ error: "Missing username or password" }, { status: 400 });
+}, Register = () => {
+  let [username, setUsername] = (0, import_react6.useState)(""), [password, setPassword] = (0, import_react6.useState)(""), actionData = useActionData2(), [hasAgreedToTerms, setHasAgreedToTerms] = (0, import_react6.useState)(!1), user = useTypedSelector((state) => state.user.value);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(pageTemplate_default, { user, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+    "form",
+    {
+      action: "/register",
+      method: "post",
+      className: "max-w-lg mx-auto mt-2 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+            "label",
+            {
+              className: "block text-gray-300 text-base font-semibold mb-2",
+              htmlFor: "username",
+              children: "Email"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.register.tsx",
+              lineNumber: 85,
+              columnNumber: 11
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+            "input",
+            {
+              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
+              id: "username",
+              type: "text",
+              name: "username",
+              value: username,
+              placeholder: "Enter your email",
+              onChange: (e) => setUsername(e.target.value)
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.register.tsx",
+              lineNumber: 91,
+              columnNumber: 11
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/routes/_auth.register.tsx",
+          lineNumber: 84,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+            "label",
+            {
+              className: "block text-gray-300 text-base font-semibold mb-2",
+              htmlFor: "password",
+              children: "Password"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.register.tsx",
+              lineNumber: 103,
+              columnNumber: 11
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+            "input",
+            {
+              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 mb-3 leading-tight focus:outline-none focus:border-blue-500",
+              id: "password",
+              type: "password",
+              name: "password",
+              value: password,
+              placeholder: "Enter your password",
+              onChange: (e) => setPassword(e.target.value)
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.register.tsx",
+              lineNumber: 109,
+              columnNumber: 11
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/routes/_auth.register.tsx",
+          lineNumber: 102,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+          "label",
+          {
+            htmlFor: "termsOfService",
+            className: "block text-gray-300 text-base font-semibold mb-2",
+            children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                "input",
+                {
+                  type: "checkbox",
+                  id: "termsOfService",
+                  checked: hasAgreedToTerms,
+                  onChange: (event) => {
+                    setHasAgreedToTerms(event.target.checked);
+                  },
+                  className: "mr-2 leading-tight"
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/routes/_auth.register.tsx",
+                  lineNumber: 125,
+                  columnNumber: 13
+                },
+                this
+              ),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "text-sm text-white", children: [
+                "I have read and agree to the ",
+                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("br", {}, void 0, !1, {
+                  fileName: "app/routes/_auth.register.tsx",
+                  lineNumber: 133,
+                  columnNumber: 44
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                  "a",
+                  {
+                    href: "/info/terms",
+                    target: "_blank",
+                    className: "text-blue-500 hover:text-blue-700",
+                    style: { margin: "0 5px" },
+                    children: "Terms of Service"
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/routes/_auth.register.tsx",
+                    lineNumber: 134,
+                    columnNumber: 15
+                  },
+                  this
+                ),
+                "and",
+                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+                  "a",
+                  {
+                    href: "/info/privacy",
+                    target: "_blank",
+                    className: "text-blue-500 hover:text-blue-700",
+                    style: { margin: "0 5px" },
+                    children: "Privacy Policy"
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/routes/_auth.register.tsx",
+                    lineNumber: 143,
+                    columnNumber: 15
+                  },
+                  this
+                )
+              ] }, void 0, !0, {
+                fileName: "app/routes/_auth.register.tsx",
+                lineNumber: 132,
+                columnNumber: 13
+              }, this)
+            ]
+          },
+          void 0,
+          !0,
+          {
+            fileName: "app/routes/_auth.register.tsx",
+            lineNumber: 121,
+            columnNumber: 11
+          },
+          this
+        ) }, void 0, !1, {
+          fileName: "app/routes/_auth.register.tsx",
+          lineNumber: 120,
+          columnNumber: 9
+        }, this),
+        actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
+          fileName: "app/routes/_auth.register.tsx",
+          lineNumber: 156,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-center justify-between", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+          "button",
+          {
+            className: "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105",
+            type: "submit",
+            disabled: !hasAgreedToTerms,
+            children: "Register"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/_auth.register.tsx",
+            lineNumber: 159,
+            columnNumber: 11
+          },
+          this
+        ) }, void 0, !1, {
+          fileName: "app/routes/_auth.register.tsx",
+          lineNumber: 158,
+          columnNumber: 9
+        }, this)
+      ]
+    },
+    void 0,
+    !0,
+    {
+      fileName: "app/routes/_auth.register.tsx",
+      lineNumber: 79,
+      columnNumber: 7
+    },
+    this
+  ) }, void 0, !1, {
+    fileName: "app/routes/_auth.register.tsx",
+    lineNumber: 78,
+    columnNumber: 5
+  }, this);
+}, auth_register_default = Register;
+
+// app/routes/_public._index.tsx
+var public_index_exports = {};
+__export(public_index_exports, {
+  default: () => public_index_default
+});
+var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime(), 1), Public = () => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { children: "Public" }, void 0, !1, {
+  fileName: "app/routes/_public._index.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), public_index_default = Public;
+
+// app/routes/_auth.logout.tsx
+var auth_logout_exports = {};
+__export(auth_logout_exports, {
+  action: () => action2
+});
+var import_cloudflare4 = __toESM(require_dist(), 1), action2 = async ({
+  request,
+  context: { session }
+}) => {
+  let quickbooksAuth = session.get("quickbooksAuth"), plaidAuth = session.get("plaidAuth");
+  return session.unset("auth"), quickbooksAuth && session.set("quickbooksAuth", quickbooksAuth), plaidAuth && session.set("plaidAuth", plaidAuth), (0, import_cloudflare4.redirect)("/");
+};
+
+// app/routes/_public.info.tsx
+var public_info_exports = {};
+__export(public_info_exports, {
+  Info: () => Info,
+  default: () => public_info_default
+});
+var import_jsx_dev_runtime20 = __toESM(require_jsx_dev_runtime(), 1), Info = () => /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(Outlet, {}, void 0, !1, {
+  fileName: "app/routes/_public.info.tsx",
+  lineNumber: 10,
+  columnNumber: 7
+}, this), public_info_default = Info;
+
+// app/routes/info.privacy.tsx
+var info_privacy_exports = {};
+__export(info_privacy_exports, {
+  default: () => info_privacy_default
+});
+var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPolicy = () => /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h1", { className: "text-4xl font-bold text-gray-800", children: "End User Privacy Policy" }, void 0, !1, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 6,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "font-semibold text-gray-700 mt-4", children: "Privacy and security are very important to us at International Communications Management, Inc, (ICM). This End User Privacy Policy (\u201CPolicy\u201D) is meant to help you (the \u201Cend user\u201D) understand how we at ICM collect, use, and share your data when you use ICM products or services - for example, when you use ICM Portal, or when you use ICM to connect and share your data to power the applications (\u201Capps\u201D) you use. These apps, which offer many business services and products such as helping you manage your business, invoicing, accounts payable, accounts receivable and manage your revenue spending, are built and provided by our business customers (we'll call them \u201Cdevelopers\u201D here), and powered by ICM applications." }, void 0, !1, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 10,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "font-semibold text-gray-700 mt-4", children: "This Policy applies to ICM and its affiliates and subsidiaries. You should read this Policy carefully; it contains important information about your privacy rights and choices." }, void 0, !1, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 24,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600 mt-6", children: "Jump to section:" }, void 0, !1, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 30,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ol", { className: "pl-5", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#our-data-practices",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Our Data Practices"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 36,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 35,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#data-collection",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Data We Collect and Categories of Sources"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 44,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 43,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#use-of-data",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "How We Use Your Data"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 52,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 51,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#how-we-share-data",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "How We Share Your Data"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 60,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 59,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#retention-and-deletion",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Our Retention and Deletion Practices"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 68,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 67,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#protection-of-data",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Protection of Data"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 76,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 75,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#data-protection-rights",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Your Data Protection Rights"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 84,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 83,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#additional-privacy-controls",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Your Additional Privacy Controls"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 92,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 91,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#summaries-of-processing",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Summaries of Processing Activities"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 100,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 99,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#summary-by-category",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Summary of Processing Activities by Category of Information"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 108,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 107,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#summary-by-product",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Summary of Processing Activities by Product"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 116,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 115,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+      "a",
+      {
+        href: "#consumer-privacy-notice",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Consumer Privacy Notice"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 124,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 123,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 34,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { id: "our-data-practices", className: "mt-8", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600", children: "Our Data Practices" }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 134,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base font-normal text-gray-600 mt-2", children: "ICM is committed to providing end users with meaningful control over their data. This section describes ICM's data practices relating to our processing of information about you. We also provide summaries of our practices organized by category of information collected and by product at the end of this Policy in the Summaries of Processing Activities section." }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 135,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 133,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { id: "data-collection", className: "mt-8", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-2xl font-bold text-gray-600 mb-4", children: "Data We Collect and Categories of Sources" }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 146,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "As explained in greater detail below, the data we collect, use, and share depends on the ICM products and services that you, and or the app you have connected to, use. Depending on which of ICM's products or services you or the developer you are connecting to use, ICM may collect the following:" }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 149,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ul", { className: "list-disc list-inside mb-6 pl-4", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data you provide to us;" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 157,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data from financial partners when you connect your financial account;" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 158,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data from the electronic device you use to connect;" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 162,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data from the developer of the app you have connected to; and" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 165,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data from other sources, including service providers and identity verification services." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 168,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 156,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-xl font-semibold text-gray-600 mb-3", children: "Data you provide to us" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 175,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you use ICM's products or services, like when you connect your financial accounts (like your bank accounts) to a developer's app through ICM, we may collect the following data from you:" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 178,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ul", { className: "list-disc list-inside pl-4 mb-4", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Identifiers like name, email address, and phone number;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 184,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Login data when required by the provider of your account, like your username and password, account and routing number, or a security token;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 187,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "When needed, data to help verify your identity and/or connect your accounts, including your Social Security number, date of birth, security questions and answers, documentary ID, and one-time password (OTP)." }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 192,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 183,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you provide this data, you also give ICM permission and authority to act on your behalf to access and transmit your data to and from the relevant bank or financial service provider that holds your financial account (we'll call them \u201Cfinancial partners\u201D in this Policy)." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 199,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 174,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-xl font-semibold text-gray-600 mb-3", children: "financial account" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 209,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Depending on which ICM products you or the developer of your app use, as well as what and how information is made available by your financial product and service providers, we may collect the following data from financial partners when you connect your financial accounts with or through ICM:" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 212,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ul", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Account data, including financial institution name, account name, account type, account ownership, branch number, IBAN, BIC, account number, routing number, and sort code;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 220,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data about an account balance, including current and available balance;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 225,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data about credit accounts, including due dates, balances owed, payment amounts and dates, transaction history, credit limit, repayment status, and interest rate;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 229,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data about loan accounts, including due dates, repayment status, balances, payment amounts and dates, interest rate, guarantor, loan type, payment plan, and terms;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 234,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data about investment accounts, including transaction information, type of asset, identifying details about the asset, quantity, price, fees, and cost basis;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 239,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Identifiers and data about the account owner(s), including name, email address, phone number, date of birth, and address information;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 244,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data about account transactions, including amount, date, payee, type, quantity, price, location, involved securities, and a description of the transaction; and/or" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 249,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Professional data, including data about your employer, in cases where you've connected your payroll accounts or provided us with your pay stub or tax form information." }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 254,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 219,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Depending on the ICM service you or the developer of your app use, and the manner in which the data is made available, the data collected from your financial accounts may include data from all accounts (e.g., checking, savings, credit card, and joint accounts) accessible through a single set of account credentials. For more specifics about data collected in connection with different products and services, see Summary of Processing Activities by Product." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 260,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 208,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive from your devices" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 272,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you use a device, like your smartphone, tablet, or computer, to connect to our services through a developer's application, we receive data about that device, including:" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 275,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ul", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Internet protocol (IP) address;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 281,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Timezone setting and location, device location;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 282,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Hardware model and operating system;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 285,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Which features within our services you access, browser data, and other technical data about the device." }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 286,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 280,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 271,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive about you from the developers of apps powered by ICM" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 294,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When needed for ICM to provide a service, the developers of the apps you use may provide us with identifiers and commercial information about you, like your name, Social Security number, email address, phone number, or information about your financial accounts and account transactions. One example of this kind of service are ICM Identity Verification and Monitor services, which are used so the developer you are connecting to can verify your identity, detect fraud, and screen their users against watchlists." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 297,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 293,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive about you from other sources" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 310,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When needed to provide a service or to help prevent fraud, abuse, or security threats, we may also receive data about you directly from third parties, including our service providers or identity verification services." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 313,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 309,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Information we derive from the data we collect" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 322,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "We may derive additional information about you from the data we collect. For example, we may infer your geolocation, your annual income, or the type of account or subaccount you've chosen to connect\u2014such as when you connect your loan accounts, so we can let the developer know whether the account is for a mortgage, student loan, or credit card." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 325,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 321,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 145,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { id: "consumer-privacy-notice", className: "mt-8", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600", children: "Consumer Privacy Notice" }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 420,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Our goal with this Policy is to provide a simple and straightforward explanation of what data ICM collects from and about you and how we use and share that information. We value transparency and want to provide you with a clear and concise description of how we treat your data." }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 423,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "This Policy does not cover what developers of the apps you use do with your data. You should review the privacy policies or terms of service for those apps for information about their practices. This Policy also does not cover data we collect through our websites or when you interact with ICM outside of using our product or services, such as emailing ICM directly. Please see our All Audience Privacy Statement and Cookie Policy for more information." }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 431,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "ICM's services are not directed to individuals under 18 and we do not knowingly collect data relating to children." }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 441,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 419,
+    columnNumber: 7
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/routes/info.privacy.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), info_privacy_default = PrivacyPolicy;
+
+// app/routes/_auth.login.tsx
+var auth_login_exports = {};
+__export(auth_login_exports, {
+  default: () => auth_login_default,
+  loader: () => loader2
+});
+var import_react9 = __toESM(require_react(), 1);
+var import_cloudflare5 = __toESM(require_dist(), 1);
+var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = async ({ request, context }) => await isAuthenticated({ request, env: context.env }) ? (0, import_cloudflare5.redirect)("/home") : (0, import_cloudflare5.json)({}), Login = () => {
+  let [username, setUsername] = (0, import_react9.useState)(""), [password, setPassword] = (0, import_react9.useState)(""), actionData = useActionData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+    "form",
+    {
+      action: "/login",
+      method: "post",
+      className: "max-w-lg mx-auto mt-2 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+            "label",
+            {
+              className: "block text-gray-300 text-base font-semibold mb-2",
+              htmlFor: "username",
+              children: "Email"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 93,
+              columnNumber: 11
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+            "input",
+            {
+              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
+              id: "username",
+              type: "text",
+              name: "username",
+              value: username,
+              placeholder: "Enter your email",
+              onChange: (e) => setUsername(e.target.value)
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 99,
+              columnNumber: 11
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 92,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+            "label",
+            {
+              className: "block text-gray-300 text-base font-semibold mb-2",
+              htmlFor: "password",
+              children: "Password"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 111,
+              columnNumber: 11
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+            "input",
+            {
+              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 mb-3 leading-tight focus:outline-none focus:border-blue-500",
+              id: "password",
+              type: "password",
+              name: "password",
+              value: password,
+              placeholder: "Enter your password",
+              onChange: (e) => setPassword(e.target.value)
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 117,
+              columnNumber: 11
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 110,
+          columnNumber: 9
+        }, this),
+        actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 129,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex items-center justify-between space-x-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          "button",
+          {
+            className: "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105",
+            type: "submit",
+            children: "Login"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/_auth.login.tsx",
+            lineNumber: 133,
+            columnNumber: 11
+          },
+          this
+        ) }, void 0, !1, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 132,
+          columnNumber: 9
+        }, this)
+      ]
+    },
+    void 0,
+    !0,
+    {
+      fileName: "app/routes/_auth.login.tsx",
+      lineNumber: 87,
+      columnNumber: 7
+    },
+    this
+  );
+}, auth_login_default = Login;
+
+// app/routes/info._index.tsx
+var info_index_exports = {};
+__export(info_index_exports, {
+  default: () => info_index_default
+});
+init_dist2();
+var import_jsx_dev_runtime23 = __toESM(require_jsx_dev_runtime(), 1), Info_Index = () => /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "flex justify-center space-x-4", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
+    "a",
+    {
+      href: "/info/privacy",
+      className: "block bg-white shadow-md rounded-lg p-6 max-w-sm hover:bg-gray-100",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-2", children: "Privacy Policy" }, void 0, !1, {
+          fileName: "app/routes/info._index.tsx",
+          lineNumber: 11,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("p", { className: "text-gray-600", children: "Read our privacy policy to understand how we handle your data." }, void 0, !1, {
+          fileName: "app/routes/info._index.tsx",
+          lineNumber: 14,
+          columnNumber: 7
+        }, this)
+      ]
+    },
+    void 0,
+    !0,
+    {
+      fileName: "app/routes/info._index.tsx",
+      lineNumber: 7,
+      columnNumber: 5
+    },
+    this
+  ),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
+    "a",
+    {
+      href: "/info/terms",
+      className: "block bg-white shadow-md rounded-lg p-6 max-w-sm hover:bg-gray-100",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-2", children: "Terms of Service" }, void 0, !1, {
+          fileName: "app/routes/info._index.tsx",
+          lineNumber: 23,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("p", { className: "text-gray-600", children: "Review our terms of service to learn about the rules and regulations." }, void 0, !1, {
+          fileName: "app/routes/info._index.tsx",
+          lineNumber: 26,
+          columnNumber: 7
+        }, this)
+      ]
+    },
+    void 0,
+    !0,
+    {
+      fileName: "app/routes/info._index.tsx",
+      lineNumber: 19,
+      columnNumber: 5
+    },
+    this
+  ),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(Outlet, {}, void 0, !1, {
+    fileName: "app/routes/info._index.tsx",
+    lineNumber: 31,
+    columnNumber: 5
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/routes/info._index.tsx",
+  lineNumber: 6,
+  columnNumber: 5
+}, this), info_index_default = Info_Index;
+
+// app/routes/_clearance.tsx
+var clearance_exports = {};
+__export(clearance_exports, {
+  default: () => Clearance10,
+  loader: () => loader3,
+  meta: () => meta
+});
+var import_cloudflare6 = __toESM(require_dist(), 1);
+
+// app/components/base/userStatus.tsx
+var import_react11 = __toESM(require_react(), 1), import_jsx_dev_runtime24 = __toESM(require_jsx_dev_runtime(), 1), UserStatus = ({ user, context }) => {
+  let [date, setDate] = (0, import_react11.useState)(""), [time, setTime] = (0, import_react11.useState)("");
+  return (0, import_react11.useEffect)(() => {
+    let setClock = (now) => {
+      if (context.locale) {
+        let date2 = now.toLocaleDateString(context.locale), time2 = now.toLocaleTimeString(context.locale);
+        setDate(date2), setTime(time2);
+      }
+    };
+    setClock(/* @__PURE__ */ new Date());
+    let interval = setInterval(() => setClock(/* @__PURE__ */ new Date()), 1e3);
+    return () => clearInterval(interval);
+  }, [context.locale]), /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "max-w-lg mx-auto p-6 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-lg", children: context.isLoggedIn && user.id ? /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_jsx_dev_runtime24.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "text-lg font-semibold text-white", children: [
+      "Welcome, ",
+      user.username
+    ] }, void 0, !0, {
+      fileName: "app/components/base/userStatus.tsx",
+      lineNumber: 35,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "mt-2 text-sm text-gray-400", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: date }, void 0, !1, {
+        fileName: "app/components/base/userStatus.tsx",
+        lineNumber: 37,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: time }, void 0, !1, {
+        fileName: "app/components/base/userStatus.tsx",
+        lineNumber: 38,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/base/userStatus.tsx",
+      lineNumber: 36,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/base/userStatus.tsx",
+    lineNumber: 34,
+    columnNumber: 7
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_jsx_dev_runtime24.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "text-lg font-semibold text-red-600", children: "Not logged in" }, void 0, !1, {
+      fileName: "app/components/base/userStatus.tsx",
+      lineNumber: 43,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "mt-2 text-sm text-gray-400", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: date }, void 0, !1, {
+        fileName: "app/components/base/userStatus.tsx",
+        lineNumber: 45,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: time }, void 0, !1, {
+        fileName: "app/components/base/userStatus.tsx",
+        lineNumber: 46,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/base/userStatus.tsx",
+      lineNumber: 44,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/base/userStatus.tsx",
+    lineNumber: 42,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/userStatus.tsx",
+    lineNumber: 32,
+    columnNumber: 5
+  }, this);
+}, userStatus_default = UserStatus;
+
+// app/routes/_clearance.tsx
+var import_react13 = __toESM(require_react(), 1);
+
 // app/utils/checkAuthentication.ts
 async function checkAuthentication(context) {
   if (await createSessionStorage(context.env).getSession(context.request.headers.get("Cookie")))
@@ -32703,386 +34426,332 @@ async function checkAuthentication(context) {
   return !1;
 }
 
-// app/root.tsx
-var import_react3 = __toESM(require_react(), 1), import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1), links = () => [
-  ...void 0 ? [{ rel: "stylesheet", href: app_default }] : []
-], store = initializeStore({}), loader = async ({
+// app/routes/_clearance.tsx
+var import_jsx_dev_runtime25 = __toESM(require_jsx_dev_runtime(), 1), meta = () => [
+  { title: "New Remix App" },
+  { name: "description", content: "Welcome to Remix!" }
+], loader3 = async ({
   request,
   context: { context }
 }) => {
   let url = new URL(request.url), user = await checkAuthentication(context);
   try {
-    return console.log(user, "user"), user ? (0, import_cloudflare3.json)({ user }) : (0, import_cloudflare3.redirect)("/login");
+    return console.log(user, "user"), user ? (0, import_cloudflare6.json)({ user }) : (0, import_cloudflare6.redirect)("/login");
   } catch {
-    return url.pathname !== "/login" ? (0, import_cloudflare3.redirect)("/login") : (0, import_cloudflare3.json)({ error: "User is not authenticated" });
+    return url.pathname, (0, import_cloudflare6.redirect)("/login");
+    return (0, import_cloudflare6.json)({ error: "User is not authenticated" });
   }
 };
-function App() {
-  let data = useLoaderData2();
-  return (0, import_react3.useEffect)(() => {
-    data.user ? store.dispatch(setUser(data.user)) : store.dispatch(setLogout());
-  }, [data.user]), /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("html", { lang: "en", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("head", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 82,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 83,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Meta, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 84,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Links, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 85,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/root.tsx",
-      lineNumber: 81,
-      columnNumber: 7
+function Clearance10() {
+  let { user } = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
+  return (0, import_react13.useEffect)(() => {
+    dispatch(user ? setUser(user) : setLogout());
+  }, [user, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
+    fileName: "app/routes/_clearance.tsx",
+    lineNumber: 76,
+    columnNumber: 11
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(import_jsx_dev_runtime25.Fragment, { children: [
+    ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, !1, {
+      fileName: "app/routes/_clearance.tsx",
+      lineNumber: 79,
+      columnNumber: 32
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Provider_default, { store, children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Outlet, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 89,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 90,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Scripts, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 91,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(LiveReload, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 92,
-        columnNumber: 11
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/root.tsx",
-      lineNumber: 88,
-      columnNumber: 9
-    }, this) }, void 0, !1, {
-      fileName: "app/root.tsx",
-      lineNumber: 87,
-      columnNumber: 7
+    /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(Outlet, {}, void 0, !1, {
+      fileName: "app/routes/_clearance.tsx",
+      lineNumber: 80,
+      columnNumber: 13
     }, this)
   ] }, void 0, !0, {
-    fileName: "app/root.tsx",
-    lineNumber: 80,
-    columnNumber: 5
+    fileName: "app/routes/_clearance.tsx",
+    lineNumber: 78,
+    columnNumber: 11
+  }, this) }, void 0, !1, {
+    fileName: "app/routes/_clearance.tsx",
+    lineNumber: 74,
+    columnNumber: 7
   }, this);
 }
 
-// app/routes/register.tsx
-var register_exports = {};
-__export(register_exports, {
-  default: () => register_default
+// app/routes/info.terms.tsx
+var info_terms_exports = {};
+__export(info_terms_exports, {
+  default: () => info_terms_default
 });
-var import_react4 = __toESM(require_react(), 1), import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1), Register = () => {
-  let [username, setUsername] = (0, import_react4.useState)(""), [password, setPassword] = (0, import_react4.useState)("");
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-    "form",
-    {
-      action: "/register",
-      method: "post",
-      className: "max-w-lg mx-auto mt-10 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
-      children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mb-4", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-            "label",
-            {
-              className: "block text-gray-300 text-base font-semibold mb-2",
-              htmlFor: "username",
-              children: "Email"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/register.tsx",
-              lineNumber: 14,
-              columnNumber: 9
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-            "input",
-            {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
-              id: "username",
-              type: "text",
-              name: "username",
-              value: username,
-              placeholder: "Enter your email",
-              onChange: (e) => setUsername(e.target.value)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/register.tsx",
-              lineNumber: 20,
-              columnNumber: 9
-            },
-            this
-          )
-        ] }, void 0, !0, {
-          fileName: "app/routes/register.tsx",
-          lineNumber: 13,
-          columnNumber: 7
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mb-4", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-            "label",
-            {
-              className: "block text-gray-300 text-base font-semibold mb-2",
-              htmlFor: "password",
-              children: "Password"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/register.tsx",
-              lineNumber: 32,
-              columnNumber: 9
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-            "input",
-            {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
-              id: "password",
-              type: "password",
-              name: "password",
-              value: password,
-              placeholder: "Enter your password",
-              onChange: (e) => setPassword(e.target.value)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/register.tsx",
-              lineNumber: 38,
-              columnNumber: 9
-            },
-            this
-          )
-        ] }, void 0, !0, {
-          fileName: "app/routes/register.tsx",
-          lineNumber: 31,
-          columnNumber: 7
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-          "button",
-          {
-            type: "submit",
-            className: "bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50",
-            children: "Register"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/register.tsx",
-            lineNumber: 49,
-            columnNumber: 7
-          },
-          this
-        )
-      ]
-    },
-    void 0,
-    !0,
-    {
-      fileName: "app/routes/register.tsx",
-      lineNumber: 8,
-      columnNumber: 5
-    },
-    this
-  );
-}, register_default = Register;
+var import_jsx_dev_runtime26 = __toESM(require_jsx_dev_runtime(), 1), TermsAndConditions = () => /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h1", { children: "Terms of Use" }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 6,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("p", { children: "These Terms of Use (these \u201CTerms\u201D) are our rules for our production application environments." }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 7,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("p", { children: "By clicking \u201CI agree\u201D (or a similar checkbox or button) or accessing or using the Services, you indicate your assent to be bound by these Terms. If you do not agree to these Terms, do not use or access the Services. These Terms contain mandatory arbitration provisions that require the use of arbitration to resolve disputes. Please read it carefully." }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 11,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("p", { children: "These Terms are between International Communications Management Inc. (ICM), a Washington corporation (\u201CICM\u201D) and a \u201CClient\u201D entity or person accessing or using ICM's application. If you are accessing or using the ICM application on behalf of another entity, then that entity is the Client. ICM may modify these Terms from time to time in accordance with Section 10 (Modifications) below." }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 18,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h2", { children: "1. ACCESS RIGHTS; RESTRICTIONS" }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 26,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h3", { children: "1.1 Access" }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 27,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("p", { children: "Subject to the Client's compliance with the terms and conditions of these Terms, ICM hereby agrees that during the term of these Terms, the Client has the non-exclusive right to:" }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 28,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("ul", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("li", { children: "use the package of application programming interface materials provided by ICM solely as necessary to make an application owned and operated by the Client (the \u201CClient Application\u201D) interoperate with the ICM services." }, void 0, !1, {
+      fileName: "app/routes/info.terms.tsx",
+      lineNumber: 34,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("li", { children: "use the Services in such Client Application provided to end users (consumers or businesses) (the \u201CEnd Users\u201D) solely for internal evaluation of the Services, and" }, void 0, !1, {
+      fileName: "app/routes/info.terms.tsx",
+      lineNumber: 40,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("li", { children: "All use of the Services and Output must be only as provided in these Terms, only in accordance with ICM's applicable technical user documentation and subject to the internal evaluation use case" }, void 0, !1, {
+      fileName: "app/routes/info.terms.tsx",
+      lineNumber: 45,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 33,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h2", { children: "10. MODIFICATIONS" }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 51,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("p", { children: "From time to time, ICM may modify these Terms. ICM will use commercially reasonable efforts to notify Client of the modifications and the effective date of such modifications through communications via Client\u2019s account, email, or other means. Client must accept the modifications to continue accessing or using Development Accounts. If Client objects to the modifications, its exclusive remedy is to cease any and all access and use of Development Accounts. Client may be required to click to accept or otherwise agree to the modified Terms in order to continue accessing or using the Services, and in any event continued access or use of the Services after the modified version of these Terms goes into effect will constitute Client's acceptance of such modified version." }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 52,
+    columnNumber: 7
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/routes/info.terms.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), info_terms_default = TermsAndConditions;
+
+// app/routes/_public.tsx
+var public_exports = {};
+__export(public_exports, {
+  default: () => Public2,
+  loader: () => loader4,
+  meta: () => meta2
+});
+var import_cloudflare7 = __toESM(require_dist(), 1);
+var import_react15 = __toESM(require_react(), 1);
+var import_jsx_dev_runtime27 = __toESM(require_jsx_dev_runtime(), 1), meta2 = () => [
+  { title: "New Remix App" },
+  { name: "description", content: "Welcome to Remix!" }
+], loader4 = async ({
+  request,
+  context: { context }
+}) => {
+  let url = new URL(request.url), user = await checkAuthentication(context);
+  try {
+    return console.log(user, "user"), user ? (0, import_cloudflare7.json)({ user }) : (0, import_cloudflare7.redirect)("/login");
+  } catch {
+    return url.pathname, (0, import_cloudflare7.redirect)("/login");
+    return (0, import_cloudflare7.json)({ error: "User is not authenticated" });
+  }
+};
+function Public2() {
+  let { user } = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
+  return (0, import_react15.useEffect)(() => {
+    dispatch(user ? setUser(user) : setLogout());
+  }, [user, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
+    fileName: "app/routes/_public.tsx",
+    lineNumber: 76,
+    columnNumber: 9
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_jsx_dev_runtime27.Fragment, { children: [
+    ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, !1, {
+      fileName: "app/routes/_public.tsx",
+      lineNumber: 79,
+      columnNumber: 30
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(Outlet, {}, void 0, !1, {
+      fileName: "app/routes/_public.tsx",
+      lineNumber: 80,
+      columnNumber: 11
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/_public.tsx",
+    lineNumber: 78,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/routes/_public.tsx",
+    lineNumber: 74,
+    columnNumber: 5
+  }, this);
+}
 
 // app/routes/welcome.tsx
 var welcome_exports = {};
 __export(welcome_exports, {
   default: () => welcome
 });
-var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime(), 1);
+var import_jsx_dev_runtime28 = __toESM(require_jsx_dev_runtime(), 1);
 function welcome() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: "welcome" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)("div", { children: "welcome" }, void 0, !1, {
     fileName: "app/routes/welcome.tsx",
     lineNumber: 5,
     columnNumber: 5
   }, this);
 }
 
-// app/routes/_index.tsx
-var index_exports = {};
-__export(index_exports, {
-  default: () => index_default
+// app/routes/_auth.tsx
+var auth_exports = {};
+__export(auth_exports, {
+  default: () => Auth,
+  meta: () => meta3
 });
-var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1), index = () => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Outlet, {}, void 0, !1, {
-  fileName: "app/routes/_index.tsx",
-  lineNumber: 7,
-  columnNumber: 7
-}, this) }, void 0, !1, {
-  fileName: "app/routes/_index.tsx",
-  lineNumber: 6,
-  columnNumber: 5
-}, this), index_default = index;
+var import_jsx_dev_runtime29 = __toESM(require_jsx_dev_runtime(), 1), meta3 = () => [
+  { title: "New Remix App" },
+  { name: "description", content: "Welcome to Remix!" }
+];
+function Auth() {
+  let { user } = useLoaderData2(), data = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: [
+    ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, !1, {
+      fileName: "app/routes/_auth.tsx",
+      lineNumber: 41,
+      columnNumber: 26
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(Outlet, {}, void 0, !1, {
+      fileName: "app/routes/_auth.tsx",
+      lineNumber: 43,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/_auth.tsx",
+    lineNumber: 39,
+    columnNumber: 5
+  }, this);
+}
 
-// app/routes/logout.tsx
-var logout_exports = {};
+// app/routes/index.tsx
+var routes_exports = {};
 
-// app/routes/login.tsx
-var login_exports = {};
-__export(login_exports, {
-  default: () => login_default
+// app/routes/$404.tsx
+var __exports = {};
+__export(__exports, {
+  default: () => __default,
+  loader: () => loader5
 });
-var import_react6 = __toESM(require_react(), 1);
-var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1), Login = () => {
-  let [username, setUsername] = (0, import_react6.useState)(""), [password, setPassword] = (0, import_react6.useState)(""), actionData = useActionData2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-    "form",
-    {
-      action: "/login",
-      method: "post",
-      className: "max-w-lg mx-auto mt-10 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
-      children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-            "label",
-            {
-              className: "block text-gray-300 text-base font-semibold mb-2",
-              htmlFor: "username",
-              children: "Email"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/login.tsx",
-              lineNumber: 21,
-              columnNumber: 9
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-            "input",
-            {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
-              id: "username",
-              type: "text",
-              name: "username",
-              value: username,
-              placeholder: "Enter your email",
-              onChange: (e) => setUsername(e.target.value)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/login.tsx",
-              lineNumber: 27,
-              columnNumber: 9
-            },
-            this
-          )
-        ] }, void 0, !0, {
-          fileName: "app/routes/login.tsx",
-          lineNumber: 20,
-          columnNumber: 7
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-            "label",
-            {
-              className: "block text-gray-300 text-base font-semibold mb-2",
-              htmlFor: "password",
-              children: "Password"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/login.tsx",
-              lineNumber: 39,
-              columnNumber: 9
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-            "input",
-            {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 mb-3 leading-tight focus:outline-none focus:border-blue-500",
-              id: "password",
-              type: "password",
-              name: "password",
-              value: password,
-              placeholder: "Enter your password",
-              onChange: (e) => setPassword(e.target.value)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/login.tsx",
-              lineNumber: 45,
-              columnNumber: 9
-            },
-            this
-          )
-        ] }, void 0, !0, {
-          fileName: "app/routes/login.tsx",
-          lineNumber: 38,
-          columnNumber: 7
-        }, this),
-        actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
-          fileName: "app/routes/login.tsx",
-          lineNumber: 57,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex items-center justify-between", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-          "button",
-          {
-            className: "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50",
-            type: "submit",
-            children: "Login"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/login.tsx",
-            lineNumber: 61,
-            columnNumber: 9
-          },
-          this
-        ) }, void 0, !1, {
-          fileName: "app/routes/login.tsx",
-          lineNumber: 60,
-          columnNumber: 7
-        }, this)
-      ]
-    },
-    void 0,
-    !0,
-    {
-      fileName: "app/routes/login.tsx",
-      lineNumber: 15,
+var import_cloudflare8 = __toESM(require_dist(), 1);
+var import_jsx_dev_runtime30 = __toESM(require_jsx_dev_runtime(), 1), loader5 = async ({ request }) => {
+  let url = new URL(request.url);
+  return console.warn(`Page not found: ${url.pathname}`), (0, import_cloudflare8.json)({ pathname: url.pathname });
+}, NotFoundPage = () => {
+  let data = useLoaderData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "min-h-screen bg-gray-100 flex flex-col items-center justify-center px-4", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("h1", { className: "text-4xl font-bold text-gray-800 mb-4", children: "404: Page Not Found" }, void 0, !1, {
+      fileName: "app/routes/$404.tsx",
+      lineNumber: 23,
       columnNumber: 5
-    },
-    this
-  );
-}, login_default = Login;
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-lg text-gray-600 mb-6", children: [
+      "The requested URL ",
+      data.pathname,
+      " was not found on this server."
+    ] }, void 0, !0, {
+      fileName: "app/routes/$404.tsx",
+      lineNumber: 24,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(
+      Link2,
+      {
+        to: "/",
+        className: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110",
+        children: "Go to Home"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/$404.tsx",
+        lineNumber: 25,
+        columnNumber: 5
+      },
+      this
+    )
+  ] }, void 0, !0, {
+    fileName: "app/routes/$404.tsx",
+    lineNumber: 22,
+    columnNumber: 5
+  }, this);
+}, __default = NotFoundPage;
+
+// app/routes/home.tsx
+var home_exports = {};
+__export(home_exports, {
+  Home: () => Home,
+  default: () => home_default
+});
+var import_jsx_dev_runtime31 = __toESM(require_jsx_dev_runtime(), 1), Home = () => /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(import_jsx_dev_runtime31.Fragment, { children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(Outlet, {}, void 0, !1, {
+    fileName: "app/routes/home.tsx",
+    lineNumber: 11,
+    columnNumber: 7
+  }, this),
+  "Hello"
+] }, void 0, !0, {
+  fileName: "app/routes/home.tsx",
+  lineNumber: 10,
+  columnNumber: 5
+}, this), home_default = Home;
+
+// app/routes/api.tsx
+var api_exports = {};
+__export(api_exports, {
+  default: () => Index,
+  meta: () => meta4
+});
+var import_jsx_dev_runtime32 = __toESM(require_jsx_dev_runtime(), 1), meta4 = () => [
+  { title: "New Remix App" },
+  { name: "description", content: "Welcome to Remix!" }
+];
+function Index() {
+  let user = useTypedSelector((state) => state.user.value);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(pageTemplate_default, { user, children: [
+    user.user && /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(userStatus_default, { user }, void 0, !1, {
+      fileName: "app/routes/api.tsx",
+      lineNumber: 31,
+      columnNumber: 21
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(Outlet, {}, void 0, !1, {
+      fileName: "app/routes/api.tsx",
+      lineNumber: 34,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/api.tsx",
+    lineNumber: 30,
+    columnNumber: 5
+  }, this);
+}
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-EOQHKP5I.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-LVVQRFL6.js", "/build/_shared/chunk-YURZJQTD.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-7X5JJGBX.js", imports: void 0, hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-PNYNNW5H.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/login": { id: "routes/login", parentId: "root", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/login-BTP5VK2T.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/logout": { id: "routes/logout", parentId: "root", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/logout-FACVNVNY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/register": { id: "routes/register", parentId: "root", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/register-E5NJG5JU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-SG2FFPT5.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "78c3fc25", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708578737841 }, url: "/build/manifest-78C3FC25.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-BU4SANC4.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-EBSDBJYD.js", "/build/_shared/chunk-2OV7O5PJ.js", "/build/_shared/chunk-FSHJZDJN.js", "/build/_shared/chunk-E5WO37RD.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OE33BN7N.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/$404": { id: "routes/$404", parentId: "root", path: ":404", index: void 0, caseSensitive: void 0, module: "/build/routes/$404-WT4OY3ER.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth": { id: "routes/_auth", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_auth-JXSQ65DQ.js", imports: ["/build/_shared/chunk-YEKGOIXN.js", "/build/_shared/chunk-KPVNLZDD.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.login": { id: "routes/_auth.login", parentId: "routes/_auth", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.login-Z7S7TEFD.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.logout": { id: "routes/_auth.logout", parentId: "routes/_auth", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.logout-YPE3SW36.js", imports: void 0, hasAction: !0, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.register": { id: "routes/_auth.register", parentId: "routes/_auth", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.register-TZJHFPVL.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance": { id: "routes/_clearance", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance-ZJQROHUX.js", imports: ["/build/_shared/chunk-YEKGOIXN.js", "/build/_shared/chunk-KPVNLZDD.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.landing": { id: "routes/_clearance.landing", parentId: "routes/_clearance", path: "landing", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.landing-HU6OV2UA.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page1": { id: "routes/_clearance.page1", parentId: "routes/_clearance", path: "page1", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page1-VU3ZPN57.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page2": { id: "routes/_clearance.page2", parentId: "routes/_clearance", path: "page2", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page2-HEFSIQH3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page3": { id: "routes/_clearance.page3", parentId: "routes/_clearance", path: "page3", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page3-OE2QVKNL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page4": { id: "routes/_clearance.page4", parentId: "routes/_clearance", path: "page4", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page4-NEVQXYHC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page5": { id: "routes/_clearance.page5", parentId: "routes/_clearance", path: "page5", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page5-PH5AQOHG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page6": { id: "routes/_clearance.page6", parentId: "routes/_clearance", path: "page6", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page6-JA7XKOQB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page7": { id: "routes/_clearance.page7", parentId: "routes/_clearance", path: "page7", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page7-V5XZMASD.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page8": { id: "routes/_clearance.page8", parentId: "routes/_clearance", path: "page8", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page8-6NNNVCUC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public": { id: "routes/_public", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_public-6LGO3Y5U.js", imports: ["/build/_shared/chunk-YEKGOIXN.js", "/build/_shared/chunk-KPVNLZDD.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public._index": { id: "routes/_public._index", parentId: "routes/_public", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_public._index-2TNEQJFR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.dashboard": { id: "routes/_public.dashboard", parentId: "routes/_public", path: "dashboard", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.dashboard-QX7W7ATY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.info": { id: "routes/_public.info", parentId: "routes/_public", path: "info", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.info-XNKQCLUF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.landingpage": { id: "routes/_public.landingpage", parentId: "routes/_public", path: "landingpage", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.landingpage-4C3NE7NV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/api": { id: "routes/api", parentId: "root", path: "api", index: void 0, caseSensitive: void 0, module: "/build/routes/api-NPR3QP5E.js", imports: ["/build/_shared/chunk-YEKGOIXN.js", "/build/_shared/chunk-KPVNLZDD.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/home": { id: "routes/home", parentId: "root", path: "home", index: void 0, caseSensitive: void 0, module: "/build/routes/home-FQSSTJHC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: "index", index: void 0, caseSensitive: void 0, module: "/build/routes/index-5P6H5OEU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info._index": { id: "routes/info._index", parentId: "root", path: "info", index: !0, caseSensitive: void 0, module: "/build/routes/info._index-P6N46QPN.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.privacy": { id: "routes/info.privacy", parentId: "root", path: "info/privacy", index: void 0, caseSensitive: void 0, module: "/build/routes/info.privacy-GXKNV62D.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.terms": { id: "routes/info.terms", parentId: "root", path: "info/terms", index: void 0, caseSensitive: void 0, module: "/build/routes/info.terms-4JN6XCYU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-A5KC7LFP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "743e0d4f", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708672423669 }, url: "/build/manifest-743E0D4F.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -33094,13 +34763,173 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     caseSensitive: void 0,
     module: root_exports
   },
-  "routes/register": {
-    id: "routes/register",
-    parentId: "root",
+  "routes/_public.landingpage": {
+    id: "routes/_public.landingpage",
+    parentId: "routes/_public",
+    path: "landingpage",
+    index: void 0,
+    caseSensitive: void 0,
+    module: public_landingpage_exports
+  },
+  "routes/_clearance.landing": {
+    id: "routes/_clearance.landing",
+    parentId: "routes/_clearance",
+    path: "landing",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_landing_exports
+  },
+  "routes/_public.dashboard": {
+    id: "routes/_public.dashboard",
+    parentId: "routes/_public",
+    path: "dashboard",
+    index: void 0,
+    caseSensitive: void 0,
+    module: public_dashboard_exports
+  },
+  "routes/_clearance.page1": {
+    id: "routes/_clearance.page1",
+    parentId: "routes/_clearance",
+    path: "page1",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page1_exports
+  },
+  "routes/_clearance.page2": {
+    id: "routes/_clearance.page2",
+    parentId: "routes/_clearance",
+    path: "page2",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page2_exports
+  },
+  "routes/_clearance.page3": {
+    id: "routes/_clearance.page3",
+    parentId: "routes/_clearance",
+    path: "page3",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page3_exports
+  },
+  "routes/_clearance.page4": {
+    id: "routes/_clearance.page4",
+    parentId: "routes/_clearance",
+    path: "page4",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page4_exports
+  },
+  "routes/_clearance.page5": {
+    id: "routes/_clearance.page5",
+    parentId: "routes/_clearance",
+    path: "page5",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page5_exports
+  },
+  "routes/_clearance.page6": {
+    id: "routes/_clearance.page6",
+    parentId: "routes/_clearance",
+    path: "page6",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page6_exports
+  },
+  "routes/_clearance.page7": {
+    id: "routes/_clearance.page7",
+    parentId: "routes/_clearance",
+    path: "page7",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page7_exports
+  },
+  "routes/_clearance.page8": {
+    id: "routes/_clearance.page8",
+    parentId: "routes/_clearance",
+    path: "page8",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page8_exports
+  },
+  "routes/_auth.register": {
+    id: "routes/_auth.register",
+    parentId: "routes/_auth",
     path: "register",
     index: void 0,
     caseSensitive: void 0,
-    module: register_exports
+    module: auth_register_exports
+  },
+  "routes/_public._index": {
+    id: "routes/_public._index",
+    parentId: "routes/_public",
+    path: void 0,
+    index: !0,
+    caseSensitive: void 0,
+    module: public_index_exports
+  },
+  "routes/_auth.logout": {
+    id: "routes/_auth.logout",
+    parentId: "routes/_auth",
+    path: "logout",
+    index: void 0,
+    caseSensitive: void 0,
+    module: auth_logout_exports
+  },
+  "routes/_public.info": {
+    id: "routes/_public.info",
+    parentId: "routes/_public",
+    path: "info",
+    index: void 0,
+    caseSensitive: void 0,
+    module: public_info_exports
+  },
+  "routes/info.privacy": {
+    id: "routes/info.privacy",
+    parentId: "root",
+    path: "info/privacy",
+    index: void 0,
+    caseSensitive: void 0,
+    module: info_privacy_exports
+  },
+  "routes/_auth.login": {
+    id: "routes/_auth.login",
+    parentId: "routes/_auth",
+    path: "login",
+    index: void 0,
+    caseSensitive: void 0,
+    module: auth_login_exports
+  },
+  "routes/info._index": {
+    id: "routes/info._index",
+    parentId: "root",
+    path: "info",
+    index: !0,
+    caseSensitive: void 0,
+    module: info_index_exports
+  },
+  "routes/_clearance": {
+    id: "routes/_clearance",
+    parentId: "root",
+    path: void 0,
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_exports
+  },
+  "routes/info.terms": {
+    id: "routes/info.terms",
+    parentId: "root",
+    path: "info/terms",
+    index: void 0,
+    caseSensitive: void 0,
+    module: info_terms_exports
+  },
+  "routes/_public": {
+    id: "routes/_public",
+    parentId: "root",
+    path: void 0,
+    index: void 0,
+    caseSensitive: void 0,
+    module: public_exports
   },
   "routes/welcome": {
     id: "routes/welcome",
@@ -33110,34 +34939,50 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     caseSensitive: void 0,
     module: welcome_exports
   },
-  "routes/_index": {
-    id: "routes/_index",
+  "routes/_auth": {
+    id: "routes/_auth",
     parentId: "root",
     path: void 0,
-    index: !0,
-    caseSensitive: void 0,
-    module: index_exports
-  },
-  "routes/logout": {
-    id: "routes/logout",
-    parentId: "root",
-    path: "logout",
     index: void 0,
     caseSensitive: void 0,
-    module: logout_exports
+    module: auth_exports
   },
-  "routes/login": {
-    id: "routes/login",
+  "routes/index": {
+    id: "routes/index",
     parentId: "root",
-    path: "login",
+    path: "index",
     index: void 0,
     caseSensitive: void 0,
-    module: login_exports
+    module: routes_exports
+  },
+  "routes/$404": {
+    id: "routes/$404",
+    parentId: "root",
+    path: ":404",
+    index: void 0,
+    caseSensitive: void 0,
+    module: __exports
+  },
+  "routes/home": {
+    id: "routes/home",
+    parentId: "root",
+    path: "home",
+    index: void 0,
+    caseSensitive: void 0,
+    module: home_exports
+  },
+  "routes/api": {
+    id: "routes/api",
+    parentId: "root",
+    path: "api",
+    index: void 0,
+    caseSensitive: void 0,
+    module: api_exports
   }
 };
 
 // server.ts
-(0, import_cloudflare4.logDevReady)(server_build_exports);
+(0, import_cloudflare9.logDevReady)(server_build_exports);
 async function onRequest(context) {
   console.log(context, "context in SERVER");
   let { getSession, commitSession, destroySession } = createSessionStorage(context.env), session = await getSession(

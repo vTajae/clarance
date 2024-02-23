@@ -6,3 +6,7 @@ export interface EnvWithKV {
   __STATIC_CONTENT: KVNamespace;
 }
 
+export interface RequestContext {
+  request: Request;
+  env: EnvWithKV;
+}

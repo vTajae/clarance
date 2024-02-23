@@ -1,12 +1,17 @@
-import { RequestContext } from "api/schemas/context";
 import { EnvWithKV } from "../../../api/schemas/kv";
 import { createSessionStorage } from "./session";
 
-// export async function isAuthenticated(
-//  { request, context }: RequestContext
-// ): Promise<boolean> {
+interface RequestContext {
+    request: Request;
+    env: EnvWithKV;
+    // Include other properties from the context model as needed
+  }
 
-//   const session = await createSessionStorage(context.env).getSession(request.headers.get("Cookie"));
-//   // Check if the session has the required auth data
-//   return session.has("auth");
-// }
+export async function isAuthenticated(
+ { request, env }: RequestContext
+): Promise<boolean> {
+
+  const session = await createSessionStorage(env).getSession(request.headers.get("Cookie"));
+  // Check if the session has the required auth data
+  return session.has("auth");
+}
