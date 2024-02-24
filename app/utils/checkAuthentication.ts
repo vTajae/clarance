@@ -65,19 +65,23 @@ interface RequestContext {
 export async function checkAuthentication(context: RequestContext): Promise<LoginCookieData | false> {
   let session = await createSessionStorage(context.env).getSession(context.request.headers.get("Cookie"));
 
-  if (session) {
+  if (session.has("auth")) {
     try {
       // Your authentication logic here
 
-      const hardcodedUserData: LoginCookieData = {
-        username: "testUser",
-        id: "123456",
-        accessToken: "hardcodedAccessToken",
-        refreshToken: "hardcodedRefreshToken",
-        tokenCreationTime: Date.now(),
-      };
+      const parsedCookieData: LoginCookieData = session.get(
+        "auth"
+      ) as LoginCookieData;
 
-      return hardcodedUserData;
+      // const hardcodedUserData: LoginCookieData = {
+      //   username: "testUser",
+      //   id: "123456",
+      //   accessToken: "hardcodedAccessToken",
+      //   refreshToken: "hardcodedRefreshToken",
+      //   tokenCreationTime: Date.now(),
+      // };
+
+      return parsedCookieData;
     } catch (error) {
       console.error("Error parsing cookie data:", error);
     }

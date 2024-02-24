@@ -13,10 +13,10 @@ var __commonJS = (cb, mod) => function() {
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: !0 });
-}, __copyProps = (to, from, except, desc) => {
+}, __copyProps = (to, from, except2, desc2) => {
   if (from && typeof from == "object" || typeof from == "function")
     for (let key of __getOwnPropNames(from))
-      !__hasOwnProp.call(to, key) && key !== except && __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+      !__hasOwnProp.call(to, key) && key !== except2 && __defProp(to, key, { get: () => from[key], enumerable: !(desc2 = __getOwnPropDesc(from, key)) || desc2.enumerable });
   return to;
 };
 var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
@@ -39,7 +39,7 @@ var require_cookie = __commonJS({
     function parse2(str, options) {
       if (typeof str != "string")
         throw new TypeError("argument str must be a string");
-      for (var obj = {}, opt = options || {}, dec = opt.decode || decode, index = 0; index < str.length; ) {
+      for (var obj = {}, opt = options || {}, dec = opt.decode || decode2, index = 0; index < str.length; ) {
         var eqIdx = str.indexOf("=", index);
         if (eqIdx === -1)
           break;
@@ -128,7 +128,7 @@ var require_cookie = __commonJS({
       }
       return str;
     }
-    function decode(str) {
+    function decode2(str) {
       return str.indexOf("%") !== -1 ? decodeURIComponent(str) : str;
     }
     function encode(val) {
@@ -137,9 +137,9 @@ var require_cookie = __commonJS({
     function isDate2(val) {
       return __toString.call(val) === "[object Date]" || val instanceof Date;
     }
-    function tryDecode(str, decode2) {
+    function tryDecode(str, decode3) {
       try {
-        return decode2(str);
+        return decode3(str);
       } catch {
         return str;
       }
@@ -158,9 +158,9 @@ var alreadyWarned, init_warnings = __esm({
 });
 
 // node_modules/@remix-run/server-runtime/dist/esm/cookies.js
-async function encodeCookieValue(sign, value, secrets) {
+async function encodeCookieValue(sign2, value, secrets) {
   let encoded = encodeData(value);
-  return secrets.length > 0 && (encoded = await sign(encoded, secrets[0])), encoded;
+  return secrets.length > 0 && (encoded = await sign2(encoded, secrets[0])), encoded;
 }
 async function decodeCookieValue(unsign, value, secrets) {
   if (secrets.length > 0) {
@@ -221,7 +221,7 @@ var import_cookie, createCookieFactory, isCookie, init_cookies = __esm({
     import_cookie = __toESM(require_cookie());
     init_warnings();
     createCookieFactory = ({
-      sign,
+      sign: sign2,
       unsign
     }) => (name, cookieOptions = {}) => {
       let {
@@ -252,7 +252,7 @@ var import_cookie, createCookieFactory, isCookie, init_cookies = __esm({
           return name in cookies ? cookies[name] === "" ? "" : await decodeCookieValue(unsign, cookies[name], secrets) : null;
         },
         async serialize(value, serializeOptions) {
-          return (0, import_cookie.serialize)(name, value === "" ? "" : await encodeCookieValue(sign, value, secrets), {
+          return (0, import_cookie.serialize)(name, value === "" ? "" : await encodeCookieValue(sign2, value, secrets), {
             ...options,
             ...serializeOptions
           });
@@ -265,7 +265,7 @@ var import_cookie, createCookieFactory, isCookie, init_cookies = __esm({
 // node_modules/@web3-storage/multipart-parser/esm/src/utils.js
 function stringToArray(s) {
   let utf8 = unescape(encodeURIComponent(s));
-  return Uint8Array.from(utf8, (_, i) => utf8.charCodeAt(i));
+  return Uint8Array.from(utf8, (_2, i) => utf8.charCodeAt(i));
 }
 function arrayToString(a) {
   let utf8 = String.fromCharCode.apply(null, a);
@@ -277,11 +277,11 @@ function mergeArrays(...arrays) {
     out.set(arr, offset), offset += arr.length;
   return out;
 }
-function arraysEqual(a, b) {
-  if (a.length !== b.length)
+function arraysEqual(a, b2) {
+  if (a.length !== b2.length)
     return !1;
   for (let i = 0; i < a.length; i++)
-    if (a[i] !== b[i])
+    if (a[i] !== b2[i])
       return !1;
   return !0;
 }
@@ -344,7 +344,7 @@ var MATCH, StreamSearch, ReadableStreamSearch, EOQ, QueueableStreamSearch, init_
             tokens.push(this._lookbehind), this._lookbehind = new Uint8Array();
           else {
             let bytesToCutOff = this._lookbehind.length + pos;
-            return bytesToCutOff > 0 && (tokens.push(this._lookbehind.slice(0, bytesToCutOff)), this._lookbehind = this._lookbehind.slice(bytesToCutOff)), this._lookbehind = Uint8Array.from(new Array(this._lookbehind.length + data.length), (_, i) => this._charAt(data, i - this._lookbehind.length)), [
+            return bytesToCutOff > 0 && (tokens.push(this._lookbehind.slice(0, bytesToCutOff)), this._lookbehind = this._lookbehind.slice(bytesToCutOff)), this._lookbehind = Uint8Array.from(new Array(this._lookbehind.length + data.length), (_2, i) => this._charAt(data, i - this._lookbehind.length)), [
               data.length,
               ...tokens
             ];
@@ -667,7 +667,7 @@ function createMemoryHistory(options) {
     v5Compat = !1
   } = options, entries;
   entries = initialEntries.map((entry2, index2) => createMemoryLocation(entry2, typeof entry2 == "string" ? null : entry2.state, index2 === 0 ? "default" : void 0));
-  let index = clampIndex(initialIndex ?? entries.length - 1), action3 = Action.Pop, listener2 = null;
+  let index = clampIndex(initialIndex ?? entries.length - 1), action4 = Action.Pop, listener2 = null;
   function clampIndex(n) {
     return Math.min(Math.max(n, 0), entries.length - 1);
   }
@@ -687,7 +687,7 @@ function createMemoryHistory(options) {
       return index;
     },
     get action() {
-      return action3;
+      return action4;
     },
     get location() {
       return getCurrentLocation();
@@ -705,28 +705,28 @@ function createMemoryHistory(options) {
       };
     },
     push(to, state) {
-      action3 = Action.Push;
+      action4 = Action.Push;
       let nextLocation = createMemoryLocation(to, state);
       index += 1, entries.splice(index, entries.length, nextLocation), v5Compat && listener2 && listener2({
-        action: action3,
+        action: action4,
         location: nextLocation,
         delta: 1
       });
     },
     replace(to, state) {
-      action3 = Action.Replace;
+      action4 = Action.Replace;
       let nextLocation = createMemoryLocation(to, state);
       entries[index] = nextLocation, v5Compat && listener2 && listener2({
-        action: action3,
+        action: action4,
         location: nextLocation,
         delta: 0
       });
     },
     go(delta) {
-      action3 = Action.Pop;
+      action4 = Action.Pop;
       let nextIndex = clampIndex(index + delta), nextLocation = entries[nextIndex];
       index = nextIndex, listener2 && listener2({
-        action: action3,
+        action: action4,
         location: nextLocation,
         delta
       });
@@ -856,7 +856,7 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   let {
     window: window2 = document.defaultView,
     v5Compat = !1
-  } = options, globalHistory = window2.history, action3 = Action.Pop, listener2 = null, index = getIndex();
+  } = options, globalHistory = window2.history, action4 = Action.Pop, listener2 = null, index = getIndex();
   index == null && (index = 0, globalHistory.replaceState(_extends({}, globalHistory.state, {
     idx: index
   }), ""));
@@ -866,16 +866,16 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
     }).idx;
   }
   function handlePop() {
-    action3 = Action.Pop;
+    action4 = Action.Pop;
     let nextIndex = getIndex(), delta = nextIndex == null ? null : nextIndex - index;
     index = nextIndex, listener2 && listener2({
-      action: action3,
+      action: action4,
       location: history.location,
       delta
     });
   }
   function push(to, state) {
-    action3 = Action.Push;
+    action4 = Action.Push;
     let location = createLocation(history.location, to, state);
     validateLocation && validateLocation(location, to), index = getIndex() + 1;
     let historyState = getHistoryState(location, index), url = history.createHref(location);
@@ -887,18 +887,18 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
       window2.location.assign(url);
     }
     v5Compat && listener2 && listener2({
-      action: action3,
+      action: action4,
       location: history.location,
       delta: 1
     });
   }
   function replace(to, state) {
-    action3 = Action.Replace;
+    action4 = Action.Replace;
     let location = createLocation(history.location, to, state);
     validateLocation && validateLocation(location, to), index = getIndex();
     let historyState = getHistoryState(location, index), url = history.createHref(location);
     globalHistory.replaceState(historyState, "", url), v5Compat && listener2 && listener2({
-      action: action3,
+      action: action4,
       location: history.location,
       delta: 0
     });
@@ -909,7 +909,7 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   }
   let history = {
     get action() {
-      return action3;
+      return action4;
     },
     get location() {
       return getLocation(window2, globalHistory);
@@ -1038,19 +1038,19 @@ function explodeOptionalSegments(path) {
   return result.push(...restExploded.map((subpath) => subpath === "" ? required : [required, subpath].join("/"))), isOptional && result.push(...restExploded), result.map((exploded) => path.startsWith("/") && exploded === "" ? "/" : exploded);
 }
 function rankRouteBranches(branches) {
-  branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta5) => meta5.childrenIndex), b.routesMeta.map((meta5) => meta5.childrenIndex)));
+  branches.sort((a, b2) => a.score !== b2.score ? b2.score - a.score : compareIndexes(a.routesMeta.map((meta5) => meta5.childrenIndex), b2.routesMeta.map((meta5) => meta5.childrenIndex)));
 }
 function computeScore(path, index) {
   let segments = path.split("/"), initialScore = segments.length;
   return segments.some(isSplat) && (initialScore += splatPenalty), index && (initialScore += indexRouteValue), segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
 }
-function compareIndexes(a, b) {
-  return a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]) ? (
+function compareIndexes(a, b2) {
+  return a.length === b2.length && a.slice(0, -1).every((n, i) => n === b2[i]) ? (
     // If two routes are siblings, we should try to match the earlier sibling
     // first. This allows people to have fine-grained control over the matching
     // behavior by simply putting routes with identical paths in the order they
     // want them tried.
-    a[a.length - 1] - b[b.length - 1]
+    a[a.length - 1] - b2[b2.length - 1]
   ) : (
     // Otherwise, it doesn't really make sense to rank non-siblings by index,
     // so they sort equally.
@@ -1127,7 +1127,7 @@ function matchPath(pattern, pathname) {
 }
 function compilePath(path, caseSensitive, end) {
   caseSensitive === void 0 && (caseSensitive = !1), end === void 0 && (end = !0), warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".'));
-  let params = [], regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:(\w+)(\?)?/g, (_, paramName, isOptional) => (params.push({
+  let params = [], regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:(\w+)(\?)?/g, (_2, paramName, isOptional) => (params.push({
     paramName,
     isOptional: isOptional != null
   }), isOptional ? "/?([^\\/]+)?" : "/([^\\/]+)"));
@@ -1253,14 +1253,14 @@ function createRouter(init) {
       [route.id]: error
     };
   }
-  let initialized, hasLazyRoutes = initialMatches.some((m) => m.route.lazy), hasLoaders = initialMatches.some((m) => m.route.loader);
+  let initialized, hasLazyRoutes = initialMatches.some((m2) => m2.route.lazy), hasLoaders = initialMatches.some((m2) => m2.route.loader);
   if (hasLazyRoutes)
     initialized = !1;
   else if (!hasLoaders)
     initialized = !0;
   else if (future2.v7_partialHydration) {
     let loaderData = init.hydrationData ? init.hydrationData.loaderData : null, errors2 = init.hydrationData ? init.hydrationData.errors : null;
-    initialized = initialMatches.every((m) => m.route.loader && m.route.loader.hydrate !== !0 && (loaderData && loaderData[m.route.id] !== void 0 || errors2 && errors2[m.route.id] !== void 0));
+    initialized = initialMatches.every((m2) => m2.route.loader && m2.route.loader.hydrate !== !0 && (loaderData && loaderData[m2.route.id] !== void 0 || errors2 && errors2[m2.route.id] !== void 0));
   } else
     initialized = init.hydrationData != null;
   let router, state = {
@@ -1328,7 +1328,7 @@ function createRouter(init) {
     }), router;
   }
   function dispose() {
-    unlistenHistory && unlistenHistory(), removePageHideEventListener && removePageHideEventListener(), subscribers.clear(), pendingNavigationController && pendingNavigationController.abort(), state.fetchers.forEach((_, key) => deleteFetcher(key)), state.blockers.forEach((_, key) => deleteBlocker(key));
+    unlistenHistory && unlistenHistory(), removePageHideEventListener && removePageHideEventListener(), subscribers.clear(), pendingNavigationController && pendingNavigationController.abort(), state.fetchers.forEach((_2, key) => deleteFetcher(key)), state.blockers.forEach((_2, key) => deleteBlocker(key));
   }
   function subscribe(fn) {
     return subscribers.add(fn), () => subscribers.delete(fn);
@@ -1351,7 +1351,7 @@ function createRouter(init) {
     } = _temp === void 0 ? {} : _temp, isActionReload = state.actionData != null && state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && state.navigation.state === "loading" && ((_location$state = location.state) == null ? void 0 : _location$state._isRedirect) !== !0, actionData;
     newState.actionData ? Object.keys(newState.actionData).length > 0 ? actionData = newState.actionData : actionData = null : isActionReload ? actionData = state.actionData : actionData = null;
     let loaderData = newState.loaderData ? mergeLoaderData(state.loaderData, newState.loaderData, newState.matches || [], newState.errors) : state.loaderData, blockers = state.blockers;
-    blockers.size > 0 && (blockers = new Map(blockers), blockers.forEach((_, k) => blockers.set(k, IDLE_BLOCKER)));
+    blockers.size > 0 && (blockers = new Map(blockers), blockers.forEach((_2, k2) => blockers.set(k2, IDLE_BLOCKER)));
     let preventScrollReset = pendingPreventScrollReset === !0 || state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && ((_location$state2 = location.state) == null ? void 0 : _location$state2._isRedirect) !== !0;
     inFlightDataRoutes && (dataRoutes = inFlightDataRoutes, inFlightDataRoutes = void 0), isUninterruptedRevalidation || pendingAction === Action.Pop || (pendingAction === Action.Push ? init.history.push(location, location.state) : pendingAction === Action.Replace && init.history.replace(location, location.state));
     let viewTransitionOpts;
@@ -1565,7 +1565,7 @@ function createRouter(init) {
   }
   async function handleLoaders(request, location, matches2, overrideNavigation, submission, fetcherSubmission, replace, initialHydration, flushSync, pendingActionData, pendingError) {
     let loadingNavigation = overrideNavigation || getLoadingNavigation(location, submission), activeSubmission = submission || fetcherSubmission || getSubmissionFromNavigation(loadingNavigation), routesToUse = inFlightDataRoutes || dataRoutes, [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches2, activeSubmission, location, future2.v7_partialHydration && initialHydration === !0, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, deletedFetchers, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionData, pendingError);
-    if (cancelActiveDeferreds((routeId) => !(matches2 && matches2.some((m) => m.route.id === routeId)) || matchesToLoad && matchesToLoad.some((m) => m.route.id === routeId)), pendingNavigationLoadId = ++incrementingLoadId, matchesToLoad.length === 0 && revalidatingFetchers.length === 0) {
+    if (cancelActiveDeferreds((routeId) => !(matches2 && matches2.some((m2) => m2.route.id === routeId)) || matchesToLoad && matchesToLoad.some((m2) => m2.route.id === routeId)), pendingNavigationLoadId = ++incrementingLoadId, matchesToLoad.length === 0 && revalidatingFetchers.length === 0) {
       let updatedFetchers2 = markFetchRedirectsDone();
       return completeNavigation(location, _extends({
         matches: matches2,
@@ -1603,7 +1603,7 @@ function createRouter(init) {
     revalidatingFetchers.forEach((rf) => {
       fetchControllers.has(rf.key) && abortFetcher(rf.key), rf.controller && fetchControllers.set(rf.key, rf.controller);
     });
-    let abortPendingFetchRevalidations = () => revalidatingFetchers.forEach((f) => abortFetcher(f.key));
+    let abortPendingFetchRevalidations = () => revalidatingFetchers.forEach((f2) => abortFetcher(f2.key));
     pendingNavigationController && pendingNavigationController.signal.addEventListener("abort", abortPendingFetchRevalidations);
     let {
       results,
@@ -1875,20 +1875,20 @@ function createRouter(init) {
     }
   }
   async function callLoadersAndMaybeResolveData(currentMatches, matches2, matchesToLoad, fetchersToLoad, request) {
-    let results = await Promise.all([...matchesToLoad.map((match) => callLoaderOrAction("loader", request, match, matches2, manifest, mapRouteProperties2, basename, future2.v7_relativeSplatPath)), ...fetchersToLoad.map((f) => f.matches && f.match && f.controller ? callLoaderOrAction("loader", createClientSideRequest(init.history, f.path, f.controller.signal), f.match, f.matches, manifest, mapRouteProperties2, basename, future2.v7_relativeSplatPath) : {
+    let results = await Promise.all([...matchesToLoad.map((match) => callLoaderOrAction("loader", request, match, matches2, manifest, mapRouteProperties2, basename, future2.v7_relativeSplatPath)), ...fetchersToLoad.map((f2) => f2.matches && f2.match && f2.controller ? callLoaderOrAction("loader", createClientSideRequest(init.history, f2.path, f2.controller.signal), f2.match, f2.matches, manifest, mapRouteProperties2, basename, future2.v7_relativeSplatPath) : {
       type: ResultType.error,
       error: getInternalRouterError(404, {
-        pathname: f.path
+        pathname: f2.path
       })
     })]), loaderResults = results.slice(0, matchesToLoad.length), fetcherResults = results.slice(matchesToLoad.length);
-    return await Promise.all([resolveDeferredResults(currentMatches, matchesToLoad, loaderResults, loaderResults.map(() => request.signal), !1, state.loaderData), resolveDeferredResults(currentMatches, fetchersToLoad.map((f) => f.match), fetcherResults, fetchersToLoad.map((f) => f.controller ? f.controller.signal : null), !0)]), {
+    return await Promise.all([resolveDeferredResults(currentMatches, matchesToLoad, loaderResults, loaderResults.map(() => request.signal), !1, state.loaderData), resolveDeferredResults(currentMatches, fetchersToLoad.map((f2) => f2.match), fetcherResults, fetchersToLoad.map((f2) => f2.controller ? f2.controller.signal : null), !0)]), {
       results,
       loaderResults,
       fetcherResults
     };
   }
   function interruptActiveLoads() {
-    isRevalidationRequired = !0, cancelledDeferredRoutes.push(...cancelActiveDeferreds()), fetchLoadMatches.forEach((_, key) => {
+    isRevalidationRequired = !0, cancelledDeferredRoutes.push(...cancelActiveDeferreds()), fetchLoadMatches.forEach((_2, key) => {
       fetchControllers.has(key) && (cancelledFetcherLoads.push(key), abortFetcher(key));
     });
   }
@@ -2006,7 +2006,7 @@ function createRouter(init) {
     };
   }
   function getScrollKey(location, matches2) {
-    return getScrollRestorationKey && getScrollRestorationKey(location, matches2.map((m) => convertRouteMatchToUiMatch(m, state.loaderData))) || location.key;
+    return getScrollRestorationKey && getScrollRestorationKey(location, matches2.map((m2) => convertRouteMatchToUiMatch(m2, state.loaderData))) || location.key;
   }
   function saveScrollPosition(location, matches2) {
     if (savedScrollPositions2 && getScrollPosition) {
@@ -2144,7 +2144,7 @@ function createStaticHandler(routes2, opts) {
       throw getInternalRouterError(404, {
         pathname: location.pathname
       });
-    let match = routeId ? matches2.find((m) => m.route.id === routeId) : getTargetMatch(matches2, location);
+    let match = routeId ? matches2.find((m2) => m2.route.id === routeId) : getTargetMatch(matches2, location);
     if (routeId && !match)
       throw getInternalRouterError(403, {
         pathname: location.pathname,
@@ -2283,13 +2283,13 @@ function createStaticHandler(routes2, opts) {
         pathname: new URL(request.url).pathname,
         routeId: routeMatch?.route.id
       });
-    let matchesToLoad = (routeMatch ? [routeMatch] : getLoaderMatchesUntilBoundary(matches2, Object.keys(pendingActionError || {})[0])).filter((m) => m.route.loader || m.route.lazy);
+    let matchesToLoad = (routeMatch ? [routeMatch] : getLoaderMatchesUntilBoundary(matches2, Object.keys(pendingActionError || {})[0])).filter((m2) => m2.route.loader || m2.route.lazy);
     if (matchesToLoad.length === 0)
       return {
         matches: matches2,
         // Add a null for all matched routes for proper revalidation on the client
-        loaderData: matches2.reduce((acc, m) => Object.assign(acc, {
-          [m.route.id]: null
+        loaderData: matches2.reduce((acc, m2) => Object.assign(acc, {
+          [m2.route.id]: null
         }), {}),
         errors: pendingActionError || null,
         statusCode: 200,
@@ -2366,7 +2366,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
     if (opts.formEncType === "text/plain") {
       if (!isMutationMethod(formMethod))
         return getInvalidBodyError();
-      let text = typeof opts.body == "string" ? opts.body : opts.body instanceof FormData || opts.body instanceof URLSearchParams ? (
+      let text2 = typeof opts.body == "string" ? opts.body : opts.body instanceof FormData || opts.body instanceof URLSearchParams ? (
         // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#plain-text-form-data
         Array.from(opts.body.entries()).reduce((acc, _ref3) => {
           let [name, value] = _ref3;
@@ -2382,7 +2382,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
           formEncType: opts.formEncType,
           formData: void 0,
           json: void 0,
-          text
+          text: text2
         }
       };
     } else if (opts.formEncType === "application/json") {
@@ -2444,7 +2444,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
 function getLoaderMatchesUntilBoundary(matches2, boundaryId) {
   let boundaryMatches = matches2;
   if (boundaryId) {
-    let index = matches2.findIndex((m) => m.route.id === boundaryId);
+    let index = matches2.findIndex((m2) => m2.route.id === boundaryId);
     index >= 0 && (boundaryMatches = matches2.slice(0, index));
   }
   return boundaryMatches;
@@ -2479,22 +2479,22 @@ function getMatchesToLoad(history, state, matches2, submission, location, isInit
       )
     }));
   }), revalidatingFetchers = [];
-  return fetchLoadMatches.forEach((f, key) => {
-    if (isInitialLoad || !matches2.some((m) => m.route.id === f.routeId) || deletedFetchers.has(key))
+  return fetchLoadMatches.forEach((f2, key) => {
+    if (isInitialLoad || !matches2.some((m2) => m2.route.id === f2.routeId) || deletedFetchers.has(key))
       return;
-    let fetcherMatches = matchRoutes(routesToUse, f.path, basename);
+    let fetcherMatches = matchRoutes(routesToUse, f2.path, basename);
     if (!fetcherMatches) {
       revalidatingFetchers.push({
         key,
-        routeId: f.routeId,
-        path: f.path,
+        routeId: f2.routeId,
+        path: f2.path,
         matches: null,
         match: null,
         controller: null
       });
       return;
     }
-    let fetcher = state.fetchers.get(key), fetcherMatch = getTargetMatch(fetcherMatches, f.path), shouldRevalidate = !1;
+    let fetcher = state.fetchers.get(key), fetcherMatch = getTargetMatch(fetcherMatches, f2.path), shouldRevalidate = !1;
     fetchRedirectIds.has(key) ? shouldRevalidate = !1 : cancelledFetcherLoads.includes(key) ? shouldRevalidate = !0 : fetcher && fetcher.state !== "idle" && fetcher.data === void 0 ? shouldRevalidate = isRevalidationRequired : shouldRevalidate = shouldRevalidateLoader(fetcherMatch, _extends({
       currentUrl,
       currentParams: state.matches[state.matches.length - 1].params,
@@ -2505,8 +2505,8 @@ function getMatchesToLoad(history, state, matches2, submission, location, isInit
       defaultShouldRevalidate: isRevalidationRequired
     })), shouldRevalidate && revalidatingFetchers.push({
       key,
-      routeId: f.routeId,
-      path: f.path,
+      routeId: f2.routeId,
+      path: f2.path,
       matches: fetcherMatches,
       match: fetcherMatch,
       controller: new AbortController()
@@ -2560,7 +2560,7 @@ async function loadLazyRouteModule(route, mapRouteProperties2, manifest) {
 async function callLoaderOrAction(type, request, match, matches2, manifest, mapRouteProperties2, basename, v7_relativeSplatPath, opts) {
   opts === void 0 && (opts = {});
   let resultType, result, onReject, runHandler = (handler) => {
-    let reject, abortPromise = new Promise((_, r) => reject = r);
+    let reject, abortPromise = new Promise((_2, r) => reject = r);
     return onReject = () => reject(), request.signal.addEventListener("abort", onReject), Promise.race([handler({
       request,
       params: match.params,
@@ -2762,7 +2762,7 @@ function mergeLoaderData(loaderData, newLoaderData, matches2, errors2) {
   return mergedLoaderData;
 }
 function findNearestBoundary(matches2, routeId) {
-  return (routeId ? matches2.slice(0, matches2.findIndex((m) => m.route.id === routeId) + 1) : [...matches2]).reverse().find((m) => m.route.hasErrorBoundary === !0) || matches2[0];
+  return (routeId ? matches2.slice(0, matches2.findIndex((m2) => m2.route.id === routeId) + 1) : [...matches2]).reverse().find((m2) => m2.route.hasErrorBoundary === !0) || matches2[0];
 }
 function getShortCircuitMatches(routes2) {
   let route = routes2.length === 1 ? routes2[0] : routes2.find((r) => r.index || !r.path || r.path === "/") || {
@@ -2803,8 +2803,8 @@ function stripHashFromPath(path) {
     hash: ""
   }));
 }
-function isHashChangeOnly(a, b) {
-  return a.pathname !== b.pathname || a.search !== b.search ? !1 : a.hash === "" ? b.hash !== "" : a.hash === b.hash ? !0 : b.hash !== "";
+function isHashChangeOnly(a, b2) {
+  return a.pathname !== b2.pathname || a.search !== b2.search ? !1 : a.hash === "" ? b2.hash !== "" : a.hash === b2.hash ? !0 : b2.hash !== "";
 }
 function isDeferredResult(result) {
   return result.type === ResultType.deferred;
@@ -2842,7 +2842,7 @@ async function resolveDeferredResults(currentMatches, matchesToLoad, results, si
     let result = results[index], match = matchesToLoad[index];
     if (!match)
       continue;
-    let currentMatch = currentMatches.find((m) => m.route.id === match.route.id), isRevalidatingLoader = currentMatch != null && !isNewRouteInstance(currentMatch, match) && (currentLoaderData && currentLoaderData[match.route.id]) !== void 0;
+    let currentMatch = currentMatches.find((m2) => m2.route.id === match.route.id), isRevalidatingLoader = currentMatch != null && !isNewRouteInstance(currentMatch, match) && (currentLoaderData && currentLoaderData[match.route.id]) !== void 0;
     if (isDeferredResult(result) && (isFetcher || isRevalidatingLoader)) {
       let signal = signals[index];
       invariant(signal, "Expected an AbortSignal for revalidating fetcher deferred result"), await resolveDeferredData(result, signal, isFetcher).then((result2) => {
@@ -2872,7 +2872,7 @@ async function resolveDeferredData(result, signal, unwrap) {
   }
 }
 function hasNakedIndexQuery(search) {
-  return new URLSearchParams(search).getAll("index").some((v) => v === "");
+  return new URLSearchParams(search).getAll("index").some((v2) => v2 === "");
 }
 function getTargetMatch(matches2, location) {
   let search = typeof location == "string" ? parsePath(location).search : location.search;
@@ -2886,19 +2886,19 @@ function getSubmissionFromNavigation(navigation) {
     formMethod,
     formAction,
     formEncType,
-    text,
+    text: text2,
     formData,
     json: json9
   } = navigation;
   if (!(!formMethod || !formAction || !formEncType)) {
-    if (text != null)
+    if (text2 != null)
       return {
         formMethod,
         formAction,
         formEncType,
         formData: void 0,
         json: void 0,
-        text
+        text: text2
       };
     if (formData != null)
       return {
@@ -3003,8 +3003,8 @@ function restoreAppliedTransitions(_window, transitions) {
     let sessionPositions = _window.sessionStorage.getItem(TRANSITIONS_STORAGE_KEY);
     if (sessionPositions) {
       let json9 = JSON.parse(sessionPositions);
-      for (let [k, v] of Object.entries(json9 || {}))
-        v && Array.isArray(v) && transitions.set(k, new Set(v || []));
+      for (let [k2, v2] of Object.entries(json9 || {}))
+        v2 && Array.isArray(v2) && transitions.set(k2, new Set(v2 || []));
     }
   } catch {
   }
@@ -3012,8 +3012,8 @@ function restoreAppliedTransitions(_window, transitions) {
 function persistAppliedTransitions(_window, transitions) {
   if (transitions.size > 0) {
     let json9 = {};
-    for (let [k, v] of transitions)
-      json9[k] = [...v];
+    for (let [k2, v2] of transitions)
+      json9[k2] = [...v2];
     try {
       _window.sessionStorage.setItem(TRANSITIONS_STORAGE_KEY, JSON.stringify(json9));
     } catch (error) {
@@ -3045,7 +3045,7 @@ var Action, PopStateEventType, ResultType, immutableRouteKeys, paramRe, dynamicS
       constructor(data, responseInit) {
         this.pendingKeysSet = /* @__PURE__ */ new Set(), this.subscribers = /* @__PURE__ */ new Set(), this.deferredKeys = [], invariant(data && typeof data == "object" && !Array.isArray(data), "defer() only accepts plain objects");
         let reject;
-        this.abortPromise = new Promise((_, r) => reject = r), this.controller = new AbortController();
+        this.abortPromise = new Promise((_2, r) => reject = r), this.controller = new AbortController();
         let onAbort = () => reject(new AbortedDeferredError("Deferred data aborted"));
         this.unlistenAbortSignal = () => this.controller.signal.removeEventListener("abort", onAbort), this.controller.signal.addEventListener("abort", onAbort), this.data = Object.entries(data).reduce((acc, _ref2) => {
           let [key, value] = _ref2;
@@ -3088,7 +3088,7 @@ var Action, PopStateEventType, ResultType, immutableRouteKeys, paramRe, dynamicS
         return this.subscribers.add(fn), () => this.subscribers.delete(fn);
       }
       cancel() {
-        this.controller.abort(), this.pendingKeysSet.forEach((v, k) => this.pendingKeysSet.delete(k)), this.emit(!0);
+        this.controller.abort(), this.pendingKeysSet.forEach((v2, k2) => this.pendingKeysSet.delete(k2)), this.emit(!0);
       }
       async resolveData(signal) {
         let aborted = !1;
@@ -3402,7 +3402,7 @@ var require_set_cookie = __commonJS({
 
 // node_modules/@remix-run/server-runtime/dist/esm/headers.js
 function getDocumentHeadersRR(build, context) {
-  let boundaryIdx = context.errors ? context.matches.findIndex((m) => context.errors[m.route.id]) : -1, matches2 = boundaryIdx >= 0 ? context.matches.slice(0, boundaryIdx + 1) : context.matches, errorHeaders;
+  let boundaryIdx = context.errors ? context.matches.findIndex((m2) => context.errors[m2.route.id]) : -1, matches2 = boundaryIdx >= 0 ? context.matches.slice(0, boundaryIdx + 1) : context.matches, errorHeaders;
   if (boundaryIdx >= 0) {
     let {
       actionHeaders,
@@ -3472,12 +3472,12 @@ var init_routeMatching = __esm({
 // node_modules/@remix-run/server-runtime/dist/esm/data.js
 async function callRouteActionRR({
   loadContext,
-  action: action3,
+  action: action4,
   params,
   request,
   routeId
 }) {
-  let result = await action3({
+  let result = await action4({
     request: stripDataParam(stripIndexParam(request)),
     context: loadContext,
     params
@@ -3840,7 +3840,7 @@ var createRequestHandler, init_server = __esm({
             var _matches$find;
             response = await _build.entry.module.handleDataRequest(response, {
               context: loadContext,
-              params: (matches2 == null || (_matches$find = matches2.find((m) => m.route.id == routeId)) === null || _matches$find === void 0 ? void 0 : _matches$find.params) || {},
+              params: (matches2 == null || (_matches$find = matches2.find((m2) => m2.route.id == routeId)) === null || _matches$find === void 0 ? void 0 : _matches$find.params) || {},
               request
             });
           }
@@ -4098,7 +4098,7 @@ var require_crypto = __commonJS({
   "node_modules/@remix-run/cloudflare/dist/crypto.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var encoder = new TextEncoder(), sign = async (value, secret) => {
+    var encoder = new TextEncoder(), sign2 = async (value, secret) => {
       let key = await createKey2(secret, ["sign"]), data = encoder.encode(value), signature = await crypto.subtle.sign("HMAC", key, data), hash = btoa(String.fromCharCode(...new Uint8Array(signature))).replace(/=+$/, "");
       return value + "." + hash;
     }, unsign = async (signed, secret) => {
@@ -4117,7 +4117,7 @@ var require_crypto = __commonJS({
         array[i] = byteString.charCodeAt(i);
       return array;
     }
-    exports.sign = sign;
+    exports.sign = sign2;
     exports.unsign = unsign;
   }
 });
@@ -4681,8 +4681,8 @@ var require_react_development = __commonJS({
         return "$" + escapedString;
       }
       var didWarnAboutMaps = !1, userProvidedKeyEscapeRegex = /\/+/g;
-      function escapeUserProvidedKey(text) {
-        return text.replace(userProvidedKeyEscapeRegex, "$&/");
+      function escapeUserProvidedKey(text2) {
+        return text2.replace(userProvidedKeyEscapeRegex, "$&/");
       }
       function getElementKey(element, index) {
         return typeof element == "object" && element !== null && element.key != null ? (checkKeyStringCoercion(element.key), escape2("" + element.key)) : index.toString(36);
@@ -5589,9 +5589,9 @@ var require_scheduler_development = __commonJS({
             return;
         }
       }
-      function compare(a, b) {
-        var diff = a.sortIndex - b.sortIndex;
-        return diff !== 0 ? diff : a.id - b.id;
+      function compare(a, b2) {
+        var diff = a.sortIndex - b2.sortIndex;
+        return diff !== 0 ? diff : a.id - b2.id;
       }
       var ImmediatePriority = 1, UserBlockingPriority = 2, NormalPriority = 3, LowPriority = 4, IdlePriority = 5;
       function markTaskErrored(task, ms) {
@@ -7122,15 +7122,15 @@ Check the render method of \`` + ownerName + "`." : "";
           return;
         }
         node.innerHTML = html;
-      }), ELEMENT_NODE = 1, TEXT_NODE = 3, COMMENT_NODE = 8, DOCUMENT_NODE = 9, DOCUMENT_FRAGMENT_NODE = 11, setTextContent = function(node, text) {
-        if (text) {
+      }), ELEMENT_NODE = 1, TEXT_NODE = 3, COMMENT_NODE = 8, DOCUMENT_NODE = 9, DOCUMENT_FRAGMENT_NODE = 11, setTextContent = function(node, text2) {
+        if (text2) {
           var firstChild = node.firstChild;
           if (firstChild && firstChild === node.lastChild && firstChild.nodeType === TEXT_NODE) {
-            firstChild.nodeValue = text;
+            firstChild.nodeValue = text2;
             return;
           }
         }
-        node.textContent = text;
+        node.textContent = text2;
       }, shorthandToLonghand = {
         animation: ["animationDelay", "animationDirection", "animationDuration", "animationFillMode", "animationIterationCount", "animationName", "animationPlayState", "animationTimingFunction"],
         background: ["backgroundAttachment", "backgroundClip", "backgroundColor", "backgroundImage", "backgroundOrigin", "backgroundPositionX", "backgroundPositionY", "backgroundRepeat", "backgroundSize"],
@@ -7246,7 +7246,7 @@ Check the render method of \`` + ownerName + "`." : "";
       };
       {
         var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/, msPattern$1 = /^-ms-/, hyphenPattern = /-(.)/g, badStyleValueWithSemicolonPattern = /;\s*$/, warnedStyleNames = {}, warnedStyleValues = {}, warnedForNaNValue = !1, warnedForInfinityValue = !1, camelize = function(string) {
-          return string.replace(hyphenPattern, function(_, character) {
+          return string.replace(hyphenPattern, function(_2, character) {
             return character.toUpperCase();
           });
         }, warnHyphenatedStyleName = function(name) {
@@ -8074,12 +8074,12 @@ Check the render method of \`` + ownerName + "`." : "";
         var controlledComponentsHavePendingUpdates = needsStateRestore();
         controlledComponentsHavePendingUpdates && (flushSyncImpl2(), restoreStateIfNeeded());
       }
-      function batchedUpdates(fn, a, b) {
+      function batchedUpdates(fn, a, b2) {
         if (isInsideEventHandler)
-          return fn(a, b);
+          return fn(a, b2);
         isInsideEventHandler = !0;
         try {
-          return batchedUpdatesImpl(fn, a, b);
+          return batchedUpdatesImpl(fn, a, b2);
         } finally {
           isInsideEventHandler = !1, finishEventHandler();
         }
@@ -8134,7 +8134,7 @@ Check the render method of \`` + ownerName + "`." : "";
         } catch {
           passiveBrowserEventsSupported = !1;
         }
-      function invokeGuardedCallbackProd(name, func, context, a, b, c, d, e, f) {
+      function invokeGuardedCallbackProd(name, func, context, a, b2, c, d2, e, f2) {
         var funcArgs = Array.prototype.slice.call(arguments, 3);
         try {
           func.apply(context, funcArgs);
@@ -8145,7 +8145,7 @@ Check the render method of \`` + ownerName + "`." : "";
       var invokeGuardedCallbackImpl = invokeGuardedCallbackProd;
       if (typeof window < "u" && typeof window.dispatchEvent == "function" && typeof document < "u" && typeof document.createEvent == "function") {
         var fakeNode = document.createElement("react");
-        invokeGuardedCallbackImpl = function(name, func, context, a, b, c, d, e, f) {
+        invokeGuardedCallbackImpl = function(name, func, context, a, b2, c, d2, e, f2) {
           if (typeof document > "u" || document === null)
             throw new Error("The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.");
           var evt = document.createEvent("Event"), didCall = !1, didError = !0, windowEvent = window.event, windowEventDescriptor = Object.getOwnPropertyDescriptor(window, "event");
@@ -8174,10 +8174,10 @@ Check the render method of \`` + ownerName + "`." : "";
           hasError = !0, caughtError = error2;
         }
       };
-      function invokeGuardedCallback(name, func, context, a, b, c, d, e, f) {
+      function invokeGuardedCallback(name, func, context, a, b2, c, d2, e, f2) {
         hasError = !1, caughtError = null, invokeGuardedCallbackImpl$1.apply(reporter, arguments);
       }
-      function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b, c, d, e, f) {
+      function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b2, c, d2, e, f2) {
         if (invokeGuardedCallback.apply(this, arguments), hasError) {
           var error2 = clearCaughtError();
           hasRethrowError || (hasRethrowError = !0, rethrowError = error2);
@@ -8342,7 +8342,7 @@ Check the render method of \`` + ownerName + "`." : "";
             throw new Error("Unable to find node on an unmounted component.");
           return nearestMounted !== fiber ? null : fiber;
         }
-        for (var a = fiber, b = alternate; ; ) {
+        for (var a = fiber, b2 = alternate; ; ) {
           var parentA = a.return;
           if (parentA === null)
             break;
@@ -8350,7 +8350,7 @@ Check the render method of \`` + ownerName + "`." : "";
           if (parentB === null) {
             var nextParent = parentA.return;
             if (nextParent !== null) {
-              a = b = nextParent;
+              a = b2 = nextParent;
               continue;
             }
             break;
@@ -8359,22 +8359,22 @@ Check the render method of \`` + ownerName + "`." : "";
             for (var child = parentA.child; child; ) {
               if (child === a)
                 return assertIsMounted(parentA), fiber;
-              if (child === b)
+              if (child === b2)
                 return assertIsMounted(parentA), alternate;
               child = child.sibling;
             }
             throw new Error("Unable to find node on an unmounted component.");
           }
-          if (a.return !== b.return)
-            a = parentA, b = parentB;
+          if (a.return !== b2.return)
+            a = parentA, b2 = parentB;
           else {
             for (var didFindChild = !1, _child = parentA.child; _child; ) {
               if (_child === a) {
-                didFindChild = !0, a = parentA, b = parentB;
+                didFindChild = !0, a = parentA, b2 = parentB;
                 break;
               }
-              if (_child === b) {
-                didFindChild = !0, b = parentA, a = parentB;
+              if (_child === b2) {
+                didFindChild = !0, b2 = parentA, a = parentB;
                 break;
               }
               _child = _child.sibling;
@@ -8382,11 +8382,11 @@ Check the render method of \`` + ownerName + "`." : "";
             if (!didFindChild) {
               for (_child = parentB.child; _child; ) {
                 if (_child === a) {
-                  didFindChild = !0, a = parentB, b = parentA;
+                  didFindChild = !0, a = parentB, b2 = parentA;
                   break;
                 }
-                if (_child === b) {
-                  didFindChild = !0, b = parentB, a = parentA;
+                if (_child === b2) {
+                  didFindChild = !0, b2 = parentB, a = parentA;
                   break;
                 }
                 _child = _child.sibling;
@@ -8395,7 +8395,7 @@ Check the render method of \`` + ownerName + "`." : "";
                 throw new Error("Child was not found in either parent set. This indicates a bug in React related to the return pointer. Please file an issue.");
             }
           }
-          if (a.alternate !== b)
+          if (a.alternate !== b2)
             throw new Error("Return fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.");
         }
         if (a.tag !== HostRoot)
@@ -8955,26 +8955,26 @@ Check the render method of \`` + ownerName + "`." : "";
       function laneToIndex(lane) {
         return pickArbitraryLaneIndex(lane);
       }
-      function includesSomeLane(a, b) {
-        return (a & b) !== NoLanes;
+      function includesSomeLane(a, b2) {
+        return (a & b2) !== NoLanes;
       }
       function isSubsetOfLanes(set3, subset) {
         return (set3 & subset) === subset;
       }
-      function mergeLanes(a, b) {
-        return a | b;
+      function mergeLanes(a, b2) {
+        return a | b2;
       }
       function removeLanes(set3, subset) {
         return set3 & ~subset;
       }
-      function intersectLanes(a, b) {
-        return a & b;
+      function intersectLanes(a, b2) {
+        return a & b2;
       }
       function laneToLanes(lane) {
         return lane;
       }
-      function higherPriorityLane(a, b) {
-        return a !== NoLane && a < b ? a : b;
+      function higherPriorityLane(a, b2) {
+        return a !== NoLane && a < b2 ? a : b2;
       }
       function createLaneMap(initial) {
         for (var laneMap = [], i = 0; i < TotalLanes; i++)
@@ -9088,14 +9088,14 @@ Check the render method of \`` + ownerName + "`." : "";
           currentUpdatePriority = previousPriority;
         }
       }
-      function higherEventPriority(a, b) {
-        return a !== 0 && a < b ? a : b;
+      function higherEventPriority(a, b2) {
+        return a !== 0 && a < b2 ? a : b2;
       }
-      function lowerEventPriority(a, b) {
-        return a === 0 || a > b ? a : b;
+      function lowerEventPriority(a, b2) {
+        return a === 0 || a > b2 ? a : b2;
       }
-      function isHigherEventPriority(a, b) {
-        return a !== 0 && a < b;
+      function isHigherEventPriority(a, b2) {
+        return a !== 0 && a < b2;
       }
       function lanesToEventPriority(lanes) {
         var lane = getHighestPriorityLane(lanes);
@@ -10064,10 +10064,10 @@ Check the render method of \`` + ownerName + "`." : "";
           }
         }
       }
-      function is2(x, y) {
+      function is3(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is2;
+      var objectIs = typeof Object.is == "function" ? Object.is : is3;
       function shallowEqual(objA, objB) {
         if (objectIs(objA, objB))
           return !0;
@@ -10718,8 +10718,8 @@ Check the render method of \`` + ownerName + "`." : "";
           domElement = ownerDocument.createElementNS(namespaceURI, type);
         return namespaceURI === HTML_NAMESPACE && !isCustomComponentTag && Object.prototype.toString.call(domElement) === "[object HTMLUnknownElement]" && !hasOwnProperty.call(warnedUnknownTags, type) && (warnedUnknownTags[type] = !0, error("The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.", type)), domElement;
       }
-      function createTextNode(text, rootContainerElement) {
-        return getOwnerDocumentFromRootContainer(rootContainerElement).createTextNode(text);
+      function createTextNode(text2, rootContainerElement) {
+        return getOwnerDocumentFromRootContainer(rootContainerElement).createTextNode(text2);
       }
       function setInitialProperties(domElement, tag, rawProps, rootContainerElement) {
         var isCustomComponentTag = isCustomComponent(tag, rawProps);
@@ -10974,8 +10974,8 @@ Check the render method of \`` + ownerName + "`." : "";
         }
         return updatePayload;
       }
-      function diffHydratedText(textNode, text, isConcurrentMode) {
-        var isDifferent = textNode.nodeValue !== text;
+      function diffHydratedText(textNode, text2, isConcurrentMode) {
+        var isDifferent = textNode.nodeValue !== text2;
         return isDifferent;
       }
       function warnForDeletedHydratableElement(parentNode, child) {
@@ -10999,11 +10999,11 @@ Check the render method of \`` + ownerName + "`." : "";
           didWarnInvalidHydration = !0, error("Expected server HTML to contain a matching <%s> in <%s>.", tag, parentNode.nodeName.toLowerCase());
         }
       }
-      function warnForInsertedHydratedText(parentNode, text) {
+      function warnForInsertedHydratedText(parentNode, text2) {
         {
-          if (text === "" || didWarnInvalidHydration)
+          if (text2 === "" || didWarnInvalidHydration)
             return;
-          didWarnInvalidHydration = !0, error('Expected server HTML to contain a matching text node for "%s" in <%s>.', text, parentNode.nodeName.toLowerCase());
+          didWarnInvalidHydration = !0, error('Expected server HTML to contain a matching text node for "%s" in <%s>.', text2, parentNode.nodeName.toLowerCase());
         }
       }
       function restoreControlledState$3(domElement, tag, props) {
@@ -11270,12 +11270,12 @@ Check the render method of \`` + ownerName + "`." : "";
       function shouldSetTextContent(type, props) {
         return type === "textarea" || type === "noscript" || typeof props.children == "string" || typeof props.children == "number" || typeof props.dangerouslySetInnerHTML == "object" && props.dangerouslySetInnerHTML !== null && props.dangerouslySetInnerHTML.__html != null;
       }
-      function createTextInstance(text, rootContainerInstance, hostContext, internalInstanceHandle) {
+      function createTextInstance(text2, rootContainerInstance, hostContext, internalInstanceHandle) {
         {
           var hostContextDev = hostContext;
-          validateDOMNesting(null, text, hostContextDev.ancestorInfo);
+          validateDOMNesting(null, text2, hostContextDev.ancestorInfo);
         }
-        var textNode = createTextNode(text, rootContainerInstance);
+        var textNode = createTextNode(text2, rootContainerInstance);
         return precacheFiberNode(internalInstanceHandle, textNode), textNode;
       }
       function getCurrentEventPriority() {
@@ -11369,8 +11369,8 @@ Check the render method of \`` + ownerName + "`." : "";
         var styleProp = props[STYLE$1], display = styleProp != null && styleProp.hasOwnProperty("display") ? styleProp.display : null;
         instance.style.display = dangerousStyleValue("display", display);
       }
-      function unhideTextInstance(textInstance, text) {
-        textInstance.nodeValue = text;
+      function unhideTextInstance(textInstance, text2) {
+        textInstance.nodeValue = text2;
       }
       function clearContainer(container) {
         container.nodeType === ELEMENT_NODE ? container.textContent = "" : container.nodeType === DOCUMENT_NODE && container.documentElement && container.removeChild(container.documentElement);
@@ -11378,8 +11378,8 @@ Check the render method of \`` + ownerName + "`." : "";
       function canHydrateInstance(instance, type, props) {
         return instance.nodeType !== ELEMENT_NODE || type.toLowerCase() !== instance.nodeName.toLowerCase() ? null : instance;
       }
-      function canHydrateTextInstance(instance, text) {
-        return text === "" || instance.nodeType !== TEXT_NODE ? null : instance;
+      function canHydrateTextInstance(instance, text2) {
+        return text2 === "" || instance.nodeType !== TEXT_NODE ? null : instance;
       }
       function canHydrateSuspenseInstance(instance) {
         return instance.nodeType !== COMMENT_NODE ? null : instance;
@@ -11438,10 +11438,10 @@ Check the render method of \`` + ownerName + "`." : "";
         var isConcurrentMode = (internalInstanceHandle.mode & ConcurrentMode) !== NoMode;
         return diffHydratedProperties(instance, type, props, parentNamespace, rootContainerInstance, isConcurrentMode, shouldWarnDev);
       }
-      function hydrateTextInstance(textInstance, text, internalInstanceHandle, shouldWarnDev) {
+      function hydrateTextInstance(textInstance, text2, internalInstanceHandle, shouldWarnDev) {
         precacheFiberNode(internalInstanceHandle, textInstance);
         var isConcurrentMode = (internalInstanceHandle.mode & ConcurrentMode) !== NoMode;
-        return diffHydratedText(textInstance, text);
+        return diffHydratedText(textInstance, text2);
       }
       function hydrateSuspenseInstance(suspenseInstance, internalInstanceHandle) {
         precacheFiberNode(internalInstanceHandle, suspenseInstance);
@@ -11485,14 +11485,14 @@ Check the render method of \`` + ownerName + "`." : "";
       function shouldDeleteUnhydratedTailInstances(parentType) {
         return parentType !== "head" && parentType !== "body";
       }
-      function didNotMatchHydratedContainerTextInstance(parentContainer, textInstance, text, isConcurrentMode) {
+      function didNotMatchHydratedContainerTextInstance(parentContainer, textInstance, text2, isConcurrentMode) {
         var shouldWarnDev = !0;
-        checkForUnmatchedText(textInstance.nodeValue, text, isConcurrentMode, shouldWarnDev);
+        checkForUnmatchedText(textInstance.nodeValue, text2, isConcurrentMode, shouldWarnDev);
       }
-      function didNotMatchHydratedTextInstance(parentType, parentProps, parentInstance, textInstance, text, isConcurrentMode) {
+      function didNotMatchHydratedTextInstance(parentType, parentProps, parentInstance, textInstance, text2, isConcurrentMode) {
         if (parentProps[SUPPRESS_HYDRATION_WARNING$1] !== !0) {
           var shouldWarnDev = !0;
-          checkForUnmatchedText(textInstance.nodeValue, text, isConcurrentMode, shouldWarnDev);
+          checkForUnmatchedText(textInstance.nodeValue, text2, isConcurrentMode, shouldWarnDev);
         }
       }
       function didNotHydrateInstanceWithinContainer(parentContainer, instance) {
@@ -11510,8 +11510,8 @@ Check the render method of \`` + ownerName + "`." : "";
       function didNotFindHydratableInstanceWithinContainer(parentContainer, type, props) {
         warnForInsertedHydratedElement(parentContainer, type);
       }
-      function didNotFindHydratableTextInstanceWithinContainer(parentContainer, text) {
-        warnForInsertedHydratedText(parentContainer, text);
+      function didNotFindHydratableTextInstanceWithinContainer(parentContainer, text2) {
+        warnForInsertedHydratedText(parentContainer, text2);
       }
       function didNotFindHydratableInstanceWithinSuspenseInstance(parentInstance, type, props) {
         {
@@ -11519,17 +11519,17 @@ Check the render method of \`` + ownerName + "`." : "";
           parentNode !== null && warnForInsertedHydratedElement(parentNode, type);
         }
       }
-      function didNotFindHydratableTextInstanceWithinSuspenseInstance(parentInstance, text) {
+      function didNotFindHydratableTextInstanceWithinSuspenseInstance(parentInstance, text2) {
         {
           var parentNode = parentInstance.parentNode;
-          parentNode !== null && warnForInsertedHydratedText(parentNode, text);
+          parentNode !== null && warnForInsertedHydratedText(parentNode, text2);
         }
       }
       function didNotFindHydratableInstance(parentType, parentProps, parentInstance, type, props, isConcurrentMode) {
         (isConcurrentMode || parentProps[SUPPRESS_HYDRATION_WARNING$1] !== !0) && warnForInsertedHydratedElement(parentInstance, type);
       }
-      function didNotFindHydratableTextInstance(parentType, parentProps, parentInstance, text, isConcurrentMode) {
-        (isConcurrentMode || parentProps[SUPPRESS_HYDRATION_WARNING$1] !== !0) && warnForInsertedHydratedText(parentInstance, text);
+      function didNotFindHydratableTextInstance(parentType, parentProps, parentInstance, text2, isConcurrentMode) {
+        (isConcurrentMode || parentProps[SUPPRESS_HYDRATION_WARNING$1] !== !0) && warnForInsertedHydratedText(parentInstance, text2);
       }
       function errorHydratingContainer(parentContainer) {
         error("An error occurred during hydration. The server HTML was replaced with client content in <%s>.", parentContainer.nodeName.toLowerCase());
@@ -11901,8 +11901,8 @@ Check the render method of \`` + ownerName + "`." : "";
                   didNotFindHydratableInstanceWithinContainer(parentContainer, type);
                   break;
                 case HostText:
-                  var text = fiber.pendingProps;
-                  didNotFindHydratableTextInstanceWithinContainer(parentContainer, text);
+                  var text2 = fiber.pendingProps;
+                  didNotFindHydratableTextInstanceWithinContainer(parentContainer, text2);
                   break;
               }
               break;
@@ -11968,7 +11968,7 @@ Check the render method of \`` + ownerName + "`." : "";
             return instance !== null ? (fiber.stateNode = instance, hydrationParentFiber = fiber, nextHydratableInstance = getFirstHydratableChild(instance), !0) : !1;
           }
           case HostText: {
-            var text = fiber.pendingProps, textInstance = canHydrateTextInstance(nextInstance, text);
+            var text2 = fiber.pendingProps, textInstance = canHydrateTextInstance(nextInstance, text2);
             return textInstance !== null ? (fiber.stateNode = textInstance, hydrationParentFiber = fiber, nextHydratableInstance = null, !0) : !1;
           }
           case SuspenseComponent: {
@@ -13467,8 +13467,8 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
         workInProgressSources.length = 0;
       }
       function registerMutableSourceForHydration(root2, mutableSource) {
-        var getVersion = mutableSource._getVersion, version = getVersion(mutableSource._source);
-        root2.mutableSourceEagerHydrationData == null ? root2.mutableSourceEagerHydrationData = [mutableSource, version] : root2.mutableSourceEagerHydrationData.push(mutableSource, version);
+        var getVersion = mutableSource._getVersion, version2 = getVersion(mutableSource._source);
+        root2.mutableSourceEagerHydrationData == null ? root2.mutableSourceEagerHydrationData = [mutableSource, version2] : root2.mutableSourceEagerHydrationData.push(mutableSource, version2);
       }
       var ReactCurrentDispatcher$1 = ReactSharedInternals.ReactCurrentDispatcher, ReactCurrentBatchConfig$2 = ReactSharedInternals.ReactCurrentBatchConfig, didWarnAboutMismatchedHooksForComponent, didWarnUncachedGetSnapshot;
       didWarnAboutMismatchedHooksForComponent = /* @__PURE__ */ new Set();
@@ -13608,8 +13608,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           stores: null
         };
       }
-      function basicStateReducer(state, action3) {
-        return typeof action3 == "function" ? action3(state) : action3;
+      function basicStateReducer(state, action4) {
+        return typeof action4 == "function" ? action4(state) : action4;
       }
       function mountReducer(reducer, initialArg, init) {
         var hook = mountWorkInProgressHook(), initialState;
@@ -13660,8 +13660,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
               if (update.hasEagerState)
                 newState = update.eagerState;
               else {
-                var action3 = update.action;
-                newState = reducer(newState, action3);
+                var action4 = update.action;
+                newState = reducer(newState, action4);
               }
             } else {
               var clone = {
@@ -13699,8 +13699,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           queue.pending = null;
           var firstRenderPhaseUpdate = lastRenderPhaseUpdate.next, update = firstRenderPhaseUpdate;
           do {
-            var action3 = update.action;
-            newState = reducer(newState, action3), update = update.next;
+            var action4 = update.action;
+            newState = reducer(newState, action4), update = update.next;
           } while (update !== firstRenderPhaseUpdate);
           objectIs(newState, hook.memoizedState) || markWorkInProgressReceivedUpdate(), hook.memoizedState = newState, hook.baseQueue === null && (hook.baseState = newState), queue.lastRenderedState = newState;
         }
@@ -14011,11 +14011,11 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         var hook = updateWorkInProgressHook(), id = hook.memoizedState;
         return id;
       }
-      function dispatchReducerAction(fiber, queue, action3) {
+      function dispatchReducerAction(fiber, queue, action4) {
         typeof arguments[3] == "function" && error("State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().");
         var lane = requestUpdateLane(fiber), update = {
           lane,
-          action: action3,
+          action: action4,
           hasEagerState: !1,
           eagerState: null,
           next: null
@@ -14031,11 +14031,11 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         }
         markUpdateInDevTools(fiber, lane);
       }
-      function dispatchSetState(fiber, queue, action3) {
+      function dispatchSetState(fiber, queue, action4) {
         typeof arguments[3] == "function" && error("State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().");
         var lane = requestUpdateLane(fiber), update = {
           lane,
-          action: action3,
+          action: action4,
           hasEagerState: !1,
           eagerState: null,
           next: null
@@ -14050,7 +14050,7 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
               var prevDispatcher;
               prevDispatcher = ReactCurrentDispatcher$1.current, ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                var currentState = queue.lastRenderedState, eagerState = lastRenderedReducer(currentState, action3);
+                var currentState = queue.lastRenderedState, eagerState = lastRenderedReducer(currentState, action4);
                 if (update.hasEagerState = !0, update.eagerState = eagerState, objectIs(eagerState, currentState)) {
                   enqueueConcurrentHookUpdateAndEagerlyBailout(fiber, queue, update, lane);
                   return;
@@ -14086,7 +14086,7 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           queue.lanes = newQueueLanes, markRootEntangled(root2, newQueueLanes);
         }
       }
-      function markUpdateInDevTools(fiber, lane, action3) {
+      function markUpdateInDevTools(fiber, lane, action4) {
         markStateUpdateScheduled(fiber, lane);
       }
       var ContextOnlyDispatcher = {
@@ -17745,10 +17745,10 @@ Learn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-f
           !ReactCurrentActQueue$1.isBatchingLegacy && (resetRenderTimer(), flushSyncCallbacksOnlyInLegacyMode());
         }
       }
-      function discreteUpdates(fn, a, b, c, d) {
+      function discreteUpdates(fn, a, b2, c, d2) {
         var previousPriority = getCurrentUpdatePriority(), prevTransition = ReactCurrentBatchConfig$3.transition;
         try {
-          return ReactCurrentBatchConfig$3.transition = null, setCurrentUpdatePriority(DiscreteEventPriority), fn(a, b, c, d);
+          return ReactCurrentBatchConfig$3.transition = null, setCurrentUpdatePriority(DiscreteEventPriority), fn(a, b2, c, d2);
         } finally {
           setCurrentUpdatePriority(previousPriority), ReactCurrentBatchConfig$3.transition = prevTransition, executionContext === NoContext && resetRenderTimer();
         }
@@ -19507,7 +19507,7 @@ function _renderMatches(matches2, parentMatches, dataRouterState, future2) {
   }
   let renderedMatches = matches2, errors2 = (_dataRouterState2 = dataRouterState) == null ? void 0 : _dataRouterState2.errors;
   if (errors2 != null) {
-    let errorIndex = renderedMatches.findIndex((m) => m.route.id && errors2?.[m.route.id]);
+    let errorIndex = renderedMatches.findIndex((m2) => m2.route.id && errors2?.[m2.route.id]);
     errorIndex >= 0 || invariant(!1, "Could not find a matching route for errors on route IDs: " + Object.keys(errors2).join(",")), renderedMatches = renderedMatches.slice(0, Math.min(renderedMatches.length, errorIndex + 1));
   }
   let renderFallback = !1, fallbackIndex = -1;
@@ -19591,7 +19591,7 @@ function useMatches() {
     matches: matches2,
     loaderData
   } = useDataRouterState(DataRouterStateHook.UseMatches);
-  return React.useMemo(() => matches2.map((m) => convertRouteMatchToUiMatch(m, loaderData)), [matches2, loaderData]);
+  return React.useMemo(() => matches2.map((m2) => convertRouteMatchToUiMatch(m2, loaderData)), [matches2, loaderData]);
 }
 function useLoaderData() {
   let state = useDataRouterState(DataRouterStateHook.UseLoaderData), routeId = useCurrentRouteId(DataRouterStateHook.UseLoaderData);
@@ -20180,12 +20180,12 @@ function shouldProcessLinkClick(event, target) {
 function createSearchParams(init) {
   return init === void 0 && (init = ""), new URLSearchParams(typeof init == "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key) => {
     let value = init[key];
-    return memo.concat(Array.isArray(value) ? value.map((v) => [key, v]) : [[key, value]]);
+    return memo.concat(Array.isArray(value) ? value.map((v2) => [key, v2]) : [[key, value]]);
   }, []));
 }
 function getSearchParamsForLocation(locationSearch, defaultSearchParams) {
   let searchParams = createSearchParams(locationSearch);
-  return defaultSearchParams && defaultSearchParams.forEach((_, key) => {
+  return defaultSearchParams && defaultSearchParams.forEach((_2, key) => {
     searchParams.has(key) || defaultSearchParams.getAll(key).forEach((value) => {
       searchParams.append(key, value);
     });
@@ -20208,16 +20208,16 @@ function getFormEncType(encType) {
   return encType != null && !supportedFormEncTypes.has(encType) ? (warning(!1, '"' + encType + '" is not a valid `encType` for `<Form>`/`<fetcher.Form>` ' + ('and will default to "' + defaultEncType + '"')), null) : encType;
 }
 function getFormSubmissionInfo(target, basename) {
-  let method, action3, encType, formData, body;
+  let method, action4, encType, formData, body;
   if (isFormElement(target)) {
     let attr = target.getAttribute("action");
-    action3 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType, formData = new FormData(target);
+    action4 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType, formData = new FormData(target);
   } else if (isButtonElement(target) || isInputElement(target) && (target.type === "submit" || target.type === "image")) {
     let form = target.form;
     if (form == null)
       throw new Error('Cannot submit a <button> or <input type="submit"> without a <form>');
     let attr = target.getAttribute("formaction") || form.getAttribute("action");
-    if (action3 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType, formData = new FormData(form, target), !isFormDataSubmitterSupported()) {
+    if (action4 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType, formData = new FormData(form, target), !isFormDataSubmitterSupported()) {
       let {
         name,
         type,
@@ -20232,10 +20232,10 @@ function getFormSubmissionInfo(target, basename) {
   } else {
     if (isHtmlElement(target))
       throw new Error('Cannot submit element that is not <form>, <button>, or <input type="submit|image">');
-    method = defaultMethod, action3 = null, encType = defaultEncType, body = target;
+    method = defaultMethod, action4 = null, encType = defaultEncType, body = target;
   }
   return formData && encType === "text/plain" && (body = formData, formData = void 0), {
-    action: action3,
+    action: action4,
     method: method.toLowerCase(),
     encType,
     formData,
@@ -20592,7 +20592,7 @@ function useSubmit() {
   return React2.useCallback(function(target, options) {
     options === void 0 && (options = {}), validateClientSideSubmission();
     let {
-      action: action3,
+      action: action4,
       method,
       encType,
       formData,
@@ -20600,7 +20600,7 @@ function useSubmit() {
     } = getFormSubmissionInfo(target, basename);
     if (options.navigate === !1) {
       let key = options.fetcherKey || getUniqueFetcherId();
-      router.fetch(key, currentRouteId, options.action || action3, {
+      router.fetch(key, currentRouteId, options.action || action4, {
         preventScrollReset: options.preventScrollReset,
         formData,
         body,
@@ -20609,7 +20609,7 @@ function useSubmit() {
         unstable_flushSync: options.unstable_flushSync
       });
     } else
-      router.navigate(options.action || action3, {
+      router.navigate(options.action || action4, {
         preventScrollReset: options.preventScrollReset,
         formData,
         body,
@@ -20623,22 +20623,22 @@ function useSubmit() {
       });
   }, [router, basename, currentRouteId]);
 }
-function useFormAction(action3, _temp2) {
+function useFormAction(action4, _temp2) {
   let {
     relative
   } = _temp2 === void 0 ? {} : _temp2, {
     basename
   } = React2.useContext(NavigationContext), routeContext = React2.useContext(RouteContext);
   routeContext || invariant(!1, "useFormAction must be used inside a RouteContext");
-  let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action3 || ".", {
+  let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action4 || ".", {
     relative
   })), location = useLocation();
-  if (action3 == null) {
+  if (action4 == null) {
     path.search = location.search;
     let params = new URLSearchParams(path.search);
     params.has("index") && params.get("index") === "" && (params.delete("index"), path.search = params.toString() ? "?" + params.toString() : "");
   }
-  return (!action3 || action3 === ".") && match.route.index && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
+  return (!action4 || action4 === ".") && match.route.index && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
 }
 function useFetcher(_temp3) {
   var _route$matches;
@@ -20909,12 +20909,12 @@ var React2, ReactDOM, defaultMethod, defaultEncType, _formDataSupportsSubmitter,
         replace,
         state,
         method = defaultMethod,
-        action: action3,
+        action: action4,
         onSubmit,
         relative,
         preventScrollReset,
         unstable_viewTransition
-      } = _ref9, props = _objectWithoutPropertiesLoose(_ref9, _excluded3), submit = useSubmit(), formAction = useFormAction(action3, {
+      } = _ref9, props = _objectWithoutPropertiesLoose(_ref9, _excluded3), submit = useSubmit(), formAction = useFormAction(action4, {
         relative
       }), formMethod = method.toLowerCase() === "get" ? "get" : "post";
       return /* @__PURE__ */ React2.createElement("form", _extends3({
@@ -20962,13 +20962,13 @@ var require_server = __commonJS({
       if (e && e.__esModule)
         return e;
       var n = /* @__PURE__ */ Object.create(null);
-      return e && Object.keys(e).forEach(function(k) {
-        if (k !== "default") {
-          var d = Object.getOwnPropertyDescriptor(e, k);
-          Object.defineProperty(n, k, d.get ? d : {
+      return e && Object.keys(e).forEach(function(k2) {
+        if (k2 !== "default") {
+          var d2 = Object.getOwnPropertyDescriptor(e, k2);
+          Object.defineProperty(n, k2, d2.get ? d2 : {
             enumerable: !0,
             get: function() {
-              return e[k];
+              return e[k2];
             }
           });
         }
@@ -20982,7 +20982,7 @@ var require_server = __commonJS({
       future: future2
     }) {
       typeof locationProp == "string" && (locationProp = reactRouterDom.parsePath(locationProp));
-      let action3 = router.Action.Pop, location = {
+      let action4 = router.Action.Pop, location = {
         pathname: locationProp.pathname || "/",
         search: locationProp.search || "",
         hash: locationProp.hash || "",
@@ -20993,7 +20993,7 @@ var require_server = __commonJS({
         basename,
         children,
         location,
-        navigationType: action3,
+        navigationType: action4,
         navigator: staticNavigator,
         future: future2,
         static: !0
@@ -22441,7 +22441,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
       };
       {
         var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/, msPattern = /^-ms-/, hyphenPattern = /-(.)/g, badStyleValueWithSemicolonPattern = /;\s*$/, warnedStyleNames = {}, warnedStyleValues = {}, warnedForNaNValue = !1, warnedForInfinityValue = !1, camelize = function(string) {
-          return string.replace(hyphenPattern, function(_, character) {
+          return string.replace(hyphenPattern, function(_2, character) {
             return character.toUpperCase();
           });
         }, warnHyphenatedStyleName = function(name) {
@@ -22497,8 +22497,8 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
         }
         return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
       }
-      function escapeTextForBrowser(text) {
-        return typeof text == "boolean" || typeof text == "number" ? "" + text : escapeHtml3(text);
+      function escapeTextForBrowser(text2) {
+        return typeof text2 == "boolean" || typeof text2 == "number" ? "" + text2 : escapeHtml3(text2);
       }
       var uppercasePattern = /([A-Z])/g, msPattern$1 = /^ms-/;
       function hyphenateStyleName(name) {
@@ -22579,12 +22579,12 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
         var idPrefix = responseState.idPrefix, id = ":" + idPrefix + "R" + treeId;
         return localId > 0 && (id += "H" + localId.toString(32)), id + ":";
       }
-      function encodeHTMLTextNode(text) {
-        return escapeTextForBrowser(text);
+      function encodeHTMLTextNode(text2) {
+        return escapeTextForBrowser(text2);
       }
       var textSeparator = "<!-- -->";
-      function pushTextInstance(target, text, responseState, textEmbedded) {
-        return text === "" ? textEmbedded : (textEmbedded && target.push(textSeparator), target.push(encodeHTMLTextNode(text)), !0);
+      function pushTextInstance(target, text2, responseState, textEmbedded) {
+        return text2 === "" ? textEmbedded : (textEmbedded && target.push(textSeparator), target.push(encodeHTMLTextNode(text2)), !0);
       }
       function pushSegmentFinale(target, responseState, lastPushedText, textEmbedded) {
         lastPushedText && textEmbedded && target.push(textSeparator);
@@ -22757,8 +22757,8 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
           if (value !== null ? (checkAttributeStringCoercion(value, "value"), stringValue = "" + value) : (innerHTML !== null && (didWarnInvalidOptionInnerHTML || (didWarnInvalidOptionInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected."))), stringValue = flattenOptionChildren(children)), isArray(selectedValue))
             for (var i = 0; i < selectedValue.length; i++) {
               checkAttributeStringCoercion(selectedValue[i], "value");
-              var v = "" + selectedValue[i];
-              if (v === stringValue) {
+              var v2 = "" + selectedValue[i];
+              if (v2 === stringValue) {
                 target.push(selectedMarkerAttribute);
                 break;
               }
@@ -23201,8 +23201,8 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
           selectedValue: null
         };
       }
-      function pushTextInstance$1(target, text, responseState, textEmbedded) {
-        return responseState.generateStaticMarkup ? (target.push(escapeTextForBrowser(text)), !1) : pushTextInstance(target, text, responseState, textEmbedded);
+      function pushTextInstance$1(target, text2, responseState, textEmbedded) {
+        return responseState.generateStaticMarkup ? (target.push(escapeTextForBrowser(text2)), !1) : pushTextInstance(target, text2, responseState, textEmbedded);
       }
       function pushSegmentFinale$1(target, responseState, lastPushedText, textEmbedded) {
         if (!responseState.generateStaticMarkup)
@@ -23808,10 +23808,10 @@ Please update the following components: %s`,
         var asUint = x >>> 0;
         return asUint === 0 ? 32 : 31 - (log(asUint) / LN2 | 0) | 0;
       }
-      function is2(x, y) {
+      function is3(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is2, currentlyRenderingComponent = null, currentlyRenderingTask = null, firstWorkInProgressHook = null, workInProgressHook = null, isReRender = !1, didScheduleRenderPhaseUpdate = !1, localIdCounter = 0, renderPhaseUpdates = null, numberOfReRenders = 0, RE_RENDER_LIMIT = 25, isInHookUserCodeInDev = !1, currentHookNameInDev;
+      var objectIs = typeof Object.is == "function" ? Object.is : is3, currentlyRenderingComponent = null, currentlyRenderingTask = null, firstWorkInProgressHook = null, workInProgressHook = null, isReRender = !1, didScheduleRenderPhaseUpdate = !1, localIdCounter = 0, renderPhaseUpdates = null, numberOfReRenders = 0, RE_RENDER_LIMIT = 25, isInHookUserCodeInDev = !1, currentHookNameInDev;
       function resolveCurrentlyRenderingComponent() {
         if (currentlyRenderingComponent === null)
           throw new Error(`Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
@@ -23866,8 +23866,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useContext4(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
-      function basicStateReducer(state, action3) {
-        return typeof action3 == "function" ? action3(state) : action3;
+      function basicStateReducer(state, action4) {
+        return typeof action4 == "function" ? action4(state) : action4;
       }
       function useState9(initialState) {
         return currentHookNameInDev = "useState", useReducer(
@@ -23885,8 +23885,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
               renderPhaseUpdates.delete(queue);
               var newState = workInProgressHook.memoizedState, update = firstRenderPhaseUpdate;
               do {
-                var action3 = update.action;
-                isInHookUserCodeInDev = !0, newState = reducer(newState, action3), isInHookUserCodeInDev = !1, update = update.next;
+                var action4 = update.action;
+                isInHookUserCodeInDev = !0, newState = reducer(newState, action4), isInHookUserCodeInDev = !1, update = update.next;
               } while (update !== null);
               return workInProgressHook.memoizedState = newState, [newState, dispatch];
             }
@@ -23932,13 +23932,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useLayoutEffect3(create, inputs) {
         currentHookNameInDev = "useLayoutEffect", error("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
       }
-      function dispatchAction(componentIdentity, queue, action3) {
+      function dispatchAction(componentIdentity, queue, action4) {
         if (numberOfReRenders >= RE_RENDER_LIMIT)
           throw new Error("Too many re-renders. React limits the number of renders to prevent an infinite loop.");
         if (componentIdentity === currentlyRenderingComponent) {
           didScheduleRenderPhaseUpdate = !0;
           var update = {
-            action: action3,
+            action: action4,
             next: null
           };
           renderPhaseUpdates === null && (renderPhaseUpdates = /* @__PURE__ */ new Map());
@@ -26033,7 +26033,7 @@ var require_react_dom_server_browser_development = __commonJS({
       };
       {
         var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/, msPattern = /^-ms-/, hyphenPattern = /-(.)/g, badStyleValueWithSemicolonPattern = /;\s*$/, warnedStyleNames = {}, warnedStyleValues = {}, warnedForNaNValue = !1, warnedForInfinityValue = !1, camelize = function(string) {
-          return string.replace(hyphenPattern, function(_, character) {
+          return string.replace(hyphenPattern, function(_2, character) {
             return character.toUpperCase();
           });
         }, warnHyphenatedStyleName = function(name) {
@@ -26089,8 +26089,8 @@ var require_react_dom_server_browser_development = __commonJS({
         }
         return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
       }
-      function escapeTextForBrowser(text) {
-        return typeof text == "boolean" || typeof text == "number" ? "" + text : escapeHtml3(text);
+      function escapeTextForBrowser(text2) {
+        return typeof text2 == "boolean" || typeof text2 == "number" ? "" + text2 : escapeHtml3(text2);
       }
       var uppercasePattern = /([A-Z])/g, msPattern$1 = /^ms-/;
       function hyphenateStyleName(name) {
@@ -26175,12 +26175,12 @@ var require_react_dom_server_browser_development = __commonJS({
         var idPrefix = responseState.idPrefix, id = ":" + idPrefix + "R" + treeId;
         return localId > 0 && (id += "H" + localId.toString(32)), id + ":";
       }
-      function encodeHTMLTextNode(text) {
-        return escapeTextForBrowser(text);
+      function encodeHTMLTextNode(text2) {
+        return escapeTextForBrowser(text2);
       }
       var textSeparator = stringToPrecomputedChunk("<!-- -->");
-      function pushTextInstance(target, text, responseState, textEmbedded) {
-        return text === "" ? textEmbedded : (textEmbedded && target.push(textSeparator), target.push(stringToChunk(encodeHTMLTextNode(text))), !0);
+      function pushTextInstance(target, text2, responseState, textEmbedded) {
+        return text2 === "" ? textEmbedded : (textEmbedded && target.push(textSeparator), target.push(stringToChunk(encodeHTMLTextNode(text2))), !0);
       }
       function pushSegmentFinale(target, responseState, lastPushedText, textEmbedded) {
         lastPushedText && textEmbedded && target.push(textSeparator);
@@ -26353,8 +26353,8 @@ var require_react_dom_server_browser_development = __commonJS({
           if (value !== null ? (checkAttributeStringCoercion(value, "value"), stringValue = "" + value) : (innerHTML !== null && (didWarnInvalidOptionInnerHTML || (didWarnInvalidOptionInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected."))), stringValue = flattenOptionChildren(children)), isArray(selectedValue))
             for (var i = 0; i < selectedValue.length; i++) {
               checkAttributeStringCoercion(selectedValue[i], "value");
-              var v = "" + selectedValue[i];
-              if (v === stringValue) {
+              var v2 = "" + selectedValue[i];
+              if (v2 === stringValue) {
                 target.push(selectedMarkerAttribute);
                 break;
               }
@@ -27360,10 +27360,10 @@ Please update the following components: %s`,
         var asUint = x >>> 0;
         return asUint === 0 ? 32 : 31 - (log(asUint) / LN2 | 0) | 0;
       }
-      function is2(x, y) {
+      function is3(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is2, currentlyRenderingComponent = null, currentlyRenderingTask = null, firstWorkInProgressHook = null, workInProgressHook = null, isReRender = !1, didScheduleRenderPhaseUpdate = !1, localIdCounter = 0, renderPhaseUpdates = null, numberOfReRenders = 0, RE_RENDER_LIMIT = 25, isInHookUserCodeInDev = !1, currentHookNameInDev;
+      var objectIs = typeof Object.is == "function" ? Object.is : is3, currentlyRenderingComponent = null, currentlyRenderingTask = null, firstWorkInProgressHook = null, workInProgressHook = null, isReRender = !1, didScheduleRenderPhaseUpdate = !1, localIdCounter = 0, renderPhaseUpdates = null, numberOfReRenders = 0, RE_RENDER_LIMIT = 25, isInHookUserCodeInDev = !1, currentHookNameInDev;
       function resolveCurrentlyRenderingComponent() {
         if (currentlyRenderingComponent === null)
           throw new Error(`Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
@@ -27418,8 +27418,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useContext4(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
-      function basicStateReducer(state, action3) {
-        return typeof action3 == "function" ? action3(state) : action3;
+      function basicStateReducer(state, action4) {
+        return typeof action4 == "function" ? action4(state) : action4;
       }
       function useState9(initialState) {
         return currentHookNameInDev = "useState", useReducer(
@@ -27437,8 +27437,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
               renderPhaseUpdates.delete(queue);
               var newState = workInProgressHook.memoizedState, update = firstRenderPhaseUpdate;
               do {
-                var action3 = update.action;
-                isInHookUserCodeInDev = !0, newState = reducer(newState, action3), isInHookUserCodeInDev = !1, update = update.next;
+                var action4 = update.action;
+                isInHookUserCodeInDev = !0, newState = reducer(newState, action4), isInHookUserCodeInDev = !1, update = update.next;
               } while (update !== null);
               return workInProgressHook.memoizedState = newState, [newState, dispatch];
             }
@@ -27484,13 +27484,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useLayoutEffect3(create, inputs) {
         currentHookNameInDev = "useLayoutEffect", error("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
       }
-      function dispatchAction(componentIdentity, queue, action3) {
+      function dispatchAction(componentIdentity, queue, action4) {
         if (numberOfReRenders >= RE_RENDER_LIMIT)
           throw new Error("Too many re-renders. React limits the number of renders to prevent an infinite loop.");
         if (componentIdentity === currentlyRenderingComponent) {
           didScheduleRenderPhaseUpdate = !0;
           var update = {
-            action: action3,
+            action: action4,
             next: null
           };
           renderPhaseUpdates === null && (renderPhaseUpdates = /* @__PURE__ */ new Map());
@@ -28976,10 +28976,10 @@ var require_use_sync_external_store_with_selector_development = __commonJS({
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
       var React13 = require_react();
-      function is2(x, y) {
+      function is3(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is2, useSyncExternalStore3 = React13.useSyncExternalStore, useRef4 = React13.useRef, useEffect8 = React13.useEffect, useMemo5 = React13.useMemo, useDebugValue = React13.useDebugValue;
+      var objectIs = typeof Object.is == "function" ? Object.is : is3, useSyncExternalStore3 = React13.useSyncExternalStore, useRef4 = React13.useRef, useEffect8 = React13.useEffect, useMemo5 = React13.useMemo, useDebugValue = React13.useDebugValue;
       function useSyncExternalStoreWithSelector3(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
         var instRef = useRef4(null), inst;
         instRef.current === null ? (inst = {
@@ -29370,7 +29370,7 @@ function Links() {
   } = useRemixContext(), {
     errors: errors2,
     matches: routerMatches
-  } = useDataRouterStateContext(), matches2 = errors2 ? routerMatches.slice(0, routerMatches.findIndex((m) => errors2[m.route.id]) + 1) : routerMatches, keyedLinks = React3.useMemo(() => getKeyedLinksForMatches(matches2, routeModules, manifest), [matches2, routeModules, manifest]);
+  } = useDataRouterStateContext(), matches2 = errors2 ? routerMatches.slice(0, routerMatches.findIndex((m2) => errors2[m2.route.id]) + 1) : routerMatches, keyedLinks = React3.useMemo(() => getKeyedLinksForMatches(matches2, routeModules, manifest), [matches2, routeModules, manifest]);
   return /* @__PURE__ */ React3.createElement(React3.Fragment, null, criticalCss ? /* @__PURE__ */ React3.createElement("style", {
     dangerouslySetInnerHTML: {
       __html: criticalCss
@@ -29449,7 +29449,7 @@ function Meta() {
     loaderData
   } = useDataRouterStateContext(), location = useLocation(), _matches = routerMatches, error = null;
   if (errors2) {
-    let errorIdx = routerMatches.findIndex((m) => errors2[m.route.id]);
+    let errorIdx = routerMatches.findIndex((m2) => errors2[m2.route.id]);
     _matches = routerMatches.slice(0, errorIdx + 1), error = errors2[routerMatches[errorIdx].route.id];
   }
   let meta5 = [], leafMeta = null, matches2 = [];
@@ -30071,20 +30071,20 @@ function RemixServer({
 function _iterableToArrayLimit(r, l) {
   var t = r == null ? null : typeof Symbol < "u" && r[Symbol.iterator] || r["@@iterator"];
   if (t != null) {
-    var e, n, i, u, a = [], f = !0, o = !1;
+    var e, n, i, u, a = [], f2 = !0, o = !1;
     try {
       if (i = (t = t.call(r)).next, l === 0) {
         if (Object(t) !== t)
           return;
-        f = !1;
+        f2 = !1;
       } else
-        for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0)
+        for (; !(f2 = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f2 = !0)
           ;
     } catch (r2) {
       o = !0, n = r2;
     } finally {
       try {
-        if (!f && t.return != null && (u = t.return(), Object(u) !== u))
+        if (!f2 && t.return != null && (u = t.return(), Object(u) !== u))
           return;
       } finally {
         if (o)
@@ -30169,9 +30169,9 @@ function _classPrivateFieldSet(receiver, privateMap, value) {
   var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set");
   return _classApplyDescriptorSet(receiver, descriptor, value), value;
 }
-function _classExtractFieldDescriptor(receiver, privateMap, action3) {
+function _classExtractFieldDescriptor(receiver, privateMap, action4) {
   if (!privateMap.has(receiver))
-    throw new TypeError("attempted to " + action3 + " private field on non-instance");
+    throw new TypeError("attempted to " + action4 + " private field on non-instance");
   return privateMap.get(receiver);
 }
 function _classApplyDescriptorGet(receiver, descriptor) {
@@ -30591,7 +30591,7 @@ function createReduxContextHook(context = ReactReduxContext) {
 }
 var useReduxContext = /* @__PURE__ */ createReduxContextHook(), useSyncExternalStoreWithSelector = notInitialized, initializeUseSelector = (fn) => {
   useSyncExternalStoreWithSelector = fn;
-}, refEquality = (a, b) => a === b;
+}, refEquality = (a, b2) => a === b2;
 function createSelectorHook(context = ReactReduxContext) {
   let useReduxContext2 = context === ReactReduxContext ? useReduxContext : createReduxContextHook(context);
   return function(selector, equalityFnOrOptions = {}) {
@@ -30927,23 +30927,23 @@ function createStore(reducer, preloadedState, enhancer) {
       }
     };
   }
-  function dispatch(action3) {
-    if (!isPlainObject(action3))
-      throw new Error(`Actions must be plain objects. Instead, the actual type was: '${kindOf(action3)}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`);
-    if (typeof action3.type > "u")
+  function dispatch(action4) {
+    if (!isPlainObject(action4))
+      throw new Error(`Actions must be plain objects. Instead, the actual type was: '${kindOf(action4)}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`);
+    if (typeof action4.type > "u")
       throw new Error('Actions may not have an undefined "type" property. You may have misspelled an action type string constant.');
-    if (typeof action3.type != "string")
-      throw new Error(`Action "type" property must be a string. Instead, the actual type was: '${kindOf(action3.type)}'. Value was: '${action3.type}' (stringified)`);
+    if (typeof action4.type != "string")
+      throw new Error(`Action "type" property must be a string. Instead, the actual type was: '${kindOf(action4.type)}'. Value was: '${action4.type}' (stringified)`);
     if (isDispatching)
       throw new Error("Reducers may not dispatch actions.");
     try {
-      isDispatching = !0, currentState = currentReducer(currentState, action3);
+      isDispatching = !0, currentState = currentReducer(currentState, action4);
     } finally {
       isDispatching = !1;
     }
     return (currentListeners = nextListeners).forEach((listener2) => {
       listener2();
-    }), action3;
+    }), action4;
   }
   function replaceReducer(nextReducer) {
     if (typeof nextReducer != "function")
@@ -30996,8 +30996,8 @@ function warning2(message) {
   } catch {
   }
 }
-function getUnexpectedStateShapeWarningMessage(inputState, reducers, action3, unexpectedKeyCache) {
-  let reducerKeys = Object.keys(reducers), argumentName = action3 && action3.type === actionTypes_default.INIT ? "preloadedState argument passed to createStore" : "previous state received by the reducer";
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action4, unexpectedKeyCache) {
+  let reducerKeys = Object.keys(reducers), argumentName = action4 && action4.type === actionTypes_default.INIT ? "preloadedState argument passed to createStore" : "previous state received by the reducer";
   if (reducerKeys.length === 0)
     return "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers.";
   if (!isPlainObject(inputState))
@@ -31005,7 +31005,7 @@ function getUnexpectedStateShapeWarningMessage(inputState, reducers, action3, un
   let unexpectedKeys = Object.keys(inputState).filter((key) => !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key]);
   if (unexpectedKeys.forEach((key) => {
     unexpectedKeyCache[key] = !0;
-  }), !(action3 && action3.type === actionTypes_default.REPLACE) && unexpectedKeys.length > 0)
+  }), !(action4 && action4.type === actionTypes_default.REPLACE) && unexpectedKeys.length > 0)
     return `Unexpected ${unexpectedKeys.length > 1 ? "keys" : "key"} "${unexpectedKeys.join('", "')}" found in ${argumentName}. Expected to find one of the known reducer keys instead: "${reducerKeys.join('", "')}". Unexpected keys will be ignored.`;
 }
 function assertReducerShape(reducers) {
@@ -31035,18 +31035,18 @@ function combineReducers(reducers) {
   } catch (e) {
     shapeAssertionError = e;
   }
-  return function(state = {}, action3) {
+  return function(state = {}, action4) {
     if (shapeAssertionError)
       throw shapeAssertionError;
     {
-      let warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action3, unexpectedKeyCache);
+      let warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action4, unexpectedKeyCache);
       warningMessage && warning2(warningMessage);
     }
     let hasChanged = !1, nextState = {};
     for (let i = 0; i < finalReducerKeys.length; i++) {
-      let key = finalReducerKeys[i], reducer = finalReducers[key], previousStateForKey = state[key], nextStateForKey = reducer(previousStateForKey, action3);
+      let key = finalReducerKeys[i], reducer = finalReducers[key], previousStateForKey = state[key], nextStateForKey = reducer(previousStateForKey, action4);
       if (typeof nextStateForKey > "u") {
-        let actionType = action3 && action3.type;
+        let actionType = action4 && action4.type;
         throw new Error(`When called with an action of type ${actionType ? `"${String(actionType)}"` : "(unknown type)"}, the slice reducer for key "${key}" returned undefined. To ignore an action, you must explicitly return the previous state. If you want this reducer to hold no value, you can return null instead of undefined.`);
       }
       nextState[key] = nextStateForKey, hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
@@ -31055,7 +31055,7 @@ function combineReducers(reducers) {
   };
 }
 function compose(...funcs) {
-  return funcs.length === 0 ? (arg) => arg : funcs.length === 1 ? funcs[0] : funcs.reduce((a, b) => (...args) => a(b(...args)));
+  return funcs.length === 0 ? (arg) => arg : funcs.length === 1 ? funcs[0] : funcs.reduce((a, b2) => (...args) => a(b2(...args)));
 }
 function applyMiddleware(...middlewares) {
   return (createStore2) => (reducer, preloadedState) => {
@@ -31063,7 +31063,7 @@ function applyMiddleware(...middlewares) {
       throw new Error("Dispatching while constructing your middleware is not allowed. Other middleware would not be applied to this dispatch.");
     }, middlewareAPI = {
       getState: store2.getState,
-      dispatch: (action3, ...args) => dispatch(action3, ...args)
+      dispatch: (action4, ...args) => dispatch(action4, ...args)
     }, chain = middlewares.map((middleware) => middleware(middlewareAPI));
     return dispatch = compose(...chain)(store2.dispatch), {
       ...store2,
@@ -31071,8 +31071,8 @@ function applyMiddleware(...middlewares) {
     };
   };
 }
-function isAction(action3) {
-  return isPlainObject(action3) && "type" in action3 && typeof action3.type == "string";
+function isAction(action4) {
+  return isPlainObject(action4) && "type" in action4 && typeof action4.type == "string";
 }
 
 // node_modules/immer/dist/immer.mjs
@@ -31174,12 +31174,12 @@ function shallowCopy(base, strict) {
   delete descriptors[DRAFT_STATE];
   let keys = Reflect.ownKeys(descriptors);
   for (let i = 0; i < keys.length; i++) {
-    let key = keys[i], desc = descriptors[key];
-    desc.writable === !1 && (desc.writable = !0, desc.configurable = !0), (desc.get || desc.set) && (descriptors[key] = {
+    let key = keys[i], desc2 = descriptors[key];
+    desc2.writable === !1 && (desc2.writable = !0, desc2.configurable = !0), (desc2.get || desc2.set) && (descriptors[key] = {
       configurable: !0,
       writable: !0,
       // could live with !!desc.set as well here...
-      enumerable: desc.enumerable,
+      enumerable: desc2.enumerable,
       value: base[key]
     });
   }
@@ -31334,9 +31334,9 @@ var objectTraps = {
     return Reflect.ownKeys(latest(state));
   },
   set(state, prop, value) {
-    let desc = getDescriptorFromProto(latest(state), prop);
-    if (desc?.set)
-      return desc.set.call(state.draft_, value), !0;
+    let desc2 = getDescriptorFromProto(latest(state), prop);
+    if (desc2?.set)
+      return desc2.set.call(state.draft_, value), !0;
     if (!state.modified_) {
       let current2 = peek(latest(state), prop), currentState = current2?.[DRAFT_STATE];
       if (currentState && currentState.base_ === value)
@@ -31355,11 +31355,11 @@ var objectTraps = {
   // Note: We never coerce `desc.value` into an Immer draft, because we can't make
   // the same guarantee in ES5 mode.
   getOwnPropertyDescriptor(state, prop) {
-    let owner = latest(state), desc = Reflect.getOwnPropertyDescriptor(owner, prop);
-    return desc && {
+    let owner = latest(state), desc2 = Reflect.getOwnPropertyDescriptor(owner, prop);
+    return desc2 && {
       writable: !0,
       configurable: state.type_ !== 1 || prop !== "length",
-      enumerable: desc.enumerable,
+      enumerable: desc2.enumerable,
       value: owner[prop]
     };
   },
@@ -31389,11 +31389,11 @@ function peek(draft, prop) {
   return (state ? latest(state) : draft)[prop];
 }
 function readPropFromProto(state, source, prop) {
-  let desc = getDescriptorFromProto(source, prop);
-  return desc ? "value" in desc ? desc.value : (
+  let desc2 = getDescriptorFromProto(source, prop);
+  return desc2 ? "value" in desc2 ? desc2.value : (
     // This is a very special case, if the prop is a getter defined by the
     // prototype, we should invoke it with the draft as context!
-    desc.get?.call(state.draft_)
+    desc2.get?.call(state.draft_)
   ) : void 0;
 }
 function getDescriptorFromProto(source, prop) {
@@ -31401,9 +31401,9 @@ function getDescriptorFromProto(source, prop) {
     return;
   let proto2 = getPrototypeOf(source);
   for (; proto2; ) {
-    let desc = Object.getOwnPropertyDescriptor(proto2, prop);
-    if (desc)
-      return desc;
+    let desc2 = Object.getOwnPropertyDescriptor(proto2, prop);
+    if (desc2)
+      return desc2;
     proto2 = getPrototypeOf(proto2);
   }
 }
@@ -31734,7 +31734,7 @@ function createSelectorCreator(memoizeOrOptions, ...memoizeOptionsFromArgs) {
 
 // node_modules/redux-thunk/dist/redux-thunk.mjs
 function createThunkMiddleware(extraArgument) {
-  return ({ dispatch, getState }) => (next) => (action3) => typeof action3 == "function" ? action3(dispatch, getState, extraArgument) : next(action3);
+  return ({ dispatch, getState }) => (next) => (action4) => typeof action4 == "function" ? action4(dispatch, getState, extraArgument) : next(action4);
 }
 var thunk = createThunkMiddleware(), withExtraArgument = createThunkMiddleware;
 
@@ -31752,7 +31752,7 @@ var createDraftSafeSelectorCreator = (...args) => {
   return function(noop3) {
     return noop3;
   };
-}, hasMatchFunction = (v) => v && typeof v.match == "function";
+}, hasMatchFunction = (v2) => v2 && typeof v2.match == "function";
 function createAction(type, prepareAction) {
   function actionCreator(...args) {
     if (prepareAction) {
@@ -31775,11 +31775,11 @@ function createAction(type, prepareAction) {
       payload: args[0]
     };
   }
-  return actionCreator.toString = () => `${type}`, actionCreator.type = type, actionCreator.match = (action3) => isAction(action3) && action3.type === type, actionCreator;
+  return actionCreator.toString = () => `${type}`, actionCreator.type = type, actionCreator.match = (action4) => isAction(action4) && action4.type === type, actionCreator;
 }
-function isActionCreator(action3) {
-  return typeof action3 == "function" && "type" in action3 && // hasMatchFunction only wants Matchers but I don't see the point in rewriting it
-  hasMatchFunction(action3);
+function isActionCreator(action4) {
+  return typeof action4 == "function" && "type" in action4 && // hasMatchFunction only wants Matchers but I don't see the point in rewriting it
+  hasMatchFunction(action4);
 }
 function getMessage(type) {
   let splitType = type ? `${type}`.split("/") : [], actionName = splitType[splitType.length - 1] || "actionCreator";
@@ -31790,7 +31790,7 @@ function createActionCreatorInvariantMiddleware(options = {}) {
   let {
     isActionCreator: isActionCreator2 = isActionCreator
   } = options;
-  return () => (next) => (action3) => (isActionCreator2(action3) && console.warn(getMessage(action3.type)), next(action3));
+  return () => (next) => (action4) => (isActionCreator2(action4) && console.warn(getMessage(action4.type)), next(action4));
 }
 function getTimeMeasureUtils(maxDelay, fnName) {
   let elapsed = 0;
@@ -31898,7 +31898,7 @@ function createImmutableStateInvariantMiddleware(options = {}) {
       return JSON.stringify(obj, getSerialize2(serializer, decycler), indent);
     }, getSerialize2 = function(serializer, decycler) {
       let stack = [], keys = [];
-      return decycler || (decycler = function(_, value) {
+      return decycler || (decycler = function(_2, value) {
         return stack[0] === value ? "[Circular ~]" : "[Circular ~." + keys.slice(0, stack.indexOf(value)).join(".") + "]";
       }), function(key, value) {
         if (stack.length > 0) {
@@ -31919,16 +31919,16 @@ function createImmutableStateInvariantMiddleware(options = {}) {
       getState
     }) => {
       let state = getState(), tracker = track(state), result;
-      return (next) => (action3) => {
+      return (next) => (action4) => {
         let measureUtils = getTimeMeasureUtils(warnAfter, "ImmutableStateInvariantMiddleware");
         measureUtils.measureTime(() => {
           if (state = getState(), result = tracker.detectMutations(), tracker = track(state), result.wasMutated)
             throw new Error(`A state mutation was detected between dispatches, in the path '${result.path || ""}'.  This may cause incorrect behavior. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
         });
-        let dispatchedAction = next(action3);
+        let dispatchedAction = next(action4);
         return measureUtils.measureTime(() => {
           if (state = getState(), result = tracker.detectMutations(), tracker = track(state), result.wasMutated)
-            throw new Error(`A state mutation was detected inside a dispatch, in the path: ${result.path || ""}. Take a look at the reducer(s) handling the action ${stringify2(action3)}. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
+            throw new Error(`A state mutation was detected inside a dispatch, in the path: ${result.path || ""}. Take a look at the reducer(s) handling the action ${stringify2(action4)}. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
         }), measureUtils.warnIfExceeded(), dispatchedAction;
       };
     };
@@ -31983,19 +31983,19 @@ function createSerializableStateInvariantMiddleware(options = {}) {
       ignoreActions = !1,
       disableCache = !1
     } = options, cache = !disableCache && WeakSet ? /* @__PURE__ */ new WeakSet() : void 0;
-    return (storeAPI) => (next) => (action3) => {
-      if (!isAction(action3))
-        return next(action3);
-      let result = next(action3), measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
-      return !ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action3.type) !== -1) && measureUtils.measureTime(() => {
-        let foundActionNonSerializableValue = findNonSerializableValue(action3, "", isSerializable, getEntries, ignoredActionPaths, cache);
+    return (storeAPI) => (next) => (action4) => {
+      if (!isAction(action4))
+        return next(action4);
+      let result = next(action4), measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
+      return !ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action4.type) !== -1) && measureUtils.measureTime(() => {
+        let foundActionNonSerializableValue = findNonSerializableValue(action4, "", isSerializable, getEntries, ignoredActionPaths, cache);
         if (foundActionNonSerializableValue) {
           let {
             keyPath,
             value
           } = foundActionNonSerializableValue;
           console.error(`A non-serializable value was detected in an action, in the path: \`${keyPath}\`. Value:`, value, `
-Take a look at the logic that dispatched this action: `, action3, `
+Take a look at the logic that dispatched this action: `, action4, `
 (See https://redux.js.org/faq/actions#why-should-type-be-a-string-or-at-least-serializable-why-should-my-action-types-be-constants)`, `
 (To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)`);
         }
@@ -32007,7 +32007,7 @@ Take a look at the logic that dispatched this action: `, action3, `
             value
           } = foundStateNonSerializableValue;
           console.error(`A non-serializable value was detected in the state, in the path: \`${keyPath}\`. Value:`, value, `
-Take a look at the reducer(s) handling this action type: ${action3.type}.
+Take a look at the reducer(s) handling this action type: ${action4.type}.
 (See https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)`);
         }
       }), measureUtils.warnIfExceeded()), result;
@@ -32057,9 +32057,9 @@ var createQueueWithTimer = (timeout) => (notify) => {
     },
     // Override the base `store.dispatch` method so that we can check actions
     // for the `shouldAutoBatch` flag and determine if batching is active
-    dispatch(action3) {
+    dispatch(action4) {
       try {
-        return notifying = !action3?.meta?.[SHOULD_AUTOBATCH], shouldNotifyAtEndOfTick = !notifying, shouldNotifyAtEndOfTick && (notificationQueued || (notificationQueued = !0, queueCallback(notifyListeners))), store2.dispatch(action3);
+        return notifying = !action4?.meta?.[SHOULD_AUTOBATCH], shouldNotifyAtEndOfTick = !notifying, shouldNotifyAtEndOfTick && (notificationQueued || (notificationQueued = !0, queueCallback(notifyListeners))), store2.dispatch(action4);
       } finally {
         notifying = !0;
       }
@@ -32156,22 +32156,22 @@ function createReducer(initialState, mapOrBuilderCallback) {
     let frozenInitialState = freezeDraftable(initialState);
     getInitialState = () => frozenInitialState;
   }
-  function reducer(state = getInitialState(), action3) {
-    let caseReducers = [actionsMap[action3.type], ...finalActionMatchers.filter(({
+  function reducer(state = getInitialState(), action4) {
+    let caseReducers = [actionsMap[action4.type], ...finalActionMatchers.filter(({
       matcher
-    }) => matcher(action3)).map(({
+    }) => matcher(action4)).map(({
       reducer: reducer2
     }) => reducer2)];
     return caseReducers.filter((cr) => !!cr).length === 0 && (caseReducers = [finalDefaultCaseReducer]), caseReducers.reduce((previousState, caseReducer) => {
       if (caseReducer)
         if (isDraft(previousState)) {
-          let result = caseReducer(previousState, action3);
+          let result = caseReducer(previousState, action4);
           return result === void 0 ? previousState : result;
         } else {
           if (isDraftable(previousState))
-            return produce(previousState, (draft) => caseReducer(draft, action3));
+            return produce(previousState, (draft) => caseReducer(draft, action4));
           {
-            let result = caseReducer(previousState, action3);
+            let result = caseReducer(previousState, action4);
             if (result === void 0) {
               if (previousState === null)
                 return previousState;
@@ -32190,9 +32190,9 @@ var urlAlphabet = "ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXI
   for (; i--; )
     id += urlAlphabet[Math.random() * 64 | 0];
   return id;
-}, matches = (matcher, action3) => hasMatchFunction(matcher) ? matcher.match(action3) : matcher(action3);
+}, matches = (matcher, action4) => hasMatchFunction(matcher) ? matcher.match(action4) : matcher(action4);
 function isAnyOf(...matchers) {
-  return (action3) => matchers.some((matcher) => matches(matcher, action3));
+  return (action4) => matchers.some((matcher) => matches(matcher, action4));
 }
 var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = class {
   constructor(payload, meta5) {
@@ -32271,7 +32271,7 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
                 name: "ConditionError",
                 message: "Aborted due to condition callback returning false."
               };
-            let abortedPromise = new Promise((_, reject) => abortController.signal.addEventListener("abort", () => reject({
+            let abortedPromise = new Promise((_2, reject) => abortController.signal.addEventListener("abort", () => reject({
               name: "AbortError",
               message: abortReason || "Aborted"
             })));
@@ -32320,12 +32320,12 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   }
   return createAsyncThunk2.withTypes = () => createAsyncThunk2, createAsyncThunk2;
 })();
-function unwrapResult(action3) {
-  if (action3.meta && action3.meta.rejectedWithValue)
-    throw action3.payload;
-  if (action3.error)
-    throw action3.error;
-  return action3.payload;
+function unwrapResult(action4) {
+  if (action4.meta && action4.meta.rejectedWithValue)
+    throw action4.payload;
+  if (action4.error)
+    throw action4.error;
+  return action4.payload;
 }
 function isThenable(value) {
   return value !== null && typeof value == "object" && typeof value.then == "function";
@@ -32395,16 +32395,16 @@ function buildCreateSlice({
           builder.addCase(key, finalCaseReducers[key]);
         for (let sM of context.sliceMatchers)
           builder.addMatcher(sM.matcher, sM.reducer);
-        for (let m of actionMatchers)
-          builder.addMatcher(m.matcher, m.reducer);
+        for (let m2 of actionMatchers)
+          builder.addMatcher(m2.matcher, m2.reducer);
         defaultCaseReducer && builder.addDefaultCase(defaultCaseReducer);
       });
     }
     let selectSelf = (state) => state, injectedSelectorCache = /* @__PURE__ */ new WeakMap(), _reducer, slice = {
       name,
       reducerPath,
-      reducer(state, action3) {
-        return _reducer || (_reducer = buildReducer()), _reducer(state, action3);
+      reducer(state, action4) {
+        return _reducer || (_reducer = buildReducer()), _reducer(state, action4);
       },
       actions: context.actionCreators,
       caseReducers: context.sliceCaseReducersByName,
@@ -32703,14 +32703,14 @@ var initialStateValue = {
   name: "user",
   initialState: { value: initialStateValue },
   reducers: {
-    setUser: (state, action3) => {
-      state.value.user = action3.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
+    setUser: (state, action4) => {
+      state.value.user = action4.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
     },
     setLogout: (state) => {
       state.value.user = null, state.value.context.isLoggedIn = !1;
     },
-    setLoading: (state, action3) => {
-      state.value.context.isLoading = action3.payload;
+    setLoading: (state, action4) => {
+      state.value.context.isLoading = action4.payload;
     },
     // Optionally, you can add a reset action to set the state back to its initial value
     resetState: (state) => {
@@ -32718,9 +32718,9 @@ var initialStateValue = {
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(loginUser.fulfilled, (state, action3) => {
-      state.value.user = action3.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
-    }).addCase(loginUser.rejected, (state, action3) => {
+    builder.addCase(loginUser.fulfilled, (state, action4) => {
+      state.value.user = action4.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
+    }).addCase(loginUser.rejected, (state, action4) => {
       state.value.context.error = "Login failed", state.value.context.isLoading = !1;
     });
   }
@@ -32728,11 +32728,11 @@ var initialStateValue = {
   "user/loginUser",
   async (credentials, { dispatch }) => {
     try {
-      let user = (await UserService.loginUser(
+      let user2 = (await UserService.loginUser(
         credentials.username,
         credentials.password
       )).user;
-      return dispatch(setUser(user)), user;
+      return dispatch(setUser(user2)), user2;
     } catch (error) {
       throw error;
     }
@@ -32749,7 +32749,7 @@ var initializeStore = (preloadedState = {}) => configureStore({
 });
 
 // app/index.css
-var app_default = "/build/_assets/index-3SR67L3E.css";
+var app_default = "/build/_assets/index-ANCR3FBZ.css";
 
 // app/root.tsx
 var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1), links = () => [
@@ -33196,7 +33196,7 @@ var import_jsx_dev_runtime16 = __toESM(require_jsx_dev_runtime(), 1), Footer = (
 }, this), footer_default = Footer;
 
 // app/components/base/pageTemplate.tsx
-var import_jsx_dev_runtime17 = __toESM(require_jsx_dev_runtime(), 1), PageTemplate = ({ children, user, context }) => context.isLoading === !0 || context.isLoading === null ? /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("header", { className: "header-content", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "loader", children: "Loading..." }, void 0, !1, {
+var import_jsx_dev_runtime17 = __toESM(require_jsx_dev_runtime(), 1), PageTemplate = ({ children, user: user2, context }) => context.isLoading === !0 || context.isLoading === null ? /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("header", { className: "header-content", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "loader", children: "Loading..." }, void 0, !1, {
   fileName: "app/components/base/pageTemplate.tsx",
   lineNumber: 17,
   columnNumber: 9
@@ -33205,7 +33205,7 @@ var import_jsx_dev_runtime17 = __toESM(require_jsx_dev_runtime(), 1), PageTempla
   lineNumber: 16,
   columnNumber: 7
 }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex flex-col min-h-screen", children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(header_default, { user, context }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(header_default, { user: user2, context }, void 0, !1, {
     fileName: "app/components/base/pageTemplate.tsx",
     lineNumber: 24,
     columnNumber: 9
@@ -33284,8 +33284,8 @@ var action = async ({ request, context }) => {
   else
     return (0, import_cloudflare3.json)({ error: "Missing username or password" }, { status: 400 });
 }, Register = () => {
-  let [username, setUsername] = (0, import_react6.useState)(""), [password, setPassword] = (0, import_react6.useState)(""), actionData = useActionData2(), [hasAgreedToTerms, setHasAgreedToTerms] = (0, import_react6.useState)(!1), user = useTypedSelector((state) => state.user.value);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(pageTemplate_default, { user, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+  let [username, setUsername] = (0, import_react6.useState)(""), [password, setPassword] = (0, import_react6.useState)(""), actionData = useActionData2(), [hasAgreedToTerms, setHasAgreedToTerms] = (0, import_react6.useState)(!1), user2 = useTypedSelector((state) => state.user.value);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(pageTemplate_default, { user: user2, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
     "form",
     {
       action: "/register",
@@ -34114,13 +34114,3724 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
 // app/routes/_auth.login.tsx
 var auth_login_exports = {};
 __export(auth_login_exports, {
+  action: () => action3,
   default: () => auth_login_default,
   loader: () => loader2
 });
 var import_react9 = __toESM(require_react(), 1);
 var import_cloudflare5 = __toESM(require_dist(), 1);
-var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = async ({ request, context }) => await isAuthenticated({ request, env: context.env }) ? (0, import_cloudflare5.redirect)("/home") : (0, import_cloudflare5.json)({}), Login = () => {
-  let [username, setUsername] = (0, import_react9.useState)(""), [password, setPassword] = (0, import_react9.useState)(""), actionData = useActionData2();
+
+// node_modules/drizzle-orm/entity.js
+var entityKind = Symbol.for("drizzle:entityKind"), hasOwnEntityKind = Symbol.for("drizzle:hasOwnEntityKind");
+function is2(value, type) {
+  if (!value || typeof value != "object")
+    return !1;
+  if (value instanceof type)
+    return !0;
+  if (!Object.prototype.hasOwnProperty.call(type, entityKind))
+    throw new Error(
+      `Class "${type.name ?? "<unknown>"}" doesn't look like a Drizzle entity. If this is incorrect and the class is provided by Drizzle, please report this as a bug.`
+    );
+  let cls = value.constructor;
+  if (cls)
+    for (; cls; ) {
+      if (entityKind in cls && cls[entityKind] === type[entityKind])
+        return !0;
+      cls = Object.getPrototypeOf(cls);
+    }
+  return !1;
+}
+
+// node_modules/drizzle-orm/logger.js
+var _a, ConsoleLogWriter = class {
+  write(message) {
+    console.log(message);
+  }
+};
+_a = entityKind, __publicField(ConsoleLogWriter, _a, "ConsoleLogWriter");
+var _a2, DefaultLogger = class {
+  writer;
+  constructor(config) {
+    this.writer = config?.writer ?? new ConsoleLogWriter();
+  }
+  logQuery(query, params) {
+    let stringifiedParams = params.map((p) => {
+      try {
+        return JSON.stringify(p);
+      } catch {
+        return String(p);
+      }
+    }), paramsStr = stringifiedParams.length ? ` -- params: [${stringifiedParams.join(", ")}]` : "";
+    this.writer.write(`Query: ${query}${paramsStr}`);
+  }
+};
+_a2 = entityKind, __publicField(DefaultLogger, _a2, "DefaultLogger");
+var _a3, NoopLogger = class {
+  logQuery() {
+  }
+};
+_a3 = entityKind, __publicField(NoopLogger, _a3, "NoopLogger");
+
+// node_modules/drizzle-orm/table.js
+var TableName = Symbol.for("drizzle:Name"), Schema = Symbol.for("drizzle:Schema"), Columns = Symbol.for("drizzle:Columns"), OriginalName = Symbol.for("drizzle:OriginalName"), BaseName = Symbol.for("drizzle:BaseName"), IsAlias = Symbol.for("drizzle:IsAlias"), ExtraConfigBuilder = Symbol.for("drizzle:ExtraConfigBuilder"), IsDrizzleTable = Symbol.for("drizzle:IsDrizzleTable"), _a4, Table = class {
+  /**
+   * @internal
+   * Can be changed if the table is aliased.
+   */
+  [(_a4 = entityKind, TableName)];
+  /**
+   * @internal
+   * Used to store the original name of the table, before any aliasing.
+   */
+  [OriginalName];
+  /** @internal */
+  [Schema];
+  /** @internal */
+  [Columns];
+  /**
+   *  @internal
+   * Used to store the table name before the transformation via the `tableCreator` functions.
+   */
+  [BaseName];
+  /** @internal */
+  [IsAlias] = !1;
+  /** @internal */
+  [ExtraConfigBuilder] = void 0;
+  [IsDrizzleTable] = !0;
+  constructor(name, schema, baseName) {
+    this[TableName] = this[OriginalName] = name, this[Schema] = schema, this[BaseName] = baseName;
+  }
+};
+__publicField(Table, _a4, "Table"), /** @internal */
+__publicField(Table, "Symbol", {
+  Name: TableName,
+  Schema,
+  OriginalName,
+  Columns,
+  BaseName,
+  IsAlias,
+  ExtraConfigBuilder
+});
+function isTable(table) {
+  return typeof table == "object" && table !== null && IsDrizzleTable in table;
+}
+function getTableName(table) {
+  return table[TableName];
+}
+
+// node_modules/drizzle-orm/column.js
+var _a5, Column = class {
+  constructor(table, config) {
+    this.table = table, this.config = config, this.name = config.name, this.notNull = config.notNull, this.default = config.default, this.defaultFn = config.defaultFn, this.hasDefault = config.hasDefault, this.primary = config.primaryKey, this.isUnique = config.isUnique, this.uniqueName = config.uniqueName, this.uniqueType = config.uniqueType, this.dataType = config.dataType, this.columnType = config.columnType;
+  }
+  name;
+  primary;
+  notNull;
+  default;
+  defaultFn;
+  hasDefault;
+  isUnique;
+  uniqueName;
+  uniqueType;
+  dataType;
+  columnType;
+  enumValues = void 0;
+  config;
+  mapFromDriverValue(value) {
+    return value;
+  }
+  mapToDriverValue(value) {
+    return value;
+  }
+};
+_a5 = entityKind, __publicField(Column, _a5, "Column");
+
+// node_modules/drizzle-orm/pg-core/table.js
+var InlineForeignKeys = Symbol.for("drizzle:PgInlineForeignKeys"), _a6, PgTable = class extends Table {
+  /**@internal */
+  [(_a6 = entityKind, InlineForeignKeys)] = [];
+  /** @internal */
+  [Table.Symbol.ExtraConfigBuilder] = void 0;
+};
+__publicField(PgTable, _a6, "PgTable"), /** @internal */
+__publicField(PgTable, "Symbol", Object.assign({}, Table.Symbol, {
+  InlineForeignKeys
+}));
+
+// node_modules/drizzle-orm/pg-core/primary-keys.js
+var _a7, PrimaryKeyBuilder = class {
+  /** @internal */
+  columns;
+  /** @internal */
+  name;
+  constructor(columns, name) {
+    this.columns = columns, this.name = name;
+  }
+  /** @internal */
+  build(table) {
+    return new PrimaryKey(table, this.columns, this.name);
+  }
+};
+_a7 = entityKind, __publicField(PrimaryKeyBuilder, _a7, "PgPrimaryKeyBuilder");
+var _a8, PrimaryKey = class {
+  constructor(table, columns, name) {
+    this.table = table, this.columns = columns, this.name = name;
+  }
+  columns;
+  name;
+  getName() {
+    return this.name ?? `${this.table[PgTable.Symbol.Name]}_${this.columns.map((column) => column.name).join("_")}_pk`;
+  }
+};
+_a8 = entityKind, __publicField(PrimaryKey, _a8, "PgPrimaryKey");
+
+// node_modules/drizzle-orm/subquery.js
+var SubqueryConfig = Symbol.for("drizzle:SubqueryConfig"), _a9, Subquery = class {
+  /** @internal */
+  [(_a9 = entityKind, SubqueryConfig)];
+  constructor(sql2, selection, alias, isWith = !1) {
+    this[SubqueryConfig] = {
+      sql: sql2,
+      selection,
+      alias,
+      isWith
+    };
+  }
+  // getSQL(): SQL<unknown> {
+  // 	return new SQL([this]);
+  // }
+};
+__publicField(Subquery, _a9, "Subquery");
+var _a10, WithSubquery = class extends Subquery {
+};
+_a10 = entityKind, __publicField(WithSubquery, _a10, "WithSubquery");
+
+// node_modules/drizzle-orm/tracing-utils.js
+function iife(fn, ...args) {
+  return fn(...args);
+}
+
+// node_modules/drizzle-orm/version.js
+var version = "0.29.4";
+
+// node_modules/drizzle-orm/tracing.js
+var otel, rawTracer, tracer = {
+  startActiveSpan(name, fn) {
+    return otel ? (rawTracer || (rawTracer = otel.trace.getTracer("drizzle-orm", version)), iife(
+      (otel2, rawTracer2) => rawTracer2.startActiveSpan(
+        name,
+        (span) => {
+          try {
+            return fn(span);
+          } catch (e) {
+            throw span.setStatus({
+              code: otel2.SpanStatusCode.ERROR,
+              message: e instanceof Error ? e.message : "Unknown error"
+              // eslint-disable-line no-instanceof/no-instanceof
+            }), e;
+          } finally {
+            span.end();
+          }
+        }
+      ),
+      otel,
+      rawTracer
+    )) : fn();
+  }
+};
+
+// node_modules/drizzle-orm/view-common.js
+var ViewBaseConfig = Symbol.for("drizzle:ViewBaseConfig");
+
+// node_modules/drizzle-orm/sql/sql.js
+var _a11, FakePrimitiveParam = class {
+};
+_a11 = entityKind, __publicField(FakePrimitiveParam, _a11, "FakePrimitiveParam");
+function isSQLWrapper(value) {
+  return typeof value == "object" && value !== null && "getSQL" in value && typeof value.getSQL == "function";
+}
+function mergeQueries(queries) {
+  let result = { sql: "", params: [] };
+  for (let query of queries)
+    result.sql += query.sql, result.params.push(...query.params), query.typings?.length && (result.typings || (result.typings = []), result.typings.push(...query.typings));
+  return result;
+}
+var _a12, StringChunk = class {
+  value;
+  constructor(value) {
+    this.value = Array.isArray(value) ? value : [value];
+  }
+  getSQL() {
+    return new SQL([this]);
+  }
+};
+_a12 = entityKind, __publicField(StringChunk, _a12, "StringChunk");
+var _a13, _SQL = class {
+  constructor(queryChunks) {
+    this.queryChunks = queryChunks;
+  }
+  /** @internal */
+  decoder = noopDecoder;
+  shouldInlineParams = !1;
+  append(query) {
+    return this.queryChunks.push(...query.queryChunks), this;
+  }
+  toQuery(config) {
+    return tracer.startActiveSpan("drizzle.buildSQL", (span) => {
+      let query = this.buildQueryFromSourceParams(this.queryChunks, config);
+      return span?.setAttributes({
+        "drizzle.query.text": query.sql,
+        "drizzle.query.params": JSON.stringify(query.params)
+      }), query;
+    });
+  }
+  buildQueryFromSourceParams(chunks, _config) {
+    let config = Object.assign({}, _config, {
+      inlineParams: _config.inlineParams || this.shouldInlineParams,
+      paramStartIndex: _config.paramStartIndex || { value: 0 }
+    }), {
+      escapeName,
+      escapeParam,
+      prepareTyping,
+      inlineParams,
+      paramStartIndex
+    } = config;
+    return mergeQueries(chunks.map((chunk) => {
+      if (is2(chunk, StringChunk))
+        return { sql: chunk.value.join(""), params: [] };
+      if (is2(chunk, Name))
+        return { sql: escapeName(chunk.value), params: [] };
+      if (chunk === void 0)
+        return { sql: "", params: [] };
+      if (Array.isArray(chunk)) {
+        let result = [new StringChunk("(")];
+        for (let [i, p] of chunk.entries())
+          result.push(p), i < chunk.length - 1 && result.push(new StringChunk(", "));
+        return result.push(new StringChunk(")")), this.buildQueryFromSourceParams(result, config);
+      }
+      if (is2(chunk, _SQL))
+        return this.buildQueryFromSourceParams(chunk.queryChunks, {
+          ...config,
+          inlineParams: inlineParams || chunk.shouldInlineParams
+        });
+      if (is2(chunk, Table)) {
+        let schemaName = chunk[Table.Symbol.Schema], tableName = chunk[Table.Symbol.Name];
+        return {
+          sql: schemaName === void 0 ? escapeName(tableName) : escapeName(schemaName) + "." + escapeName(tableName),
+          params: []
+        };
+      }
+      if (is2(chunk, Column))
+        return { sql: escapeName(chunk.table[Table.Symbol.Name]) + "." + escapeName(chunk.name), params: [] };
+      if (is2(chunk, View)) {
+        let schemaName = chunk[ViewBaseConfig].schema, viewName = chunk[ViewBaseConfig].name;
+        return {
+          sql: schemaName === void 0 ? escapeName(viewName) : escapeName(schemaName) + "." + escapeName(viewName),
+          params: []
+        };
+      }
+      if (is2(chunk, Param)) {
+        let mappedValue = chunk.value === null ? null : chunk.encoder.mapToDriverValue(chunk.value);
+        if (is2(mappedValue, _SQL))
+          return this.buildQueryFromSourceParams([mappedValue], config);
+        if (inlineParams)
+          return { sql: this.mapInlineParam(mappedValue, config), params: [] };
+        let typings;
+        return prepareTyping !== void 0 && (typings = [prepareTyping(chunk.encoder)]), { sql: escapeParam(paramStartIndex.value++, mappedValue), params: [mappedValue], typings };
+      }
+      return is2(chunk, Placeholder) ? { sql: escapeParam(paramStartIndex.value++, chunk), params: [chunk] } : is2(chunk, _SQL.Aliased) && chunk.fieldAlias !== void 0 ? { sql: escapeName(chunk.fieldAlias), params: [] } : is2(chunk, Subquery) ? chunk[SubqueryConfig].isWith ? { sql: escapeName(chunk[SubqueryConfig].alias), params: [] } : this.buildQueryFromSourceParams([
+        new StringChunk("("),
+        chunk[SubqueryConfig].sql,
+        new StringChunk(") "),
+        new Name(chunk[SubqueryConfig].alias)
+      ], config) : isSQLWrapper(chunk) ? this.buildQueryFromSourceParams([
+        new StringChunk("("),
+        chunk.getSQL(),
+        new StringChunk(")")
+      ], config) : inlineParams ? { sql: this.mapInlineParam(chunk, config), params: [] } : { sql: escapeParam(paramStartIndex.value++, chunk), params: [chunk] };
+    }));
+  }
+  mapInlineParam(chunk, { escapeString }) {
+    if (chunk === null)
+      return "null";
+    if (typeof chunk == "number" || typeof chunk == "boolean")
+      return chunk.toString();
+    if (typeof chunk == "string")
+      return escapeString(chunk);
+    if (typeof chunk == "object") {
+      let mappedValueAsString = chunk.toString();
+      return escapeString(mappedValueAsString === "[object Object]" ? JSON.stringify(chunk) : mappedValueAsString);
+    }
+    throw new Error("Unexpected param value: " + chunk);
+  }
+  getSQL() {
+    return this;
+  }
+  as(alias) {
+    return alias === void 0 ? this : new _SQL.Aliased(this, alias);
+  }
+  mapWith(decoder) {
+    return this.decoder = typeof decoder == "function" ? { mapFromDriverValue: decoder } : decoder, this;
+  }
+  inlineParams() {
+    return this.shouldInlineParams = !0, this;
+  }
+}, SQL = _SQL;
+_a13 = entityKind, __publicField(SQL, _a13, "SQL");
+var _a14, Name = class {
+  constructor(value) {
+    this.value = value;
+  }
+  brand;
+  getSQL() {
+    return new SQL([this]);
+  }
+};
+_a14 = entityKind, __publicField(Name, _a14, "Name");
+function isDriverValueEncoder(value) {
+  return typeof value == "object" && value !== null && "mapToDriverValue" in value && typeof value.mapToDriverValue == "function";
+}
+var noopDecoder = {
+  mapFromDriverValue: (value) => value
+}, noopEncoder = {
+  mapToDriverValue: (value) => value
+}, noopMapper = {
+  ...noopDecoder,
+  ...noopEncoder
+}, _a15, Param = class {
+  /**
+   * @param value - Parameter value
+   * @param encoder - Encoder to convert the value to a driver parameter
+   */
+  constructor(value, encoder = noopEncoder) {
+    this.value = value, this.encoder = encoder;
+  }
+  brand;
+  getSQL() {
+    return new SQL([this]);
+  }
+};
+_a15 = entityKind, __publicField(Param, _a15, "Param");
+function sql(strings, ...params) {
+  let queryChunks = [];
+  (params.length > 0 || strings.length > 0 && strings[0] !== "") && queryChunks.push(new StringChunk(strings[0]));
+  for (let [paramIndex, param2] of params.entries())
+    queryChunks.push(param2, new StringChunk(strings[paramIndex + 1]));
+  return new SQL(queryChunks);
+}
+((sql2) => {
+  function empty() {
+    return new SQL([]);
+  }
+  sql2.empty = empty;
+  function fromList(list2) {
+    return new SQL(list2);
+  }
+  sql2.fromList = fromList;
+  function raw(str) {
+    return new SQL([new StringChunk(str)]);
+  }
+  sql2.raw = raw;
+  function join(chunks, separator) {
+    let result = [];
+    for (let [i, chunk] of chunks.entries())
+      i > 0 && separator !== void 0 && result.push(separator), result.push(chunk);
+    return new SQL(result);
+  }
+  sql2.join = join;
+  function identifier(value) {
+    return new Name(value);
+  }
+  sql2.identifier = identifier;
+  function placeholder2(name2) {
+    return new Placeholder(name2);
+  }
+  sql2.placeholder = placeholder2;
+  function param2(value, encoder) {
+    return new Param(value, encoder);
+  }
+  sql2.param = param2;
+})(sql || (sql = {}));
+((SQL2) => {
+  class Aliased {
+    constructor(sql2, fieldAlias) {
+      this.sql = sql2, this.fieldAlias = fieldAlias;
+    }
+    static [entityKind] = "SQL.Aliased";
+    /** @internal */
+    isSelectionField = !1;
+    getSQL() {
+      return this.sql;
+    }
+    /** @internal */
+    clone() {
+      return new Aliased(this.sql, this.fieldAlias);
+    }
+  }
+  SQL2.Aliased = Aliased;
+})(SQL || (SQL = {}));
+var _a16, Placeholder = class {
+  constructor(name2) {
+    this.name = name2;
+  }
+  getSQL() {
+    return new SQL([this]);
+  }
+};
+_a16 = entityKind, __publicField(Placeholder, _a16, "Placeholder");
+function fillPlaceholders(params, values) {
+  return params.map((p) => {
+    if (is2(p, Placeholder)) {
+      if (!(p.name in values))
+        throw new Error(`No value for placeholder "${p.name}" was provided`);
+      return values[p.name];
+    }
+    return p;
+  });
+}
+var _a17, View = class {
+  /** @internal */
+  [(_a17 = entityKind, ViewBaseConfig)];
+  constructor({ name: name2, schema, selectedFields, query }) {
+    this[ViewBaseConfig] = {
+      name: name2,
+      originalName: name2,
+      schema,
+      selectedFields,
+      query,
+      isExisting: !query,
+      isAlias: !1
+    };
+  }
+  getSQL() {
+    return new SQL([this]);
+  }
+};
+__publicField(View, _a17, "View");
+Column.prototype.getSQL = function() {
+  return new SQL([this]);
+};
+Table.prototype.getSQL = function() {
+  return new SQL([this]);
+};
+Subquery.prototype.getSQL = function() {
+  return new SQL([this]);
+};
+
+// node_modules/drizzle-orm/sql/expressions/conditions.js
+function bindIfParam(value, column) {
+  return isDriverValueEncoder(column) && !isSQLWrapper(value) && !is2(value, Param) && !is2(value, Placeholder) && !is2(value, Column) && !is2(value, Table) && !is2(value, View) ? new Param(value, column) : value;
+}
+var eq = (left, right) => sql`${left} = ${bindIfParam(right, left)}`, ne = (left, right) => sql`${left} <> ${bindIfParam(right, left)}`;
+function and(...unfilteredConditions) {
+  let conditions = unfilteredConditions.filter(
+    (c) => c !== void 0
+  );
+  if (conditions.length !== 0)
+    return conditions.length === 1 ? new SQL(conditions) : new SQL([
+      new StringChunk("("),
+      sql.join(conditions, new StringChunk(" and ")),
+      new StringChunk(")")
+    ]);
+}
+function or(...unfilteredConditions) {
+  let conditions = unfilteredConditions.filter(
+    (c) => c !== void 0
+  );
+  if (conditions.length !== 0)
+    return conditions.length === 1 ? new SQL(conditions) : new SQL([
+      new StringChunk("("),
+      sql.join(conditions, new StringChunk(" or ")),
+      new StringChunk(")")
+    ]);
+}
+function not(condition) {
+  return sql`not ${condition}`;
+}
+var gt = (left, right) => sql`${left} > ${bindIfParam(right, left)}`, gte = (left, right) => sql`${left} >= ${bindIfParam(right, left)}`, lt = (left, right) => sql`${left} < ${bindIfParam(right, left)}`, lte = (left, right) => sql`${left} <= ${bindIfParam(right, left)}`;
+function inArray(column, values) {
+  if (Array.isArray(values)) {
+    if (values.length === 0)
+      throw new Error("inArray requires at least one value");
+    return sql`${column} in ${values.map((v2) => bindIfParam(v2, column))}`;
+  }
+  return sql`${column} in ${bindIfParam(values, column)}`;
+}
+function notInArray(column, values) {
+  if (Array.isArray(values)) {
+    if (values.length === 0)
+      throw new Error("notInArray requires at least one value");
+    return sql`${column} not in ${values.map((v2) => bindIfParam(v2, column))}`;
+  }
+  return sql`${column} not in ${bindIfParam(values, column)}`;
+}
+function isNull(value) {
+  return sql`${value} is null`;
+}
+function isNotNull(value) {
+  return sql`${value} is not null`;
+}
+function exists(subquery) {
+  return sql`exists ${subquery}`;
+}
+function notExists(subquery) {
+  return sql`not exists ${subquery}`;
+}
+function between(column, min, max) {
+  return sql`${column} between ${bindIfParam(min, column)} and ${bindIfParam(
+    max,
+    column
+  )}`;
+}
+function notBetween(column, min, max) {
+  return sql`${column} not between ${bindIfParam(
+    min,
+    column
+  )} and ${bindIfParam(max, column)}`;
+}
+function like(column, value) {
+  return sql`${column} like ${value}`;
+}
+function notLike(column, value) {
+  return sql`${column} not like ${value}`;
+}
+function ilike(column, value) {
+  return sql`${column} ilike ${value}`;
+}
+function notIlike(column, value) {
+  return sql`${column} not ilike ${value}`;
+}
+
+// node_modules/drizzle-orm/sql/expressions/select.js
+function asc(column) {
+  return sql`${column} asc`;
+}
+function desc(column) {
+  return sql`${column} desc`;
+}
+
+// node_modules/drizzle-orm/relations.js
+var _a18, Relation = class {
+  constructor(sourceTable, referencedTable, relationName) {
+    this.sourceTable = sourceTable, this.referencedTable = referencedTable, this.relationName = relationName, this.referencedTableName = referencedTable[Table.Symbol.Name];
+  }
+  referencedTableName;
+  fieldName;
+};
+_a18 = entityKind, __publicField(Relation, _a18, "Relation");
+var _a19, Relations = class {
+  constructor(table, config) {
+    this.table = table, this.config = config;
+  }
+};
+_a19 = entityKind, __publicField(Relations, _a19, "Relations");
+var _a20, _One = class extends Relation {
+  constructor(sourceTable, referencedTable, config, isNullable) {
+    super(sourceTable, referencedTable, config?.relationName), this.config = config, this.isNullable = isNullable;
+  }
+  withFieldName(fieldName) {
+    let relation = new _One(
+      this.sourceTable,
+      this.referencedTable,
+      this.config,
+      this.isNullable
+    );
+    return relation.fieldName = fieldName, relation;
+  }
+}, One = _One;
+_a20 = entityKind, __publicField(One, _a20, "One");
+var _a21, _Many = class extends Relation {
+  constructor(sourceTable, referencedTable, config) {
+    super(sourceTable, referencedTable, config?.relationName), this.config = config;
+  }
+  withFieldName(fieldName) {
+    let relation = new _Many(
+      this.sourceTable,
+      this.referencedTable,
+      this.config
+    );
+    return relation.fieldName = fieldName, relation;
+  }
+}, Many = _Many;
+_a21 = entityKind, __publicField(Many, _a21, "Many");
+function getOperators() {
+  return {
+    and,
+    between,
+    eq,
+    exists,
+    gt,
+    gte,
+    ilike,
+    inArray,
+    isNull,
+    isNotNull,
+    like,
+    lt,
+    lte,
+    ne,
+    not,
+    notBetween,
+    notExists,
+    notLike,
+    notIlike,
+    notInArray,
+    or,
+    sql
+  };
+}
+function getOrderByOperators() {
+  return {
+    sql,
+    asc,
+    desc
+  };
+}
+function extractTablesRelationalConfig(schema, configHelpers) {
+  Object.keys(schema).length === 1 && "default" in schema && !is2(schema.default, Table) && (schema = schema.default);
+  let tableNamesMap = {}, relationsBuffer = {}, tablesConfig = {};
+  for (let [key, value] of Object.entries(schema))
+    if (isTable(value)) {
+      let dbName = value[Table.Symbol.Name], bufferedRelations = relationsBuffer[dbName];
+      tableNamesMap[dbName] = key, tablesConfig[key] = {
+        tsName: key,
+        dbName: value[Table.Symbol.Name],
+        schema: value[Table.Symbol.Schema],
+        columns: value[Table.Symbol.Columns],
+        relations: bufferedRelations?.relations ?? {},
+        primaryKey: bufferedRelations?.primaryKey ?? []
+      };
+      for (let column of Object.values(
+        value[Table.Symbol.Columns]
+      ))
+        column.primary && tablesConfig[key].primaryKey.push(column);
+      let extraConfig = value[Table.Symbol.ExtraConfigBuilder]?.(value);
+      if (extraConfig)
+        for (let configEntry of Object.values(extraConfig))
+          is2(configEntry, PrimaryKeyBuilder) && tablesConfig[key].primaryKey.push(...configEntry.columns);
+    } else if (is2(value, Relations)) {
+      let dbName = value.table[Table.Symbol.Name], tableName = tableNamesMap[dbName], relations2 = value.config(
+        configHelpers(value.table)
+      ), primaryKey;
+      for (let [relationName, relation] of Object.entries(relations2))
+        if (tableName) {
+          let tableConfig = tablesConfig[tableName];
+          tableConfig.relations[relationName] = relation, primaryKey && tableConfig.primaryKey.push(...primaryKey);
+        } else
+          dbName in relationsBuffer || (relationsBuffer[dbName] = {
+            relations: {},
+            primaryKey
+          }), relationsBuffer[dbName].relations[relationName] = relation;
+    }
+  return { tables: tablesConfig, tableNamesMap };
+}
+function createOne(sourceTable) {
+  return function(table, config) {
+    return new One(
+      sourceTable,
+      table,
+      config,
+      config?.fields.reduce((res, f2) => res && f2.notNull, !0) ?? !1
+    );
+  };
+}
+function createMany(sourceTable) {
+  return function(referencedTable, config) {
+    return new Many(sourceTable, referencedTable, config);
+  };
+}
+function normalizeRelation(schema, tableNamesMap, relation) {
+  if (is2(relation, One) && relation.config)
+    return {
+      fields: relation.config.fields,
+      references: relation.config.references
+    };
+  let referencedTableTsName = tableNamesMap[relation.referencedTable[Table.Symbol.Name]];
+  if (!referencedTableTsName)
+    throw new Error(
+      `Table "${relation.referencedTable[Table.Symbol.Name]}" not found in schema`
+    );
+  let referencedTableConfig = schema[referencedTableTsName];
+  if (!referencedTableConfig)
+    throw new Error(`Table "${referencedTableTsName}" not found in schema`);
+  let sourceTable = relation.sourceTable, sourceTableTsName = tableNamesMap[sourceTable[Table.Symbol.Name]];
+  if (!sourceTableTsName)
+    throw new Error(
+      `Table "${sourceTable[Table.Symbol.Name]}" not found in schema`
+    );
+  let reverseRelations = [];
+  for (let referencedTableRelation of Object.values(
+    referencedTableConfig.relations
+  ))
+    (relation.relationName && relation !== referencedTableRelation && referencedTableRelation.relationName === relation.relationName || !relation.relationName && referencedTableRelation.referencedTable === relation.sourceTable) && reverseRelations.push(referencedTableRelation);
+  if (reverseRelations.length > 1)
+    throw relation.relationName ? new Error(
+      `There are multiple relations with name "${relation.relationName}" in table "${referencedTableTsName}"`
+    ) : new Error(
+      `There are multiple relations between "${referencedTableTsName}" and "${relation.sourceTable[Table.Symbol.Name]}". Please specify relation name`
+    );
+  if (reverseRelations[0] && is2(reverseRelations[0], One) && reverseRelations[0].config)
+    return {
+      fields: reverseRelations[0].config.references,
+      references: reverseRelations[0].config.fields
+    };
+  throw new Error(
+    `There is not enough information to infer relation "${sourceTableTsName}.${relation.fieldName}"`
+  );
+}
+function createTableRelationsHelpers(sourceTable) {
+  return {
+    one: createOne(sourceTable),
+    many: createMany(sourceTable)
+  };
+}
+function mapRelationalRow(tablesConfig, tableConfig, row, buildQueryResultSelection, mapColumnValue = (value) => value) {
+  let result = {};
+  for (let [
+    selectionItemIndex,
+    selectionItem
+  ] of buildQueryResultSelection.entries())
+    if (selectionItem.isJson) {
+      let relation = tableConfig.relations[selectionItem.tsKey], rawSubRows = row[selectionItemIndex], subRows = typeof rawSubRows == "string" ? JSON.parse(rawSubRows) : rawSubRows;
+      result[selectionItem.tsKey] = is2(relation, One) ? subRows && mapRelationalRow(
+        tablesConfig,
+        tablesConfig[selectionItem.relationTableTsKey],
+        subRows,
+        selectionItem.selection,
+        mapColumnValue
+      ) : subRows.map(
+        (subRow) => mapRelationalRow(
+          tablesConfig,
+          tablesConfig[selectionItem.relationTableTsKey],
+          subRow,
+          selectionItem.selection,
+          mapColumnValue
+        )
+      );
+    } else {
+      let value = mapColumnValue(row[selectionItemIndex]), field = selectionItem.field, decoder;
+      is2(field, Column) ? decoder = field : is2(field, SQL) ? decoder = field.decoder : decoder = field.sql.decoder, result[selectionItem.tsKey] = value === null ? null : decoder.mapFromDriverValue(value);
+    }
+  return result;
+}
+
+// node_modules/drizzle-orm/alias.js
+var _a22, ColumnAliasProxyHandler = class {
+  constructor(table) {
+    this.table = table;
+  }
+  get(columnObj, prop) {
+    return prop === "table" ? this.table : columnObj[prop];
+  }
+};
+_a22 = entityKind, __publicField(ColumnAliasProxyHandler, _a22, "ColumnAliasProxyHandler");
+var _a23, TableAliasProxyHandler = class {
+  constructor(alias, replaceOriginalName) {
+    this.alias = alias, this.replaceOriginalName = replaceOriginalName;
+  }
+  get(target, prop) {
+    if (prop === Table.Symbol.IsAlias)
+      return !0;
+    if (prop === Table.Symbol.Name)
+      return this.alias;
+    if (this.replaceOriginalName && prop === Table.Symbol.OriginalName)
+      return this.alias;
+    if (prop === ViewBaseConfig)
+      return {
+        ...target[ViewBaseConfig],
+        name: this.alias,
+        isAlias: !0
+      };
+    if (prop === Table.Symbol.Columns) {
+      let columns = target[Table.Symbol.Columns];
+      if (!columns)
+        return columns;
+      let proxiedColumns = {};
+      return Object.keys(columns).map((key) => {
+        proxiedColumns[key] = new Proxy(
+          columns[key],
+          new ColumnAliasProxyHandler(new Proxy(target, this))
+        );
+      }), proxiedColumns;
+    }
+    let value = target[prop];
+    return is2(value, Column) ? new Proxy(value, new ColumnAliasProxyHandler(new Proxy(target, this))) : value;
+  }
+};
+_a23 = entityKind, __publicField(TableAliasProxyHandler, _a23, "TableAliasProxyHandler");
+var _a24, RelationTableAliasProxyHandler = class {
+  constructor(alias) {
+    this.alias = alias;
+  }
+  get(target, prop) {
+    return prop === "sourceTable" ? aliasedTable(target.sourceTable, this.alias) : target[prop];
+  }
+};
+_a24 = entityKind, __publicField(RelationTableAliasProxyHandler, _a24, "RelationTableAliasProxyHandler");
+function aliasedTable(table, tableAlias) {
+  return new Proxy(table, new TableAliasProxyHandler(tableAlias, !1));
+}
+function aliasedTableColumn(column, tableAlias) {
+  return new Proxy(
+    column,
+    new ColumnAliasProxyHandler(new Proxy(column.table, new TableAliasProxyHandler(tableAlias, !1)))
+  );
+}
+function mapColumnsInAliasedSQLToAlias(query, alias) {
+  return new SQL.Aliased(mapColumnsInSQLToAlias(query.sql, alias), query.fieldAlias);
+}
+function mapColumnsInSQLToAlias(query, alias) {
+  return sql.join(query.queryChunks.map((c) => is2(c, Column) ? aliasedTableColumn(c, alias) : is2(c, SQL) ? mapColumnsInSQLToAlias(c, alias) : is2(c, SQL.Aliased) ? mapColumnsInAliasedSQLToAlias(c, alias) : c));
+}
+
+// node_modules/drizzle-orm/selection-proxy.js
+var _a25, _SelectionProxyHandler = class {
+  config;
+  constructor(config) {
+    this.config = { ...config };
+  }
+  get(subquery, prop) {
+    if (prop === SubqueryConfig)
+      return {
+        ...subquery[SubqueryConfig],
+        selection: new Proxy(
+          subquery[SubqueryConfig].selection,
+          this
+        )
+      };
+    if (prop === ViewBaseConfig)
+      return {
+        ...subquery[ViewBaseConfig],
+        selectedFields: new Proxy(
+          subquery[ViewBaseConfig].selectedFields,
+          this
+        )
+      };
+    if (typeof prop == "symbol")
+      return subquery[prop];
+    let value = (is2(subquery, Subquery) ? subquery[SubqueryConfig].selection : is2(subquery, View) ? subquery[ViewBaseConfig].selectedFields : subquery)[prop];
+    if (is2(value, SQL.Aliased)) {
+      if (this.config.sqlAliasedBehavior === "sql" && !value.isSelectionField)
+        return value.sql;
+      let newValue = value.clone();
+      return newValue.isSelectionField = !0, newValue;
+    }
+    if (is2(value, SQL)) {
+      if (this.config.sqlBehavior === "sql")
+        return value;
+      throw new Error(
+        `You tried to reference "${prop}" field from a subquery, which is a raw SQL field, but it doesn't have an alias declared. Please add an alias to the field using ".as('alias')" method.`
+      );
+    }
+    return is2(value, Column) ? this.config.alias ? new Proxy(
+      value,
+      new ColumnAliasProxyHandler(
+        new Proxy(
+          value.table,
+          new TableAliasProxyHandler(this.config.alias, this.config.replaceOriginalName ?? !1)
+        )
+      )
+    ) : value : typeof value != "object" || value === null ? value : new Proxy(value, new _SelectionProxyHandler(this.config));
+  }
+}, SelectionProxyHandler = _SelectionProxyHandler;
+_a25 = entityKind, __publicField(SelectionProxyHandler, _a25, "SelectionProxyHandler");
+
+// node_modules/drizzle-orm/query-promise.js
+var _a26, QueryPromise = class {
+  [(_a26 = entityKind, Symbol.toStringTag)] = "QueryPromise";
+  catch(onRejected) {
+    return this.then(void 0, onRejected);
+  }
+  finally(onFinally) {
+    return this.then(
+      (value) => (onFinally?.(), value),
+      (reason) => {
+        throw onFinally?.(), reason;
+      }
+    );
+  }
+  then(onFulfilled, onRejected) {
+    return this.execute().then(onFulfilled, onRejected);
+  }
+};
+__publicField(QueryPromise, _a26, "QueryPromise");
+
+// node_modules/drizzle-orm/sqlite-core/table.js
+var InlineForeignKeys2 = Symbol.for("drizzle:SQLiteInlineForeignKeys"), _a27, SQLiteTable = class extends Table {
+  /** @internal */
+  [(_a27 = entityKind, Table.Symbol.Columns)];
+  /** @internal */
+  [InlineForeignKeys2] = [];
+  /** @internal */
+  [Table.Symbol.ExtraConfigBuilder] = void 0;
+};
+__publicField(SQLiteTable, _a27, "SQLiteTable"), /** @internal */
+__publicField(SQLiteTable, "Symbol", Object.assign({}, Table.Symbol, {
+  InlineForeignKeys: InlineForeignKeys2
+}));
+function sqliteTableBase(name, columns, extraConfig, schema, baseName = name) {
+  let rawTable = new SQLiteTable(name, schema, baseName), builtColumns = Object.fromEntries(
+    Object.entries(columns).map(([name2, colBuilderBase]) => {
+      let colBuilder = colBuilderBase, column = colBuilder.build(rawTable);
+      return rawTable[InlineForeignKeys2].push(...colBuilder.buildForeignKeys(column, rawTable)), [name2, column];
+    })
+  ), table = Object.assign(rawTable, builtColumns);
+  return table[Table.Symbol.Columns] = builtColumns, extraConfig && (table[SQLiteTable.Symbol.ExtraConfigBuilder] = extraConfig), table;
+}
+var sqliteTable = (name, columns, extraConfig) => sqliteTableBase(name, columns, extraConfig);
+
+// node_modules/drizzle-orm/utils.js
+function mapResultRow(columns, row, joinsNotNullableMap) {
+  let nullifyMap = {}, result = columns.reduce(
+    (result2, { path, field }, columnIndex) => {
+      let decoder;
+      is2(field, Column) ? decoder = field : is2(field, SQL) ? decoder = field.decoder : decoder = field.sql.decoder;
+      let node = result2;
+      for (let [pathChunkIndex, pathChunk] of path.entries())
+        if (pathChunkIndex < path.length - 1)
+          pathChunk in node || (node[pathChunk] = {}), node = node[pathChunk];
+        else {
+          let rawValue = row[columnIndex], value = node[pathChunk] = rawValue === null ? null : decoder.mapFromDriverValue(rawValue);
+          if (joinsNotNullableMap && is2(field, Column) && path.length === 2) {
+            let objectName = path[0];
+            objectName in nullifyMap ? typeof nullifyMap[objectName] == "string" && nullifyMap[objectName] !== getTableName(field.table) && (nullifyMap[objectName] = !1) : nullifyMap[objectName] = value === null ? getTableName(field.table) : !1;
+          }
+        }
+      return result2;
+    },
+    {}
+  );
+  if (joinsNotNullableMap && Object.keys(nullifyMap).length > 0)
+    for (let [objectName, tableName] of Object.entries(nullifyMap))
+      typeof tableName == "string" && !joinsNotNullableMap[tableName] && (result[objectName] = null);
+  return result;
+}
+function orderSelectedFields(fields, pathPrefix) {
+  return Object.entries(fields).reduce((result, [name, field]) => {
+    if (typeof name != "string")
+      return result;
+    let newPath = pathPrefix ? [...pathPrefix, name] : [name];
+    return is2(field, Column) || is2(field, SQL) || is2(field, SQL.Aliased) ? result.push({ path: newPath, field }) : is2(field, Table) ? result.push(...orderSelectedFields(field[Table.Symbol.Columns], newPath)) : result.push(...orderSelectedFields(field, newPath)), result;
+  }, []);
+}
+function haveSameKeys(left, right) {
+  let leftKeys = Object.keys(left), rightKeys = Object.keys(right);
+  if (leftKeys.length !== rightKeys.length)
+    return !1;
+  for (let [index, key] of leftKeys.entries())
+    if (key !== rightKeys[index])
+      return !1;
+  return !0;
+}
+function mapUpdateSet(table, values) {
+  let entries = Object.entries(values).filter(([, value]) => value !== void 0).map(([key, value]) => is2(value, SQL) ? [key, value] : [key, new Param(value, table[Table.Symbol.Columns][key])]);
+  if (entries.length === 0)
+    throw new Error("No values to set");
+  return Object.fromEntries(entries);
+}
+function applyMixins(baseClass, extendedClasses) {
+  for (let extendedClass of extendedClasses)
+    for (let name of Object.getOwnPropertyNames(extendedClass.prototype))
+      name !== "constructor" && Object.defineProperty(
+        baseClass.prototype,
+        name,
+        Object.getOwnPropertyDescriptor(extendedClass.prototype, name) || /* @__PURE__ */ Object.create(null)
+      );
+}
+function getTableColumns(table) {
+  return table[Table.Symbol.Columns];
+}
+function getTableLikeName(table) {
+  return is2(table, Subquery) ? table[SubqueryConfig].alias : is2(table, View) ? table[ViewBaseConfig].name : is2(table, SQL) ? void 0 : table[Table.Symbol.IsAlias] ? table[Table.Symbol.Name] : table[Table.Symbol.BaseName];
+}
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/delete.js
+var _a28, SQLiteDeleteBase = class extends QueryPromise {
+  constructor(table, session, dialect) {
+    super(), this.table = table, this.session = session, this.dialect = dialect, this.config = { table };
+  }
+  /** @internal */
+  config;
+  /**
+   * Adds a `where` clause to the query.
+   *
+   * Calling this method will delete only those rows that fulfill a specified condition.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/delete}
+   *
+   * @param where the `where` clause.
+   *
+   * @example
+   * You can use conditional operators and `sql function` to filter the rows to be deleted.
+   *
+   * ```ts
+   * // Delete all cars with green color
+   * db.delete(cars).where(eq(cars.color, 'green'));
+   * // or
+   * db.delete(cars).where(sql`${cars.color} = 'green'`)
+   * ```
+   *
+   * You can logically combine conditional operators with `and()` and `or()` operators:
+   *
+   * ```ts
+   * // Delete all BMW cars with a green color
+   * db.delete(cars).where(and(eq(cars.color, 'green'), eq(cars.brand, 'BMW')));
+   *
+   * // Delete all cars with the green or blue color
+   * db.delete(cars).where(or(eq(cars.color, 'green'), eq(cars.color, 'blue')));
+   * ```
+   */
+  where(where) {
+    return this.config.where = where, this;
+  }
+  returning(fields = this.table[SQLiteTable.Symbol.Columns]) {
+    return this.config.returning = orderSelectedFields(fields), this;
+  }
+  /** @internal */
+  getSQL() {
+    return this.dialect.buildDeleteQuery(this.config);
+  }
+  toSQL() {
+    let { typings: _typings, ...rest } = this.dialect.sqlToQuery(this.getSQL());
+    return rest;
+  }
+  /** @internal */
+  _prepare(isOneTimeQuery = !0) {
+    return this.session[isOneTimeQuery ? "prepareOneTimeQuery" : "prepareQuery"](
+      this.dialect.sqlToQuery(this.getSQL()),
+      this.config.returning,
+      this.config.returning ? "all" : "run"
+    );
+  }
+  prepare() {
+    return this._prepare(!1);
+  }
+  run = (placeholderValues) => this._prepare().run(placeholderValues);
+  all = (placeholderValues) => this._prepare().all(placeholderValues);
+  get = (placeholderValues) => this._prepare().get(placeholderValues);
+  values = (placeholderValues) => this._prepare().values(placeholderValues);
+  async execute(placeholderValues) {
+    return this._prepare().execute(placeholderValues);
+  }
+  $dynamic() {
+    return this;
+  }
+};
+_a28 = entityKind, __publicField(SQLiteDeleteBase, _a28, "SQLiteDelete");
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/insert.js
+var _a29, SQLiteInsertBuilder = class {
+  constructor(table, session, dialect) {
+    this.table = table, this.session = session, this.dialect = dialect;
+  }
+  values(values) {
+    if (values = Array.isArray(values) ? values : [values], values.length === 0)
+      throw new Error("values() must be called with at least one value");
+    let mappedValues = values.map((entry2) => {
+      let result = {}, cols = this.table[Table.Symbol.Columns];
+      for (let colKey of Object.keys(entry2)) {
+        let colValue = entry2[colKey];
+        result[colKey] = is2(colValue, SQL) ? colValue : new Param(colValue, cols[colKey]);
+      }
+      return result;
+    });
+    return new SQLiteInsertBase(this.table, mappedValues, this.session, this.dialect);
+  }
+};
+_a29 = entityKind, __publicField(SQLiteInsertBuilder, _a29, "SQLiteInsertBuilder");
+var _a30, SQLiteInsertBase = class extends QueryPromise {
+  constructor(table, values, session, dialect) {
+    super(), this.session = session, this.dialect = dialect, this.config = { table, values };
+  }
+  /** @internal */
+  config;
+  returning(fields = this.config.table[SQLiteTable.Symbol.Columns]) {
+    return this.config.returning = orderSelectedFields(fields), this;
+  }
+  /**
+   * Adds an `on conflict do nothing` clause to the query.
+   *
+   * Calling this method simply avoids inserting a row as its alternative action.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/insert#on-conflict-do-nothing}
+   *
+   * @param config The `target` and `where` clauses.
+   *
+   * @example
+   * ```ts
+   * // Insert one row and cancel the insert if there's a conflict
+   * await db.insert(cars)
+   *   .values({ id: 1, brand: 'BMW' })
+   *   .onConflictDoNothing();
+   *
+   * // Explicitly specify conflict target
+   * await db.insert(cars)
+   *   .values({ id: 1, brand: 'BMW' })
+   *   .onConflictDoNothing({ target: cars.id });
+   * ```
+   */
+  onConflictDoNothing(config = {}) {
+    if (config.target === void 0)
+      this.config.onConflict = sql`do nothing`;
+    else {
+      let targetSql = Array.isArray(config.target) ? sql`${config.target}` : sql`${[config.target]}`, whereSql = config.where ? sql` where ${config.where}` : sql``;
+      this.config.onConflict = sql`${targetSql} do nothing${whereSql}`;
+    }
+    return this;
+  }
+  /**
+   * Adds an `on conflict do update` clause to the query.
+   *
+   * Calling this method will update the existing row that conflicts with the row proposed for insertion as its alternative action.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/insert#upserts-and-conflicts}
+   *
+   * @param config The `target`, `set` and `where` clauses.
+   *
+   * @example
+   * ```ts
+   * // Update the row if there's a conflict
+   * await db.insert(cars)
+   *   .values({ id: 1, brand: 'BMW' })
+   *   .onConflictDoUpdate({
+   *     target: cars.id,
+   *     set: { brand: 'Porsche' }
+   *   });
+   *
+   * // Upsert with 'where' clause
+   * await db.insert(cars)
+   *   .values({ id: 1, brand: 'BMW' })
+   *   .onConflictDoUpdate({
+   *     target: cars.id,
+   *     set: { brand: 'newBMW' },
+   *     where: sql`${cars.createdAt} > '2023-01-01'::date`,
+   *   });
+   * ```
+   */
+  onConflictDoUpdate(config) {
+    let targetSql = Array.isArray(config.target) ? sql`${config.target}` : sql`${[config.target]}`, whereSql = config.where ? sql` where ${config.where}` : sql``, setSql = this.dialect.buildUpdateSet(this.config.table, mapUpdateSet(this.config.table, config.set));
+    return this.config.onConflict = sql`${targetSql} do update set ${setSql}${whereSql}`, this;
+  }
+  /** @internal */
+  getSQL() {
+    return this.dialect.buildInsertQuery(this.config);
+  }
+  toSQL() {
+    let { typings: _typings, ...rest } = this.dialect.sqlToQuery(this.getSQL());
+    return rest;
+  }
+  /** @internal */
+  _prepare(isOneTimeQuery = !0) {
+    return this.session[isOneTimeQuery ? "prepareOneTimeQuery" : "prepareQuery"](
+      this.dialect.sqlToQuery(this.getSQL()),
+      this.config.returning,
+      this.config.returning ? "all" : "run"
+    );
+  }
+  prepare() {
+    return this._prepare(!1);
+  }
+  run = (placeholderValues) => this._prepare().run(placeholderValues);
+  all = (placeholderValues) => this._prepare().all(placeholderValues);
+  get = (placeholderValues) => this._prepare().get(placeholderValues);
+  values = (placeholderValues) => this._prepare().values(placeholderValues);
+  async execute() {
+    return this.config.returning ? this.all() : this.run();
+  }
+  $dynamic() {
+    return this;
+  }
+};
+_a30 = entityKind, __publicField(SQLiteInsertBase, _a30, "SQLiteInsert");
+
+// node_modules/drizzle-orm/errors.js
+var _a31, DrizzleError = class extends Error {
+  constructor({ message, cause }) {
+    super(message), this.name = "DrizzleError", this.cause = cause;
+  }
+};
+_a31 = entityKind, __publicField(DrizzleError, _a31, "DrizzleError");
+var _a32, TransactionRollbackError = class extends DrizzleError {
+  constructor() {
+    super({ message: "Rollback" });
+  }
+};
+_a32 = entityKind, __publicField(TransactionRollbackError, _a32, "TransactionRollbackError");
+
+// node_modules/drizzle-orm/column-builder.js
+var _a33, ColumnBuilder = class {
+  config;
+  constructor(name, dataType, columnType) {
+    this.config = {
+      name,
+      notNull: !1,
+      default: void 0,
+      hasDefault: !1,
+      primaryKey: !1,
+      isUnique: !1,
+      uniqueName: void 0,
+      uniqueType: void 0,
+      dataType,
+      columnType
+    };
+  }
+  /**
+   * Changes the data type of the column. Commonly used with `json` columns. Also, useful for branded types.
+   *
+   * @example
+   * ```ts
+   * const users = pgTable('users', {
+   * 	id: integer('id').$type<UserId>().primaryKey(),
+   * 	details: json('details').$type<UserDetails>().notNull(),
+   * });
+   * ```
+   */
+  $type() {
+    return this;
+  }
+  /**
+   * Adds a `not null` clause to the column definition.
+   *
+   * Affects the `select` model of the table - columns *without* `not null` will be nullable on select.
+   */
+  notNull() {
+    return this.config.notNull = !0, this;
+  }
+  /**
+   * Adds a `default <value>` clause to the column definition.
+   *
+   * Affects the `insert` model of the table - columns *with* `default` are optional on insert.
+   *
+   * If you need to set a dynamic default value, use {@link $defaultFn} instead.
+   */
+  default(value) {
+    return this.config.default = value, this.config.hasDefault = !0, this;
+  }
+  /**
+   * Adds a dynamic default value to the column.
+   * The function will be called when the row is inserted, and the returned value will be used as the column value.
+   *
+   * **Note:** This value does not affect the `drizzle-kit` behavior, it is only used at runtime in `drizzle-orm`.
+   */
+  $defaultFn(fn) {
+    return this.config.defaultFn = fn, this.config.hasDefault = !0, this;
+  }
+  /**
+   * Alias for {@link $defaultFn}.
+   */
+  $default = this.$defaultFn;
+  /**
+   * Adds a `primary key` clause to the column definition. This implicitly makes the column `not null`.
+   *
+   * In SQLite, `integer primary key` implicitly makes the column auto-incrementing.
+   */
+  primaryKey() {
+    return this.config.primaryKey = !0, this.config.notNull = !0, this;
+  }
+};
+_a33 = entityKind, __publicField(ColumnBuilder, _a33, "ColumnBuilder");
+
+// node_modules/drizzle-orm/sqlite-core/foreign-keys.js
+var _a34, ForeignKeyBuilder = class {
+  /** @internal */
+  reference;
+  /** @internal */
+  _onUpdate;
+  /** @internal */
+  _onDelete;
+  constructor(config, actions) {
+    this.reference = () => {
+      let { name, columns, foreignColumns } = config();
+      return { name, columns, foreignTable: foreignColumns[0].table, foreignColumns };
+    }, actions && (this._onUpdate = actions.onUpdate, this._onDelete = actions.onDelete);
+  }
+  onUpdate(action4) {
+    return this._onUpdate = action4, this;
+  }
+  onDelete(action4) {
+    return this._onDelete = action4, this;
+  }
+  /** @internal */
+  build(table) {
+    return new ForeignKey(table, this);
+  }
+};
+_a34 = entityKind, __publicField(ForeignKeyBuilder, _a34, "SQLiteForeignKeyBuilder");
+var _a35, ForeignKey = class {
+  constructor(table, builder) {
+    this.table = table, this.reference = builder.reference, this.onUpdate = builder._onUpdate, this.onDelete = builder._onDelete;
+  }
+  reference;
+  onUpdate;
+  onDelete;
+  getName() {
+    let { name, columns, foreignColumns } = this.reference(), columnNames = columns.map((column) => column.name), foreignColumnNames = foreignColumns.map((column) => column.name), chunks = [
+      this.table[SQLiteTable.Symbol.Name],
+      ...columnNames,
+      foreignColumns[0].table[SQLiteTable.Symbol.Name],
+      ...foreignColumnNames
+    ];
+    return name ?? `${chunks.join("_")}_fk`;
+  }
+};
+_a35 = entityKind, __publicField(ForeignKey, _a35, "SQLiteForeignKey");
+
+// node_modules/drizzle-orm/sqlite-core/unique-constraint.js
+function uniqueKeyName(table, columns) {
+  return `${table[SQLiteTable.Symbol.Name]}_${columns.join("_")}_unique`;
+}
+var _a36, UniqueConstraintBuilder = class {
+  constructor(columns, name) {
+    this.name = name, this.columns = columns;
+  }
+  /** @internal */
+  columns;
+  /** @internal */
+  build(table) {
+    return new UniqueConstraint(table, this.columns, this.name);
+  }
+};
+_a36 = entityKind, __publicField(UniqueConstraintBuilder, _a36, "SQLiteUniqueConstraintBuilder");
+var _a37, UniqueOnConstraintBuilder = class {
+  /** @internal */
+  name;
+  constructor(name) {
+    this.name = name;
+  }
+  on(...columns) {
+    return new UniqueConstraintBuilder(columns, this.name);
+  }
+};
+_a37 = entityKind, __publicField(UniqueOnConstraintBuilder, _a37, "SQLiteUniqueOnConstraintBuilder");
+var _a38, UniqueConstraint = class {
+  constructor(table, columns, name) {
+    this.table = table, this.columns = columns, this.name = name ?? uniqueKeyName(this.table, this.columns.map((column) => column.name));
+  }
+  columns;
+  name;
+  getName() {
+    return this.name;
+  }
+};
+_a38 = entityKind, __publicField(UniqueConstraint, _a38, "SQLiteUniqueConstraint");
+
+// node_modules/drizzle-orm/sqlite-core/columns/common.js
+var _a39, SQLiteColumnBuilder = class extends ColumnBuilder {
+  foreignKeyConfigs = [];
+  references(ref, actions = {}) {
+    return this.foreignKeyConfigs.push({ ref, actions }), this;
+  }
+  unique(name) {
+    return this.config.isUnique = !0, this.config.uniqueName = name, this;
+  }
+  /** @internal */
+  buildForeignKeys(column, table) {
+    return this.foreignKeyConfigs.map(({ ref, actions }) => ((ref2, actions2) => {
+      let builder = new ForeignKeyBuilder(() => {
+        let foreignColumn = ref2();
+        return { columns: [column], foreignColumns: [foreignColumn] };
+      });
+      return actions2.onUpdate && builder.onUpdate(actions2.onUpdate), actions2.onDelete && builder.onDelete(actions2.onDelete), builder.build(table);
+    })(ref, actions));
+  }
+};
+_a39 = entityKind, __publicField(SQLiteColumnBuilder, _a39, "SQLiteColumnBuilder");
+var _a40, SQLiteColumn = class extends Column {
+  constructor(table, config) {
+    config.uniqueName || (config.uniqueName = uniqueKeyName(table, [config.name])), super(table, config), this.table = table;
+  }
+};
+_a40 = entityKind, __publicField(SQLiteColumn, _a40, "SQLiteColumn");
+
+// node_modules/drizzle-orm/sqlite-core/columns/integer.js
+var _a41, SQLiteBaseIntegerBuilder = class extends SQLiteColumnBuilder {
+  constructor(name, dataType, columnType) {
+    super(name, dataType, columnType), this.config.autoIncrement = !1;
+  }
+  primaryKey(config) {
+    return config?.autoIncrement && (this.config.autoIncrement = !0), this.config.hasDefault = !0, super.primaryKey();
+  }
+};
+_a41 = entityKind, __publicField(SQLiteBaseIntegerBuilder, _a41, "SQLiteBaseIntegerBuilder");
+var _a42, SQLiteBaseInteger = class extends SQLiteColumn {
+  autoIncrement = this.config.autoIncrement;
+  getSQLType() {
+    return "integer";
+  }
+};
+_a42 = entityKind, __publicField(SQLiteBaseInteger, _a42, "SQLiteBaseInteger");
+var _a43, SQLiteIntegerBuilder = class extends SQLiteBaseIntegerBuilder {
+  constructor(name) {
+    super(name, "number", "SQLiteInteger");
+  }
+  build(table) {
+    return new SQLiteInteger(
+      table,
+      this.config
+    );
+  }
+};
+_a43 = entityKind, __publicField(SQLiteIntegerBuilder, _a43, "SQLiteIntegerBuilder");
+var _a44, SQLiteInteger = class extends SQLiteBaseInteger {
+};
+_a44 = entityKind, __publicField(SQLiteInteger, _a44, "SQLiteInteger");
+var _a45, SQLiteTimestampBuilder = class extends SQLiteBaseIntegerBuilder {
+  constructor(name, mode2) {
+    super(name, "date", "SQLiteTimestamp"), this.config.mode = mode2;
+  }
+  /**
+   * @deprecated Use `default()` with your own expression instead.
+   *
+   * Adds `DEFAULT (cast((julianday('now') - 2440587.5)*86400000 as integer))` to the column, which is the current epoch timestamp in milliseconds.
+   */
+  defaultNow() {
+    return this.default(sql`(cast((julianday('now') - 2440587.5)*86400000 as integer))`);
+  }
+  build(table) {
+    return new SQLiteTimestamp(
+      table,
+      this.config
+    );
+  }
+};
+_a45 = entityKind, __publicField(SQLiteTimestampBuilder, _a45, "SQLiteTimestampBuilder");
+var _a46, SQLiteTimestamp = class extends SQLiteBaseInteger {
+  mode = this.config.mode;
+  mapFromDriverValue(value) {
+    return this.config.mode === "timestamp" ? new Date(value * 1e3) : new Date(value);
+  }
+  mapToDriverValue(value) {
+    let unix = value.getTime();
+    return this.config.mode === "timestamp" ? Math.floor(unix / 1e3) : unix;
+  }
+};
+_a46 = entityKind, __publicField(SQLiteTimestamp, _a46, "SQLiteTimestamp");
+var _a47, SQLiteBooleanBuilder = class extends SQLiteBaseIntegerBuilder {
+  constructor(name, mode2) {
+    super(name, "boolean", "SQLiteBoolean"), this.config.mode = mode2;
+  }
+  build(table) {
+    return new SQLiteBoolean(
+      table,
+      this.config
+    );
+  }
+};
+_a47 = entityKind, __publicField(SQLiteBooleanBuilder, _a47, "SQLiteBooleanBuilder");
+var _a48, SQLiteBoolean = class extends SQLiteBaseInteger {
+  mode = this.config.mode;
+  mapFromDriverValue(value) {
+    return Number(value) === 1;
+  }
+  mapToDriverValue(value) {
+    return value ? 1 : 0;
+  }
+};
+_a48 = entityKind, __publicField(SQLiteBoolean, _a48, "SQLiteBoolean");
+function integer(name, config) {
+  return config?.mode === "timestamp" || config?.mode === "timestamp_ms" ? new SQLiteTimestampBuilder(name, config.mode) : config?.mode === "boolean" ? new SQLiteBooleanBuilder(name, config.mode) : new SQLiteIntegerBuilder(name);
+}
+
+// node_modules/drizzle-orm/sqlite-core/columns/text.js
+var _a49, SQLiteTextBuilder = class extends SQLiteColumnBuilder {
+  constructor(name, config) {
+    super(name, "string", "SQLiteText"), this.config.enumValues = config.enum, this.config.length = config.length;
+  }
+  /** @internal */
+  build(table) {
+    return new SQLiteText(table, this.config);
+  }
+};
+_a49 = entityKind, __publicField(SQLiteTextBuilder, _a49, "SQLiteTextBuilder");
+var _a50, SQLiteText = class extends SQLiteColumn {
+  enumValues = this.config.enumValues;
+  length = this.config.length;
+  constructor(table, config) {
+    super(table, config);
+  }
+  getSQLType() {
+    return `text${this.config.length ? `(${this.config.length})` : ""}`;
+  }
+};
+_a50 = entityKind, __publicField(SQLiteText, _a50, "SQLiteText");
+var _a51, SQLiteTextJsonBuilder = class extends SQLiteColumnBuilder {
+  constructor(name) {
+    super(name, "json", "SQLiteTextJson");
+  }
+  /** @internal */
+  build(table) {
+    return new SQLiteTextJson(
+      table,
+      this.config
+    );
+  }
+};
+_a51 = entityKind, __publicField(SQLiteTextJsonBuilder, _a51, "SQLiteTextJsonBuilder");
+var _a52, SQLiteTextJson = class extends SQLiteColumn {
+  getSQLType() {
+    return "text";
+  }
+  mapFromDriverValue(value) {
+    return JSON.parse(value);
+  }
+  mapToDriverValue(value) {
+    return JSON.stringify(value);
+  }
+};
+_a52 = entityKind, __publicField(SQLiteTextJson, _a52, "SQLiteTextJson");
+function text(name, config = {}) {
+  return config.mode === "json" ? new SQLiteTextJsonBuilder(name) : new SQLiteTextBuilder(name, config);
+}
+
+// node_modules/drizzle-orm/sqlite-core/view-base.js
+var _a53, SQLiteViewBase = class extends View {
+};
+_a53 = entityKind, __publicField(SQLiteViewBase, _a53, "SQLiteViewBase");
+
+// node_modules/drizzle-orm/sqlite-core/dialect.js
+var _a54, SQLiteDialect = class {
+  escapeName(name) {
+    return `"${name}"`;
+  }
+  escapeParam(_num) {
+    return "?";
+  }
+  escapeString(str) {
+    return `'${str.replace(/'/g, "''")}'`;
+  }
+  buildDeleteQuery({ table, where, returning }) {
+    let returningSql = returning ? sql` returning ${this.buildSelection(returning, { isSingleTable: !0 })}` : void 0, whereSql = where ? sql` where ${where}` : void 0;
+    return sql`delete from ${table}${whereSql}${returningSql}`;
+  }
+  buildUpdateSet(table, set2) {
+    let setEntries = Object.entries(set2), setSize = setEntries.length;
+    return sql.join(
+      setEntries.flatMap(([colName, value], i) => {
+        let col = table[Table.Symbol.Columns][colName], res = sql`${sql.identifier(col.name)} = ${value}`;
+        return i < setSize - 1 ? [res, sql.raw(", ")] : [res];
+      })
+    );
+  }
+  buildUpdateQuery({ table, set: set2, where, returning }) {
+    let setSql = this.buildUpdateSet(table, set2), returningSql = returning ? sql` returning ${this.buildSelection(returning, { isSingleTable: !0 })}` : void 0, whereSql = where ? sql` where ${where}` : void 0;
+    return sql`update ${table} set ${setSql}${whereSql}${returningSql}`;
+  }
+  /**
+   * Builds selection SQL with provided fields/expressions
+   *
+   * Examples:
+   *
+   * `select <selection> from`
+   *
+   * `insert ... returning <selection>`
+   *
+   * If `isSingleTable` is true, then columns won't be prefixed with table name
+   */
+  buildSelection(fields, { isSingleTable = !1 } = {}) {
+    let columnsLen = fields.length, chunks = fields.flatMap(({ field }, i) => {
+      let chunk = [];
+      if (is2(field, SQL.Aliased) && field.isSelectionField)
+        chunk.push(sql.identifier(field.fieldAlias));
+      else if (is2(field, SQL.Aliased) || is2(field, SQL)) {
+        let query = is2(field, SQL.Aliased) ? field.sql : field;
+        isSingleTable ? chunk.push(
+          new SQL(
+            query.queryChunks.map((c) => is2(c, Column) ? sql.identifier(c.name) : c)
+          )
+        ) : chunk.push(query), is2(field, SQL.Aliased) && chunk.push(sql` as ${sql.identifier(field.fieldAlias)}`);
+      } else if (is2(field, Column)) {
+        let tableName = field.table[Table.Symbol.Name], columnName = field.name;
+        isSingleTable ? chunk.push(sql.identifier(columnName)) : chunk.push(sql`${sql.identifier(tableName)}.${sql.identifier(columnName)}`);
+      }
+      return i < columnsLen - 1 && chunk.push(sql`, `), chunk;
+    });
+    return sql.join(chunks);
+  }
+  buildSelectQuery({
+    withList,
+    fields,
+    fieldsFlat,
+    where,
+    having,
+    table,
+    joins,
+    orderBy,
+    groupBy,
+    limit,
+    offset,
+    distinct,
+    setOperators
+  }) {
+    let fieldsList = fieldsFlat ?? orderSelectedFields(fields);
+    for (let f2 of fieldsList)
+      if (is2(f2.field, Column) && getTableName(f2.field.table) !== (is2(table, Subquery) ? table[SubqueryConfig].alias : is2(table, SQLiteViewBase) ? table[ViewBaseConfig].name : is2(table, SQL) ? void 0 : getTableName(table)) && !((table2) => joins?.some(
+        ({ alias }) => alias === (table2[Table.Symbol.IsAlias] ? getTableName(table2) : table2[Table.Symbol.BaseName])
+      ))(f2.field.table)) {
+        let tableName = getTableName(f2.field.table);
+        throw new Error(
+          `Your "${f2.path.join("->")}" field references a column "${tableName}"."${f2.field.name}", but the table "${tableName}" is not part of the query! Did you forget to join it?`
+        );
+      }
+    let isSingleTable = !joins || joins.length === 0, withSql;
+    if (withList?.length) {
+      let withSqlChunks = [sql`with `];
+      for (let [i, w2] of withList.entries())
+        withSqlChunks.push(sql`${sql.identifier(w2[SubqueryConfig].alias)} as (${w2[SubqueryConfig].sql})`), i < withList.length - 1 && withSqlChunks.push(sql`, `);
+      withSqlChunks.push(sql` `), withSql = sql.join(withSqlChunks);
+    }
+    let distinctSql = distinct ? sql` distinct` : void 0, selection = this.buildSelection(fieldsList, { isSingleTable }), tableSql = (() => is2(table, Table) && table[Table.Symbol.OriginalName] !== table[Table.Symbol.Name] ? sql`${sql.identifier(table[Table.Symbol.OriginalName])} ${sql.identifier(table[Table.Symbol.Name])}` : table)(), joinsArray = [];
+    if (joins)
+      for (let [index, joinMeta] of joins.entries()) {
+        index === 0 && joinsArray.push(sql` `);
+        let table2 = joinMeta.table;
+        if (is2(table2, SQLiteTable)) {
+          let tableName = table2[SQLiteTable.Symbol.Name], tableSchema = table2[SQLiteTable.Symbol.Schema], origTableName = table2[SQLiteTable.Symbol.OriginalName], alias = tableName === origTableName ? void 0 : joinMeta.alias;
+          joinsArray.push(
+            sql`${sql.raw(joinMeta.joinType)} join ${tableSchema ? sql`${sql.identifier(tableSchema)}.` : void 0}${sql.identifier(origTableName)}${alias && sql` ${sql.identifier(alias)}`} on ${joinMeta.on}`
+          );
+        } else
+          joinsArray.push(
+            sql`${sql.raw(joinMeta.joinType)} join ${table2} on ${joinMeta.on}`
+          );
+        index < joins.length - 1 && joinsArray.push(sql` `);
+      }
+    let joinsSql = sql.join(joinsArray), whereSql = where ? sql` where ${where}` : void 0, havingSql = having ? sql` having ${having}` : void 0, orderByList = [];
+    if (orderBy)
+      for (let [index, orderByValue] of orderBy.entries())
+        orderByList.push(orderByValue), index < orderBy.length - 1 && orderByList.push(sql`, `);
+    let groupByList = [];
+    if (groupBy)
+      for (let [index, groupByValue] of groupBy.entries())
+        groupByList.push(groupByValue), index < groupBy.length - 1 && groupByList.push(sql`, `);
+    let groupBySql = groupByList.length > 0 ? sql` group by ${sql.join(groupByList)}` : void 0, orderBySql = orderByList.length > 0 ? sql` order by ${sql.join(orderByList)}` : void 0, limitSql = limit ? sql` limit ${limit}` : void 0, offsetSql = offset ? sql` offset ${offset}` : void 0, finalQuery = sql`${withSql}select${distinctSql} ${selection} from ${tableSql}${joinsSql}${whereSql}${groupBySql}${havingSql}${orderBySql}${limitSql}${offsetSql}`;
+    return setOperators.length > 0 ? this.buildSetOperations(finalQuery, setOperators) : finalQuery;
+  }
+  buildSetOperations(leftSelect, setOperators) {
+    let [setOperator, ...rest] = setOperators;
+    if (!setOperator)
+      throw new Error("Cannot pass undefined values to any set operator");
+    return rest.length === 0 ? this.buildSetOperationQuery({ leftSelect, setOperator }) : this.buildSetOperations(
+      this.buildSetOperationQuery({ leftSelect, setOperator }),
+      rest
+    );
+  }
+  buildSetOperationQuery({
+    leftSelect,
+    setOperator: { type, isAll, rightSelect, limit, orderBy, offset }
+  }) {
+    let leftChunk = sql`${leftSelect.getSQL()} `, rightChunk = sql`${rightSelect.getSQL()}`, orderBySql;
+    if (orderBy && orderBy.length > 0) {
+      let orderByValues = [];
+      for (let singleOrderBy of orderBy)
+        if (is2(singleOrderBy, SQLiteColumn))
+          orderByValues.push(sql.identifier(singleOrderBy.name));
+        else if (is2(singleOrderBy, SQL)) {
+          for (let i = 0; i < singleOrderBy.queryChunks.length; i++) {
+            let chunk = singleOrderBy.queryChunks[i];
+            is2(chunk, SQLiteColumn) && (singleOrderBy.queryChunks[i] = sql.identifier(chunk.name));
+          }
+          orderByValues.push(sql`${singleOrderBy}`);
+        } else
+          orderByValues.push(sql`${singleOrderBy}`);
+      orderBySql = sql` order by ${sql.join(orderByValues, sql`, `)}`;
+    }
+    let limitSql = limit ? sql` limit ${limit}` : void 0, operatorChunk = sql.raw(`${type} ${isAll ? "all " : ""}`), offsetSql = offset ? sql` offset ${offset}` : void 0;
+    return sql`${leftChunk}${operatorChunk}${rightChunk}${orderBySql}${limitSql}${offsetSql}`;
+  }
+  buildInsertQuery({ table, values, onConflict, returning }) {
+    let valuesSqlList = [], columns = table[Table.Symbol.Columns], colEntries = Object.entries(columns), insertOrder = colEntries.map(([, column]) => sql.identifier(column.name));
+    for (let [valueIndex, value] of values.entries()) {
+      let valueList = [];
+      for (let [fieldName, col] of colEntries) {
+        let colValue = value[fieldName];
+        if (colValue === void 0 || is2(colValue, Param) && colValue.value === void 0) {
+          let defaultValue;
+          if (col.default !== null && col.default !== void 0)
+            defaultValue = is2(col.default, SQL) ? col.default : sql.param(col.default, col);
+          else if (col.defaultFn !== void 0) {
+            let defaultFnResult = col.defaultFn();
+            defaultValue = is2(defaultFnResult, SQL) ? defaultFnResult : sql.param(defaultFnResult, col);
+          } else
+            defaultValue = sql`null`;
+          valueList.push(defaultValue);
+        } else
+          valueList.push(colValue);
+      }
+      valuesSqlList.push(valueList), valueIndex < values.length - 1 && valuesSqlList.push(sql`, `);
+    }
+    let valuesSql = sql.join(valuesSqlList), returningSql = returning ? sql` returning ${this.buildSelection(returning, { isSingleTable: !0 })}` : void 0, onConflictSql = onConflict ? sql` on conflict ${onConflict}` : void 0;
+    return sql`insert into ${table} ${insertOrder} values ${valuesSql}${onConflictSql}${returningSql}`;
+  }
+  sqlToQuery(sql2) {
+    return sql2.toQuery({
+      escapeName: this.escapeName,
+      escapeParam: this.escapeParam,
+      escapeString: this.escapeString
+    });
+  }
+  buildRelationalQuery({
+    fullSchema,
+    schema,
+    tableNamesMap,
+    table,
+    tableConfig,
+    queryConfig: config,
+    tableAlias,
+    nestedQueryRelation,
+    joinOn
+  }) {
+    let selection = [], limit, offset, orderBy = [], where, joins = [];
+    if (config === !0)
+      selection = Object.entries(tableConfig.columns).map(([key, value]) => ({
+        dbKey: value.name,
+        tsKey: key,
+        field: aliasedTableColumn(value, tableAlias),
+        relationTableTsKey: void 0,
+        isJson: !1,
+        selection: []
+      }));
+    else {
+      let aliasedColumns = Object.fromEntries(
+        Object.entries(tableConfig.columns).map(([key, value]) => [key, aliasedTableColumn(value, tableAlias)])
+      );
+      if (config.where) {
+        let whereSql = typeof config.where == "function" ? config.where(aliasedColumns, getOperators()) : config.where;
+        where = whereSql && mapColumnsInSQLToAlias(whereSql, tableAlias);
+      }
+      let fieldsSelection = [], selectedColumns = [];
+      if (config.columns) {
+        let isIncludeMode = !1;
+        for (let [field, value] of Object.entries(config.columns))
+          value !== void 0 && field in tableConfig.columns && (!isIncludeMode && value === !0 && (isIncludeMode = !0), selectedColumns.push(field));
+        selectedColumns.length > 0 && (selectedColumns = isIncludeMode ? selectedColumns.filter((c) => config.columns?.[c] === !0) : Object.keys(tableConfig.columns).filter((key) => !selectedColumns.includes(key)));
+      } else
+        selectedColumns = Object.keys(tableConfig.columns);
+      for (let field of selectedColumns) {
+        let column = tableConfig.columns[field];
+        fieldsSelection.push({ tsKey: field, value: column });
+      }
+      let selectedRelations = [];
+      config.with && (selectedRelations = Object.entries(config.with).filter((entry2) => !!entry2[1]).map(([tsKey, queryConfig]) => ({ tsKey, queryConfig, relation: tableConfig.relations[tsKey] })));
+      let extras;
+      if (config.extras) {
+        extras = typeof config.extras == "function" ? config.extras(aliasedColumns, { sql }) : config.extras;
+        for (let [tsKey, value] of Object.entries(extras))
+          fieldsSelection.push({
+            tsKey,
+            value: mapColumnsInAliasedSQLToAlias(value, tableAlias)
+          });
+      }
+      for (let { tsKey, value } of fieldsSelection)
+        selection.push({
+          dbKey: is2(value, SQL.Aliased) ? value.fieldAlias : tableConfig.columns[tsKey].name,
+          tsKey,
+          field: is2(value, Column) ? aliasedTableColumn(value, tableAlias) : value,
+          relationTableTsKey: void 0,
+          isJson: !1,
+          selection: []
+        });
+      let orderByOrig = typeof config.orderBy == "function" ? config.orderBy(aliasedColumns, getOrderByOperators()) : config.orderBy ?? [];
+      Array.isArray(orderByOrig) || (orderByOrig = [orderByOrig]), orderBy = orderByOrig.map((orderByValue) => is2(orderByValue, Column) ? aliasedTableColumn(orderByValue, tableAlias) : mapColumnsInSQLToAlias(orderByValue, tableAlias)), limit = config.limit, offset = config.offset;
+      for (let {
+        tsKey: selectedRelationTsKey,
+        queryConfig: selectedRelationConfigValue,
+        relation
+      } of selectedRelations) {
+        let normalizedRelation = normalizeRelation(schema, tableNamesMap, relation), relationTableName = relation.referencedTable[Table.Symbol.Name], relationTableTsName = tableNamesMap[relationTableName], relationTableAlias = `${tableAlias}_${selectedRelationTsKey}`, joinOn2 = and(
+          ...normalizedRelation.fields.map(
+            (field2, i) => eq(
+              aliasedTableColumn(normalizedRelation.references[i], relationTableAlias),
+              aliasedTableColumn(field2, tableAlias)
+            )
+          )
+        ), builtRelation = this.buildRelationalQuery({
+          fullSchema,
+          schema,
+          tableNamesMap,
+          table: fullSchema[relationTableTsName],
+          tableConfig: schema[relationTableTsName],
+          queryConfig: is2(relation, One) ? selectedRelationConfigValue === !0 ? { limit: 1 } : { ...selectedRelationConfigValue, limit: 1 } : selectedRelationConfigValue,
+          tableAlias: relationTableAlias,
+          joinOn: joinOn2,
+          nestedQueryRelation: relation
+        }), field = sql`(${builtRelation.sql})`.as(selectedRelationTsKey);
+        selection.push({
+          dbKey: selectedRelationTsKey,
+          tsKey: selectedRelationTsKey,
+          field,
+          relationTableTsKey: relationTableTsName,
+          isJson: !0,
+          selection: builtRelation.selection
+        });
+      }
+    }
+    if (selection.length === 0)
+      throw new DrizzleError({
+        message: `No fields selected for table "${tableConfig.tsName}" ("${tableAlias}"). You need to have at least one item in "columns", "with" or "extras". If you need to select all columns, omit the "columns" key or set it to undefined.`
+      });
+    let result;
+    if (where = and(joinOn, where), nestedQueryRelation) {
+      let field = sql`json_array(${sql.join(
+        selection.map(
+          ({ field: field2 }) => is2(field2, SQLiteColumn) ? sql.identifier(field2.name) : is2(field2, SQL.Aliased) ? field2.sql : field2
+        ),
+        sql`, `
+      )})`;
+      is2(nestedQueryRelation, Many) && (field = sql`coalesce(json_group_array(${field}), json_array())`);
+      let nestedSelection = [{
+        dbKey: "data",
+        tsKey: "data",
+        field: field.as("data"),
+        isJson: !0,
+        relationTableTsKey: tableConfig.tsName,
+        selection
+      }];
+      limit !== void 0 || offset !== void 0 || orderBy.length > 0 ? (result = this.buildSelectQuery({
+        table: aliasedTable(table, tableAlias),
+        fields: {},
+        fieldsFlat: [
+          {
+            path: [],
+            field: sql.raw("*")
+          }
+        ],
+        where,
+        limit,
+        offset,
+        orderBy,
+        setOperators: []
+      }), where = void 0, limit = void 0, offset = void 0, orderBy = void 0) : result = aliasedTable(table, tableAlias), result = this.buildSelectQuery({
+        table: is2(result, SQLiteTable) ? result : new Subquery(result, {}, tableAlias),
+        fields: {},
+        fieldsFlat: nestedSelection.map(({ field: field2 }) => ({
+          path: [],
+          field: is2(field2, Column) ? aliasedTableColumn(field2, tableAlias) : field2
+        })),
+        joins,
+        where,
+        limit,
+        offset,
+        orderBy,
+        setOperators: []
+      });
+    } else
+      result = this.buildSelectQuery({
+        table: aliasedTable(table, tableAlias),
+        fields: {},
+        fieldsFlat: selection.map(({ field }) => ({
+          path: [],
+          field: is2(field, Column) ? aliasedTableColumn(field, tableAlias) : field
+        })),
+        joins,
+        where,
+        limit,
+        offset,
+        orderBy,
+        setOperators: []
+      });
+    return {
+      tableTsKey: tableConfig.tsName,
+      sql: result,
+      selection
+    };
+  }
+};
+_a54 = entityKind, __publicField(SQLiteDialect, _a54, "SQLiteDialect");
+var _a55, SQLiteSyncDialect = class extends SQLiteDialect {
+  migrate(migrations, session) {
+    let migrationTableCreate = sql`
+			CREATE TABLE IF NOT EXISTS "__drizzle_migrations" (
+				id SERIAL PRIMARY KEY,
+				hash text NOT NULL,
+				created_at numeric
+			)
+		`;
+    session.run(migrationTableCreate);
+    let lastDbMigration = session.values(
+      sql`SELECT id, hash, created_at FROM "__drizzle_migrations" ORDER BY created_at DESC LIMIT 1`
+    )[0] ?? void 0;
+    session.run(sql`BEGIN`);
+    try {
+      for (let migration of migrations)
+        if (!lastDbMigration || Number(lastDbMigration[2]) < migration.folderMillis) {
+          for (let stmt of migration.sql)
+            session.run(sql.raw(stmt));
+          session.run(
+            sql`INSERT INTO "__drizzle_migrations" ("hash", "created_at") VALUES(${migration.hash}, ${migration.folderMillis})`
+          );
+        }
+      session.run(sql`COMMIT`);
+    } catch (e) {
+      throw session.run(sql`ROLLBACK`), e;
+    }
+  }
+};
+_a55 = entityKind, __publicField(SQLiteSyncDialect, _a55, "SQLiteSyncDialect");
+var _a56, SQLiteAsyncDialect = class extends SQLiteDialect {
+  async migrate(migrations, session) {
+    let migrationTableCreate = sql`
+			CREATE TABLE IF NOT EXISTS "__drizzle_migrations" (
+				id SERIAL PRIMARY KEY,
+				hash text NOT NULL,
+				created_at numeric
+			)
+		`;
+    await session.run(migrationTableCreate);
+    let lastDbMigration = (await session.values(
+      sql`SELECT id, hash, created_at FROM "__drizzle_migrations" ORDER BY created_at DESC LIMIT 1`
+    ))[0] ?? void 0;
+    await session.transaction(async (tx) => {
+      for (let migration of migrations)
+        if (!lastDbMigration || Number(lastDbMigration[2]) < migration.folderMillis) {
+          for (let stmt of migration.sql)
+            await tx.run(sql.raw(stmt));
+          await tx.run(
+            sql`INSERT INTO "__drizzle_migrations" ("hash", "created_at") VALUES(${migration.hash}, ${migration.folderMillis})`
+          );
+        }
+    });
+  }
+};
+_a56 = entityKind, __publicField(SQLiteAsyncDialect, _a56, "SQLiteAsyncDialect");
+
+// node_modules/drizzle-orm/query-builders/query-builder.js
+var _a57, TypedQueryBuilder = class {
+  /** @internal */
+  getSelectedFields() {
+    return this._.selectedFields;
+  }
+};
+_a57 = entityKind, __publicField(TypedQueryBuilder, _a57, "TypedQueryBuilder");
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/select.js
+var _a58, SQLiteSelectBuilder = class {
+  fields;
+  session;
+  dialect;
+  withList;
+  distinct;
+  constructor(config) {
+    this.fields = config.fields, this.session = config.session, this.dialect = config.dialect, this.withList = config.withList, this.distinct = config.distinct;
+  }
+  from(source) {
+    let isPartialSelect = !!this.fields, fields;
+    return this.fields ? fields = this.fields : is2(source, Subquery) ? fields = Object.fromEntries(
+      Object.keys(source[SubqueryConfig].selection).map((key) => [key, source[key]])
+    ) : is2(source, SQLiteViewBase) ? fields = source[ViewBaseConfig].selectedFields : is2(source, SQL) ? fields = {} : fields = getTableColumns(source), new SQLiteSelectBase({
+      table: source,
+      fields,
+      isPartialSelect,
+      session: this.session,
+      dialect: this.dialect,
+      withList: this.withList,
+      distinct: this.distinct
+    });
+  }
+};
+_a58 = entityKind, __publicField(SQLiteSelectBuilder, _a58, "SQLiteSelectBuilder");
+var _a59, SQLiteSelectQueryBuilderBase = class extends TypedQueryBuilder {
+  _;
+  /** @internal */
+  config;
+  joinsNotNullableMap;
+  tableName;
+  isPartialSelect;
+  session;
+  dialect;
+  constructor({ table, fields, isPartialSelect, session, dialect, withList, distinct }) {
+    super(), this.config = {
+      withList,
+      table,
+      fields: { ...fields },
+      distinct,
+      setOperators: []
+    }, this.isPartialSelect = isPartialSelect, this.session = session, this.dialect = dialect, this._ = {
+      selectedFields: fields
+    }, this.tableName = getTableLikeName(table), this.joinsNotNullableMap = typeof this.tableName == "string" ? { [this.tableName]: !0 } : {};
+  }
+  createJoin(joinType) {
+    return (table, on) => {
+      let baseTableName = this.tableName, tableName = getTableLikeName(table);
+      if (typeof tableName == "string" && this.config.joins?.some((join) => join.alias === tableName))
+        throw new Error(`Alias "${tableName}" is already used in this query`);
+      if (!this.isPartialSelect && (Object.keys(this.joinsNotNullableMap).length === 1 && typeof baseTableName == "string" && (this.config.fields = {
+        [baseTableName]: this.config.fields
+      }), typeof tableName == "string" && !is2(table, SQL))) {
+        let selection = is2(table, Subquery) ? table[SubqueryConfig].selection : is2(table, View) ? table[ViewBaseConfig].selectedFields : table[Table.Symbol.Columns];
+        this.config.fields[tableName] = selection;
+      }
+      if (typeof on == "function" && (on = on(
+        new Proxy(
+          this.config.fields,
+          new SelectionProxyHandler({ sqlAliasedBehavior: "sql", sqlBehavior: "sql" })
+        )
+      )), this.config.joins || (this.config.joins = []), this.config.joins.push({ on, table, joinType, alias: tableName }), typeof tableName == "string")
+        switch (joinType) {
+          case "left": {
+            this.joinsNotNullableMap[tableName] = !1;
+            break;
+          }
+          case "right": {
+            this.joinsNotNullableMap = Object.fromEntries(
+              Object.entries(this.joinsNotNullableMap).map(([key]) => [key, !1])
+            ), this.joinsNotNullableMap[tableName] = !0;
+            break;
+          }
+          case "inner": {
+            this.joinsNotNullableMap[tableName] = !0;
+            break;
+          }
+          case "full": {
+            this.joinsNotNullableMap = Object.fromEntries(
+              Object.entries(this.joinsNotNullableMap).map(([key]) => [key, !1])
+            ), this.joinsNotNullableMap[tableName] = !1;
+            break;
+          }
+        }
+      return this;
+    };
+  }
+  /**
+   * Executes a `left join` operation by adding another table to the current query.
+   *
+   * Calling this method associates each row of the table with the corresponding row from the joined table, if a match is found. If no matching row exists, it sets all columns of the joined table to null.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/joins#left-join}
+   *
+   * @param table the table to join.
+   * @param on the `on` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all users and their pets
+   * const usersWithPets: { user: User; pets: Pet | null }[] = await db.select()
+   *   .from(users)
+   *   .leftJoin(pets, eq(users.id, pets.ownerId))
+   *
+   * // Select userId and petId
+   * const usersIdsAndPetIds: { userId: number; petId: number | null }[] = await db.select({
+   *   userId: users.id,
+   *   petId: pets.id,
+   * })
+   *   .from(users)
+   *   .leftJoin(pets, eq(users.id, pets.ownerId))
+   * ```
+   */
+  leftJoin = this.createJoin("left");
+  /**
+   * Executes a `right join` operation by adding another table to the current query.
+   *
+   * Calling this method associates each row of the joined table with the corresponding row from the main table, if a match is found. If no matching row exists, it sets all columns of the main table to null.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/joins#right-join}
+   *
+   * @param table the table to join.
+   * @param on the `on` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all users and their pets
+   * const usersWithPets: { user: User | null; pets: Pet }[] = await db.select()
+   *   .from(users)
+   *   .rightJoin(pets, eq(users.id, pets.ownerId))
+   *
+   * // Select userId and petId
+   * const usersIdsAndPetIds: { userId: number | null; petId: number }[] = await db.select({
+   *   userId: users.id,
+   *   petId: pets.id,
+   * })
+   *   .from(users)
+   *   .rightJoin(pets, eq(users.id, pets.ownerId))
+   * ```
+   */
+  rightJoin = this.createJoin("right");
+  /**
+   * Executes an `inner join` operation, creating a new table by combining rows from two tables that have matching values.
+   *
+   * Calling this method retrieves rows that have corresponding entries in both joined tables. Rows without matching entries in either table are excluded, resulting in a table that includes only matching pairs.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/joins#inner-join}
+   *
+   * @param table the table to join.
+   * @param on the `on` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all users and their pets
+   * const usersWithPets: { user: User; pets: Pet }[] = await db.select()
+   *   .from(users)
+   *   .innerJoin(pets, eq(users.id, pets.ownerId))
+   *
+   * // Select userId and petId
+   * const usersIdsAndPetIds: { userId: number; petId: number }[] = await db.select({
+   *   userId: users.id,
+   *   petId: pets.id,
+   * })
+   *   .from(users)
+   *   .innerJoin(pets, eq(users.id, pets.ownerId))
+   * ```
+   */
+  innerJoin = this.createJoin("inner");
+  /**
+   * Executes a `full join` operation by combining rows from two tables into a new table.
+   *
+   * Calling this method retrieves all rows from both main and joined tables, merging rows with matching values and filling in `null` for non-matching columns.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/joins#full-join}
+   *
+   * @param table the table to join.
+   * @param on the `on` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all users and their pets
+   * const usersWithPets: { user: User | null; pets: Pet | null }[] = await db.select()
+   *   .from(users)
+   *   .fullJoin(pets, eq(users.id, pets.ownerId))
+   *
+   * // Select userId and petId
+   * const usersIdsAndPetIds: { userId: number | null; petId: number | null }[] = await db.select({
+   *   userId: users.id,
+   *   petId: pets.id,
+   * })
+   *   .from(users)
+   *   .fullJoin(pets, eq(users.id, pets.ownerId))
+   * ```
+   */
+  fullJoin = this.createJoin("full");
+  createSetOperator(type, isAll) {
+    return (rightSelection) => {
+      let rightSelect = typeof rightSelection == "function" ? rightSelection(getSQLiteSetOperators()) : rightSelection;
+      if (!haveSameKeys(this.getSelectedFields(), rightSelect.getSelectedFields()))
+        throw new Error(
+          "Set operator error (union / intersect / except): selected fields are not the same or are in a different order"
+        );
+      return this.config.setOperators.push({ type, isAll, rightSelect }), this;
+    };
+  }
+  /**
+   * Adds `union` set operator to the query.
+   *
+   * Calling this method will combine the result sets of the `select` statements and remove any duplicate rows that appear across them.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/set-operations#union}
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all unique names from customers and users tables
+   * await db.select({ name: users.name })
+   *   .from(users)
+   *   .union(
+   *     db.select({ name: customers.name }).from(customers)
+   *   );
+   * // or
+   * import { union } from 'drizzle-orm/sqlite-core'
+   *
+   * await union(
+   *   db.select({ name: users.name }).from(users),
+   *   db.select({ name: customers.name }).from(customers)
+   * );
+   * ```
+   */
+  union = this.createSetOperator("union", !1);
+  /**
+   * Adds `union all` set operator to the query.
+   *
+   * Calling this method will combine the result-set of the `select` statements and keep all duplicate rows that appear across them.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/set-operations#union-all}
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all transaction ids from both online and in-store sales
+   * await db.select({ transaction: onlineSales.transactionId })
+   *   .from(onlineSales)
+   *   .unionAll(
+   *     db.select({ transaction: inStoreSales.transactionId }).from(inStoreSales)
+   *   );
+   * // or
+   * import { unionAll } from 'drizzle-orm/sqlite-core'
+   *
+   * await unionAll(
+   *   db.select({ transaction: onlineSales.transactionId }).from(onlineSales),
+   *   db.select({ transaction: inStoreSales.transactionId }).from(inStoreSales)
+   * );
+   * ```
+   */
+  unionAll = this.createSetOperator("union", !0);
+  /**
+   * Adds `intersect` set operator to the query.
+   *
+   * Calling this method will retain only the rows that are present in both result sets and eliminate duplicates.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/set-operations#intersect}
+   *
+   * @example
+   *
+   * ```ts
+   * // Select course names that are offered in both departments A and B
+   * await db.select({ courseName: depA.courseName })
+   *   .from(depA)
+   *   .intersect(
+   *     db.select({ courseName: depB.courseName }).from(depB)
+   *   );
+   * // or
+   * import { intersect } from 'drizzle-orm/sqlite-core'
+   *
+   * await intersect(
+   *   db.select({ courseName: depA.courseName }).from(depA),
+   *   db.select({ courseName: depB.courseName }).from(depB)
+   * );
+   * ```
+   */
+  intersect = this.createSetOperator("intersect", !1);
+  /**
+   * Adds `except` set operator to the query.
+   *
+   * Calling this method will retrieve all unique rows from the left query, except for the rows that are present in the result set of the right query.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/set-operations#except}
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all courses offered in department A but not in department B
+   * await db.select({ courseName: depA.courseName })
+   *   .from(depA)
+   *   .except(
+   *     db.select({ courseName: depB.courseName }).from(depB)
+   *   );
+   * // or
+   * import { except } from 'drizzle-orm/sqlite-core'
+   *
+   * await except(
+   *   db.select({ courseName: depA.courseName }).from(depA),
+   *   db.select({ courseName: depB.courseName }).from(depB)
+   * );
+   * ```
+   */
+  except = this.createSetOperator("except", !1);
+  /** @internal */
+  addSetOperators(setOperators) {
+    return this.config.setOperators.push(...setOperators), this;
+  }
+  /**
+   * Adds a `where` clause to the query.
+   *
+   * Calling this method will select only those rows that fulfill a specified condition.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#filtering}
+   *
+   * @param where the `where` clause.
+   *
+   * @example
+   * You can use conditional operators and `sql function` to filter the rows to be selected.
+   *
+   * ```ts
+   * // Select all cars with green color
+   * await db.select().from(cars).where(eq(cars.color, 'green'));
+   * // or
+   * await db.select().from(cars).where(sql`${cars.color} = 'green'`)
+   * ```
+   *
+   * You can logically combine conditional operators with `and()` and `or()` operators:
+   *
+   * ```ts
+   * // Select all BMW cars with a green color
+   * await db.select().from(cars).where(and(eq(cars.color, 'green'), eq(cars.brand, 'BMW')));
+   *
+   * // Select all cars with the green or blue color
+   * await db.select().from(cars).where(or(eq(cars.color, 'green'), eq(cars.color, 'blue')));
+   * ```
+   */
+  where(where) {
+    return typeof where == "function" && (where = where(
+      new Proxy(
+        this.config.fields,
+        new SelectionProxyHandler({ sqlAliasedBehavior: "sql", sqlBehavior: "sql" })
+      )
+    )), this.config.where = where, this;
+  }
+  /**
+   * Adds a `having` clause to the query.
+   *
+   * Calling this method will select only those rows that fulfill a specified condition. It is typically used with aggregate functions to filter the aggregated data based on a specified condition.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#aggregations}
+   *
+   * @param having the `having` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all brands with more than one car
+   * await db.select({
+   * 	brand: cars.brand,
+   * 	count: sql<number>`cast(count(${cars.id}) as int)`,
+   * })
+   *   .from(cars)
+   *   .groupBy(cars.brand)
+   *   .having(({ count }) => gt(count, 1));
+   * ```
+   */
+  having(having) {
+    return typeof having == "function" && (having = having(
+      new Proxy(
+        this.config.fields,
+        new SelectionProxyHandler({ sqlAliasedBehavior: "sql", sqlBehavior: "sql" })
+      )
+    )), this.config.having = having, this;
+  }
+  groupBy(...columns) {
+    if (typeof columns[0] == "function") {
+      let groupBy = columns[0](
+        new Proxy(
+          this.config.fields,
+          new SelectionProxyHandler({ sqlAliasedBehavior: "alias", sqlBehavior: "sql" })
+        )
+      );
+      this.config.groupBy = Array.isArray(groupBy) ? groupBy : [groupBy];
+    } else
+      this.config.groupBy = columns;
+    return this;
+  }
+  orderBy(...columns) {
+    if (typeof columns[0] == "function") {
+      let orderBy = columns[0](
+        new Proxy(
+          this.config.fields,
+          new SelectionProxyHandler({ sqlAliasedBehavior: "alias", sqlBehavior: "sql" })
+        )
+      ), orderByArray = Array.isArray(orderBy) ? orderBy : [orderBy];
+      this.config.setOperators.length > 0 ? this.config.setOperators.at(-1).orderBy = orderByArray : this.config.orderBy = orderByArray;
+    } else {
+      let orderByArray = columns;
+      this.config.setOperators.length > 0 ? this.config.setOperators.at(-1).orderBy = orderByArray : this.config.orderBy = orderByArray;
+    }
+    return this;
+  }
+  /**
+   * Adds a `limit` clause to the query.
+   *
+   * Calling this method will set the maximum number of rows that will be returned by this query.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#limit--offset}
+   *
+   * @param limit the `limit` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Get the first 10 people from this query.
+   * await db.select().from(people).limit(10);
+   * ```
+   */
+  limit(limit) {
+    return this.config.setOperators.length > 0 ? this.config.setOperators.at(-1).limit = limit : this.config.limit = limit, this;
+  }
+  /**
+   * Adds an `offset` clause to the query.
+   *
+   * Calling this method will skip a number of rows when returning results from this query.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#limit--offset}
+   *
+   * @param offset the `offset` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Get the 10th-20th people from this query.
+   * await db.select().from(people).offset(10).limit(10);
+   * ```
+   */
+  offset(offset) {
+    return this.config.setOperators.length > 0 ? this.config.setOperators.at(-1).offset = offset : this.config.offset = offset, this;
+  }
+  /** @internal */
+  getSQL() {
+    return this.dialect.buildSelectQuery(this.config);
+  }
+  toSQL() {
+    let { typings: _typings, ...rest } = this.dialect.sqlToQuery(this.getSQL());
+    return rest;
+  }
+  as(alias) {
+    return new Proxy(
+      new Subquery(this.getSQL(), this.config.fields, alias),
+      new SelectionProxyHandler({ alias, sqlAliasedBehavior: "alias", sqlBehavior: "error" })
+    );
+  }
+  /** @internal */
+  getSelectedFields() {
+    return new Proxy(
+      this.config.fields,
+      new SelectionProxyHandler({ alias: this.tableName, sqlAliasedBehavior: "alias", sqlBehavior: "error" })
+    );
+  }
+  $dynamic() {
+    return this;
+  }
+};
+_a59 = entityKind, __publicField(SQLiteSelectQueryBuilderBase, _a59, "SQLiteSelectQueryBuilder");
+var _a60, SQLiteSelectBase = class extends SQLiteSelectQueryBuilderBase {
+  /** @internal */
+  _prepare(isOneTimeQuery = !0) {
+    if (!this.session)
+      throw new Error("Cannot execute a query on a query builder. Please use a database instance instead.");
+    let fieldsList = orderSelectedFields(this.config.fields), query = this.session[isOneTimeQuery ? "prepareOneTimeQuery" : "prepareQuery"](
+      this.dialect.sqlToQuery(this.getSQL()),
+      fieldsList,
+      "all"
+    );
+    return query.joinsNotNullableMap = this.joinsNotNullableMap, query;
+  }
+  prepare() {
+    return this._prepare(!1);
+  }
+  run = (placeholderValues) => this._prepare().run(placeholderValues);
+  all = (placeholderValues) => this._prepare().all(placeholderValues);
+  get = (placeholderValues) => this._prepare().get(placeholderValues);
+  values = (placeholderValues) => this._prepare().values(placeholderValues);
+  async execute() {
+    return this.all();
+  }
+};
+_a60 = entityKind, __publicField(SQLiteSelectBase, _a60, "SQLiteSelect");
+applyMixins(SQLiteSelectBase, [QueryPromise]);
+function createSetOperator(type, isAll) {
+  return (leftSelect, rightSelect, ...restSelects) => {
+    let setOperators = [rightSelect, ...restSelects].map((select) => ({
+      type,
+      isAll,
+      rightSelect: select
+    }));
+    for (let setOperator of setOperators)
+      if (!haveSameKeys(leftSelect.getSelectedFields(), setOperator.rightSelect.getSelectedFields()))
+        throw new Error(
+          "Set operator error (union / intersect / except): selected fields are not the same or are in a different order"
+        );
+    return leftSelect.addSetOperators(setOperators);
+  };
+}
+var getSQLiteSetOperators = () => ({
+  union,
+  unionAll,
+  intersect,
+  except
+}), union = createSetOperator("union", !1), unionAll = createSetOperator("union", !0), intersect = createSetOperator("intersect", !1), except = createSetOperator("except", !1);
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/query-builder.js
+var _a61, QueryBuilder = class {
+  dialect;
+  $with(alias) {
+    let queryBuilder = this;
+    return {
+      as(qb) {
+        return typeof qb == "function" && (qb = qb(queryBuilder)), new Proxy(
+          new WithSubquery(qb.getSQL(), qb.getSelectedFields(), alias, !0),
+          new SelectionProxyHandler({ alias, sqlAliasedBehavior: "alias", sqlBehavior: "error" })
+        );
+      }
+    };
+  }
+  with(...queries) {
+    let self = this;
+    function select(fields) {
+      return new SQLiteSelectBuilder({
+        fields: fields ?? void 0,
+        session: void 0,
+        dialect: self.getDialect(),
+        withList: queries
+      });
+    }
+    function selectDistinct(fields) {
+      return new SQLiteSelectBuilder({
+        fields: fields ?? void 0,
+        session: void 0,
+        dialect: self.getDialect(),
+        withList: queries,
+        distinct: !0
+      });
+    }
+    return { select, selectDistinct };
+  }
+  select(fields) {
+    return new SQLiteSelectBuilder({ fields: fields ?? void 0, session: void 0, dialect: this.getDialect() });
+  }
+  selectDistinct(fields) {
+    return new SQLiteSelectBuilder({
+      fields: fields ?? void 0,
+      session: void 0,
+      dialect: this.getDialect(),
+      distinct: !0
+    });
+  }
+  // Lazy load dialect to avoid circular dependency
+  getDialect() {
+    return this.dialect || (this.dialect = new SQLiteSyncDialect()), this.dialect;
+  }
+};
+_a61 = entityKind, __publicField(QueryBuilder, _a61, "SQLiteQueryBuilder");
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/update.js
+var _a62, SQLiteUpdateBuilder = class {
+  constructor(table, session, dialect) {
+    this.table = table, this.session = session, this.dialect = dialect;
+  }
+  set(values) {
+    return new SQLiteUpdateBase(this.table, mapUpdateSet(this.table, values), this.session, this.dialect);
+  }
+};
+_a62 = entityKind, __publicField(SQLiteUpdateBuilder, _a62, "SQLiteUpdateBuilder");
+var _a63, SQLiteUpdateBase = class extends QueryPromise {
+  constructor(table, set2, session, dialect) {
+    super(), this.session = session, this.dialect = dialect, this.config = { set: set2, table };
+  }
+  /** @internal */
+  config;
+  /**
+   * Adds a 'where' clause to the query.
+   *
+   * Calling this method will update only those rows that fulfill a specified condition.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/update}
+   *
+   * @param where the 'where' clause.
+   *
+   * @example
+   * You can use conditional operators and `sql function` to filter the rows to be updated.
+   *
+   * ```ts
+   * // Update all cars with green color
+   * db.update(cars).set({ color: 'red' })
+   *   .where(eq(cars.color, 'green'));
+   * // or
+   * db.update(cars).set({ color: 'red' })
+   *   .where(sql`${cars.color} = 'green'`)
+   * ```
+   *
+   * You can logically combine conditional operators with `and()` and `or()` operators:
+   *
+   * ```ts
+   * // Update all BMW cars with a green color
+   * db.update(cars).set({ color: 'red' })
+   *   .where(and(eq(cars.color, 'green'), eq(cars.brand, 'BMW')));
+   *
+   * // Update all cars with the green or blue color
+   * db.update(cars).set({ color: 'red' })
+   *   .where(or(eq(cars.color, 'green'), eq(cars.color, 'blue')));
+   * ```
+   */
+  where(where) {
+    return this.config.where = where, this;
+  }
+  returning(fields = this.config.table[SQLiteTable.Symbol.Columns]) {
+    return this.config.returning = orderSelectedFields(fields), this;
+  }
+  /** @internal */
+  getSQL() {
+    return this.dialect.buildUpdateQuery(this.config);
+  }
+  toSQL() {
+    let { typings: _typings, ...rest } = this.dialect.sqlToQuery(this.getSQL());
+    return rest;
+  }
+  /** @internal */
+  _prepare(isOneTimeQuery = !0) {
+    return this.session[isOneTimeQuery ? "prepareOneTimeQuery" : "prepareQuery"](
+      this.dialect.sqlToQuery(this.getSQL()),
+      this.config.returning,
+      this.config.returning ? "all" : "run"
+    );
+  }
+  prepare() {
+    return this._prepare(!1);
+  }
+  run = (placeholderValues) => this._prepare().run(placeholderValues);
+  all = (placeholderValues) => this._prepare().all(placeholderValues);
+  get = (placeholderValues) => this._prepare().get(placeholderValues);
+  values = (placeholderValues) => this._prepare().values(placeholderValues);
+  async execute() {
+    return this.config.returning ? this.all() : this.run();
+  }
+  $dynamic() {
+    return this;
+  }
+};
+_a63 = entityKind, __publicField(SQLiteUpdateBase, _a63, "SQLiteUpdate");
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/query.js
+var _a64, RelationalQueryBuilder = class {
+  constructor(mode2, fullSchema, schema, tableNamesMap, table, tableConfig, dialect, session) {
+    this.mode = mode2, this.fullSchema = fullSchema, this.schema = schema, this.tableNamesMap = tableNamesMap, this.table = table, this.tableConfig = tableConfig, this.dialect = dialect, this.session = session;
+  }
+  findMany(config) {
+    return this.mode === "sync" ? new SQLiteSyncRelationalQuery(
+      this.fullSchema,
+      this.schema,
+      this.tableNamesMap,
+      this.table,
+      this.tableConfig,
+      this.dialect,
+      this.session,
+      config || {},
+      "many"
+    ) : new SQLiteRelationalQuery(
+      this.fullSchema,
+      this.schema,
+      this.tableNamesMap,
+      this.table,
+      this.tableConfig,
+      this.dialect,
+      this.session,
+      config || {},
+      "many"
+    );
+  }
+  findFirst(config) {
+    return this.mode === "sync" ? new SQLiteSyncRelationalQuery(
+      this.fullSchema,
+      this.schema,
+      this.tableNamesMap,
+      this.table,
+      this.tableConfig,
+      this.dialect,
+      this.session,
+      config ? { ...config, limit: 1 } : { limit: 1 },
+      "first"
+    ) : new SQLiteRelationalQuery(
+      this.fullSchema,
+      this.schema,
+      this.tableNamesMap,
+      this.table,
+      this.tableConfig,
+      this.dialect,
+      this.session,
+      config ? { ...config, limit: 1 } : { limit: 1 },
+      "first"
+    );
+  }
+};
+_a64 = entityKind, __publicField(RelationalQueryBuilder, _a64, "SQLiteAsyncRelationalQueryBuilder");
+var _a65, SQLiteRelationalQuery = class extends QueryPromise {
+  constructor(fullSchema, schema, tableNamesMap, table, tableConfig, dialect, session, config, mode2) {
+    super(), this.fullSchema = fullSchema, this.schema = schema, this.tableNamesMap = tableNamesMap, this.table = table, this.tableConfig = tableConfig, this.dialect = dialect, this.session = session, this.config = config, this.mode = mode2;
+  }
+  /** @internal */
+  mode;
+  /** @internal */
+  getSQL() {
+    return this.dialect.buildRelationalQuery({
+      fullSchema: this.fullSchema,
+      schema: this.schema,
+      tableNamesMap: this.tableNamesMap,
+      table: this.table,
+      tableConfig: this.tableConfig,
+      queryConfig: this.config,
+      tableAlias: this.tableConfig.tsName
+    }).sql;
+  }
+  /** @internal */
+  _prepare(isOneTimeQuery = !1) {
+    let { query, builtQuery } = this._toSQL();
+    return this.session[isOneTimeQuery ? "prepareOneTimeQuery" : "prepareQuery"](
+      builtQuery,
+      void 0,
+      this.mode === "first" ? "get" : "all",
+      (rawRows, mapColumnValue) => {
+        let rows = rawRows.map(
+          (row) => mapRelationalRow(this.schema, this.tableConfig, row, query.selection, mapColumnValue)
+        );
+        return this.mode === "first" ? rows[0] : rows;
+      }
+    );
+  }
+  prepare() {
+    return this._prepare(!1);
+  }
+  _toSQL() {
+    let query = this.dialect.buildRelationalQuery({
+      fullSchema: this.fullSchema,
+      schema: this.schema,
+      tableNamesMap: this.tableNamesMap,
+      table: this.table,
+      tableConfig: this.tableConfig,
+      queryConfig: this.config,
+      tableAlias: this.tableConfig.tsName
+    }), builtQuery = this.dialect.sqlToQuery(query.sql);
+    return { query, builtQuery };
+  }
+  toSQL() {
+    return this._toSQL().builtQuery;
+  }
+  /** @internal */
+  executeRaw() {
+    return this.mode === "first" ? this._prepare(!1).get() : this._prepare(!1).all();
+  }
+  async execute() {
+    return this.executeRaw();
+  }
+};
+_a65 = entityKind, __publicField(SQLiteRelationalQuery, _a65, "SQLiteAsyncRelationalQuery");
+var _a66, SQLiteSyncRelationalQuery = class extends SQLiteRelationalQuery {
+  sync() {
+    return this.executeRaw();
+  }
+};
+_a66 = entityKind, __publicField(SQLiteSyncRelationalQuery, _a66, "SQLiteSyncRelationalQuery");
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/raw.js
+var _a67, SQLiteRaw = class extends QueryPromise {
+  constructor(execute, getSQL, action4, dialect, mapBatchResult) {
+    super(), this.execute = execute, this.getSQL = getSQL, this.dialect = dialect, this.mapBatchResult = mapBatchResult, this.config = { action: action4 };
+  }
+  /** @internal */
+  config;
+  getQuery() {
+    return this.dialect.sqlToQuery(this.getSQL());
+  }
+  mapResult(result, isFromBatch) {
+    return isFromBatch ? this.mapBatchResult(result) : result;
+  }
+  _prepare() {
+    return this;
+  }
+};
+_a67 = entityKind, __publicField(SQLiteRaw, _a67, "SQLiteRaw");
+
+// node_modules/drizzle-orm/sqlite-core/db.js
+var _a68, BaseSQLiteDatabase = class {
+  constructor(resultKind, dialect, session, schema) {
+    this.resultKind = resultKind, this.dialect = dialect, this.session = session, this._ = schema ? { schema: schema.schema, tableNamesMap: schema.tableNamesMap } : { schema: void 0, tableNamesMap: {} }, this.query = {};
+    let query = this.query;
+    if (this._.schema)
+      for (let [tableName, columns] of Object.entries(this._.schema))
+        query[tableName] = new RelationalQueryBuilder(
+          resultKind,
+          schema.fullSchema,
+          this._.schema,
+          this._.tableNamesMap,
+          schema.fullSchema[tableName],
+          columns,
+          dialect,
+          session
+        );
+  }
+  query;
+  /**
+   * Creates a subquery that defines a temporary named result set as a CTE.
+   *
+   * It is useful for breaking down complex queries into simpler parts and for reusing the result set in subsequent parts of the query.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#with-clause}
+   *
+   * @param alias The alias for the subquery.
+   *
+   * Failure to provide an alias will result in a DrizzleTypeError, preventing the subquery from being referenced in other queries.
+   *
+   * @example
+   *
+   * ```ts
+   * // Create a subquery with alias 'sq' and use it in the select query
+   * const sq = db.$with('sq').as(db.select().from(users).where(eq(users.id, 42)));
+   *
+   * const result = await db.with(sq).select().from(sq);
+   * ```
+   *
+   * To select arbitrary SQL values as fields in a CTE and reference them in other CTEs or in the main query, you need to add aliases to them:
+   *
+   * ```ts
+   * // Select an arbitrary SQL value as a field in a CTE and reference it in the main query
+   * const sq = db.$with('sq').as(db.select({
+   *   name: sql<string>`upper(${users.name})`.as('name'),
+   * })
+   * .from(users));
+   *
+   * const result = await db.with(sq).select({ name: sq.name }).from(sq);
+   * ```
+   */
+  $with(alias) {
+    return {
+      as(qb) {
+        return typeof qb == "function" && (qb = qb(new QueryBuilder())), new Proxy(
+          new WithSubquery(qb.getSQL(), qb.getSelectedFields(), alias, !0),
+          new SelectionProxyHandler({ alias, sqlAliasedBehavior: "alias", sqlBehavior: "error" })
+        );
+      }
+    };
+  }
+  /**
+   * Incorporates a previously defined CTE (using `$with`) into the main query.
+   *
+   * This method allows the main query to reference a temporary named result set.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#with-clause}
+   *
+   * @param queries The CTEs to incorporate into the main query.
+   *
+   * @example
+   *
+   * ```ts
+   * // Define a subquery 'sq' as a CTE using $with
+   * const sq = db.$with('sq').as(db.select().from(users).where(eq(users.id, 42)));
+   *
+   * // Incorporate the CTE 'sq' into the main query and select from it
+   * const result = await db.with(sq).select().from(sq);
+   * ```
+   */
+  with(...queries) {
+    let self = this;
+    function select(fields) {
+      return new SQLiteSelectBuilder({
+        fields: fields ?? void 0,
+        session: self.session,
+        dialect: self.dialect,
+        withList: queries
+      });
+    }
+    function selectDistinct(fields) {
+      return new SQLiteSelectBuilder({
+        fields: fields ?? void 0,
+        session: self.session,
+        dialect: self.dialect,
+        withList: queries,
+        distinct: !0
+      });
+    }
+    function update(table) {
+      return new SQLiteUpdateBuilder(table, self.session, self.dialect);
+    }
+    function insert(into) {
+      return new SQLiteInsertBuilder(into, self.session, self.dialect);
+    }
+    function delete_(from) {
+      return new SQLiteDeleteBase(from, self.session, self.dialect);
+    }
+    return { select, selectDistinct, update, insert, delete: delete_ };
+  }
+  select(fields) {
+    return new SQLiteSelectBuilder({ fields: fields ?? void 0, session: this.session, dialect: this.dialect });
+  }
+  selectDistinct(fields) {
+    return new SQLiteSelectBuilder({
+      fields: fields ?? void 0,
+      session: this.session,
+      dialect: this.dialect,
+      distinct: !0
+    });
+  }
+  /**
+   * Creates an update query.
+   *
+   * Calling this method without `.where()` clause will update all rows in a table. The `.where()` clause specifies which rows should be updated.
+   *
+   * Use `.set()` method to specify which values to update.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/update}
+   *
+   * @param table The table to update.
+   *
+   * @example
+   *
+   * ```ts
+   * // Update all rows in the 'cars' table
+   * await db.update(cars).set({ color: 'red' });
+   *
+   * // Update rows with filters and conditions
+   * await db.update(cars).set({ color: 'red' }).where(eq(cars.brand, 'BMW'));
+   *
+   * // Update with returning clause
+   * const updatedCar: Car[] = await db.update(cars)
+   *   .set({ color: 'red' })
+   *   .where(eq(cars.id, 1))
+   *   .returning();
+   * ```
+   */
+  update(table) {
+    return new SQLiteUpdateBuilder(table, this.session, this.dialect);
+  }
+  /**
+   * Creates an insert query.
+   *
+   * Calling this method will create new rows in a table. Use `.values()` method to specify which values to insert.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/insert}
+   *
+   * @param table The table to insert into.
+   *
+   * @example
+   *
+   * ```ts
+   * // Insert one row
+   * await db.insert(cars).values({ brand: 'BMW' });
+   *
+   * // Insert multiple rows
+   * await db.insert(cars).values([{ brand: 'BMW' }, { brand: 'Porsche' }]);
+   *
+   * // Insert with returning clause
+   * const insertedCar: Car[] = await db.insert(cars)
+   *   .values({ brand: 'BMW' })
+   *   .returning();
+   * ```
+   */
+  insert(into) {
+    return new SQLiteInsertBuilder(into, this.session, this.dialect);
+  }
+  /**
+   * Creates a delete query.
+   *
+   * Calling this method without `.where()` clause will delete all rows in a table. The `.where()` clause specifies which rows should be deleted.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/delete}
+   *
+   * @param table The table to delete from.
+   *
+   * @example
+   *
+   * ```ts
+   * // Delete all rows in the 'cars' table
+   * await db.delete(cars);
+   *
+   * // Delete rows with filters and conditions
+   * await db.delete(cars).where(eq(cars.color, 'green'));
+   *
+   * // Delete with returning clause
+   * const deletedCar: Car[] = await db.delete(cars)
+   *   .where(eq(cars.id, 1))
+   *   .returning();
+   * ```
+   */
+  delete(from) {
+    return new SQLiteDeleteBase(from, this.session, this.dialect);
+  }
+  run(query) {
+    let sql2 = query.getSQL();
+    return this.resultKind === "async" ? new SQLiteRaw(
+      async () => this.session.run(sql2),
+      () => sql2,
+      "run",
+      this.dialect,
+      this.session.extractRawRunValueFromBatchResult.bind(this.session)
+    ) : this.session.run(sql2);
+  }
+  all(query) {
+    let sql2 = query.getSQL();
+    return this.resultKind === "async" ? new SQLiteRaw(
+      async () => this.session.all(sql2),
+      () => sql2,
+      "all",
+      this.dialect,
+      this.session.extractRawAllValueFromBatchResult.bind(this.session)
+    ) : this.session.all(sql2);
+  }
+  get(query) {
+    let sql2 = query.getSQL();
+    return this.resultKind === "async" ? new SQLiteRaw(
+      async () => this.session.get(sql2),
+      () => sql2,
+      "get",
+      this.dialect,
+      this.session.extractRawGetValueFromBatchResult.bind(this.session)
+    ) : this.session.get(sql2);
+  }
+  values(query) {
+    let sql2 = query.getSQL();
+    return this.resultKind === "async" ? new SQLiteRaw(
+      async () => this.session.values(sql2),
+      () => sql2,
+      "values",
+      this.dialect,
+      this.session.extractRawValuesValueFromBatchResult.bind(this.session)
+    ) : this.session.values(sql2);
+  }
+  transaction(transaction, config) {
+    return this.session.transaction(transaction, config);
+  }
+};
+_a68 = entityKind, __publicField(BaseSQLiteDatabase, _a68, "BaseSQLiteDatabase");
+
+// node_modules/drizzle-orm/sqlite-core/session.js
+var _a69, ExecuteResultSync = class extends QueryPromise {
+  constructor(resultCb) {
+    super(), this.resultCb = resultCb;
+  }
+  async execute() {
+    return this.resultCb();
+  }
+  sync() {
+    return this.resultCb();
+  }
+};
+_a69 = entityKind, __publicField(ExecuteResultSync, _a69, "ExecuteResultSync");
+var _a70, SQLitePreparedQuery = class {
+  constructor(mode2, executeMethod, query) {
+    this.mode = mode2, this.executeMethod = executeMethod, this.query = query;
+  }
+  /** @internal */
+  joinsNotNullableMap;
+  getQuery() {
+    return this.query;
+  }
+  mapRunResult(result, _isFromBatch) {
+    return result;
+  }
+  mapAllResult(_result, _isFromBatch) {
+    throw new Error("Not implemented");
+  }
+  mapGetResult(_result, _isFromBatch) {
+    throw new Error("Not implemented");
+  }
+  execute(placeholderValues) {
+    return this.mode === "async" ? this[this.executeMethod](placeholderValues) : new ExecuteResultSync(() => this[this.executeMethod](placeholderValues));
+  }
+  mapResult(response, isFromBatch) {
+    switch (this.executeMethod) {
+      case "run":
+        return this.mapRunResult(response, isFromBatch);
+      case "all":
+        return this.mapAllResult(response, isFromBatch);
+      case "get":
+        return this.mapGetResult(response, isFromBatch);
+    }
+  }
+};
+_a70 = entityKind, __publicField(SQLitePreparedQuery, _a70, "PreparedQuery");
+var _a71, SQLiteSession = class {
+  constructor(dialect) {
+    this.dialect = dialect;
+  }
+  prepareOneTimeQuery(query, fields, executeMethod) {
+    return this.prepareQuery(query, fields, executeMethod);
+  }
+  run(query) {
+    let staticQuery = this.dialect.sqlToQuery(query);
+    try {
+      return this.prepareOneTimeQuery(staticQuery, void 0, "run").run();
+    } catch (err) {
+      throw new DrizzleError({ cause: err, message: `Failed to run the query '${staticQuery.sql}'` });
+    }
+  }
+  /** @internal */
+  extractRawRunValueFromBatchResult(result) {
+    return result;
+  }
+  all(query) {
+    return this.prepareOneTimeQuery(this.dialect.sqlToQuery(query), void 0, "run").all();
+  }
+  /** @internal */
+  extractRawAllValueFromBatchResult(_result) {
+    throw new Error("Not implemented");
+  }
+  get(query) {
+    return this.prepareOneTimeQuery(this.dialect.sqlToQuery(query), void 0, "run").get();
+  }
+  /** @internal */
+  extractRawGetValueFromBatchResult(_result) {
+    throw new Error("Not implemented");
+  }
+  values(query) {
+    return this.prepareOneTimeQuery(this.dialect.sqlToQuery(query), void 0, "run").values();
+  }
+  /** @internal */
+  extractRawValuesValueFromBatchResult(_result) {
+    throw new Error("Not implemented");
+  }
+};
+_a71 = entityKind, __publicField(SQLiteSession, _a71, "SQLiteSession");
+var _a72, SQLiteTransaction = class extends BaseSQLiteDatabase {
+  constructor(resultType, dialect, session, schema, nestedIndex = 0) {
+    super(resultType, dialect, session, schema), this.schema = schema, this.nestedIndex = nestedIndex;
+  }
+  rollback() {
+    throw new TransactionRollbackError();
+  }
+};
+_a72 = entityKind, __publicField(SQLiteTransaction, _a72, "SQLiteTransaction");
+
+// node_modules/drizzle-orm/d1/session.js
+var _a73, SQLiteD1Session = class extends SQLiteSession {
+  constructor(client, dialect, schema, options = {}) {
+    super(dialect), this.client = client, this.schema = schema, this.options = options, this.logger = options.logger ?? new NoopLogger();
+  }
+  logger;
+  prepareQuery(query, fields, executeMethod, customResultMapper) {
+    let stmt = this.client.prepare(query.sql);
+    return new D1PreparedQuery(stmt, query, this.logger, fields, executeMethod, customResultMapper);
+  }
+  /*override */
+  async batch(queries) {
+    let preparedQueries = [], builtQueries = [];
+    for (let query of queries) {
+      let preparedQuery = query._prepare(), builtQuery = preparedQuery.getQuery();
+      if (preparedQueries.push(preparedQuery), builtQuery.params.length > 0)
+        builtQueries.push(preparedQuery.stmt.bind(...builtQuery.params));
+      else {
+        let builtQuery2 = preparedQuery.getQuery();
+        builtQueries.push(
+          this.client.prepare(builtQuery2.sql).bind(...builtQuery2.params)
+        );
+      }
+    }
+    return (await this.client.batch(builtQueries)).map((result, i) => preparedQueries[i].mapResult(result, !0));
+  }
+  extractRawAllValueFromBatchResult(result) {
+    return result.results;
+  }
+  extractRawGetValueFromBatchResult(result) {
+    return result.results[0];
+  }
+  extractRawValuesValueFromBatchResult(result) {
+    return d1ToRawMapping(result.results);
+  }
+  async transaction(transaction, config) {
+    let tx = new D1Transaction("async", this.dialect, this, this.schema);
+    await this.run(sql.raw(`begin${config?.behavior ? " " + config.behavior : ""}`));
+    try {
+      let result = await transaction(tx);
+      return await this.run(sql`commit`), result;
+    } catch (err) {
+      throw await this.run(sql`rollback`), err;
+    }
+  }
+};
+_a73 = entityKind, __publicField(SQLiteD1Session, _a73, "SQLiteD1Session");
+var _a74, _D1Transaction = class extends SQLiteTransaction {
+  async transaction(transaction) {
+    let savepointName = `sp${this.nestedIndex}`, tx = new _D1Transaction("async", this.dialect, this.session, this.schema, this.nestedIndex + 1);
+    await this.session.run(sql.raw(`savepoint ${savepointName}`));
+    try {
+      let result = await transaction(tx);
+      return await this.session.run(sql.raw(`release savepoint ${savepointName}`)), result;
+    } catch (err) {
+      throw await this.session.run(sql.raw(`rollback to savepoint ${savepointName}`)), err;
+    }
+  }
+}, D1Transaction = _D1Transaction;
+_a74 = entityKind, __publicField(D1Transaction, _a74, "D1Transaction");
+function d1ToRawMapping(results) {
+  let rows = [];
+  for (let row of results) {
+    let entry2 = Object.keys(row).map((k2) => row[k2]);
+    rows.push(entry2);
+  }
+  return rows;
+}
+var _a75, D1PreparedQuery = class extends SQLitePreparedQuery {
+  constructor(stmt, query, logger, fields, executeMethod, customResultMapper) {
+    super("async", executeMethod, query), this.logger = logger, this.customResultMapper = customResultMapper, this.fields = fields, this.stmt = stmt;
+  }
+  /** @internal */
+  customResultMapper;
+  /** @internal */
+  fields;
+  /** @internal */
+  stmt;
+  run(placeholderValues) {
+    let params = fillPlaceholders(this.query.params, placeholderValues ?? {});
+    return this.logger.logQuery(this.query.sql, params), this.stmt.bind(...params).run();
+  }
+  async all(placeholderValues) {
+    let { fields, query, logger, stmt, customResultMapper } = this;
+    if (!fields && !customResultMapper) {
+      let params = fillPlaceholders(query.params, placeholderValues ?? {});
+      return logger.logQuery(query.sql, params), stmt.bind(...params).all().then(({ results }) => this.mapAllResult(results));
+    }
+    let rows = await this.values(placeholderValues);
+    return this.mapAllResult(rows);
+  }
+  mapAllResult(rows, isFromBatch) {
+    return isFromBatch && (rows = d1ToRawMapping(rows.results)), !this.fields && !this.customResultMapper ? rows : this.customResultMapper ? this.customResultMapper(rows) : rows.map((row) => mapResultRow(this.fields, row, this.joinsNotNullableMap));
+  }
+  async get(placeholderValues) {
+    let { fields, joinsNotNullableMap, query, logger, stmt, customResultMapper } = this;
+    if (!fields && !customResultMapper) {
+      let params = fillPlaceholders(query.params, placeholderValues ?? {});
+      return logger.logQuery(query.sql, params), stmt.bind(...params).all().then(({ results }) => results[0]);
+    }
+    let rows = await this.values(placeholderValues);
+    if (rows[0])
+      return customResultMapper ? customResultMapper(rows) : mapResultRow(fields, rows[0], joinsNotNullableMap);
+  }
+  mapGetResult(result, isFromBatch) {
+    return isFromBatch && (result = d1ToRawMapping(result.results)[0]), !this.fields && !this.customResultMapper ? result : this.customResultMapper ? this.customResultMapper([result]) : mapResultRow(this.fields, result, this.joinsNotNullableMap);
+  }
+  values(placeholderValues) {
+    let params = fillPlaceholders(this.query.params, placeholderValues ?? {});
+    return this.logger.logQuery(this.query.sql, params), this.stmt.bind(...params).raw();
+  }
+};
+_a75 = entityKind, __publicField(D1PreparedQuery, _a75, "D1PreparedQuery");
+
+// node_modules/drizzle-orm/d1/driver.js
+var _a76, DrizzleD1Database = class extends BaseSQLiteDatabase {
+  async batch(batch) {
+    return this.session.batch(batch);
+  }
+};
+_a76 = entityKind, __publicField(DrizzleD1Database, _a76, "LibSQLDatabase");
+function drizzle(client, config = {}) {
+  let dialect = new SQLiteAsyncDialect(), logger;
+  config.logger === !0 ? logger = new DefaultLogger() : config.logger !== !1 && (logger = config.logger);
+  let schema;
+  if (config.schema) {
+    let tablesConfig = extractTablesRelationalConfig(
+      config.schema,
+      createTableRelationsHelpers
+    );
+    schema = {
+      fullSchema: config.schema,
+      schema: tablesConfig.tables,
+      tableNamesMap: tablesConfig.tableNamesMap
+    };
+  }
+  let session = new SQLiteD1Session(client, dialect, schema, { logger });
+  return new DrizzleD1Database("async", dialect, session, schema);
+}
+
+// database/sqlite/user.ts
+var user = sqliteTable("user", {
+  id: integer("id").primaryKey({ autoIncrement: !0 }),
+  // SQLite uses INTEGER for auto-increment primary keys
+  username: text("username").notNull().unique(),
+  // Assuming email should be unique
+  password: text("password").notNull(),
+  role: text("role", { enum: ["1", "2", "3"] }),
+  createdAt: integer("createdAt").notNull(),
+  // Using integer for Unix timestamp
+  updatedAt: integer("updatedAt").notNull()
+});
+
+// api_v2/repository/userRepository.ts
+var UserRepository = class {
+  db;
+  constructor(env) {
+    this.db = drizzle(env.DB);
+  }
+  async findUserByUsername(username) {
+    let result = await this.db.select().from(user).where(eq(user.username, username)).execute();
+    return result.length > 0 ? result[0] : null;
+  }
+  async addUser(userData) {
+    let unixTimestamp = Math.floor(Date.now() / 1e3), result = await this.db.insert(user).values({
+      ...userData,
+      createdAt: unixTimestamp,
+      updatedAt: unixTimestamp
+    }).returning({ insertedId: user.id }).execute();
+    return result.length > 0 ? result[0].insertedId : null;
+  }
+}, userRepository_default = UserRepository;
+
+// node_modules/bcrypt-ts/dist/browser.mjs
+var A = "./ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""), I = Array.from({ length: 64 }, (n, r) => r), f = (n) => Array(n).fill(-1), E = [...f(46), 0, 1, ...I.slice(54, 64), ...f(7), ...I.slice(2, 28), ...f(6), ...I.slice(28, 54), ...f(5)], L = [608135816, 2242054355, 320440878, 57701188, 2752067618, 698298832, 137296536, 3964562569, 1160258022, 953160567, 3193202383, 887688300, 3232508343, 3380367581, 1065670069, 3041331479, 2450970073, 2306472731], b = [3509652390, 2564797868, 805139163, 3491422135, 3101798381, 1780907670, 3128725573, 4046225305, 614570311, 3012652279, 134345442, 2240740374, 1667834072, 1901547113, 2757295779, 4103290238, 227898511, 1921955416, 1904987480, 2182433518, 2069144605, 3260701109, 2620446009, 720527379, 3318853667, 677414384, 3393288472, 3101374703, 2390351024, 1614419982, 1822297739, 2954791486, 3608508353, 3174124327, 2024746970, 1432378464, 3864339955, 2857741204, 1464375394, 1676153920, 1439316330, 715854006, 3033291828, 289532110, 2706671279, 2087905683, 3018724369, 1668267050, 732546397, 1947742710, 3462151702, 2609353502, 2950085171, 1814351708, 2050118529, 680887927, 999245976, 1800124847, 3300911131, 1713906067, 1641548236, 4213287313, 1216130144, 1575780402, 4018429277, 3917837745, 3693486850, 3949271944, 596196993, 3549867205, 258830323, 2213823033, 772490370, 2760122372, 1774776394, 2652871518, 566650946, 4142492826, 1728879713, 2882767088, 1783734482, 3629395816, 2517608232, 2874225571, 1861159788, 326777828, 3124490320, 2130389656, 2716951837, 967770486, 1724537150, 2185432712, 2364442137, 1164943284, 2105845187, 998989502, 3765401048, 2244026483, 1075463327, 1455516326, 1322494562, 910128902, 469688178, 1117454909, 936433444, 3490320968, 3675253459, 1240580251, 122909385, 2157517691, 634681816, 4142456567, 3825094682, 3061402683, 2540495037, 79693498, 3249098678, 1084186820, 1583128258, 426386531, 1761308591, 1047286709, 322548459, 995290223, 1845252383, 2603652396, 3431023940, 2942221577, 3202600964, 3727903485, 1712269319, 422464435, 3234572375, 1170764815, 3523960633, 3117677531, 1434042557, 442511882, 3600875718, 1076654713, 1738483198, 4213154764, 2393238008, 3677496056, 1014306527, 4251020053, 793779912, 2902807211, 842905082, 4246964064, 1395751752, 1040244610, 2656851899, 3396308128, 445077038, 3742853595, 3577915638, 679411651, 2892444358, 2354009459, 1767581616, 3150600392, 3791627101, 3102740896, 284835224, 4246832056, 1258075500, 768725851, 2589189241, 3069724005, 3532540348, 1274779536, 3789419226, 2764799539, 1660621633, 3471099624, 4011903706, 913787905, 3497959166, 737222580, 2514213453, 2928710040, 3937242737, 1804850592, 3499020752, 2949064160, 2386320175, 2390070455, 2415321851, 4061277028, 2290661394, 2416832540, 1336762016, 1754252060, 3520065937, 3014181293, 791618072, 3188594551, 3933548030, 2332172193, 3852520463, 3043980520, 413987798, 3465142937, 3030929376, 4245938359, 2093235073, 3534596313, 375366246, 2157278981, 2479649556, 555357303, 3870105701, 2008414854, 3344188149, 4221384143, 3956125452, 2067696032, 3594591187, 2921233993, 2428461, 544322398, 577241275, 1471733935, 610547355, 4027169054, 1432588573, 1507829418, 2025931657, 3646575487, 545086370, 48609733, 2200306550, 1653985193, 298326376, 1316178497, 3007786442, 2064951626, 458293330, 2589141269, 3591329599, 3164325604, 727753846, 2179363840, 146436021, 1461446943, 4069977195, 705550613, 3059967265, 3887724982, 4281599278, 3313849956, 1404054877, 2845806497, 146425753, 1854211946, 1266315497, 3048417604, 3681880366, 3289982499, 290971e4, 1235738493, 2632868024, 2414719590, 3970600049, 1771706367, 1449415276, 3266420449, 422970021, 1963543593, 2690192192, 3826793022, 1062508698, 1531092325, 1804592342, 2583117782, 2714934279, 4024971509, 1294809318, 4028980673, 1289560198, 2221992742, 1669523910, 35572830, 157838143, 1052438473, 1016535060, 1802137761, 1753167236, 1386275462, 3080475397, 2857371447, 1040679964, 2145300060, 2390574316, 1461121720, 2956646967, 4031777805, 4028374788, 33600511, 2920084762, 1018524850, 629373528, 3691585981, 3515945977, 2091462646, 2486323059, 586499841, 988145025, 935516892, 3367335476, 2599673255, 2839830854, 265290510, 3972581182, 2759138881, 3795373465, 1005194799, 847297441, 406762289, 1314163512, 1332590856, 1866599683, 4127851711, 750260880, 613907577, 1450815602, 3165620655, 3734664991, 3650291728, 3012275730, 3704569646, 1427272223, 778793252, 1343938022, 2676280711, 2052605720, 1946737175, 3164576444, 3914038668, 3967478842, 3682934266, 1661551462, 3294938066, 4011595847, 840292616, 3712170807, 616741398, 312560963, 711312465, 1351876610, 322626781, 1910503582, 271666773, 2175563734, 1594956187, 70604529, 3617834859, 1007753275, 1495573769, 4069517037, 2549218298, 2663038764, 504708206, 2263041392, 3941167025, 2249088522, 1514023603, 1998579484, 1312622330, 694541497, 2582060303, 2151582166, 1382467621, 776784248, 2618340202, 3323268794, 2497899128, 2784771155, 503983604, 4076293799, 907881277, 423175695, 432175456, 1378068232, 4145222326, 3954048622, 3938656102, 3820766613, 2793130115, 2977904593, 26017576, 3274890735, 3194772133, 1700274565, 1756076034, 4006520079, 3677328699, 720338349, 1533947780, 354530856, 688349552, 3973924725, 1637815568, 332179504, 3949051286, 53804574, 2852348879, 3044236432, 1282449977, 3583942155, 3416972820, 4006381244, 1617046695, 2628476075, 3002303598, 1686838959, 431878346, 2686675385, 1700445008, 1080580658, 1009431731, 832498133, 3223435511, 2605976345, 2271191193, 2516031870, 1648197032, 4164389018, 2548247927, 300782431, 375919233, 238389289, 3353747414, 2531188641, 2019080857, 1475708069, 455242339, 2609103871, 448939670, 3451063019, 1395535956, 2413381860, 1841049896, 1491858159, 885456874, 4264095073, 4001119347, 1565136089, 3898914787, 1108368660, 540939232, 1173283510, 2745871338, 3681308437, 4207628240, 3343053890, 4016749493, 1699691293, 1103962373, 3625875870, 2256883143, 3830138730, 1031889488, 3479347698, 1535977030, 4236805024, 3251091107, 2132092099, 1774941330, 1199868427, 1452454533, 157007616, 2904115357, 342012276, 595725824, 1480756522, 206960106, 497939518, 591360097, 863170706, 2375253569, 3596610801, 1814182875, 2094937945, 3421402208, 1082520231, 3463918190, 2785509508, 435703966, 3908032597, 1641649973, 2842273706, 3305899714, 1510255612, 2148256476, 2655287854, 3276092548, 4258621189, 236887753, 3681803219, 274041037, 1734335097, 3815195456, 3317970021, 1899903192, 1026095262, 4050517792, 356393447, 2410691914, 3873677099, 3682840055, 3913112168, 2491498743, 4132185628, 2489919796, 1091903735, 1979897079, 3170134830, 3567386728, 3557303409, 857797738, 1136121015, 1342202287, 507115054, 2535736646, 337727348, 3213592640, 1301675037, 2528481711, 1895095763, 1721773893, 3216771564, 62756741, 2142006736, 835421444, 2531993523, 1442658625, 3659876326, 2882144922, 676362277, 1392781812, 170690266, 3921047035, 1759253602, 3611846912, 1745797284, 664899054, 1329594018, 3901205900, 3045908486, 2062866102, 2865634940, 3543621612, 3464012697, 1080764994, 553557557, 3656615353, 3996768171, 991055499, 499776247, 1265440854, 648242737, 3940784050, 980351604, 3713745714, 1749149687, 3396870395, 4211799374, 3640570775, 1161844396, 3125318951, 1431517754, 545492359, 4268468663, 3499529547, 1437099964, 2702547544, 3433638243, 2581715763, 2787789398, 1060185593, 1593081372, 2418618748, 4260947970, 69676912, 2159744348, 86519011, 2512459080, 3838209314, 1220612927, 3339683548, 133810670, 1090789135, 1078426020, 1569222167, 845107691, 3583754449, 4072456591, 1091646820, 628848692, 1613405280, 3757631651, 526609435, 236106946, 48312990, 2942717905, 3402727701, 1797494240, 859738849, 992217954, 4005476642, 2243076622, 3870952857, 3732016268, 765654824, 3490871365, 2511836413, 1685915746, 3888969200, 1414112111, 2273134842, 3281911079, 4080962846, 172450625, 2569994100, 980381355, 4109958455, 2819808352, 2716589560, 2568741196, 3681446669, 3329971472, 1835478071, 660984891, 3704678404, 4045999559, 3422617507, 3040415634, 1762651403, 1719377915, 3470491036, 2693910283, 3642056355, 3138596744, 1364962596, 2073328063, 1983633131, 926494387, 3423689081, 2150032023, 4096667949, 1749200295, 3328846651, 309677260, 2016342300, 1779581495, 3079819751, 111262694, 1274766160, 443224088, 298511866, 1025883608, 3806446537, 1145181785, 168956806, 3641502830, 3584813610, 1689216846, 3666258015, 3200248200, 1692713982, 2646376535, 4042768518, 1618508792, 1610833997, 3523052358, 4130873264, 2001055236, 3610705100, 2202168115, 4028541809, 2961195399, 1006657119, 2006996926, 3186142756, 1430667929, 3210227297, 1314452623, 4074634658, 4101304120, 2273951170, 1399257539, 3367210612, 3027628629, 1190975929, 2062231137, 2333990788, 2221543033, 2438960610, 1181637006, 548689776, 2362791313, 3372408396, 3104550113, 3145860560, 296247880, 1970579870, 3078560182, 3769228297, 1714227617, 3291629107, 3898220290, 166772364, 1251581989, 493813264, 448347421, 195405023, 2709975567, 677966185, 3703036547, 1463355134, 2715995803, 1338867538, 1343315457, 2802222074, 2684532164, 233230375, 2599980071, 2000651841, 3277868038, 1638401717, 4028070440, 3237316320, 6314154, 819756386, 300326615, 590932579, 1405279636, 3267499572, 3150704214, 2428286686, 3959192993, 3461946742, 1862657033, 1266418056, 963775037, 2089974820, 2263052895, 1917689273, 448879540, 3550394620, 3981727096, 150775221, 3627908307, 1303187396, 508620638, 2975983352, 2726630617, 1817252668, 1876281319, 1457606340, 908771278, 3720792119, 3617206836, 2455994898, 1729034894, 1080033504, 976866871, 3556439503, 2881648439, 1522871579, 1555064734, 1336096578, 3548522304, 2579274686, 3574697629, 3205460757, 3593280638, 3338716283, 3079412587, 564236357, 2993598910, 1781952180, 1464380207, 3163844217, 3332601554, 1699332808, 1393555694, 1183702653, 3581086237, 1288719814, 691649499, 2847557200, 2895455976, 3193889540, 2717570544, 1781354906, 1676643554, 2592534050, 3230253752, 1126444790, 2770207658, 2633158820, 2210423226, 2615765581, 2414155088, 3127139286, 673620729, 2805611233, 1269405062, 4015350505, 3341807571, 4149409754, 1057255273, 2012875353, 2162469141, 2276492801, 2601117357, 993977747, 3918593370, 2654263191, 753973209, 36408145, 2530585658, 25011837, 3520020182, 2088578344, 530523599, 2918365339, 1524020338, 1518925132, 3760827505, 3759777254, 1202760957, 3985898139, 3906192525, 674977740, 4174734889, 2031300136, 2019492241, 3983892565, 4153806404, 3822280332, 352677332, 2297720250, 60907813, 90501309, 3286998549, 1016092578, 2535922412, 2839152426, 457141659, 509813237, 4120667899, 652014361, 1966332200, 2975202805, 55981186, 2327461051, 676427537, 3255491064, 2882294119, 3433927263, 1307055953, 942726286, 933058658, 2468411793, 3933900994, 4215176142, 1361170020, 2001714738, 2830558078, 3274259782, 1222529897, 1679025792, 2729314320, 3714953764, 1770335741, 151462246, 3013232138, 1682292957, 1483529935, 471910574, 1539241949, 458788160, 3436315007, 1807016891, 3718408830, 978976581, 1043663428, 3165965781, 1927990952, 4200891579, 2372276910, 3208408903, 3533431907, 1412390302, 2931980059, 4132332400, 1947078029, 3881505623, 4168226417, 2941484381, 1077988104, 1320477388, 886195818, 18198404, 3786409e3, 2509781533, 112762804, 3463356488, 1866414978, 891333506, 18488651, 661792760, 1628790961, 3885187036, 3141171499, 876946877, 2693282273, 1372485963, 791857591, 2686433993, 3759982718, 3167212022, 3472953795, 2716379847, 445679433, 3561995674, 3504004811, 3574258232, 54117162, 3331405415, 2381918588, 3769707343, 4154350007, 1140177722, 4074052095, 668550556, 3214352940, 367459370, 261225585, 2610173221, 4209349473, 3468074219, 3265815641, 314222801, 3066103646, 3808782860, 282218597, 3406013506, 3773591054, 379116347, 1285071038, 846784868, 2669647154, 3771962079, 3550491691, 2305946142, 453669953, 1268987020, 3317592352, 3279303384, 3744833421, 2610507566, 3859509063, 266596637, 3847019092, 517658769, 3462560207, 3443424879, 370717030, 4247526661, 2224018117, 4143653529, 4112773975, 2788324899, 2477274417, 1456262402, 2901442914, 1517677493, 1846949527, 2295493580, 3734397586, 2176403920, 1280348187, 1908823572, 3871786941, 846861322, 1172426758, 3287448474, 3383383037, 1655181056, 3139813346, 901632758, 1897031941, 2986607138, 3066810236, 3447102507, 1393639104, 373351379, 950779232, 625454576, 3124240540, 4148612726, 2007998917, 544563296, 2244738638, 2330496472, 2058025392, 1291430526, 424198748, 50039436, 29584100, 3605783033, 2429876329, 2791104160, 1057563949, 3255363231, 3075367218, 3463963227, 1469046755, 985887462], C = [1332899944, 1700884034, 1701343084, 1684370003, 1668446532, 1869963892], S = (n, r) => {
+  if (r <= 0 || r > n.length)
+    throw Error(`Illegal len: ${r}`);
+  let o = 0, t, e, l = [];
+  for (; o < r; ) {
+    if (t = n[o++] & 255, l.push(A[t >> 2 & 63]), t = (t & 3) << 4, o >= r) {
+      l.push(A[t & 63]);
+      break;
+    }
+    if (e = n[o++] & 255, t |= e >> 4 & 15, l.push(A[t & 63]), t = (e & 15) << 2, o >= r) {
+      l.push(A[t & 63]);
+      break;
+    }
+    e = n[o++] & 255, t |= e >> 6 & 3, l.push(A[t & 63]), l.push(A[e & 63]);
+  }
+  return l.join("");
+}, O = (n, r) => {
+  if (r <= 0)
+    throw Error(`Illegal len: ${r}`);
+  let o = n.length, t = 0, e = 0, l, s, h, u, i, p, g = [];
+  for (; t < o - 1 && e < r && (p = n.charCodeAt(t++), l = p < E.length ? E[p] : -1, p = n.charCodeAt(t++), s = p < E.length ? E[p] : -1, !(l == -1 || s == -1 || (i = l << 2 >>> 0, i |= (s & 48) >> 4, g.push(String.fromCharCode(i)), ++e >= r || t >= o) || (p = n.charCodeAt(t++), h = p < E.length ? E[p] : -1, h == -1) || (i = (s & 15) << 4 >>> 0, i |= (h & 60) >> 2, g.push(String.fromCharCode(i)), ++e >= r || t >= o))); )
+    p = n.charCodeAt(t++), u = p < E.length ? E[p] : -1, i = (h & 3) << 6 >>> 0, i |= u, g.push(String.fromCharCode(i)), ++e;
+  return g.map((c) => c.charCodeAt(0));
+}, D = (n, r) => {
+  let o = null;
+  for (typeof n == "number" && (o = n, n = () => null); o !== null || (o = n()) !== null; )
+    o < 128 ? r(o & 127) : o < 2048 ? (r(o >> 6 & 31 | 192), r(o & 63 | 128)) : o < 65536 ? (r(o >> 12 & 15 | 224), r(o >> 6 & 63 | 128), r(o & 63 | 128)) : (r(o >> 18 & 7 | 240), r(o >> 12 & 63 | 128), r(o >> 6 & 63 | 128), r(o & 63 | 128)), o = null;
+}, B = (n, r) => {
+  let o, t = null;
+  for (; (o = t !== null ? t : n()) !== null; ) {
+    if (o >= 55296 && o <= 57343 && (t = n()) !== null && t >= 56320 && t <= 57343) {
+      r((o - 55296) * 1024 + t - 56320 + 65536), t = null;
+      continue;
+    }
+    r(o);
+  }
+  t !== null && r(t);
+}, j = (n, r) => {
+  B(n, function(o) {
+    D(o, r);
+  });
+}, w = typeof process == "object" && process.env.NEXT_RUNTIME === "edge" ? setTimeout : typeof setImmediate == "function" ? setImmediate : typeof process == "object" && typeof process.nextTick == "function" ? process.nextTick : setTimeout, k = (n) => {
+  let r = [], o = 0;
+  return j(() => o >= n.length ? null : n.charCodeAt(o++), (t) => {
+    r.push(t);
+  }), r;
+}, _ = (n, r, o, t) => {
+  let e, l = n[r], s = n[r + 1];
+  return l ^= o[0], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[1], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[2], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[3], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[4], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[5], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[6], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[7], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[8], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[9], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[10], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[11], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[12], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[13], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[14], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[15], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[16], n[r] = s ^ o[17], n[r + 1] = l, n;
+}, T = (n, r) => {
+  let o = 0;
+  for (let t = 0; t < 4; ++t)
+    o = o << 8 | n[r] & 255, r = (r + 1) % n.length;
+  return { key: o, offp: r };
+}, N = (n, r, o) => {
+  let t = r.length, e = o.length, l = 0, s = [0, 0], h;
+  for (let u = 0; u < t; u++)
+    h = T(n, l), l = h.offp, r[u] = r[u] ^ h.key;
+  for (let u = 0; u < t; u += 2)
+    s = _(s, 0, r, o), r[u] = s[0], r[u + 1] = s[1];
+  for (let u = 0; u < e; u += 2)
+    s = _(s, 0, r, o), o[u] = s[0], o[u + 1] = s[1];
+}, F = (n, r, o, t) => {
+  let e = o.length, l = t.length, s = 0, h = [0, 0], u;
+  for (let i = 0; i < e; i++)
+    u = T(r, s), s = u.offp, o[i] = o[i] ^ u.key;
+  s = 0;
+  for (let i = 0; i < e; i += 2)
+    u = T(n, s), s = u.offp, h[0] ^= u.key, u = T(n, s), s = u.offp, h[1] ^= u.key, h = _(h, 0, o, t), o[i] = h[0], o[i + 1] = h[1];
+  for (let i = 0; i < l; i += 2)
+    u = T(n, s), s = u.offp, h[0] ^= u.key, u = T(n, s), s = u.offp, h[1] ^= u.key, h = _(h, 0, o, t), t[i] = h[0], t[i + 1] = h[1];
+}, R = (n, r, o, t, e) => {
+  let l = C.slice(), s = l.length;
+  if (o < 4 || o > 31) {
+    let c = new Error(`Illegal number of rounds (4-31): ${o}`);
+    if (t === !1)
+      return Promise.reject(c);
+    throw c;
+  }
+  if (r.length !== 16) {
+    let c = new Error(`Illegal salt length: ${r.length} != 16`);
+    if (t === !1)
+      return Promise.reject(c);
+    throw c;
+  }
+  o = 1 << o >>> 0;
+  let h, u, i = 0, p;
+  Int32Array ? (h = new Int32Array(L), u = new Int32Array(b)) : (h = L.slice(), u = b.slice()), F(r, n, h, u);
+  let g = () => {
+    if (e && e(i / o), i < o) {
+      let c = Date.now();
+      for (; i < o && (i = i + 1, N(n, h, u), N(r, h, u), !(Date.now() - c > 100)); )
+        ;
+    } else {
+      for (i = 0; i < 64; i++)
+        for (p = 0; p < s >> 1; p++)
+          _(l, p << 1, h, u);
+      let c = [];
+      for (i = 0; i < s; i++)
+        c.push((l[i] >> 24 & 255) >>> 0), c.push((l[i] >> 16 & 255) >>> 0), c.push((l[i] >> 8 & 255) >>> 0), c.push((l[i] & 255) >>> 0);
+      return t === !1 ? Promise.resolve(c) : c;
+    }
+    if (t === !1)
+      return new Promise((c) => w(() => {
+        g().then(c);
+      }));
+  };
+  if (t === !1)
+    return g();
+  {
+    let c;
+    for (; ; )
+      if (typeof (c = g()) < "u")
+        return c || [];
+  }
+}, G = (n) => {
+  try {
+    let r;
+    typeof window < "u" ? r = window.crypto ?? window.msCrypto : r = globalThis.crypto;
+    let o = new Uint32Array(n);
+    return r?.getRandomValues(o), Array.from(o);
+  } catch {
+    throw Error("WebCryptoAPI is not available");
+  }
+}, m = (n = 10) => {
+  if (typeof n != "number")
+    throw Error("Illegal arguments: " + typeof n);
+  n < 4 ? n = 4 : n > 31 && (n = 31);
+  let r = [];
+  return r.push("$2a$"), n < 10 && r.push("0"), r.push(n.toString()), r.push("$"), r.push(S(G(16), 16)), r.join("");
+}, $ = (n = 10) => {
+  if (typeof n != "number")
+    throw Error("illegal arguments: " + typeof n);
+  return new Promise((r, o) => w(() => {
+    try {
+      r(m(n));
+    } catch (t) {
+      o(t);
+    }
+  }));
+};
+function d(n, r, o, t) {
+  if (typeof n != "string" || typeof r != "string") {
+    let a = new Error("Invalid string / salt: Not a string");
+    if (o === !1)
+      return Promise.reject(a);
+    throw a;
+  }
+  let e, l;
+  if (r.charAt(0) !== "$" || r.charAt(1) !== "2") {
+    let a = new Error("Invalid salt version: " + r.substring(0, 2));
+    if (o === !1)
+      return Promise.reject(a);
+    throw a;
+  }
+  if (r.charAt(2) === "$")
+    e = "\0", l = 3;
+  else {
+    if (e = r.charAt(2), e !== "a" && e !== "b" && e !== "y" || r.charAt(3) !== "$") {
+      let a = Error("Invalid salt revision: " + r.substring(2, 4));
+      if (o === !1)
+        return Promise.reject(a);
+      throw a;
+    }
+    l = 4;
+  }
+  if (r.charAt(l + 2) > "$") {
+    let a = new Error("Missing salt rounds");
+    if (o === !1)
+      return Promise.reject(a);
+    throw a;
+  }
+  let s = parseInt(r.substring(l, l + 1), 10) * 10, h = parseInt(r.substring(l + 1, l + 2), 10), u = s + h, i = r.substring(l + 3, l + 25);
+  n += e >= "a" ? "\0" : "";
+  let p = k(n), g = O(i, 16), c = (a) => {
+    let y = [];
+    return y.push("$2"), e >= "a" && y.push(e), y.push("$"), u < 10 && y.push("0"), y.push(u.toString()), y.push("$"), y.push(S(g, g.length)), y.push(S(a, C.length * 4 - 1)), y.join("");
+  };
+  return o === !1 ? R(p, g, u, !1, t).then((a) => c(a)) : c(R(p, g, u, !0, t));
+}
+var P = function(n, r, o) {
+  return typeof n == "string" && typeof r == "number" ? $(r).then((t) => d(n, t, !1, o)) : typeof n == "string" && typeof r == "string" ? d(n, r, !1, o) : Promise.reject(new Error(`Illegal arguments: ${typeof n}, ${typeof r}`));
+};
+var v = (n, r, o) => new Promise((t, e) => {
+  if (typeof n != "string" || typeof r != "string") {
+    w(() => e(new Error(`Illegal arguments: ${typeof n}, ${typeof r}`)));
+    return;
+  }
+  if (r.length !== 60) {
+    w(() => e(!1));
+    return;
+  }
+  P(n, r.substring(0, 29), o).then((l) => t(l === r)).catch((l) => e(l));
+});
+
+// node_modules/@tsndr/cloudflare-worker-jwt/index.js
+function bytesToByteString(bytes) {
+  let byteStr = "";
+  for (let i = 0; i < bytes.byteLength; i++)
+    byteStr += String.fromCharCode(bytes[i]);
+  return byteStr;
+}
+function byteStringToBytes(byteStr) {
+  let bytes = new Uint8Array(byteStr.length);
+  for (let i = 0; i < byteStr.length; i++)
+    bytes[i] = byteStr.charCodeAt(i);
+  return bytes;
+}
+function arrayBufferToBase64String(arrayBuffer) {
+  return btoa(bytesToByteString(new Uint8Array(arrayBuffer)));
+}
+function base64StringToArrayBuffer(b64str) {
+  return byteStringToBytes(atob(b64str)).buffer;
+}
+function textToArrayBuffer(str) {
+  return byteStringToBytes(decodeURI(encodeURIComponent(str)));
+}
+function arrayBufferToBase64Url(arrayBuffer) {
+  return arrayBufferToBase64String(arrayBuffer).replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+}
+function base64UrlToArrayBuffer(b64url) {
+  return base64StringToArrayBuffer(b64url.replace(/-/g, "+").replace(/_/g, "/").replace(/\s/g, ""));
+}
+function textToBase64Url(str) {
+  let charCodes = new TextEncoder().encode(str), binaryStr = String.fromCharCode(...charCodes);
+  return btoa(binaryStr).replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+}
+function pemToBinary(pem) {
+  return base64StringToArrayBuffer(pem.replace(/-+(BEGIN|END).*/g, "").replace(/\s/g, ""));
+}
+async function importTextSecret(key, algorithm, keyUsages) {
+  return await crypto.subtle.importKey("raw", textToArrayBuffer(key), algorithm, !0, keyUsages);
+}
+async function importJwk(key, algorithm, keyUsages) {
+  return await crypto.subtle.importKey("jwk", key, algorithm, !0, keyUsages);
+}
+async function importPublicKey(key, algorithm, keyUsages) {
+  return await crypto.subtle.importKey("spki", pemToBinary(key), algorithm, !0, keyUsages);
+}
+async function importPrivateKey(key, algorithm, keyUsages) {
+  return await crypto.subtle.importKey("pkcs8", pemToBinary(key), algorithm, !0, keyUsages);
+}
+async function importKey(key, algorithm, keyUsages) {
+  if (typeof key == "object")
+    return importJwk(key, algorithm, keyUsages);
+  if (typeof key != "string")
+    throw new Error("Unsupported key type!");
+  return key.includes("PUBLIC") ? importPublicKey(key, algorithm, keyUsages) : key.includes("PRIVATE") ? importPrivateKey(key, algorithm, keyUsages) : importTextSecret(key, algorithm, keyUsages);
+}
+function decodePayload(raw) {
+  try {
+    let bytes = Array.from(atob(raw), (char) => char.charCodeAt(0)), decodedString = new TextDecoder("utf-8").decode(new Uint8Array(bytes));
+    return JSON.parse(decodedString);
+  } catch {
+    return;
+  }
+}
+if (typeof crypto > "u" || !crypto.subtle)
+  throw new Error("SubtleCrypto not supported!");
+var algorithms = {
+  ES256: { name: "ECDSA", namedCurve: "P-256", hash: { name: "SHA-256" } },
+  ES384: { name: "ECDSA", namedCurve: "P-384", hash: { name: "SHA-384" } },
+  ES512: { name: "ECDSA", namedCurve: "P-521", hash: { name: "SHA-512" } },
+  HS256: { name: "HMAC", hash: { name: "SHA-256" } },
+  HS384: { name: "HMAC", hash: { name: "SHA-384" } },
+  HS512: { name: "HMAC", hash: { name: "SHA-512" } },
+  RS256: { name: "RSASSA-PKCS1-v1_5", hash: { name: "SHA-256" } },
+  RS384: { name: "RSASSA-PKCS1-v1_5", hash: { name: "SHA-384" } },
+  RS512: { name: "RSASSA-PKCS1-v1_5", hash: { name: "SHA-512" } }
+};
+async function sign(payload, secret, options = "HS256") {
+  if (typeof options == "string" && (options = { algorithm: options }), options = { algorithm: "HS256", header: { typ: "JWT" }, ...options }, !payload || typeof payload != "object")
+    throw new Error("payload must be an object");
+  if (!secret || typeof secret != "string" && typeof secret != "object")
+    throw new Error("secret must be a string, a JWK object or a CryptoKey object");
+  if (typeof options.algorithm != "string")
+    throw new Error("options.algorithm must be a string");
+  let algorithm = algorithms[options.algorithm];
+  if (!algorithm)
+    throw new Error("algorithm not found");
+  payload.iat || (payload.iat = Math.floor(Date.now() / 1e3));
+  let partialToken = `${textToBase64Url(JSON.stringify({ ...options.header, alg: options.algorithm }))}.${textToBase64Url(JSON.stringify(payload))}`, key = secret instanceof CryptoKey ? secret : await importKey(secret, algorithm, ["sign"]), signature = await crypto.subtle.sign(algorithm, key, textToArrayBuffer(partialToken));
+  return `${partialToken}.${arrayBufferToBase64Url(signature)}`;
+}
+async function verify(token, secret, options = "HS256") {
+  if (typeof options == "string" && (options = { algorithm: options }), options = { algorithm: "HS256", clockTolerance: 0, throwError: !1, ...options }, typeof token != "string")
+    throw new Error("token must be a string");
+  if (typeof secret != "string" && typeof secret != "object")
+    throw new Error("secret must be a string, a JWK object or a CryptoKey object");
+  if (typeof options.algorithm != "string")
+    throw new Error("options.algorithm must be a string");
+  let tokenParts = token.split(".");
+  if (tokenParts.length !== 3)
+    throw new Error("token must consist of 3 parts");
+  let algorithm = algorithms[options.algorithm];
+  if (!algorithm)
+    throw new Error("algorithm not found");
+  let { header, payload } = decode(token);
+  if (header?.alg !== options.algorithm) {
+    if (options.throwError)
+      throw new Error("ALG_MISMATCH");
+    return !1;
+  }
+  try {
+    if (!payload)
+      throw new Error("PARSE_ERROR");
+    let now = Math.floor(Date.now() / 1e3);
+    if (payload.nbf && payload.nbf > now && Math.abs(payload.nbf - now) > (options.clockTolerance ?? 0))
+      throw new Error("NOT_YET_VALID");
+    if (payload.exp && payload.exp <= now && Math.abs(payload.exp - now) > (options.clockTolerance ?? 0))
+      throw new Error("EXPIRED");
+    let key = secret instanceof CryptoKey ? secret : await importKey(secret, algorithm, ["verify"]);
+    return await crypto.subtle.verify(algorithm, key, base64UrlToArrayBuffer(tokenParts[2]), textToArrayBuffer(`${tokenParts[0]}.${tokenParts[1]}`));
+  } catch (err) {
+    if (options.throwError)
+      throw err;
+    return !1;
+  }
+}
+function decode(token) {
+  return {
+    header: decodePayload(token.split(".")[0].replace(/-/g, "+").replace(/_/g, "/")),
+    payload: decodePayload(token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))
+  };
+}
+var src_default = {
+  sign,
+  verify,
+  decode
+};
+
+// app/utils/auth/auth-service.ts
+var Auth = class {
+  static async hashPassword(password, saltRounds = 10) {
+    return await P(password, saltRounds);
+  }
+  static async verifyPassword(password, hashedPassword) {
+    return await v(password, hashedPassword);
+  }
+  static async generateToken(payload, secretKey, options) {
+    return options?.expiresIn && (payload = {
+      ...payload,
+      exp: Math.floor(Date.now() / 1e3) + Auth.parseDurationToSeconds(options.expiresIn)
+    }), options?.notBefore && (payload = {
+      ...payload,
+      nbf: Math.floor(Date.now() / 1e3) + Auth.parseDurationToSeconds(options.notBefore)
+    }), await src_default.sign(payload, secretKey);
+  }
+  static async verifyToken(token, secretKey) {
+    return await src_default.verify(token, secretKey);
+  }
+  static decodeToken(token) {
+    return src_default.decode(token);
+  }
+  // Helper method to parse a duration string (e.g., "1h", "30m") into seconds
+  static parseDurationToSeconds(duration) {
+    let unit = duration.slice(-1), value = parseInt(duration.slice(0, -1), 10);
+    switch (unit) {
+      case "h":
+        return value * 60 * 60;
+      case "m":
+        return value * 60;
+      case "s":
+        return value;
+      default:
+        throw new Error("Invalid duration unit");
+    }
+  }
+}, auth_service_default = Auth;
+
+// api_v2/services/userService.ts
+var UserService2 = class {
+  userRepository;
+  constructor(env) {
+    this.userRepository = new userRepository_default(env);
+  }
+  async loginUser(userData) {
+    let user2 = await this.userRepository.findUserByUsername(userData.username);
+    return user2 ? await auth_service_default.verifyPassword(userData.password, user2.password) ? { success: !0, user: user2, message: "User logged in successfully." } : { success: !1, message: "Incorrect password." } : { success: !1, message: "User does not exist." };
+  }
+  async registerUser(userData) {
+    if (await this.userRepository.findUserByUsername(userData.username))
+      return { success: !1, message: "User already exists." };
+    userData.password = await auth_service_default.hashPassword(userData.password);
+    let userId = await this.userRepository.addUser(userData);
+    return userId ? { success: !0, userId, message: "User registered successfully." } : { success: !1, message: "Failed to register user." };
+  }
+}, userService_default = UserService2;
+
+// app/routes/_auth.login.tsx
+var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = async ({ request, context }) => {
+  let env = context.context.env;
+  return await isAuthenticated({ request, env }) ? (0, import_cloudflare5.redirect)("/home") : (0, import_cloudflare5.json)({});
+}, action3 = async ({ request, context }) => {
+  let env = context.context.env, userService = new userService_default(env), formData = await request.formData(), actionType = formData.get("actionType"), userData = {
+    username: formData.get("username"),
+    password: formData.get("password"),
+    // Ensure to hash this in a real application
+    role: formData.get("role")
+  };
+  return console.log(userData.role, "userData.roleee"), actionType === "login" ? (0, import_cloudflare5.json)(await userService.loginUser(userData)) : actionType === "register" ? (0, import_cloudflare5.json)(await userService.registerUser(userData)) : (0, import_cloudflare5.json)({ error: "Invalid action type." });
+}, LoginOrRegister = () => {
+  let [username, setUsername] = (0, import_react9.useState)(""), [password, setPassword] = (0, import_react9.useState)(""), [role, setRole] = (0, import_react9.useState)(""), [actionType, setActionType] = (0, import_react9.useState)("login"), actionData = useActionData2();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
     "form",
     {
@@ -34128,114 +37839,197 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
       method: "post",
       className: "max-w-lg mx-auto mt-2 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
       children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("input", { type: "hidden", name: "actionType", value: actionType }, void 0, !1, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 139,
+          columnNumber: 7
+        }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "mb-6", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
             "label",
             {
-              className: "block text-gray-300 text-base font-semibold mb-2",
               htmlFor: "username",
-              children: "Email"
+              className: "block text-gray-300 text-base font-semibold mb-2",
+              children: "Username"
             },
             void 0,
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 93,
-              columnNumber: 11
+              lineNumber: 142,
+              columnNumber: 9
             },
             this
           ),
           /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
             "input",
             {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
-              id: "username",
               type: "text",
               name: "username",
+              id: "username",
               value: username,
-              placeholder: "Enter your email",
-              onChange: (e) => setUsername(e.target.value)
+              onChange: (e) => setUsername(e.target.value),
+              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
+              placeholder: "Enter your username"
             },
             void 0,
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 99,
-              columnNumber: 11
+              lineNumber: 148,
+              columnNumber: 9
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 92,
-          columnNumber: 9
+          lineNumber: 141,
+          columnNumber: 7
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "mb-6", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
             "label",
             {
-              className: "block text-gray-300 text-base font-semibold mb-2",
               htmlFor: "password",
+              className: "block text-gray-300 text-base font-semibold mb-2",
               children: "Password"
             },
             void 0,
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 111,
-              columnNumber: 11
+              lineNumber: 160,
+              columnNumber: 9
             },
             this
           ),
           /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
             "input",
             {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 mb-3 leading-tight focus:outline-none focus:border-blue-500",
-              id: "password",
               type: "password",
               name: "password",
+              id: "password",
               value: password,
-              placeholder: "Enter your password",
-              onChange: (e) => setPassword(e.target.value)
+              onChange: (e) => setPassword(e.target.value),
+              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 mb-3 leading-tight focus:outline-none focus:border-blue-500",
+              placeholder: "Enter your password"
             },
             void 0,
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 117,
+              lineNumber: 166,
+              columnNumber: 9
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 159,
+          columnNumber: 7
+        }, this),
+        actionType === "register" && // Add additional fields for registration as needed
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+            "label",
+            {
+              htmlFor: "role",
+              className: "block text-gray-300 text-base font-semibold mb-2",
+              children: "Role"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 180,
+              columnNumber: 11
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+            "select",
+            {
+              name: "role",
+              id: "role",
+              value: role,
+              onChange: (e) => setRole(e.target.value),
+              className: "shadow border-2 border-gray-700 rounded-lg w-full py-3 px-4 bg-gray-800 text-white leading-tight focus:outline-none focus:border-blue-500",
+              children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("option", { value: "", children: "Select a role" }, void 0, !1, {
+                  fileName: "app/routes/_auth.login.tsx",
+                  lineNumber: 193,
+                  columnNumber: 13
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("option", { value: "2", children: "User" }, void 0, !1, {
+                  fileName: "app/routes/_auth.login.tsx",
+                  lineNumber: 194,
+                  columnNumber: 13
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("option", { value: "1", children: "Admin" }, void 0, !1, {
+                  fileName: "app/routes/_auth.login.tsx",
+                  lineNumber: 195,
+                  columnNumber: 13
+                }, this)
+              ]
+            },
+            void 0,
+            !0,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 186,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 110,
+          lineNumber: 179,
           columnNumber: 9
         }, this),
         actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 129,
-          columnNumber: 11
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex items-center justify-between space-x-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
-          "button",
-          {
-            className: "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105",
-            type: "submit",
-            children: "Login"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/_auth.login.tsx",
-            lineNumber: 133,
-            columnNumber: 11
-          },
-          this
-        ) }, void 0, !1, {
-          fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 132,
+          lineNumber: 201,
           columnNumber: 9
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex items-center justify-between space-x-4", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+            "button",
+            {
+              className: "bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105",
+              type: "submit",
+              onClick: () => setActionType("login"),
+              children: "Login"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 205,
+              columnNumber: 9
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+            "button",
+            {
+              className: "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105",
+              type: "submit",
+              onClick: () => setActionType("register"),
+              children: "Register"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 212,
+              columnNumber: 9
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 204,
+          columnNumber: 7
         }, this)
       ]
     },
@@ -34243,12 +38037,12 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
     !0,
     {
       fileName: "app/routes/_auth.login.tsx",
-      lineNumber: 87,
-      columnNumber: 7
+      lineNumber: 133,
+      columnNumber: 5
     },
     this
   );
-}, auth_login_default = Login;
+}, auth_login_default = LoginOrRegister;
 
 // app/routes/info._index.tsx
 var info_index_exports = {};
@@ -34332,7 +38126,7 @@ __export(clearance_exports, {
 var import_cloudflare6 = __toESM(require_dist(), 1);
 
 // app/components/base/userStatus.tsx
-var import_react11 = __toESM(require_react(), 1), import_jsx_dev_runtime24 = __toESM(require_jsx_dev_runtime(), 1), UserStatus = ({ user, context }) => {
+var import_react11 = __toESM(require_react(), 1), import_jsx_dev_runtime24 = __toESM(require_jsx_dev_runtime(), 1), UserStatus = ({ user: user2, context }) => {
   let [date, setDate] = (0, import_react11.useState)(""), [time, setTime] = (0, import_react11.useState)("");
   return (0, import_react11.useEffect)(() => {
     let setClock = (now) => {
@@ -34344,10 +38138,10 @@ var import_react11 = __toESM(require_react(), 1), import_jsx_dev_runtime24 = __t
     setClock(/* @__PURE__ */ new Date());
     let interval = setInterval(() => setClock(/* @__PURE__ */ new Date()), 1e3);
     return () => clearInterval(interval);
-  }, [context.locale]), /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "max-w-lg mx-auto p-6 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-lg", children: context.isLoggedIn && user.id ? /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_jsx_dev_runtime24.Fragment, { children: [
+  }, [context.locale]), /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "max-w-lg mx-auto p-6 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-lg", children: context.isLoggedIn && user2.id ? /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_jsx_dev_runtime24.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "text-lg font-semibold text-white", children: [
       "Welcome, ",
-      user.username
+      user2.username
     ] }, void 0, !0, {
       fileName: "app/components/base/userStatus.tsx",
       lineNumber: 35,
@@ -34411,15 +38205,12 @@ var import_react13 = __toESM(require_react(), 1);
 
 // app/utils/checkAuthentication.ts
 async function checkAuthentication(context) {
-  if (await createSessionStorage(context.env).getSession(context.request.headers.get("Cookie")))
+  let session = await createSessionStorage(context.env).getSession(context.request.headers.get("Cookie"));
+  if (session.has("auth"))
     try {
-      return {
-        username: "testUser",
-        id: "123456",
-        accessToken: "hardcodedAccessToken",
-        refreshToken: "hardcodedRefreshToken",
-        tokenCreationTime: Date.now()
-      };
+      return session.get(
+        "auth"
+      );
     } catch (error) {
       console.error("Error parsing cookie data:", error);
     }
@@ -34434,19 +38225,19 @@ var import_jsx_dev_runtime25 = __toESM(require_jsx_dev_runtime(), 1), meta = () 
   request,
   context: { context }
 }) => {
-  let url = new URL(request.url), user = await checkAuthentication(context);
+  let url = new URL(request.url), user2 = await checkAuthentication(context);
   try {
-    return console.log(user, "user"), user ? (0, import_cloudflare6.json)({ user }) : (0, import_cloudflare6.redirect)("/login");
+    return console.log(user2, "user"), user2 ? (0, import_cloudflare6.json)({ user: user2 }) : (0, import_cloudflare6.redirect)("/login");
   } catch {
     return url.pathname, (0, import_cloudflare6.redirect)("/login");
     return (0, import_cloudflare6.json)({ error: "User is not authenticated" });
   }
 };
 function Clearance10() {
-  let { user } = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
+  let { user: user2 } = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
   return (0, import_react13.useEffect)(() => {
-    dispatch(user ? setUser(user) : setLogout());
-  }, [user, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
+    dispatch(user2 ? setUser(user2) : setLogout());
+  }, [user2, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
     fileName: "app/routes/_clearance.tsx",
     lineNumber: 76,
     columnNumber: 11
@@ -34566,19 +38357,19 @@ var import_jsx_dev_runtime27 = __toESM(require_jsx_dev_runtime(), 1), meta2 = ()
   request,
   context: { context }
 }) => {
-  let url = new URL(request.url), user = await checkAuthentication(context);
+  let url = new URL(request.url), user2 = await checkAuthentication(context);
   try {
-    return console.log(user, "user"), user ? (0, import_cloudflare7.json)({ user }) : (0, import_cloudflare7.redirect)("/login");
+    return console.log(user2, "user"), user2 ? (0, import_cloudflare7.json)({ user: user2 }) : (0, import_cloudflare7.redirect)("/login");
   } catch {
     return url.pathname, (0, import_cloudflare7.redirect)("/login");
     return (0, import_cloudflare7.json)({ error: "User is not authenticated" });
   }
 };
 function Public2() {
-  let { user } = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
+  let { user: user2 } = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
   return (0, import_react15.useEffect)(() => {
-    dispatch(user ? setUser(user) : setLogout());
-  }, [user, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
+    dispatch(user2 ? setUser(user2) : setLogout());
+  }, [user2, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
     fileName: "app/routes/_public.tsx",
     lineNumber: 76,
     columnNumber: 9
@@ -34621,30 +38412,19 @@ function welcome() {
 // app/routes/_auth.tsx
 var auth_exports = {};
 __export(auth_exports, {
-  default: () => Auth,
+  default: () => Auth2,
   meta: () => meta3
 });
 var import_jsx_dev_runtime29 = __toESM(require_jsx_dev_runtime(), 1), meta3 = () => [
   { title: "New Remix App" },
   { name: "description", content: "Welcome to Remix!" }
 ];
-function Auth() {
-  let { user } = useLoaderData2(), data = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: [
-    ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, !1, {
-      fileName: "app/routes/_auth.tsx",
-      lineNumber: 41,
-      columnNumber: 26
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(Outlet, {}, void 0, !1, {
-      fileName: "app/routes/_auth.tsx",
-      lineNumber: 43,
-      columnNumber: 7
-    }, this)
-  ] }, void 0, !0, {
+function Auth2() {
+  let data = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(Outlet, {}, void 0, !1, {
     fileName: "app/routes/_auth.tsx",
     lineNumber: 39,
-    columnNumber: 5
+    columnNumber: 7
   }, this);
 }
 
@@ -34731,9 +38511,9 @@ var import_jsx_dev_runtime32 = __toESM(require_jsx_dev_runtime(), 1), meta4 = ()
   { name: "description", content: "Welcome to Remix!" }
 ];
 function Index() {
-  let user = useTypedSelector((state) => state.user.value);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(pageTemplate_default, { user, children: [
-    user.user && /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(userStatus_default, { user }, void 0, !1, {
+  let user2 = useTypedSelector((state) => state.user.value);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(pageTemplate_default, { user: user2, children: [
+    user2.user && /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(userStatus_default, { user: user2 }, void 0, !1, {
       fileName: "app/routes/api.tsx",
       lineNumber: 31,
       columnNumber: 21
@@ -34751,7 +38531,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-BU4SANC4.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-EBSDBJYD.js", "/build/_shared/chunk-2OV7O5PJ.js", "/build/_shared/chunk-FSHJZDJN.js", "/build/_shared/chunk-E5WO37RD.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OE33BN7N.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/$404": { id: "routes/$404", parentId: "root", path: ":404", index: void 0, caseSensitive: void 0, module: "/build/routes/$404-WT4OY3ER.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth": { id: "routes/_auth", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_auth-JXSQ65DQ.js", imports: ["/build/_shared/chunk-YEKGOIXN.js", "/build/_shared/chunk-KPVNLZDD.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.login": { id: "routes/_auth.login", parentId: "routes/_auth", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.login-Z7S7TEFD.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.logout": { id: "routes/_auth.logout", parentId: "routes/_auth", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.logout-YPE3SW36.js", imports: void 0, hasAction: !0, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.register": { id: "routes/_auth.register", parentId: "routes/_auth", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.register-TZJHFPVL.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance": { id: "routes/_clearance", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance-ZJQROHUX.js", imports: ["/build/_shared/chunk-YEKGOIXN.js", "/build/_shared/chunk-KPVNLZDD.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.landing": { id: "routes/_clearance.landing", parentId: "routes/_clearance", path: "landing", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.landing-HU6OV2UA.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page1": { id: "routes/_clearance.page1", parentId: "routes/_clearance", path: "page1", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page1-VU3ZPN57.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page2": { id: "routes/_clearance.page2", parentId: "routes/_clearance", path: "page2", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page2-HEFSIQH3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page3": { id: "routes/_clearance.page3", parentId: "routes/_clearance", path: "page3", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page3-OE2QVKNL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page4": { id: "routes/_clearance.page4", parentId: "routes/_clearance", path: "page4", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page4-NEVQXYHC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page5": { id: "routes/_clearance.page5", parentId: "routes/_clearance", path: "page5", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page5-PH5AQOHG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page6": { id: "routes/_clearance.page6", parentId: "routes/_clearance", path: "page6", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page6-JA7XKOQB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page7": { id: "routes/_clearance.page7", parentId: "routes/_clearance", path: "page7", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page7-V5XZMASD.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page8": { id: "routes/_clearance.page8", parentId: "routes/_clearance", path: "page8", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page8-6NNNVCUC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public": { id: "routes/_public", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_public-6LGO3Y5U.js", imports: ["/build/_shared/chunk-YEKGOIXN.js", "/build/_shared/chunk-KPVNLZDD.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public._index": { id: "routes/_public._index", parentId: "routes/_public", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_public._index-2TNEQJFR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.dashboard": { id: "routes/_public.dashboard", parentId: "routes/_public", path: "dashboard", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.dashboard-QX7W7ATY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.info": { id: "routes/_public.info", parentId: "routes/_public", path: "info", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.info-XNKQCLUF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.landingpage": { id: "routes/_public.landingpage", parentId: "routes/_public", path: "landingpage", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.landingpage-4C3NE7NV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/api": { id: "routes/api", parentId: "root", path: "api", index: void 0, caseSensitive: void 0, module: "/build/routes/api-NPR3QP5E.js", imports: ["/build/_shared/chunk-YEKGOIXN.js", "/build/_shared/chunk-KPVNLZDD.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/home": { id: "routes/home", parentId: "root", path: "home", index: void 0, caseSensitive: void 0, module: "/build/routes/home-FQSSTJHC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: "index", index: void 0, caseSensitive: void 0, module: "/build/routes/index-5P6H5OEU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info._index": { id: "routes/info._index", parentId: "root", path: "info", index: !0, caseSensitive: void 0, module: "/build/routes/info._index-P6N46QPN.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.privacy": { id: "routes/info.privacy", parentId: "root", path: "info/privacy", index: void 0, caseSensitive: void 0, module: "/build/routes/info.privacy-GXKNV62D.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.terms": { id: "routes/info.terms", parentId: "root", path: "info/terms", index: void 0, caseSensitive: void 0, module: "/build/routes/info.terms-4JN6XCYU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-A5KC7LFP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "743e0d4f", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708672423669 }, url: "/build/manifest-743E0D4F.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-4PHSFXTG.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-GYLQYPPK.js", "/build/_shared/chunk-EB64VCHI.js", "/build/_shared/chunk-JVVCMFL4.js", "/build/_shared/chunk-FSHJZDJN.js", "/build/_shared/chunk-E5WO37RD.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-YAQ2QGOL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/$404": { id: "routes/$404", parentId: "root", path: ":404", index: void 0, caseSensitive: void 0, module: "/build/routes/$404-XUUWW76Z.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth": { id: "routes/_auth", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_auth-BUI6OCAG.js", imports: ["/build/_shared/chunk-XQZ2HSLL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.login": { id: "routes/_auth.login", parentId: "routes/_auth", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.login-USABVYAG.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.logout": { id: "routes/_auth.logout", parentId: "routes/_auth", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.logout-YPE3SW36.js", imports: void 0, hasAction: !0, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.register": { id: "routes/_auth.register", parentId: "routes/_auth", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.register-SDPQOUH6.js", imports: ["/build/_shared/chunk-7GR4HX5H.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance": { id: "routes/_clearance", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance-TSK2WYOQ.js", imports: ["/build/_shared/chunk-YWHKITJJ.js", "/build/_shared/chunk-7GR4HX5H.js", "/build/_shared/chunk-XQZ2HSLL.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.landing": { id: "routes/_clearance.landing", parentId: "routes/_clearance", path: "landing", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.landing-2XMUHKJ3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page1": { id: "routes/_clearance.page1", parentId: "routes/_clearance", path: "page1", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page1-5SXTXQNH.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page2": { id: "routes/_clearance.page2", parentId: "routes/_clearance", path: "page2", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page2-3CMULZSK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page3": { id: "routes/_clearance.page3", parentId: "routes/_clearance", path: "page3", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page3-3625EQ6D.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page4": { id: "routes/_clearance.page4", parentId: "routes/_clearance", path: "page4", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page4-AWYSWNHV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page5": { id: "routes/_clearance.page5", parentId: "routes/_clearance", path: "page5", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page5-DKIEYM4C.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page6": { id: "routes/_clearance.page6", parentId: "routes/_clearance", path: "page6", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page6-VUQEEH54.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page7": { id: "routes/_clearance.page7", parentId: "routes/_clearance", path: "page7", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page7-25MLTX6N.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page8": { id: "routes/_clearance.page8", parentId: "routes/_clearance", path: "page8", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page8-CNS52QNK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public": { id: "routes/_public", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_public-SUXBYZBL.js", imports: ["/build/_shared/chunk-YWHKITJJ.js", "/build/_shared/chunk-7GR4HX5H.js", "/build/_shared/chunk-XQZ2HSLL.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public._index": { id: "routes/_public._index", parentId: "routes/_public", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_public._index-LFGPDWTE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.dashboard": { id: "routes/_public.dashboard", parentId: "routes/_public", path: "dashboard", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.dashboard-Q7YOO4D7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.info": { id: "routes/_public.info", parentId: "routes/_public", path: "info", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.info-SBXQS3PL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.landingpage": { id: "routes/_public.landingpage", parentId: "routes/_public", path: "landingpage", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.landingpage-3NWPNM6V.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/api": { id: "routes/api", parentId: "root", path: "api", index: void 0, caseSensitive: void 0, module: "/build/routes/api-5WOADCSZ.js", imports: ["/build/_shared/chunk-YWHKITJJ.js", "/build/_shared/chunk-7GR4HX5H.js", "/build/_shared/chunk-XQZ2HSLL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/home": { id: "routes/home", parentId: "root", path: "home", index: void 0, caseSensitive: void 0, module: "/build/routes/home-5LCY3IJG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: "index", index: void 0, caseSensitive: void 0, module: "/build/routes/index-5P6H5OEU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info._index": { id: "routes/info._index", parentId: "root", path: "info", index: !0, caseSensitive: void 0, module: "/build/routes/info._index-R55ZT443.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.privacy": { id: "routes/info.privacy", parentId: "root", path: "info/privacy", index: void 0, caseSensitive: void 0, module: "/build/routes/info.privacy-FMO4ZIWY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.terms": { id: "routes/info.terms", parentId: "root", path: "info/terms", index: void 0, caseSensitive: void 0, module: "/build/routes/info.terms-TF4X3YSR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-A5KC7LFP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "f7dcd124", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708755856510 }, url: "/build/manifest-F7DCD124.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

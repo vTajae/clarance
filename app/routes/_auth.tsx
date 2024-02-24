@@ -31,16 +31,11 @@ export const meta: MetaFunction = () => {
 
 
 export default function Auth() {
-  const {user} = useLoaderData<LoaderData>();
   const data = useLoaderData<LoaderData>();
   const ReduxUser = useTypedSelector((state: RootState) => state.user.value);
 
   return (
-    <PageTemplate user={ReduxUser.user} context={ReduxUser.context}>
-      {/* Rest of the home page content */}
-      {ReduxUser.user && <UserStatus user={ReduxUser.user} context={ReduxUser.context} />}
 
       <Outlet />
-    </PageTemplate>
   );
 }

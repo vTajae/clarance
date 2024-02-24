@@ -1,3 +1,17 @@
-DROP TABLE IF EXISTS Customers;
-CREATE TABLE IF NOT EXISTS Customers (CustomerId INTEGER PRIMARY KEY, CompanyName TEXT, ContactName TEXT);
-INSERT INTO Customers (CustomerID, CompanyName, ContactName) VALUES (1, 'Alfreds Futterkiste', 'Maria Anders'), (4, 'Around the Horn', 'Thomas Hardy'), (11, 'Bs Beverages', 'Victoria Ashworth'), (13, 'Bs Beverages', 'Random Name');
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE IF NOT EXISTS user (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT NOT NULL UNIQUE,
+  password TEXT NOT NULL,
+  role TEXT NOT NULL CHECK (role IN ('1', '2', '3')),
+  createdAt INTEGER NOT NULL,
+  updatedAt INTEGER NOT NULL
+);
+
+
+INSERT INTO user (username, password, role, createdAt, updatedAt)
+VALUES
+  ('john.doe@example.com', 'hashedpassword1', '1', strftime('%s','now'), strftime('%s','now')),
+  ('jane.doe@example.com', 'hashedpassword2', '2', strftime('%s','now'), strftime('%s','now')),
+  ('jim.smith@example.com', 'hashedpassword3', '3', strftime('%s','now'), strftime('%s','now'));

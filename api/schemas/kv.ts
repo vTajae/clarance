@@ -4,6 +4,7 @@ export interface EnvWithKV {
   ASSETS: object;
   theform: KVNamespace;
   __STATIC_CONTENT: KVNamespace;
+  DB: D1Database;
 }
 
 export interface RequestContext {

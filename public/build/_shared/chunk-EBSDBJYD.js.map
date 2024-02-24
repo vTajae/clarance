@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../app/state/store.ts"],
-  "sourcesContent": ["// REMIX HMR BEGIN\nimport * as __hmr__ from \"remix:hmr\";\nif (import.meta) {\nimport.meta.hot = __hmr__.createHotContext(\n//@ts-expect-error\n\"app/state/store.ts\"\n);\nimport.meta.hot.lastModified = \"1708653337767.8157\";\n}\n// REMIX HMR END\n\n// src/state/store.js\n\nimport { configureStore } from \"@reduxjs/toolkit\";\nimport userReducer from \"./user/userSlice\";\n\n\n// Function to initialize the store\nexport const initializeStore = (preloadedState = {}) => {\n  return configureStore({\n    reducer: {\n      user: userReducer,\n\n    },\n    preloadedState,\n  });\n};\n\nexport type RootState = ReturnType<ReturnType<typeof initializeStore>['getState']>;\nexport type AppDispatch = ReturnType<typeof initializeStore>['dispatch'];\n"],
-  "mappings": ";;;;;;;;;AAEA,IAAI,aAAa;AACjB,cAAY,MAAc;AAAA;AAAA,IAE1B;AAAA,EACA;AACA,cAAY,IAAI,eAAe;AAC/B;AAUO,IAAM,kBAAkB,CAAC,iBAAiB,CAAC,MAAM;AACtD,SAAO,eAAe;AAAA,IACpB,SAAS;AAAA,MACP,MAAM;AAAA,IAER;AAAA,IACA;AAAA,EACF,CAAC;AACH;",
-  "names": []
-}

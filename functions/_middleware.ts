@@ -26,7 +26,7 @@ export async function onRequest(context: any) {
   // Checking if the user is authenticated
   const isAuthenticated = await checkAuthentication({ request, env });
   
-
+console.log(isAuthenticated), "isAuthenticated";
   if (isAuthenticated) {
     // If the user is trying to access /login or /register, redirect them
     if (url.pathname === "/login" || url.pathname === "/register") {
