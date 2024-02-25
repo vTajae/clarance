@@ -1,3 +1,4 @@
+import { redirect } from "@remix-run/cloudflare";
 import { checkAuthentication } from "~/utils/checkAuthentication";
 
 // Define the structure of the environment variables
@@ -31,24 +32,15 @@ console.log(isAuthenticated), "isAuthenticated";
     // If the user is trying to access /login or /register, redirect them
     if (url.pathname === "/login" || url.pathname === "/register") {
       // Redirecting to the intended destination or default route for authenticated users
-      return new Response(null, {
-        status: 302,
-        headers: {
-          "Location": DEFAULT_AUTHENTICATED_ROUTE,
-        },
-      });
+      return redirect(DEFAULT_AUTHENTICATED_ROUTE)
     }
     // Proceed to the requested page if it's not /login or /register
     return next(request);
   } else {
     // If the user is not authenticated and trying to access a protected route, redirect them to /login
     if (url.pathname !== "/login" && url.pathname !== "/register") {
-      return new Response(null, {
-        status: 302,
-        headers: {
-          "Location": "/login",
-        },
-      });
+      return redirect("/login")
+
     }
     // Proceed to /login or /register if the user is not authenticated
     return next(request);

@@ -42,7 +42,7 @@ if (import.meta) {
     //@ts-expect-error
     "app/routes/_auth.login.tsx"
   );
-  import.meta.hot.lastModified = "1708755855981.1565";
+  import.meta.hot.lastModified = "1708903629465.7825";
 }
 var LoginOrRegister = () => {
   _s();
@@ -54,98 +54,98 @@ var LoginOrRegister = () => {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("form", { action: "/login", method: "post", className: "max-w-lg mx-auto mt-2 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "hidden", name: "actionType", value: actionType }, void 0, false, {
       fileName: "app/routes/_auth.login.tsx",
-      lineNumber: 145,
+      lineNumber: 110,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-6", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("label", { htmlFor: "username", className: "block text-gray-300 text-base font-semibold mb-2", children: "Username" }, void 0, false, {
         fileName: "app/routes/_auth.login.tsx",
-        lineNumber: 148,
+        lineNumber: 113,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "text", name: "username", id: "username", value: username, onChange: (e) => setUsername(e.target.value), className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500", placeholder: "Enter your username" }, void 0, false, {
         fileName: "app/routes/_auth.login.tsx",
-        lineNumber: 151,
+        lineNumber: 116,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/_auth.login.tsx",
-      lineNumber: 147,
+      lineNumber: 112,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-6", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("label", { htmlFor: "password", className: "block text-gray-300 text-base font-semibold mb-2", children: "Password" }, void 0, false, {
         fileName: "app/routes/_auth.login.tsx",
-        lineNumber: 155,
+        lineNumber: 120,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "password", name: "password", id: "password", value: password, onChange: (e) => setPassword(e.target.value), className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 mb-3 leading-tight focus:outline-none focus:border-blue-500", placeholder: "Enter your password" }, void 0, false, {
         fileName: "app/routes/_auth.login.tsx",
-        lineNumber: 158,
+        lineNumber: 123,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/_auth.login.tsx",
-      lineNumber: 154,
+      lineNumber: 119,
       columnNumber: 7
     }, this),
     actionType === "register" && // Add additional fields for registration as needed
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-6", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("label", { htmlFor: "role", className: "block text-gray-300 text-base font-semibold mb-2", children: "Role" }, void 0, false, {
         fileName: "app/routes/_auth.login.tsx",
-        lineNumber: 164,
+        lineNumber: 129,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("select", { name: "role", id: "role", value: role, onChange: (e) => setRole(e.target.value), className: "shadow border-2 border-gray-700 rounded-lg w-full py-3 px-4 bg-gray-800 text-white leading-tight focus:outline-none focus:border-blue-500", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("option", { value: "", children: "Select a role" }, void 0, false, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 168,
+          lineNumber: 133,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("option", { value: "2", children: "User" }, void 0, false, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 169,
+          lineNumber: 134,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("option", { value: "1", children: "Admin" }, void 0, false, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 170,
+          lineNumber: 135,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/_auth.login.tsx",
-        lineNumber: 167,
+        lineNumber: 132,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/_auth.login.tsx",
-      lineNumber: 163,
+      lineNumber: 128,
       columnNumber: 5
     }, this),
     actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, false, {
       fileName: "app/routes/_auth.login.tsx",
-      lineNumber: 174,
+      lineNumber: 139,
       columnNumber: 29
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-center justify-between space-x-4", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { className: "bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105", type: "submit", onClick: () => setActionType("login"), children: "Login" }, void 0, false, {
         fileName: "app/routes/_auth.login.tsx",
-        lineNumber: 177,
+        lineNumber: 142,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { className: "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105", type: "submit", onClick: () => setActionType("register"), children: "Register" }, void 0, false, {
         fileName: "app/routes/_auth.login.tsx",
-        lineNumber: 180,
+        lineNumber: 145,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/_auth.login.tsx",
-      lineNumber: 176,
+      lineNumber: 141,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/_auth.login.tsx",
-    lineNumber: 143,
+    lineNumber: 108,
     columnNumber: 10
   }, this);
 };
@@ -161,4 +161,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   auth_login_default as default
 };
-//# sourceMappingURL=/build/routes/_auth.login-USABVYAG.js.map
+//# sourceMappingURL=/build/routes/_auth.login-E5QKXBOJ.js.map

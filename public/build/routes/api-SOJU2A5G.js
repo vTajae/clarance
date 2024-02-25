@@ -1,9 +1,7 @@
 import {
+  pageTemplate_default,
   userStatus_default
-} from "/build/_shared/chunk-YWHKITJJ.js";
-import {
-  pageTemplate_default
-} from "/build/_shared/chunk-7GR4HX5H.js";
+} from "/build/_shared/chunk-DSHWOZZD.js";
 import {
   useTypedSelector
 } from "/build/_shared/chunk-XQZ2HSLL.js";
@@ -88,4 +86,4 @@ export {
   Index as default,
   meta
 };
-//# sourceMappingURL=/build/routes/api-5WOADCSZ.js.map
+//# sourceMappingURL=/build/routes/api-SOJU2A5G.js.map

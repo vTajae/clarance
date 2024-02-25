@@ -1,9 +1,7 @@
 import {
+  pageTemplate_default,
   userStatus_default
-} from "/build/_shared/chunk-YWHKITJJ.js";
-import {
-  pageTemplate_default
-} from "/build/_shared/chunk-7GR4HX5H.js";
+} from "/build/_shared/chunk-DSHWOZZD.js";
 import {
   useDispatch,
   useTypedSelector
@@ -37,7 +35,7 @@ import {
   __toESM
 } from "/build/_shared/chunk-RODUX5XG.js";
 
-// app/routes/_clearance.tsx
+// app/routes/_public.tsx
 var import_cloudflare = __toESM(require_cloudflare(), 1);
 var import_react2 = __toESM(require_react(), 1);
 var import_jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
@@ -47,7 +45,7 @@ if (!window.$RefreshReg$ || !window.$RefreshSig$ || !window.$RefreshRuntime$) {
   prevRefreshReg = window.$RefreshReg$;
   prevRefreshSig = window.$RefreshSig$;
   window.$RefreshReg$ = (type, id) => {
-    window.$RefreshRuntime$.register(type, '"app/routes/_clearance.tsx"' + id);
+    window.$RefreshRuntime$.register(type, '"app/routes/_public.tsx"' + id);
   };
   window.$RefreshSig$ = window.$RefreshRuntime$.createSignatureFunctionForTransform;
 }
@@ -57,9 +55,9 @@ var _s = $RefreshSig$();
 if (import.meta) {
   import.meta.hot = createHotContext(
     //@ts-expect-error
-    "app/routes/_clearance.tsx"
+    "app/routes/_public.tsx"
   );
-  import.meta.hot.lastModified = "1708672520859.668";
+  import.meta.hot.lastModified = "1708880363400.907";
 }
 var meta = () => {
   return [{
@@ -69,7 +67,7 @@ var meta = () => {
     content: "Welcome to Remix!"
   }];
 };
-function Clearance() {
+function Public() {
   _s();
   const {
     user
@@ -84,40 +82,40 @@ function Clearance() {
     }
   }, [user, dispatch]);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: "Loading..." }, void 0, false, {
-    fileName: "app/routes/_clearance.tsx",
+    fileName: "app/routes/_public.tsx",
     lineNumber: 82,
-    columnNumber: 40
+    columnNumber: 38
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: [
     ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, false, {
-      fileName: "app/routes/_clearance.tsx",
+      fileName: "app/routes/_public.tsx",
       lineNumber: 83,
-      columnNumber: 32
+      columnNumber: 30
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Outlet, {}, void 0, false, {
-      fileName: "app/routes/_clearance.tsx",
+      fileName: "app/routes/_public.tsx",
       lineNumber: 84,
-      columnNumber: 13
+      columnNumber: 11
     }, this)
   ] }, void 0, true, {
-    fileName: "app/routes/_clearance.tsx",
+    fileName: "app/routes/_public.tsx",
     lineNumber: 82,
-    columnNumber: 64
+    columnNumber: 62
   }, this) }, void 0, false, {
-    fileName: "app/routes/_clearance.tsx",
+    fileName: "app/routes/_public.tsx",
     lineNumber: 81,
     columnNumber: 10
   }, this);
 }
-_s(Clearance, "f6jr5OCWJu5zVZGtD+8HJe7tsAE=", false, function() {
+_s(Public, "f6jr5OCWJu5zVZGtD+8HJe7tsAE=", false, function() {
   return [useLoaderData, useTypedSelector, useDispatch];
 });
-_c = Clearance;
+_c = Public;
 var _c;
-$RefreshReg$(_c, "Clearance");
+$RefreshReg$(_c, "Public");
 window.$RefreshReg$ = prevRefreshReg;
 window.$RefreshSig$ = prevRefreshSig;
 export {
-  Clearance as default,
+  Public as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_clearance-TSK2WYOQ.js.map
+//# sourceMappingURL=/build/routes/_public-ECCF5L4B.js.map

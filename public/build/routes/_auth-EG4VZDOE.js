@@ -41,7 +41,7 @@ if (import.meta) {
     //@ts-expect-error
     "app/routes/_auth.tsx"
   );
-  import.meta.hot.lastModified = "1708748292882.6958";
+  import.meta.hot.lastModified = "1708756008587.8538";
 }
 var meta = () => {
   return [{
@@ -73,4 +73,4 @@ export {
   Auth as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_auth-BUI6OCAG.js.map
+//# sourceMappingURL=/build/routes/_auth-EG4VZDOE.js.map

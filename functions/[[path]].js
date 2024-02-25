@@ -667,7 +667,7 @@ function createMemoryHistory(options) {
     v5Compat = !1
   } = options, entries;
   entries = initialEntries.map((entry2, index2) => createMemoryLocation(entry2, typeof entry2 == "string" ? null : entry2.state, index2 === 0 ? "default" : void 0));
-  let index = clampIndex(initialIndex ?? entries.length - 1), action4 = Action.Pop, listener2 = null;
+  let index = clampIndex(initialIndex ?? entries.length - 1), action3 = Action.Pop, listener2 = null;
   function clampIndex(n) {
     return Math.min(Math.max(n, 0), entries.length - 1);
   }
@@ -687,7 +687,7 @@ function createMemoryHistory(options) {
       return index;
     },
     get action() {
-      return action4;
+      return action3;
     },
     get location() {
       return getCurrentLocation();
@@ -705,28 +705,28 @@ function createMemoryHistory(options) {
       };
     },
     push(to, state) {
-      action4 = Action.Push;
+      action3 = Action.Push;
       let nextLocation = createMemoryLocation(to, state);
       index += 1, entries.splice(index, entries.length, nextLocation), v5Compat && listener2 && listener2({
-        action: action4,
+        action: action3,
         location: nextLocation,
         delta: 1
       });
     },
     replace(to, state) {
-      action4 = Action.Replace;
+      action3 = Action.Replace;
       let nextLocation = createMemoryLocation(to, state);
       entries[index] = nextLocation, v5Compat && listener2 && listener2({
-        action: action4,
+        action: action3,
         location: nextLocation,
         delta: 0
       });
     },
     go(delta) {
-      action4 = Action.Pop;
+      action3 = Action.Pop;
       let nextIndex = clampIndex(index + delta), nextLocation = entries[nextIndex];
       index = nextIndex, listener2 && listener2({
-        action: action4,
+        action: action3,
         location: nextLocation,
         delta
       });
@@ -856,7 +856,7 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   let {
     window: window2 = document.defaultView,
     v5Compat = !1
-  } = options, globalHistory = window2.history, action4 = Action.Pop, listener2 = null, index = getIndex();
+  } = options, globalHistory = window2.history, action3 = Action.Pop, listener2 = null, index = getIndex();
   index == null && (index = 0, globalHistory.replaceState(_extends({}, globalHistory.state, {
     idx: index
   }), ""));
@@ -866,16 +866,16 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
     }).idx;
   }
   function handlePop() {
-    action4 = Action.Pop;
+    action3 = Action.Pop;
     let nextIndex = getIndex(), delta = nextIndex == null ? null : nextIndex - index;
     index = nextIndex, listener2 && listener2({
-      action: action4,
+      action: action3,
       location: history.location,
       delta
     });
   }
   function push(to, state) {
-    action4 = Action.Push;
+    action3 = Action.Push;
     let location = createLocation(history.location, to, state);
     validateLocation && validateLocation(location, to), index = getIndex() + 1;
     let historyState = getHistoryState(location, index), url = history.createHref(location);
@@ -887,18 +887,18 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
       window2.location.assign(url);
     }
     v5Compat && listener2 && listener2({
-      action: action4,
+      action: action3,
       location: history.location,
       delta: 1
     });
   }
   function replace(to, state) {
-    action4 = Action.Replace;
+    action3 = Action.Replace;
     let location = createLocation(history.location, to, state);
     validateLocation && validateLocation(location, to), index = getIndex();
     let historyState = getHistoryState(location, index), url = history.createHref(location);
     globalHistory.replaceState(historyState, "", url), v5Compat && listener2 && listener2({
-      action: action4,
+      action: action3,
       location: history.location,
       delta: 0
     });
@@ -909,7 +909,7 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   }
   let history = {
     get action() {
-      return action4;
+      return action3;
     },
     get location() {
       return getLocation(window2, globalHistory);
@@ -1615,13 +1615,13 @@ function createRouter(init) {
         shortCircuited: !0
       };
     pendingNavigationController && pendingNavigationController.signal.removeEventListener("abort", abortPendingFetchRevalidations), revalidatingFetchers.forEach((rf) => fetchControllers.delete(rf.key));
-    let redirect9 = findRedirect(results);
-    if (redirect9) {
-      if (redirect9.idx >= matchesToLoad.length) {
-        let fetcherKey = revalidatingFetchers[redirect9.idx - matchesToLoad.length].key;
+    let redirect8 = findRedirect(results);
+    if (redirect8) {
+      if (redirect8.idx >= matchesToLoad.length) {
+        let fetcherKey = revalidatingFetchers[redirect8.idx - matchesToLoad.length].key;
         fetchRedirectIds.add(fetcherKey);
       }
-      return await startRedirectNavigation(state, redirect9.result, {
+      return await startRedirectNavigation(state, redirect8.result, {
         replace
       }), {
         shortCircuited: !0
@@ -1767,13 +1767,13 @@ function createRouter(init) {
     if (abortController.signal.aborted)
       return;
     abortController.signal.removeEventListener("abort", abortPendingFetchRevalidations), fetchReloadIds.delete(key), fetchControllers.delete(key), revalidatingFetchers.forEach((r) => fetchControllers.delete(r.key));
-    let redirect9 = findRedirect(results);
-    if (redirect9) {
-      if (redirect9.idx >= matchesToLoad.length) {
-        let fetcherKey = revalidatingFetchers[redirect9.idx - matchesToLoad.length].key;
+    let redirect8 = findRedirect(results);
+    if (redirect8) {
+      if (redirect8.idx >= matchesToLoad.length) {
+        let fetcherKey = revalidatingFetchers[redirect8.idx - matchesToLoad.length].key;
         fetchRedirectIds.add(fetcherKey);
       }
-      return startRedirectNavigation(state, redirect9.result);
+      return startRedirectNavigation(state, redirect8.result);
     }
     let {
       loaderData,
@@ -1822,28 +1822,28 @@ function createRouter(init) {
       invariant(!isDeferredResult(result), "Unhandled fetcher deferred data"), updateFetcherState(key, getDoneFetcher(result.data));
     }
   }
-  async function startRedirectNavigation(state2, redirect9, _temp2) {
+  async function startRedirectNavigation(state2, redirect8, _temp2) {
     let {
       submission,
       fetcherSubmission,
       replace
     } = _temp2 === void 0 ? {} : _temp2;
-    redirect9.revalidate && (isRevalidationRequired = !0);
-    let redirectLocation = createLocation(state2.location, redirect9.location, {
+    redirect8.revalidate && (isRevalidationRequired = !0);
+    let redirectLocation = createLocation(state2.location, redirect8.location, {
       _isRedirect: !0
     });
     if (invariant(redirectLocation, "Expected a location on the redirect navigation"), isBrowser2) {
       let isDocumentReload = !1;
-      if (redirect9.reloadDocument)
+      if (redirect8.reloadDocument)
         isDocumentReload = !0;
-      else if (ABSOLUTE_URL_REGEX.test(redirect9.location)) {
-        let url = init.history.createURL(redirect9.location);
+      else if (ABSOLUTE_URL_REGEX.test(redirect8.location)) {
+        let url = init.history.createURL(redirect8.location);
         isDocumentReload = // Hard reload if it's an absolute URL to a new origin
         url.origin !== routerWindow.location.origin || // Hard reload if it's an absolute URL that does not match our basename
         stripBasename(url.pathname, basename) == null;
       }
       if (isDocumentReload) {
-        replace ? routerWindow.location.replace(redirect9.location) : routerWindow.location.assign(redirect9.location);
+        replace ? routerWindow.location.replace(redirect8.location) : routerWindow.location.assign(redirect8.location);
         return;
       }
     }
@@ -1855,10 +1855,10 @@ function createRouter(init) {
     } = state2.navigation;
     !submission && !fetcherSubmission && formMethod && formAction && formEncType && (submission = getSubmissionFromNavigation(state2.navigation));
     let activeSubmission = submission || fetcherSubmission;
-    if (redirectPreserveMethodStatusCodes.has(redirect9.status) && activeSubmission && isMutationMethod(activeSubmission.formMethod))
+    if (redirectPreserveMethodStatusCodes.has(redirect8.status) && activeSubmission && isMutationMethod(activeSubmission.formMethod))
       await startNavigation(redirectHistoryAction, redirectLocation, {
         submission: _extends({}, activeSubmission, {
-          formAction: redirect9.location
+          formAction: redirect8.location
         }),
         // Preserve this flag across redirects
         preventScrollReset: pendingPreventScrollReset
@@ -2389,7 +2389,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
       if (!isMutationMethod(formMethod))
         return getInvalidBodyError();
       try {
-        let json9 = typeof opts.body == "string" ? JSON.parse(opts.body) : opts.body;
+        let json8 = typeof opts.body == "string" ? JSON.parse(opts.body) : opts.body;
         return {
           path,
           submission: {
@@ -2397,7 +2397,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
             formAction,
             formEncType: opts.formEncType,
             formData: void 0,
-            json: json9,
+            json: json8,
             text: void 0
           }
         };
@@ -2888,7 +2888,7 @@ function getSubmissionFromNavigation(navigation) {
     formEncType,
     text: text2,
     formData,
-    json: json9
+    json: json8
   } = navigation;
   if (!(!formMethod || !formAction || !formEncType)) {
     if (text2 != null)
@@ -2909,13 +2909,13 @@ function getSubmissionFromNavigation(navigation) {
         json: void 0,
         text: void 0
       };
-    if (json9 !== void 0)
+    if (json8 !== void 0)
       return {
         formMethod,
         formAction,
         formEncType,
         formData: void 0,
-        json: json9,
+        json: json8,
         text: void 0
       };
   }
@@ -3002,8 +3002,8 @@ function restoreAppliedTransitions(_window, transitions) {
   try {
     let sessionPositions = _window.sessionStorage.getItem(TRANSITIONS_STORAGE_KEY);
     if (sessionPositions) {
-      let json9 = JSON.parse(sessionPositions);
-      for (let [k2, v2] of Object.entries(json9 || {}))
+      let json8 = JSON.parse(sessionPositions);
+      for (let [k2, v2] of Object.entries(json8 || {}))
         v2 && Array.isArray(v2) && transitions.set(k2, new Set(v2 || []));
     }
   } catch {
@@ -3011,11 +3011,11 @@ function restoreAppliedTransitions(_window, transitions) {
 }
 function persistAppliedTransitions(_window, transitions) {
   if (transitions.size > 0) {
-    let json9 = {};
+    let json8 = {};
     for (let [k2, v2] of transitions)
-      json9[k2] = [...v2];
+      json8[k2] = [...v2];
     try {
-      _window.sessionStorage.setItem(TRANSITIONS_STORAGE_KEY, JSON.stringify(json9));
+      _window.sessionStorage.setItem(TRANSITIONS_STORAGE_KEY, JSON.stringify(json8));
     } catch (error) {
       warning(!1, "Failed to save applied view transitions in sessionStorage (" + error + ").");
     }
@@ -3472,12 +3472,12 @@ var init_routeMatching = __esm({
 // node_modules/@remix-run/server-runtime/dist/esm/data.js
 async function callRouteActionRR({
   loadContext,
-  action: action4,
+  action: action3,
   params,
   request,
   routeId
 }) {
-  let result = await action4({
+  let result = await action3({
     request: stripDataParam(stripIndexParam(request)),
     context: loadContext,
     params
@@ -3488,12 +3488,12 @@ async function callRouteActionRR({
 }
 async function callRouteLoaderRR({
   loadContext,
-  loader: loader6,
+  loader: loader5,
   params,
   request,
   routeId
 }) {
-  let result = await loader6({
+  let result = await loader5({
     request: stripDataParam(stripIndexParam(request)),
     context: loadContext,
     params
@@ -4994,7 +4994,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         }
         return dispatcher.useContext(Context);
       }
-      function useState9(initialState) {
+      function useState8(initialState) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useState(initialState);
       }
@@ -5535,7 +5535,7 @@ Check the top-level render call using <` + parentName + ">.");
         toArray,
         only: onlyChild
       };
-      exports.Children = Children2, exports.Component = Component3, exports.Fragment = REACT_FRAGMENT_TYPE2, exports.Profiler = REACT_PROFILER_TYPE2, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE2, exports.Suspense = REACT_SUSPENSE_TYPE2, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext4, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef3, exports.isValidElement = isValidElement2, exports.lazy = lazy, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext4, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect8, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo5, exports.useReducer = useReducer, exports.useRef = useRef4, exports.useState = useState9, exports.useSyncExternalStore = useSyncExternalStore3, exports.useTransition = useTransition, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+      exports.Children = Children2, exports.Component = Component3, exports.Fragment = REACT_FRAGMENT_TYPE2, exports.Profiler = REACT_PROFILER_TYPE2, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE2, exports.Suspense = REACT_SUSPENSE_TYPE2, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext4, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef3, exports.isValidElement = isValidElement2, exports.lazy = lazy, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext4, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect8, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo5, exports.useReducer = useReducer, exports.useRef = useRef4, exports.useState = useState8, exports.useSyncExternalStore = useSyncExternalStore3, exports.useTransition = useTransition, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
     })();
   }
 });
@@ -5839,7 +5839,7 @@ var require_react_dom_development = __commonJS({
     (function() {
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-      var React13 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
+      var React12 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
       function setSuppressWarning(newSuppressWarning) {
         suppressWarning = newSuppressWarning;
       }
@@ -6961,7 +6961,7 @@ Error generating stack: ` + x.message + `
       }
       var didWarnSelectedSetOnOption = !1, didWarnInvalidChild = !1, didWarnInvalidInnerHTML = !1;
       function validateProps(element, props) {
-        props.value == null && (typeof props.children == "object" && props.children !== null ? React13.Children.forEach(props.children, function(child) {
+        props.value == null && (typeof props.children == "object" && props.children !== null ? React12.Children.forEach(props.children, function(child) {
           child != null && (typeof child == "string" || typeof child == "number" || didWarnInvalidChild || (didWarnInvalidChild = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }) : props.dangerouslySetInnerHTML != null && (didWarnInvalidInnerHTML || (didWarnInvalidInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.")))), props.selected != null && !didWarnSelectedSetOnOption && (error("Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>."), didWarnSelectedSetOnOption = !0);
       }
@@ -12657,7 +12657,7 @@ Learn more about this warning here: https://reactjs.org/link/legacy-context`, so
             callback !== null && (effect.callback = null, callCallback(callback, instance));
           }
       }
-      var fakeInternalInstance = {}, emptyRefsObject = new React13.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
+      var fakeInternalInstance = {}, emptyRefsObject = new React12.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
       {
         didWarnAboutStateAssignmentForComponent = /* @__PURE__ */ new Set(), didWarnAboutUninitializedState = /* @__PURE__ */ new Set(), didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = /* @__PURE__ */ new Set(), didWarnAboutLegacyLifecyclesAndDerivedState = /* @__PURE__ */ new Set(), didWarnAboutDirectlyAssigningPropsToState = /* @__PURE__ */ new Set(), didWarnAboutUndefinedDerivedState = /* @__PURE__ */ new Set(), didWarnAboutContextTypeAndContextTypes = /* @__PURE__ */ new Set(), didWarnAboutInvalidateContextType = /* @__PURE__ */ new Set();
         var didWarnOnInvalidCallback = /* @__PURE__ */ new Set();
@@ -13608,8 +13608,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           stores: null
         };
       }
-      function basicStateReducer(state, action4) {
-        return typeof action4 == "function" ? action4(state) : action4;
+      function basicStateReducer(state, action3) {
+        return typeof action3 == "function" ? action3(state) : action3;
       }
       function mountReducer(reducer, initialArg, init) {
         var hook = mountWorkInProgressHook(), initialState;
@@ -13660,8 +13660,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
               if (update.hasEagerState)
                 newState = update.eagerState;
               else {
-                var action4 = update.action;
-                newState = reducer(newState, action4);
+                var action3 = update.action;
+                newState = reducer(newState, action3);
               }
             } else {
               var clone = {
@@ -13699,8 +13699,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           queue.pending = null;
           var firstRenderPhaseUpdate = lastRenderPhaseUpdate.next, update = firstRenderPhaseUpdate;
           do {
-            var action4 = update.action;
-            newState = reducer(newState, action4), update = update.next;
+            var action3 = update.action;
+            newState = reducer(newState, action3), update = update.next;
           } while (update !== firstRenderPhaseUpdate);
           objectIs(newState, hook.memoizedState) || markWorkInProgressReceivedUpdate(), hook.memoizedState = newState, hook.baseQueue === null && (hook.baseState = newState), queue.lastRenderedState = newState;
         }
@@ -14011,11 +14011,11 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         var hook = updateWorkInProgressHook(), id = hook.memoizedState;
         return id;
       }
-      function dispatchReducerAction(fiber, queue, action4) {
+      function dispatchReducerAction(fiber, queue, action3) {
         typeof arguments[3] == "function" && error("State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().");
         var lane = requestUpdateLane(fiber), update = {
           lane,
-          action: action4,
+          action: action3,
           hasEagerState: !1,
           eagerState: null,
           next: null
@@ -14031,11 +14031,11 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         }
         markUpdateInDevTools(fiber, lane);
       }
-      function dispatchSetState(fiber, queue, action4) {
+      function dispatchSetState(fiber, queue, action3) {
         typeof arguments[3] == "function" && error("State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().");
         var lane = requestUpdateLane(fiber), update = {
           lane,
-          action: action4,
+          action: action3,
           hasEagerState: !1,
           eagerState: null,
           next: null
@@ -14050,7 +14050,7 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
               var prevDispatcher;
               prevDispatcher = ReactCurrentDispatcher$1.current, ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                var currentState = queue.lastRenderedState, eagerState = lastRenderedReducer(currentState, action4);
+                var currentState = queue.lastRenderedState, eagerState = lastRenderedReducer(currentState, action3);
                 if (update.hasEagerState = !0, update.eagerState = eagerState, objectIs(eagerState, currentState)) {
                   enqueueConcurrentHookUpdateAndEagerlyBailout(fiber, queue, update, lane);
                   return;
@@ -14086,7 +14086,7 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           queue.lanes = newQueueLanes, markRootEntangled(root2, newQueueLanes);
         }
       }
-      function markUpdateInDevTools(fiber, lane, action4) {
+      function markUpdateInDevTools(fiber, lane, action3) {
         markStateUpdateScheduled(fiber, lane);
       }
       var ContextOnlyDispatcher = {
@@ -20208,16 +20208,16 @@ function getFormEncType(encType) {
   return encType != null && !supportedFormEncTypes.has(encType) ? (warning(!1, '"' + encType + '" is not a valid `encType` for `<Form>`/`<fetcher.Form>` ' + ('and will default to "' + defaultEncType + '"')), null) : encType;
 }
 function getFormSubmissionInfo(target, basename) {
-  let method, action4, encType, formData, body;
+  let method, action3, encType, formData, body;
   if (isFormElement(target)) {
     let attr = target.getAttribute("action");
-    action4 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType, formData = new FormData(target);
+    action3 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType, formData = new FormData(target);
   } else if (isButtonElement(target) || isInputElement(target) && (target.type === "submit" || target.type === "image")) {
     let form = target.form;
     if (form == null)
       throw new Error('Cannot submit a <button> or <input type="submit"> without a <form>');
     let attr = target.getAttribute("formaction") || form.getAttribute("action");
-    if (action4 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType, formData = new FormData(form, target), !isFormDataSubmitterSupported()) {
+    if (action3 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType, formData = new FormData(form, target), !isFormDataSubmitterSupported()) {
       let {
         name,
         type,
@@ -20232,10 +20232,10 @@ function getFormSubmissionInfo(target, basename) {
   } else {
     if (isHtmlElement(target))
       throw new Error('Cannot submit element that is not <form>, <button>, or <input type="submit|image">');
-    method = defaultMethod, action4 = null, encType = defaultEncType, body = target;
+    method = defaultMethod, action3 = null, encType = defaultEncType, body = target;
   }
   return formData && encType === "text/plain" && (body = formData, formData = void 0), {
-    action: action4,
+    action: action3,
     method: method.toLowerCase(),
     encType,
     formData,
@@ -20592,7 +20592,7 @@ function useSubmit() {
   return React2.useCallback(function(target, options) {
     options === void 0 && (options = {}), validateClientSideSubmission();
     let {
-      action: action4,
+      action: action3,
       method,
       encType,
       formData,
@@ -20600,7 +20600,7 @@ function useSubmit() {
     } = getFormSubmissionInfo(target, basename);
     if (options.navigate === !1) {
       let key = options.fetcherKey || getUniqueFetcherId();
-      router.fetch(key, currentRouteId, options.action || action4, {
+      router.fetch(key, currentRouteId, options.action || action3, {
         preventScrollReset: options.preventScrollReset,
         formData,
         body,
@@ -20609,7 +20609,7 @@ function useSubmit() {
         unstable_flushSync: options.unstable_flushSync
       });
     } else
-      router.navigate(options.action || action4, {
+      router.navigate(options.action || action3, {
         preventScrollReset: options.preventScrollReset,
         formData,
         body,
@@ -20623,22 +20623,22 @@ function useSubmit() {
       });
   }, [router, basename, currentRouteId]);
 }
-function useFormAction(action4, _temp2) {
+function useFormAction(action3, _temp2) {
   let {
     relative
   } = _temp2 === void 0 ? {} : _temp2, {
     basename
   } = React2.useContext(NavigationContext), routeContext = React2.useContext(RouteContext);
   routeContext || invariant(!1, "useFormAction must be used inside a RouteContext");
-  let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action4 || ".", {
+  let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action3 || ".", {
     relative
   })), location = useLocation();
-  if (action4 == null) {
+  if (action3 == null) {
     path.search = location.search;
     let params = new URLSearchParams(path.search);
     params.has("index") && params.get("index") === "" && (params.delete("index"), path.search = params.toString() ? "?" + params.toString() : "");
   }
-  return (!action4 || action4 === ".") && match.route.index && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
+  return (!action3 || action3 === ".") && match.route.index && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
 }
 function useFetcher(_temp3) {
   var _route$matches;
@@ -20909,12 +20909,12 @@ var React2, ReactDOM, defaultMethod, defaultEncType, _formDataSupportsSubmitter,
         replace,
         state,
         method = defaultMethod,
-        action: action4,
+        action: action3,
         onSubmit,
         relative,
         preventScrollReset,
         unstable_viewTransition
-      } = _ref9, props = _objectWithoutPropertiesLoose(_ref9, _excluded3), submit = useSubmit(), formAction = useFormAction(action4, {
+      } = _ref9, props = _objectWithoutPropertiesLoose(_ref9, _excluded3), submit = useSubmit(), formAction = useFormAction(action3, {
         relative
       }), formMethod = method.toLowerCase() === "get" ? "get" : "post";
       return /* @__PURE__ */ React2.createElement("form", _extends3({
@@ -20957,7 +20957,7 @@ var require_server = __commonJS({
   "node_modules/react-router-dom/server.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var React13 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
+    var React12 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
     function _interopNamespace(e) {
       if (e && e.__esModule)
         return e;
@@ -20974,7 +20974,7 @@ var require_server = __commonJS({
         }
       }), n.default = e, Object.freeze(n);
     }
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React13);
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React12);
     function StaticRouter({
       basename,
       children,
@@ -20982,7 +20982,7 @@ var require_server = __commonJS({
       future: future2
     }) {
       typeof locationProp == "string" && (locationProp = reactRouterDom.parsePath(locationProp));
-      let action4 = router.Action.Pop, location = {
+      let action3 = router.Action.Pop, location = {
         pathname: locationProp.pathname || "/",
         search: locationProp.search || "",
         hash: locationProp.hash || "",
@@ -20993,7 +20993,7 @@ var require_server = __commonJS({
         basename,
         children,
         location,
-        navigationType: action4,
+        navigationType: action3,
         navigator: staticNavigator,
         future: future2,
         static: !0
@@ -21227,7 +21227,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React13 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React12 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -22721,7 +22721,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React13.Children.forEach(children, function(child) {
+        return React12.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -23866,10 +23866,10 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useContext4(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
-      function basicStateReducer(state, action4) {
-        return typeof action4 == "function" ? action4(state) : action4;
+      function basicStateReducer(state, action3) {
+        return typeof action3 == "function" ? action3(state) : action3;
       }
-      function useState9(initialState) {
+      function useState8(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
@@ -23885,8 +23885,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
               renderPhaseUpdates.delete(queue);
               var newState = workInProgressHook.memoizedState, update = firstRenderPhaseUpdate;
               do {
-                var action4 = update.action;
-                isInHookUserCodeInDev = !0, newState = reducer(newState, action4), isInHookUserCodeInDev = !1, update = update.next;
+                var action3 = update.action;
+                isInHookUserCodeInDev = !0, newState = reducer(newState, action3), isInHookUserCodeInDev = !1, update = update.next;
               } while (update !== null);
               return workInProgressHook.memoizedState = newState, [newState, dispatch];
             }
@@ -23932,13 +23932,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useLayoutEffect3(create, inputs) {
         currentHookNameInDev = "useLayoutEffect", error("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
       }
-      function dispatchAction(componentIdentity, queue, action4) {
+      function dispatchAction(componentIdentity, queue, action3) {
         if (numberOfReRenders >= RE_RENDER_LIMIT)
           throw new Error("Too many re-renders. React limits the number of renders to prevent an infinite loop.");
         if (componentIdentity === currentlyRenderingComponent) {
           didScheduleRenderPhaseUpdate = !0;
           var update = {
-            action: action4,
+            action: action3,
             next: null
           };
           renderPhaseUpdates === null && (renderPhaseUpdates = /* @__PURE__ */ new Map());
@@ -23989,7 +23989,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         useMemo: useMemo5,
         useReducer,
         useRef: useRef4,
-        useState: useState9,
+        useState: useState8,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
         useCallback: useCallback3,
@@ -24808,7 +24808,7 @@ var require_react_dom_server_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React13 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React12 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -26317,7 +26317,7 @@ var require_react_dom_server_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React13.Children.forEach(children, function(child) {
+        return React12.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -27418,10 +27418,10 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useContext4(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
-      function basicStateReducer(state, action4) {
-        return typeof action4 == "function" ? action4(state) : action4;
+      function basicStateReducer(state, action3) {
+        return typeof action3 == "function" ? action3(state) : action3;
       }
-      function useState9(initialState) {
+      function useState8(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
@@ -27437,8 +27437,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
               renderPhaseUpdates.delete(queue);
               var newState = workInProgressHook.memoizedState, update = firstRenderPhaseUpdate;
               do {
-                var action4 = update.action;
-                isInHookUserCodeInDev = !0, newState = reducer(newState, action4), isInHookUserCodeInDev = !1, update = update.next;
+                var action3 = update.action;
+                isInHookUserCodeInDev = !0, newState = reducer(newState, action3), isInHookUserCodeInDev = !1, update = update.next;
               } while (update !== null);
               return workInProgressHook.memoizedState = newState, [newState, dispatch];
             }
@@ -27484,13 +27484,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useLayoutEffect3(create, inputs) {
         currentHookNameInDev = "useLayoutEffect", error("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
       }
-      function dispatchAction(componentIdentity, queue, action4) {
+      function dispatchAction(componentIdentity, queue, action3) {
         if (numberOfReRenders >= RE_RENDER_LIMIT)
           throw new Error("Too many re-renders. React limits the number of renders to prevent an infinite loop.");
         if (componentIdentity === currentlyRenderingComponent) {
           didScheduleRenderPhaseUpdate = !0;
           var update = {
-            action: action4,
+            action: action3,
             next: null
           };
           renderPhaseUpdates === null && (renderPhaseUpdates = /* @__PURE__ */ new Map());
@@ -27541,7 +27541,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         useMemo: useMemo5,
         useReducer,
         useRef: useRef4,
-        useState: useState9,
+        useState: useState8,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
         useCallback: useCallback3,
@@ -28380,14 +28380,14 @@ var require_react_jsx_dev_runtime_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React13 = require_react(), REACT_ELEMENT_TYPE2 = Symbol.for("react.element"), REACT_PORTAL_TYPE2 = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE2 = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE2 = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE2 = Symbol.for("react.provider"), REACT_CONTEXT_TYPE2 = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE2 = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE2 = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE2 = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE2 = Symbol.for("react.memo"), REACT_LAZY_TYPE2 = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE2 = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
+      var React12 = require_react(), REACT_ELEMENT_TYPE2 = Symbol.for("react.element"), REACT_PORTAL_TYPE2 = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE2 = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE2 = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE2 = Symbol.for("react.provider"), REACT_CONTEXT_TYPE2 = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE2 = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE2 = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE2 = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE2 = Symbol.for("react.memo"), REACT_LAZY_TYPE2 = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE2 = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
       function getIteratorFn(maybeIterable) {
         if (maybeIterable === null || typeof maybeIterable != "object")
           return null;
         var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
         return typeof maybeIterator == "function" ? maybeIterator : null;
       }
-      var ReactSharedInternals = React13.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function error(format) {
         {
           for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)
@@ -28788,7 +28788,7 @@ var require_react_jsx_dev_runtime_development = __commonJS({
           value: source
         }), Object.freeze && (Object.freeze(element.props), Object.freeze(element)), element;
       };
-      function jsxDEV33(type, config, maybeKey, source, self) {
+      function jsxDEV32(type, config, maybeKey, source, self) {
         {
           var propName, props = {}, key = null, ref = null;
           maybeKey !== void 0 && (checkKeyStringCoercion(maybeKey), key = "" + maybeKey), hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key), hasValidRef(config) && (ref = config.ref, warnIfStringRefCannotBeAutoConverted(config, self));
@@ -28935,7 +28935,7 @@ Check the top-level render call using <` + parentName + ">.");
             var typeString;
             type === null ? typeString = "null" : isArray(type) ? typeString = "array" : type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE2 ? (typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />", info = " Did you accidentally export a JSX literal instead of a component?") : typeString = typeof type, error("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
           }
-          var element = jsxDEV33(type, props, key, source, self);
+          var element = jsxDEV32(type, props, key, source, self);
           if (element == null)
             return element;
           if (validType) {
@@ -28975,11 +28975,11 @@ var require_use_sync_external_store_with_selector_development = __commonJS({
     (function() {
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-      var React13 = require_react();
+      var React12 = require_react();
       function is3(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is3, useSyncExternalStore3 = React13.useSyncExternalStore, useRef4 = React13.useRef, useEffect8 = React13.useEffect, useMemo5 = React13.useMemo, useDebugValue = React13.useDebugValue;
+      var objectIs = typeof Object.is == "function" ? Object.is : is3, useSyncExternalStore3 = React12.useSyncExternalStore, useRef4 = React12.useRef, useEffect8 = React12.useEffect, useMemo5 = React12.useMemo, useDebugValue = React12.useDebugValue;
       function useSyncExternalStoreWithSelector3(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
         var instRef = useRef4(null), inst;
         instRef.current === null ? (inst = {
@@ -29028,7 +29028,7 @@ var require_with_selector = __commonJS({
 });
 
 // server.ts
-var import_cloudflare9 = __toESM(require_dist(), 1);
+var import_cloudflare8 = __toESM(require_dist(), 1);
 
 // node_modules/@remix-run/cloudflare-pages/dist/esm/worker.js
 var import_cloudflare = __toESM(require_dist());
@@ -29498,12 +29498,12 @@ To reference the meta function API, see https://remix.run/route/meta`);
       }) : null;
     if ("script:ld+json" in metaProps)
       try {
-        let json9 = JSON.stringify(metaProps["script:ld+json"]);
+        let json8 = JSON.stringify(metaProps["script:ld+json"]);
         return /* @__PURE__ */ React3.createElement("script", {
-          key: `script:ld+json:${json9}`,
+          key: `script:ld+json:${json8}`,
           type: "application/ld+json",
           dangerouslySetInnerHTML: {
-            __html: json9
+            __html: json8
           }
         });
       } catch {
@@ -30169,9 +30169,9 @@ function _classPrivateFieldSet(receiver, privateMap, value) {
   var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set");
   return _classApplyDescriptorSet(receiver, descriptor, value), value;
 }
-function _classExtractFieldDescriptor(receiver, privateMap, action4) {
+function _classExtractFieldDescriptor(receiver, privateMap, action3) {
   if (!privateMap.has(receiver))
-    throw new TypeError("attempted to " + action4 + " private field on non-instance");
+    throw new TypeError("attempted to " + action3 + " private field on non-instance");
   return privateMap.get(receiver);
 }
 function _classApplyDescriptorGet(receiver, descriptor) {
@@ -30927,23 +30927,23 @@ function createStore(reducer, preloadedState, enhancer) {
       }
     };
   }
-  function dispatch(action4) {
-    if (!isPlainObject(action4))
-      throw new Error(`Actions must be plain objects. Instead, the actual type was: '${kindOf(action4)}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`);
-    if (typeof action4.type > "u")
+  function dispatch(action3) {
+    if (!isPlainObject(action3))
+      throw new Error(`Actions must be plain objects. Instead, the actual type was: '${kindOf(action3)}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`);
+    if (typeof action3.type > "u")
       throw new Error('Actions may not have an undefined "type" property. You may have misspelled an action type string constant.');
-    if (typeof action4.type != "string")
-      throw new Error(`Action "type" property must be a string. Instead, the actual type was: '${kindOf(action4.type)}'. Value was: '${action4.type}' (stringified)`);
+    if (typeof action3.type != "string")
+      throw new Error(`Action "type" property must be a string. Instead, the actual type was: '${kindOf(action3.type)}'. Value was: '${action3.type}' (stringified)`);
     if (isDispatching)
       throw new Error("Reducers may not dispatch actions.");
     try {
-      isDispatching = !0, currentState = currentReducer(currentState, action4);
+      isDispatching = !0, currentState = currentReducer(currentState, action3);
     } finally {
       isDispatching = !1;
     }
     return (currentListeners = nextListeners).forEach((listener2) => {
       listener2();
-    }), action4;
+    }), action3;
   }
   function replaceReducer(nextReducer) {
     if (typeof nextReducer != "function")
@@ -30996,8 +30996,8 @@ function warning2(message) {
   } catch {
   }
 }
-function getUnexpectedStateShapeWarningMessage(inputState, reducers, action4, unexpectedKeyCache) {
-  let reducerKeys = Object.keys(reducers), argumentName = action4 && action4.type === actionTypes_default.INIT ? "preloadedState argument passed to createStore" : "previous state received by the reducer";
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action3, unexpectedKeyCache) {
+  let reducerKeys = Object.keys(reducers), argumentName = action3 && action3.type === actionTypes_default.INIT ? "preloadedState argument passed to createStore" : "previous state received by the reducer";
   if (reducerKeys.length === 0)
     return "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers.";
   if (!isPlainObject(inputState))
@@ -31005,7 +31005,7 @@ function getUnexpectedStateShapeWarningMessage(inputState, reducers, action4, un
   let unexpectedKeys = Object.keys(inputState).filter((key) => !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key]);
   if (unexpectedKeys.forEach((key) => {
     unexpectedKeyCache[key] = !0;
-  }), !(action4 && action4.type === actionTypes_default.REPLACE) && unexpectedKeys.length > 0)
+  }), !(action3 && action3.type === actionTypes_default.REPLACE) && unexpectedKeys.length > 0)
     return `Unexpected ${unexpectedKeys.length > 1 ? "keys" : "key"} "${unexpectedKeys.join('", "')}" found in ${argumentName}. Expected to find one of the known reducer keys instead: "${reducerKeys.join('", "')}". Unexpected keys will be ignored.`;
 }
 function assertReducerShape(reducers) {
@@ -31035,18 +31035,18 @@ function combineReducers(reducers) {
   } catch (e) {
     shapeAssertionError = e;
   }
-  return function(state = {}, action4) {
+  return function(state = {}, action3) {
     if (shapeAssertionError)
       throw shapeAssertionError;
     {
-      let warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action4, unexpectedKeyCache);
+      let warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action3, unexpectedKeyCache);
       warningMessage && warning2(warningMessage);
     }
     let hasChanged = !1, nextState = {};
     for (let i = 0; i < finalReducerKeys.length; i++) {
-      let key = finalReducerKeys[i], reducer = finalReducers[key], previousStateForKey = state[key], nextStateForKey = reducer(previousStateForKey, action4);
+      let key = finalReducerKeys[i], reducer = finalReducers[key], previousStateForKey = state[key], nextStateForKey = reducer(previousStateForKey, action3);
       if (typeof nextStateForKey > "u") {
-        let actionType = action4 && action4.type;
+        let actionType = action3 && action3.type;
         throw new Error(`When called with an action of type ${actionType ? `"${String(actionType)}"` : "(unknown type)"}, the slice reducer for key "${key}" returned undefined. To ignore an action, you must explicitly return the previous state. If you want this reducer to hold no value, you can return null instead of undefined.`);
       }
       nextState[key] = nextStateForKey, hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
@@ -31063,7 +31063,7 @@ function applyMiddleware(...middlewares) {
       throw new Error("Dispatching while constructing your middleware is not allowed. Other middleware would not be applied to this dispatch.");
     }, middlewareAPI = {
       getState: store2.getState,
-      dispatch: (action4, ...args) => dispatch(action4, ...args)
+      dispatch: (action3, ...args) => dispatch(action3, ...args)
     }, chain = middlewares.map((middleware) => middleware(middlewareAPI));
     return dispatch = compose(...chain)(store2.dispatch), {
       ...store2,
@@ -31071,8 +31071,8 @@ function applyMiddleware(...middlewares) {
     };
   };
 }
-function isAction(action4) {
-  return isPlainObject(action4) && "type" in action4 && typeof action4.type == "string";
+function isAction(action3) {
+  return isPlainObject(action3) && "type" in action3 && typeof action3.type == "string";
 }
 
 // node_modules/immer/dist/immer.mjs
@@ -31734,7 +31734,7 @@ function createSelectorCreator(memoizeOrOptions, ...memoizeOptionsFromArgs) {
 
 // node_modules/redux-thunk/dist/redux-thunk.mjs
 function createThunkMiddleware(extraArgument) {
-  return ({ dispatch, getState }) => (next) => (action4) => typeof action4 == "function" ? action4(dispatch, getState, extraArgument) : next(action4);
+  return ({ dispatch, getState }) => (next) => (action3) => typeof action3 == "function" ? action3(dispatch, getState, extraArgument) : next(action3);
 }
 var thunk = createThunkMiddleware(), withExtraArgument = createThunkMiddleware;
 
@@ -31775,11 +31775,11 @@ function createAction(type, prepareAction) {
       payload: args[0]
     };
   }
-  return actionCreator.toString = () => `${type}`, actionCreator.type = type, actionCreator.match = (action4) => isAction(action4) && action4.type === type, actionCreator;
+  return actionCreator.toString = () => `${type}`, actionCreator.type = type, actionCreator.match = (action3) => isAction(action3) && action3.type === type, actionCreator;
 }
-function isActionCreator(action4) {
-  return typeof action4 == "function" && "type" in action4 && // hasMatchFunction only wants Matchers but I don't see the point in rewriting it
-  hasMatchFunction(action4);
+function isActionCreator(action3) {
+  return typeof action3 == "function" && "type" in action3 && // hasMatchFunction only wants Matchers but I don't see the point in rewriting it
+  hasMatchFunction(action3);
 }
 function getMessage(type) {
   let splitType = type ? `${type}`.split("/") : [], actionName = splitType[splitType.length - 1] || "actionCreator";
@@ -31790,7 +31790,7 @@ function createActionCreatorInvariantMiddleware(options = {}) {
   let {
     isActionCreator: isActionCreator2 = isActionCreator
   } = options;
-  return () => (next) => (action4) => (isActionCreator2(action4) && console.warn(getMessage(action4.type)), next(action4));
+  return () => (next) => (action3) => (isActionCreator2(action3) && console.warn(getMessage(action3.type)), next(action3));
 }
 function getTimeMeasureUtils(maxDelay, fnName) {
   let elapsed = 0;
@@ -31919,16 +31919,16 @@ function createImmutableStateInvariantMiddleware(options = {}) {
       getState
     }) => {
       let state = getState(), tracker = track(state), result;
-      return (next) => (action4) => {
+      return (next) => (action3) => {
         let measureUtils = getTimeMeasureUtils(warnAfter, "ImmutableStateInvariantMiddleware");
         measureUtils.measureTime(() => {
           if (state = getState(), result = tracker.detectMutations(), tracker = track(state), result.wasMutated)
             throw new Error(`A state mutation was detected between dispatches, in the path '${result.path || ""}'.  This may cause incorrect behavior. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
         });
-        let dispatchedAction = next(action4);
+        let dispatchedAction = next(action3);
         return measureUtils.measureTime(() => {
           if (state = getState(), result = tracker.detectMutations(), tracker = track(state), result.wasMutated)
-            throw new Error(`A state mutation was detected inside a dispatch, in the path: ${result.path || ""}. Take a look at the reducer(s) handling the action ${stringify2(action4)}. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
+            throw new Error(`A state mutation was detected inside a dispatch, in the path: ${result.path || ""}. Take a look at the reducer(s) handling the action ${stringify2(action3)}. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
         }), measureUtils.warnIfExceeded(), dispatchedAction;
       };
     };
@@ -31983,19 +31983,19 @@ function createSerializableStateInvariantMiddleware(options = {}) {
       ignoreActions = !1,
       disableCache = !1
     } = options, cache = !disableCache && WeakSet ? /* @__PURE__ */ new WeakSet() : void 0;
-    return (storeAPI) => (next) => (action4) => {
-      if (!isAction(action4))
-        return next(action4);
-      let result = next(action4), measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
-      return !ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action4.type) !== -1) && measureUtils.measureTime(() => {
-        let foundActionNonSerializableValue = findNonSerializableValue(action4, "", isSerializable, getEntries, ignoredActionPaths, cache);
+    return (storeAPI) => (next) => (action3) => {
+      if (!isAction(action3))
+        return next(action3);
+      let result = next(action3), measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
+      return !ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action3.type) !== -1) && measureUtils.measureTime(() => {
+        let foundActionNonSerializableValue = findNonSerializableValue(action3, "", isSerializable, getEntries, ignoredActionPaths, cache);
         if (foundActionNonSerializableValue) {
           let {
             keyPath,
             value
           } = foundActionNonSerializableValue;
           console.error(`A non-serializable value was detected in an action, in the path: \`${keyPath}\`. Value:`, value, `
-Take a look at the logic that dispatched this action: `, action4, `
+Take a look at the logic that dispatched this action: `, action3, `
 (See https://redux.js.org/faq/actions#why-should-type-be-a-string-or-at-least-serializable-why-should-my-action-types-be-constants)`, `
 (To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)`);
         }
@@ -32007,7 +32007,7 @@ Take a look at the logic that dispatched this action: `, action4, `
             value
           } = foundStateNonSerializableValue;
           console.error(`A non-serializable value was detected in the state, in the path: \`${keyPath}\`. Value:`, value, `
-Take a look at the reducer(s) handling this action type: ${action4.type}.
+Take a look at the reducer(s) handling this action type: ${action3.type}.
 (See https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)`);
         }
       }), measureUtils.warnIfExceeded()), result;
@@ -32057,9 +32057,9 @@ var createQueueWithTimer = (timeout) => (notify) => {
     },
     // Override the base `store.dispatch` method so that we can check actions
     // for the `shouldAutoBatch` flag and determine if batching is active
-    dispatch(action4) {
+    dispatch(action3) {
       try {
-        return notifying = !action4?.meta?.[SHOULD_AUTOBATCH], shouldNotifyAtEndOfTick = !notifying, shouldNotifyAtEndOfTick && (notificationQueued || (notificationQueued = !0, queueCallback(notifyListeners))), store2.dispatch(action4);
+        return notifying = !action3?.meta?.[SHOULD_AUTOBATCH], shouldNotifyAtEndOfTick = !notifying, shouldNotifyAtEndOfTick && (notificationQueued || (notificationQueued = !0, queueCallback(notifyListeners))), store2.dispatch(action3);
       } finally {
         notifying = !0;
       }
@@ -32156,22 +32156,22 @@ function createReducer(initialState, mapOrBuilderCallback) {
     let frozenInitialState = freezeDraftable(initialState);
     getInitialState = () => frozenInitialState;
   }
-  function reducer(state = getInitialState(), action4) {
-    let caseReducers = [actionsMap[action4.type], ...finalActionMatchers.filter(({
+  function reducer(state = getInitialState(), action3) {
+    let caseReducers = [actionsMap[action3.type], ...finalActionMatchers.filter(({
       matcher
-    }) => matcher(action4)).map(({
+    }) => matcher(action3)).map(({
       reducer: reducer2
     }) => reducer2)];
     return caseReducers.filter((cr) => !!cr).length === 0 && (caseReducers = [finalDefaultCaseReducer]), caseReducers.reduce((previousState, caseReducer) => {
       if (caseReducer)
         if (isDraft(previousState)) {
-          let result = caseReducer(previousState, action4);
+          let result = caseReducer(previousState, action3);
           return result === void 0 ? previousState : result;
         } else {
           if (isDraftable(previousState))
-            return produce(previousState, (draft) => caseReducer(draft, action4));
+            return produce(previousState, (draft) => caseReducer(draft, action3));
           {
-            let result = caseReducer(previousState, action4);
+            let result = caseReducer(previousState, action3);
             if (result === void 0) {
               if (previousState === null)
                 return previousState;
@@ -32190,9 +32190,9 @@ var urlAlphabet = "ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXI
   for (; i--; )
     id += urlAlphabet[Math.random() * 64 | 0];
   return id;
-}, matches = (matcher, action4) => hasMatchFunction(matcher) ? matcher.match(action4) : matcher(action4);
+}, matches = (matcher, action3) => hasMatchFunction(matcher) ? matcher.match(action3) : matcher(action3);
 function isAnyOf(...matchers) {
-  return (action4) => matchers.some((matcher) => matches(matcher, action4));
+  return (action3) => matchers.some((matcher) => matches(matcher, action3));
 }
 var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = class {
   constructor(payload, meta5) {
@@ -32320,12 +32320,12 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   }
   return createAsyncThunk2.withTypes = () => createAsyncThunk2, createAsyncThunk2;
 })();
-function unwrapResult(action4) {
-  if (action4.meta && action4.meta.rejectedWithValue)
-    throw action4.payload;
-  if (action4.error)
-    throw action4.error;
-  return action4.payload;
+function unwrapResult(action3) {
+  if (action3.meta && action3.meta.rejectedWithValue)
+    throw action3.payload;
+  if (action3.error)
+    throw action3.error;
+  return action3.payload;
 }
 function isThenable(value) {
   return value !== null && typeof value == "object" && typeof value.then == "function";
@@ -32403,8 +32403,8 @@ function buildCreateSlice({
     let selectSelf = (state) => state, injectedSelectorCache = /* @__PURE__ */ new WeakMap(), _reducer, slice = {
       name,
       reducerPath,
-      reducer(state, action4) {
-        return _reducer || (_reducer = buildReducer()), _reducer(state, action4);
+      reducer(state, action3) {
+        return _reducer || (_reducer = buildReducer()), _reducer(state, action3);
       },
       actions: context.actionCreators,
       caseReducers: context.sliceCaseReducersByName,
@@ -32703,14 +32703,14 @@ var initialStateValue = {
   name: "user",
   initialState: { value: initialStateValue },
   reducers: {
-    setUser: (state, action4) => {
-      state.value.user = action4.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
+    setUser: (state, action3) => {
+      state.value.user = action3.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
     },
     setLogout: (state) => {
       state.value.user = null, state.value.context.isLoggedIn = !1;
     },
-    setLoading: (state, action4) => {
-      state.value.context.isLoading = action4.payload;
+    setLoading: (state, action3) => {
+      state.value.context.isLoading = action3.payload;
     },
     // Optionally, you can add a reset action to set the state back to its initial value
     resetState: (state) => {
@@ -32718,9 +32718,9 @@ var initialStateValue = {
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(loginUser.fulfilled, (state, action4) => {
-      state.value.user = action4.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
-    }).addCase(loginUser.rejected, (state, action4) => {
+    builder.addCase(loginUser.fulfilled, (state, action3) => {
+      state.value.user = action3.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
+    }).addCase(loginUser.rejected, (state, action3) => {
       state.value.context.error = "Login failed", state.value.context.isLoading = !1;
     });
   }
@@ -32749,7 +32749,7 @@ var initializeStore = (preloadedState = {}) => configureStore({
 });
 
 // app/index.css
-var app_default = "/build/_assets/index-ANCR3FBZ.css";
+var app_default = "/build/_assets/index-RIDNN4T4.css";
 
 // app/root.tsx
 var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1), links = () => [
@@ -33034,487 +33034,13 @@ var import_jsx_dev_runtime13 = __toESM(require_jsx_dev_runtime(), 1), Clearance9
 
 // app/routes/_auth.register.tsx
 var auth_register_exports = {};
-__export(auth_register_exports, {
-  action: () => action,
-  default: () => auth_register_default,
-  loader: () => loader
-});
-var import_react6 = __toESM(require_react(), 1);
-var import_cloudflare3 = __toESM(require_dist(), 1);
-
-// app/state/hooks/user.tsx
-var useTypedSelector = useSelector, useDispatch2 = () => useDispatch();
-
-// app/components/base/navigation.tsx
-var import_jsx_dev_runtime14 = __toESM(require_jsx_dev_runtime(), 1), Navigation = ({ context }) => {
-  let fetcher = useFetcher2(), dispatch = useDispatch2(), navigate = useNavigate(), handleLogout = () => {
-    fetcher.submit({}, { method: "post", action: "/logout" }), dispatch(setLogout());
-  };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_jsx_dev_runtime14.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("nav", { className: "bg-white shadow-md py-4 px-5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("ul", { className: "flex space-x-4", children: context.isLoggedIn ? /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_jsx_dev_runtime14.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
-      Link2,
-      {
-        className: "text-blue-600 hover:text-blue-800 font-semibold",
-        to: "/info",
-        prefetch: "intent",
-        children: "Info"
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/base/navigation.tsx",
-        lineNumber: 61,
-        columnNumber: 17
-      },
-      this
-    ) }, void 0, !1, {
-      fileName: "app/components/base/navigation.tsx",
-      lineNumber: 60,
-      columnNumber: 15
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
-      "button",
-      {
-        className: "text-red-600 hover:text-red-800 font-semibold",
-        onClick: handleLogout,
-        children: "Logout"
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/base/navigation.tsx",
-        lineNumber: 69,
-        columnNumber: 17
-      },
-      this
-    ) }, void 0, !1, {
-      fileName: "app/components/base/navigation.tsx",
-      lineNumber: 68,
-      columnNumber: 15
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/components/base/navigation.tsx",
-    lineNumber: 50,
-    columnNumber: 13
-  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_jsx_dev_runtime14.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
-      Link2,
-      {
-        className: "text-blue-600 hover:text-blue-800 font-semibold",
-        to: "/login",
-        prefetch: "intent",
-        children: "Login"
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/base/navigation.tsx",
-        lineNumber: 31,
-        columnNumber: 17
-      },
-      this
-    ) }, void 0, !1, {
-      fileName: "app/components/base/navigation.tsx",
-      lineNumber: 30,
-      columnNumber: 15
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
-      Link2,
-      {
-        className: "text-blue-600 hover:text-blue-800 font-semibold",
-        to: "/register",
-        prefetch: "intent",
-        children: "Register"
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/base/navigation.tsx",
-        lineNumber: 40,
-        columnNumber: 17
-      },
-      this
-    ) }, void 0, !1, {
-      fileName: "app/components/base/navigation.tsx",
-      lineNumber: 39,
-      columnNumber: 15
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/components/base/navigation.tsx",
-    lineNumber: 29,
-    columnNumber: 13
-  }, this) }, void 0, !1, {
-    fileName: "app/components/base/navigation.tsx",
-    lineNumber: 27,
-    columnNumber: 9
-  }, this) }, void 0, !1, {
-    fileName: "app/components/base/navigation.tsx",
-    lineNumber: 26,
-    columnNumber: 7
-  }, this) }, void 0, !1, {
-    fileName: "app/components/base/navigation.tsx",
-    lineNumber: 25,
-    columnNumber: 5
-  }, this);
-}, navigation_default = Navigation;
-
-// app/components/base/header.tsx
-var import_jsx_dev_runtime15 = __toESM(require_jsx_dev_runtime(), 1), Header = ({ context }) => /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("header", { className: "header-content", children: /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(navigation_default, { context }, void 0, !1, {
-  fileName: "app/components/base/header.tsx",
-  lineNumber: 19,
-  columnNumber: 7
-}, this) }, void 0, !1, {
-  fileName: "app/components/base/header.tsx",
-  lineNumber: 18,
-  columnNumber: 5
-}, this), header_default = Header;
-
-// app/components/base/footer.tsx
-var import_jsx_dev_runtime16 = __toESM(require_jsx_dev_runtime(), 1), Footer = () => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("footer", { className: "bg-gray-800 text-white p-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "container mx-auto flex justify-between items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex", children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("a", { href: "/info/terms", className: "text-white hover:text-gray-300 mr-4", children: "Terms of Service" }, void 0, !1, {
-    fileName: "app/components/base/footer.tsx",
-    lineNumber: 9,
-    columnNumber: 11
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("a", { href: "/info/privacy", className: "text-white hover:text-gray-300", children: "Privacy Policy" }, void 0, !1, {
-    fileName: "app/components/base/footer.tsx",
-    lineNumber: 12,
-    columnNumber: 11
-  }, this)
-] }, void 0, !0, {
-  fileName: "app/components/base/footer.tsx",
-  lineNumber: 8,
-  columnNumber: 9
-}, this) }, void 0, !1, {
-  fileName: "app/components/base/footer.tsx",
-  lineNumber: 6,
-  columnNumber: 7
-}, this) }, void 0, !1, {
-  fileName: "app/components/base/footer.tsx",
-  lineNumber: 5,
-  columnNumber: 5
-}, this), footer_default = Footer;
-
-// app/components/base/pageTemplate.tsx
-var import_jsx_dev_runtime17 = __toESM(require_jsx_dev_runtime(), 1), PageTemplate = ({ children, user: user2, context }) => context.isLoading === !0 || context.isLoading === null ? /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("header", { className: "header-content", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "loader", children: "Loading..." }, void 0, !1, {
-  fileName: "app/components/base/pageTemplate.tsx",
-  lineNumber: 17,
-  columnNumber: 9
-}, this) }, void 0, !1, {
-  fileName: "app/components/base/pageTemplate.tsx",
-  lineNumber: 16,
-  columnNumber: 7
-}, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex flex-col min-h-screen", children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(header_default, { user: user2, context }, void 0, !1, {
-    fileName: "app/components/base/pageTemplate.tsx",
-    lineNumber: 24,
-    columnNumber: 9
-  }, this) }, void 0, !1, {
-    fileName: "app/components/base/pageTemplate.tsx",
-    lineNumber: 23,
-    columnNumber: 7
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("main", { className: "main-content flex-grow py-8 max-w-7xl px-4 sm:px-6 lg:px-8", children }, void 0, !1, {
-    fileName: "app/components/base/pageTemplate.tsx",
-    lineNumber: 26,
-    columnNumber: 7
-  }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(footer_default, {}, void 0, !1, {
-    fileName: "app/components/base/pageTemplate.tsx",
-    lineNumber: 30,
-    columnNumber: 9
-  }, this) }, void 0, !1, {
-    fileName: "app/components/base/pageTemplate.tsx",
-    lineNumber: 29,
-    columnNumber: 7
-  }, this)
-] }, void 0, !0, {
-  fileName: "app/components/base/pageTemplate.tsx",
-  lineNumber: 22,
-  columnNumber: 5
-}, this), pageTemplate_default = PageTemplate;
-
-// app/utils/session/session.ts
-var import_cloudflare2 = __toESM(require_dist(), 1);
-function createSessionStorage(env) {
-  let sessionCookie = (0, import_cloudflare2.createCookie)("__session", {
-    httpOnly: !0,
-    maxAge: 2592e3,
-    // 30 days
-    path: "/",
-    sameSite: "lax",
-    secrets: [env.USER_SESSION_SECRET],
-    // Securely using the session secret from environment variables
-    secure: !0
-  }), { getSession, commitSession, destroySession } = (0, import_cloudflare2.createWorkersKVSessionStorage)({
-    kv: env.theform,
-    // Using the KV namespace from the environment
-    cookie: sessionCookie
-  });
-  return { getSession, commitSession, destroySession };
-}
-
-// app/utils/session/sessionUtils.ts
-async function isAuthenticated({ request, env }) {
-  return (await createSessionStorage(env).getSession(request.headers.get("Cookie"))).has("auth");
-}
-
-// app/routes/_auth.register.tsx
-var import_jsx_dev_runtime18 = __toESM(require_jsx_dev_runtime(), 1), loader = async ({ request, context }) => await isAuthenticated({ request, env: context.env }) ? (0, import_cloudflare3.redirect)("/home") : (0, import_cloudflare3.json)({});
-async function registerUser(username, password) {
-  try {
-    return await UserService.registerUser(username, password);
-  } catch (error) {
-    throw console.error("Login failed:", error), new Error("Login failed");
-  }
-}
-var action = async ({ request, context }) => {
-  let formData = await request.formData(), username = formData.get("username"), password = formData.get("password");
-  if (typeof username == "string" && typeof password == "string")
-    try {
-      return await registerUser(username, password), new Response(null, {
-        status: 303,
-        headers: {
-          Location: "/login"
-        }
-      });
-    } catch {
-      return (0, import_cloudflare3.json)({ error: "Registration failed." }, { status: 501 });
-    }
-  else
-    return (0, import_cloudflare3.json)({ error: "Missing username or password" }, { status: 400 });
-}, Register = () => {
-  let [username, setUsername] = (0, import_react6.useState)(""), [password, setPassword] = (0, import_react6.useState)(""), actionData = useActionData2(), [hasAgreedToTerms, setHasAgreedToTerms] = (0, import_react6.useState)(!1), user2 = useTypedSelector((state) => state.user.value);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(pageTemplate_default, { user: user2, children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-    "form",
-    {
-      action: "/register",
-      method: "post",
-      className: "max-w-lg mx-auto mt-2 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
-      children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-            "label",
-            {
-              className: "block text-gray-300 text-base font-semibold mb-2",
-              htmlFor: "username",
-              children: "Email"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/_auth.register.tsx",
-              lineNumber: 85,
-              columnNumber: 11
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-            "input",
-            {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
-              id: "username",
-              type: "text",
-              name: "username",
-              value: username,
-              placeholder: "Enter your email",
-              onChange: (e) => setUsername(e.target.value)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/_auth.register.tsx",
-              lineNumber: 91,
-              columnNumber: 11
-            },
-            this
-          )
-        ] }, void 0, !0, {
-          fileName: "app/routes/_auth.register.tsx",
-          lineNumber: 84,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-            "label",
-            {
-              className: "block text-gray-300 text-base font-semibold mb-2",
-              htmlFor: "password",
-              children: "Password"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/_auth.register.tsx",
-              lineNumber: 103,
-              columnNumber: 11
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-            "input",
-            {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 mb-3 leading-tight focus:outline-none focus:border-blue-500",
-              id: "password",
-              type: "password",
-              name: "password",
-              value: password,
-              placeholder: "Enter your password",
-              onChange: (e) => setPassword(e.target.value)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/_auth.register.tsx",
-              lineNumber: 109,
-              columnNumber: 11
-            },
-            this
-          )
-        ] }, void 0, !0, {
-          fileName: "app/routes/_auth.register.tsx",
-          lineNumber: 102,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-          "label",
-          {
-            htmlFor: "termsOfService",
-            className: "block text-gray-300 text-base font-semibold mb-2",
-            children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                "input",
-                {
-                  type: "checkbox",
-                  id: "termsOfService",
-                  checked: hasAgreedToTerms,
-                  onChange: (event) => {
-                    setHasAgreedToTerms(event.target.checked);
-                  },
-                  className: "mr-2 leading-tight"
-                },
-                void 0,
-                !1,
-                {
-                  fileName: "app/routes/_auth.register.tsx",
-                  lineNumber: 125,
-                  columnNumber: 13
-                },
-                this
-              ),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("span", { className: "text-sm text-white", children: [
-                "I have read and agree to the ",
-                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("br", {}, void 0, !1, {
-                  fileName: "app/routes/_auth.register.tsx",
-                  lineNumber: 133,
-                  columnNumber: 44
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                  "a",
-                  {
-                    href: "/info/terms",
-                    target: "_blank",
-                    className: "text-blue-500 hover:text-blue-700",
-                    style: { margin: "0 5px" },
-                    children: "Terms of Service"
-                  },
-                  void 0,
-                  !1,
-                  {
-                    fileName: "app/routes/_auth.register.tsx",
-                    lineNumber: 134,
-                    columnNumber: 15
-                  },
-                  this
-                ),
-                "and",
-                /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-                  "a",
-                  {
-                    href: "/info/privacy",
-                    target: "_blank",
-                    className: "text-blue-500 hover:text-blue-700",
-                    style: { margin: "0 5px" },
-                    children: "Privacy Policy"
-                  },
-                  void 0,
-                  !1,
-                  {
-                    fileName: "app/routes/_auth.register.tsx",
-                    lineNumber: 143,
-                    columnNumber: 15
-                  },
-                  this
-                )
-              ] }, void 0, !0, {
-                fileName: "app/routes/_auth.register.tsx",
-                lineNumber: 132,
-                columnNumber: 13
-              }, this)
-            ]
-          },
-          void 0,
-          !0,
-          {
-            fileName: "app/routes/_auth.register.tsx",
-            lineNumber: 121,
-            columnNumber: 11
-          },
-          this
-        ) }, void 0, !1, {
-          fileName: "app/routes/_auth.register.tsx",
-          lineNumber: 120,
-          columnNumber: 9
-        }, this),
-        actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
-          fileName: "app/routes/_auth.register.tsx",
-          lineNumber: 156,
-          columnNumber: 11
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex items-center justify-between", children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-          "button",
-          {
-            className: "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105",
-            type: "submit",
-            disabled: !hasAgreedToTerms,
-            children: "Register"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/_auth.register.tsx",
-            lineNumber: 159,
-            columnNumber: 11
-          },
-          this
-        ) }, void 0, !1, {
-          fileName: "app/routes/_auth.register.tsx",
-          lineNumber: 158,
-          columnNumber: 9
-        }, this)
-      ]
-    },
-    void 0,
-    !0,
-    {
-      fileName: "app/routes/_auth.register.tsx",
-      lineNumber: 79,
-      columnNumber: 7
-    },
-    this
-  ) }, void 0, !1, {
-    fileName: "app/routes/_auth.register.tsx",
-    lineNumber: 78,
-    columnNumber: 5
-  }, this);
-}, auth_register_default = Register;
 
 // app/routes/_public._index.tsx
 var public_index_exports = {};
 __export(public_index_exports, {
   default: () => public_index_default
 });
-var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime(), 1), Public = () => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { children: "Public" }, void 0, !1, {
+var import_jsx_dev_runtime14 = __toESM(require_jsx_dev_runtime(), 1), Public = () => /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("div", { children: "Public" }, void 0, !1, {
   fileName: "app/routes/_public._index.tsx",
   lineNumber: 5,
   columnNumber: 5
@@ -33523,14 +33049,14 @@ var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime(), 1), Public = (
 // app/routes/_auth.logout.tsx
 var auth_logout_exports = {};
 __export(auth_logout_exports, {
-  action: () => action2
+  action: () => action
 });
-var import_cloudflare4 = __toESM(require_dist(), 1), action2 = async ({
+var import_cloudflare2 = __toESM(require_dist(), 1), action = async ({
   request,
   context: { session }
 }) => {
   let quickbooksAuth = session.get("quickbooksAuth"), plaidAuth = session.get("plaidAuth");
-  return session.unset("auth"), quickbooksAuth && session.set("quickbooksAuth", quickbooksAuth), plaidAuth && session.set("plaidAuth", plaidAuth), (0, import_cloudflare4.redirect)("/");
+  return session.unset("auth"), quickbooksAuth && session.set("quickbooksAuth", quickbooksAuth), plaidAuth && session.set("plaidAuth", plaidAuth), (0, import_cloudflare2.redirect)("/");
 };
 
 // app/routes/_public.info.tsx
@@ -33539,7 +33065,7 @@ __export(public_info_exports, {
   Info: () => Info,
   default: () => public_info_default
 });
-var import_jsx_dev_runtime20 = __toESM(require_jsx_dev_runtime(), 1), Info = () => /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(Outlet, {}, void 0, !1, {
+var import_jsx_dev_runtime15 = __toESM(require_jsx_dev_runtime(), 1), Info = () => /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(Outlet, {}, void 0, !1, {
   fileName: "app/routes/_public.info.tsx",
   lineNumber: 10,
   columnNumber: 7
@@ -33550,29 +33076,29 @@ var info_privacy_exports = {};
 __export(info_privacy_exports, {
   default: () => info_privacy_default
 });
-var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPolicy = () => /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4", children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h1", { className: "text-4xl font-bold text-gray-800", children: "End User Privacy Policy" }, void 0, !1, {
+var import_jsx_dev_runtime16 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPolicy = () => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h1", { className: "text-4xl font-bold text-gray-800", children: "End User Privacy Policy" }, void 0, !1, {
     fileName: "app/routes/info.privacy.tsx",
     lineNumber: 6,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "font-semibold text-gray-700 mt-4", children: "Privacy and security are very important to us at International Communications Management, Inc, (ICM). This End User Privacy Policy (\u201CPolicy\u201D) is meant to help you (the \u201Cend user\u201D) understand how we at ICM collect, use, and share your data when you use ICM products or services - for example, when you use ICM Portal, or when you use ICM to connect and share your data to power the applications (\u201Capps\u201D) you use. These apps, which offer many business services and products such as helping you manage your business, invoicing, accounts payable, accounts receivable and manage your revenue spending, are built and provided by our business customers (we'll call them \u201Cdevelopers\u201D here), and powered by ICM applications." }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "font-semibold text-gray-700 mt-4", children: "Privacy and security are very important to us at International Communications Management, Inc, (ICM). This End User Privacy Policy (\u201CPolicy\u201D) is meant to help you (the \u201Cend user\u201D) understand how we at ICM collect, use, and share your data when you use ICM products or services - for example, when you use ICM Portal, or when you use ICM to connect and share your data to power the applications (\u201Capps\u201D) you use. These apps, which offer many business services and products such as helping you manage your business, invoicing, accounts payable, accounts receivable and manage your revenue spending, are built and provided by our business customers (we'll call them \u201Cdevelopers\u201D here), and powered by ICM applications." }, void 0, !1, {
     fileName: "app/routes/info.privacy.tsx",
     lineNumber: 10,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "font-semibold text-gray-700 mt-4", children: "This Policy applies to ICM and its affiliates and subsidiaries. You should read this Policy carefully; it contains important information about your privacy rights and choices." }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "font-semibold text-gray-700 mt-4", children: "This Policy applies to ICM and its affiliates and subsidiaries. You should read this Policy carefully; it contains important information about your privacy rights and choices." }, void 0, !1, {
     fileName: "app/routes/info.privacy.tsx",
     lineNumber: 24,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600 mt-6", children: "Jump to section:" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600 mt-6", children: "Jump to section:" }, void 0, !1, {
     fileName: "app/routes/info.privacy.tsx",
     lineNumber: 30,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ol", { className: "pl-5", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ol", { className: "pl-5", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#our-data-practices",
@@ -33592,7 +33118,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 35,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#data-collection",
@@ -33612,7 +33138,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 43,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#use-of-data",
@@ -33632,7 +33158,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 51,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#how-we-share-data",
@@ -33652,7 +33178,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 59,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#retention-and-deletion",
@@ -33672,7 +33198,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 67,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#protection-of-data",
@@ -33692,7 +33218,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 75,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#data-protection-rights",
@@ -33712,7 +33238,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 83,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#additional-privacy-controls",
@@ -33732,7 +33258,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 91,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#summaries-of-processing",
@@ -33752,7 +33278,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 99,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#summary-by-category",
@@ -33772,7 +33298,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 107,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#summary-by-product",
@@ -33792,7 +33318,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 115,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       "a",
       {
         href: "#consumer-privacy-notice",
@@ -33817,13 +33343,13 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
     lineNumber: 34,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { id: "our-data-practices", className: "mt-8", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600", children: "Our Data Practices" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { id: "our-data-practices", className: "mt-8", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600", children: "Our Data Practices" }, void 0, !1, {
       fileName: "app/routes/info.privacy.tsx",
       lineNumber: 134,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base font-normal text-gray-600 mt-2", children: "ICM is committed to providing end users with meaningful control over their data. This section describes ICM's data practices relating to our processing of information about you. We also provide summaries of our practices organized by category of information collected and by product at the end of this Policy in the Summaries of Processing Activities section." }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base font-normal text-gray-600 mt-2", children: "ICM is committed to providing end users with meaningful control over their data. This section describes ICM's data practices relating to our processing of information about you. We also provide summaries of our practices organized by category of information collected and by product at the end of this Policy in the Summaries of Processing Activities section." }, void 0, !1, {
       fileName: "app/routes/info.privacy.tsx",
       lineNumber: 135,
       columnNumber: 9
@@ -33833,39 +33359,39 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
     lineNumber: 133,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { id: "data-collection", className: "mt-8", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-2xl font-bold text-gray-600 mb-4", children: "Data We Collect and Categories of Sources" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { id: "data-collection", className: "mt-8", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-2xl font-bold text-gray-600 mb-4", children: "Data We Collect and Categories of Sources" }, void 0, !1, {
       fileName: "app/routes/info.privacy.tsx",
       lineNumber: 146,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "As explained in greater detail below, the data we collect, use, and share depends on the ICM products and services that you, and or the app you have connected to, use. Depending on which of ICM's products or services you or the developer you are connecting to use, ICM may collect the following:" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "As explained in greater detail below, the data we collect, use, and share depends on the ICM products and services that you, and or the app you have connected to, use. Depending on which of ICM's products or services you or the developer you are connecting to use, ICM may collect the following:" }, void 0, !1, {
       fileName: "app/routes/info.privacy.tsx",
       lineNumber: 149,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ul", { className: "list-disc list-inside mb-6 pl-4", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data you provide to us;" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ul", { className: "list-disc list-inside mb-6 pl-4", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data you provide to us;" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 157,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data from financial partners when you connect your financial account;" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data from financial partners when you connect your financial account;" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 158,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data from the electronic device you use to connect;" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data from the electronic device you use to connect;" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 162,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data from the developer of the app you have connected to; and" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data from the developer of the app you have connected to; and" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 165,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data from other sources, including service providers and identity verification services." }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data from other sources, including service providers and identity verification services." }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 168,
         columnNumber: 11
@@ -33875,29 +33401,29 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 156,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-xl font-semibold text-gray-600 mb-3", children: "Data you provide to us" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-xl font-semibold text-gray-600 mb-3", children: "Data you provide to us" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 175,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you use ICM's products or services, like when you connect your financial accounts (like your bank accounts) to a developer's app through ICM, we may collect the following data from you:" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you use ICM's products or services, like when you connect your financial accounts (like your bank accounts) to a developer's app through ICM, we may collect the following data from you:" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 178,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ul", { className: "list-disc list-inside pl-4 mb-4", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Identifiers like name, email address, and phone number;" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ul", { className: "list-disc list-inside pl-4 mb-4", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Identifiers like name, email address, and phone number;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 184,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Login data when required by the provider of your account, like your username and password, account and routing number, or a security token;" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Login data when required by the provider of your account, like your username and password, account and routing number, or a security token;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 187,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "When needed, data to help verify your identity and/or connect your accounts, including your Social Security number, date of birth, security questions and answers, documentary ID, and one-time password (OTP)." }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "When needed, data to help verify your identity and/or connect your accounts, including your Social Security number, date of birth, security questions and answers, documentary ID, and one-time password (OTP)." }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 192,
           columnNumber: 13
@@ -33907,7 +33433,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
         lineNumber: 183,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you provide this data, you also give ICM permission and authority to act on your behalf to access and transmit your data to and from the relevant bank or financial service provider that holds your financial account (we'll call them \u201Cfinancial partners\u201D in this Policy)." }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you provide this data, you also give ICM permission and authority to act on your behalf to access and transmit your data to and from the relevant bank or financial service provider that holds your financial account (we'll call them \u201Cfinancial partners\u201D in this Policy)." }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 199,
         columnNumber: 11
@@ -33917,54 +33443,54 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 174,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-xl font-semibold text-gray-600 mb-3", children: "financial account" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-xl font-semibold text-gray-600 mb-3", children: "financial account" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 209,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Depending on which ICM products you or the developer of your app use, as well as what and how information is made available by your financial product and service providers, we may collect the following data from financial partners when you connect your financial accounts with or through ICM:" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Depending on which ICM products you or the developer of your app use, as well as what and how information is made available by your financial product and service providers, we may collect the following data from financial partners when you connect your financial accounts with or through ICM:" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 212,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ul", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Account data, including financial institution name, account name, account type, account ownership, branch number, IBAN, BIC, account number, routing number, and sort code;" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ul", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Account data, including financial institution name, account name, account type, account ownership, branch number, IBAN, BIC, account number, routing number, and sort code;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 220,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data about an account balance, including current and available balance;" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data about an account balance, including current and available balance;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 225,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data about credit accounts, including due dates, balances owed, payment amounts and dates, transaction history, credit limit, repayment status, and interest rate;" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data about credit accounts, including due dates, balances owed, payment amounts and dates, transaction history, credit limit, repayment status, and interest rate;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 229,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data about loan accounts, including due dates, repayment status, balances, payment amounts and dates, interest rate, guarantor, loan type, payment plan, and terms;" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data about loan accounts, including due dates, repayment status, balances, payment amounts and dates, interest rate, guarantor, loan type, payment plan, and terms;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 234,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data about investment accounts, including transaction information, type of asset, identifying details about the asset, quantity, price, fees, and cost basis;" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data about investment accounts, including transaction information, type of asset, identifying details about the asset, quantity, price, fees, and cost basis;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 239,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Identifiers and data about the account owner(s), including name, email address, phone number, date of birth, and address information;" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Identifiers and data about the account owner(s), including name, email address, phone number, date of birth, and address information;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 244,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Data about account transactions, including amount, date, payee, type, quantity, price, location, involved securities, and a description of the transaction; and/or" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data about account transactions, including amount, date, payee, type, quantity, price, location, involved securities, and a description of the transaction; and/or" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 249,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Professional data, including data about your employer, in cases where you've connected your payroll accounts or provided us with your pay stub or tax form information." }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Professional data, including data about your employer, in cases where you've connected your payroll accounts or provided us with your pay stub or tax form information." }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 254,
           columnNumber: 13
@@ -33974,7 +33500,7 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
         lineNumber: 219,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Depending on the ICM service you or the developer of your app use, and the manner in which the data is made available, the data collected from your financial accounts may include data from all accounts (e.g., checking, savings, credit card, and joint accounts) accessible through a single set of account credentials. For more specifics about data collected in connection with different products and services, see Summary of Processing Activities by Product." }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Depending on the ICM service you or the developer of your app use, and the manner in which the data is made available, the data collected from your financial accounts may include data from all accounts (e.g., checking, savings, credit card, and joint accounts) accessible through a single set of account credentials. For more specifics about data collected in connection with different products and services, see Summary of Processing Activities by Product." }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 260,
         columnNumber: 11
@@ -33984,34 +33510,34 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 208,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive from your devices" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive from your devices" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 272,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you use a device, like your smartphone, tablet, or computer, to connect to our services through a developer's application, we receive data about that device, including:" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you use a device, like your smartphone, tablet, or computer, to connect to our services through a developer's application, we receive data about that device, including:" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 275,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ul", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Internet protocol (IP) address;" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ul", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Internet protocol (IP) address;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 281,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Timezone setting and location, device location;" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Timezone setting and location, device location;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 282,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Hardware model and operating system;" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Hardware model and operating system;" }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 285,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { className: "mb-2", children: "Which features within our services you access, browser data, and other technical data about the device." }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Which features within our services you access, browser data, and other technical data about the device." }, void 0, !1, {
           fileName: "app/routes/info.privacy.tsx",
           lineNumber: 286,
           columnNumber: 13
@@ -34026,13 +33552,13 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 271,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive about you from the developers of apps powered by ICM" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive about you from the developers of apps powered by ICM" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 294,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When needed for ICM to provide a service, the developers of the apps you use may provide us with identifiers and commercial information about you, like your name, Social Security number, email address, phone number, or information about your financial accounts and account transactions. One example of this kind of service are ICM Identity Verification and Monitor services, which are used so the developer you are connecting to can verify your identity, detect fraud, and screen their users against watchlists." }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When needed for ICM to provide a service, the developers of the apps you use may provide us with identifiers and commercial information about you, like your name, Social Security number, email address, phone number, or information about your financial accounts and account transactions. One example of this kind of service are ICM Identity Verification and Monitor services, which are used so the developer you are connecting to can verify your identity, detect fraud, and screen their users against watchlists." }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 297,
         columnNumber: 11
@@ -34042,13 +33568,13 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 293,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive about you from other sources" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive about you from other sources" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 310,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When needed to provide a service or to help prevent fraud, abuse, or security threats, we may also receive data about you directly from third parties, including our service providers or identity verification services." }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When needed to provide a service or to help prevent fraud, abuse, or security threats, we may also receive data about you directly from third parties, including our service providers or identity verification services." }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 313,
         columnNumber: 11
@@ -34058,13 +33584,13 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
       lineNumber: 309,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Information we derive from the data we collect" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Information we derive from the data we collect" }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 322,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "We may derive additional information about you from the data we collect. For example, we may infer your geolocation, your annual income, or the type of account or subaccount you've chosen to connect\u2014such as when you connect your loan accounts, so we can let the developer know whether the account is for a mortgage, student loan, or credit card." }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "We may derive additional information about you from the data we collect. For example, we may infer your geolocation, your annual income, or the type of account or subaccount you've chosen to connect\u2014such as when you connect your loan accounts, so we can let the developer know whether the account is for a mortgage, student loan, or credit card." }, void 0, !1, {
         fileName: "app/routes/info.privacy.tsx",
         lineNumber: 325,
         columnNumber: 11
@@ -34079,23 +33605,23 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
     lineNumber: 145,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { id: "consumer-privacy-notice", className: "mt-8", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600", children: "Consumer Privacy Notice" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { id: "consumer-privacy-notice", className: "mt-8", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600", children: "Consumer Privacy Notice" }, void 0, !1, {
       fileName: "app/routes/info.privacy.tsx",
       lineNumber: 420,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Our goal with this Policy is to provide a simple and straightforward explanation of what data ICM collects from and about you and how we use and share that information. We value transparency and want to provide you with a clear and concise description of how we treat your data." }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Our goal with this Policy is to provide a simple and straightforward explanation of what data ICM collects from and about you and how we use and share that information. We value transparency and want to provide you with a clear and concise description of how we treat your data." }, void 0, !1, {
       fileName: "app/routes/info.privacy.tsx",
       lineNumber: 423,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "This Policy does not cover what developers of the apps you use do with your data. You should review the privacy policies or terms of service for those apps for information about their practices. This Policy also does not cover data we collect through our websites or when you interact with ICM outside of using our product or services, such as emailing ICM directly. Please see our All Audience Privacy Statement and Cookie Policy for more information." }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "This Policy does not cover what developers of the apps you use do with your data. You should review the privacy policies or terms of service for those apps for information about their practices. This Policy also does not cover data we collect through our websites or when you interact with ICM outside of using our product or services, such as emailing ICM directly. Please see our All Audience Privacy Statement and Cookie Policy for more information." }, void 0, !1, {
       fileName: "app/routes/info.privacy.tsx",
       lineNumber: 431,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "ICM's services are not directed to individuals under 18 and we do not knowingly collect data relating to children." }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "ICM's services are not directed to individuals under 18 and we do not knowingly collect data relating to children." }, void 0, !1, {
       fileName: "app/routes/info.privacy.tsx",
       lineNumber: 441,
       columnNumber: 9
@@ -34114,12 +33640,40 @@ var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPol
 // app/routes/_auth.login.tsx
 var auth_login_exports = {};
 __export(auth_login_exports, {
-  action: () => action3,
+  action: () => action2,
   default: () => auth_login_default,
-  loader: () => loader2
+  loader: () => loader
 });
-var import_react9 = __toESM(require_react(), 1);
-var import_cloudflare5 = __toESM(require_dist(), 1);
+var import_react6 = __toESM(require_react(), 1);
+var import_cloudflare4 = __toESM(require_dist(), 1);
+
+// app/utils/session/session.ts
+var import_cloudflare3 = __toESM(require_dist(), 1);
+function getSessionSecret(env) {
+  return env.USER_SESSION_SECRET || "default-secret";
+}
+function createSessionStorage(env) {
+  let sessionCookie = (0, import_cloudflare3.createCookie)("__session", {
+    httpOnly: !0,
+    maxAge: 2592e3,
+    // 30 days
+    path: "/",
+    sameSite: "lax",
+    secrets: [getSessionSecret(env)],
+    // Use the session secret from the environment variable or a default value
+    secure: !0
+  }), { getSession, commitSession, destroySession } = (0, import_cloudflare3.createWorkersKVSessionStorage)({
+    kv: env.theform,
+    // Using the KV namespace from the environment
+    cookie: sessionCookie
+  });
+  return { getSession, commitSession, destroySession };
+}
+
+// app/utils/session/sessionUtils.ts
+async function isAuthenticated(request, context) {
+  return (await createSessionStorage(context).getSession(request.headers.get("Cookie"))).has("auth");
+}
 
 // node_modules/drizzle-orm/entity.js
 var entityKind = Symbol.for("drizzle:entityKind"), hasOwnEntityKind = Symbol.for("drizzle:hasOwnEntityKind");
@@ -35445,11 +34999,11 @@ var _a34, ForeignKeyBuilder = class {
       return { name, columns, foreignTable: foreignColumns[0].table, foreignColumns };
     }, actions && (this._onUpdate = actions.onUpdate, this._onDelete = actions.onDelete);
   }
-  onUpdate(action4) {
-    return this._onUpdate = action4, this;
+  onUpdate(action3) {
+    return this._onUpdate = action3, this;
   }
-  onDelete(action4) {
-    return this._onDelete = action4, this;
+  onDelete(action3) {
+    return this._onDelete = action3, this;
   }
   /** @internal */
   build(table) {
@@ -36889,8 +36443,8 @@ _a66 = entityKind, __publicField(SQLiteSyncRelationalQuery, _a66, "SQLiteSyncRel
 
 // node_modules/drizzle-orm/sqlite-core/query-builders/raw.js
 var _a67, SQLiteRaw = class extends QueryPromise {
-  constructor(execute, getSQL, action4, dialect, mapBatchResult) {
-    super(), this.execute = execute, this.getSQL = getSQL, this.dialect = dialect, this.mapBatchResult = mapBatchResult, this.config = { action: action4 };
+  constructor(execute, getSQL, action3, dialect, mapBatchResult) {
+    super(), this.execute = execute, this.getSQL = getSQL, this.dialect = dialect, this.mapBatchResult = mapBatchResult, this.config = { action: action3 };
   }
   /** @internal */
   config;
@@ -37412,7 +36966,7 @@ var user = sqliteTable("user", {
 var UserRepository = class {
   db;
   constructor(env) {
-    this.db = drizzle(env.DB);
+    console.log(env, "env in userRepo"), this.db = drizzle(env.DB);
   }
   async findUserByUsername(username) {
     let result = await this.db.select().from(user).where(eq(user.username, username)).execute();
@@ -37807,7 +37361,13 @@ var UserService2 = class {
   }
   async loginUser(userData) {
     let user2 = await this.userRepository.findUserByUsername(userData.username);
-    return user2 ? await auth_service_default.verifyPassword(userData.password, user2.password) ? { success: !0, user: user2, message: "User logged in successfully." } : { success: !1, message: "Incorrect password." } : { success: !1, message: "User does not exist." };
+    return user2 ? await auth_service_default.verifyPassword(userData.password, user2.password) ? user2.username && typeof user2.id == "number" && user2.createdAt && user2.updatedAt && user2.role ? { success: !0, user: {
+      username: user2.username,
+      role: user2.role,
+      id: user2.id,
+      createdAt: user2.createdAt,
+      updatedAt: user2.updatedAt
+    }, message: "User logged in successfully." } : { success: !1, message: "User data incomplete." } : { success: !1, message: "Incorrect password." } : { success: !1, message: "User does not exist." };
   }
   async registerUser(userData) {
     if (await this.userRepository.findUserByUsername(userData.username))
@@ -37819,33 +37379,49 @@ var UserService2 = class {
 }, userService_default = UserService2;
 
 // app/routes/_auth.login.tsx
-var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = async ({ request, context }) => {
-  let env = context.context.env;
-  return await isAuthenticated({ request, env }) ? (0, import_cloudflare5.redirect)("/home") : (0, import_cloudflare5.json)({});
-}, action3 = async ({ request, context }) => {
-  let env = context.context.env, userService = new userService_default(env), formData = await request.formData(), actionType = formData.get("actionType"), userData = {
-    username: formData.get("username"),
-    password: formData.get("password"),
-    // Ensure to hash this in a real application
-    role: formData.get("role")
-  };
-  return console.log(userData.role, "userData.roleee"), actionType === "login" ? (0, import_cloudflare5.json)(await userService.loginUser(userData)) : actionType === "register" ? (0, import_cloudflare5.json)(await userService.registerUser(userData)) : (0, import_cloudflare5.json)({ error: "Invalid action type." });
+var import_jsx_dev_runtime17 = __toESM(require_jsx_dev_runtime(), 1), loader = async ({ request, context }) => await isAuthenticated(request, context) ? (0, import_cloudflare4.redirect)("/home") : (0, import_cloudflare4.json)({}), action2 = async ({
+  request,
+  context
+}) => {
+  let mySession = context.session, myEnv = context.env;
+  console.log(context, "context.env");
+  let userService = new userService_default(myEnv), formData = await request.formData(), actionType = formData.get("actionType");
+  if (actionType === "login") {
+    let userData = {
+      username: formData.get("username"),
+      password: formData.get("password"),
+      role: formData.get("role")
+    }, loginResult = await userService.loginUser(userData);
+    return loginResult.success && loginResult.user ? (console.log("loginResult", loginResult), mySession.set("auth", { ...loginResult.user }), new Response(null, {
+      status: 303,
+      // or 302, depending on your use case
+      headers: {
+        Location: "/home"
+      }
+    })) : (mySession.flash("error", "Invalid username or password."), new Response(null, {
+      status: 303,
+      headers: {
+        Location: "/login"
+      }
+    }));
+  }
+  return (0, import_cloudflare4.json)({ error: "Invalid action type." });
 }, LoginOrRegister = () => {
-  let [username, setUsername] = (0, import_react9.useState)(""), [password, setPassword] = (0, import_react9.useState)(""), [role, setRole] = (0, import_react9.useState)(""), [actionType, setActionType] = (0, import_react9.useState)("login"), actionData = useActionData2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+  let [username, setUsername] = (0, import_react6.useState)(""), [password, setPassword] = (0, import_react6.useState)(""), [role, setRole] = (0, import_react6.useState)(""), [actionType, setActionType] = (0, import_react6.useState)("login"), actionData = useActionData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
     "form",
     {
       action: "/login",
       method: "post",
       className: "max-w-lg mx-auto mt-2 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("input", { type: "hidden", name: "actionType", value: actionType }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("input", { type: "hidden", name: "actionType", value: actionType }, void 0, !1, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 139,
+          lineNumber: 114,
           columnNumber: 7
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "label",
             {
               htmlFor: "username",
@@ -37856,12 +37432,12 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 142,
+              lineNumber: 117,
               columnNumber: 9
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "input",
             {
               type: "text",
@@ -37876,18 +37452,18 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 148,
+              lineNumber: 123,
               columnNumber: 9
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 141,
+          lineNumber: 116,
           columnNumber: 7
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "label",
             {
               htmlFor: "password",
@@ -37898,12 +37474,12 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 160,
+              lineNumber: 135,
               columnNumber: 9
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "input",
             {
               type: "password",
@@ -37918,19 +37494,19 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 166,
+              lineNumber: 141,
               columnNumber: 9
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 159,
+          lineNumber: 134,
           columnNumber: 7
         }, this),
         actionType === "register" && // Add additional fields for registration as needed
-        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "label",
             {
               htmlFor: "role",
@@ -37941,12 +37517,12 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 180,
+              lineNumber: 155,
               columnNumber: 11
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "select",
             {
               name: "role",
@@ -37955,19 +37531,19 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
               onChange: (e) => setRole(e.target.value),
               className: "shadow border-2 border-gray-700 rounded-lg w-full py-3 px-4 bg-gray-800 text-white leading-tight focus:outline-none focus:border-blue-500",
               children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("option", { value: "", children: "Select a role" }, void 0, !1, {
+                /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("option", { value: "", children: "Select a role" }, void 0, !1, {
                   fileName: "app/routes/_auth.login.tsx",
-                  lineNumber: 193,
+                  lineNumber: 168,
                   columnNumber: 13
                 }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("option", { value: "2", children: "User" }, void 0, !1, {
+                /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("option", { value: "2", children: "User" }, void 0, !1, {
                   fileName: "app/routes/_auth.login.tsx",
-                  lineNumber: 194,
+                  lineNumber: 169,
                   columnNumber: 13
                 }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("option", { value: "1", children: "Admin" }, void 0, !1, {
+                /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("option", { value: "1", children: "Admin" }, void 0, !1, {
                   fileName: "app/routes/_auth.login.tsx",
-                  lineNumber: 195,
+                  lineNumber: 170,
                   columnNumber: 13
                 }, this)
               ]
@@ -37976,23 +37552,23 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
             !0,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 186,
+              lineNumber: 161,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 179,
+          lineNumber: 154,
           columnNumber: 9
         }, this),
-        actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
+        actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 201,
+          lineNumber: 176,
           columnNumber: 9
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex items-center justify-between space-x-4", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex items-center justify-between space-x-4", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "button",
             {
               className: "bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105",
@@ -38004,12 +37580,12 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 205,
+              lineNumber: 180,
               columnNumber: 9
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "button",
             {
               className: "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105",
@@ -38021,14 +37597,14 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
             !1,
             {
               fileName: "app/routes/_auth.login.tsx",
-              lineNumber: 212,
+              lineNumber: 187,
               columnNumber: 9
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/_auth.login.tsx",
-          lineNumber: 204,
+          lineNumber: 179,
           columnNumber: 7
         }, this)
       ]
@@ -38037,7 +37613,7 @@ var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), loader2 = 
     !0,
     {
       fileName: "app/routes/_auth.login.tsx",
-      lineNumber: 133,
+      lineNumber: 108,
       columnNumber: 5
     },
     this
@@ -38050,19 +37626,19 @@ __export(info_index_exports, {
   default: () => info_index_default
 });
 init_dist2();
-var import_jsx_dev_runtime23 = __toESM(require_jsx_dev_runtime(), 1), Info_Index = () => /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "flex justify-center space-x-4", children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
+var import_jsx_dev_runtime18 = __toESM(require_jsx_dev_runtime(), 1), Info_Index = () => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex justify-center space-x-4", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
     "a",
     {
       href: "/info/privacy",
       className: "block bg-white shadow-md rounded-lg p-6 max-w-sm hover:bg-gray-100",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-2", children: "Privacy Policy" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-2", children: "Privacy Policy" }, void 0, !1, {
           fileName: "app/routes/info._index.tsx",
           lineNumber: 11,
           columnNumber: 7
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("p", { className: "text-gray-600", children: "Read our privacy policy to understand how we handle your data." }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("p", { className: "text-gray-600", children: "Read our privacy policy to understand how we handle your data." }, void 0, !1, {
           fileName: "app/routes/info._index.tsx",
           lineNumber: 14,
           columnNumber: 7
@@ -38078,18 +37654,18 @@ var import_jsx_dev_runtime23 = __toESM(require_jsx_dev_runtime(), 1), Info_Index
     },
     this
   ),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
+  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
     "a",
     {
       href: "/info/terms",
       className: "block bg-white shadow-md rounded-lg p-6 max-w-sm hover:bg-gray-100",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-2", children: "Terms of Service" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-2", children: "Terms of Service" }, void 0, !1, {
           fileName: "app/routes/info._index.tsx",
           lineNumber: 23,
           columnNumber: 7
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("p", { className: "text-gray-600", children: "Review our terms of service to learn about the rules and regulations." }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("p", { className: "text-gray-600", children: "Review our terms of service to learn about the rules and regulations." }, void 0, !1, {
           fileName: "app/routes/info._index.tsx",
           lineNumber: 26,
           columnNumber: 7
@@ -38105,7 +37681,7 @@ var import_jsx_dev_runtime23 = __toESM(require_jsx_dev_runtime(), 1), Info_Index
     },
     this
   ),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(Outlet, {}, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(Outlet, {}, void 0, !1, {
     fileName: "app/routes/info._index.tsx",
     lineNumber: 31,
     columnNumber: 5
@@ -38120,15 +37696,207 @@ var import_jsx_dev_runtime23 = __toESM(require_jsx_dev_runtime(), 1), Info_Index
 var clearance_exports = {};
 __export(clearance_exports, {
   default: () => Clearance10,
-  loader: () => loader3,
+  loader: () => loader2,
   meta: () => meta
 });
-var import_cloudflare6 = __toESM(require_dist(), 1);
+var import_cloudflare5 = __toESM(require_dist(), 1);
+
+// app/state/hooks/user.tsx
+var useTypedSelector = useSelector, useDispatch2 = () => useDispatch();
+
+// app/components/base/navigation.tsx
+var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime(), 1), Navigation = ({ context }) => {
+  let fetcher = useFetcher2(), dispatch = useDispatch2(), navigate = useNavigate(), handleLogout = () => {
+    fetcher.submit({}, { method: "post", action: "/logout" }), dispatch(setLogout());
+  };
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_jsx_dev_runtime19.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("nav", { className: "bg-white shadow-md py-4 px-5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("ul", { className: "flex space-x-4", children: context.isLoggedIn ? /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_jsx_dev_runtime19.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+      Link2,
+      {
+        className: "text-blue-600 hover:text-blue-800 font-semibold",
+        to: "/info",
+        prefetch: "intent",
+        children: "Info"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 61,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 60,
+      columnNumber: 15
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+      "button",
+      {
+        className: "text-red-600 hover:text-red-800 font-semibold",
+        onClick: handleLogout,
+        children: "Logout"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 69,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 68,
+      columnNumber: 15
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 50,
+    columnNumber: 13
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_jsx_dev_runtime19.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+      Link2,
+      {
+        className: "text-blue-600 hover:text-blue-800 font-semibold",
+        to: "/login",
+        prefetch: "intent",
+        children: "Login"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 31,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 30,
+      columnNumber: 15
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+      Link2,
+      {
+        className: "text-blue-600 hover:text-blue-800 font-semibold",
+        to: "/register",
+        prefetch: "intent",
+        children: "Register"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 40,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 39,
+      columnNumber: 15
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 29,
+    columnNumber: 13
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 27,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 26,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 25,
+    columnNumber: 5
+  }, this);
+}, navigation_default = Navigation;
+
+// app/components/base/header.tsx
+var import_jsx_dev_runtime20 = __toESM(require_jsx_dev_runtime(), 1), Header = ({ context }) => /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("header", { className: "header-content", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(navigation_default, { context }, void 0, !1, {
+  fileName: "app/components/base/header.tsx",
+  lineNumber: 19,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/header.tsx",
+  lineNumber: 18,
+  columnNumber: 5
+}, this), header_default = Header;
+
+// app/components/base/footer.tsx
+var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), Footer = () => /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("footer", { className: "bg-gray-800 text-white p-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { className: "container mx-auto flex justify-between items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { className: "flex", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("a", { href: "/info/terms", className: "text-white hover:text-gray-300 mr-4", children: "Terms of Service" }, void 0, !1, {
+    fileName: "app/components/base/footer.tsx",
+    lineNumber: 9,
+    columnNumber: 11
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("a", { href: "/info/privacy", className: "text-white hover:text-gray-300", children: "Privacy Policy" }, void 0, !1, {
+    fileName: "app/components/base/footer.tsx",
+    lineNumber: 12,
+    columnNumber: 11
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/base/footer.tsx",
+  lineNumber: 8,
+  columnNumber: 9
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/footer.tsx",
+  lineNumber: 6,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/footer.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), footer_default = Footer;
+
+// app/components/base/pageTemplate.tsx
+var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), PageTemplate = ({ children, user: user2, context }) => context.isLoading === !0 || context.isLoading === null ? /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("header", { className: "header-content", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "loader", children: "Loading..." }, void 0, !1, {
+  fileName: "app/components/base/pageTemplate.tsx",
+  lineNumber: 17,
+  columnNumber: 9
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/pageTemplate.tsx",
+  lineNumber: 16,
+  columnNumber: 7
+}, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex flex-col min-h-screen", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(header_default, { user: user2, context }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 24,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 23,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("main", { className: "main-content flex-grow py-8 max-w-7xl px-4 sm:px-6 lg:px-8", children }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 26,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(footer_default, {}, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 30,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 29,
+    columnNumber: 7
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/base/pageTemplate.tsx",
+  lineNumber: 22,
+  columnNumber: 5
+}, this), pageTemplate_default = PageTemplate;
 
 // app/components/base/userStatus.tsx
-var import_react11 = __toESM(require_react(), 1), import_jsx_dev_runtime24 = __toESM(require_jsx_dev_runtime(), 1), UserStatus = ({ user: user2, context }) => {
-  let [date, setDate] = (0, import_react11.useState)(""), [time, setTime] = (0, import_react11.useState)("");
-  return (0, import_react11.useEffect)(() => {
+var import_react9 = __toESM(require_react(), 1), import_jsx_dev_runtime23 = __toESM(require_jsx_dev_runtime(), 1), UserStatus = ({ user: user2, context }) => {
+  let [date, setDate] = (0, import_react9.useState)(""), [time, setTime] = (0, import_react9.useState)("");
+  return (0, import_react9.useEffect)(() => {
     let setClock = (now) => {
       if (context.locale) {
         let date2 = now.toLocaleDateString(context.locale), time2 = now.toLocaleTimeString(context.locale);
@@ -38138,8 +37906,8 @@ var import_react11 = __toESM(require_react(), 1), import_jsx_dev_runtime24 = __t
     setClock(/* @__PURE__ */ new Date());
     let interval = setInterval(() => setClock(/* @__PURE__ */ new Date()), 1e3);
     return () => clearInterval(interval);
-  }, [context.locale]), /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "max-w-lg mx-auto p-6 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-lg", children: context.isLoggedIn && user2.id ? /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_jsx_dev_runtime24.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "text-lg font-semibold text-white", children: [
+  }, [context.locale]), /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "max-w-lg mx-auto p-6 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-lg", children: context.isLoggedIn && user2.id ? /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(import_jsx_dev_runtime23.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "text-lg font-semibold text-white", children: [
       "Welcome, ",
       user2.username
     ] }, void 0, !0, {
@@ -38147,13 +37915,13 @@ var import_react11 = __toESM(require_react(), 1), import_jsx_dev_runtime24 = __t
       lineNumber: 35,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "mt-2 text-sm text-gray-400", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: date }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "mt-2 text-sm text-gray-400", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { children: date }, void 0, !1, {
         fileName: "app/components/base/userStatus.tsx",
         lineNumber: 37,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: time }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { children: time }, void 0, !1, {
         fileName: "app/components/base/userStatus.tsx",
         lineNumber: 38,
         columnNumber: 11
@@ -38167,19 +37935,19 @@ var import_react11 = __toESM(require_react(), 1), import_jsx_dev_runtime24 = __t
     fileName: "app/components/base/userStatus.tsx",
     lineNumber: 34,
     columnNumber: 7
-  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_jsx_dev_runtime24.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "text-lg font-semibold text-red-600", children: "Not logged in" }, void 0, !1, {
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(import_jsx_dev_runtime23.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "text-lg font-semibold text-red-600", children: "Not logged in" }, void 0, !1, {
       fileName: "app/components/base/userStatus.tsx",
       lineNumber: 43,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "mt-2 text-sm text-gray-400", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: date }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "mt-2 text-sm text-gray-400", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { children: date }, void 0, !1, {
         fileName: "app/components/base/userStatus.tsx",
         lineNumber: 45,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: time }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { children: time }, void 0, !1, {
         fileName: "app/components/base/userStatus.tsx",
         lineNumber: 46,
         columnNumber: 11
@@ -38201,16 +37969,18 @@ var import_react11 = __toESM(require_react(), 1), import_jsx_dev_runtime24 = __t
 }, userStatus_default = UserStatus;
 
 // app/routes/_clearance.tsx
-var import_react13 = __toESM(require_react(), 1);
+var import_react11 = __toESM(require_react(), 1);
 
 // app/utils/checkAuthentication.ts
 async function checkAuthentication(context) {
+  console.log(context, "contexttt");
   let session = await createSessionStorage(context.env).getSession(context.request.headers.get("Cookie"));
-  if (session.has("auth"))
+  if (console.log("CheckSession", session.data.auth), session.has("auth"))
     try {
-      return session.get(
+      let parsedCookieData = session.get(
         "auth"
       );
+      return console.log("parsedCookieData", parsedCookieData), parsedCookieData;
     } catch (error) {
       console.error("Error parsing cookie data:", error);
     }
@@ -38218,36 +37988,36 @@ async function checkAuthentication(context) {
 }
 
 // app/routes/_clearance.tsx
-var import_jsx_dev_runtime25 = __toESM(require_jsx_dev_runtime(), 1), meta = () => [
+var import_jsx_dev_runtime24 = __toESM(require_jsx_dev_runtime(), 1), meta = () => [
   { title: "New Remix App" },
   { name: "description", content: "Welcome to Remix!" }
-], loader3 = async ({
+], loader2 = async ({
   request,
   context: { context }
 }) => {
   let url = new URL(request.url), user2 = await checkAuthentication(context);
   try {
-    return console.log(user2, "user"), user2 ? (0, import_cloudflare6.json)({ user: user2 }) : (0, import_cloudflare6.redirect)("/login");
+    return console.log(user2, "user"), user2 ? (0, import_cloudflare5.json)({ user: user2 }) : (0, import_cloudflare5.redirect)("/login");
   } catch {
-    return url.pathname, (0, import_cloudflare6.redirect)("/login");
-    return (0, import_cloudflare6.json)({ error: "User is not authenticated" });
+    return url.pathname, (0, import_cloudflare5.redirect)("/login");
+    return (0, import_cloudflare5.json)({ error: "User is not authenticated" });
   }
 };
 function Clearance10() {
   let { user: user2 } = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
-  return (0, import_react13.useEffect)(() => {
+  return (0, import_react11.useEffect)(() => {
     dispatch(user2 ? setUser(user2) : setLogout());
-  }, [user2, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
+  }, [user2, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
     fileName: "app/routes/_clearance.tsx",
     lineNumber: 76,
     columnNumber: 11
-  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(import_jsx_dev_runtime25.Fragment, { children: [
-    ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, !1, {
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_jsx_dev_runtime24.Fragment, { children: [
+    ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, !1, {
       fileName: "app/routes/_clearance.tsx",
       lineNumber: 79,
       columnNumber: 32
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(Outlet, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(Outlet, {}, void 0, !1, {
       fileName: "app/routes/_clearance.tsx",
       lineNumber: 80,
       columnNumber: 13
@@ -38268,54 +38038,54 @@ var info_terms_exports = {};
 __export(info_terms_exports, {
   default: () => info_terms_default
 });
-var import_jsx_dev_runtime26 = __toESM(require_jsx_dev_runtime(), 1), TermsAndConditions = () => /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h1", { children: "Terms of Use" }, void 0, !1, {
+var import_jsx_dev_runtime25 = __toESM(require_jsx_dev_runtime(), 1), TermsAndConditions = () => /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h1", { children: "Terms of Use" }, void 0, !1, {
     fileName: "app/routes/info.terms.tsx",
     lineNumber: 6,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("p", { children: "These Terms of Use (these \u201CTerms\u201D) are our rules for our production application environments." }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("p", { children: "These Terms of Use (these \u201CTerms\u201D) are our rules for our production application environments." }, void 0, !1, {
     fileName: "app/routes/info.terms.tsx",
     lineNumber: 7,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("p", { children: "By clicking \u201CI agree\u201D (or a similar checkbox or button) or accessing or using the Services, you indicate your assent to be bound by these Terms. If you do not agree to these Terms, do not use or access the Services. These Terms contain mandatory arbitration provisions that require the use of arbitration to resolve disputes. Please read it carefully." }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("p", { children: "By clicking \u201CI agree\u201D (or a similar checkbox or button) or accessing or using the Services, you indicate your assent to be bound by these Terms. If you do not agree to these Terms, do not use or access the Services. These Terms contain mandatory arbitration provisions that require the use of arbitration to resolve disputes. Please read it carefully." }, void 0, !1, {
     fileName: "app/routes/info.terms.tsx",
     lineNumber: 11,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("p", { children: "These Terms are between International Communications Management Inc. (ICM), a Washington corporation (\u201CICM\u201D) and a \u201CClient\u201D entity or person accessing or using ICM's application. If you are accessing or using the ICM application on behalf of another entity, then that entity is the Client. ICM may modify these Terms from time to time in accordance with Section 10 (Modifications) below." }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("p", { children: "These Terms are between International Communications Management Inc. (ICM), a Washington corporation (\u201CICM\u201D) and a \u201CClient\u201D entity or person accessing or using ICM's application. If you are accessing or using the ICM application on behalf of another entity, then that entity is the Client. ICM may modify these Terms from time to time in accordance with Section 10 (Modifications) below." }, void 0, !1, {
     fileName: "app/routes/info.terms.tsx",
     lineNumber: 18,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h2", { children: "1. ACCESS RIGHTS; RESTRICTIONS" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h2", { children: "1. ACCESS RIGHTS; RESTRICTIONS" }, void 0, !1, {
     fileName: "app/routes/info.terms.tsx",
     lineNumber: 26,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h3", { children: "1.1 Access" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h3", { children: "1.1 Access" }, void 0, !1, {
     fileName: "app/routes/info.terms.tsx",
     lineNumber: 27,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("p", { children: "Subject to the Client's compliance with the terms and conditions of these Terms, ICM hereby agrees that during the term of these Terms, the Client has the non-exclusive right to:" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("p", { children: "Subject to the Client's compliance with the terms and conditions of these Terms, ICM hereby agrees that during the term of these Terms, the Client has the non-exclusive right to:" }, void 0, !1, {
     fileName: "app/routes/info.terms.tsx",
     lineNumber: 28,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("ul", { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("li", { children: "use the package of application programming interface materials provided by ICM solely as necessary to make an application owned and operated by the Client (the \u201CClient Application\u201D) interoperate with the ICM services." }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("ul", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("li", { children: "use the package of application programming interface materials provided by ICM solely as necessary to make an application owned and operated by the Client (the \u201CClient Application\u201D) interoperate with the ICM services." }, void 0, !1, {
       fileName: "app/routes/info.terms.tsx",
       lineNumber: 34,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("li", { children: "use the Services in such Client Application provided to end users (consumers or businesses) (the \u201CEnd Users\u201D) solely for internal evaluation of the Services, and" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("li", { children: "use the Services in such Client Application provided to end users (consumers or businesses) (the \u201CEnd Users\u201D) solely for internal evaluation of the Services, and" }, void 0, !1, {
       fileName: "app/routes/info.terms.tsx",
       lineNumber: 40,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("li", { children: "All use of the Services and Output must be only as provided in these Terms, only in accordance with ICM's applicable technical user documentation and subject to the internal evaluation use case" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("li", { children: "All use of the Services and Output must be only as provided in these Terms, only in accordance with ICM's applicable technical user documentation and subject to the internal evaluation use case" }, void 0, !1, {
       fileName: "app/routes/info.terms.tsx",
       lineNumber: 45,
       columnNumber: 9
@@ -38325,12 +38095,12 @@ var import_jsx_dev_runtime26 = __toESM(require_jsx_dev_runtime(), 1), TermsAndCo
     lineNumber: 33,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("h2", { children: "10. MODIFICATIONS" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h2", { children: "10. MODIFICATIONS" }, void 0, !1, {
     fileName: "app/routes/info.terms.tsx",
     lineNumber: 51,
     columnNumber: 7
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("p", { children: "From time to time, ICM may modify these Terms. ICM will use commercially reasonable efforts to notify Client of the modifications and the effective date of such modifications through communications via Client\u2019s account, email, or other means. Client must accept the modifications to continue accessing or using Development Accounts. If Client objects to the modifications, its exclusive remedy is to cease any and all access and use of Development Accounts. Client may be required to click to accept or otherwise agree to the modified Terms in order to continue accessing or using the Services, and in any event continued access or use of the Services after the modified version of these Terms goes into effect will constitute Client's acceptance of such modified version." }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("p", { children: "From time to time, ICM may modify these Terms. ICM will use commercially reasonable efforts to notify Client of the modifications and the effective date of such modifications through communications via Client\u2019s account, email, or other means. Client must accept the modifications to continue accessing or using Development Accounts. If Client objects to the modifications, its exclusive remedy is to cease any and all access and use of Development Accounts. Client may be required to click to accept or otherwise agree to the modified Terms in order to continue accessing or using the Services, and in any event continued access or use of the Services after the modified version of these Terms goes into effect will constitute Client's acceptance of such modified version." }, void 0, !1, {
     fileName: "app/routes/info.terms.tsx",
     lineNumber: 52,
     columnNumber: 7
@@ -38345,41 +38115,41 @@ var import_jsx_dev_runtime26 = __toESM(require_jsx_dev_runtime(), 1), TermsAndCo
 var public_exports = {};
 __export(public_exports, {
   default: () => Public2,
-  loader: () => loader4,
+  loader: () => loader3,
   meta: () => meta2
 });
-var import_cloudflare7 = __toESM(require_dist(), 1);
-var import_react15 = __toESM(require_react(), 1);
-var import_jsx_dev_runtime27 = __toESM(require_jsx_dev_runtime(), 1), meta2 = () => [
+var import_cloudflare6 = __toESM(require_dist(), 1);
+var import_react13 = __toESM(require_react(), 1);
+var import_jsx_dev_runtime26 = __toESM(require_jsx_dev_runtime(), 1), meta2 = () => [
   { title: "New Remix App" },
   { name: "description", content: "Welcome to Remix!" }
-], loader4 = async ({
+], loader3 = async ({
   request,
   context: { context }
 }) => {
   let url = new URL(request.url), user2 = await checkAuthentication(context);
   try {
-    return console.log(user2, "user"), user2 ? (0, import_cloudflare7.json)({ user: user2 }) : (0, import_cloudflare7.redirect)("/login");
+    return console.log(user2, "user"), user2 ? (0, import_cloudflare6.json)({ user: user2 }) : (0, import_cloudflare6.redirect)("/login");
   } catch {
-    return url.pathname, (0, import_cloudflare7.redirect)("/login");
-    return (0, import_cloudflare7.json)({ error: "User is not authenticated" });
+    return url.pathname, (0, import_cloudflare6.redirect)("/login");
+    return (0, import_cloudflare6.json)({ error: "User is not authenticated" });
   }
 };
 function Public2() {
   let { user: user2 } = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
-  return (0, import_react15.useEffect)(() => {
+  return (0, import_react13.useEffect)(() => {
     dispatch(user2 ? setUser(user2) : setLogout());
-  }, [user2, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
+  }, [user2, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
     fileName: "app/routes/_public.tsx",
     lineNumber: 76,
     columnNumber: 9
-  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(import_jsx_dev_runtime27.Fragment, { children: [
-    ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, !1, {
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(import_jsx_dev_runtime26.Fragment, { children: [
+    ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, !1, {
       fileName: "app/routes/_public.tsx",
       lineNumber: 79,
       columnNumber: 30
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(Outlet, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(Outlet, {}, void 0, !1, {
       fileName: "app/routes/_public.tsx",
       lineNumber: 80,
       columnNumber: 11
@@ -38400,9 +38170,9 @@ var welcome_exports = {};
 __export(welcome_exports, {
   default: () => welcome
 });
-var import_jsx_dev_runtime28 = __toESM(require_jsx_dev_runtime(), 1);
+var import_jsx_dev_runtime27 = __toESM(require_jsx_dev_runtime(), 1);
 function welcome() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)("div", { children: "welcome" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: "welcome" }, void 0, !1, {
     fileName: "app/routes/welcome.tsx",
     lineNumber: 5,
     columnNumber: 5
@@ -38415,13 +38185,13 @@ __export(auth_exports, {
   default: () => Auth2,
   meta: () => meta3
 });
-var import_jsx_dev_runtime29 = __toESM(require_jsx_dev_runtime(), 1), meta3 = () => [
+var import_jsx_dev_runtime28 = __toESM(require_jsx_dev_runtime(), 1), meta3 = () => [
   { title: "New Remix App" },
   { name: "description", content: "Welcome to Remix!" }
 ];
 function Auth2() {
   let data = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(Outlet, {}, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)(Outlet, {}, void 0, !1, {
     fileName: "app/routes/_auth.tsx",
     lineNumber: 39,
     columnNumber: 7
@@ -38435,21 +38205,21 @@ var routes_exports = {};
 var __exports = {};
 __export(__exports, {
   default: () => __default,
-  loader: () => loader5
+  loader: () => loader4
 });
-var import_cloudflare8 = __toESM(require_dist(), 1);
-var import_jsx_dev_runtime30 = __toESM(require_jsx_dev_runtime(), 1), loader5 = async ({ request }) => {
+var import_cloudflare7 = __toESM(require_dist(), 1);
+var import_jsx_dev_runtime29 = __toESM(require_jsx_dev_runtime(), 1), loader4 = async ({ request }) => {
   let url = new URL(request.url);
-  return console.warn(`Page not found: ${url.pathname}`), (0, import_cloudflare8.json)({ pathname: url.pathname });
+  return console.warn(`Page not found: ${url.pathname}`), (0, import_cloudflare7.json)({ pathname: url.pathname });
 }, NotFoundPage = () => {
   let data = useLoaderData2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "min-h-screen bg-gray-100 flex flex-col items-center justify-center px-4", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("h1", { className: "text-4xl font-bold text-gray-800 mb-4", children: "404: Page Not Found" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "min-h-screen bg-gray-100 flex flex-col items-center justify-center px-4", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("h1", { className: "text-4xl font-bold text-gray-800 mb-4", children: "404: Page Not Found" }, void 0, !1, {
       fileName: "app/routes/$404.tsx",
       lineNumber: 23,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-lg text-gray-600 mb-6", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-lg text-gray-600 mb-6", children: [
       "The requested URL ",
       data.pathname,
       " was not found on this server."
@@ -38458,7 +38228,7 @@ var import_jsx_dev_runtime30 = __toESM(require_jsx_dev_runtime(), 1), loader5 = 
       lineNumber: 24,
       columnNumber: 5
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
       Link2,
       {
         to: "/",
@@ -38487,8 +38257,8 @@ __export(home_exports, {
   Home: () => Home,
   default: () => home_default
 });
-var import_jsx_dev_runtime31 = __toESM(require_jsx_dev_runtime(), 1), Home = () => /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(import_jsx_dev_runtime31.Fragment, { children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(Outlet, {}, void 0, !1, {
+var import_jsx_dev_runtime30 = __toESM(require_jsx_dev_runtime(), 1), Home = () => /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(import_jsx_dev_runtime30.Fragment, { children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(Outlet, {}, void 0, !1, {
     fileName: "app/routes/home.tsx",
     lineNumber: 11,
     columnNumber: 7
@@ -38506,19 +38276,19 @@ __export(api_exports, {
   default: () => Index,
   meta: () => meta4
 });
-var import_jsx_dev_runtime32 = __toESM(require_jsx_dev_runtime(), 1), meta4 = () => [
+var import_jsx_dev_runtime31 = __toESM(require_jsx_dev_runtime(), 1), meta4 = () => [
   { title: "New Remix App" },
   { name: "description", content: "Welcome to Remix!" }
 ];
 function Index() {
   let user2 = useTypedSelector((state) => state.user.value);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(pageTemplate_default, { user: user2, children: [
-    user2.user && /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(userStatus_default, { user: user2 }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(pageTemplate_default, { user: user2, children: [
+    user2.user && /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(userStatus_default, { user: user2 }, void 0, !1, {
       fileName: "app/routes/api.tsx",
       lineNumber: 31,
       columnNumber: 21
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(Outlet, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(Outlet, {}, void 0, !1, {
       fileName: "app/routes/api.tsx",
       lineNumber: 34,
       columnNumber: 7
@@ -38531,7 +38301,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-4PHSFXTG.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-GYLQYPPK.js", "/build/_shared/chunk-EB64VCHI.js", "/build/_shared/chunk-JVVCMFL4.js", "/build/_shared/chunk-FSHJZDJN.js", "/build/_shared/chunk-E5WO37RD.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-YAQ2QGOL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/$404": { id: "routes/$404", parentId: "root", path: ":404", index: void 0, caseSensitive: void 0, module: "/build/routes/$404-XUUWW76Z.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth": { id: "routes/_auth", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_auth-BUI6OCAG.js", imports: ["/build/_shared/chunk-XQZ2HSLL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.login": { id: "routes/_auth.login", parentId: "routes/_auth", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.login-USABVYAG.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.logout": { id: "routes/_auth.logout", parentId: "routes/_auth", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.logout-YPE3SW36.js", imports: void 0, hasAction: !0, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.register": { id: "routes/_auth.register", parentId: "routes/_auth", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.register-SDPQOUH6.js", imports: ["/build/_shared/chunk-7GR4HX5H.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance": { id: "routes/_clearance", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance-TSK2WYOQ.js", imports: ["/build/_shared/chunk-YWHKITJJ.js", "/build/_shared/chunk-7GR4HX5H.js", "/build/_shared/chunk-XQZ2HSLL.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.landing": { id: "routes/_clearance.landing", parentId: "routes/_clearance", path: "landing", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.landing-2XMUHKJ3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page1": { id: "routes/_clearance.page1", parentId: "routes/_clearance", path: "page1", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page1-5SXTXQNH.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page2": { id: "routes/_clearance.page2", parentId: "routes/_clearance", path: "page2", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page2-3CMULZSK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page3": { id: "routes/_clearance.page3", parentId: "routes/_clearance", path: "page3", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page3-3625EQ6D.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page4": { id: "routes/_clearance.page4", parentId: "routes/_clearance", path: "page4", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page4-AWYSWNHV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page5": { id: "routes/_clearance.page5", parentId: "routes/_clearance", path: "page5", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page5-DKIEYM4C.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page6": { id: "routes/_clearance.page6", parentId: "routes/_clearance", path: "page6", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page6-VUQEEH54.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page7": { id: "routes/_clearance.page7", parentId: "routes/_clearance", path: "page7", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page7-25MLTX6N.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page8": { id: "routes/_clearance.page8", parentId: "routes/_clearance", path: "page8", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page8-CNS52QNK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public": { id: "routes/_public", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_public-SUXBYZBL.js", imports: ["/build/_shared/chunk-YWHKITJJ.js", "/build/_shared/chunk-7GR4HX5H.js", "/build/_shared/chunk-XQZ2HSLL.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public._index": { id: "routes/_public._index", parentId: "routes/_public", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_public._index-LFGPDWTE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.dashboard": { id: "routes/_public.dashboard", parentId: "routes/_public", path: "dashboard", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.dashboard-Q7YOO4D7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.info": { id: "routes/_public.info", parentId: "routes/_public", path: "info", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.info-SBXQS3PL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.landingpage": { id: "routes/_public.landingpage", parentId: "routes/_public", path: "landingpage", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.landingpage-3NWPNM6V.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/api": { id: "routes/api", parentId: "root", path: "api", index: void 0, caseSensitive: void 0, module: "/build/routes/api-5WOADCSZ.js", imports: ["/build/_shared/chunk-YWHKITJJ.js", "/build/_shared/chunk-7GR4HX5H.js", "/build/_shared/chunk-XQZ2HSLL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/home": { id: "routes/home", parentId: "root", path: "home", index: void 0, caseSensitive: void 0, module: "/build/routes/home-5LCY3IJG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: "index", index: void 0, caseSensitive: void 0, module: "/build/routes/index-5P6H5OEU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info._index": { id: "routes/info._index", parentId: "root", path: "info", index: !0, caseSensitive: void 0, module: "/build/routes/info._index-R55ZT443.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.privacy": { id: "routes/info.privacy", parentId: "root", path: "info/privacy", index: void 0, caseSensitive: void 0, module: "/build/routes/info.privacy-FMO4ZIWY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.terms": { id: "routes/info.terms", parentId: "root", path: "info/terms", index: void 0, caseSensitive: void 0, module: "/build/routes/info.terms-TF4X3YSR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-A5KC7LFP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "f7dcd124", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708755856510 }, url: "/build/manifest-F7DCD124.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-4PHSFXTG.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-GYLQYPPK.js", "/build/_shared/chunk-EB64VCHI.js", "/build/_shared/chunk-JVVCMFL4.js", "/build/_shared/chunk-FSHJZDJN.js", "/build/_shared/chunk-E5WO37RD.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-A65DS7ZJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/$404": { id: "routes/$404", parentId: "root", path: ":404", index: void 0, caseSensitive: void 0, module: "/build/routes/$404-XUUWW76Z.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth": { id: "routes/_auth", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_auth-EG4VZDOE.js", imports: ["/build/_shared/chunk-XQZ2HSLL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.login": { id: "routes/_auth.login", parentId: "routes/_auth", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.login-E5QKXBOJ.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.logout": { id: "routes/_auth.logout", parentId: "routes/_auth", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.logout-YPE3SW36.js", imports: void 0, hasAction: !0, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.register": { id: "routes/_auth.register", parentId: "routes/_auth", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.register-7S2MFXFA.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance": { id: "routes/_clearance", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance-D7VR7A3I.js", imports: ["/build/_shared/chunk-DSHWOZZD.js", "/build/_shared/chunk-XQZ2HSLL.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.landing": { id: "routes/_clearance.landing", parentId: "routes/_clearance", path: "landing", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.landing-2XMUHKJ3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page1": { id: "routes/_clearance.page1", parentId: "routes/_clearance", path: "page1", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page1-5SXTXQNH.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page2": { id: "routes/_clearance.page2", parentId: "routes/_clearance", path: "page2", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page2-3CMULZSK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page3": { id: "routes/_clearance.page3", parentId: "routes/_clearance", path: "page3", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page3-3625EQ6D.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page4": { id: "routes/_clearance.page4", parentId: "routes/_clearance", path: "page4", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page4-AWYSWNHV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page5": { id: "routes/_clearance.page5", parentId: "routes/_clearance", path: "page5", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page5-DKIEYM4C.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page6": { id: "routes/_clearance.page6", parentId: "routes/_clearance", path: "page6", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page6-VUQEEH54.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page7": { id: "routes/_clearance.page7", parentId: "routes/_clearance", path: "page7", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page7-25MLTX6N.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page8": { id: "routes/_clearance.page8", parentId: "routes/_clearance", path: "page8", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page8-CNS52QNK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public": { id: "routes/_public", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_public-ECCF5L4B.js", imports: ["/build/_shared/chunk-DSHWOZZD.js", "/build/_shared/chunk-XQZ2HSLL.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public._index": { id: "routes/_public._index", parentId: "routes/_public", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_public._index-LFGPDWTE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.dashboard": { id: "routes/_public.dashboard", parentId: "routes/_public", path: "dashboard", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.dashboard-Q7YOO4D7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.info": { id: "routes/_public.info", parentId: "routes/_public", path: "info", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.info-SBXQS3PL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.landingpage": { id: "routes/_public.landingpage", parentId: "routes/_public", path: "landingpage", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.landingpage-3NWPNM6V.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/api": { id: "routes/api", parentId: "root", path: "api", index: void 0, caseSensitive: void 0, module: "/build/routes/api-SOJU2A5G.js", imports: ["/build/_shared/chunk-DSHWOZZD.js", "/build/_shared/chunk-XQZ2HSLL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/home": { id: "routes/home", parentId: "root", path: "home", index: void 0, caseSensitive: void 0, module: "/build/routes/home-5LCY3IJG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: "index", index: void 0, caseSensitive: void 0, module: "/build/routes/index-5P6H5OEU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info._index": { id: "routes/info._index", parentId: "root", path: "info", index: !0, caseSensitive: void 0, module: "/build/routes/info._index-R55ZT443.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.privacy": { id: "routes/info.privacy", parentId: "root", path: "info/privacy", index: void 0, caseSensitive: void 0, module: "/build/routes/info.privacy-FMO4ZIWY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.terms": { id: "routes/info.terms", parentId: "root", path: "info/terms", index: void 0, caseSensitive: void 0, module: "/build/routes/info.terms-TF4X3YSR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-A5KC7LFP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "1f4814d9", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708903779777 }, url: "/build/manifest-1F4814D9.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -38762,22 +38532,18 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
 };
 
 // server.ts
-(0, import_cloudflare9.logDevReady)(server_build_exports);
+(0, import_cloudflare8.logDevReady)(server_build_exports);
 async function onRequest(context) {
-  console.log(context, "context in SERVER");
-  let { getSession, commitSession, destroySession } = createSessionStorage(context.env), session = await getSession(
-    context.request.headers.get("Cookie")
-  ), response = await createPagesFunctionHandler({
+  let { getSession, commitSession } = createSessionStorage(context.env), session = await getSession(context.request.headers.get("Cookie"));
+  console.log(session.data, "SERVER SESSION");
+  let response = await createPagesFunctionHandler({
     build: server_build_exports,
     mode,
     getLoadContext(context2) {
-      return { context: context2, session };
+      return { ...context2, session };
     }
   })(context);
-  return response.headers.append(
-    "Set-Cookie",
-    await commitSession(session)
-  ), response;
+  return response.headers.append("Set-Cookie", await commitSession(session)), response;
 }
 export {
   onRequest

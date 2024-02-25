@@ -8,6 +8,8 @@ class UserRepository {
   private db;
 
   constructor(env: EnvWithKV) {
+
+    console.log(env, "env in userRepo")
     this.db = drizzle(env.DB);
   }
 

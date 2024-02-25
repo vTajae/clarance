@@ -32,7 +32,7 @@ import {
 var cssBundleHref = void 0;
 
 // app/index.css
-var app_default = "/build/_assets/index-ANCR3FBZ.css";
+var app_default = "/build/_assets/index-RIDNN4T4.css";
 
 // app/root.tsx
 var import_jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
@@ -132,4 +132,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-YAQ2QGOL.js.map
+//# sourceMappingURL=/build/root-A65DS7ZJ.js.map

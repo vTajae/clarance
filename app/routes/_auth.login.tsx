@@ -16,6 +16,7 @@ import { isAuthenticated } from "~/utils/session/sessionUtils";
 import { EnvWithKV, RequestContext } from "api/schemas/kv";
 import UserService from "api_v2/services/userService";
 import { userLogin } from "api_v2/types/userLogin";
+import { createSessionStorage } from "~/utils/session/session";
 
 interface ActionData {
   error?: string;
@@ -30,95 +31,69 @@ interface NestedContext {
 }
 
 export const loader: LoaderFunction = async ({ request, context }) => {
-  // Assuming isAuthenticated is a function you've defined that checks if the user is authenticated
-
-  // Directly accessing the `env` from the context object
-
-const nestedContext = context as unknown as NestedContext;
-
-// Now you can access your env with the correct type
-const env = nestedContext.context.env;
-
-// Example usage of the env within isAuthenticated function
-if (await isAuthenticated({ request, env })) {
+  if (await isAuthenticated(request, context as any)) {
     // User is already logged in, redirect them to the dashboard or home page
     return redirect("/home");
   }
-
   return json({});
 };
 
-// export const action: ActionFunction = async ({ request, context: {session} }) => {
-//   // Assuming createSessionStorage is imported and env is available
-//  let mySession = session as Session
-//   try {
-//     const formData = await request.formData();
-//     const username = formData.get("username");
-//     const password = formData.get("password");
+export const action: ActionFunction = async ({
+  request,
+  context
+}) => {
 
-//     if (typeof username === "string" && typeof password === "string") {
-//       const user = await UserService.loginUser(username, password);
+  let mySession = context.session as Session;
 
-//       console.log(user, "user");
-//       if (user) {
-//         const tokenCreationTime = new Date().getTime(); // Get current timestamp
+  let myEnv = context.env as EnvWithKV;
 
-//         // Set session data
-//         mySession.set("auth", {
-//           username: user.user.username,
-//           id: user.user.id,
-//           accessToken: user.tokens.access_token,
-//           refreshToken: user.tokens.refresh_token,
-//           tokenCreationTime: tokenCreationTime,
-//         });
+  console.log(context, "context.env")
 
-//         return redirect("/home", {
-//           // headers: {
-//           //   "Set-Cookie": await commitSession(session),
-//           // },
-//         });
-//       } else {
-//         return json(
-//           { error: "Invalid credentials" },
-//           {
-//             status: 401,
-//           }
-//         );
-//       }
-//     } else {
-//       return json({ error: "Invalid input" }, { status: 400 });
-//     }
-//   } catch (error) {
-//     return json({error: "Error processing request"}, { status: 500 });
-//   }
-// };
 
-export let action: ActionFunction = async ({ request, context }) => {
-  const nestedContext = context as unknown as NestedContext;
+  // Now you can access your env with the correct type
 
-// Now you can access your env with the correct type
-const env = nestedContext.context.env;
-  const userService = new UserService(env);
+  const userService = new UserService(myEnv);
 
-  // Parse the form data
   const formData = await request.formData();
-  const actionType = formData.get("actionType"); // This determines if it's a login or register action
+  const actionType = formData.get("actionType");
+  // const userService = new UserService(env);
 
-  const userData = {
-    username: formData.get("username"),
-    password: formData.get("password"), // Ensure to hash this in a real application
-    role: formData.get("role"),
-  } as userLogin;
-
-  console.log(userData.role, "userData.roleee")
-
-  // Depending on the action, call the corresponding userService method
   if (actionType === "login") {
-    return json(await userService.loginUser(userData));
+    const userData = {
+      username: formData.get("username"),
+      password: formData.get("password"),
+      role: formData.get("role"),
+    } as userLogin;
+
+    const loginResult = await userService.loginUser(userData);
+
+    if (loginResult.success && loginResult.user) {
+      console.log("loginResult", loginResult);
+      // Create a new session and set login data
+      mySession.set("auth", { ...loginResult.user });
+
+      // Respond with a redirect and set the session cookie
+      return new Response(null, {
+        status: 303, // or 302, depending on your use case
+        headers: {
+          Location: "/home",
+        },
+      });
+    } else {
+      // Handle login failure (e.g., return an error message)
+      mySession.flash("error", "Invalid username or password.");
+      return new Response(null, {
+        status: 303,
+        headers: {
+          Location: "/login",
+        },
+      });
+    }
   } else if (actionType === "register") {
-    return json(await userService.registerUser(userData)); // Assuming you have a registerUser method
+    // Handle registration similarly, potentially creating a session on successful registration
   }
 
+  // Fallback for invalid action type
   return json({ error: "Invalid action type." });
 };
 

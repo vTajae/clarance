@@ -8,34 +8,26 @@ if (process.env.NODE_ENV === "development") {
   logDevReady(build);
 }
 
-
 export async function onRequest(context: any) {
+  // console.log(context, "context in SERVER")
 
-  console.log(context, "context in SERVER")
+  const { getSession, commitSession } = createSessionStorage(context.env);
+
+  let session = await getSession(context.request.headers.get("Cookie"));
+  console.log(session.data, "SERVER SESSION");
+
   
-
-  const { getSession, commitSession, destroySession } = createSessionStorage(context.env);
-  
-  
-  let session = await getSession(
-    context.request.headers.get("Cookie")
-  );
-
-
   let handleRequest = createPagesFunctionHandler({
     build,
     mode: build.mode,
     getLoadContext(context) {
-      return { context, session };
+      return { ...context, session };
     },
   });
 
   let response = await handleRequest(context);
 
-  response.headers.append(
-    "Set-Cookie",
-    await commitSession(session)
-  );
+  response.headers.append("Set-Cookie", await commitSession(session));
 
   return response;
 }

@@ -7,7 +7,6 @@ enum Role {
  type userLogin = {
 username: string;
 password: string;
-role: Role; // Use the Role enum here
 };
 
 

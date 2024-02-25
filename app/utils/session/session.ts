@@ -34,6 +34,20 @@ interface RequestContext {
 }
 
 
+// Function to get the session secret, with default fallback
+function getSessionSecret(env: EnvWithKV) {
+  // Access the environment variable directly
+
+  // console.log(env, "eeeefwergreg");
+
+  let sessionSecret = env.USER_SESSION_SECRET || "default-secret";
+  // if (!sessionSecret || sessionSecret === "default-secret") {
+  //   console.warn("Session secret is not set or is set to the default. This is insecure in production.");
+  // }
+  return sessionSecret;
+}
+
+
 // You don't need to manually fetch the session secret from the environment variables;
 // Cloudflare automatically makes them available via the `env` parameter in your functions.
 // This function now simply ensures types are respected.
@@ -46,7 +60,7 @@ export function createSessionStorage(env: EnvWithKV) {
     maxAge: 60 * 60 * 24 * 30, // 30 days
     path: "/",
     sameSite: "lax",
-    secrets: [env.USER_SESSION_SECRET], // Securely using the session secret from environment variables
+    secrets: [getSessionSecret(env)], // Use the session secret from the environment variable or a default value
     secure: true,
   });
 
