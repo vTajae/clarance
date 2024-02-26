@@ -1,7 +1,6 @@
 // src/state/store.js
 
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./counter/counterSlice";
 import userReducer from "./user/userSlice";
 
 
@@ -10,7 +9,6 @@ export const initializeStore = (preloadedState = {}) => {
   return configureStore({
     reducer: {
       user: userReducer,
-      counter: counterReducer,
 
     },
     preloadedState,

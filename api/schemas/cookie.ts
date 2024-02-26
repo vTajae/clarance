@@ -1,10 +1,12 @@
 export interface LoginCookieData {
-    username: string;
-    id: string;
-    accessToken: string;
-    refreshToken: string;
-    tokenCreationTime: number
+  username: string;
+  role: "1" | "2" | "3" | null;
+  id: number;
+  createdAt: number;
+  updatedAt: number;
   }
+
+  
 
   
   

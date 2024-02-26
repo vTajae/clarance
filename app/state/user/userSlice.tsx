@@ -1,44 +1,37 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import {UserService} from '../../../api/services/user_service'; // Adjust the path to your auth service
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { UserService } from "../../../api/services/user_service"; // Adjust the path to your auth service
 import { Credentials } from "~/props/credentials";
 
-
 // // Define TypeScript interfaces for your user model and tokens
-interface UserModel {
+export interface UserModel {
   id: number;
   username: string;
 }
 
-interface UserToken {
-  access_token: string;
-  refresh_token: string;
-}
-
-interface UserResponse {
-  user: UserModel;
+export interface UserContext {
+  isLoading: boolean;
+  isLoggedIn: boolean;
+  locale: string;
+  error: string | null;
 }
 
 // // Define the state structure
-interface UserState {
+export interface UserState {
   user: UserModel | null;
-  tokens: UserToken | null;
-  isLoading: boolean;
-  isLoggedIn: boolean;
-  locale: null | string;
-  error: string | null;
+  context: UserContext;
 }
 
 const initialStateValue: UserState = {
   user: null,
-  tokens: null,
-  isLoading: true,
-  isLoggedIn: false,
-  locale: "en-US",
-  error: null,
+  context: {
+    isLoading: true,
+    isLoggedIn: false,
+    locale: "en-US",
+    error: null,
+  }
 };
-
 
 const userSlice = createSlice({
   name: "user",
@@ -46,17 +39,16 @@ const userSlice = createSlice({
   reducers: {
     setUser: (state, action: PayloadAction<UserModel>) => {
       state.value.user = action.payload;
-      state.value.isLoggedIn = true;
-      state.value.isLoading = false;
-      state.value.error = null;
+      state.value.context.isLoggedIn = true;
+      state.value.context.isLoading = false;
+      state.value.context.error = null;
     },
     setLogout: (state) => {
       state.value.user = null;
-      state.value.tokens = null;
-      state.value.isLoggedIn = false;
+      state.value.context.isLoggedIn = false;
     },
     setLoading: (state, action: PayloadAction<boolean>) => {
-      state.value.isLoading = action.payload;
+      state.value.context.isLoading = action.payload;
     },
     // Optionally, you can add a reset action to set the state back to its initial value
     resetState: (state) => {
@@ -67,24 +59,27 @@ const userSlice = createSlice({
     builder
       .addCase(loginUser.fulfilled, (state, action) => {
         state.value.user = action.payload;
-        state.value.isLoggedIn = true;
-        state.value.isLoading = false;
-        state.value.error = null;
+        state.value.context.isLoggedIn = true;
+        state.value.context.isLoading = false;
+        state.value.context.error = null;
       })
       .addCase(loginUser.rejected, (state, action) => {
         // Handle failed login attempt
-        state.value.error = 'Login failed';
-        state.value.isLoading = false;
+        state.value.context.error = "Login failed";
+        state.value.context.isLoading = false;
       });
   },
 });
 
 // In your Redux slice or action file
 export const loginUser = createAsyncThunk(
-  'user/loginUser',
+  "user/loginUser",
   async (credentials: any, { dispatch }) => {
     try {
-      const response = await UserService.loginUser(credentials.username, credentials.password);
+      const response = await UserService.loginUser(
+        credentials.username,
+        credentials.password
+      );
       const user = response.user;
       dispatch(setUser(user)); // Update Redux state
       return user;
@@ -94,11 +89,10 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-
-
 // Update the selectors to reflect the new structure
-export const selectIsLoggedIn = (state: RootState) => state.user.value.isLoggedIn;
-export const selectIsLoading = (state: RootState) => state.user.value.isLoading;
+export const selectIsLoggedIn = (state: RootState) =>
+  state.user.value.context.isLoggedIn;
+export const selectIsLoading = (state: RootState) => state.user.value.context.isLoading;
 
 export const { setUser, setLogout, setLoading, resetState } = userSlice.actions;
 

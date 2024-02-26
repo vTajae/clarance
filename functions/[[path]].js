@@ -13,10 +13,10 @@ var __commonJS = (cb, mod) => function() {
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: !0 });
-}, __copyProps = (to, from, except, desc) => {
+}, __copyProps = (to, from, except2, desc2) => {
   if (from && typeof from == "object" || typeof from == "function")
     for (let key of __getOwnPropNames(from))
-      !__hasOwnProp.call(to, key) && key !== except && __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+      !__hasOwnProp.call(to, key) && key !== except2 && __defProp(to, key, { get: () => from[key], enumerable: !(desc2 = __getOwnPropDesc(from, key)) || desc2.enumerable });
   return to;
 };
 var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
@@ -39,23 +39,23 @@ var require_cookie = __commonJS({
     function parse2(str, options) {
       if (typeof str != "string")
         throw new TypeError("argument str must be a string");
-      for (var obj = {}, opt = options || {}, dec = opt.decode || decode, index2 = 0; index2 < str.length; ) {
-        var eqIdx = str.indexOf("=", index2);
+      for (var obj = {}, opt = options || {}, dec = opt.decode || decode2, index = 0; index < str.length; ) {
+        var eqIdx = str.indexOf("=", index);
         if (eqIdx === -1)
           break;
-        var endIdx = str.indexOf(";", index2);
+        var endIdx = str.indexOf(";", index);
         if (endIdx === -1)
           endIdx = str.length;
         else if (endIdx < eqIdx) {
-          index2 = str.lastIndexOf(";", eqIdx - 1) + 1;
+          index = str.lastIndexOf(";", eqIdx - 1) + 1;
           continue;
         }
-        var key = str.slice(index2, eqIdx).trim();
+        var key = str.slice(index, eqIdx).trim();
         if (obj[key] === void 0) {
           var val = str.slice(eqIdx + 1, endIdx).trim();
           val.charCodeAt(0) === 34 && (val = val.slice(1, -1)), obj[key] = tryDecode(val, dec);
         }
-        index2 = endIdx + 1;
+        index = endIdx + 1;
       }
       return obj;
     }
@@ -128,7 +128,7 @@ var require_cookie = __commonJS({
       }
       return str;
     }
-    function decode(str) {
+    function decode2(str) {
       return str.indexOf("%") !== -1 ? decodeURIComponent(str) : str;
     }
     function encode(val) {
@@ -137,9 +137,9 @@ var require_cookie = __commonJS({
     function isDate2(val) {
       return __toString.call(val) === "[object Date]" || val instanceof Date;
     }
-    function tryDecode(str, decode2) {
+    function tryDecode(str, decode3) {
       try {
-        return decode2(str);
+        return decode3(str);
       } catch {
         return str;
       }
@@ -158,9 +158,9 @@ var alreadyWarned, init_warnings = __esm({
 });
 
 // node_modules/@remix-run/server-runtime/dist/esm/cookies.js
-async function encodeCookieValue(sign, value, secrets) {
+async function encodeCookieValue(sign2, value, secrets) {
   let encoded = encodeData(value);
-  return secrets.length > 0 && (encoded = await sign(encoded, secrets[0])), encoded;
+  return secrets.length > 0 && (encoded = await sign2(encoded, secrets[0])), encoded;
 }
 async function decodeCookieValue(unsign, value, secrets) {
   if (secrets.length > 0) {
@@ -184,9 +184,9 @@ function decodeData(value) {
   }
 }
 function myEscape(value) {
-  let str = value.toString(), result = "", index2 = 0, chr, code;
-  for (; index2 < str.length; )
-    chr = str.charAt(index2++), /[\w*+\-./@]/.exec(chr) ? result += chr : (code = chr.charCodeAt(0), code < 256 ? result += "%" + hex(code, 2) : result += "%u" + hex(code, 4).toUpperCase());
+  let str = value.toString(), result = "", index = 0, chr, code;
+  for (; index < str.length; )
+    chr = str.charAt(index++), /[\w*+\-./@]/.exec(chr) ? result += chr : (code = chr.charCodeAt(0), code < 256 ? result += "%" + hex(code, 2) : result += "%u" + hex(code, 4).toUpperCase());
   return result;
 }
 function hex(code, length) {
@@ -196,16 +196,16 @@ function hex(code, length) {
   return result;
 }
 function myUnescape(value) {
-  let str = value.toString(), result = "", index2 = 0, chr, part;
-  for (; index2 < str.length; ) {
-    if (chr = str.charAt(index2++), chr === "%") {
-      if (str.charAt(index2) === "u") {
-        if (part = str.slice(index2 + 1, index2 + 5), /^[\da-f]{4}$/i.exec(part)) {
-          result += String.fromCharCode(parseInt(part, 16)), index2 += 5;
+  let str = value.toString(), result = "", index = 0, chr, part;
+  for (; index < str.length; ) {
+    if (chr = str.charAt(index++), chr === "%") {
+      if (str.charAt(index) === "u") {
+        if (part = str.slice(index + 1, index + 5), /^[\da-f]{4}$/i.exec(part)) {
+          result += String.fromCharCode(parseInt(part, 16)), index += 5;
           continue;
         }
-      } else if (part = str.slice(index2, index2 + 2), /^[\da-f]{2}$/i.exec(part)) {
-        result += String.fromCharCode(parseInt(part, 16)), index2 += 2;
+      } else if (part = str.slice(index, index + 2), /^[\da-f]{2}$/i.exec(part)) {
+        result += String.fromCharCode(parseInt(part, 16)), index += 2;
         continue;
       }
     }
@@ -221,7 +221,7 @@ var import_cookie, createCookieFactory, isCookie, init_cookies = __esm({
     import_cookie = __toESM(require_cookie());
     init_warnings();
     createCookieFactory = ({
-      sign,
+      sign: sign2,
       unsign
     }) => (name, cookieOptions = {}) => {
       let {
@@ -252,7 +252,7 @@ var import_cookie, createCookieFactory, isCookie, init_cookies = __esm({
           return name in cookies ? cookies[name] === "" ? "" : await decodeCookieValue(unsign, cookies[name], secrets) : null;
         },
         async serialize(value, serializeOptions) {
-          return (0, import_cookie.serialize)(name, value === "" ? "" : await encodeCookieValue(sign, value, secrets), {
+          return (0, import_cookie.serialize)(name, value === "" ? "" : await encodeCookieValue(sign2, value, secrets), {
             ...options,
             ...serializeOptions
           });
@@ -265,7 +265,7 @@ var import_cookie, createCookieFactory, isCookie, init_cookies = __esm({
 // node_modules/@web3-storage/multipart-parser/esm/src/utils.js
 function stringToArray(s) {
   let utf8 = unescape(encodeURIComponent(s));
-  return Uint8Array.from(utf8, (_, i) => utf8.charCodeAt(i));
+  return Uint8Array.from(utf8, (_2, i) => utf8.charCodeAt(i));
 }
 function arrayToString(a) {
   let utf8 = String.fromCharCode.apply(null, a);
@@ -277,11 +277,11 @@ function mergeArrays(...arrays) {
     out.set(arr, offset), offset += arr.length;
   return out;
 }
-function arraysEqual(a, b) {
-  if (a.length !== b.length)
+function arraysEqual(a, b2) {
+  if (a.length !== b2.length)
     return !1;
   for (let i = 0; i < a.length; i++)
-    if (a[i] !== b[i])
+    if (a[i] !== b2[i])
       return !1;
   return !0;
 }
@@ -292,7 +292,7 @@ var init_utils = __esm({
 
 // node_modules/@web3-storage/multipart-parser/esm/src/search.js
 function coerce(a) {
-  return a instanceof Uint8Array ? (index2) => a[index2] : a;
+  return a instanceof Uint8Array ? (index) => a[index] : a;
 }
 function jsmemcmp(buf1, pos1, buf2, pos2, len) {
   let fn1 = coerce(buf1), fn2 = coerce(buf2);
@@ -344,7 +344,7 @@ var MATCH, StreamSearch, ReadableStreamSearch, EOQ, QueueableStreamSearch, init_
             tokens.push(this._lookbehind), this._lookbehind = new Uint8Array();
           else {
             let bytesToCutOff = this._lookbehind.length + pos;
-            return bytesToCutOff > 0 && (tokens.push(this._lookbehind.slice(0, bytesToCutOff)), this._lookbehind = this._lookbehind.slice(bytesToCutOff)), this._lookbehind = Uint8Array.from(new Array(this._lookbehind.length + data.length), (_, i) => this._charAt(data, i - this._lookbehind.length)), [
+            return bytesToCutOff > 0 && (tokens.push(this._lookbehind.slice(0, bytesToCutOff)), this._lookbehind = this._lookbehind.slice(bytesToCutOff)), this._lookbehind = Uint8Array.from(new Array(this._lookbehind.length + data.length), (_2, i) => this._charAt(data, i - this._lookbehind.length)), [
               data.length,
               ...tokens
             ];
@@ -666,13 +666,13 @@ function createMemoryHistory(options) {
     initialIndex,
     v5Compat = !1
   } = options, entries;
-  entries = initialEntries.map((entry2, index3) => createMemoryLocation(entry2, typeof entry2 == "string" ? null : entry2.state, index3 === 0 ? "default" : void 0));
-  let index2 = clampIndex(initialIndex ?? entries.length - 1), action = Action.Pop, listener2 = null;
+  entries = initialEntries.map((entry2, index2) => createMemoryLocation(entry2, typeof entry2 == "string" ? null : entry2.state, index2 === 0 ? "default" : void 0));
+  let index = clampIndex(initialIndex ?? entries.length - 1), action3 = Action.Pop, listener2 = null;
   function clampIndex(n) {
     return Math.min(Math.max(n, 0), entries.length - 1);
   }
   function getCurrentLocation() {
-    return entries[index2];
+    return entries[index];
   }
   function createMemoryLocation(to, state, key) {
     state === void 0 && (state = null);
@@ -684,10 +684,10 @@ function createMemoryHistory(options) {
   }
   return {
     get index() {
-      return index2;
+      return index;
     },
     get action() {
-      return action;
+      return action3;
     },
     get location() {
       return getCurrentLocation();
@@ -705,28 +705,28 @@ function createMemoryHistory(options) {
       };
     },
     push(to, state) {
-      action = Action.Push;
+      action3 = Action.Push;
       let nextLocation = createMemoryLocation(to, state);
-      index2 += 1, entries.splice(index2, entries.length, nextLocation), v5Compat && listener2 && listener2({
-        action,
+      index += 1, entries.splice(index, entries.length, nextLocation), v5Compat && listener2 && listener2({
+        action: action3,
         location: nextLocation,
         delta: 1
       });
     },
     replace(to, state) {
-      action = Action.Replace;
+      action3 = Action.Replace;
       let nextLocation = createMemoryLocation(to, state);
-      entries[index2] = nextLocation, v5Compat && listener2 && listener2({
-        action,
+      entries[index] = nextLocation, v5Compat && listener2 && listener2({
+        action: action3,
         location: nextLocation,
         delta: 0
       });
     },
     go(delta) {
-      action = Action.Pop;
-      let nextIndex = clampIndex(index2 + delta), nextLocation = entries[nextIndex];
-      index2 = nextIndex, listener2 && listener2({
-        action,
+      action3 = Action.Pop;
+      let nextIndex = clampIndex(index + delta), nextLocation = entries[nextIndex];
+      index = nextIndex, listener2 && listener2({
+        action: action3,
         location: nextLocation,
         delta
       });
@@ -812,11 +812,11 @@ function warning(cond, message) {
 function createKey() {
   return Math.random().toString(36).substr(2, 8);
 }
-function getHistoryState(location, index2) {
+function getHistoryState(location, index) {
   return {
     usr: location.state,
     key: location.key,
-    idx: index2
+    idx: index
   };
 }
 function createLocation(current2, to, state, key) {
@@ -856,9 +856,9 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   let {
     window: window2 = document.defaultView,
     v5Compat = !1
-  } = options, globalHistory = window2.history, action = Action.Pop, listener2 = null, index2 = getIndex();
-  index2 == null && (index2 = 0, globalHistory.replaceState(_extends({}, globalHistory.state, {
-    idx: index2
+  } = options, globalHistory = window2.history, action3 = Action.Pop, listener2 = null, index = getIndex();
+  index == null && (index = 0, globalHistory.replaceState(_extends({}, globalHistory.state, {
+    idx: index
   }), ""));
   function getIndex() {
     return (globalHistory.state || {
@@ -866,19 +866,19 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
     }).idx;
   }
   function handlePop() {
-    action = Action.Pop;
-    let nextIndex = getIndex(), delta = nextIndex == null ? null : nextIndex - index2;
-    index2 = nextIndex, listener2 && listener2({
-      action,
+    action3 = Action.Pop;
+    let nextIndex = getIndex(), delta = nextIndex == null ? null : nextIndex - index;
+    index = nextIndex, listener2 && listener2({
+      action: action3,
       location: history.location,
       delta
     });
   }
   function push(to, state) {
-    action = Action.Push;
+    action3 = Action.Push;
     let location = createLocation(history.location, to, state);
-    validateLocation && validateLocation(location, to), index2 = getIndex() + 1;
-    let historyState = getHistoryState(location, index2), url = history.createHref(location);
+    validateLocation && validateLocation(location, to), index = getIndex() + 1;
+    let historyState = getHistoryState(location, index), url = history.createHref(location);
     try {
       globalHistory.pushState(historyState, "", url);
     } catch (error) {
@@ -887,18 +887,18 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
       window2.location.assign(url);
     }
     v5Compat && listener2 && listener2({
-      action,
+      action: action3,
       location: history.location,
       delta: 1
     });
   }
   function replace(to, state) {
-    action = Action.Replace;
+    action3 = Action.Replace;
     let location = createLocation(history.location, to, state);
-    validateLocation && validateLocation(location, to), index2 = getIndex();
-    let historyState = getHistoryState(location, index2), url = history.createHref(location);
+    validateLocation && validateLocation(location, to), index = getIndex();
+    let historyState = getHistoryState(location, index), url = history.createHref(location);
     globalHistory.replaceState(historyState, "", url), v5Compat && listener2 && listener2({
-      action,
+      action: action3,
       location: history.location,
       delta: 0
     });
@@ -909,7 +909,7 @@ function getUrlBasedHistory(getLocation, createHref, validateLocation, options) 
   }
   let history = {
     get action() {
-      return action;
+      return action3;
     },
     get location() {
       return getLocation(window2, globalHistory);
@@ -945,8 +945,8 @@ function isIndexRoute(route) {
   return route.index === !0;
 }
 function convertRoutesToDataRoutes(routes2, mapRouteProperties2, parentPath, manifest) {
-  return parentPath === void 0 && (parentPath = []), manifest === void 0 && (manifest = {}), routes2.map((route, index2) => {
-    let treePath = [...parentPath, index2], id = typeof route.id == "string" ? route.id : treePath.join("-");
+  return parentPath === void 0 && (parentPath = []), manifest === void 0 && (manifest = {}), routes2.map((route, index) => {
+    let treePath = [...parentPath, index], id = typeof route.id == "string" ? route.id : treePath.join("-");
     if (invariant(route.index !== !0 || !route.children, "Cannot specify children on an index route"), invariant(!manifest[id], 'Found a route id collision on id "' + id + `".  Route id's must be globally unique within Data Router usages`), isIndexRoute(route)) {
       let indexRoute = _extends({}, route, mapRouteProperties2(route), {
         id
@@ -998,15 +998,15 @@ function convertRouteMatchToUiMatch(match, loaderData) {
 }
 function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
   branches === void 0 && (branches = []), parentsMeta === void 0 && (parentsMeta = []), parentPath === void 0 && (parentPath = "");
-  let flattenRoute = (route, index2, relativePath) => {
-    let meta = {
+  let flattenRoute = (route, index, relativePath) => {
+    let meta5 = {
       relativePath: relativePath === void 0 ? route.path || "" : relativePath,
       caseSensitive: route.caseSensitive === !0,
-      childrenIndex: index2,
+      childrenIndex: index,
       route
     };
-    meta.relativePath.startsWith("/") && (invariant(meta.relativePath.startsWith(parentPath), 'Absolute route path "' + meta.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes."), meta.relativePath = meta.relativePath.slice(parentPath.length));
-    let path = joinPaths([parentPath, meta.relativePath]), routesMeta = parentsMeta.concat(meta);
+    meta5.relativePath.startsWith("/") && (invariant(meta5.relativePath.startsWith(parentPath), 'Absolute route path "' + meta5.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes."), meta5.relativePath = meta5.relativePath.slice(parentPath.length));
+    let path = joinPaths([parentPath, meta5.relativePath]), routesMeta = parentsMeta.concat(meta5);
     route.children && route.children.length > 0 && (invariant(
       // Our types know better, but runtime JS may not!
       // @ts-expect-error
@@ -1018,13 +1018,13 @@ function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
       routesMeta
     });
   };
-  return routes2.forEach((route, index2) => {
+  return routes2.forEach((route, index) => {
     var _route$path;
     if (route.path === "" || !((_route$path = route.path) != null && _route$path.includes("?")))
-      flattenRoute(route, index2);
+      flattenRoute(route, index);
     else
       for (let exploded of explodeOptionalSegments(route.path))
-        flattenRoute(route, index2, exploded);
+        flattenRoute(route, index, exploded);
   }), branches;
 }
 function explodeOptionalSegments(path) {
@@ -1038,19 +1038,19 @@ function explodeOptionalSegments(path) {
   return result.push(...restExploded.map((subpath) => subpath === "" ? required : [required, subpath].join("/"))), isOptional && result.push(...restExploded), result.map((exploded) => path.startsWith("/") && exploded === "" ? "/" : exploded);
 }
 function rankRouteBranches(branches) {
-  branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta) => meta.childrenIndex), b.routesMeta.map((meta) => meta.childrenIndex)));
+  branches.sort((a, b2) => a.score !== b2.score ? b2.score - a.score : compareIndexes(a.routesMeta.map((meta5) => meta5.childrenIndex), b2.routesMeta.map((meta5) => meta5.childrenIndex)));
 }
-function computeScore(path, index2) {
+function computeScore(path, index) {
   let segments = path.split("/"), initialScore = segments.length;
-  return segments.some(isSplat) && (initialScore += splatPenalty), index2 && (initialScore += indexRouteValue), segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+  return segments.some(isSplat) && (initialScore += splatPenalty), index && (initialScore += indexRouteValue), segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
 }
-function compareIndexes(a, b) {
-  return a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]) ? (
+function compareIndexes(a, b2) {
+  return a.length === b2.length && a.slice(0, -1).every((n, i) => n === b2[i]) ? (
     // If two routes are siblings, we should try to match the earlier sibling
     // first. This allows people to have fine-grained control over the matching
     // behavior by simply putting routes with identical paths in the order they
     // want them tried.
-    a[a.length - 1] - b[b.length - 1]
+    a[a.length - 1] - b2[b2.length - 1]
   ) : (
     // Otherwise, it doesn't really make sense to rank non-siblings by index,
     // so they sort equally.
@@ -1062,15 +1062,15 @@ function matchRouteBranch(branch, pathname) {
     routesMeta
   } = branch, matchedParams = {}, matchedPathname = "/", matches2 = [];
   for (let i = 0; i < routesMeta.length; ++i) {
-    let meta = routesMeta[i], end = i === routesMeta.length - 1, remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/", match = matchPath({
-      path: meta.relativePath,
-      caseSensitive: meta.caseSensitive,
+    let meta5 = routesMeta[i], end = i === routesMeta.length - 1, remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/", match = matchPath({
+      path: meta5.relativePath,
+      caseSensitive: meta5.caseSensitive,
       end
     }, remainingPathname);
     if (!match)
       return null;
     Object.assign(matchedParams, match.params);
-    let route = meta.route;
+    let route = meta5.route;
     matches2.push({
       // TODO: Can this as be avoided?
       params: matchedParams,
@@ -1085,8 +1085,8 @@ function generatePath(originalPath, params) {
   params === void 0 && (params = {});
   let path = originalPath;
   path.endsWith("*") && path !== "*" && !path.endsWith("/*") && (warning(!1, 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".')), path = path.replace(/\*$/, "/*"));
-  let prefix = path.startsWith("/") ? "/" : "", stringify = (p) => p == null ? "" : typeof p == "string" ? p : String(p), segments = path.split(/\/+/).map((segment, index2, array) => {
-    if (index2 === array.length - 1 && segment === "*")
+  let prefix = path.startsWith("/") ? "/" : "", stringify = (p) => p == null ? "" : typeof p == "string" ? p : String(p), segments = path.split(/\/+/).map((segment, index, array) => {
+    if (index === array.length - 1 && segment === "*")
       return stringify(params["*"]);
     let keyMatch = segment.match(/^:(\w+)(\??)$/);
     if (keyMatch) {
@@ -1108,16 +1108,16 @@ function matchPath(pattern, pathname) {
     return null;
   let matchedPathname = match[0], pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1"), captureGroups = match.slice(1);
   return {
-    params: compiledParams.reduce((memo, _ref, index2) => {
+    params: compiledParams.reduce((memo, _ref, index) => {
       let {
         paramName,
         isOptional
       } = _ref;
       if (paramName === "*") {
-        let splatValue = captureGroups[index2] || "";
+        let splatValue = captureGroups[index] || "";
         pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
       }
-      let value = captureGroups[index2];
+      let value = captureGroups[index];
       return isOptional && !value ? memo[paramName] = void 0 : memo[paramName] = safelyDecodeURIComponent(value || "", paramName), memo;
     }, {}),
     pathname: matchedPathname,
@@ -1127,7 +1127,7 @@ function matchPath(pattern, pathname) {
 }
 function compilePath(path, caseSensitive, end) {
   caseSensitive === void 0 && (caseSensitive = !1), end === void 0 && (end = !0), warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".'));
-  let params = [], regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:(\w+)(\?)?/g, (_, paramName, isOptional) => (params.push({
+  let params = [], regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:(\w+)(\?)?/g, (_2, paramName, isOptional) => (params.push({
     paramName,
     isOptional: isOptional != null
   }), isOptional ? "/?([^\\/]+)?" : "/([^\\/]+)"));
@@ -1180,7 +1180,7 @@ function getInvalidPathError(char, field, dest, path) {
   return "Cannot include a '" + char + "' character in a manually specified " + ("`to." + field + "` field [" + JSON.stringify(path) + "].  Please separate it out to the ") + ("`to." + dest + "` field. Alternatively you may provide the full path as ") + 'a string in <Link to="..."> and the router will parse it for you.';
 }
 function getPathContributingMatches(matches2) {
-  return matches2.filter((match, index2) => index2 === 0 || match.route.path && match.route.path.length > 0);
+  return matches2.filter((match, index) => index === 0 || match.route.path && match.route.path.length > 0);
 }
 function getResolveToMatches(matches2, v7_relativeSplatPath) {
   let pathMatches = getPathContributingMatches(matches2);
@@ -1253,14 +1253,14 @@ function createRouter(init) {
       [route.id]: error
     };
   }
-  let initialized, hasLazyRoutes = initialMatches.some((m) => m.route.lazy), hasLoaders = initialMatches.some((m) => m.route.loader);
+  let initialized, hasLazyRoutes = initialMatches.some((m2) => m2.route.lazy), hasLoaders = initialMatches.some((m2) => m2.route.loader);
   if (hasLazyRoutes)
     initialized = !1;
   else if (!hasLoaders)
     initialized = !0;
   else if (future2.v7_partialHydration) {
     let loaderData = init.hydrationData ? init.hydrationData.loaderData : null, errors2 = init.hydrationData ? init.hydrationData.errors : null;
-    initialized = initialMatches.every((m) => m.route.loader && m.route.loader.hydrate !== !0 && (loaderData && loaderData[m.route.id] !== void 0 || errors2 && errors2[m.route.id] !== void 0));
+    initialized = initialMatches.every((m2) => m2.route.loader && m2.route.loader.hydrate !== !0 && (loaderData && loaderData[m2.route.id] !== void 0 || errors2 && errors2[m2.route.id] !== void 0));
   } else
     initialized = init.hydrationData != null;
   let router, state = {
@@ -1328,7 +1328,7 @@ function createRouter(init) {
     }), router;
   }
   function dispose() {
-    unlistenHistory && unlistenHistory(), removePageHideEventListener && removePageHideEventListener(), subscribers.clear(), pendingNavigationController && pendingNavigationController.abort(), state.fetchers.forEach((_, key) => deleteFetcher(key)), state.blockers.forEach((_, key) => deleteBlocker(key));
+    unlistenHistory && unlistenHistory(), removePageHideEventListener && removePageHideEventListener(), subscribers.clear(), pendingNavigationController && pendingNavigationController.abort(), state.fetchers.forEach((_2, key) => deleteFetcher(key)), state.blockers.forEach((_2, key) => deleteBlocker(key));
   }
   function subscribe(fn) {
     return subscribers.add(fn), () => subscribers.delete(fn);
@@ -1351,7 +1351,7 @@ function createRouter(init) {
     } = _temp === void 0 ? {} : _temp, isActionReload = state.actionData != null && state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && state.navigation.state === "loading" && ((_location$state = location.state) == null ? void 0 : _location$state._isRedirect) !== !0, actionData;
     newState.actionData ? Object.keys(newState.actionData).length > 0 ? actionData = newState.actionData : actionData = null : isActionReload ? actionData = state.actionData : actionData = null;
     let loaderData = newState.loaderData ? mergeLoaderData(state.loaderData, newState.loaderData, newState.matches || [], newState.errors) : state.loaderData, blockers = state.blockers;
-    blockers.size > 0 && (blockers = new Map(blockers), blockers.forEach((_, k) => blockers.set(k, IDLE_BLOCKER)));
+    blockers.size > 0 && (blockers = new Map(blockers), blockers.forEach((_2, k2) => blockers.set(k2, IDLE_BLOCKER)));
     let preventScrollReset = pendingPreventScrollReset === !0 || state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && ((_location$state2 = location.state) == null ? void 0 : _location$state2._isRedirect) !== !0;
     inFlightDataRoutes && (dataRoutes = inFlightDataRoutes, inFlightDataRoutes = void 0), isUninterruptedRevalidation || pendingAction === Action.Pop || (pendingAction === Action.Push ? init.history.push(location, location.state) : pendingAction === Action.Replace && init.history.replace(location, location.state));
     let viewTransitionOpts;
@@ -1565,7 +1565,7 @@ function createRouter(init) {
   }
   async function handleLoaders(request, location, matches2, overrideNavigation, submission, fetcherSubmission, replace, initialHydration, flushSync, pendingActionData, pendingError) {
     let loadingNavigation = overrideNavigation || getLoadingNavigation(location, submission), activeSubmission = submission || fetcherSubmission || getSubmissionFromNavigation(loadingNavigation), routesToUse = inFlightDataRoutes || dataRoutes, [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches2, activeSubmission, location, future2.v7_partialHydration && initialHydration === !0, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, deletedFetchers, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionData, pendingError);
-    if (cancelActiveDeferreds((routeId) => !(matches2 && matches2.some((m) => m.route.id === routeId)) || matchesToLoad && matchesToLoad.some((m) => m.route.id === routeId)), pendingNavigationLoadId = ++incrementingLoadId, matchesToLoad.length === 0 && revalidatingFetchers.length === 0) {
+    if (cancelActiveDeferreds((routeId) => !(matches2 && matches2.some((m2) => m2.route.id === routeId)) || matchesToLoad && matchesToLoad.some((m2) => m2.route.id === routeId)), pendingNavigationLoadId = ++incrementingLoadId, matchesToLoad.length === 0 && revalidatingFetchers.length === 0) {
       let updatedFetchers2 = markFetchRedirectsDone();
       return completeNavigation(location, _extends({
         matches: matches2,
@@ -1603,7 +1603,7 @@ function createRouter(init) {
     revalidatingFetchers.forEach((rf) => {
       fetchControllers.has(rf.key) && abortFetcher(rf.key), rf.controller && fetchControllers.set(rf.key, rf.controller);
     });
-    let abortPendingFetchRevalidations = () => revalidatingFetchers.forEach((f) => abortFetcher(f.key));
+    let abortPendingFetchRevalidations = () => revalidatingFetchers.forEach((f2) => abortFetcher(f2.key));
     pendingNavigationController && pendingNavigationController.signal.addEventListener("abort", abortPendingFetchRevalidations);
     let {
       results,
@@ -1615,13 +1615,13 @@ function createRouter(init) {
         shortCircuited: !0
       };
     pendingNavigationController && pendingNavigationController.signal.removeEventListener("abort", abortPendingFetchRevalidations), revalidatingFetchers.forEach((rf) => fetchControllers.delete(rf.key));
-    let redirect5 = findRedirect(results);
-    if (redirect5) {
-      if (redirect5.idx >= matchesToLoad.length) {
-        let fetcherKey = revalidatingFetchers[redirect5.idx - matchesToLoad.length].key;
+    let redirect8 = findRedirect(results);
+    if (redirect8) {
+      if (redirect8.idx >= matchesToLoad.length) {
+        let fetcherKey = revalidatingFetchers[redirect8.idx - matchesToLoad.length].key;
         fetchRedirectIds.add(fetcherKey);
       }
-      return await startRedirectNavigation(state, redirect5.result, {
+      return await startRedirectNavigation(state, redirect8.result, {
         replace
       }), {
         shortCircuited: !0
@@ -1767,13 +1767,13 @@ function createRouter(init) {
     if (abortController.signal.aborted)
       return;
     abortController.signal.removeEventListener("abort", abortPendingFetchRevalidations), fetchReloadIds.delete(key), fetchControllers.delete(key), revalidatingFetchers.forEach((r) => fetchControllers.delete(r.key));
-    let redirect5 = findRedirect(results);
-    if (redirect5) {
-      if (redirect5.idx >= matchesToLoad.length) {
-        let fetcherKey = revalidatingFetchers[redirect5.idx - matchesToLoad.length].key;
+    let redirect8 = findRedirect(results);
+    if (redirect8) {
+      if (redirect8.idx >= matchesToLoad.length) {
+        let fetcherKey = revalidatingFetchers[redirect8.idx - matchesToLoad.length].key;
         fetchRedirectIds.add(fetcherKey);
       }
-      return startRedirectNavigation(state, redirect5.result);
+      return startRedirectNavigation(state, redirect8.result);
     }
     let {
       loaderData,
@@ -1822,28 +1822,28 @@ function createRouter(init) {
       invariant(!isDeferredResult(result), "Unhandled fetcher deferred data"), updateFetcherState(key, getDoneFetcher(result.data));
     }
   }
-  async function startRedirectNavigation(state2, redirect5, _temp2) {
+  async function startRedirectNavigation(state2, redirect8, _temp2) {
     let {
       submission,
       fetcherSubmission,
       replace
     } = _temp2 === void 0 ? {} : _temp2;
-    redirect5.revalidate && (isRevalidationRequired = !0);
-    let redirectLocation = createLocation(state2.location, redirect5.location, {
+    redirect8.revalidate && (isRevalidationRequired = !0);
+    let redirectLocation = createLocation(state2.location, redirect8.location, {
       _isRedirect: !0
     });
     if (invariant(redirectLocation, "Expected a location on the redirect navigation"), isBrowser2) {
       let isDocumentReload = !1;
-      if (redirect5.reloadDocument)
+      if (redirect8.reloadDocument)
         isDocumentReload = !0;
-      else if (ABSOLUTE_URL_REGEX.test(redirect5.location)) {
-        let url = init.history.createURL(redirect5.location);
+      else if (ABSOLUTE_URL_REGEX.test(redirect8.location)) {
+        let url = init.history.createURL(redirect8.location);
         isDocumentReload = // Hard reload if it's an absolute URL to a new origin
         url.origin !== routerWindow.location.origin || // Hard reload if it's an absolute URL that does not match our basename
         stripBasename(url.pathname, basename) == null;
       }
       if (isDocumentReload) {
-        replace ? routerWindow.location.replace(redirect5.location) : routerWindow.location.assign(redirect5.location);
+        replace ? routerWindow.location.replace(redirect8.location) : routerWindow.location.assign(redirect8.location);
         return;
       }
     }
@@ -1855,10 +1855,10 @@ function createRouter(init) {
     } = state2.navigation;
     !submission && !fetcherSubmission && formMethod && formAction && formEncType && (submission = getSubmissionFromNavigation(state2.navigation));
     let activeSubmission = submission || fetcherSubmission;
-    if (redirectPreserveMethodStatusCodes.has(redirect5.status) && activeSubmission && isMutationMethod(activeSubmission.formMethod))
+    if (redirectPreserveMethodStatusCodes.has(redirect8.status) && activeSubmission && isMutationMethod(activeSubmission.formMethod))
       await startNavigation(redirectHistoryAction, redirectLocation, {
         submission: _extends({}, activeSubmission, {
-          formAction: redirect5.location
+          formAction: redirect8.location
         }),
         // Preserve this flag across redirects
         preventScrollReset: pendingPreventScrollReset
@@ -1875,20 +1875,20 @@ function createRouter(init) {
     }
   }
   async function callLoadersAndMaybeResolveData(currentMatches, matches2, matchesToLoad, fetchersToLoad, request) {
-    let results = await Promise.all([...matchesToLoad.map((match) => callLoaderOrAction("loader", request, match, matches2, manifest, mapRouteProperties2, basename, future2.v7_relativeSplatPath)), ...fetchersToLoad.map((f) => f.matches && f.match && f.controller ? callLoaderOrAction("loader", createClientSideRequest(init.history, f.path, f.controller.signal), f.match, f.matches, manifest, mapRouteProperties2, basename, future2.v7_relativeSplatPath) : {
+    let results = await Promise.all([...matchesToLoad.map((match) => callLoaderOrAction("loader", request, match, matches2, manifest, mapRouteProperties2, basename, future2.v7_relativeSplatPath)), ...fetchersToLoad.map((f2) => f2.matches && f2.match && f2.controller ? callLoaderOrAction("loader", createClientSideRequest(init.history, f2.path, f2.controller.signal), f2.match, f2.matches, manifest, mapRouteProperties2, basename, future2.v7_relativeSplatPath) : {
       type: ResultType.error,
       error: getInternalRouterError(404, {
-        pathname: f.path
+        pathname: f2.path
       })
     })]), loaderResults = results.slice(0, matchesToLoad.length), fetcherResults = results.slice(matchesToLoad.length);
-    return await Promise.all([resolveDeferredResults(currentMatches, matchesToLoad, loaderResults, loaderResults.map(() => request.signal), !1, state.loaderData), resolveDeferredResults(currentMatches, fetchersToLoad.map((f) => f.match), fetcherResults, fetchersToLoad.map((f) => f.controller ? f.controller.signal : null), !0)]), {
+    return await Promise.all([resolveDeferredResults(currentMatches, matchesToLoad, loaderResults, loaderResults.map(() => request.signal), !1, state.loaderData), resolveDeferredResults(currentMatches, fetchersToLoad.map((f2) => f2.match), fetcherResults, fetchersToLoad.map((f2) => f2.controller ? f2.controller.signal : null), !0)]), {
       results,
       loaderResults,
       fetcherResults
     };
   }
   function interruptActiveLoads() {
-    isRevalidationRequired = !0, cancelledDeferredRoutes.push(...cancelActiveDeferreds()), fetchLoadMatches.forEach((_, key) => {
+    isRevalidationRequired = !0, cancelledDeferredRoutes.push(...cancelActiveDeferreds()), fetchLoadMatches.forEach((_2, key) => {
       fetchControllers.has(key) && (cancelledFetcherLoads.push(key), abortFetcher(key));
     });
   }
@@ -2006,7 +2006,7 @@ function createRouter(init) {
     };
   }
   function getScrollKey(location, matches2) {
-    return getScrollRestorationKey && getScrollRestorationKey(location, matches2.map((m) => convertRouteMatchToUiMatch(m, state.loaderData))) || location.key;
+    return getScrollRestorationKey && getScrollRestorationKey(location, matches2.map((m2) => convertRouteMatchToUiMatch(m2, state.loaderData))) || location.key;
   }
   function saveScrollPosition(location, matches2) {
     if (savedScrollPositions2 && getScrollPosition) {
@@ -2144,7 +2144,7 @@ function createStaticHandler(routes2, opts) {
       throw getInternalRouterError(404, {
         pathname: location.pathname
       });
-    let match = routeId ? matches2.find((m) => m.route.id === routeId) : getTargetMatch(matches2, location);
+    let match = routeId ? matches2.find((m2) => m2.route.id === routeId) : getTargetMatch(matches2, location);
     if (routeId && !match)
       throw getInternalRouterError(403, {
         pathname: location.pathname,
@@ -2283,13 +2283,13 @@ function createStaticHandler(routes2, opts) {
         pathname: new URL(request.url).pathname,
         routeId: routeMatch?.route.id
       });
-    let matchesToLoad = (routeMatch ? [routeMatch] : getLoaderMatchesUntilBoundary(matches2, Object.keys(pendingActionError || {})[0])).filter((m) => m.route.loader || m.route.lazy);
+    let matchesToLoad = (routeMatch ? [routeMatch] : getLoaderMatchesUntilBoundary(matches2, Object.keys(pendingActionError || {})[0])).filter((m2) => m2.route.loader || m2.route.lazy);
     if (matchesToLoad.length === 0)
       return {
         matches: matches2,
         // Add a null for all matched routes for proper revalidation on the client
-        loaderData: matches2.reduce((acc, m) => Object.assign(acc, {
-          [m.route.id]: null
+        loaderData: matches2.reduce((acc, m2) => Object.assign(acc, {
+          [m2.route.id]: null
         }), {}),
         errors: pendingActionError || null,
         statusCode: 200,
@@ -2366,7 +2366,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
     if (opts.formEncType === "text/plain") {
       if (!isMutationMethod(formMethod))
         return getInvalidBodyError();
-      let text = typeof opts.body == "string" ? opts.body : opts.body instanceof FormData || opts.body instanceof URLSearchParams ? (
+      let text2 = typeof opts.body == "string" ? opts.body : opts.body instanceof FormData || opts.body instanceof URLSearchParams ? (
         // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#plain-text-form-data
         Array.from(opts.body.entries()).reduce((acc, _ref3) => {
           let [name, value] = _ref3;
@@ -2382,14 +2382,14 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
           formEncType: opts.formEncType,
           formData: void 0,
           json: void 0,
-          text
+          text: text2
         }
       };
     } else if (opts.formEncType === "application/json") {
       if (!isMutationMethod(formMethod))
         return getInvalidBodyError();
       try {
-        let json5 = typeof opts.body == "string" ? JSON.parse(opts.body) : opts.body;
+        let json8 = typeof opts.body == "string" ? JSON.parse(opts.body) : opts.body;
         return {
           path,
           submission: {
@@ -2397,7 +2397,7 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
             formAction,
             formEncType: opts.formEncType,
             formData: void 0,
-            json: json5,
+            json: json8,
             text: void 0
           }
         };
@@ -2444,13 +2444,13 @@ function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
 function getLoaderMatchesUntilBoundary(matches2, boundaryId) {
   let boundaryMatches = matches2;
   if (boundaryId) {
-    let index2 = matches2.findIndex((m) => m.route.id === boundaryId);
-    index2 >= 0 && (boundaryMatches = matches2.slice(0, index2));
+    let index = matches2.findIndex((m2) => m2.route.id === boundaryId);
+    index >= 0 && (boundaryMatches = matches2.slice(0, index));
   }
   return boundaryMatches;
 }
 function getMatchesToLoad(history, state, matches2, submission, location, isInitialLoad, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, deletedFetchers, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionData, pendingError) {
-  let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : void 0, currentUrl = history.createURL(state.location), nextUrl = history.createURL(location), boundaryId = pendingError ? Object.keys(pendingError)[0] : void 0, navigationMatches = getLoaderMatchesUntilBoundary(matches2, boundaryId).filter((match, index2) => {
+  let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : void 0, currentUrl = history.createURL(state.location), nextUrl = history.createURL(location), boundaryId = pendingError ? Object.keys(pendingError)[0] : void 0, navigationMatches = getLoaderMatchesUntilBoundary(matches2, boundaryId).filter((match, index) => {
     let {
       route
     } = match;
@@ -2461,9 +2461,9 @@ function getMatchesToLoad(history, state, matches2, submission, location, isInit
     if (isInitialLoad)
       return route.loader.hydrate ? !0 : state.loaderData[route.id] === void 0 && // Don't re-run if the loader ran and threw an error
       (!state.errors || state.errors[route.id] === void 0);
-    if (isNewLoader(state.loaderData, state.matches[index2], match) || cancelledDeferredRoutes.some((id) => id === match.route.id))
+    if (isNewLoader(state.loaderData, state.matches[index], match) || cancelledDeferredRoutes.some((id) => id === match.route.id))
       return !0;
-    let currentRouteMatch = state.matches[index2], nextRouteMatch = match;
+    let currentRouteMatch = state.matches[index], nextRouteMatch = match;
     return shouldRevalidateLoader(match, _extends({
       currentUrl,
       currentParams: currentRouteMatch.params,
@@ -2479,22 +2479,22 @@ function getMatchesToLoad(history, state, matches2, submission, location, isInit
       )
     }));
   }), revalidatingFetchers = [];
-  return fetchLoadMatches.forEach((f, key) => {
-    if (isInitialLoad || !matches2.some((m) => m.route.id === f.routeId) || deletedFetchers.has(key))
+  return fetchLoadMatches.forEach((f2, key) => {
+    if (isInitialLoad || !matches2.some((m2) => m2.route.id === f2.routeId) || deletedFetchers.has(key))
       return;
-    let fetcherMatches = matchRoutes(routesToUse, f.path, basename);
+    let fetcherMatches = matchRoutes(routesToUse, f2.path, basename);
     if (!fetcherMatches) {
       revalidatingFetchers.push({
         key,
-        routeId: f.routeId,
-        path: f.path,
+        routeId: f2.routeId,
+        path: f2.path,
         matches: null,
         match: null,
         controller: null
       });
       return;
     }
-    let fetcher = state.fetchers.get(key), fetcherMatch = getTargetMatch(fetcherMatches, f.path), shouldRevalidate = !1;
+    let fetcher = state.fetchers.get(key), fetcherMatch = getTargetMatch(fetcherMatches, f2.path), shouldRevalidate = !1;
     fetchRedirectIds.has(key) ? shouldRevalidate = !1 : cancelledFetcherLoads.includes(key) ? shouldRevalidate = !0 : fetcher && fetcher.state !== "idle" && fetcher.data === void 0 ? shouldRevalidate = isRevalidationRequired : shouldRevalidate = shouldRevalidateLoader(fetcherMatch, _extends({
       currentUrl,
       currentParams: state.matches[state.matches.length - 1].params,
@@ -2505,8 +2505,8 @@ function getMatchesToLoad(history, state, matches2, submission, location, isInit
       defaultShouldRevalidate: isRevalidationRequired
     })), shouldRevalidate && revalidatingFetchers.push({
       key,
-      routeId: f.routeId,
-      path: f.path,
+      routeId: f2.routeId,
+      path: f2.path,
       matches: fetcherMatches,
       match: fetcherMatch,
       controller: new AbortController()
@@ -2560,7 +2560,7 @@ async function loadLazyRouteModule(route, mapRouteProperties2, manifest) {
 async function callLoaderOrAction(type, request, match, matches2, manifest, mapRouteProperties2, basename, v7_relativeSplatPath, opts) {
   opts === void 0 && (opts = {});
   let resultType, result, onReject, runHandler = (handler) => {
-    let reject, abortPromise = new Promise((_, r) => reject = r);
+    let reject, abortPromise = new Promise((_2, r) => reject = r);
     return onReject = () => reject(), request.signal.addEventListener("abort", onReject), Promise.race([handler({
       request,
       params: match.params,
@@ -2705,8 +2705,8 @@ function convertSearchParamsToFormData(searchParams) {
 }
 function processRouteLoaderData(matches2, matchesToLoad, results, pendingError, activeDeferreds) {
   let loaderData = {}, errors2 = null, statusCode, foundError = !1, loaderHeaders = {};
-  return results.forEach((result, index2) => {
-    let id = matchesToLoad[index2].route.id;
+  return results.forEach((result, index) => {
+    let id = matchesToLoad[index].route.id;
     if (invariant(!isRedirectResult(result), "Cannot handle redirect results in processLoaderData"), isErrorResult(result)) {
       let boundaryMatch = findNearestBoundary(matches2, id), error = result.error;
       pendingError && (error = Object.values(pendingError)[0], pendingError = void 0), errors2 = errors2 || {}, errors2[boundaryMatch.route.id] == null && (errors2[boundaryMatch.route.id] = error), loaderData[id] = void 0, foundError || (foundError = !0, statusCode = isRouteErrorResponse(result.error) ? result.error.status : 500), result.headers && (loaderHeaders[id] = result.headers);
@@ -2724,14 +2724,14 @@ function processLoaderData(state, matches2, matchesToLoad, results, pendingError
     loaderData,
     errors: errors2
   } = processRouteLoaderData(matches2, matchesToLoad, results, pendingError, activeDeferreds);
-  for (let index2 = 0; index2 < revalidatingFetchers.length; index2++) {
+  for (let index = 0; index < revalidatingFetchers.length; index++) {
     let {
       key,
       match,
       controller
-    } = revalidatingFetchers[index2];
-    invariant(fetcherResults !== void 0 && fetcherResults[index2] !== void 0, "Did not find corresponding fetcher result");
-    let result = fetcherResults[index2];
+    } = revalidatingFetchers[index];
+    invariant(fetcherResults !== void 0 && fetcherResults[index] !== void 0, "Did not find corresponding fetcher result");
+    let result = fetcherResults[index];
     if (!(controller && controller.signal.aborted))
       if (isErrorResult(result)) {
         let boundaryMatch = findNearestBoundary(state.matches, match?.route.id);
@@ -2762,7 +2762,7 @@ function mergeLoaderData(loaderData, newLoaderData, matches2, errors2) {
   return mergedLoaderData;
 }
 function findNearestBoundary(matches2, routeId) {
-  return (routeId ? matches2.slice(0, matches2.findIndex((m) => m.route.id === routeId) + 1) : [...matches2]).reverse().find((m) => m.route.hasErrorBoundary === !0) || matches2[0];
+  return (routeId ? matches2.slice(0, matches2.findIndex((m2) => m2.route.id === routeId) + 1) : [...matches2]).reverse().find((m2) => m2.route.hasErrorBoundary === !0) || matches2[0];
 }
 function getShortCircuitMatches(routes2) {
   let route = routes2.length === 1 ? routes2[0] : routes2.find((r) => r.index || !r.path || r.path === "/") || {
@@ -2803,8 +2803,8 @@ function stripHashFromPath(path) {
     hash: ""
   }));
 }
-function isHashChangeOnly(a, b) {
-  return a.pathname !== b.pathname || a.search !== b.search ? !1 : a.hash === "" ? b.hash !== "" : a.hash === b.hash ? !0 : b.hash !== "";
+function isHashChangeOnly(a, b2) {
+  return a.pathname !== b2.pathname || a.search !== b2.search ? !1 : a.hash === "" ? b2.hash !== "" : a.hash === b2.hash ? !0 : b2.hash !== "";
 }
 function isDeferredResult(result) {
   return result.type === ResultType.deferred;
@@ -2838,15 +2838,15 @@ function isMutationMethod(method) {
   return validMutationMethods.has(method.toLowerCase());
 }
 async function resolveDeferredResults(currentMatches, matchesToLoad, results, signals, isFetcher, currentLoaderData) {
-  for (let index2 = 0; index2 < results.length; index2++) {
-    let result = results[index2], match = matchesToLoad[index2];
+  for (let index = 0; index < results.length; index++) {
+    let result = results[index], match = matchesToLoad[index];
     if (!match)
       continue;
-    let currentMatch = currentMatches.find((m) => m.route.id === match.route.id), isRevalidatingLoader = currentMatch != null && !isNewRouteInstance(currentMatch, match) && (currentLoaderData && currentLoaderData[match.route.id]) !== void 0;
+    let currentMatch = currentMatches.find((m2) => m2.route.id === match.route.id), isRevalidatingLoader = currentMatch != null && !isNewRouteInstance(currentMatch, match) && (currentLoaderData && currentLoaderData[match.route.id]) !== void 0;
     if (isDeferredResult(result) && (isFetcher || isRevalidatingLoader)) {
-      let signal = signals[index2];
+      let signal = signals[index];
       invariant(signal, "Expected an AbortSignal for revalidating fetcher deferred result"), await resolveDeferredData(result, signal, isFetcher).then((result2) => {
-        result2 && (results[index2] = result2 || results[index2]);
+        result2 && (results[index] = result2 || results[index]);
       });
     }
   }
@@ -2872,7 +2872,7 @@ async function resolveDeferredData(result, signal, unwrap) {
   }
 }
 function hasNakedIndexQuery(search) {
-  return new URLSearchParams(search).getAll("index").some((v) => v === "");
+  return new URLSearchParams(search).getAll("index").some((v2) => v2 === "");
 }
 function getTargetMatch(matches2, location) {
   let search = typeof location == "string" ? parsePath(location).search : location.search;
@@ -2886,19 +2886,19 @@ function getSubmissionFromNavigation(navigation) {
     formMethod,
     formAction,
     formEncType,
-    text,
+    text: text2,
     formData,
-    json: json5
+    json: json8
   } = navigation;
   if (!(!formMethod || !formAction || !formEncType)) {
-    if (text != null)
+    if (text2 != null)
       return {
         formMethod,
         formAction,
         formEncType,
         formData: void 0,
         json: void 0,
-        text
+        text: text2
       };
     if (formData != null)
       return {
@@ -2909,13 +2909,13 @@ function getSubmissionFromNavigation(navigation) {
         json: void 0,
         text: void 0
       };
-    if (json5 !== void 0)
+    if (json8 !== void 0)
       return {
         formMethod,
         formAction,
         formEncType,
         formData: void 0,
-        json: json5,
+        json: json8,
         text: void 0
       };
   }
@@ -3002,20 +3002,20 @@ function restoreAppliedTransitions(_window, transitions) {
   try {
     let sessionPositions = _window.sessionStorage.getItem(TRANSITIONS_STORAGE_KEY);
     if (sessionPositions) {
-      let json5 = JSON.parse(sessionPositions);
-      for (let [k, v] of Object.entries(json5 || {}))
-        v && Array.isArray(v) && transitions.set(k, new Set(v || []));
+      let json8 = JSON.parse(sessionPositions);
+      for (let [k2, v2] of Object.entries(json8 || {}))
+        v2 && Array.isArray(v2) && transitions.set(k2, new Set(v2 || []));
     }
   } catch {
   }
 }
 function persistAppliedTransitions(_window, transitions) {
   if (transitions.size > 0) {
-    let json5 = {};
-    for (let [k, v] of transitions)
-      json5[k] = [...v];
+    let json8 = {};
+    for (let [k2, v2] of transitions)
+      json8[k2] = [...v2];
     try {
-      _window.sessionStorage.setItem(TRANSITIONS_STORAGE_KEY, JSON.stringify(json5));
+      _window.sessionStorage.setItem(TRANSITIONS_STORAGE_KEY, JSON.stringify(json8));
     } catch (error) {
       warning(!1, "Failed to save applied view transitions in sessionStorage (" + error + ").");
     }
@@ -3045,7 +3045,7 @@ var Action, PopStateEventType, ResultType, immutableRouteKeys, paramRe, dynamicS
       constructor(data, responseInit) {
         this.pendingKeysSet = /* @__PURE__ */ new Set(), this.subscribers = /* @__PURE__ */ new Set(), this.deferredKeys = [], invariant(data && typeof data == "object" && !Array.isArray(data), "defer() only accepts plain objects");
         let reject;
-        this.abortPromise = new Promise((_, r) => reject = r), this.controller = new AbortController();
+        this.abortPromise = new Promise((_2, r) => reject = r), this.controller = new AbortController();
         let onAbort = () => reject(new AbortedDeferredError("Deferred data aborted"));
         this.unlistenAbortSignal = () => this.controller.signal.removeEventListener("abort", onAbort), this.controller.signal.addEventListener("abort", onAbort), this.data = Object.entries(data).reduce((acc, _ref2) => {
           let [key, value] = _ref2;
@@ -3088,7 +3088,7 @@ var Action, PopStateEventType, ResultType, immutableRouteKeys, paramRe, dynamicS
         return this.subscribers.add(fn), () => this.subscribers.delete(fn);
       }
       cancel() {
-        this.controller.abort(), this.pendingKeysSet.forEach((v, k) => this.pendingKeysSet.delete(k)), this.emit(!0);
+        this.controller.abort(), this.pendingKeysSet.forEach((v2, k2) => this.pendingKeysSet.delete(k2)), this.emit(!0);
       }
       async resolveData(signal) {
         let aborted = !1;
@@ -3402,7 +3402,7 @@ var require_set_cookie = __commonJS({
 
 // node_modules/@remix-run/server-runtime/dist/esm/headers.js
 function getDocumentHeadersRR(build, context) {
-  let boundaryIdx = context.errors ? context.matches.findIndex((m) => context.errors[m.route.id]) : -1, matches2 = boundaryIdx >= 0 ? context.matches.slice(0, boundaryIdx + 1) : context.matches, errorHeaders;
+  let boundaryIdx = context.errors ? context.matches.findIndex((m2) => context.errors[m2.route.id]) : -1, matches2 = boundaryIdx >= 0 ? context.matches.slice(0, boundaryIdx + 1) : context.matches, errorHeaders;
   if (boundaryIdx >= 0) {
     let {
       actionHeaders,
@@ -3472,12 +3472,12 @@ var init_routeMatching = __esm({
 // node_modules/@remix-run/server-runtime/dist/esm/data.js
 async function callRouteActionRR({
   loadContext,
-  action,
+  action: action3,
   params,
   request,
   routeId
 }) {
-  let result = await action({
+  let result = await action3({
     request: stripDataParam(stripIndexParam(request)),
     context: loadContext,
     params
@@ -3488,12 +3488,12 @@ async function callRouteActionRR({
 }
 async function callRouteLoaderRR({
   loadContext,
-  loader: loader2,
+  loader: loader5,
   params,
   request,
   routeId
 }) {
-  let result = await loader2({
+  let result = await loader5({
     request: stripDataParam(stripIndexParam(request)),
     context: loadContext,
     params
@@ -3840,7 +3840,7 @@ var createRequestHandler, init_server = __esm({
             var _matches$find;
             response = await _build.entry.module.handleDataRequest(response, {
               context: loadContext,
-              params: (matches2 == null || (_matches$find = matches2.find((m) => m.route.id == routeId)) === null || _matches$find === void 0 ? void 0 : _matches$find.params) || {},
+              params: (matches2 == null || (_matches$find = matches2.find((m2) => m2.route.id == routeId)) === null || _matches$find === void 0 ? void 0 : _matches$find.params) || {},
               request
             });
           }
@@ -4098,11 +4098,11 @@ var require_crypto = __commonJS({
   "node_modules/@remix-run/cloudflare/dist/crypto.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var encoder = new TextEncoder(), sign = async (value, secret) => {
+    var encoder = new TextEncoder(), sign2 = async (value, secret) => {
       let key = await createKey2(secret, ["sign"]), data = encoder.encode(value), signature = await crypto.subtle.sign("HMAC", key, data), hash = btoa(String.fromCharCode(...new Uint8Array(signature))).replace(/=+$/, "");
       return value + "." + hash;
     }, unsign = async (signed, secret) => {
-      let index2 = signed.lastIndexOf("."), value = signed.slice(0, index2), hash = signed.slice(index2 + 1), key = await createKey2(secret, ["verify"]), data = encoder.encode(value), signature = byteStringToUint8Array(atob(hash));
+      let index = signed.lastIndexOf("."), value = signed.slice(0, index), hash = signed.slice(index + 1), key = await createKey2(secret, ["verify"]), data = encoder.encode(value), signature = byteStringToUint8Array(atob(hash));
       return await crypto.subtle.verify("HMAC", key, signature, data) ? value : !1;
     };
     async function createKey2(secret, usages) {
@@ -4117,7 +4117,7 @@ var require_crypto = __commonJS({
         array[i] = byteString.charCodeAt(i);
       return array;
     }
-    exports.sign = sign;
+    exports.sign = sign2;
     exports.unsign = unsign;
   }
 });
@@ -4681,11 +4681,11 @@ var require_react_development = __commonJS({
         return "$" + escapedString;
       }
       var didWarnAboutMaps = !1, userProvidedKeyEscapeRegex = /\/+/g;
-      function escapeUserProvidedKey(text) {
-        return text.replace(userProvidedKeyEscapeRegex, "$&/");
+      function escapeUserProvidedKey(text2) {
+        return text2.replace(userProvidedKeyEscapeRegex, "$&/");
       }
-      function getElementKey(element, index2) {
-        return typeof element == "object" && element !== null && element.key != null ? (checkKeyStringCoercion(element.key), escape2("" + element.key)) : index2.toString(36);
+      function getElementKey(element, index) {
+        return typeof element == "object" && element !== null && element.key != null ? (checkKeyStringCoercion(element.key), escape2("" + element.key)) : index.toString(36);
       }
       function mapIntoArray(children, array, escapedPrefix, nameSoFar, callback) {
         var type = typeof children;
@@ -4994,9 +4994,9 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         }
         return dispatcher.useContext(Context);
       }
-      function useState6(initialState2) {
+      function useState8(initialState) {
         var dispatcher = resolveDispatcher();
-        return dispatcher.useState(initialState2);
+        return dispatcher.useState(initialState);
       }
       function useReducer(reducer, initialArg, init) {
         var dispatcher = resolveDispatcher();
@@ -5006,7 +5006,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
         var dispatcher = resolveDispatcher();
         return dispatcher.useRef(initialValue);
       }
-      function useEffect5(create, deps) {
+      function useEffect8(create, deps) {
         var dispatcher = resolveDispatcher();
         return dispatcher.useEffect(create, deps);
       }
@@ -5535,7 +5535,7 @@ Check the top-level render call using <` + parentName + ">.");
         toArray,
         only: onlyChild
       };
-      exports.Children = Children2, exports.Component = Component3, exports.Fragment = REACT_FRAGMENT_TYPE2, exports.Profiler = REACT_PROFILER_TYPE2, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE2, exports.Suspense = REACT_SUSPENSE_TYPE2, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext4, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef3, exports.isValidElement = isValidElement2, exports.lazy = lazy, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext4, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect5, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo5, exports.useReducer = useReducer, exports.useRef = useRef4, exports.useState = useState6, exports.useSyncExternalStore = useSyncExternalStore3, exports.useTransition = useTransition, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+      exports.Children = Children2, exports.Component = Component3, exports.Fragment = REACT_FRAGMENT_TYPE2, exports.Profiler = REACT_PROFILER_TYPE2, exports.PureComponent = PureComponent, exports.StrictMode = REACT_STRICT_MODE_TYPE2, exports.Suspense = REACT_SUSPENSE_TYPE2, exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals, exports.cloneElement = cloneElement$1, exports.createContext = createContext4, exports.createElement = createElement$1, exports.createFactory = createFactory, exports.createRef = createRef, exports.forwardRef = forwardRef3, exports.isValidElement = isValidElement2, exports.lazy = lazy, exports.memo = memo, exports.startTransition = startTransition, exports.unstable_act = act, exports.useCallback = useCallback3, exports.useContext = useContext4, exports.useDebugValue = useDebugValue, exports.useDeferredValue = useDeferredValue, exports.useEffect = useEffect8, exports.useId = useId, exports.useImperativeHandle = useImperativeHandle, exports.useInsertionEffect = useInsertionEffect, exports.useLayoutEffect = useLayoutEffect3, exports.useMemo = useMemo5, exports.useReducer = useReducer, exports.useRef = useRef4, exports.useState = useState8, exports.useSyncExternalStore = useSyncExternalStore3, exports.useTransition = useTransition, exports.version = ReactVersion, typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
     })();
   }
 });
@@ -5557,8 +5557,8 @@ var require_scheduler_development = __commonJS({
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
       var enableSchedulerDebugging = !1, enableProfiling = !1, frameYieldMs = 5;
       function push(heap, node) {
-        var index2 = heap.length;
-        heap.push(node), siftUp(heap, node, index2);
+        var index = heap.length;
+        heap.push(node), siftUp(heap, node, index);
       }
       function peek2(heap) {
         return heap.length === 0 ? null : heap[0];
@@ -5570,28 +5570,28 @@ var require_scheduler_development = __commonJS({
         return last !== first && (heap[0] = last, siftDown(heap, last, 0)), first;
       }
       function siftUp(heap, node, i) {
-        for (var index2 = i; index2 > 0; ) {
-          var parentIndex = index2 - 1 >>> 1, parent = heap[parentIndex];
+        for (var index = i; index > 0; ) {
+          var parentIndex = index - 1 >>> 1, parent = heap[parentIndex];
           if (compare(parent, node) > 0)
-            heap[parentIndex] = node, heap[index2] = parent, index2 = parentIndex;
+            heap[parentIndex] = node, heap[index] = parent, index = parentIndex;
           else
             return;
         }
       }
       function siftDown(heap, node, i) {
-        for (var index2 = i, length = heap.length, halfLength = length >>> 1; index2 < halfLength; ) {
-          var leftIndex = (index2 + 1) * 2 - 1, left = heap[leftIndex], rightIndex = leftIndex + 1, right = heap[rightIndex];
+        for (var index = i, length = heap.length, halfLength = length >>> 1; index < halfLength; ) {
+          var leftIndex = (index + 1) * 2 - 1, left = heap[leftIndex], rightIndex = leftIndex + 1, right = heap[rightIndex];
           if (compare(left, node) < 0)
-            rightIndex < length && compare(right, left) < 0 ? (heap[index2] = right, heap[rightIndex] = node, index2 = rightIndex) : (heap[index2] = left, heap[leftIndex] = node, index2 = leftIndex);
+            rightIndex < length && compare(right, left) < 0 ? (heap[index] = right, heap[rightIndex] = node, index = rightIndex) : (heap[index] = left, heap[leftIndex] = node, index = leftIndex);
           else if (rightIndex < length && compare(right, node) < 0)
-            heap[index2] = right, heap[rightIndex] = node, index2 = rightIndex;
+            heap[index] = right, heap[rightIndex] = node, index = rightIndex;
           else
             return;
         }
       }
-      function compare(a, b) {
-        var diff = a.sortIndex - b.sortIndex;
-        return diff !== 0 ? diff : a.id - b.id;
+      function compare(a, b2) {
+        var diff = a.sortIndex - b2.sortIndex;
+        return diff !== 0 ? diff : a.id - b2.id;
       }
       var ImmediatePriority = 1, UserBlockingPriority = 2, NormalPriority = 3, LowPriority = 4, IdlePriority = 5;
       function markTaskErrored(task, ms) {
@@ -5839,7 +5839,7 @@ var require_react_dom_development = __commonJS({
     (function() {
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-      var React10 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
+      var React12 = require_react(), Scheduler = require_scheduler(), ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, suppressWarning = !1;
       function setSuppressWarning(newSuppressWarning) {
         suppressWarning = newSuppressWarning;
       }
@@ -5867,7 +5867,7 @@ var require_react_dom_development = __commonJS({
           argsWithFormat.unshift("Warning: " + format), Function.prototype.apply.call(console[level], console, argsWithFormat);
         }
       }
-      var FunctionComponent = 0, ClassComponent = 1, IndeterminateComponent = 2, HostRoot = 3, HostPortal = 4, HostComponent = 5, HostText = 6, Fragment4 = 7, Mode = 8, ContextConsumer = 9, ContextProvider = 10, ForwardRef2 = 11, Profiler = 12, SuspenseComponent = 13, MemoComponent = 14, SimpleMemoComponent = 15, LazyComponent = 16, IncompleteClassComponent = 17, DehydratedFragment = 18, SuspenseListComponent = 19, ScopeComponent = 21, OffscreenComponent = 22, LegacyHiddenComponent = 23, CacheComponent = 24, TracingMarkerComponent = 25, enableClientRenderFallbackOnTextMismatch = !0, enableNewReconciler = !1, enableLazyContextPropagation = !1, enableLegacyHidden = !1, enableSuspenseAvoidThisFallback = !1, disableCommentsAsDOMContainers = !0, enableCustomElementPropertySupport = !1, warnAboutStringRefs = !1, enableSchedulingProfiler = !0, enableProfilerTimer = !0, enableProfilerCommitHooks = !0, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {};
+      var FunctionComponent = 0, ClassComponent = 1, IndeterminateComponent = 2, HostRoot = 3, HostPortal = 4, HostComponent = 5, HostText = 6, Fragment9 = 7, Mode = 8, ContextConsumer = 9, ContextProvider = 10, ForwardRef2 = 11, Profiler = 12, SuspenseComponent = 13, MemoComponent = 14, SimpleMemoComponent = 15, LazyComponent = 16, IncompleteClassComponent = 17, DehydratedFragment = 18, SuspenseListComponent = 19, ScopeComponent = 21, OffscreenComponent = 22, LegacyHiddenComponent = 23, CacheComponent = 24, TracingMarkerComponent = 25, enableClientRenderFallbackOnTextMismatch = !0, enableNewReconciler = !1, enableLazyContextPropagation = !1, enableLegacyHidden = !1, enableSuspenseAvoidThisFallback = !1, disableCommentsAsDOMContainers = !0, enableCustomElementPropertySupport = !1, warnAboutStringRefs = !1, enableSchedulingProfiler = !0, enableProfilerTimer = !0, enableProfilerCommitHooks = !0, allNativeEvents = /* @__PURE__ */ new Set(), registrationNameDependencies = {}, possibleRegistrationNames = {};
       function registerTwoPhaseEvent(registrationName, dependencies) {
         registerDirectEvent(registrationName, dependencies), registerDirectEvent(registrationName + "Capture", dependencies);
       }
@@ -6717,7 +6717,7 @@ Error generating stack: ` + x.message + `
             return "DehydratedFragment";
           case ForwardRef2:
             return getWrappedName$1(type, type.render, "ForwardRef");
-          case Fragment4:
+          case Fragment9:
             return "Fragment";
           case HostComponent:
             return type;
@@ -6961,7 +6961,7 @@ Error generating stack: ` + x.message + `
       }
       var didWarnSelectedSetOnOption = !1, didWarnInvalidChild = !1, didWarnInvalidInnerHTML = !1;
       function validateProps(element, props) {
-        props.value == null && (typeof props.children == "object" && props.children !== null ? React10.Children.forEach(props.children, function(child) {
+        props.value == null && (typeof props.children == "object" && props.children !== null ? React12.Children.forEach(props.children, function(child) {
           child != null && (typeof child == "string" || typeof child == "number" || didWarnInvalidChild || (didWarnInvalidChild = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }) : props.dangerouslySetInnerHTML != null && (didWarnInvalidInnerHTML || (didWarnInvalidInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.")))), props.selected != null && !didWarnSelectedSetOnOption && (error("Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>."), didWarnSelectedSetOnOption = !0);
       }
@@ -7122,15 +7122,15 @@ Check the render method of \`` + ownerName + "`." : "";
           return;
         }
         node.innerHTML = html;
-      }), ELEMENT_NODE = 1, TEXT_NODE = 3, COMMENT_NODE = 8, DOCUMENT_NODE = 9, DOCUMENT_FRAGMENT_NODE = 11, setTextContent = function(node, text) {
-        if (text) {
+      }), ELEMENT_NODE = 1, TEXT_NODE = 3, COMMENT_NODE = 8, DOCUMENT_NODE = 9, DOCUMENT_FRAGMENT_NODE = 11, setTextContent = function(node, text2) {
+        if (text2) {
           var firstChild = node.firstChild;
           if (firstChild && firstChild === node.lastChild && firstChild.nodeType === TEXT_NODE) {
-            firstChild.nodeValue = text;
+            firstChild.nodeValue = text2;
             return;
           }
         }
-        node.textContent = text;
+        node.textContent = text2;
       }, shorthandToLonghand = {
         animation: ["animationDelay", "animationDirection", "animationDuration", "animationFillMode", "animationIterationCount", "animationName", "animationPlayState", "animationTimingFunction"],
         background: ["backgroundAttachment", "backgroundClip", "backgroundColor", "backgroundImage", "backgroundOrigin", "backgroundPositionX", "backgroundPositionY", "backgroundRepeat", "backgroundSize"],
@@ -7246,7 +7246,7 @@ Check the render method of \`` + ownerName + "`." : "";
       };
       {
         var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/, msPattern$1 = /^-ms-/, hyphenPattern = /-(.)/g, badStyleValueWithSemicolonPattern = /;\s*$/, warnedStyleNames = {}, warnedStyleValues = {}, warnedForNaNValue = !1, warnedForInfinityValue = !1, camelize = function(string) {
-          return string.replace(hyphenPattern, function(_, character) {
+          return string.replace(hyphenPattern, function(_2, character) {
             return character.toUpperCase();
           });
         }, warnHyphenatedStyleName = function(name) {
@@ -8074,12 +8074,12 @@ Check the render method of \`` + ownerName + "`." : "";
         var controlledComponentsHavePendingUpdates = needsStateRestore();
         controlledComponentsHavePendingUpdates && (flushSyncImpl2(), restoreStateIfNeeded());
       }
-      function batchedUpdates(fn, a, b) {
+      function batchedUpdates(fn, a, b2) {
         if (isInsideEventHandler)
-          return fn(a, b);
+          return fn(a, b2);
         isInsideEventHandler = !0;
         try {
-          return batchedUpdatesImpl(fn, a, b);
+          return batchedUpdatesImpl(fn, a, b2);
         } finally {
           isInsideEventHandler = !1, finishEventHandler();
         }
@@ -8134,7 +8134,7 @@ Check the render method of \`` + ownerName + "`." : "";
         } catch {
           passiveBrowserEventsSupported = !1;
         }
-      function invokeGuardedCallbackProd(name, func, context, a, b, c, d, e, f) {
+      function invokeGuardedCallbackProd(name, func, context, a, b2, c, d2, e, f2) {
         var funcArgs = Array.prototype.slice.call(arguments, 3);
         try {
           func.apply(context, funcArgs);
@@ -8145,7 +8145,7 @@ Check the render method of \`` + ownerName + "`." : "";
       var invokeGuardedCallbackImpl = invokeGuardedCallbackProd;
       if (typeof window < "u" && typeof window.dispatchEvent == "function" && typeof document < "u" && typeof document.createEvent == "function") {
         var fakeNode = document.createElement("react");
-        invokeGuardedCallbackImpl = function(name, func, context, a, b, c, d, e, f) {
+        invokeGuardedCallbackImpl = function(name, func, context, a, b2, c, d2, e, f2) {
           if (typeof document > "u" || document === null)
             throw new Error("The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.");
           var evt = document.createEvent("Event"), didCall = !1, didError = !0, windowEvent = window.event, windowEventDescriptor = Object.getOwnPropertyDescriptor(window, "event");
@@ -8174,10 +8174,10 @@ Check the render method of \`` + ownerName + "`." : "";
           hasError = !0, caughtError = error2;
         }
       };
-      function invokeGuardedCallback(name, func, context, a, b, c, d, e, f) {
+      function invokeGuardedCallback(name, func, context, a, b2, c, d2, e, f2) {
         hasError = !1, caughtError = null, invokeGuardedCallbackImpl$1.apply(reporter, arguments);
       }
-      function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b, c, d, e, f) {
+      function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b2, c, d2, e, f2) {
         if (invokeGuardedCallback.apply(this, arguments), hasError) {
           var error2 = clearCaughtError();
           hasRethrowError || (hasRethrowError = !0, rethrowError = error2);
@@ -8342,7 +8342,7 @@ Check the render method of \`` + ownerName + "`." : "";
             throw new Error("Unable to find node on an unmounted component.");
           return nearestMounted !== fiber ? null : fiber;
         }
-        for (var a = fiber, b = alternate; ; ) {
+        for (var a = fiber, b2 = alternate; ; ) {
           var parentA = a.return;
           if (parentA === null)
             break;
@@ -8350,7 +8350,7 @@ Check the render method of \`` + ownerName + "`." : "";
           if (parentB === null) {
             var nextParent = parentA.return;
             if (nextParent !== null) {
-              a = b = nextParent;
+              a = b2 = nextParent;
               continue;
             }
             break;
@@ -8359,22 +8359,22 @@ Check the render method of \`` + ownerName + "`." : "";
             for (var child = parentA.child; child; ) {
               if (child === a)
                 return assertIsMounted(parentA), fiber;
-              if (child === b)
+              if (child === b2)
                 return assertIsMounted(parentA), alternate;
               child = child.sibling;
             }
             throw new Error("Unable to find node on an unmounted component.");
           }
-          if (a.return !== b.return)
-            a = parentA, b = parentB;
+          if (a.return !== b2.return)
+            a = parentA, b2 = parentB;
           else {
             for (var didFindChild = !1, _child = parentA.child; _child; ) {
               if (_child === a) {
-                didFindChild = !0, a = parentA, b = parentB;
+                didFindChild = !0, a = parentA, b2 = parentB;
                 break;
               }
-              if (_child === b) {
-                didFindChild = !0, b = parentA, a = parentB;
+              if (_child === b2) {
+                didFindChild = !0, b2 = parentA, a = parentB;
                 break;
               }
               _child = _child.sibling;
@@ -8382,11 +8382,11 @@ Check the render method of \`` + ownerName + "`." : "";
             if (!didFindChild) {
               for (_child = parentB.child; _child; ) {
                 if (_child === a) {
-                  didFindChild = !0, a = parentB, b = parentA;
+                  didFindChild = !0, a = parentB, b2 = parentA;
                   break;
                 }
-                if (_child === b) {
-                  didFindChild = !0, b = parentB, a = parentA;
+                if (_child === b2) {
+                  didFindChild = !0, b2 = parentB, a = parentA;
                   break;
                 }
                 _child = _child.sibling;
@@ -8395,7 +8395,7 @@ Check the render method of \`` + ownerName + "`." : "";
                 throw new Error("Child was not found in either parent set. This indicates a bug in React related to the return pointer. Please file an issue.");
             }
           }
-          if (a.alternate !== b)
+          if (a.alternate !== b2)
             throw new Error("Return fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.");
         }
         if (a.tag !== HostRoot)
@@ -8520,7 +8520,7 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       function getLaneLabelMap() {
         {
-          for (var map = /* @__PURE__ */ new Map(), lane = 1, index3 = 0; index3 < TotalLanes; index3++) {
+          for (var map = /* @__PURE__ */ new Map(), lane = 1, index2 = 0; index2 < TotalLanes; index2++) {
             var label = getLabelForLane(lane);
             map.set(lane, label), lane *= 2;
           }
@@ -8843,14 +8843,14 @@ Check the render method of \`` + ownerName + "`." : "";
         var entangledLanes = root2.entangledLanes;
         if (entangledLanes !== NoLanes)
           for (var entanglements = root2.entanglements, lanes = nextLanes & entangledLanes; lanes > 0; ) {
-            var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
-            nextLanes |= entanglements[index3], lanes &= ~lane;
+            var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
+            nextLanes |= entanglements[index2], lanes &= ~lane;
           }
         return nextLanes;
       }
       function getMostRecentEventTime(root2, lanes) {
         for (var eventTimes = root2.eventTimes, mostRecentEventTime = NoTimestamp; lanes > 0; ) {
-          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3, eventTime = eventTimes[index3];
+          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2, eventTime = eventTimes[index2];
           eventTime > mostRecentEventTime && (mostRecentEventTime = eventTime), lanes &= ~lane;
         }
         return mostRecentEventTime;
@@ -8898,8 +8898,8 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       function markStarvedLanesAsExpired(root2, currentTime) {
         for (var pendingLanes = root2.pendingLanes, suspendedLanes = root2.suspendedLanes, pingedLanes = root2.pingedLanes, expirationTimes = root2.expirationTimes, lanes = pendingLanes; lanes > 0; ) {
-          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3, expirationTime = expirationTimes[index3];
-          expirationTime === NoTimestamp ? ((lane & suspendedLanes) === NoLanes || (lane & pingedLanes) !== NoLanes) && (expirationTimes[index3] = computeExpirationTime(lane, currentTime)) : expirationTime <= currentTime && (root2.expiredLanes |= lane), lanes &= ~lane;
+          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2, expirationTime = expirationTimes[index2];
+          expirationTime === NoTimestamp ? ((lane & suspendedLanes) === NoLanes || (lane & pingedLanes) !== NoLanes) && (expirationTimes[index2] = computeExpirationTime(lane, currentTime)) : expirationTime <= currentTime && (root2.expiredLanes |= lane), lanes &= ~lane;
         }
       }
       function getHighestPriorityPendingLanes(root2) {
@@ -8955,26 +8955,26 @@ Check the render method of \`` + ownerName + "`." : "";
       function laneToIndex(lane) {
         return pickArbitraryLaneIndex(lane);
       }
-      function includesSomeLane(a, b) {
-        return (a & b) !== NoLanes;
+      function includesSomeLane(a, b2) {
+        return (a & b2) !== NoLanes;
       }
       function isSubsetOfLanes(set3, subset) {
         return (set3 & subset) === subset;
       }
-      function mergeLanes(a, b) {
-        return a | b;
+      function mergeLanes(a, b2) {
+        return a | b2;
       }
       function removeLanes(set3, subset) {
         return set3 & ~subset;
       }
-      function intersectLanes(a, b) {
-        return a & b;
+      function intersectLanes(a, b2) {
+        return a & b2;
       }
       function laneToLanes(lane) {
         return lane;
       }
-      function higherPriorityLane(a, b) {
-        return a !== NoLane && a < b ? a : b;
+      function higherPriorityLane(a, b2) {
+        return a !== NoLane && a < b2 ? a : b2;
       }
       function createLaneMap(initial) {
         for (var laneMap = [], i = 0; i < TotalLanes; i++)
@@ -8983,14 +8983,14 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       function markRootUpdated(root2, updateLane, eventTime) {
         root2.pendingLanes |= updateLane, updateLane !== IdleLane && (root2.suspendedLanes = NoLanes, root2.pingedLanes = NoLanes);
-        var eventTimes = root2.eventTimes, index3 = laneToIndex(updateLane);
-        eventTimes[index3] = eventTime;
+        var eventTimes = root2.eventTimes, index2 = laneToIndex(updateLane);
+        eventTimes[index2] = eventTime;
       }
       function markRootSuspended(root2, suspendedLanes) {
         root2.suspendedLanes |= suspendedLanes, root2.pingedLanes &= ~suspendedLanes;
         for (var expirationTimes = root2.expirationTimes, lanes = suspendedLanes; lanes > 0; ) {
-          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
-          expirationTimes[index3] = NoTimestamp, lanes &= ~lane;
+          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
+          expirationTimes[index2] = NoTimestamp, lanes &= ~lane;
         }
       }
       function markRootPinged(root2, pingedLanes, eventTime) {
@@ -9000,16 +9000,16 @@ Check the render method of \`` + ownerName + "`." : "";
         var noLongerPendingLanes = root2.pendingLanes & ~remainingLanes;
         root2.pendingLanes = remainingLanes, root2.suspendedLanes = NoLanes, root2.pingedLanes = NoLanes, root2.expiredLanes &= remainingLanes, root2.mutableReadLanes &= remainingLanes, root2.entangledLanes &= remainingLanes;
         for (var entanglements = root2.entanglements, eventTimes = root2.eventTimes, expirationTimes = root2.expirationTimes, lanes = noLongerPendingLanes; lanes > 0; ) {
-          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
-          entanglements[index3] = NoLanes, eventTimes[index3] = NoTimestamp, expirationTimes[index3] = NoTimestamp, lanes &= ~lane;
+          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
+          entanglements[index2] = NoLanes, eventTimes[index2] = NoTimestamp, expirationTimes[index2] = NoTimestamp, lanes &= ~lane;
         }
       }
       function markRootEntangled(root2, entangledLanes) {
         for (var rootEntangledLanes = root2.entangledLanes |= entangledLanes, entanglements = root2.entanglements, lanes = rootEntangledLanes; lanes; ) {
-          var index3 = pickArbitraryLaneIndex(lanes), lane = 1 << index3;
+          var index2 = pickArbitraryLaneIndex(lanes), lane = 1 << index2;
           // Is this one of the newly entangled lanes?
           lane & entangledLanes | // Is this lane transitively entangled with the newly entangled lanes?
-          entanglements[index3] & entangledLanes && (entanglements[index3] |= entangledLanes), lanes &= ~lane;
+          entanglements[index2] & entangledLanes && (entanglements[index2] |= entangledLanes), lanes &= ~lane;
         }
       }
       function getBumpedLaneForHydration(root2, renderLanes2) {
@@ -9056,14 +9056,14 @@ Check the render method of \`` + ownerName + "`." : "";
       function addFiberToLanesMap(root2, fiber, lanes) {
         if (isDevToolsPresent)
           for (var pendingUpdatersLaneMap = root2.pendingUpdatersLaneMap; lanes > 0; ) {
-            var index3 = laneToIndex(lanes), lane = 1 << index3, updaters = pendingUpdatersLaneMap[index3];
+            var index2 = laneToIndex(lanes), lane = 1 << index2, updaters = pendingUpdatersLaneMap[index2];
             updaters.add(fiber), lanes &= ~lane;
           }
       }
       function movePendingFibersToMemoized(root2, lanes) {
         if (isDevToolsPresent)
           for (var pendingUpdatersLaneMap = root2.pendingUpdatersLaneMap, memoizedUpdaters = root2.memoizedUpdaters; lanes > 0; ) {
-            var index3 = laneToIndex(lanes), lane = 1 << index3, updaters = pendingUpdatersLaneMap[index3];
+            var index2 = laneToIndex(lanes), lane = 1 << index2, updaters = pendingUpdatersLaneMap[index2];
             updaters.size > 0 && (updaters.forEach(function(fiber) {
               var alternate = fiber.alternate;
               (alternate === null || !memoizedUpdaters.has(alternate)) && memoizedUpdaters.add(fiber);
@@ -9088,14 +9088,14 @@ Check the render method of \`` + ownerName + "`." : "";
           currentUpdatePriority = previousPriority;
         }
       }
-      function higherEventPriority(a, b) {
-        return a !== 0 && a < b ? a : b;
+      function higherEventPriority(a, b2) {
+        return a !== 0 && a < b2 ? a : b2;
       }
-      function lowerEventPriority(a, b) {
-        return a === 0 || a > b ? a : b;
+      function lowerEventPriority(a, b2) {
+        return a === 0 || a > b2 ? a : b2;
       }
-      function isHigherEventPriority(a, b) {
-        return a !== 0 && a < b;
+      function isHigherEventPriority(a, b2) {
+        return a !== 0 && a < b2;
       }
       function lanesToEventPriority(lanes) {
         var lane = getHighestPriorityLane(lanes);
@@ -10064,10 +10064,10 @@ Check the render method of \`` + ownerName + "`." : "";
           }
         }
       }
-      function is2(x, y) {
+      function is3(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is2;
+      var objectIs = typeof Object.is == "function" ? Object.is : is3;
       function shallowEqual(objA, objB) {
         if (objectIs(objA, objB))
           return !0;
@@ -10718,8 +10718,8 @@ Check the render method of \`` + ownerName + "`." : "";
           domElement = ownerDocument.createElementNS(namespaceURI, type);
         return namespaceURI === HTML_NAMESPACE && !isCustomComponentTag && Object.prototype.toString.call(domElement) === "[object HTMLUnknownElement]" && !hasOwnProperty.call(warnedUnknownTags, type) && (warnedUnknownTags[type] = !0, error("The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.", type)), domElement;
       }
-      function createTextNode(text, rootContainerElement) {
-        return getOwnerDocumentFromRootContainer(rootContainerElement).createTextNode(text);
+      function createTextNode(text2, rootContainerElement) {
+        return getOwnerDocumentFromRootContainer(rootContainerElement).createTextNode(text2);
       }
       function setInitialProperties(domElement, tag, rawProps, rootContainerElement) {
         var isCustomComponentTag = isCustomComponent(tag, rawProps);
@@ -10974,8 +10974,8 @@ Check the render method of \`` + ownerName + "`." : "";
         }
         return updatePayload;
       }
-      function diffHydratedText(textNode, text, isConcurrentMode) {
-        var isDifferent = textNode.nodeValue !== text;
+      function diffHydratedText(textNode, text2, isConcurrentMode) {
+        var isDifferent = textNode.nodeValue !== text2;
         return isDifferent;
       }
       function warnForDeletedHydratableElement(parentNode, child) {
@@ -10999,11 +10999,11 @@ Check the render method of \`` + ownerName + "`." : "";
           didWarnInvalidHydration = !0, error("Expected server HTML to contain a matching <%s> in <%s>.", tag, parentNode.nodeName.toLowerCase());
         }
       }
-      function warnForInsertedHydratedText(parentNode, text) {
+      function warnForInsertedHydratedText(parentNode, text2) {
         {
-          if (text === "" || didWarnInvalidHydration)
+          if (text2 === "" || didWarnInvalidHydration)
             return;
-          didWarnInvalidHydration = !0, error('Expected server HTML to contain a matching text node for "%s" in <%s>.', text, parentNode.nodeName.toLowerCase());
+          didWarnInvalidHydration = !0, error('Expected server HTML to contain a matching text node for "%s" in <%s>.', text2, parentNode.nodeName.toLowerCase());
         }
       }
       function restoreControlledState$3(domElement, tag, props) {
@@ -11270,12 +11270,12 @@ Check the render method of \`` + ownerName + "`." : "";
       function shouldSetTextContent(type, props) {
         return type === "textarea" || type === "noscript" || typeof props.children == "string" || typeof props.children == "number" || typeof props.dangerouslySetInnerHTML == "object" && props.dangerouslySetInnerHTML !== null && props.dangerouslySetInnerHTML.__html != null;
       }
-      function createTextInstance(text, rootContainerInstance, hostContext, internalInstanceHandle) {
+      function createTextInstance(text2, rootContainerInstance, hostContext, internalInstanceHandle) {
         {
           var hostContextDev = hostContext;
-          validateDOMNesting(null, text, hostContextDev.ancestorInfo);
+          validateDOMNesting(null, text2, hostContextDev.ancestorInfo);
         }
-        var textNode = createTextNode(text, rootContainerInstance);
+        var textNode = createTextNode(text2, rootContainerInstance);
         return precacheFiberNode(internalInstanceHandle, textNode), textNode;
       }
       function getCurrentEventPriority() {
@@ -11369,8 +11369,8 @@ Check the render method of \`` + ownerName + "`." : "";
         var styleProp = props[STYLE$1], display = styleProp != null && styleProp.hasOwnProperty("display") ? styleProp.display : null;
         instance.style.display = dangerousStyleValue("display", display);
       }
-      function unhideTextInstance(textInstance, text) {
-        textInstance.nodeValue = text;
+      function unhideTextInstance(textInstance, text2) {
+        textInstance.nodeValue = text2;
       }
       function clearContainer(container) {
         container.nodeType === ELEMENT_NODE ? container.textContent = "" : container.nodeType === DOCUMENT_NODE && container.documentElement && container.removeChild(container.documentElement);
@@ -11378,8 +11378,8 @@ Check the render method of \`` + ownerName + "`." : "";
       function canHydrateInstance(instance, type, props) {
         return instance.nodeType !== ELEMENT_NODE || type.toLowerCase() !== instance.nodeName.toLowerCase() ? null : instance;
       }
-      function canHydrateTextInstance(instance, text) {
-        return text === "" || instance.nodeType !== TEXT_NODE ? null : instance;
+      function canHydrateTextInstance(instance, text2) {
+        return text2 === "" || instance.nodeType !== TEXT_NODE ? null : instance;
       }
       function canHydrateSuspenseInstance(instance) {
         return instance.nodeType !== COMMENT_NODE ? null : instance;
@@ -11438,10 +11438,10 @@ Check the render method of \`` + ownerName + "`." : "";
         var isConcurrentMode = (internalInstanceHandle.mode & ConcurrentMode) !== NoMode;
         return diffHydratedProperties(instance, type, props, parentNamespace, rootContainerInstance, isConcurrentMode, shouldWarnDev);
       }
-      function hydrateTextInstance(textInstance, text, internalInstanceHandle, shouldWarnDev) {
+      function hydrateTextInstance(textInstance, text2, internalInstanceHandle, shouldWarnDev) {
         precacheFiberNode(internalInstanceHandle, textInstance);
         var isConcurrentMode = (internalInstanceHandle.mode & ConcurrentMode) !== NoMode;
-        return diffHydratedText(textInstance, text);
+        return diffHydratedText(textInstance, text2);
       }
       function hydrateSuspenseInstance(suspenseInstance, internalInstanceHandle) {
         precacheFiberNode(internalInstanceHandle, suspenseInstance);
@@ -11485,14 +11485,14 @@ Check the render method of \`` + ownerName + "`." : "";
       function shouldDeleteUnhydratedTailInstances(parentType) {
         return parentType !== "head" && parentType !== "body";
       }
-      function didNotMatchHydratedContainerTextInstance(parentContainer, textInstance, text, isConcurrentMode) {
+      function didNotMatchHydratedContainerTextInstance(parentContainer, textInstance, text2, isConcurrentMode) {
         var shouldWarnDev = !0;
-        checkForUnmatchedText(textInstance.nodeValue, text, isConcurrentMode, shouldWarnDev);
+        checkForUnmatchedText(textInstance.nodeValue, text2, isConcurrentMode, shouldWarnDev);
       }
-      function didNotMatchHydratedTextInstance(parentType, parentProps, parentInstance, textInstance, text, isConcurrentMode) {
+      function didNotMatchHydratedTextInstance(parentType, parentProps, parentInstance, textInstance, text2, isConcurrentMode) {
         if (parentProps[SUPPRESS_HYDRATION_WARNING$1] !== !0) {
           var shouldWarnDev = !0;
-          checkForUnmatchedText(textInstance.nodeValue, text, isConcurrentMode, shouldWarnDev);
+          checkForUnmatchedText(textInstance.nodeValue, text2, isConcurrentMode, shouldWarnDev);
         }
       }
       function didNotHydrateInstanceWithinContainer(parentContainer, instance) {
@@ -11510,8 +11510,8 @@ Check the render method of \`` + ownerName + "`." : "";
       function didNotFindHydratableInstanceWithinContainer(parentContainer, type, props) {
         warnForInsertedHydratedElement(parentContainer, type);
       }
-      function didNotFindHydratableTextInstanceWithinContainer(parentContainer, text) {
-        warnForInsertedHydratedText(parentContainer, text);
+      function didNotFindHydratableTextInstanceWithinContainer(parentContainer, text2) {
+        warnForInsertedHydratedText(parentContainer, text2);
       }
       function didNotFindHydratableInstanceWithinSuspenseInstance(parentInstance, type, props) {
         {
@@ -11519,17 +11519,17 @@ Check the render method of \`` + ownerName + "`." : "";
           parentNode !== null && warnForInsertedHydratedElement(parentNode, type);
         }
       }
-      function didNotFindHydratableTextInstanceWithinSuspenseInstance(parentInstance, text) {
+      function didNotFindHydratableTextInstanceWithinSuspenseInstance(parentInstance, text2) {
         {
           var parentNode = parentInstance.parentNode;
-          parentNode !== null && warnForInsertedHydratedText(parentNode, text);
+          parentNode !== null && warnForInsertedHydratedText(parentNode, text2);
         }
       }
       function didNotFindHydratableInstance(parentType, parentProps, parentInstance, type, props, isConcurrentMode) {
         (isConcurrentMode || parentProps[SUPPRESS_HYDRATION_WARNING$1] !== !0) && warnForInsertedHydratedElement(parentInstance, type);
       }
-      function didNotFindHydratableTextInstance(parentType, parentProps, parentInstance, text, isConcurrentMode) {
-        (isConcurrentMode || parentProps[SUPPRESS_HYDRATION_WARNING$1] !== !0) && warnForInsertedHydratedText(parentInstance, text);
+      function didNotFindHydratableTextInstance(parentType, parentProps, parentInstance, text2, isConcurrentMode) {
+        (isConcurrentMode || parentProps[SUPPRESS_HYDRATION_WARNING$1] !== !0) && warnForInsertedHydratedText(parentInstance, text2);
       }
       function errorHydratingContainer(parentContainer) {
         error("An error occurred during hydration. The server HTML was replaced with client content in <%s>.", parentContainer.nodeName.toLowerCase());
@@ -11621,21 +11621,21 @@ Check the render method of \`` + ownerName + "`." : "";
       }
       var valueStack = [], fiberStack;
       fiberStack = [];
-      var index2 = -1;
+      var index = -1;
       function createCursor(defaultValue) {
         return {
           current: defaultValue
         };
       }
       function pop(cursor, fiber) {
-        if (index2 < 0) {
+        if (index < 0) {
           error("Unexpected pop.");
           return;
         }
-        fiber !== fiberStack[index2] && error("Unexpected Fiber popped."), cursor.current = valueStack[index2], valueStack[index2] = null, fiberStack[index2] = null, index2--;
+        fiber !== fiberStack[index] && error("Unexpected Fiber popped."), cursor.current = valueStack[index], valueStack[index] = null, fiberStack[index] = null, index--;
       }
       function push(cursor, value, fiber) {
-        index2++, valueStack[index2] = cursor.current, fiberStack[index2] = fiber, cursor.current = value;
+        index++, valueStack[index] = cursor.current, fiberStack[index] = fiber, cursor.current = value;
       }
       var warnedAboutMissingGetChildContext;
       warnedAboutMissingGetChildContext = {};
@@ -11796,9 +11796,9 @@ Check the render method of \`` + ownerName + "`." : "";
       function pushTreeFork(workInProgress2, totalChildren) {
         warnIfNotHydrating(), forkStack[forkStackIndex++] = treeForkCount, forkStack[forkStackIndex++] = treeForkProvider, treeForkProvider = workInProgress2, treeForkCount = totalChildren;
       }
-      function pushTreeId(workInProgress2, totalChildren, index3) {
+      function pushTreeId(workInProgress2, totalChildren, index2) {
         warnIfNotHydrating(), idStack[idStackIndex++] = treeContextId, idStack[idStackIndex++] = treeContextOverflow, idStack[idStackIndex++] = treeContextProvider, treeContextProvider = workInProgress2;
-        var baseIdWithLeadingBit = treeContextId, baseOverflow = treeContextOverflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index3 + 1, length = getBitLength(totalChildren) + baseLength;
+        var baseIdWithLeadingBit = treeContextId, baseOverflow = treeContextOverflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index2 + 1, length = getBitLength(totalChildren) + baseLength;
         if (length > 30) {
           var numberOfOverflowBits = baseLength - baseLength % 5, newOverflowBits = (1 << numberOfOverflowBits) - 1, newOverflow = (baseId & newOverflowBits).toString(32), restOfBaseId = baseId >> numberOfOverflowBits, restOfBaseLength = baseLength - numberOfOverflowBits, restOfLength = getBitLength(totalChildren) + restOfBaseLength, restOfNewBits = slot << restOfBaseLength, id = restOfNewBits | restOfBaseId, overflow = newOverflow + baseOverflow;
           treeContextId = 1 << restOfLength | id, treeContextOverflow = overflow;
@@ -11901,8 +11901,8 @@ Check the render method of \`` + ownerName + "`." : "";
                   didNotFindHydratableInstanceWithinContainer(parentContainer, type);
                   break;
                 case HostText:
-                  var text = fiber.pendingProps;
-                  didNotFindHydratableTextInstanceWithinContainer(parentContainer, text);
+                  var text2 = fiber.pendingProps;
+                  didNotFindHydratableTextInstanceWithinContainer(parentContainer, text2);
                   break;
               }
               break;
@@ -11968,7 +11968,7 @@ Check the render method of \`` + ownerName + "`." : "";
             return instance !== null ? (fiber.stateNode = instance, hydrationParentFiber = fiber, nextHydratableInstance = getFirstHydratableChild(instance), !0) : !1;
           }
           case HostText: {
-            var text = fiber.pendingProps, textInstance = canHydrateTextInstance(nextInstance, text);
+            var text2 = fiber.pendingProps, textInstance = canHydrateTextInstance(nextInstance, text2);
             return textInstance !== null ? (fiber.stateNode = textInstance, hydrationParentFiber = fiber, nextHydratableInstance = null, !0) : !1;
           }
           case SuspenseComponent: {
@@ -12657,7 +12657,7 @@ Learn more about this warning here: https://reactjs.org/link/legacy-context`, so
             callback !== null && (effect.callback = null, callCallback(callback, instance));
           }
       }
-      var fakeInternalInstance = {}, emptyRefsObject = new React10.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
+      var fakeInternalInstance = {}, emptyRefsObject = new React12.Component().refs, didWarnAboutStateAssignmentForComponent, didWarnAboutUninitializedState, didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate, didWarnAboutLegacyLifecyclesAndDerivedState, didWarnAboutUndefinedDerivedState, warnOnUndefinedDerivedState, warnOnInvalidCallback, didWarnAboutDirectlyAssigningPropsToState, didWarnAboutContextTypeAndContextTypes, didWarnAboutInvalidateContextType;
       {
         didWarnAboutStateAssignmentForComponent = /* @__PURE__ */ new Set(), didWarnAboutUninitializedState = /* @__PURE__ */ new Set(), didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = /* @__PURE__ */ new Set(), didWarnAboutLegacyLifecyclesAndDerivedState = /* @__PURE__ */ new Set(), didWarnAboutDirectlyAssigningPropsToState = /* @__PURE__ */ new Set(), didWarnAboutUndefinedDerivedState = /* @__PURE__ */ new Set(), didWarnAboutContextTypeAndContextTypes = /* @__PURE__ */ new Set(), didWarnAboutInvalidateContextType = /* @__PURE__ */ new Set();
         var didWarnOnInvalidCallback = /* @__PURE__ */ new Set();
@@ -13046,7 +13046,7 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
           }
         }
         function updateFragment2(returnFiber, current3, fragment, lanes, key) {
-          if (current3 === null || current3.tag !== Fragment4) {
+          if (current3 === null || current3.tag !== Fragment9) {
             var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
             return created.return = returnFiber, created;
           } else {
@@ -13274,7 +13274,7 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
             if (child.key === key) {
               var elementType = element.type;
               if (elementType === REACT_FRAGMENT_TYPE2) {
-                if (child.tag === Fragment4) {
+                if (child.tag === Fragment9) {
                   deleteRemainingChildren(returnFiber, child.sibling);
                   var existing = useFiber(child, element.props.children);
                   return existing.return = returnFiber, existing._debugSource = element._source, existing._debugOwner = element._owner, existing;
@@ -13467,8 +13467,8 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`);
         workInProgressSources.length = 0;
       }
       function registerMutableSourceForHydration(root2, mutableSource) {
-        var getVersion = mutableSource._getVersion, version = getVersion(mutableSource._source);
-        root2.mutableSourceEagerHydrationData == null ? root2.mutableSourceEagerHydrationData = [mutableSource, version] : root2.mutableSourceEagerHydrationData.push(mutableSource, version);
+        var getVersion = mutableSource._getVersion, version2 = getVersion(mutableSource._source);
+        root2.mutableSourceEagerHydrationData == null ? root2.mutableSourceEagerHydrationData = [mutableSource, version2] : root2.mutableSourceEagerHydrationData.push(mutableSource, version2);
       }
       var ReactCurrentDispatcher$1 = ReactSharedInternals.ReactCurrentDispatcher, ReactCurrentBatchConfig$2 = ReactSharedInternals.ReactCurrentBatchConfig, didWarnAboutMismatchedHooksForComponent, didWarnUncachedGetSnapshot;
       didWarnAboutMismatchedHooksForComponent = /* @__PURE__ */ new Set();
@@ -13608,19 +13608,19 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           stores: null
         };
       }
-      function basicStateReducer(state, action) {
-        return typeof action == "function" ? action(state) : action;
+      function basicStateReducer(state, action3) {
+        return typeof action3 == "function" ? action3(state) : action3;
       }
       function mountReducer(reducer, initialArg, init) {
-        var hook = mountWorkInProgressHook(), initialState2;
-        init !== void 0 ? initialState2 = init(initialArg) : initialState2 = initialArg, hook.memoizedState = hook.baseState = initialState2;
+        var hook = mountWorkInProgressHook(), initialState;
+        init !== void 0 ? initialState = init(initialArg) : initialState = initialArg, hook.memoizedState = hook.baseState = initialState;
         var queue = {
           pending: null,
           interleaved: null,
           lanes: NoLanes,
           dispatch: null,
           lastRenderedReducer: reducer,
-          lastRenderedState: initialState2
+          lastRenderedState: initialState
         };
         hook.queue = queue;
         var dispatch = queue.dispatch = dispatchReducerAction.bind(null, currentlyRenderingFiber$1, queue);
@@ -13660,8 +13660,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
               if (update.hasEagerState)
                 newState = update.eagerState;
               else {
-                var action = update.action;
-                newState = reducer(newState, action);
+                var action3 = update.action;
+                newState = reducer(newState, action3);
               }
             } else {
               var clone = {
@@ -13699,8 +13699,8 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           queue.pending = null;
           var firstRenderPhaseUpdate = lastRenderPhaseUpdate.next, update = firstRenderPhaseUpdate;
           do {
-            var action = update.action;
-            newState = reducer(newState, action), update = update.next;
+            var action3 = update.action;
+            newState = reducer(newState, action3), update = update.next;
           } while (update !== firstRenderPhaseUpdate);
           objectIs(newState, hook.memoizedState) || markWorkInProgressReceivedUpdate(), hook.memoizedState = newState, hook.baseQueue === null && (hook.baseState = newState), queue.lastRenderedState = newState;
         }
@@ -13788,25 +13788,25 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         var root2 = enqueueConcurrentRenderForLane(fiber, SyncLane);
         root2 !== null && scheduleUpdateOnFiber(root2, fiber, SyncLane, NoTimestamp);
       }
-      function mountState(initialState2) {
+      function mountState(initialState) {
         var hook = mountWorkInProgressHook();
-        typeof initialState2 == "function" && (initialState2 = initialState2()), hook.memoizedState = hook.baseState = initialState2;
+        typeof initialState == "function" && (initialState = initialState()), hook.memoizedState = hook.baseState = initialState;
         var queue = {
           pending: null,
           interleaved: null,
           lanes: NoLanes,
           dispatch: null,
           lastRenderedReducer: basicStateReducer,
-          lastRenderedState: initialState2
+          lastRenderedState: initialState
         };
         hook.queue = queue;
         var dispatch = queue.dispatch = dispatchSetState.bind(null, currentlyRenderingFiber$1, queue);
         return [hook.memoizedState, dispatch];
       }
-      function updateState(initialState2) {
+      function updateState(initialState) {
         return updateReducer(basicStateReducer);
       }
-      function rerenderState(initialState2) {
+      function rerenderState(initialState) {
         return rerenderReducer(basicStateReducer);
       }
       function pushEffect(tag, create, destroy, deps) {
@@ -14011,11 +14011,11 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         var hook = updateWorkInProgressHook(), id = hook.memoizedState;
         return id;
       }
-      function dispatchReducerAction(fiber, queue, action) {
+      function dispatchReducerAction(fiber, queue, action3) {
         typeof arguments[3] == "function" && error("State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().");
         var lane = requestUpdateLane(fiber), update = {
           lane,
-          action,
+          action: action3,
           hasEagerState: !1,
           eagerState: null,
           next: null
@@ -14031,11 +14031,11 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
         }
         markUpdateInDevTools(fiber, lane);
       }
-      function dispatchSetState(fiber, queue, action) {
+      function dispatchSetState(fiber, queue, action3) {
         typeof arguments[3] == "function" && error("State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().");
         var lane = requestUpdateLane(fiber), update = {
           lane,
-          action,
+          action: action3,
           hasEagerState: !1,
           eagerState: null,
           next: null
@@ -14050,7 +14050,7 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
               var prevDispatcher;
               prevDispatcher = ReactCurrentDispatcher$1.current, ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                var currentState = queue.lastRenderedState, eagerState = lastRenderedReducer(currentState, action);
+                var currentState = queue.lastRenderedState, eagerState = lastRenderedReducer(currentState, action3);
                 if (update.hasEagerState = !0, update.eagerState = eagerState, objectIs(eagerState, currentState)) {
                   enqueueConcurrentHookUpdateAndEagerlyBailout(fiber, queue, update, lane);
                   return;
@@ -14086,7 +14086,7 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           queue.lanes = newQueueLanes, markRootEntangled(root2, newQueueLanes);
         }
       }
-      function markUpdateInDevTools(fiber, lane, action) {
+      function markUpdateInDevTools(fiber, lane, action3) {
         markStateUpdateScheduled(fiber, lane);
       }
       var ContextOnlyDispatcher = {
@@ -14160,12 +14160,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", mountHookTypesDev(), mountRef(initialValue);
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", mountHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
             try {
-              return mountState(initialState2);
+              return mountState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14234,12 +14234,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", updateHookTypesDev(), mountRef(initialValue);
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", updateHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
             try {
-              return mountState(initialState2);
+              return mountState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14308,12 +14308,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", updateHookTypesDev(), updateRef();
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", updateHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
             try {
-              return updateState(initialState2);
+              return updateState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14382,12 +14382,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", updateHookTypesDev(), updateRef();
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", updateHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnRerenderInDEV;
             try {
-              return rerenderState(initialState2);
+              return rerenderState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14456,12 +14456,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", warnInvalidHookAccess(), mountHookTypesDev(), mountRef(initialValue);
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", warnInvalidHookAccess(), mountHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
             try {
-              return mountState(initialState2);
+              return mountState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14530,12 +14530,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", warnInvalidHookAccess(), updateHookTypesDev(), updateRef();
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", warnInvalidHookAccess(), updateHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
             try {
-              return updateState(initialState2);
+              return updateState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -14604,12 +14604,12 @@ Incoming: %s`, currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + next
           useRef: function(initialValue) {
             return currentHookNameInDev = "useRef", warnInvalidHookAccess(), updateHookTypesDev(), updateRef();
           },
-          useState: function(initialState2) {
+          useState: function(initialState) {
             currentHookNameInDev = "useState", warnInvalidHookAccess(), updateHookTypesDev();
             var prevDispatcher = ReactCurrentDispatcher$1.current;
             ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
             try {
-              return rerenderState(initialState2);
+              return rerenderState(initialState);
             } finally {
               ReactCurrentDispatcher$1.current = prevDispatcher;
             }
@@ -15574,12 +15574,12 @@ Check the render method of \`` + ownerName + "`.");
       function validateTailOptions(tailMode, revealOrder) {
         tailMode !== void 0 && !didWarnAboutTailOptions[tailMode] && (tailMode !== "collapsed" && tailMode !== "hidden" ? (didWarnAboutTailOptions[tailMode] = !0, error('"%s" is not a supported value for tail on <SuspenseList />. Did you mean "collapsed" or "hidden"?', tailMode)) : revealOrder !== "forwards" && revealOrder !== "backwards" && (didWarnAboutTailOptions[tailMode] = !0, error('<SuspenseList tail="%s" /> is only valid if revealOrder is "forwards" or "backwards". Did you mean to specify revealOrder="forwards"?', tailMode)));
       }
-      function validateSuspenseListNestedChild(childSlot, index3) {
+      function validateSuspenseListNestedChild(childSlot, index2) {
         {
           var isAnArray = isArray(childSlot), isIterable = !isAnArray && typeof getIteratorFn(childSlot) == "function";
           if (isAnArray || isIterable) {
             var type = isAnArray ? "array" : "iterable";
-            return error("A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>", type, index3, type), !1;
+            return error("A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>", type, index2, type), !1;
           }
         }
         return !0;
@@ -15864,7 +15864,7 @@ Check the render method of \`` + ownerName + "`.");
             var type = workInProgress2.type, _unresolvedProps2 = workInProgress2.pendingProps, _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
             return updateForwardRef(current3, workInProgress2, type, _resolvedProps2, renderLanes2);
           }
-          case Fragment4:
+          case Fragment9:
             return updateFragment(current3, workInProgress2, renderLanes2);
           case Mode:
             return updateMode(current3, workInProgress2, renderLanes2);
@@ -16016,7 +16016,7 @@ Check the render method of \`` + ownerName + "`.");
           case SimpleMemoComponent:
           case FunctionComponent:
           case ForwardRef2:
-          case Fragment4:
+          case Fragment9:
           case Mode:
           case Profiler:
           case ContextConsumer:
@@ -17745,10 +17745,10 @@ Learn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-f
           !ReactCurrentActQueue$1.isBatchingLegacy && (resetRenderTimer(), flushSyncCallbacksOnlyInLegacyMode());
         }
       }
-      function discreteUpdates(fn, a, b, c, d) {
+      function discreteUpdates(fn, a, b2, c, d2) {
         var previousPriority = getCurrentUpdatePriority(), prevTransition = ReactCurrentBatchConfig$3.transition;
         try {
-          return ReactCurrentBatchConfig$3.transition = null, setCurrentUpdatePriority(DiscreteEventPriority), fn(a, b, c, d);
+          return ReactCurrentBatchConfig$3.transition = null, setCurrentUpdatePriority(DiscreteEventPriority), fn(a, b2, c, d2);
         } finally {
           setCurrentUpdatePriority(previousPriority), ReactCurrentBatchConfig$3.transition = prevTransition, executionContext === NoContext && resetRenderTimer();
         }
@@ -18573,7 +18573,7 @@ Check the render method of \`` + ownerName + "`.");
         return fiber._debugSource = element._source, fiber._debugOwner = element._owner, fiber;
       }
       function createFiberFromFragment(elements, mode2, lanes, key) {
-        var fiber = createFiber(Fragment4, elements, key, mode2);
+        var fiber = createFiber(Fragment9, elements, key, mode2);
         return fiber.lanes = lanes, fiber;
       }
       function createFiberFromProfiler(pendingProps, mode2, lanes, key) {
@@ -18815,15 +18815,15 @@ Check the render method of %s.`, getComponentNameFromFiber(current2) || "Unknown
       }
       var overrideHookState = null, overrideHookStateDeletePath = null, overrideHookStateRenamePath = null, overrideProps = null, overridePropsDeletePath = null, overridePropsRenamePath = null, scheduleUpdate = null, setErrorHandler = null, setSuspenseHandler = null;
       {
-        var copyWithDeleteImpl = function(obj, path, index3) {
-          var key = path[index3], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
-          return index3 + 1 === path.length ? (isArray(updated) ? updated.splice(key, 1) : delete updated[key], updated) : (updated[key] = copyWithDeleteImpl(obj[key], path, index3 + 1), updated);
+        var copyWithDeleteImpl = function(obj, path, index2) {
+          var key = path[index2], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
+          return index2 + 1 === path.length ? (isArray(updated) ? updated.splice(key, 1) : delete updated[key], updated) : (updated[key] = copyWithDeleteImpl(obj[key], path, index2 + 1), updated);
         }, copyWithDelete = function(obj, path) {
           return copyWithDeleteImpl(obj, path, 0);
-        }, copyWithRenameImpl = function(obj, oldPath, newPath, index3) {
-          var oldKey = oldPath[index3], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
-          if (index3 + 1 === oldPath.length) {
-            var newKey = newPath[index3];
+        }, copyWithRenameImpl = function(obj, oldPath, newPath, index2) {
+          var oldKey = oldPath[index2], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
+          if (index2 + 1 === oldPath.length) {
+            var newKey = newPath[index2];
             updated[newKey] = updated[oldKey], isArray(updated) ? updated.splice(oldKey, 1) : delete updated[oldKey];
           } else
             updated[oldKey] = copyWithRenameImpl(
@@ -18831,7 +18831,7 @@ Check the render method of %s.`, getComponentNameFromFiber(current2) || "Unknown
               obj[oldKey],
               oldPath,
               newPath,
-              index3 + 1
+              index2 + 1
             );
           return updated;
         }, copyWithRename = function(obj, oldPath, newPath) {
@@ -18845,11 +18845,11 @@ Check the render method of %s.`, getComponentNameFromFiber(current2) || "Unknown
                 return;
               }
           return copyWithRenameImpl(obj, oldPath, newPath, 0);
-        }, copyWithSetImpl = function(obj, path, index3, value) {
-          if (index3 >= path.length)
+        }, copyWithSetImpl = function(obj, path, index2, value) {
+          if (index2 >= path.length)
             return value;
-          var key = path[index3], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
-          return updated[key] = copyWithSetImpl(obj[key], path, index3 + 1, value), updated;
+          var key = path[index2], updated = isArray(obj) ? obj.slice() : assign2({}, obj);
+          return updated[key] = copyWithSetImpl(obj[key], path, index2 + 1, value), updated;
         }, copyWithSet = function(obj, path, value) {
           return copyWithSetImpl(obj, path, 0, value);
         }, findHook = function(fiber, id) {
@@ -19507,7 +19507,7 @@ function _renderMatches(matches2, parentMatches, dataRouterState, future2) {
   }
   let renderedMatches = matches2, errors2 = (_dataRouterState2 = dataRouterState) == null ? void 0 : _dataRouterState2.errors;
   if (errors2 != null) {
-    let errorIndex = renderedMatches.findIndex((m) => m.route.id && errors2?.[m.route.id]);
+    let errorIndex = renderedMatches.findIndex((m2) => m2.route.id && errors2?.[m2.route.id]);
     errorIndex >= 0 || invariant(!1, "Could not find a matching route for errors on route IDs: " + Object.keys(errors2).join(",")), renderedMatches = renderedMatches.slice(0, Math.min(renderedMatches.length, errorIndex + 1));
   }
   let renderFallback = !1, fallbackIndex = -1;
@@ -19525,10 +19525,10 @@ function _renderMatches(matches2, parentMatches, dataRouterState, future2) {
         }
       }
     }
-  return renderedMatches.reduceRight((outlet, match, index2) => {
+  return renderedMatches.reduceRight((outlet, match, index) => {
     let error, shouldRenderHydrateFallback = !1, errorElement = null, hydrateFallbackElement = null;
-    dataRouterState && (error = errors2 && match.route.id ? errors2[match.route.id] : void 0, errorElement = match.route.errorElement || defaultErrorElement, renderFallback && (fallbackIndex < 0 && index2 === 0 ? (warningOnce("route-fallback", !1, "No `HydrateFallback` element provided to render during initial hydration"), shouldRenderHydrateFallback = !0, hydrateFallbackElement = null) : fallbackIndex === index2 && (shouldRenderHydrateFallback = !0, hydrateFallbackElement = match.route.hydrateFallbackElement || null)));
-    let matches3 = parentMatches.concat(renderedMatches.slice(0, index2 + 1)), getChildren = () => {
+    dataRouterState && (error = errors2 && match.route.id ? errors2[match.route.id] : void 0, errorElement = match.route.errorElement || defaultErrorElement, renderFallback && (fallbackIndex < 0 && index === 0 ? (warningOnce("route-fallback", !1, "No `HydrateFallback` element provided to render during initial hydration"), shouldRenderHydrateFallback = !0, hydrateFallbackElement = null) : fallbackIndex === index && (shouldRenderHydrateFallback = !0, hydrateFallbackElement = match.route.hydrateFallbackElement || null)));
+    let matches3 = parentMatches.concat(renderedMatches.slice(0, index + 1)), getChildren = () => {
       let children;
       return error ? children = errorElement : shouldRenderHydrateFallback ? children = hydrateFallbackElement : match.route.Component ? children = /* @__PURE__ */ React.createElement(match.route.Component, null) : match.route.element ? children = match.route.element : children = outlet, /* @__PURE__ */ React.createElement(RenderedRoute, {
         match,
@@ -19540,7 +19540,7 @@ function _renderMatches(matches2, parentMatches, dataRouterState, future2) {
         children
       });
     };
-    return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index2 === 0) ? /* @__PURE__ */ React.createElement(RenderErrorBoundary, {
+    return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index === 0) ? /* @__PURE__ */ React.createElement(RenderErrorBoundary, {
       location: dataRouterState.location,
       revalidation: dataRouterState.revalidation,
       component: errorElement,
@@ -19591,7 +19591,7 @@ function useMatches() {
     matches: matches2,
     loaderData
   } = useDataRouterState(DataRouterStateHook.UseMatches);
-  return React.useMemo(() => matches2.map((m) => convertRouteMatchToUiMatch(m, loaderData)), [matches2, loaderData]);
+  return React.useMemo(() => matches2.map((m2) => convertRouteMatchToUiMatch(m2, loaderData)), [matches2, loaderData]);
 }
 function useLoaderData() {
   let state = useDataRouterState(DataRouterStateHook.UseLoaderData), routeId = useCurrentRouteId(DataRouterStateHook.UseLoaderData);
@@ -19863,10 +19863,10 @@ function ResolveAwait(_ref8) {
 function createRoutesFromChildren(children, parentPath) {
   parentPath === void 0 && (parentPath = []);
   let routes2 = [];
-  return React.Children.forEach(children, (element, index2) => {
+  return React.Children.forEach(children, (element, index) => {
     if (!/* @__PURE__ */ React.isValidElement(element))
       return;
-    let treePath = [...parentPath, index2];
+    let treePath = [...parentPath, index];
     if (element.type === React.Fragment) {
       routes2.push.apply(routes2, createRoutesFromChildren(element.props.children, treePath));
       return;
@@ -20180,12 +20180,12 @@ function shouldProcessLinkClick(event, target) {
 function createSearchParams(init) {
   return init === void 0 && (init = ""), new URLSearchParams(typeof init == "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key) => {
     let value = init[key];
-    return memo.concat(Array.isArray(value) ? value.map((v) => [key, v]) : [[key, value]]);
+    return memo.concat(Array.isArray(value) ? value.map((v2) => [key, v2]) : [[key, value]]);
   }, []));
 }
 function getSearchParamsForLocation(locationSearch, defaultSearchParams) {
   let searchParams = createSearchParams(locationSearch);
-  return defaultSearchParams && defaultSearchParams.forEach((_, key) => {
+  return defaultSearchParams && defaultSearchParams.forEach((_2, key) => {
     searchParams.has(key) || defaultSearchParams.getAll(key).forEach((value) => {
       searchParams.append(key, value);
     });
@@ -20208,16 +20208,16 @@ function getFormEncType(encType) {
   return encType != null && !supportedFormEncTypes.has(encType) ? (warning(!1, '"' + encType + '" is not a valid `encType` for `<Form>`/`<fetcher.Form>` ' + ('and will default to "' + defaultEncType + '"')), null) : encType;
 }
 function getFormSubmissionInfo(target, basename) {
-  let method, action, encType, formData, body;
+  let method, action3, encType, formData, body;
   if (isFormElement(target)) {
     let attr = target.getAttribute("action");
-    action = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType, formData = new FormData(target);
+    action3 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType, formData = new FormData(target);
   } else if (isButtonElement(target) || isInputElement(target) && (target.type === "submit" || target.type === "image")) {
     let form = target.form;
     if (form == null)
       throw new Error('Cannot submit a <button> or <input type="submit"> without a <form>');
     let attr = target.getAttribute("formaction") || form.getAttribute("action");
-    if (action = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType, formData = new FormData(form, target), !isFormDataSubmitterSupported()) {
+    if (action3 = attr ? stripBasename(attr, basename) : null, method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod, encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType, formData = new FormData(form, target), !isFormDataSubmitterSupported()) {
       let {
         name,
         type,
@@ -20232,10 +20232,10 @@ function getFormSubmissionInfo(target, basename) {
   } else {
     if (isHtmlElement(target))
       throw new Error('Cannot submit element that is not <form>, <button>, or <input type="submit|image">');
-    method = defaultMethod, action = null, encType = defaultEncType, body = target;
+    method = defaultMethod, action3 = null, encType = defaultEncType, body = target;
   }
   return formData && encType === "text/plain" && (body = formData, formData = void 0), {
-    action,
+    action: action3,
     method: method.toLowerCase(),
     encType,
     formData,
@@ -20592,7 +20592,7 @@ function useSubmit() {
   return React2.useCallback(function(target, options) {
     options === void 0 && (options = {}), validateClientSideSubmission();
     let {
-      action,
+      action: action3,
       method,
       encType,
       formData,
@@ -20600,7 +20600,7 @@ function useSubmit() {
     } = getFormSubmissionInfo(target, basename);
     if (options.navigate === !1) {
       let key = options.fetcherKey || getUniqueFetcherId();
-      router.fetch(key, currentRouteId, options.action || action, {
+      router.fetch(key, currentRouteId, options.action || action3, {
         preventScrollReset: options.preventScrollReset,
         formData,
         body,
@@ -20609,7 +20609,7 @@ function useSubmit() {
         unstable_flushSync: options.unstable_flushSync
       });
     } else
-      router.navigate(options.action || action, {
+      router.navigate(options.action || action3, {
         preventScrollReset: options.preventScrollReset,
         formData,
         body,
@@ -20623,22 +20623,22 @@ function useSubmit() {
       });
   }, [router, basename, currentRouteId]);
 }
-function useFormAction(action, _temp2) {
+function useFormAction(action3, _temp2) {
   let {
     relative
   } = _temp2 === void 0 ? {} : _temp2, {
     basename
   } = React2.useContext(NavigationContext), routeContext = React2.useContext(RouteContext);
   routeContext || invariant(!1, "useFormAction must be used inside a RouteContext");
-  let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action || ".", {
+  let [match] = routeContext.matches.slice(-1), path = _extends3({}, useResolvedPath(action3 || ".", {
     relative
   })), location = useLocation();
-  if (action == null) {
+  if (action3 == null) {
     path.search = location.search;
     let params = new URLSearchParams(path.search);
     params.has("index") && params.get("index") === "" && (params.delete("index"), path.search = params.toString() ? "?" + params.toString() : "");
   }
-  return (!action || action === ".") && match.route.index && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
+  return (!action3 || action3 === ".") && match.route.index && (path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index"), basename !== "/" && (path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname])), createPath(path);
 }
 function useFetcher(_temp3) {
   var _route$matches;
@@ -20909,12 +20909,12 @@ var React2, ReactDOM, defaultMethod, defaultEncType, _formDataSupportsSubmitter,
         replace,
         state,
         method = defaultMethod,
-        action,
+        action: action3,
         onSubmit,
         relative,
         preventScrollReset,
         unstable_viewTransition
-      } = _ref9, props = _objectWithoutPropertiesLoose(_ref9, _excluded3), submit = useSubmit(), formAction = useFormAction(action, {
+      } = _ref9, props = _objectWithoutPropertiesLoose(_ref9, _excluded3), submit = useSubmit(), formAction = useFormAction(action3, {
         relative
       }), formMethod = method.toLowerCase() === "get" ? "get" : "post";
       return /* @__PURE__ */ React2.createElement("form", _extends3({
@@ -20957,24 +20957,24 @@ var require_server = __commonJS({
   "node_modules/react-router-dom/server.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: !0 });
-    var React10 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
+    var React12 = require_react(), router = (init_router(), __toCommonJS(router_exports)), reactRouter = (init_dist(), __toCommonJS(dist_exports)), reactRouterDom = (init_dist2(), __toCommonJS(dist_exports2));
     function _interopNamespace(e) {
       if (e && e.__esModule)
         return e;
       var n = /* @__PURE__ */ Object.create(null);
-      return e && Object.keys(e).forEach(function(k) {
-        if (k !== "default") {
-          var d = Object.getOwnPropertyDescriptor(e, k);
-          Object.defineProperty(n, k, d.get ? d : {
+      return e && Object.keys(e).forEach(function(k2) {
+        if (k2 !== "default") {
+          var d2 = Object.getOwnPropertyDescriptor(e, k2);
+          Object.defineProperty(n, k2, d2.get ? d2 : {
             enumerable: !0,
             get: function() {
-              return e[k];
+              return e[k2];
             }
           });
         }
       }), n.default = e, Object.freeze(n);
     }
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React10);
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React12);
     function StaticRouter({
       basename,
       children,
@@ -20982,7 +20982,7 @@ var require_server = __commonJS({
       future: future2
     }) {
       typeof locationProp == "string" && (locationProp = reactRouterDom.parsePath(locationProp));
-      let action = router.Action.Pop, location = {
+      let action3 = router.Action.Pop, location = {
         pathname: locationProp.pathname || "/",
         search: locationProp.search || "",
         hash: locationProp.hash || "",
@@ -20993,7 +20993,7 @@ var require_server = __commonJS({
         basename,
         children,
         location,
-        navigationType: action,
+        navigationType: action3,
         navigator: staticNavigator,
         future: future2,
         static: !0
@@ -21227,7 +21227,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React10 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React12 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -22441,7 +22441,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
       };
       {
         var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/, msPattern = /^-ms-/, hyphenPattern = /-(.)/g, badStyleValueWithSemicolonPattern = /;\s*$/, warnedStyleNames = {}, warnedStyleValues = {}, warnedForNaNValue = !1, warnedForInfinityValue = !1, camelize = function(string) {
-          return string.replace(hyphenPattern, function(_, character) {
+          return string.replace(hyphenPattern, function(_2, character) {
             return character.toUpperCase();
           });
         }, warnHyphenatedStyleName = function(name) {
@@ -22472,9 +22472,9 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
         var str = "" + string, match = matchHtmlRegExp.exec(str);
         if (!match)
           return str;
-        var escape2, html = "", index2, lastIndex = 0;
-        for (index2 = match.index; index2 < str.length; index2++) {
-          switch (str.charCodeAt(index2)) {
+        var escape2, html = "", index, lastIndex = 0;
+        for (index = match.index; index < str.length; index++) {
+          switch (str.charCodeAt(index)) {
             case 34:
               escape2 = "&quot;";
               break;
@@ -22493,12 +22493,12 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
             default:
               continue;
           }
-          lastIndex !== index2 && (html += str.substring(lastIndex, index2)), lastIndex = index2 + 1, html += escape2;
+          lastIndex !== index && (html += str.substring(lastIndex, index)), lastIndex = index + 1, html += escape2;
         }
-        return lastIndex !== index2 ? html + str.substring(lastIndex, index2) : html;
+        return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
       }
-      function escapeTextForBrowser(text) {
-        return typeof text == "boolean" || typeof text == "number" ? "" + text : escapeHtml3(text);
+      function escapeTextForBrowser(text2) {
+        return typeof text2 == "boolean" || typeof text2 == "number" ? "" + text2 : escapeHtml3(text2);
       }
       var uppercasePattern = /([A-Z])/g, msPattern$1 = /^ms-/;
       function hyphenateStyleName(name) {
@@ -22579,12 +22579,12 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
         var idPrefix = responseState.idPrefix, id = ":" + idPrefix + "R" + treeId;
         return localId > 0 && (id += "H" + localId.toString(32)), id + ":";
       }
-      function encodeHTMLTextNode(text) {
-        return escapeTextForBrowser(text);
+      function encodeHTMLTextNode(text2) {
+        return escapeTextForBrowser(text2);
       }
       var textSeparator = "<!-- -->";
-      function pushTextInstance(target, text, responseState, textEmbedded) {
-        return text === "" ? textEmbedded : (textEmbedded && target.push(textSeparator), target.push(encodeHTMLTextNode(text)), !0);
+      function pushTextInstance(target, text2, responseState, textEmbedded) {
+        return text2 === "" ? textEmbedded : (textEmbedded && target.push(textSeparator), target.push(encodeHTMLTextNode(text2)), !0);
       }
       function pushSegmentFinale(target, responseState, lastPushedText, textEmbedded) {
         lastPushedText && textEmbedded && target.push(textSeparator);
@@ -22721,7 +22721,7 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React10.Children.forEach(children, function(child) {
+        return React12.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -22757,8 +22757,8 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
           if (value !== null ? (checkAttributeStringCoercion(value, "value"), stringValue = "" + value) : (innerHTML !== null && (didWarnInvalidOptionInnerHTML || (didWarnInvalidOptionInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected."))), stringValue = flattenOptionChildren(children)), isArray(selectedValue))
             for (var i = 0; i < selectedValue.length; i++) {
               checkAttributeStringCoercion(selectedValue[i], "value");
-              var v = "" + selectedValue[i];
-              if (v === stringValue) {
+              var v2 = "" + selectedValue[i];
+              if (v2 === stringValue) {
                 target.push(selectedMarkerAttribute);
                 break;
               }
@@ -23201,8 +23201,8 @@ var require_react_dom_server_legacy_browser_development = __commonJS({
           selectedValue: null
         };
       }
-      function pushTextInstance$1(target, text, responseState, textEmbedded) {
-        return responseState.generateStaticMarkup ? (target.push(escapeTextForBrowser(text)), !1) : pushTextInstance(target, text, responseState, textEmbedded);
+      function pushTextInstance$1(target, text2, responseState, textEmbedded) {
+        return responseState.generateStaticMarkup ? (target.push(escapeTextForBrowser(text2)), !1) : pushTextInstance(target, text2, responseState, textEmbedded);
       }
       function pushSegmentFinale$1(target, responseState, lastPushedText, textEmbedded) {
         if (!responseState.generateStaticMarkup)
@@ -23758,8 +23758,8 @@ Please update the following components: %s`,
       }
       function mountClassInstance(instance, ctor, newProps, maskedLegacyContext) {
         checkClassInstance(instance, ctor, newProps);
-        var initialState2 = instance.state !== void 0 ? instance.state : null;
-        instance.updater = classComponentUpdater, instance.props = newProps, instance.state = initialState2;
+        var initialState = instance.state !== void 0 ? instance.state : null;
+        instance.updater = classComponentUpdater, instance.props = newProps, instance.state = initialState;
         var internalInstance = {
           queue: [],
           replace: !1
@@ -23771,7 +23771,7 @@ Please update the following components: %s`,
           didWarnAboutDirectlyAssigningPropsToState.has(componentName) || (didWarnAboutDirectlyAssigningPropsToState.add(componentName), error("%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.", componentName));
         }
         var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
-        typeof getDerivedStateFromProps == "function" && (instance.state = applyDerivedStateFromProps(instance, ctor, getDerivedStateFromProps, initialState2, newProps)), typeof ctor.getDerivedStateFromProps != "function" && typeof instance.getSnapshotBeforeUpdate != "function" && (typeof instance.UNSAFE_componentWillMount == "function" || typeof instance.componentWillMount == "function") && (callComponentWillMount(ctor, instance), processUpdateQueue(internalInstance, instance, newProps, maskedLegacyContext));
+        typeof getDerivedStateFromProps == "function" && (instance.state = applyDerivedStateFromProps(instance, ctor, getDerivedStateFromProps, initialState, newProps)), typeof ctor.getDerivedStateFromProps != "function" && typeof instance.getSnapshotBeforeUpdate != "function" && (typeof instance.UNSAFE_componentWillMount == "function" || typeof instance.componentWillMount == "function") && (callComponentWillMount(ctor, instance), processUpdateQueue(internalInstance, instance, newProps, maskedLegacyContext));
       }
       var emptyTreeContext = {
         id: 1,
@@ -23781,8 +23781,8 @@ Please update the following components: %s`,
         var overflow = context.overflow, idWithLeadingBit = context.id, id = idWithLeadingBit & ~getLeadingBit(idWithLeadingBit);
         return id.toString(32) + overflow;
       }
-      function pushTreeContext(baseContext, totalChildren, index2) {
-        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index2 + 1, length = getBitLength(totalChildren) + baseLength;
+      function pushTreeContext(baseContext, totalChildren, index) {
+        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index + 1, length = getBitLength(totalChildren) + baseLength;
         if (length > 30) {
           var numberOfOverflowBits = baseLength - baseLength % 5, newOverflowBits = (1 << numberOfOverflowBits) - 1, newOverflow = (baseId & newOverflowBits).toString(32), restOfBaseId = baseId >> numberOfOverflowBits, restOfBaseLength = baseLength - numberOfOverflowBits, restOfLength = getBitLength(totalChildren) + restOfBaseLength, restOfNewBits = slot << restOfBaseLength, id = restOfNewBits | restOfBaseId, overflow = newOverflow + baseOverflow;
           return {
@@ -23808,10 +23808,10 @@ Please update the following components: %s`,
         var asUint = x >>> 0;
         return asUint === 0 ? 32 : 31 - (log(asUint) / LN2 | 0) | 0;
       }
-      function is2(x, y) {
+      function is3(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is2, currentlyRenderingComponent = null, currentlyRenderingTask = null, firstWorkInProgressHook = null, workInProgressHook = null, isReRender = !1, didScheduleRenderPhaseUpdate = !1, localIdCounter = 0, renderPhaseUpdates = null, numberOfReRenders = 0, RE_RENDER_LIMIT = 25, isInHookUserCodeInDev = !1, currentHookNameInDev;
+      var objectIs = typeof Object.is == "function" ? Object.is : is3, currentlyRenderingComponent = null, currentlyRenderingTask = null, firstWorkInProgressHook = null, workInProgressHook = null, isReRender = !1, didScheduleRenderPhaseUpdate = !1, localIdCounter = 0, renderPhaseUpdates = null, numberOfReRenders = 0, RE_RENDER_LIMIT = 25, isInHookUserCodeInDev = !1, currentHookNameInDev;
       function resolveCurrentlyRenderingComponent() {
         if (currentlyRenderingComponent === null)
           throw new Error(`Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
@@ -23866,14 +23866,14 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useContext4(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
-      function basicStateReducer(state, action) {
-        return typeof action == "function" ? action(state) : action;
+      function basicStateReducer(state, action3) {
+        return typeof action3 == "function" ? action3(state) : action3;
       }
-      function useState6(initialState2) {
+      function useState8(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
-          initialState2
+          initialState
         );
       }
       function useReducer(reducer, initialArg, init) {
@@ -23885,8 +23885,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
               renderPhaseUpdates.delete(queue);
               var newState = workInProgressHook.memoizedState, update = firstRenderPhaseUpdate;
               do {
-                var action = update.action;
-                isInHookUserCodeInDev = !0, newState = reducer(newState, action), isInHookUserCodeInDev = !1, update = update.next;
+                var action3 = update.action;
+                isInHookUserCodeInDev = !0, newState = reducer(newState, action3), isInHookUserCodeInDev = !1, update = update.next;
               } while (update !== null);
               return workInProgressHook.memoizedState = newState, [newState, dispatch];
             }
@@ -23894,8 +23894,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
           return [workInProgressHook.memoizedState, dispatch];
         } else {
           isInHookUserCodeInDev = !0;
-          var initialState2;
-          reducer === basicStateReducer ? initialState2 = typeof initialArg == "function" ? initialArg() : initialArg : initialState2 = init !== void 0 ? init(initialArg) : initialArg, isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = initialState2;
+          var initialState;
+          reducer === basicStateReducer ? initialState = typeof initialArg == "function" ? initialArg() : initialArg : initialState = init !== void 0 ? init(initialArg) : initialArg, isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = initialState;
           var _queue = workInProgressHook.queue = {
             last: null,
             dispatch: null
@@ -23932,13 +23932,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useLayoutEffect3(create, inputs) {
         currentHookNameInDev = "useLayoutEffect", error("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
       }
-      function dispatchAction(componentIdentity, queue, action) {
+      function dispatchAction(componentIdentity, queue, action3) {
         if (numberOfReRenders >= RE_RENDER_LIMIT)
           throw new Error("Too many re-renders. React limits the number of renders to prevent an infinite loop.");
         if (componentIdentity === currentlyRenderingComponent) {
           didScheduleRenderPhaseUpdate = !0;
           var update = {
-            action,
+            action: action3,
             next: null
           };
           renderPhaseUpdates === null && (renderPhaseUpdates = /* @__PURE__ */ new Map());
@@ -23989,7 +23989,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         useMemo: useMemo5,
         useReducer,
         useRef: useRef4,
-        useState: useState6,
+        useState: useState8,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
         useCallback: useCallback3,
@@ -24108,12 +24108,12 @@ Error generating stack: ` + x.message + `
         };
         return task.componentStack = null, abortSet.add(task), task;
       }
-      function createPendingSegment(request, index2, boundary, formatContext, lastPushedText, textEmbedded) {
+      function createPendingSegment(request, index, boundary, formatContext, lastPushedText, textEmbedded) {
         return {
           status: PENDING,
           id: -1,
           // lazily assigned later
-          index: index2,
+          index,
           parentFlushed: !1,
           chunks: [],
           children: [],
@@ -24264,8 +24264,8 @@ Error generating stack: ` + x.message + `
           }
           mountClassInstance(value, Component3, props, legacyContext), finishClassComponent(request, task, value, Component3, props);
         } else if (validateFunctionComponentInDev(Component3), hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
           try {
             renderNodeDestructive(request, task, value);
           } finally {
@@ -24300,8 +24300,8 @@ Error generating stack: ` + x.message + `
         pushFunctionComponentStackInDEV(task, type.render);
         var children = renderWithHooks(request, task, type.render, props, ref), hasId = checkDidRenderIdHook();
         if (hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
           try {
             renderNodeDestructive(request, task, children);
           } finally {
@@ -24808,7 +24808,7 @@ var require_react_dom_server_browser_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React10 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var React12 = require_react(), ReactVersion = "18.2.0", ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function warn(format) {
         {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)
@@ -26033,7 +26033,7 @@ var require_react_dom_server_browser_development = __commonJS({
       };
       {
         var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/, msPattern = /^-ms-/, hyphenPattern = /-(.)/g, badStyleValueWithSemicolonPattern = /;\s*$/, warnedStyleNames = {}, warnedStyleValues = {}, warnedForNaNValue = !1, warnedForInfinityValue = !1, camelize = function(string) {
-          return string.replace(hyphenPattern, function(_, character) {
+          return string.replace(hyphenPattern, function(_2, character) {
             return character.toUpperCase();
           });
         }, warnHyphenatedStyleName = function(name) {
@@ -26064,9 +26064,9 @@ var require_react_dom_server_browser_development = __commonJS({
         var str = "" + string, match = matchHtmlRegExp.exec(str);
         if (!match)
           return str;
-        var escape2, html = "", index2, lastIndex = 0;
-        for (index2 = match.index; index2 < str.length; index2++) {
-          switch (str.charCodeAt(index2)) {
+        var escape2, html = "", index, lastIndex = 0;
+        for (index = match.index; index < str.length; index++) {
+          switch (str.charCodeAt(index)) {
             case 34:
               escape2 = "&quot;";
               break;
@@ -26085,12 +26085,12 @@ var require_react_dom_server_browser_development = __commonJS({
             default:
               continue;
           }
-          lastIndex !== index2 && (html += str.substring(lastIndex, index2)), lastIndex = index2 + 1, html += escape2;
+          lastIndex !== index && (html += str.substring(lastIndex, index)), lastIndex = index + 1, html += escape2;
         }
-        return lastIndex !== index2 ? html + str.substring(lastIndex, index2) : html;
+        return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
       }
-      function escapeTextForBrowser(text) {
-        return typeof text == "boolean" || typeof text == "number" ? "" + text : escapeHtml3(text);
+      function escapeTextForBrowser(text2) {
+        return typeof text2 == "boolean" || typeof text2 == "number" ? "" + text2 : escapeHtml3(text2);
       }
       var uppercasePattern = /([A-Z])/g, msPattern$1 = /^ms-/;
       function hyphenateStyleName(name) {
@@ -26175,12 +26175,12 @@ var require_react_dom_server_browser_development = __commonJS({
         var idPrefix = responseState.idPrefix, id = ":" + idPrefix + "R" + treeId;
         return localId > 0 && (id += "H" + localId.toString(32)), id + ":";
       }
-      function encodeHTMLTextNode(text) {
-        return escapeTextForBrowser(text);
+      function encodeHTMLTextNode(text2) {
+        return escapeTextForBrowser(text2);
       }
       var textSeparator = stringToPrecomputedChunk("<!-- -->");
-      function pushTextInstance(target, text, responseState, textEmbedded) {
-        return text === "" ? textEmbedded : (textEmbedded && target.push(textSeparator), target.push(stringToChunk(encodeHTMLTextNode(text))), !0);
+      function pushTextInstance(target, text2, responseState, textEmbedded) {
+        return text2 === "" ? textEmbedded : (textEmbedded && target.push(textSeparator), target.push(stringToChunk(encodeHTMLTextNode(text2))), !0);
       }
       function pushSegmentFinale(target, responseState, lastPushedText, textEmbedded) {
         lastPushedText && textEmbedded && target.push(textSeparator);
@@ -26317,7 +26317,7 @@ var require_react_dom_server_browser_development = __commonJS({
       }
       function flattenOptionChildren(children) {
         var content = "";
-        return React10.Children.forEach(children, function(child) {
+        return React12.Children.forEach(children, function(child) {
           child != null && (content += child, !didWarnInvalidOptionChildren && typeof child != "string" && typeof child != "number" && (didWarnInvalidOptionChildren = !0, error("Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.")));
         }), content;
       }
@@ -26353,8 +26353,8 @@ var require_react_dom_server_browser_development = __commonJS({
           if (value !== null ? (checkAttributeStringCoercion(value, "value"), stringValue = "" + value) : (innerHTML !== null && (didWarnInvalidOptionInnerHTML || (didWarnInvalidOptionInnerHTML = !0, error("Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected."))), stringValue = flattenOptionChildren(children)), isArray(selectedValue))
             for (var i = 0; i < selectedValue.length; i++) {
               checkAttributeStringCoercion(selectedValue[i], "value");
-              var v = "" + selectedValue[i];
-              if (v === stringValue) {
+              var v2 = "" + selectedValue[i];
+              if (v2 === stringValue) {
                 target.push(selectedMarkerAttribute);
                 break;
               }
@@ -27310,8 +27310,8 @@ Please update the following components: %s`,
       }
       function mountClassInstance(instance, ctor, newProps, maskedLegacyContext) {
         checkClassInstance(instance, ctor, newProps);
-        var initialState2 = instance.state !== void 0 ? instance.state : null;
-        instance.updater = classComponentUpdater, instance.props = newProps, instance.state = initialState2;
+        var initialState = instance.state !== void 0 ? instance.state : null;
+        instance.updater = classComponentUpdater, instance.props = newProps, instance.state = initialState;
         var internalInstance = {
           queue: [],
           replace: !1
@@ -27323,7 +27323,7 @@ Please update the following components: %s`,
           didWarnAboutDirectlyAssigningPropsToState.has(componentName) || (didWarnAboutDirectlyAssigningPropsToState.add(componentName), error("%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.", componentName));
         }
         var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
-        typeof getDerivedStateFromProps == "function" && (instance.state = applyDerivedStateFromProps(instance, ctor, getDerivedStateFromProps, initialState2, newProps)), typeof ctor.getDerivedStateFromProps != "function" && typeof instance.getSnapshotBeforeUpdate != "function" && (typeof instance.UNSAFE_componentWillMount == "function" || typeof instance.componentWillMount == "function") && (callComponentWillMount(ctor, instance), processUpdateQueue(internalInstance, instance, newProps, maskedLegacyContext));
+        typeof getDerivedStateFromProps == "function" && (instance.state = applyDerivedStateFromProps(instance, ctor, getDerivedStateFromProps, initialState, newProps)), typeof ctor.getDerivedStateFromProps != "function" && typeof instance.getSnapshotBeforeUpdate != "function" && (typeof instance.UNSAFE_componentWillMount == "function" || typeof instance.componentWillMount == "function") && (callComponentWillMount(ctor, instance), processUpdateQueue(internalInstance, instance, newProps, maskedLegacyContext));
       }
       var emptyTreeContext = {
         id: 1,
@@ -27333,8 +27333,8 @@ Please update the following components: %s`,
         var overflow = context.overflow, idWithLeadingBit = context.id, id = idWithLeadingBit & ~getLeadingBit(idWithLeadingBit);
         return id.toString(32) + overflow;
       }
-      function pushTreeContext(baseContext, totalChildren, index2) {
-        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index2 + 1, length = getBitLength(totalChildren) + baseLength;
+      function pushTreeContext(baseContext, totalChildren, index) {
+        var baseIdWithLeadingBit = baseContext.id, baseOverflow = baseContext.overflow, baseLength = getBitLength(baseIdWithLeadingBit) - 1, baseId = baseIdWithLeadingBit & ~(1 << baseLength), slot = index + 1, length = getBitLength(totalChildren) + baseLength;
         if (length > 30) {
           var numberOfOverflowBits = baseLength - baseLength % 5, newOverflowBits = (1 << numberOfOverflowBits) - 1, newOverflow = (baseId & newOverflowBits).toString(32), restOfBaseId = baseId >> numberOfOverflowBits, restOfBaseLength = baseLength - numberOfOverflowBits, restOfLength = getBitLength(totalChildren) + restOfBaseLength, restOfNewBits = slot << restOfBaseLength, id = restOfNewBits | restOfBaseId, overflow = newOverflow + baseOverflow;
           return {
@@ -27360,10 +27360,10 @@ Please update the following components: %s`,
         var asUint = x >>> 0;
         return asUint === 0 ? 32 : 31 - (log(asUint) / LN2 | 0) | 0;
       }
-      function is2(x, y) {
+      function is3(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is2, currentlyRenderingComponent = null, currentlyRenderingTask = null, firstWorkInProgressHook = null, workInProgressHook = null, isReRender = !1, didScheduleRenderPhaseUpdate = !1, localIdCounter = 0, renderPhaseUpdates = null, numberOfReRenders = 0, RE_RENDER_LIMIT = 25, isInHookUserCodeInDev = !1, currentHookNameInDev;
+      var objectIs = typeof Object.is == "function" ? Object.is : is3, currentlyRenderingComponent = null, currentlyRenderingTask = null, firstWorkInProgressHook = null, workInProgressHook = null, isReRender = !1, didScheduleRenderPhaseUpdate = !1, localIdCounter = 0, renderPhaseUpdates = null, numberOfReRenders = 0, RE_RENDER_LIMIT = 25, isInHookUserCodeInDev = !1, currentHookNameInDev;
       function resolveCurrentlyRenderingComponent() {
         if (currentlyRenderingComponent === null)
           throw new Error(`Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
@@ -27418,14 +27418,14 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useContext4(context) {
         return currentHookNameInDev = "useContext", resolveCurrentlyRenderingComponent(), readContext(context);
       }
-      function basicStateReducer(state, action) {
-        return typeof action == "function" ? action(state) : action;
+      function basicStateReducer(state, action3) {
+        return typeof action3 == "function" ? action3(state) : action3;
       }
-      function useState6(initialState2) {
+      function useState8(initialState) {
         return currentHookNameInDev = "useState", useReducer(
           basicStateReducer,
           // useReducer has a special case to support lazy useState initializers
-          initialState2
+          initialState
         );
       }
       function useReducer(reducer, initialArg, init) {
@@ -27437,8 +27437,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
               renderPhaseUpdates.delete(queue);
               var newState = workInProgressHook.memoizedState, update = firstRenderPhaseUpdate;
               do {
-                var action = update.action;
-                isInHookUserCodeInDev = !0, newState = reducer(newState, action), isInHookUserCodeInDev = !1, update = update.next;
+                var action3 = update.action;
+                isInHookUserCodeInDev = !0, newState = reducer(newState, action3), isInHookUserCodeInDev = !1, update = update.next;
               } while (update !== null);
               return workInProgressHook.memoizedState = newState, [newState, dispatch];
             }
@@ -27446,8 +27446,8 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
           return [workInProgressHook.memoizedState, dispatch];
         } else {
           isInHookUserCodeInDev = !0;
-          var initialState2;
-          reducer === basicStateReducer ? initialState2 = typeof initialArg == "function" ? initialArg() : initialArg : initialState2 = init !== void 0 ? init(initialArg) : initialArg, isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = initialState2;
+          var initialState;
+          reducer === basicStateReducer ? initialState = typeof initialArg == "function" ? initialArg() : initialArg : initialState = init !== void 0 ? init(initialArg) : initialArg, isInHookUserCodeInDev = !1, workInProgressHook.memoizedState = initialState;
           var _queue = workInProgressHook.queue = {
             last: null,
             dispatch: null
@@ -27484,13 +27484,13 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
       function useLayoutEffect3(create, inputs) {
         currentHookNameInDev = "useLayoutEffect", error("useLayoutEffect does nothing on the server, because its effect cannot be encoded into the server renderer's output format. This will lead to a mismatch between the initial, non-hydrated UI and the intended UI. To avoid this, useLayoutEffect should only be used in components that render exclusively on the client. See https://reactjs.org/link/uselayouteffect-ssr for common fixes.");
       }
-      function dispatchAction(componentIdentity, queue, action) {
+      function dispatchAction(componentIdentity, queue, action3) {
         if (numberOfReRenders >= RE_RENDER_LIMIT)
           throw new Error("Too many re-renders. React limits the number of renders to prevent an infinite loop.");
         if (componentIdentity === currentlyRenderingComponent) {
           didScheduleRenderPhaseUpdate = !0;
           var update = {
-            action,
+            action: action3,
             next: null
           };
           renderPhaseUpdates === null && (renderPhaseUpdates = /* @__PURE__ */ new Map());
@@ -27541,7 +27541,7 @@ Incoming: %s`, currentHookNameInDev, "[" + nextDeps.join(", ") + "]", "[" + prev
         useMemo: useMemo5,
         useReducer,
         useRef: useRef4,
-        useState: useState6,
+        useState: useState8,
         useInsertionEffect: noop2,
         useLayoutEffect: useLayoutEffect3,
         useCallback: useCallback3,
@@ -27660,12 +27660,12 @@ Error generating stack: ` + x.message + `
         };
         return task.componentStack = null, abortSet.add(task), task;
       }
-      function createPendingSegment(request, index2, boundary, formatContext, lastPushedText, textEmbedded) {
+      function createPendingSegment(request, index, boundary, formatContext, lastPushedText, textEmbedded) {
         return {
           status: PENDING,
           id: -1,
           // lazily assigned later
-          index: index2,
+          index,
           parentFlushed: !1,
           chunks: [],
           children: [],
@@ -27816,8 +27816,8 @@ Error generating stack: ` + x.message + `
           }
           mountClassInstance(value, Component3, props, legacyContext), finishClassComponent(request, task, value, Component3, props);
         } else if (validateFunctionComponentInDev(Component3), hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
           try {
             renderNodeDestructive(request, task, value);
           } finally {
@@ -27852,8 +27852,8 @@ Error generating stack: ` + x.message + `
         pushFunctionComponentStackInDEV(task, type.render);
         var children = renderWithHooks(request, task, type.render, props, ref), hasId = checkDidRenderIdHook();
         if (hasId) {
-          var prevTreeContext = task.treeContext, totalChildren = 1, index2 = 0;
-          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index2);
+          var prevTreeContext = task.treeContext, totalChildren = 1, index = 0;
+          task.treeContext = pushTreeContext(prevTreeContext, totalChildren, index);
           try {
             renderNodeDestructive(request, task, children);
           } finally {
@@ -28380,14 +28380,14 @@ var require_react_jsx_dev_runtime_development = __commonJS({
     "use strict";
     (function() {
       "use strict";
-      var React10 = require_react(), REACT_ELEMENT_TYPE2 = Symbol.for("react.element"), REACT_PORTAL_TYPE2 = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE2 = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE2 = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE2 = Symbol.for("react.provider"), REACT_CONTEXT_TYPE2 = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE2 = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE2 = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE2 = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE2 = Symbol.for("react.memo"), REACT_LAZY_TYPE2 = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE2 = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
+      var React12 = require_react(), REACT_ELEMENT_TYPE2 = Symbol.for("react.element"), REACT_PORTAL_TYPE2 = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE2 = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE2 = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE2 = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE2 = Symbol.for("react.provider"), REACT_CONTEXT_TYPE2 = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE2 = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE2 = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE2 = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE2 = Symbol.for("react.memo"), REACT_LAZY_TYPE2 = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE2 = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, FAUX_ITERATOR_SYMBOL = "@@iterator";
       function getIteratorFn(maybeIterable) {
         if (maybeIterable === null || typeof maybeIterable != "object")
           return null;
         var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
         return typeof maybeIterator == "function" ? maybeIterator : null;
       }
-      var ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      var ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
       function error(format) {
         {
           for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)
@@ -28788,7 +28788,7 @@ var require_react_jsx_dev_runtime_development = __commonJS({
           value: source
         }), Object.freeze && (Object.freeze(element.props), Object.freeze(element)), element;
       };
-      function jsxDEV7(type, config, maybeKey, source, self) {
+      function jsxDEV32(type, config, maybeKey, source, self) {
         {
           var propName, props = {}, key = null, ref = null;
           maybeKey !== void 0 && (checkKeyStringCoercion(maybeKey), key = "" + maybeKey), hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key), hasValidRef(config) && (ref = config.ref, warnIfStringRefCannotBeAutoConverted(config, self));
@@ -28935,7 +28935,7 @@ Check the top-level render call using <` + parentName + ">.");
             var typeString;
             type === null ? typeString = "null" : isArray(type) ? typeString = "array" : type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE2 ? (typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />", info = " Did you accidentally export a JSX literal instead of a component?") : typeString = typeof type, error("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
           }
-          var element = jsxDEV7(type, props, key, source, self);
+          var element = jsxDEV32(type, props, key, source, self);
           if (element == null)
             return element;
           if (validType) {
@@ -28975,11 +28975,11 @@ var require_use_sync_external_store_with_selector_development = __commonJS({
     (function() {
       "use strict";
       typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart == "function" && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-      var React10 = require_react();
-      function is2(x, y) {
+      var React12 = require_react();
+      function is3(x, y) {
         return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
       }
-      var objectIs = typeof Object.is == "function" ? Object.is : is2, useSyncExternalStore3 = React10.useSyncExternalStore, useRef4 = React10.useRef, useEffect5 = React10.useEffect, useMemo5 = React10.useMemo, useDebugValue = React10.useDebugValue;
+      var objectIs = typeof Object.is == "function" ? Object.is : is3, useSyncExternalStore3 = React12.useSyncExternalStore, useRef4 = React12.useRef, useEffect8 = React12.useEffect, useMemo5 = React12.useMemo, useDebugValue = React12.useDebugValue;
       function useSyncExternalStoreWithSelector3(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
         var instRef = useRef4(null), inst;
         instRef.current === null ? (inst = {
@@ -29010,7 +29010,7 @@ var require_use_sync_external_store_with_selector_development = __commonJS({
           };
           return [getSnapshotWithSelector, getServerSnapshotWithSelector];
         }, [getSnapshot, getServerSnapshot, selector, isEqual]), getSelection = _useMemo[0], getServerSelection = _useMemo[1], value = useSyncExternalStore3(subscribe, getSelection, getServerSelection);
-        return useEffect5(function() {
+        return useEffect8(function() {
           inst.hasValue = !0, inst.value = value;
         }, [value]), useDebugValue(value), value;
       }
@@ -29028,7 +29028,7 @@ var require_with_selector = __commonJS({
 });
 
 // server.ts
-var import_cloudflare4 = __toESM(require_dist(), 1);
+var import_cloudflare8 = __toESM(require_dist(), 1);
 
 // node_modules/@remix-run/cloudflare-pages/dist/esm/worker.js
 var import_cloudflare = __toESM(require_dist());
@@ -29169,22 +29169,22 @@ async function getKeyedPrefetchLinks(matches2, manifest, routeModules) {
   }));
 }
 function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, location, mode2) {
-  let path = parsePathPatch(page), isNew = (match, index2) => currentMatches[index2] ? match.route.id !== currentMatches[index2].route.id : !0, matchPathChanged = (match, index2) => {
+  let path = parsePathPatch(page), isNew = (match, index) => currentMatches[index] ? match.route.id !== currentMatches[index].route.id : !0, matchPathChanged = (match, index) => {
     var _currentMatches$index;
     return (
       // param change, /users/123 -> /users/456
-      currentMatches[index2].pathname !== match.pathname || // splat param changed, which is not present in match.path
+      currentMatches[index].pathname !== match.pathname || // splat param changed, which is not present in match.path
       // e.g. /files/images/avatar.jpg -> files/finances.xls
-      ((_currentMatches$index = currentMatches[index2].route.path) === null || _currentMatches$index === void 0 ? void 0 : _currentMatches$index.endsWith("*")) && currentMatches[index2].params["*"] !== match.params["*"]
+      ((_currentMatches$index = currentMatches[index].route.path) === null || _currentMatches$index === void 0 ? void 0 : _currentMatches$index.endsWith("*")) && currentMatches[index].params["*"] !== match.params["*"]
     );
   };
   return mode2 === "data" && location.search !== path.search ? (
     // this is really similar to stuff in transition.ts, maybe somebody smarter
     // than me (or in less of a hurry) can share some of it. You're the best.
-    nextMatches.filter((match, index2) => {
+    nextMatches.filter((match, index) => {
       if (!manifest.routes[match.route.id].hasLoader)
         return !1;
-      if (isNew(match, index2) || matchPathChanged(match, index2))
+      if (isNew(match, index) || matchPathChanged(match, index))
         return !0;
       if (match.route.shouldRevalidate) {
         var _currentMatches$;
@@ -29200,9 +29200,9 @@ function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, loca
       }
       return !0;
     })
-  ) : nextMatches.filter((match, index2) => {
+  ) : nextMatches.filter((match, index) => {
     let manifestRoute = manifest.routes[match.route.id];
-    return (mode2 === "assets" || manifestRoute.hasLoader) && (isNew(match, index2) || matchPathChanged(match, index2));
+    return (mode2 === "assets" || manifestRoute.hasLoader) && (isNew(match, index) || matchPathChanged(match, index));
   });
 }
 function getDataLinkHrefs(page, matches2, manifest) {
@@ -29370,7 +29370,7 @@ function Links() {
   } = useRemixContext(), {
     errors: errors2,
     matches: routerMatches
-  } = useDataRouterStateContext(), matches2 = errors2 ? routerMatches.slice(0, routerMatches.findIndex((m) => errors2[m.route.id]) + 1) : routerMatches, keyedLinks = React3.useMemo(() => getKeyedLinksForMatches(matches2, routeModules, manifest), [matches2, routeModules, manifest]);
+  } = useDataRouterStateContext(), matches2 = errors2 ? routerMatches.slice(0, routerMatches.findIndex((m2) => errors2[m2.route.id]) + 1) : routerMatches, keyedLinks = React3.useMemo(() => getKeyedLinksForMatches(matches2, routeModules, manifest), [matches2, routeModules, manifest]);
   return /* @__PURE__ */ React3.createElement(React3.Fragment, null, criticalCss ? /* @__PURE__ */ React3.createElement("style", {
     dangerouslySetInnerHTML: {
       __html: criticalCss
@@ -29449,10 +29449,10 @@ function Meta() {
     loaderData
   } = useDataRouterStateContext(), location = useLocation(), _matches = routerMatches, error = null;
   if (errors2) {
-    let errorIdx = routerMatches.findIndex((m) => errors2[m.route.id]);
+    let errorIdx = routerMatches.findIndex((m2) => errors2[m2.route.id]);
     _matches = routerMatches.slice(0, errorIdx + 1), error = errors2[routerMatches[errorIdx].route.id];
   }
-  let meta = [], leafMeta = null, matches2 = [];
+  let meta5 = [], leafMeta = null, matches2 = [];
   for (let i = 0; i < _matches.length; i++) {
     let _match = _matches[i], routeId = _match.route.id, data = loaderData[routeId], params = _match.params, routeModule = routeModules[routeId], routeMeta = [], match = {
       id: routeId,
@@ -29473,9 +29473,9 @@ function Meta() {
       throw new Error("The route at " + _match.route.path + ` returns an invalid value. All route meta functions must return an array of meta objects.
 
 To reference the meta function API, see https://remix.run/route/meta`);
-    match.meta = routeMeta, matches2[i] = match, meta = [...routeMeta], leafMeta = meta;
+    match.meta = routeMeta, matches2[i] = match, meta5 = [...routeMeta], leafMeta = meta5;
   }
-  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, meta.flat().map((metaProps) => {
+  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, meta5.flat().map((metaProps) => {
     if (!metaProps)
       return null;
     if ("tagName" in metaProps) {
@@ -29498,12 +29498,12 @@ To reference the meta function API, see https://remix.run/route/meta`);
       }) : null;
     if ("script:ld+json" in metaProps)
       try {
-        let json5 = JSON.stringify(metaProps["script:ld+json"]);
+        let json8 = JSON.stringify(metaProps["script:ld+json"]);
         return /* @__PURE__ */ React3.createElement("script", {
-          key: `script:ld+json:${json5}`,
+          key: `script:ld+json:${json8}`,
           type: "application/ld+json",
           dangerouslySetInnerHTML: {
-            __html: json5
+            __html: json8
           }
         });
       } catch {
@@ -29587,9 +29587,9 @@ function Scripts(props) {
     }).join(`
 `) + (deferredScripts.length > 0 ? `__remixContext.a=${deferredScripts.length};` : "") : "";
     let routeModulesScript = isStatic ? `${(_manifest$hmr = manifest.hmr) !== null && _manifest$hmr !== void 0 && _manifest$hmr.runtime ? `import ${JSON.stringify(manifest.hmr.runtime)};` : ""}import ${JSON.stringify(manifest.url)};
-${matches2.map((match, index2) => `import * as route${index2} from ${JSON.stringify(manifest.routes[match.route.id].module)};`).join(`
+${matches2.map((match, index) => `import * as route${index} from ${JSON.stringify(manifest.routes[match.route.id].module)};`).join(`
 `)}
-window.__remixRouteModules = {${matches2.map((match, index2) => `${JSON.stringify(match.route.id)}:route${index2}`).join(",")}};
+window.__remixRouteModules = {${matches2.map((match, index) => `${JSON.stringify(match.route.id)}:route${index}`).join(",")}};
 
 import(${JSON.stringify(manifest.entry.module)});` : " ";
     return /* @__PURE__ */ React3.createElement(React3.Fragment, null, /* @__PURE__ */ React3.createElement("script", _extends4({}, props, {
@@ -29702,6 +29702,9 @@ function useLoaderData2() {
 }
 function useActionData2() {
   return useActionData();
+}
+function useFetcher2(opts = {}) {
+  return useFetcher(opts);
 }
 var LiveReload = function({
   origin = "http://localhost:3001/",
@@ -30068,20 +30071,20 @@ function RemixServer({
 function _iterableToArrayLimit(r, l) {
   var t = r == null ? null : typeof Symbol < "u" && r[Symbol.iterator] || r["@@iterator"];
   if (t != null) {
-    var e, n, i, u, a = [], f = !0, o = !1;
+    var e, n, i, u, a = [], f2 = !0, o = !1;
     try {
       if (i = (t = t.call(r)).next, l === 0) {
         if (Object(t) !== t)
           return;
-        f = !1;
+        f2 = !1;
       } else
-        for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0)
+        for (; !(f2 = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f2 = !0)
           ;
     } catch (r2) {
       o = !0, n = r2;
     } finally {
       try {
-        if (!f && t.return != null && (u = t.return(), Object(u) !== u))
+        if (!f2 && t.return != null && (u = t.return(), Object(u) !== u))
           return;
       } finally {
         if (o)
@@ -30166,9 +30169,9 @@ function _classPrivateFieldSet(receiver, privateMap, value) {
   var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set");
   return _classApplyDescriptorSet(receiver, descriptor, value), value;
 }
-function _classExtractFieldDescriptor(receiver, privateMap, action) {
+function _classExtractFieldDescriptor(receiver, privateMap, action3) {
   if (!privateMap.has(receiver))
-    throw new TypeError("attempted to " + action + " private field on non-instance");
+    throw new TypeError("attempted to " + action3 + " private field on non-instance");
   return privateMap.get(receiver);
 }
 function _classApplyDescriptorGet(receiver, descriptor) {
@@ -30393,8 +30396,8 @@ function amend(list2) {
     // Addresses: Yandex Search App
     ["search", "(?<! ya(?:yandex)?)search"]
   ].forEach(function(_ref) {
-    var _ref2 = _slicedToArray(_ref, 2), search = _ref2[0], replace = _ref2[1], index2 = list2.lastIndexOf(search);
-    ~index2 && list2.splice(index2, 1, replace);
+    var _ref2 = _slicedToArray(_ref, 2), search = _ref2[0], replace = _ref2[1], index = list2.lastIndexOf(search);
+    ~index && list2.splice(index, 1, replace);
   }), list2;
 }
 amend(list);
@@ -30502,8 +30505,8 @@ var flags = "i", _list = /* @__PURE__ */ new WeakMap(), _pattern = /* @__PURE__ 
     key: "exclude",
     value: function() {
       for (var filters = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : [], length = filters.length; length--; ) {
-        var index2 = _classPrivateMethodGet(this, _index, _index2).call(this, filters[length]);
-        index2 > -1 && _classPrivateFieldGet(this, _list).splice(index2, 1);
+        var index = _classPrivateMethodGet(this, _index, _index2).call(this, filters[length]);
+        index > -1 && _classPrivateFieldGet(this, _list).splice(index, 1);
       }
       _classPrivateMethodGet(this, _update, _update2).call(this);
     }
@@ -30553,8 +30556,7 @@ async function handleRequest(request, responseStatusCode, responseHeaders, remix
 var root_exports = {};
 __export(root_exports, {
   default: () => App,
-  links: () => links,
-  loader: () => loader
+  links: () => links
 });
 
 // node_modules/react-redux/dist/react-redux.mjs
@@ -30577,10 +30579,101 @@ function getContext() {
 var ReactReduxContext = /* @__PURE__ */ getContext(), notInitialized = () => {
   throw new Error("uSES not initialized!");
 };
-var useSyncExternalStoreWithSelector = notInitialized, initializeUseSelector = (fn) => {
+function createReduxContextHook(context = ReactReduxContext) {
+  return function() {
+    let contextValue = React9.useContext(context);
+    if (!contextValue)
+      throw new Error(
+        "could not find react-redux context value; please ensure the component is wrapped in a <Provider>"
+      );
+    return contextValue;
+  };
+}
+var useReduxContext = /* @__PURE__ */ createReduxContextHook(), useSyncExternalStoreWithSelector = notInitialized, initializeUseSelector = (fn) => {
   useSyncExternalStoreWithSelector = fn;
-};
-var REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_SERVER_CONTEXT_TYPE = Symbol.for("react.server_context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ForwardRef = REACT_FORWARD_REF_TYPE, Memo = REACT_MEMO_TYPE;
+}, refEquality = (a, b2) => a === b2;
+function createSelectorHook(context = ReactReduxContext) {
+  let useReduxContext2 = context === ReactReduxContext ? useReduxContext : createReduxContextHook(context);
+  return function(selector, equalityFnOrOptions = {}) {
+    let { equalityFn = refEquality, devModeChecks = {} } = typeof equalityFnOrOptions == "function" ? { equalityFn: equalityFnOrOptions } : equalityFnOrOptions;
+    if (!selector)
+      throw new Error("You must pass a selector to useSelector");
+    if (typeof selector != "function")
+      throw new Error("You must pass a function as a selector to useSelector");
+    if (typeof equalityFn != "function")
+      throw new Error(
+        "You must pass a function as an equality function to useSelector"
+      );
+    let {
+      store: store2,
+      subscription,
+      getServerState,
+      stabilityCheck,
+      identityFunctionCheck
+    } = useReduxContext2(), firstRun = React9.useRef(!0), wrappedSelector = React9.useCallback(
+      {
+        [selector.name](state) {
+          let selected = selector(state);
+          {
+            let {
+              identityFunctionCheck: finalIdentityFunctionCheck,
+              stabilityCheck: finalStabilityCheck
+            } = {
+              stabilityCheck,
+              identityFunctionCheck,
+              ...devModeChecks
+            };
+            if (finalStabilityCheck === "always" || finalStabilityCheck === "once" && firstRun.current) {
+              let toCompare = selector(state);
+              if (!equalityFn(selected, toCompare)) {
+                let stack;
+                try {
+                  throw new Error();
+                } catch (e) {
+                  ({ stack } = e);
+                }
+                console.warn(
+                  "Selector " + (selector.name || "unknown") + ` returned a different result when called with the same parameters. This can lead to unnecessary rerenders.
+Selectors that return a new reference (such as an object or an array) should be memoized: https://redux.js.org/usage/deriving-data-selectors#optimizing-selectors-with-memoization`,
+                  {
+                    state,
+                    selected,
+                    selected2: toCompare,
+                    stack
+                  }
+                );
+              }
+            }
+            if ((finalIdentityFunctionCheck === "always" || finalIdentityFunctionCheck === "once" && firstRun.current) && selected === state) {
+              let stack;
+              try {
+                throw new Error();
+              } catch (e) {
+                ({ stack } = e);
+              }
+              console.warn(
+                "Selector " + (selector.name || "unknown") + ` returned the root state when called. This can lead to unnecessary rerenders.
+Selectors that return the entire state are almost certainly a mistake, as they will cause a rerender whenever *anything* in state changes.`,
+                { stack }
+              );
+            }
+            firstRun.current && (firstRun.current = !1);
+          }
+          return selected;
+        }
+      }[selector.name],
+      [selector, stabilityCheck, devModeChecks.stabilityCheck]
+    ), selectedState = useSyncExternalStoreWithSelector(
+      subscription.addNestedSub,
+      store2.getState,
+      getServerState || store2.getState,
+      wrappedSelector,
+      equalityFn
+    );
+    return React9.useDebugValue(selectedState), selectedState;
+  };
+}
+var useSelector = /* @__PURE__ */ createSelectorHook(), REACT_ELEMENT_TYPE = Symbol.for("react.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_SERVER_CONTEXT_TYPE = Symbol.for("react.server_context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ForwardRef = REACT_FORWARD_REF_TYPE, Memo = REACT_MEMO_TYPE;
 function defaultNoopBatch(callback) {
   callback();
 }
@@ -30711,6 +30804,30 @@ function Provider({
   return /* @__PURE__ */ React9.createElement(Context.Provider, { value: contextValue }, children);
 }
 var Provider_default = Provider;
+function createStoreHook(context = ReactReduxContext) {
+  let useReduxContext2 = (
+    // @ts-ignore
+    context === ReactReduxContext ? useReduxContext : (
+      // @ts-ignore
+      createReduxContextHook(context)
+    )
+  );
+  return function() {
+    let { store: store2 } = useReduxContext2();
+    return store2;
+  };
+}
+var useStore = /* @__PURE__ */ createStoreHook();
+function createDispatchHook(context = ReactReduxContext) {
+  let useStore2 = (
+    // @ts-ignore
+    context === ReactReduxContext ? useStore : createStoreHook(context)
+  );
+  return function() {
+    return useStore2().dispatch;
+  };
+}
+var useDispatch = /* @__PURE__ */ createDispatchHook();
 initializeUseSelector(import_with_selector.useSyncExternalStoreWithSelector);
 initializeConnect(React22.useSyncExternalStore);
 
@@ -30810,23 +30927,23 @@ function createStore(reducer, preloadedState, enhancer) {
       }
     };
   }
-  function dispatch(action) {
-    if (!isPlainObject(action))
-      throw new Error(`Actions must be plain objects. Instead, the actual type was: '${kindOf(action)}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`);
-    if (typeof action.type > "u")
+  function dispatch(action3) {
+    if (!isPlainObject(action3))
+      throw new Error(`Actions must be plain objects. Instead, the actual type was: '${kindOf(action3)}'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.`);
+    if (typeof action3.type > "u")
       throw new Error('Actions may not have an undefined "type" property. You may have misspelled an action type string constant.');
-    if (typeof action.type != "string")
-      throw new Error(`Action "type" property must be a string. Instead, the actual type was: '${kindOf(action.type)}'. Value was: '${action.type}' (stringified)`);
+    if (typeof action3.type != "string")
+      throw new Error(`Action "type" property must be a string. Instead, the actual type was: '${kindOf(action3.type)}'. Value was: '${action3.type}' (stringified)`);
     if (isDispatching)
       throw new Error("Reducers may not dispatch actions.");
     try {
-      isDispatching = !0, currentState = currentReducer(currentState, action);
+      isDispatching = !0, currentState = currentReducer(currentState, action3);
     } finally {
       isDispatching = !1;
     }
     return (currentListeners = nextListeners).forEach((listener2) => {
       listener2();
-    }), action;
+    }), action3;
   }
   function replaceReducer(nextReducer) {
     if (typeof nextReducer != "function")
@@ -30879,8 +30996,8 @@ function warning2(message) {
   } catch {
   }
 }
-function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
-  let reducerKeys = Object.keys(reducers), argumentName = action && action.type === actionTypes_default.INIT ? "preloadedState argument passed to createStore" : "previous state received by the reducer";
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action3, unexpectedKeyCache) {
+  let reducerKeys = Object.keys(reducers), argumentName = action3 && action3.type === actionTypes_default.INIT ? "preloadedState argument passed to createStore" : "previous state received by the reducer";
   if (reducerKeys.length === 0)
     return "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers.";
   if (!isPlainObject(inputState))
@@ -30888,7 +31005,7 @@ function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, une
   let unexpectedKeys = Object.keys(inputState).filter((key) => !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key]);
   if (unexpectedKeys.forEach((key) => {
     unexpectedKeyCache[key] = !0;
-  }), !(action && action.type === actionTypes_default.REPLACE) && unexpectedKeys.length > 0)
+  }), !(action3 && action3.type === actionTypes_default.REPLACE) && unexpectedKeys.length > 0)
     return `Unexpected ${unexpectedKeys.length > 1 ? "keys" : "key"} "${unexpectedKeys.join('", "')}" found in ${argumentName}. Expected to find one of the known reducer keys instead: "${reducerKeys.join('", "')}". Unexpected keys will be ignored.`;
 }
 function assertReducerShape(reducers) {
@@ -30918,18 +31035,18 @@ function combineReducers(reducers) {
   } catch (e) {
     shapeAssertionError = e;
   }
-  return function(state = {}, action) {
+  return function(state = {}, action3) {
     if (shapeAssertionError)
       throw shapeAssertionError;
     {
-      let warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action, unexpectedKeyCache);
+      let warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action3, unexpectedKeyCache);
       warningMessage && warning2(warningMessage);
     }
     let hasChanged = !1, nextState = {};
     for (let i = 0; i < finalReducerKeys.length; i++) {
-      let key = finalReducerKeys[i], reducer = finalReducers[key], previousStateForKey = state[key], nextStateForKey = reducer(previousStateForKey, action);
+      let key = finalReducerKeys[i], reducer = finalReducers[key], previousStateForKey = state[key], nextStateForKey = reducer(previousStateForKey, action3);
       if (typeof nextStateForKey > "u") {
-        let actionType = action && action.type;
+        let actionType = action3 && action3.type;
         throw new Error(`When called with an action of type ${actionType ? `"${String(actionType)}"` : "(unknown type)"}, the slice reducer for key "${key}" returned undefined. To ignore an action, you must explicitly return the previous state. If you want this reducer to hold no value, you can return null instead of undefined.`);
       }
       nextState[key] = nextStateForKey, hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
@@ -30938,7 +31055,7 @@ function combineReducers(reducers) {
   };
 }
 function compose(...funcs) {
-  return funcs.length === 0 ? (arg) => arg : funcs.length === 1 ? funcs[0] : funcs.reduce((a, b) => (...args) => a(b(...args)));
+  return funcs.length === 0 ? (arg) => arg : funcs.length === 1 ? funcs[0] : funcs.reduce((a, b2) => (...args) => a(b2(...args)));
 }
 function applyMiddleware(...middlewares) {
   return (createStore2) => (reducer, preloadedState) => {
@@ -30946,7 +31063,7 @@ function applyMiddleware(...middlewares) {
       throw new Error("Dispatching while constructing your middleware is not allowed. Other middleware would not be applied to this dispatch.");
     }, middlewareAPI = {
       getState: store2.getState,
-      dispatch: (action, ...args) => dispatch(action, ...args)
+      dispatch: (action3, ...args) => dispatch(action3, ...args)
     }, chain = middlewares.map((middleware) => middleware(middlewareAPI));
     return dispatch = compose(...chain)(store2.dispatch), {
       ...store2,
@@ -30954,8 +31071,8 @@ function applyMiddleware(...middlewares) {
     };
   };
 }
-function isAction(action) {
-  return isPlainObject(action) && "type" in action && typeof action.type == "string";
+function isAction(action3) {
+  return isPlainObject(action3) && "type" in action3 && typeof action3.type == "string";
 }
 
 // node_modules/immer/dist/immer.mjs
@@ -31019,7 +31136,7 @@ function isPlainObject2(value) {
 function each(obj, iter) {
   getArchtype(obj) === 0 ? Object.entries(obj).forEach(([key, value]) => {
     iter(key, value, obj);
-  }) : obj.forEach((entry2, index2) => iter(index2, entry2, obj));
+  }) : obj.forEach((entry2, index) => iter(index, entry2, obj));
 }
 function getArchtype(thing) {
   let state = thing[DRAFT_STATE];
@@ -31057,12 +31174,12 @@ function shallowCopy(base, strict) {
   delete descriptors[DRAFT_STATE];
   let keys = Reflect.ownKeys(descriptors);
   for (let i = 0; i < keys.length; i++) {
-    let key = keys[i], desc = descriptors[key];
-    desc.writable === !1 && (desc.writable = !0, desc.configurable = !0), (desc.get || desc.set) && (descriptors[key] = {
+    let key = keys[i], desc2 = descriptors[key];
+    desc2.writable === !1 && (desc2.writable = !0, desc2.configurable = !0), (desc2.get || desc2.set) && (descriptors[key] = {
       configurable: !0,
       writable: !0,
       // could live with !!desc.set as well here...
-      enumerable: desc.enumerable,
+      enumerable: desc2.enumerable,
       value: base[key]
     });
   }
@@ -31217,9 +31334,9 @@ var objectTraps = {
     return Reflect.ownKeys(latest(state));
   },
   set(state, prop, value) {
-    let desc = getDescriptorFromProto(latest(state), prop);
-    if (desc?.set)
-      return desc.set.call(state.draft_, value), !0;
+    let desc2 = getDescriptorFromProto(latest(state), prop);
+    if (desc2?.set)
+      return desc2.set.call(state.draft_, value), !0;
     if (!state.modified_) {
       let current2 = peek(latest(state), prop), currentState = current2?.[DRAFT_STATE];
       if (currentState && currentState.base_ === value)
@@ -31238,11 +31355,11 @@ var objectTraps = {
   // Note: We never coerce `desc.value` into an Immer draft, because we can't make
   // the same guarantee in ES5 mode.
   getOwnPropertyDescriptor(state, prop) {
-    let owner = latest(state), desc = Reflect.getOwnPropertyDescriptor(owner, prop);
-    return desc && {
+    let owner = latest(state), desc2 = Reflect.getOwnPropertyDescriptor(owner, prop);
+    return desc2 && {
       writable: !0,
       configurable: state.type_ !== 1 || prop !== "length",
-      enumerable: desc.enumerable,
+      enumerable: desc2.enumerable,
       value: owner[prop]
     };
   },
@@ -31272,11 +31389,11 @@ function peek(draft, prop) {
   return (state ? latest(state) : draft)[prop];
 }
 function readPropFromProto(state, source, prop) {
-  let desc = getDescriptorFromProto(source, prop);
-  return desc ? "value" in desc ? desc.value : (
+  let desc2 = getDescriptorFromProto(source, prop);
+  return desc2 ? "value" in desc2 ? desc2.value : (
     // This is a very special case, if the prop is a getter defined by the
     // prototype, we should invoke it with the draft as context!
-    desc.get?.call(state.draft_)
+    desc2.get?.call(state.draft_)
   ) : void 0;
 }
 function getDescriptorFromProto(source, prop) {
@@ -31284,9 +31401,9 @@ function getDescriptorFromProto(source, prop) {
     return;
   let proto2 = getPrototypeOf(source);
   for (; proto2; ) {
-    let desc = Object.getOwnPropertyDescriptor(proto2, prop);
-    if (desc)
-      return desc;
+    let desc2 = Object.getOwnPropertyDescriptor(proto2, prop);
+    if (desc2)
+      return desc2;
     proto2 = getPrototypeOf(proto2);
   }
 }
@@ -31617,7 +31734,7 @@ function createSelectorCreator(memoizeOrOptions, ...memoizeOptionsFromArgs) {
 
 // node_modules/redux-thunk/dist/redux-thunk.mjs
 function createThunkMiddleware(extraArgument) {
-  return ({ dispatch, getState }) => (next) => (action) => typeof action == "function" ? action(dispatch, getState, extraArgument) : next(action);
+  return ({ dispatch, getState }) => (next) => (action3) => typeof action3 == "function" ? action3(dispatch, getState, extraArgument) : next(action3);
 }
 var thunk = createThunkMiddleware(), withExtraArgument = createThunkMiddleware;
 
@@ -31635,7 +31752,7 @@ var createDraftSafeSelectorCreator = (...args) => {
   return function(noop3) {
     return noop3;
   };
-}, hasMatchFunction = (v) => v && typeof v.match == "function";
+}, hasMatchFunction = (v2) => v2 && typeof v2.match == "function";
 function createAction(type, prepareAction) {
   function actionCreator(...args) {
     if (prepareAction) {
@@ -31658,11 +31775,11 @@ function createAction(type, prepareAction) {
       payload: args[0]
     };
   }
-  return actionCreator.toString = () => `${type}`, actionCreator.type = type, actionCreator.match = (action) => isAction(action) && action.type === type, actionCreator;
+  return actionCreator.toString = () => `${type}`, actionCreator.type = type, actionCreator.match = (action3) => isAction(action3) && action3.type === type, actionCreator;
 }
-function isActionCreator(action) {
-  return typeof action == "function" && "type" in action && // hasMatchFunction only wants Matchers but I don't see the point in rewriting it
-  hasMatchFunction(action);
+function isActionCreator(action3) {
+  return typeof action3 == "function" && "type" in action3 && // hasMatchFunction only wants Matchers but I don't see the point in rewriting it
+  hasMatchFunction(action3);
 }
 function getMessage(type) {
   let splitType = type ? `${type}`.split("/") : [], actionName = splitType[splitType.length - 1] || "actionCreator";
@@ -31673,7 +31790,7 @@ function createActionCreatorInvariantMiddleware(options = {}) {
   let {
     isActionCreator: isActionCreator2 = isActionCreator
   } = options;
-  return () => (next) => (action) => (isActionCreator2(action) && console.warn(getMessage(action.type)), next(action));
+  return () => (next) => (action3) => (isActionCreator2(action3) && console.warn(getMessage(action3.type)), next(action3));
 }
 function getTimeMeasureUtils(maxDelay, fnName) {
   let elapsed = 0;
@@ -31781,7 +31898,7 @@ function createImmutableStateInvariantMiddleware(options = {}) {
       return JSON.stringify(obj, getSerialize2(serializer, decycler), indent);
     }, getSerialize2 = function(serializer, decycler) {
       let stack = [], keys = [];
-      return decycler || (decycler = function(_, value) {
+      return decycler || (decycler = function(_2, value) {
         return stack[0] === value ? "[Circular ~]" : "[Circular ~." + keys.slice(0, stack.indexOf(value)).join(".") + "]";
       }), function(key, value) {
         if (stack.length > 0) {
@@ -31802,16 +31919,16 @@ function createImmutableStateInvariantMiddleware(options = {}) {
       getState
     }) => {
       let state = getState(), tracker = track(state), result;
-      return (next) => (action) => {
+      return (next) => (action3) => {
         let measureUtils = getTimeMeasureUtils(warnAfter, "ImmutableStateInvariantMiddleware");
         measureUtils.measureTime(() => {
           if (state = getState(), result = tracker.detectMutations(), tracker = track(state), result.wasMutated)
             throw new Error(`A state mutation was detected between dispatches, in the path '${result.path || ""}'.  This may cause incorrect behavior. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
         });
-        let dispatchedAction = next(action);
+        let dispatchedAction = next(action3);
         return measureUtils.measureTime(() => {
           if (state = getState(), result = tracker.detectMutations(), tracker = track(state), result.wasMutated)
-            throw new Error(`A state mutation was detected inside a dispatch, in the path: ${result.path || ""}. Take a look at the reducer(s) handling the action ${stringify2(action)}. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
+            throw new Error(`A state mutation was detected inside a dispatch, in the path: ${result.path || ""}. Take a look at the reducer(s) handling the action ${stringify2(action3)}. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)`);
         }), measureUtils.warnIfExceeded(), dispatchedAction;
       };
     };
@@ -31866,19 +31983,19 @@ function createSerializableStateInvariantMiddleware(options = {}) {
       ignoreActions = !1,
       disableCache = !1
     } = options, cache = !disableCache && WeakSet ? /* @__PURE__ */ new WeakSet() : void 0;
-    return (storeAPI) => (next) => (action) => {
-      if (!isAction(action))
-        return next(action);
-      let result = next(action), measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
-      return !ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action.type) !== -1) && measureUtils.measureTime(() => {
-        let foundActionNonSerializableValue = findNonSerializableValue(action, "", isSerializable, getEntries, ignoredActionPaths, cache);
+    return (storeAPI) => (next) => (action3) => {
+      if (!isAction(action3))
+        return next(action3);
+      let result = next(action3), measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
+      return !ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action3.type) !== -1) && measureUtils.measureTime(() => {
+        let foundActionNonSerializableValue = findNonSerializableValue(action3, "", isSerializable, getEntries, ignoredActionPaths, cache);
         if (foundActionNonSerializableValue) {
           let {
             keyPath,
             value
           } = foundActionNonSerializableValue;
           console.error(`A non-serializable value was detected in an action, in the path: \`${keyPath}\`. Value:`, value, `
-Take a look at the logic that dispatched this action: `, action, `
+Take a look at the logic that dispatched this action: `, action3, `
 (See https://redux.js.org/faq/actions#why-should-type-be-a-string-or-at-least-serializable-why-should-my-action-types-be-constants)`, `
 (To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)`);
         }
@@ -31890,7 +32007,7 @@ Take a look at the logic that dispatched this action: `, action, `
             value
           } = foundStateNonSerializableValue;
           console.error(`A non-serializable value was detected in the state, in the path: \`${keyPath}\`. Value:`, value, `
-Take a look at the reducer(s) handling this action type: ${action.type}.
+Take a look at the reducer(s) handling this action type: ${action3.type}.
 (See https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)`);
         }
       }), measureUtils.warnIfExceeded()), result;
@@ -31940,9 +32057,9 @@ var createQueueWithTimer = (timeout) => (notify) => {
     },
     // Override the base `store.dispatch` method so that we can check actions
     // for the `shouldAutoBatch` flag and determine if batching is active
-    dispatch(action) {
+    dispatch(action3) {
       try {
-        return notifying = !action?.meta?.[SHOULD_AUTOBATCH], shouldNotifyAtEndOfTick = !notifying, shouldNotifyAtEndOfTick && (notificationQueued || (notificationQueued = !0, queueCallback(notifyListeners))), store2.dispatch(action);
+        return notifying = !action3?.meta?.[SHOULD_AUTOBATCH], shouldNotifyAtEndOfTick = !notifying, shouldNotifyAtEndOfTick && (notificationQueued || (notificationQueued = !0, queueCallback(notifyListeners))), store2.dispatch(action3);
       } finally {
         notifying = !0;
       }
@@ -32029,32 +32146,32 @@ function executeReducerBuilderCallback(builderCallback) {
 function isStateFunction(x) {
   return typeof x == "function";
 }
-function createReducer(initialState2, mapOrBuilderCallback) {
+function createReducer(initialState, mapOrBuilderCallback) {
   if (typeof mapOrBuilderCallback == "object")
     throw new Error("The object notation for `createReducer` has been removed. Please use the 'builder callback' notation instead: https://redux-toolkit.js.org/api/createReducer");
   let [actionsMap, finalActionMatchers, finalDefaultCaseReducer] = executeReducerBuilderCallback(mapOrBuilderCallback), getInitialState;
-  if (isStateFunction(initialState2))
-    getInitialState = () => freezeDraftable(initialState2());
+  if (isStateFunction(initialState))
+    getInitialState = () => freezeDraftable(initialState());
   else {
-    let frozenInitialState = freezeDraftable(initialState2);
+    let frozenInitialState = freezeDraftable(initialState);
     getInitialState = () => frozenInitialState;
   }
-  function reducer(state = getInitialState(), action) {
-    let caseReducers = [actionsMap[action.type], ...finalActionMatchers.filter(({
+  function reducer(state = getInitialState(), action3) {
+    let caseReducers = [actionsMap[action3.type], ...finalActionMatchers.filter(({
       matcher
-    }) => matcher(action)).map(({
+    }) => matcher(action3)).map(({
       reducer: reducer2
     }) => reducer2)];
     return caseReducers.filter((cr) => !!cr).length === 0 && (caseReducers = [finalDefaultCaseReducer]), caseReducers.reduce((previousState, caseReducer) => {
       if (caseReducer)
         if (isDraft(previousState)) {
-          let result = caseReducer(previousState, action);
+          let result = caseReducer(previousState, action3);
           return result === void 0 ? previousState : result;
         } else {
           if (isDraftable(previousState))
-            return produce(previousState, (draft) => caseReducer(draft, action));
+            return produce(previousState, (draft) => caseReducer(draft, action3));
           {
-            let result = caseReducer(previousState, action);
+            let result = caseReducer(previousState, action3);
             if (result === void 0) {
               if (previousState === null)
                 return previousState;
@@ -32073,13 +32190,13 @@ var urlAlphabet = "ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXI
   for (; i--; )
     id += urlAlphabet[Math.random() * 64 | 0];
   return id;
-}, matches = (matcher, action) => hasMatchFunction(matcher) ? matcher.match(action) : matcher(action);
+}, matches = (matcher, action3) => hasMatchFunction(matcher) ? matcher.match(action3) : matcher(action3);
 function isAnyOf(...matchers) {
-  return (action) => matchers.some((matcher) => matches(matcher, action));
+  return (action3) => matchers.some((matcher) => matches(matcher, action3));
 }
 var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = class {
-  constructor(payload, meta) {
-    this.payload = payload, this.meta = meta;
+  constructor(payload, meta5) {
+    this.payload = payload, this.meta = meta5;
   }
   /*
   type-only property to distinguish between RejectWithValue and FulfillWithMeta
@@ -32087,8 +32204,8 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   */
   _type;
 }, FulfillWithMeta = class {
-  constructor(payload, meta) {
-    this.payload = payload, this.meta = meta;
+  constructor(payload, meta5) {
+    this.payload = payload, this.meta = meta5;
   }
   /*
   type-only property to distinguish between RejectWithValue and FulfillWithMeta
@@ -32107,27 +32224,27 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   };
 }, createAsyncThunk = /* @__PURE__ */ (() => {
   function createAsyncThunk2(typePrefix, payloadCreator, options) {
-    let fulfilled = createAction(typePrefix + "/fulfilled", (payload, requestId, arg, meta) => ({
+    let fulfilled = createAction(typePrefix + "/fulfilled", (payload, requestId, arg, meta5) => ({
       payload,
       meta: {
-        ...meta || {},
+        ...meta5 || {},
         arg,
         requestId,
         requestStatus: "fulfilled"
       }
-    })), pending = createAction(typePrefix + "/pending", (requestId, arg, meta) => ({
+    })), pending = createAction(typePrefix + "/pending", (requestId, arg, meta5) => ({
       payload: void 0,
       meta: {
-        ...meta || {},
+        ...meta5 || {},
         arg,
         requestId,
         requestStatus: "pending"
       }
-    })), rejected = createAction(typePrefix + "/rejected", (error, requestId, arg, payload, meta) => ({
+    })), rejected = createAction(typePrefix + "/rejected", (error, requestId, arg, payload, meta5) => ({
       payload,
       error: (options && options.serializeError || miniSerializeError)(error || "Rejected"),
       meta: {
-        ...meta || {},
+        ...meta5 || {},
         arg,
         requestId,
         rejectedWithValue: !!payload,
@@ -32154,7 +32271,7 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
                 name: "ConditionError",
                 message: "Aborted due to condition callback returning false."
               };
-            let abortedPromise = new Promise((_, reject) => abortController.signal.addEventListener("abort", () => reject({
+            let abortedPromise = new Promise((_2, reject) => abortController.signal.addEventListener("abort", () => reject({
               name: "AbortError",
               message: abortReason || "Aborted"
             })));
@@ -32171,8 +32288,8 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
               requestId,
               signal: abortController.signal,
               abort,
-              rejectWithValue: (value, meta) => new RejectWithValue(value, meta),
-              fulfillWithValue: (value, meta) => new FulfillWithMeta(value, meta)
+              rejectWithValue: (value, meta5) => new RejectWithValue(value, meta5),
+              fulfillWithValue: (value, meta5) => new FulfillWithMeta(value, meta5)
             })).then((result) => {
               if (result instanceof RejectWithValue)
                 throw result;
@@ -32203,12 +32320,12 @@ var commonProperties = ["name", "message", "stack", "code"], RejectWithValue = c
   }
   return createAsyncThunk2.withTypes = () => createAsyncThunk2, createAsyncThunk2;
 })();
-function unwrapResult(action) {
-  if (action.meta && action.meta.rejectedWithValue)
-    throw action.payload;
-  if (action.error)
-    throw action.error;
-  return action.payload;
+function unwrapResult(action3) {
+  if (action3.meta && action3.meta.rejectedWithValue)
+    throw action3.payload;
+  if (action3.error)
+    throw action3.error;
+  return action3.payload;
 }
 function isThenable(value) {
   return value !== null && typeof value == "object" && typeof value.then == "function";
@@ -32278,16 +32395,16 @@ function buildCreateSlice({
           builder.addCase(key, finalCaseReducers[key]);
         for (let sM of context.sliceMatchers)
           builder.addMatcher(sM.matcher, sM.reducer);
-        for (let m of actionMatchers)
-          builder.addMatcher(m.matcher, m.reducer);
+        for (let m2 of actionMatchers)
+          builder.addMatcher(m2.matcher, m2.reducer);
         defaultCaseReducer && builder.addDefaultCase(defaultCaseReducer);
       });
     }
     let selectSelf = (state) => state, injectedSelectorCache = /* @__PURE__ */ new WeakMap(), _reducer, slice = {
       name,
       reducerPath,
-      reducer(state, action) {
-        return _reducer || (_reducer = buildReducer()), _reducer(state, action);
+      reducer(state, action3) {
+        return _reducer || (_reducer = buildReducer()), _reducer(state, action3);
       },
       actions: context.actionCreators,
       caseReducers: context.sliceCaseReducersByName,
@@ -32430,38 +32547,6 @@ var {
 var alm = "listenerMiddleware";
 var addListener = createAction(`${alm}/add`), clearAllListeners = createAction(`${alm}/removeAll`), removeListener = createAction(`${alm}/remove`);
 var ORIGINAL_STATE = Symbol.for("rtk-state-proxy-original");
-
-// app/state/counter/counterSlice.tsx
-var initialState = {
-  value: 0
-}, counterSlice = createSlice({
-  name: "counter",
-  initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
-    }
-  },
-  extraReducers: (builder) => {
-    builder.addCase(incrementAsync.pending, () => {
-      console.log("incrementAsync.pending");
-    }).addCase(
-      incrementAsync.fulfilled,
-      (state, action) => {
-        state.value += action.payload;
-      }
-    );
-  }
-}), incrementAsync = createAsyncThunk(
-  "counter/incrementAsync",
-  async (amount) => (await new Promise((resolve) => setTimeout(resolve, 1e3)), amount)
-), { increment, decrement, incrementByAmount } = counterSlice.actions, counterSlice_default = counterSlice.reducer;
 
 // api/models/api-result.ts
 var ApiResult = class {
@@ -32608,23 +32693,24 @@ var UserService = class extends SecureService {
 // app/state/user/userSlice.tsx
 var initialStateValue = {
   user: null,
-  tokens: null,
-  isLoading: !0,
-  isLoggedIn: !1,
-  locale: "en-US",
-  error: null
+  context: {
+    isLoading: !0,
+    isLoggedIn: !1,
+    locale: "en-US",
+    error: null
+  }
 }, userSlice = createSlice({
   name: "user",
   initialState: { value: initialStateValue },
   reducers: {
-    setUser: (state, action) => {
-      state.value.user = action.payload, state.value.isLoggedIn = !0, state.value.isLoading = !1, state.value.error = null;
+    setUser: (state, action3) => {
+      state.value.user = action3.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
     },
     setLogout: (state) => {
-      state.value.user = null, state.value.tokens = null, state.value.isLoggedIn = !1;
+      state.value.user = null, state.value.context.isLoggedIn = !1;
     },
-    setLoading: (state, action) => {
-      state.value.isLoading = action.payload;
+    setLoading: (state, action3) => {
+      state.value.context.isLoading = action3.payload;
     },
     // Optionally, you can add a reset action to set the state back to its initial value
     resetState: (state) => {
@@ -32632,18 +32718,21 @@ var initialStateValue = {
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(loginUser.fulfilled, (state, action) => {
-      state.value.user = action.payload, state.value.isLoggedIn = !0, state.value.isLoading = !1, state.value.error = null;
-    }).addCase(loginUser.rejected, (state, action) => {
-      state.value.error = "Login failed", state.value.isLoading = !1;
+    builder.addCase(loginUser.fulfilled, (state, action3) => {
+      state.value.user = action3.payload, state.value.context.isLoggedIn = !0, state.value.context.isLoading = !1, state.value.context.error = null;
+    }).addCase(loginUser.rejected, (state, action3) => {
+      state.value.context.error = "Login failed", state.value.context.isLoading = !1;
     });
   }
 }), loginUser = createAsyncThunk(
   "user/loginUser",
   async (credentials, { dispatch }) => {
     try {
-      let user = (await UserService.loginUser(credentials.username, credentials.password)).user;
-      return dispatch(setUser(user)), user;
+      let user2 = (await UserService.loginUser(
+        credentials.username,
+        credentials.password
+      )).user;
+      return dispatch(setUser(user2)), user2;
     } catch (error) {
       throw error;
     }
@@ -32654,31 +32743,926 @@ var { setUser, setLogout, setLoading, resetState } = userSlice.actions, userSlic
 // app/state/store.ts
 var initializeStore = (preloadedState = {}) => configureStore({
   reducer: {
-    user: userSlice_default,
-    counter: counterSlice_default
+    user: userSlice_default
   },
   preloadedState
 });
 
 // app/index.css
-var app_default = "/build/_assets/index-GMKPFCQ6.css";
+var app_default = "/build/_assets/index-RIDNN4T4.css";
 
 // app/root.tsx
-var import_cloudflare3 = __toESM(require_dist(), 1);
+var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1), links = () => [
+  ...void 0 ? [{ rel: "stylesheet", href: app_default }] : []
+], store = initializeStore({});
+function App() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("html", { lang: "en", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("head", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 76,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 77,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Meta, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 78,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Links, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 79,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/root.tsx",
+      lineNumber: 75,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Provider_default, { store, children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Outlet, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 83,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 84,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Scripts, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 85,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(LiveReload, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 86,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/root.tsx",
+      lineNumber: 82,
+      columnNumber: 9
+    }, this) }, void 0, !1, {
+      fileName: "app/root.tsx",
+      lineNumber: 81,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/root.tsx",
+    lineNumber: 74,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/_public.landingpage.tsx
+var public_landingpage_exports = {};
+__export(public_landingpage_exports, {
+  default: () => dashboard
+});
+var import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1);
+function dashboard() {
+  let data = useLoaderData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "min-h-screen bg-gray-100 p-10", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { className: "text-2xl font-bold text-gray-700 mb-6", children: "Landing Page" }, void 0, !1, {
+      fileName: "app/routes/_public.landingpage.tsx",
+      lineNumber: 22,
+      columnNumber: 9
+    }, this),
+    data.user?.username
+  ] }, void 0, !0, {
+    fileName: "app/routes/_public.landingpage.tsx",
+    lineNumber: 21,
+    columnNumber: 7
+  }, this);
+}
+
+// app/routes/_clearance.landing.tsx
+var clearance_landing_exports = {};
+__export(clearance_landing_exports, {
+  default: () => clearance_landing_default
+});
+var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime(), 1), Clearance = () => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: "Clearance Landing Page" }, void 0, !1, {
+  fileName: "app/routes/_clearance.landing.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_landing_default = Clearance;
+
+// app/routes/_public.dashboard.tsx
+var public_dashboard_exports = {};
+__export(public_dashboard_exports, {
+  default: () => dashboard2
+});
+var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1);
+function dashboard2() {
+  let data = useLoaderData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "min-h-screen bg-gray-100 p-10", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h1", { className: "text-2xl font-bold text-gray-700 mb-6", children: "Dashboard" }, void 0, !1, {
+      fileName: "app/routes/_public.dashboard.tsx",
+      lineNumber: 22,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-4", children: "Plaid" }, void 0, !1, {
+          fileName: "app/routes/_public.dashboard.tsx",
+          lineNumber: 25,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-gray-600 mb-6", children: "Connect your bank accounts securely with Plaid." }, void 0, !1, {
+          fileName: "app/routes/_public.dashboard.tsx",
+          lineNumber: 26,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+          "a",
+          {
+            href: "/plaid",
+            className: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out",
+            children: "Connect to Plaid"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/_public.dashboard.tsx",
+            lineNumber: 30,
+            columnNumber: 13
+          },
+          this
+        )
+      ] }, void 0, !0, {
+        fileName: "app/routes/_public.dashboard.tsx",
+        lineNumber: 24,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-4", children: "QuickBooks" }, void 0, !1, {
+          fileName: "app/routes/_public.dashboard.tsx",
+          lineNumber: 39,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-gray-600 mb-6", children: "Manage your accounting with QuickBooks." }, void 0, !1, {
+          fileName: "app/routes/_public.dashboard.tsx",
+          lineNumber: 42,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+          "a",
+          {
+            href: "/quickbooks",
+            className: "bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out",
+            children: "Connect to QuickBooks"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/_public.dashboard.tsx",
+            lineNumber: 45,
+            columnNumber: 13
+          },
+          this
+        )
+      ] }, void 0, !0, {
+        fileName: "app/routes/_public.dashboard.tsx",
+        lineNumber: 38,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/_public.dashboard.tsx",
+      lineNumber: 23,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/_public.dashboard.tsx",
+    lineNumber: 21,
+    columnNumber: 7
+  }, this);
+}
+
+// app/routes/_clearance.page1.tsx
+var clearance_page1_exports = {};
+__export(clearance_page1_exports, {
+  default: () => clearance_page1_default
+});
+var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1), Clearance2 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { children: "Page 1" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page1.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page1_default = Clearance2;
+
+// app/routes/_clearance.page2.tsx
+var clearance_page2_exports = {};
+__export(clearance_page2_exports, {
+  default: () => clearance_page2_default
+});
+var import_jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime(), 1), Clearance3 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { children: "Page 2" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page2.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page2_default = Clearance3;
+
+// app/routes/_clearance.page3.tsx
+var clearance_page3_exports = {};
+__export(clearance_page3_exports, {
+  default: () => clearance_page3_default
+});
+var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime(), 1), Clearance4 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { children: "Page 3" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page3.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page3_default = Clearance4;
+
+// app/routes/_clearance.page4.tsx
+var clearance_page4_exports = {};
+__export(clearance_page4_exports, {
+  default: () => clearance_page4_default
+});
+var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime(), 1), Clearance5 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { children: "Page 4" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page4.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page4_default = Clearance5;
+
+// app/routes/_clearance.page5.tsx
+var clearance_page5_exports = {};
+__export(clearance_page5_exports, {
+  default: () => clearance_page5_default
+});
+var import_jsx_dev_runtime10 = __toESM(require_jsx_dev_runtime(), 1), Clearance6 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { children: "Page 5" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page5.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page5_default = Clearance6;
+
+// app/routes/_clearance.page6.tsx
+var clearance_page6_exports = {};
+__export(clearance_page6_exports, {
+  default: () => clearance_page6_default
+});
+var import_jsx_dev_runtime11 = __toESM(require_jsx_dev_runtime(), 1), Clearance7 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { children: "Page 6" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page6.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page6_default = Clearance7;
+
+// app/routes/_clearance.page7.tsx
+var clearance_page7_exports = {};
+__export(clearance_page7_exports, {
+  default: () => clearance_page7_default
+});
+var import_jsx_dev_runtime12 = __toESM(require_jsx_dev_runtime(), 1), Clearance8 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { children: "Page 7" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page7.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page7_default = Clearance8;
+
+// app/routes/_clearance.page8.tsx
+var clearance_page8_exports = {};
+__export(clearance_page8_exports, {
+  default: () => clearance_page8_default
+});
+var import_jsx_dev_runtime13 = __toESM(require_jsx_dev_runtime(), 1), Clearance9 = () => /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { children: "Page 8" }, void 0, !1, {
+  fileName: "app/routes/_clearance.page8.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), clearance_page8_default = Clearance9;
+
+// app/routes/_auth.register.tsx
+var auth_register_exports = {};
+
+// app/routes/_public._index.tsx
+var public_index_exports = {};
+__export(public_index_exports, {
+  default: () => public_index_default
+});
+var import_jsx_dev_runtime14 = __toESM(require_jsx_dev_runtime(), 1), Public = () => /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)("div", { children: "Public" }, void 0, !1, {
+  fileName: "app/routes/_public._index.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), public_index_default = Public;
+
+// app/routes/_auth.logout.tsx
+var auth_logout_exports = {};
+__export(auth_logout_exports, {
+  action: () => action
+});
+var import_cloudflare2 = __toESM(require_dist(), 1), action = async ({
+  request,
+  context: { session }
+}) => {
+  let quickbooksAuth = session.get("quickbooksAuth"), plaidAuth = session.get("plaidAuth");
+  return session.unset("auth"), quickbooksAuth && session.set("quickbooksAuth", quickbooksAuth), plaidAuth && session.set("plaidAuth", plaidAuth), (0, import_cloudflare2.redirect)("/");
+};
+
+// app/routes/_public.info.tsx
+var public_info_exports = {};
+__export(public_info_exports, {
+  Info: () => Info,
+  default: () => public_info_default
+});
+var import_jsx_dev_runtime15 = __toESM(require_jsx_dev_runtime(), 1), Info = () => /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(Outlet, {}, void 0, !1, {
+  fileName: "app/routes/_public.info.tsx",
+  lineNumber: 10,
+  columnNumber: 7
+}, this), public_info_default = Info;
+
+// app/routes/info.privacy.tsx
+var info_privacy_exports = {};
+__export(info_privacy_exports, {
+  default: () => info_privacy_default
+});
+var import_jsx_dev_runtime16 = __toESM(require_jsx_dev_runtime(), 1), PrivacyPolicy = () => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h1", { className: "text-4xl font-bold text-gray-800", children: "End User Privacy Policy" }, void 0, !1, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 6,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "font-semibold text-gray-700 mt-4", children: "Privacy and security are very important to us at International Communications Management, Inc, (ICM). This End User Privacy Policy (\u201CPolicy\u201D) is meant to help you (the \u201Cend user\u201D) understand how we at ICM collect, use, and share your data when you use ICM products or services - for example, when you use ICM Portal, or when you use ICM to connect and share your data to power the applications (\u201Capps\u201D) you use. These apps, which offer many business services and products such as helping you manage your business, invoicing, accounts payable, accounts receivable and manage your revenue spending, are built and provided by our business customers (we'll call them \u201Cdevelopers\u201D here), and powered by ICM applications." }, void 0, !1, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 10,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "font-semibold text-gray-700 mt-4", children: "This Policy applies to ICM and its affiliates and subsidiaries. You should read this Policy carefully; it contains important information about your privacy rights and choices." }, void 0, !1, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 24,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600 mt-6", children: "Jump to section:" }, void 0, !1, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 30,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ol", { className: "pl-5", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#our-data-practices",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Our Data Practices"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 36,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 35,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#data-collection",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Data We Collect and Categories of Sources"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 44,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 43,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#use-of-data",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "How We Use Your Data"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 52,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 51,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#how-we-share-data",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "How We Share Your Data"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 60,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 59,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#retention-and-deletion",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Our Retention and Deletion Practices"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 68,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 67,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#protection-of-data",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Protection of Data"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 76,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 75,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#data-protection-rights",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Your Data Protection Rights"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 84,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 83,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#additional-privacy-controls",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Your Additional Privacy Controls"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 92,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 91,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#summaries-of-processing",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Summaries of Processing Activities"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 100,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 99,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#summary-by-category",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Summary of Processing Activities by Category of Information"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 108,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 107,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#summary-by-product",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Summary of Processing Activities by Product"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 116,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 115,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+      "a",
+      {
+        href: "#consumer-privacy-notice",
+        className: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+        children: "Consumer Privacy Notice"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 124,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 123,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 34,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { id: "our-data-practices", className: "mt-8", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600", children: "Our Data Practices" }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 134,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base font-normal text-gray-600 mt-2", children: "ICM is committed to providing end users with meaningful control over their data. This section describes ICM's data practices relating to our processing of information about you. We also provide summaries of our practices organized by category of information collected and by product at the end of this Policy in the Summaries of Processing Activities section." }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 135,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 133,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { id: "data-collection", className: "mt-8", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-2xl font-bold text-gray-600 mb-4", children: "Data We Collect and Categories of Sources" }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 146,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "As explained in greater detail below, the data we collect, use, and share depends on the ICM products and services that you, and or the app you have connected to, use. Depending on which of ICM's products or services you or the developer you are connecting to use, ICM may collect the following:" }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 149,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ul", { className: "list-disc list-inside mb-6 pl-4", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data you provide to us;" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 157,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data from financial partners when you connect your financial account;" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 158,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data from the electronic device you use to connect;" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 162,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data from the developer of the app you have connected to; and" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 165,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data from other sources, including service providers and identity verification services." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 168,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 156,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-xl font-semibold text-gray-600 mb-3", children: "Data you provide to us" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 175,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you use ICM's products or services, like when you connect your financial accounts (like your bank accounts) to a developer's app through ICM, we may collect the following data from you:" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 178,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ul", { className: "list-disc list-inside pl-4 mb-4", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Identifiers like name, email address, and phone number;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 184,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Login data when required by the provider of your account, like your username and password, account and routing number, or a security token;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 187,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "When needed, data to help verify your identity and/or connect your accounts, including your Social Security number, date of birth, security questions and answers, documentary ID, and one-time password (OTP)." }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 192,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 183,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you provide this data, you also give ICM permission and authority to act on your behalf to access and transmit your data to and from the relevant bank or financial service provider that holds your financial account (we'll call them \u201Cfinancial partners\u201D in this Policy)." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 199,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 174,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-xl font-semibold text-gray-600 mb-3", children: "financial account" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 209,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Depending on which ICM products you or the developer of your app use, as well as what and how information is made available by your financial product and service providers, we may collect the following data from financial partners when you connect your financial accounts with or through ICM:" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 212,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ul", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Account data, including financial institution name, account name, account type, account ownership, branch number, IBAN, BIC, account number, routing number, and sort code;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 220,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data about an account balance, including current and available balance;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 225,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data about credit accounts, including due dates, balances owed, payment amounts and dates, transaction history, credit limit, repayment status, and interest rate;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 229,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data about loan accounts, including due dates, repayment status, balances, payment amounts and dates, interest rate, guarantor, loan type, payment plan, and terms;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 234,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data about investment accounts, including transaction information, type of asset, identifying details about the asset, quantity, price, fees, and cost basis;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 239,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Identifiers and data about the account owner(s), including name, email address, phone number, date of birth, and address information;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 244,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Data about account transactions, including amount, date, payee, type, quantity, price, location, involved securities, and a description of the transaction; and/or" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 249,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Professional data, including data about your employer, in cases where you've connected your payroll accounts or provided us with your pay stub or tax form information." }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 254,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 219,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Depending on the ICM service you or the developer of your app use, and the manner in which the data is made available, the data collected from your financial accounts may include data from all accounts (e.g., checking, savings, credit card, and joint accounts) accessible through a single set of account credentials. For more specifics about data collected in connection with different products and services, see Summary of Processing Activities by Product." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 260,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 208,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive from your devices" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 272,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When you use a device, like your smartphone, tablet, or computer, to connect to our services through a developer's application, we receive data about that device, including:" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 275,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ul", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Internet protocol (IP) address;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 281,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Timezone setting and location, device location;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 282,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Hardware model and operating system;" }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 285,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "mb-2", children: "Which features within our services you access, browser data, and other technical data about the device." }, void 0, !1, {
+          fileName: "app/routes/info.privacy.tsx",
+          lineNumber: 286,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 280,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 271,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive about you from the developers of apps powered by ICM" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 294,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When needed for ICM to provide a service, the developers of the apps you use may provide us with identifiers and commercial information about you, like your name, Social Security number, email address, phone number, or information about your financial accounts and account transactions. One example of this kind of service are ICM Identity Verification and Monitor services, which are used so the developer you are connecting to can verify your identity, detect fraud, and screen their users against watchlists." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 297,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 293,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Data we receive about you from other sources" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 310,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "When needed to provide a service or to help prevent fraud, abuse, or security threats, we may also receive data about you directly from third parties, including our service providers or identity verification services." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 313,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 309,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "text-2xl font-semibold text-gray-700 mb-3", children: "Information we derive from the data we collect" }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 322,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "We may derive additional information about you from the data we collect. For example, we may infer your geolocation, your annual income, or the type of account or subaccount you've chosen to connect\u2014such as when you connect your loan accounts, so we can let the developer know whether the account is for a mortgage, student loan, or credit card." }, void 0, !1, {
+        fileName: "app/routes/info.privacy.tsx",
+        lineNumber: 325,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 321,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 145,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { id: "consumer-privacy-notice", className: "mt-8", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-600", children: "Consumer Privacy Notice" }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 420,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "Our goal with this Policy is to provide a simple and straightforward explanation of what data ICM collects from and about you and how we use and share that information. We value transparency and want to provide you with a clear and concise description of how we treat your data." }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 423,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "This Policy does not cover what developers of the apps you use do with your data. You should review the privacy policies or terms of service for those apps for information about their practices. This Policy also does not cover data we collect through our websites or when you interact with ICM outside of using our product or services, such as emailing ICM directly. Please see our All Audience Privacy Statement and Cookie Policy for more information." }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 431,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-base text-gray-600 mb-4", children: "ICM's services are not directed to individuals under 18 and we do not knowingly collect data relating to children." }, void 0, !1, {
+      fileName: "app/routes/info.privacy.tsx",
+      lineNumber: 441,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/info.privacy.tsx",
+    lineNumber: 419,
+    columnNumber: 7
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/routes/info.privacy.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), info_privacy_default = PrivacyPolicy;
+
+// app/routes/_auth.login.tsx
+var auth_login_exports = {};
+__export(auth_login_exports, {
+  action: () => action2,
+  default: () => auth_login_default,
+  loader: () => loader
+});
+var import_react6 = __toESM(require_react(), 1);
+var import_cloudflare4 = __toESM(require_dist(), 1);
 
 // app/utils/session/session.ts
-var import_cloudflare2 = __toESM(require_dist(), 1);
+var import_cloudflare3 = __toESM(require_dist(), 1);
+function getSessionSecret(env) {
+  return env.USER_SESSION_SECRET || "default-secret";
+}
 function createSessionStorage(env) {
-  let sessionCookie = (0, import_cloudflare2.createCookie)("__session", {
+  let sessionCookie = (0, import_cloudflare3.createCookie)("__session", {
     httpOnly: !0,
     maxAge: 2592e3,
     // 30 days
     path: "/",
     sameSite: "lax",
-    secrets: [env.USER_SESSION_SECRET],
-    // Securely using the session secret from environment variables
+    secrets: [getSessionSecret(env)],
+    // Use the session secret from the environment variable or a default value
     secure: !0
-  }), { getSession, commitSession, destroySession } = (0, import_cloudflare2.createWorkersKVSessionStorage)({
+  }), { getSession, commitSession, destroySession } = (0, import_cloudflare3.createWorkersKVSessionStorage)({
     kv: env.theform,
     // Using the KV namespace from the environment
     cookie: sessionCookie
@@ -32686,386 +33670,3941 @@ function createSessionStorage(env) {
   return { getSession, commitSession, destroySession };
 }
 
-// app/utils/checkAuthentication.ts
-async function checkAuthentication(context) {
-  if (await createSessionStorage(context.env).getSession(context.request.headers.get("Cookie")))
-    try {
-      return {
-        username: "testUser",
-        id: "123456",
-        accessToken: "hardcodedAccessToken",
-        refreshToken: "hardcodedRefreshToken",
-        tokenCreationTime: Date.now()
-      };
-    } catch (error) {
-      console.error("Error parsing cookie data:", error);
+// app/utils/session/sessionUtils.ts
+async function isAuthenticated(request, context) {
+  return (await createSessionStorage(context).getSession(request.headers.get("Cookie"))).has("auth");
+}
+
+// node_modules/drizzle-orm/entity.js
+var entityKind = Symbol.for("drizzle:entityKind"), hasOwnEntityKind = Symbol.for("drizzle:hasOwnEntityKind");
+function is2(value, type) {
+  if (!value || typeof value != "object")
+    return !1;
+  if (value instanceof type)
+    return !0;
+  if (!Object.prototype.hasOwnProperty.call(type, entityKind))
+    throw new Error(
+      `Class "${type.name ?? "<unknown>"}" doesn't look like a Drizzle entity. If this is incorrect and the class is provided by Drizzle, please report this as a bug.`
+    );
+  let cls = value.constructor;
+  if (cls)
+    for (; cls; ) {
+      if (entityKind in cls && cls[entityKind] === type[entityKind])
+        return !0;
+      cls = Object.getPrototypeOf(cls);
     }
   return !1;
 }
 
-// app/root.tsx
-var import_react3 = __toESM(require_react(), 1), import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1), links = () => [
-  ...void 0 ? [{ rel: "stylesheet", href: app_default }] : []
-], store = initializeStore({}), loader = async ({
-  request,
-  context: { context }
-}) => {
-  let url = new URL(request.url), user = await checkAuthentication(context);
-  try {
-    return console.log(user, "user"), user ? (0, import_cloudflare3.json)({ user }) : (0, import_cloudflare3.redirect)("/login");
-  } catch {
-    return url.pathname !== "/login" ? (0, import_cloudflare3.redirect)("/login") : (0, import_cloudflare3.json)({ error: "User is not authenticated" });
+// node_modules/drizzle-orm/logger.js
+var _a, ConsoleLogWriter = class {
+  write(message) {
+    console.log(message);
   }
 };
-function App() {
-  let data = useLoaderData2();
-  return (0, import_react3.useEffect)(() => {
-    data.user ? store.dispatch(setUser(data.user)) : store.dispatch(setLogout());
-  }, [data.user]), /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("html", { lang: "en", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("head", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 82,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 83,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Meta, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 84,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Links, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 85,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/root.tsx",
-      lineNumber: 81,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Provider_default, { store, children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Outlet, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 89,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(ScrollRestoration2, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 90,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Scripts, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 91,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(LiveReload, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 92,
-        columnNumber: 11
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/root.tsx",
-      lineNumber: 88,
-      columnNumber: 9
-    }, this) }, void 0, !1, {
-      fileName: "app/root.tsx",
-      lineNumber: 87,
-      columnNumber: 7
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/root.tsx",
-    lineNumber: 80,
-    columnNumber: 5
-  }, this);
+_a = entityKind, __publicField(ConsoleLogWriter, _a, "ConsoleLogWriter");
+var _a2, DefaultLogger = class {
+  writer;
+  constructor(config) {
+    this.writer = config?.writer ?? new ConsoleLogWriter();
+  }
+  logQuery(query, params) {
+    let stringifiedParams = params.map((p) => {
+      try {
+        return JSON.stringify(p);
+      } catch {
+        return String(p);
+      }
+    }), paramsStr = stringifiedParams.length ? ` -- params: [${stringifiedParams.join(", ")}]` : "";
+    this.writer.write(`Query: ${query}${paramsStr}`);
+  }
+};
+_a2 = entityKind, __publicField(DefaultLogger, _a2, "DefaultLogger");
+var _a3, NoopLogger = class {
+  logQuery() {
+  }
+};
+_a3 = entityKind, __publicField(NoopLogger, _a3, "NoopLogger");
+
+// node_modules/drizzle-orm/table.js
+var TableName = Symbol.for("drizzle:Name"), Schema = Symbol.for("drizzle:Schema"), Columns = Symbol.for("drizzle:Columns"), OriginalName = Symbol.for("drizzle:OriginalName"), BaseName = Symbol.for("drizzle:BaseName"), IsAlias = Symbol.for("drizzle:IsAlias"), ExtraConfigBuilder = Symbol.for("drizzle:ExtraConfigBuilder"), IsDrizzleTable = Symbol.for("drizzle:IsDrizzleTable"), _a4, Table = class {
+  /**
+   * @internal
+   * Can be changed if the table is aliased.
+   */
+  [(_a4 = entityKind, TableName)];
+  /**
+   * @internal
+   * Used to store the original name of the table, before any aliasing.
+   */
+  [OriginalName];
+  /** @internal */
+  [Schema];
+  /** @internal */
+  [Columns];
+  /**
+   *  @internal
+   * Used to store the table name before the transformation via the `tableCreator` functions.
+   */
+  [BaseName];
+  /** @internal */
+  [IsAlias] = !1;
+  /** @internal */
+  [ExtraConfigBuilder] = void 0;
+  [IsDrizzleTable] = !0;
+  constructor(name, schema, baseName) {
+    this[TableName] = this[OriginalName] = name, this[Schema] = schema, this[BaseName] = baseName;
+  }
+};
+__publicField(Table, _a4, "Table"), /** @internal */
+__publicField(Table, "Symbol", {
+  Name: TableName,
+  Schema,
+  OriginalName,
+  Columns,
+  BaseName,
+  IsAlias,
+  ExtraConfigBuilder
+});
+function isTable(table) {
+  return typeof table == "object" && table !== null && IsDrizzleTable in table;
+}
+function getTableName(table) {
+  return table[TableName];
 }
 
-// app/routes/register.tsx
-var register_exports = {};
-__export(register_exports, {
-  default: () => register_default
-});
-var import_react4 = __toESM(require_react(), 1), import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1), Register = () => {
-  let [username, setUsername] = (0, import_react4.useState)(""), [password, setPassword] = (0, import_react4.useState)("");
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-    "form",
-    {
-      action: "/register",
-      method: "post",
-      className: "max-w-lg mx-auto mt-10 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
-      children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mb-4", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-            "label",
-            {
-              className: "block text-gray-300 text-base font-semibold mb-2",
-              htmlFor: "username",
-              children: "Email"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/register.tsx",
-              lineNumber: 14,
-              columnNumber: 9
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-            "input",
-            {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
-              id: "username",
-              type: "text",
-              name: "username",
-              value: username,
-              placeholder: "Enter your email",
-              onChange: (e) => setUsername(e.target.value)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/register.tsx",
-              lineNumber: 20,
-              columnNumber: 9
-            },
-            this
-          )
-        ] }, void 0, !0, {
-          fileName: "app/routes/register.tsx",
-          lineNumber: 13,
-          columnNumber: 7
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "mb-4", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-            "label",
-            {
-              className: "block text-gray-300 text-base font-semibold mb-2",
-              htmlFor: "password",
-              children: "Password"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/register.tsx",
-              lineNumber: 32,
-              columnNumber: 9
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-            "input",
-            {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
-              id: "password",
-              type: "password",
-              name: "password",
-              value: password,
-              placeholder: "Enter your password",
-              onChange: (e) => setPassword(e.target.value)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/register.tsx",
-              lineNumber: 38,
-              columnNumber: 9
-            },
-            this
-          )
-        ] }, void 0, !0, {
-          fileName: "app/routes/register.tsx",
-          lineNumber: 31,
-          columnNumber: 7
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
-          "button",
-          {
-            type: "submit",
-            className: "bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50",
-            children: "Register"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/register.tsx",
-            lineNumber: 49,
-            columnNumber: 7
-          },
+// node_modules/drizzle-orm/column.js
+var _a5, Column = class {
+  constructor(table, config) {
+    this.table = table, this.config = config, this.name = config.name, this.notNull = config.notNull, this.default = config.default, this.defaultFn = config.defaultFn, this.hasDefault = config.hasDefault, this.primary = config.primaryKey, this.isUnique = config.isUnique, this.uniqueName = config.uniqueName, this.uniqueType = config.uniqueType, this.dataType = config.dataType, this.columnType = config.columnType;
+  }
+  name;
+  primary;
+  notNull;
+  default;
+  defaultFn;
+  hasDefault;
+  isUnique;
+  uniqueName;
+  uniqueType;
+  dataType;
+  columnType;
+  enumValues = void 0;
+  config;
+  mapFromDriverValue(value) {
+    return value;
+  }
+  mapToDriverValue(value) {
+    return value;
+  }
+};
+_a5 = entityKind, __publicField(Column, _a5, "Column");
+
+// node_modules/drizzle-orm/pg-core/table.js
+var InlineForeignKeys = Symbol.for("drizzle:PgInlineForeignKeys"), _a6, PgTable = class extends Table {
+  /**@internal */
+  [(_a6 = entityKind, InlineForeignKeys)] = [];
+  /** @internal */
+  [Table.Symbol.ExtraConfigBuilder] = void 0;
+};
+__publicField(PgTable, _a6, "PgTable"), /** @internal */
+__publicField(PgTable, "Symbol", Object.assign({}, Table.Symbol, {
+  InlineForeignKeys
+}));
+
+// node_modules/drizzle-orm/pg-core/primary-keys.js
+var _a7, PrimaryKeyBuilder = class {
+  /** @internal */
+  columns;
+  /** @internal */
+  name;
+  constructor(columns, name) {
+    this.columns = columns, this.name = name;
+  }
+  /** @internal */
+  build(table) {
+    return new PrimaryKey(table, this.columns, this.name);
+  }
+};
+_a7 = entityKind, __publicField(PrimaryKeyBuilder, _a7, "PgPrimaryKeyBuilder");
+var _a8, PrimaryKey = class {
+  constructor(table, columns, name) {
+    this.table = table, this.columns = columns, this.name = name;
+  }
+  columns;
+  name;
+  getName() {
+    return this.name ?? `${this.table[PgTable.Symbol.Name]}_${this.columns.map((column) => column.name).join("_")}_pk`;
+  }
+};
+_a8 = entityKind, __publicField(PrimaryKey, _a8, "PgPrimaryKey");
+
+// node_modules/drizzle-orm/subquery.js
+var SubqueryConfig = Symbol.for("drizzle:SubqueryConfig"), _a9, Subquery = class {
+  /** @internal */
+  [(_a9 = entityKind, SubqueryConfig)];
+  constructor(sql2, selection, alias, isWith = !1) {
+    this[SubqueryConfig] = {
+      sql: sql2,
+      selection,
+      alias,
+      isWith
+    };
+  }
+  // getSQL(): SQL<unknown> {
+  // 	return new SQL([this]);
+  // }
+};
+__publicField(Subquery, _a9, "Subquery");
+var _a10, WithSubquery = class extends Subquery {
+};
+_a10 = entityKind, __publicField(WithSubquery, _a10, "WithSubquery");
+
+// node_modules/drizzle-orm/tracing-utils.js
+function iife(fn, ...args) {
+  return fn(...args);
+}
+
+// node_modules/drizzle-orm/version.js
+var version = "0.29.4";
+
+// node_modules/drizzle-orm/tracing.js
+var otel, rawTracer, tracer = {
+  startActiveSpan(name, fn) {
+    return otel ? (rawTracer || (rawTracer = otel.trace.getTracer("drizzle-orm", version)), iife(
+      (otel2, rawTracer2) => rawTracer2.startActiveSpan(
+        name,
+        (span) => {
+          try {
+            return fn(span);
+          } catch (e) {
+            throw span.setStatus({
+              code: otel2.SpanStatusCode.ERROR,
+              message: e instanceof Error ? e.message : "Unknown error"
+              // eslint-disable-line no-instanceof/no-instanceof
+            }), e;
+          } finally {
+            span.end();
+          }
+        }
+      ),
+      otel,
+      rawTracer
+    )) : fn();
+  }
+};
+
+// node_modules/drizzle-orm/view-common.js
+var ViewBaseConfig = Symbol.for("drizzle:ViewBaseConfig");
+
+// node_modules/drizzle-orm/sql/sql.js
+var _a11, FakePrimitiveParam = class {
+};
+_a11 = entityKind, __publicField(FakePrimitiveParam, _a11, "FakePrimitiveParam");
+function isSQLWrapper(value) {
+  return typeof value == "object" && value !== null && "getSQL" in value && typeof value.getSQL == "function";
+}
+function mergeQueries(queries) {
+  let result = { sql: "", params: [] };
+  for (let query of queries)
+    result.sql += query.sql, result.params.push(...query.params), query.typings?.length && (result.typings || (result.typings = []), result.typings.push(...query.typings));
+  return result;
+}
+var _a12, StringChunk = class {
+  value;
+  constructor(value) {
+    this.value = Array.isArray(value) ? value : [value];
+  }
+  getSQL() {
+    return new SQL([this]);
+  }
+};
+_a12 = entityKind, __publicField(StringChunk, _a12, "StringChunk");
+var _a13, _SQL = class {
+  constructor(queryChunks) {
+    this.queryChunks = queryChunks;
+  }
+  /** @internal */
+  decoder = noopDecoder;
+  shouldInlineParams = !1;
+  append(query) {
+    return this.queryChunks.push(...query.queryChunks), this;
+  }
+  toQuery(config) {
+    return tracer.startActiveSpan("drizzle.buildSQL", (span) => {
+      let query = this.buildQueryFromSourceParams(this.queryChunks, config);
+      return span?.setAttributes({
+        "drizzle.query.text": query.sql,
+        "drizzle.query.params": JSON.stringify(query.params)
+      }), query;
+    });
+  }
+  buildQueryFromSourceParams(chunks, _config) {
+    let config = Object.assign({}, _config, {
+      inlineParams: _config.inlineParams || this.shouldInlineParams,
+      paramStartIndex: _config.paramStartIndex || { value: 0 }
+    }), {
+      escapeName,
+      escapeParam,
+      prepareTyping,
+      inlineParams,
+      paramStartIndex
+    } = config;
+    return mergeQueries(chunks.map((chunk) => {
+      if (is2(chunk, StringChunk))
+        return { sql: chunk.value.join(""), params: [] };
+      if (is2(chunk, Name))
+        return { sql: escapeName(chunk.value), params: [] };
+      if (chunk === void 0)
+        return { sql: "", params: [] };
+      if (Array.isArray(chunk)) {
+        let result = [new StringChunk("(")];
+        for (let [i, p] of chunk.entries())
+          result.push(p), i < chunk.length - 1 && result.push(new StringChunk(", "));
+        return result.push(new StringChunk(")")), this.buildQueryFromSourceParams(result, config);
+      }
+      if (is2(chunk, _SQL))
+        return this.buildQueryFromSourceParams(chunk.queryChunks, {
+          ...config,
+          inlineParams: inlineParams || chunk.shouldInlineParams
+        });
+      if (is2(chunk, Table)) {
+        let schemaName = chunk[Table.Symbol.Schema], tableName = chunk[Table.Symbol.Name];
+        return {
+          sql: schemaName === void 0 ? escapeName(tableName) : escapeName(schemaName) + "." + escapeName(tableName),
+          params: []
+        };
+      }
+      if (is2(chunk, Column))
+        return { sql: escapeName(chunk.table[Table.Symbol.Name]) + "." + escapeName(chunk.name), params: [] };
+      if (is2(chunk, View)) {
+        let schemaName = chunk[ViewBaseConfig].schema, viewName = chunk[ViewBaseConfig].name;
+        return {
+          sql: schemaName === void 0 ? escapeName(viewName) : escapeName(schemaName) + "." + escapeName(viewName),
+          params: []
+        };
+      }
+      if (is2(chunk, Param)) {
+        let mappedValue = chunk.value === null ? null : chunk.encoder.mapToDriverValue(chunk.value);
+        if (is2(mappedValue, _SQL))
+          return this.buildQueryFromSourceParams([mappedValue], config);
+        if (inlineParams)
+          return { sql: this.mapInlineParam(mappedValue, config), params: [] };
+        let typings;
+        return prepareTyping !== void 0 && (typings = [prepareTyping(chunk.encoder)]), { sql: escapeParam(paramStartIndex.value++, mappedValue), params: [mappedValue], typings };
+      }
+      return is2(chunk, Placeholder) ? { sql: escapeParam(paramStartIndex.value++, chunk), params: [chunk] } : is2(chunk, _SQL.Aliased) && chunk.fieldAlias !== void 0 ? { sql: escapeName(chunk.fieldAlias), params: [] } : is2(chunk, Subquery) ? chunk[SubqueryConfig].isWith ? { sql: escapeName(chunk[SubqueryConfig].alias), params: [] } : this.buildQueryFromSourceParams([
+        new StringChunk("("),
+        chunk[SubqueryConfig].sql,
+        new StringChunk(") "),
+        new Name(chunk[SubqueryConfig].alias)
+      ], config) : isSQLWrapper(chunk) ? this.buildQueryFromSourceParams([
+        new StringChunk("("),
+        chunk.getSQL(),
+        new StringChunk(")")
+      ], config) : inlineParams ? { sql: this.mapInlineParam(chunk, config), params: [] } : { sql: escapeParam(paramStartIndex.value++, chunk), params: [chunk] };
+    }));
+  }
+  mapInlineParam(chunk, { escapeString }) {
+    if (chunk === null)
+      return "null";
+    if (typeof chunk == "number" || typeof chunk == "boolean")
+      return chunk.toString();
+    if (typeof chunk == "string")
+      return escapeString(chunk);
+    if (typeof chunk == "object") {
+      let mappedValueAsString = chunk.toString();
+      return escapeString(mappedValueAsString === "[object Object]" ? JSON.stringify(chunk) : mappedValueAsString);
+    }
+    throw new Error("Unexpected param value: " + chunk);
+  }
+  getSQL() {
+    return this;
+  }
+  as(alias) {
+    return alias === void 0 ? this : new _SQL.Aliased(this, alias);
+  }
+  mapWith(decoder) {
+    return this.decoder = typeof decoder == "function" ? { mapFromDriverValue: decoder } : decoder, this;
+  }
+  inlineParams() {
+    return this.shouldInlineParams = !0, this;
+  }
+}, SQL = _SQL;
+_a13 = entityKind, __publicField(SQL, _a13, "SQL");
+var _a14, Name = class {
+  constructor(value) {
+    this.value = value;
+  }
+  brand;
+  getSQL() {
+    return new SQL([this]);
+  }
+};
+_a14 = entityKind, __publicField(Name, _a14, "Name");
+function isDriverValueEncoder(value) {
+  return typeof value == "object" && value !== null && "mapToDriverValue" in value && typeof value.mapToDriverValue == "function";
+}
+var noopDecoder = {
+  mapFromDriverValue: (value) => value
+}, noopEncoder = {
+  mapToDriverValue: (value) => value
+}, noopMapper = {
+  ...noopDecoder,
+  ...noopEncoder
+}, _a15, Param = class {
+  /**
+   * @param value - Parameter value
+   * @param encoder - Encoder to convert the value to a driver parameter
+   */
+  constructor(value, encoder = noopEncoder) {
+    this.value = value, this.encoder = encoder;
+  }
+  brand;
+  getSQL() {
+    return new SQL([this]);
+  }
+};
+_a15 = entityKind, __publicField(Param, _a15, "Param");
+function sql(strings, ...params) {
+  let queryChunks = [];
+  (params.length > 0 || strings.length > 0 && strings[0] !== "") && queryChunks.push(new StringChunk(strings[0]));
+  for (let [paramIndex, param2] of params.entries())
+    queryChunks.push(param2, new StringChunk(strings[paramIndex + 1]));
+  return new SQL(queryChunks);
+}
+((sql2) => {
+  function empty() {
+    return new SQL([]);
+  }
+  sql2.empty = empty;
+  function fromList(list2) {
+    return new SQL(list2);
+  }
+  sql2.fromList = fromList;
+  function raw(str) {
+    return new SQL([new StringChunk(str)]);
+  }
+  sql2.raw = raw;
+  function join(chunks, separator) {
+    let result = [];
+    for (let [i, chunk] of chunks.entries())
+      i > 0 && separator !== void 0 && result.push(separator), result.push(chunk);
+    return new SQL(result);
+  }
+  sql2.join = join;
+  function identifier(value) {
+    return new Name(value);
+  }
+  sql2.identifier = identifier;
+  function placeholder2(name2) {
+    return new Placeholder(name2);
+  }
+  sql2.placeholder = placeholder2;
+  function param2(value, encoder) {
+    return new Param(value, encoder);
+  }
+  sql2.param = param2;
+})(sql || (sql = {}));
+((SQL2) => {
+  class Aliased {
+    constructor(sql2, fieldAlias) {
+      this.sql = sql2, this.fieldAlias = fieldAlias;
+    }
+    static [entityKind] = "SQL.Aliased";
+    /** @internal */
+    isSelectionField = !1;
+    getSQL() {
+      return this.sql;
+    }
+    /** @internal */
+    clone() {
+      return new Aliased(this.sql, this.fieldAlias);
+    }
+  }
+  SQL2.Aliased = Aliased;
+})(SQL || (SQL = {}));
+var _a16, Placeholder = class {
+  constructor(name2) {
+    this.name = name2;
+  }
+  getSQL() {
+    return new SQL([this]);
+  }
+};
+_a16 = entityKind, __publicField(Placeholder, _a16, "Placeholder");
+function fillPlaceholders(params, values) {
+  return params.map((p) => {
+    if (is2(p, Placeholder)) {
+      if (!(p.name in values))
+        throw new Error(`No value for placeholder "${p.name}" was provided`);
+      return values[p.name];
+    }
+    return p;
+  });
+}
+var _a17, View = class {
+  /** @internal */
+  [(_a17 = entityKind, ViewBaseConfig)];
+  constructor({ name: name2, schema, selectedFields, query }) {
+    this[ViewBaseConfig] = {
+      name: name2,
+      originalName: name2,
+      schema,
+      selectedFields,
+      query,
+      isExisting: !query,
+      isAlias: !1
+    };
+  }
+  getSQL() {
+    return new SQL([this]);
+  }
+};
+__publicField(View, _a17, "View");
+Column.prototype.getSQL = function() {
+  return new SQL([this]);
+};
+Table.prototype.getSQL = function() {
+  return new SQL([this]);
+};
+Subquery.prototype.getSQL = function() {
+  return new SQL([this]);
+};
+
+// node_modules/drizzle-orm/sql/expressions/conditions.js
+function bindIfParam(value, column) {
+  return isDriverValueEncoder(column) && !isSQLWrapper(value) && !is2(value, Param) && !is2(value, Placeholder) && !is2(value, Column) && !is2(value, Table) && !is2(value, View) ? new Param(value, column) : value;
+}
+var eq = (left, right) => sql`${left} = ${bindIfParam(right, left)}`, ne = (left, right) => sql`${left} <> ${bindIfParam(right, left)}`;
+function and(...unfilteredConditions) {
+  let conditions = unfilteredConditions.filter(
+    (c) => c !== void 0
+  );
+  if (conditions.length !== 0)
+    return conditions.length === 1 ? new SQL(conditions) : new SQL([
+      new StringChunk("("),
+      sql.join(conditions, new StringChunk(" and ")),
+      new StringChunk(")")
+    ]);
+}
+function or(...unfilteredConditions) {
+  let conditions = unfilteredConditions.filter(
+    (c) => c !== void 0
+  );
+  if (conditions.length !== 0)
+    return conditions.length === 1 ? new SQL(conditions) : new SQL([
+      new StringChunk("("),
+      sql.join(conditions, new StringChunk(" or ")),
+      new StringChunk(")")
+    ]);
+}
+function not(condition) {
+  return sql`not ${condition}`;
+}
+var gt = (left, right) => sql`${left} > ${bindIfParam(right, left)}`, gte = (left, right) => sql`${left} >= ${bindIfParam(right, left)}`, lt = (left, right) => sql`${left} < ${bindIfParam(right, left)}`, lte = (left, right) => sql`${left} <= ${bindIfParam(right, left)}`;
+function inArray(column, values) {
+  if (Array.isArray(values)) {
+    if (values.length === 0)
+      throw new Error("inArray requires at least one value");
+    return sql`${column} in ${values.map((v2) => bindIfParam(v2, column))}`;
+  }
+  return sql`${column} in ${bindIfParam(values, column)}`;
+}
+function notInArray(column, values) {
+  if (Array.isArray(values)) {
+    if (values.length === 0)
+      throw new Error("notInArray requires at least one value");
+    return sql`${column} not in ${values.map((v2) => bindIfParam(v2, column))}`;
+  }
+  return sql`${column} not in ${bindIfParam(values, column)}`;
+}
+function isNull(value) {
+  return sql`${value} is null`;
+}
+function isNotNull(value) {
+  return sql`${value} is not null`;
+}
+function exists(subquery) {
+  return sql`exists ${subquery}`;
+}
+function notExists(subquery) {
+  return sql`not exists ${subquery}`;
+}
+function between(column, min, max) {
+  return sql`${column} between ${bindIfParam(min, column)} and ${bindIfParam(
+    max,
+    column
+  )}`;
+}
+function notBetween(column, min, max) {
+  return sql`${column} not between ${bindIfParam(
+    min,
+    column
+  )} and ${bindIfParam(max, column)}`;
+}
+function like(column, value) {
+  return sql`${column} like ${value}`;
+}
+function notLike(column, value) {
+  return sql`${column} not like ${value}`;
+}
+function ilike(column, value) {
+  return sql`${column} ilike ${value}`;
+}
+function notIlike(column, value) {
+  return sql`${column} not ilike ${value}`;
+}
+
+// node_modules/drizzle-orm/sql/expressions/select.js
+function asc(column) {
+  return sql`${column} asc`;
+}
+function desc(column) {
+  return sql`${column} desc`;
+}
+
+// node_modules/drizzle-orm/relations.js
+var _a18, Relation = class {
+  constructor(sourceTable, referencedTable, relationName) {
+    this.sourceTable = sourceTable, this.referencedTable = referencedTable, this.relationName = relationName, this.referencedTableName = referencedTable[Table.Symbol.Name];
+  }
+  referencedTableName;
+  fieldName;
+};
+_a18 = entityKind, __publicField(Relation, _a18, "Relation");
+var _a19, Relations = class {
+  constructor(table, config) {
+    this.table = table, this.config = config;
+  }
+};
+_a19 = entityKind, __publicField(Relations, _a19, "Relations");
+var _a20, _One = class extends Relation {
+  constructor(sourceTable, referencedTable, config, isNullable) {
+    super(sourceTable, referencedTable, config?.relationName), this.config = config, this.isNullable = isNullable;
+  }
+  withFieldName(fieldName) {
+    let relation = new _One(
+      this.sourceTable,
+      this.referencedTable,
+      this.config,
+      this.isNullable
+    );
+    return relation.fieldName = fieldName, relation;
+  }
+}, One = _One;
+_a20 = entityKind, __publicField(One, _a20, "One");
+var _a21, _Many = class extends Relation {
+  constructor(sourceTable, referencedTable, config) {
+    super(sourceTable, referencedTable, config?.relationName), this.config = config;
+  }
+  withFieldName(fieldName) {
+    let relation = new _Many(
+      this.sourceTable,
+      this.referencedTable,
+      this.config
+    );
+    return relation.fieldName = fieldName, relation;
+  }
+}, Many = _Many;
+_a21 = entityKind, __publicField(Many, _a21, "Many");
+function getOperators() {
+  return {
+    and,
+    between,
+    eq,
+    exists,
+    gt,
+    gte,
+    ilike,
+    inArray,
+    isNull,
+    isNotNull,
+    like,
+    lt,
+    lte,
+    ne,
+    not,
+    notBetween,
+    notExists,
+    notLike,
+    notIlike,
+    notInArray,
+    or,
+    sql
+  };
+}
+function getOrderByOperators() {
+  return {
+    sql,
+    asc,
+    desc
+  };
+}
+function extractTablesRelationalConfig(schema, configHelpers) {
+  Object.keys(schema).length === 1 && "default" in schema && !is2(schema.default, Table) && (schema = schema.default);
+  let tableNamesMap = {}, relationsBuffer = {}, tablesConfig = {};
+  for (let [key, value] of Object.entries(schema))
+    if (isTable(value)) {
+      let dbName = value[Table.Symbol.Name], bufferedRelations = relationsBuffer[dbName];
+      tableNamesMap[dbName] = key, tablesConfig[key] = {
+        tsName: key,
+        dbName: value[Table.Symbol.Name],
+        schema: value[Table.Symbol.Schema],
+        columns: value[Table.Symbol.Columns],
+        relations: bufferedRelations?.relations ?? {},
+        primaryKey: bufferedRelations?.primaryKey ?? []
+      };
+      for (let column of Object.values(
+        value[Table.Symbol.Columns]
+      ))
+        column.primary && tablesConfig[key].primaryKey.push(column);
+      let extraConfig = value[Table.Symbol.ExtraConfigBuilder]?.(value);
+      if (extraConfig)
+        for (let configEntry of Object.values(extraConfig))
+          is2(configEntry, PrimaryKeyBuilder) && tablesConfig[key].primaryKey.push(...configEntry.columns);
+    } else if (is2(value, Relations)) {
+      let dbName = value.table[Table.Symbol.Name], tableName = tableNamesMap[dbName], relations2 = value.config(
+        configHelpers(value.table)
+      ), primaryKey;
+      for (let [relationName, relation] of Object.entries(relations2))
+        if (tableName) {
+          let tableConfig = tablesConfig[tableName];
+          tableConfig.relations[relationName] = relation, primaryKey && tableConfig.primaryKey.push(...primaryKey);
+        } else
+          dbName in relationsBuffer || (relationsBuffer[dbName] = {
+            relations: {},
+            primaryKey
+          }), relationsBuffer[dbName].relations[relationName] = relation;
+    }
+  return { tables: tablesConfig, tableNamesMap };
+}
+function createOne(sourceTable) {
+  return function(table, config) {
+    return new One(
+      sourceTable,
+      table,
+      config,
+      config?.fields.reduce((res, f2) => res && f2.notNull, !0) ?? !1
+    );
+  };
+}
+function createMany(sourceTable) {
+  return function(referencedTable, config) {
+    return new Many(sourceTable, referencedTable, config);
+  };
+}
+function normalizeRelation(schema, tableNamesMap, relation) {
+  if (is2(relation, One) && relation.config)
+    return {
+      fields: relation.config.fields,
+      references: relation.config.references
+    };
+  let referencedTableTsName = tableNamesMap[relation.referencedTable[Table.Symbol.Name]];
+  if (!referencedTableTsName)
+    throw new Error(
+      `Table "${relation.referencedTable[Table.Symbol.Name]}" not found in schema`
+    );
+  let referencedTableConfig = schema[referencedTableTsName];
+  if (!referencedTableConfig)
+    throw new Error(`Table "${referencedTableTsName}" not found in schema`);
+  let sourceTable = relation.sourceTable, sourceTableTsName = tableNamesMap[sourceTable[Table.Symbol.Name]];
+  if (!sourceTableTsName)
+    throw new Error(
+      `Table "${sourceTable[Table.Symbol.Name]}" not found in schema`
+    );
+  let reverseRelations = [];
+  for (let referencedTableRelation of Object.values(
+    referencedTableConfig.relations
+  ))
+    (relation.relationName && relation !== referencedTableRelation && referencedTableRelation.relationName === relation.relationName || !relation.relationName && referencedTableRelation.referencedTable === relation.sourceTable) && reverseRelations.push(referencedTableRelation);
+  if (reverseRelations.length > 1)
+    throw relation.relationName ? new Error(
+      `There are multiple relations with name "${relation.relationName}" in table "${referencedTableTsName}"`
+    ) : new Error(
+      `There are multiple relations between "${referencedTableTsName}" and "${relation.sourceTable[Table.Symbol.Name]}". Please specify relation name`
+    );
+  if (reverseRelations[0] && is2(reverseRelations[0], One) && reverseRelations[0].config)
+    return {
+      fields: reverseRelations[0].config.references,
+      references: reverseRelations[0].config.fields
+    };
+  throw new Error(
+    `There is not enough information to infer relation "${sourceTableTsName}.${relation.fieldName}"`
+  );
+}
+function createTableRelationsHelpers(sourceTable) {
+  return {
+    one: createOne(sourceTable),
+    many: createMany(sourceTable)
+  };
+}
+function mapRelationalRow(tablesConfig, tableConfig, row, buildQueryResultSelection, mapColumnValue = (value) => value) {
+  let result = {};
+  for (let [
+    selectionItemIndex,
+    selectionItem
+  ] of buildQueryResultSelection.entries())
+    if (selectionItem.isJson) {
+      let relation = tableConfig.relations[selectionItem.tsKey], rawSubRows = row[selectionItemIndex], subRows = typeof rawSubRows == "string" ? JSON.parse(rawSubRows) : rawSubRows;
+      result[selectionItem.tsKey] = is2(relation, One) ? subRows && mapRelationalRow(
+        tablesConfig,
+        tablesConfig[selectionItem.relationTableTsKey],
+        subRows,
+        selectionItem.selection,
+        mapColumnValue
+      ) : subRows.map(
+        (subRow) => mapRelationalRow(
+          tablesConfig,
+          tablesConfig[selectionItem.relationTableTsKey],
+          subRow,
+          selectionItem.selection,
+          mapColumnValue
+        )
+      );
+    } else {
+      let value = mapColumnValue(row[selectionItemIndex]), field = selectionItem.field, decoder;
+      is2(field, Column) ? decoder = field : is2(field, SQL) ? decoder = field.decoder : decoder = field.sql.decoder, result[selectionItem.tsKey] = value === null ? null : decoder.mapFromDriverValue(value);
+    }
+  return result;
+}
+
+// node_modules/drizzle-orm/alias.js
+var _a22, ColumnAliasProxyHandler = class {
+  constructor(table) {
+    this.table = table;
+  }
+  get(columnObj, prop) {
+    return prop === "table" ? this.table : columnObj[prop];
+  }
+};
+_a22 = entityKind, __publicField(ColumnAliasProxyHandler, _a22, "ColumnAliasProxyHandler");
+var _a23, TableAliasProxyHandler = class {
+  constructor(alias, replaceOriginalName) {
+    this.alias = alias, this.replaceOriginalName = replaceOriginalName;
+  }
+  get(target, prop) {
+    if (prop === Table.Symbol.IsAlias)
+      return !0;
+    if (prop === Table.Symbol.Name)
+      return this.alias;
+    if (this.replaceOriginalName && prop === Table.Symbol.OriginalName)
+      return this.alias;
+    if (prop === ViewBaseConfig)
+      return {
+        ...target[ViewBaseConfig],
+        name: this.alias,
+        isAlias: !0
+      };
+    if (prop === Table.Symbol.Columns) {
+      let columns = target[Table.Symbol.Columns];
+      if (!columns)
+        return columns;
+      let proxiedColumns = {};
+      return Object.keys(columns).map((key) => {
+        proxiedColumns[key] = new Proxy(
+          columns[key],
+          new ColumnAliasProxyHandler(new Proxy(target, this))
+        );
+      }), proxiedColumns;
+    }
+    let value = target[prop];
+    return is2(value, Column) ? new Proxy(value, new ColumnAliasProxyHandler(new Proxy(target, this))) : value;
+  }
+};
+_a23 = entityKind, __publicField(TableAliasProxyHandler, _a23, "TableAliasProxyHandler");
+var _a24, RelationTableAliasProxyHandler = class {
+  constructor(alias) {
+    this.alias = alias;
+  }
+  get(target, prop) {
+    return prop === "sourceTable" ? aliasedTable(target.sourceTable, this.alias) : target[prop];
+  }
+};
+_a24 = entityKind, __publicField(RelationTableAliasProxyHandler, _a24, "RelationTableAliasProxyHandler");
+function aliasedTable(table, tableAlias) {
+  return new Proxy(table, new TableAliasProxyHandler(tableAlias, !1));
+}
+function aliasedTableColumn(column, tableAlias) {
+  return new Proxy(
+    column,
+    new ColumnAliasProxyHandler(new Proxy(column.table, new TableAliasProxyHandler(tableAlias, !1)))
+  );
+}
+function mapColumnsInAliasedSQLToAlias(query, alias) {
+  return new SQL.Aliased(mapColumnsInSQLToAlias(query.sql, alias), query.fieldAlias);
+}
+function mapColumnsInSQLToAlias(query, alias) {
+  return sql.join(query.queryChunks.map((c) => is2(c, Column) ? aliasedTableColumn(c, alias) : is2(c, SQL) ? mapColumnsInSQLToAlias(c, alias) : is2(c, SQL.Aliased) ? mapColumnsInAliasedSQLToAlias(c, alias) : c));
+}
+
+// node_modules/drizzle-orm/selection-proxy.js
+var _a25, _SelectionProxyHandler = class {
+  config;
+  constructor(config) {
+    this.config = { ...config };
+  }
+  get(subquery, prop) {
+    if (prop === SubqueryConfig)
+      return {
+        ...subquery[SubqueryConfig],
+        selection: new Proxy(
+          subquery[SubqueryConfig].selection,
           this
         )
-      ]
-    },
-    void 0,
-    !0,
-    {
-      fileName: "app/routes/register.tsx",
-      lineNumber: 8,
-      columnNumber: 5
-    },
-    this
-  );
-}, register_default = Register;
+      };
+    if (prop === ViewBaseConfig)
+      return {
+        ...subquery[ViewBaseConfig],
+        selectedFields: new Proxy(
+          subquery[ViewBaseConfig].selectedFields,
+          this
+        )
+      };
+    if (typeof prop == "symbol")
+      return subquery[prop];
+    let value = (is2(subquery, Subquery) ? subquery[SubqueryConfig].selection : is2(subquery, View) ? subquery[ViewBaseConfig].selectedFields : subquery)[prop];
+    if (is2(value, SQL.Aliased)) {
+      if (this.config.sqlAliasedBehavior === "sql" && !value.isSelectionField)
+        return value.sql;
+      let newValue = value.clone();
+      return newValue.isSelectionField = !0, newValue;
+    }
+    if (is2(value, SQL)) {
+      if (this.config.sqlBehavior === "sql")
+        return value;
+      throw new Error(
+        `You tried to reference "${prop}" field from a subquery, which is a raw SQL field, but it doesn't have an alias declared. Please add an alias to the field using ".as('alias')" method.`
+      );
+    }
+    return is2(value, Column) ? this.config.alias ? new Proxy(
+      value,
+      new ColumnAliasProxyHandler(
+        new Proxy(
+          value.table,
+          new TableAliasProxyHandler(this.config.alias, this.config.replaceOriginalName ?? !1)
+        )
+      )
+    ) : value : typeof value != "object" || value === null ? value : new Proxy(value, new _SelectionProxyHandler(this.config));
+  }
+}, SelectionProxyHandler = _SelectionProxyHandler;
+_a25 = entityKind, __publicField(SelectionProxyHandler, _a25, "SelectionProxyHandler");
 
-// app/routes/welcome.tsx
-var welcome_exports = {};
-__export(welcome_exports, {
-  default: () => welcome
-});
-var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime(), 1);
-function welcome() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: "welcome" }, void 0, !1, {
-    fileName: "app/routes/welcome.tsx",
-    lineNumber: 5,
-    columnNumber: 5
-  }, this);
+// node_modules/drizzle-orm/query-promise.js
+var _a26, QueryPromise = class {
+  [(_a26 = entityKind, Symbol.toStringTag)] = "QueryPromise";
+  catch(onRejected) {
+    return this.then(void 0, onRejected);
+  }
+  finally(onFinally) {
+    return this.then(
+      (value) => (onFinally?.(), value),
+      (reason) => {
+        throw onFinally?.(), reason;
+      }
+    );
+  }
+  then(onFulfilled, onRejected) {
+    return this.execute().then(onFulfilled, onRejected);
+  }
+};
+__publicField(QueryPromise, _a26, "QueryPromise");
+
+// node_modules/drizzle-orm/sqlite-core/table.js
+var InlineForeignKeys2 = Symbol.for("drizzle:SQLiteInlineForeignKeys"), _a27, SQLiteTable = class extends Table {
+  /** @internal */
+  [(_a27 = entityKind, Table.Symbol.Columns)];
+  /** @internal */
+  [InlineForeignKeys2] = [];
+  /** @internal */
+  [Table.Symbol.ExtraConfigBuilder] = void 0;
+};
+__publicField(SQLiteTable, _a27, "SQLiteTable"), /** @internal */
+__publicField(SQLiteTable, "Symbol", Object.assign({}, Table.Symbol, {
+  InlineForeignKeys: InlineForeignKeys2
+}));
+function sqliteTableBase(name, columns, extraConfig, schema, baseName = name) {
+  let rawTable = new SQLiteTable(name, schema, baseName), builtColumns = Object.fromEntries(
+    Object.entries(columns).map(([name2, colBuilderBase]) => {
+      let colBuilder = colBuilderBase, column = colBuilder.build(rawTable);
+      return rawTable[InlineForeignKeys2].push(...colBuilder.buildForeignKeys(column, rawTable)), [name2, column];
+    })
+  ), table = Object.assign(rawTable, builtColumns);
+  return table[Table.Symbol.Columns] = builtColumns, extraConfig && (table[SQLiteTable.Symbol.ExtraConfigBuilder] = extraConfig), table;
+}
+var sqliteTable = (name, columns, extraConfig) => sqliteTableBase(name, columns, extraConfig);
+
+// node_modules/drizzle-orm/utils.js
+function mapResultRow(columns, row, joinsNotNullableMap) {
+  let nullifyMap = {}, result = columns.reduce(
+    (result2, { path, field }, columnIndex) => {
+      let decoder;
+      is2(field, Column) ? decoder = field : is2(field, SQL) ? decoder = field.decoder : decoder = field.sql.decoder;
+      let node = result2;
+      for (let [pathChunkIndex, pathChunk] of path.entries())
+        if (pathChunkIndex < path.length - 1)
+          pathChunk in node || (node[pathChunk] = {}), node = node[pathChunk];
+        else {
+          let rawValue = row[columnIndex], value = node[pathChunk] = rawValue === null ? null : decoder.mapFromDriverValue(rawValue);
+          if (joinsNotNullableMap && is2(field, Column) && path.length === 2) {
+            let objectName = path[0];
+            objectName in nullifyMap ? typeof nullifyMap[objectName] == "string" && nullifyMap[objectName] !== getTableName(field.table) && (nullifyMap[objectName] = !1) : nullifyMap[objectName] = value === null ? getTableName(field.table) : !1;
+          }
+        }
+      return result2;
+    },
+    {}
+  );
+  if (joinsNotNullableMap && Object.keys(nullifyMap).length > 0)
+    for (let [objectName, tableName] of Object.entries(nullifyMap))
+      typeof tableName == "string" && !joinsNotNullableMap[tableName] && (result[objectName] = null);
+  return result;
+}
+function orderSelectedFields(fields, pathPrefix) {
+  return Object.entries(fields).reduce((result, [name, field]) => {
+    if (typeof name != "string")
+      return result;
+    let newPath = pathPrefix ? [...pathPrefix, name] : [name];
+    return is2(field, Column) || is2(field, SQL) || is2(field, SQL.Aliased) ? result.push({ path: newPath, field }) : is2(field, Table) ? result.push(...orderSelectedFields(field[Table.Symbol.Columns], newPath)) : result.push(...orderSelectedFields(field, newPath)), result;
+  }, []);
+}
+function haveSameKeys(left, right) {
+  let leftKeys = Object.keys(left), rightKeys = Object.keys(right);
+  if (leftKeys.length !== rightKeys.length)
+    return !1;
+  for (let [index, key] of leftKeys.entries())
+    if (key !== rightKeys[index])
+      return !1;
+  return !0;
+}
+function mapUpdateSet(table, values) {
+  let entries = Object.entries(values).filter(([, value]) => value !== void 0).map(([key, value]) => is2(value, SQL) ? [key, value] : [key, new Param(value, table[Table.Symbol.Columns][key])]);
+  if (entries.length === 0)
+    throw new Error("No values to set");
+  return Object.fromEntries(entries);
+}
+function applyMixins(baseClass, extendedClasses) {
+  for (let extendedClass of extendedClasses)
+    for (let name of Object.getOwnPropertyNames(extendedClass.prototype))
+      name !== "constructor" && Object.defineProperty(
+        baseClass.prototype,
+        name,
+        Object.getOwnPropertyDescriptor(extendedClass.prototype, name) || /* @__PURE__ */ Object.create(null)
+      );
+}
+function getTableColumns(table) {
+  return table[Table.Symbol.Columns];
+}
+function getTableLikeName(table) {
+  return is2(table, Subquery) ? table[SubqueryConfig].alias : is2(table, View) ? table[ViewBaseConfig].name : is2(table, SQL) ? void 0 : table[Table.Symbol.IsAlias] ? table[Table.Symbol.Name] : table[Table.Symbol.BaseName];
 }
 
-// app/routes/_index.tsx
-var index_exports = {};
-__export(index_exports, {
-  default: () => index_default
-});
-var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1), index = () => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Outlet, {}, void 0, !1, {
-  fileName: "app/routes/_index.tsx",
-  lineNumber: 7,
-  columnNumber: 7
-}, this) }, void 0, !1, {
-  fileName: "app/routes/_index.tsx",
-  lineNumber: 6,
-  columnNumber: 5
-}, this), index_default = index;
+// node_modules/drizzle-orm/sqlite-core/query-builders/delete.js
+var _a28, SQLiteDeleteBase = class extends QueryPromise {
+  constructor(table, session, dialect) {
+    super(), this.table = table, this.session = session, this.dialect = dialect, this.config = { table };
+  }
+  /** @internal */
+  config;
+  /**
+   * Adds a `where` clause to the query.
+   *
+   * Calling this method will delete only those rows that fulfill a specified condition.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/delete}
+   *
+   * @param where the `where` clause.
+   *
+   * @example
+   * You can use conditional operators and `sql function` to filter the rows to be deleted.
+   *
+   * ```ts
+   * // Delete all cars with green color
+   * db.delete(cars).where(eq(cars.color, 'green'));
+   * // or
+   * db.delete(cars).where(sql`${cars.color} = 'green'`)
+   * ```
+   *
+   * You can logically combine conditional operators with `and()` and `or()` operators:
+   *
+   * ```ts
+   * // Delete all BMW cars with a green color
+   * db.delete(cars).where(and(eq(cars.color, 'green'), eq(cars.brand, 'BMW')));
+   *
+   * // Delete all cars with the green or blue color
+   * db.delete(cars).where(or(eq(cars.color, 'green'), eq(cars.color, 'blue')));
+   * ```
+   */
+  where(where) {
+    return this.config.where = where, this;
+  }
+  returning(fields = this.table[SQLiteTable.Symbol.Columns]) {
+    return this.config.returning = orderSelectedFields(fields), this;
+  }
+  /** @internal */
+  getSQL() {
+    return this.dialect.buildDeleteQuery(this.config);
+  }
+  toSQL() {
+    let { typings: _typings, ...rest } = this.dialect.sqlToQuery(this.getSQL());
+    return rest;
+  }
+  /** @internal */
+  _prepare(isOneTimeQuery = !0) {
+    return this.session[isOneTimeQuery ? "prepareOneTimeQuery" : "prepareQuery"](
+      this.dialect.sqlToQuery(this.getSQL()),
+      this.config.returning,
+      this.config.returning ? "all" : "run"
+    );
+  }
+  prepare() {
+    return this._prepare(!1);
+  }
+  run = (placeholderValues) => this._prepare().run(placeholderValues);
+  all = (placeholderValues) => this._prepare().all(placeholderValues);
+  get = (placeholderValues) => this._prepare().get(placeholderValues);
+  values = (placeholderValues) => this._prepare().values(placeholderValues);
+  async execute(placeholderValues) {
+    return this._prepare().execute(placeholderValues);
+  }
+  $dynamic() {
+    return this;
+  }
+};
+_a28 = entityKind, __publicField(SQLiteDeleteBase, _a28, "SQLiteDelete");
 
-// app/routes/logout.tsx
-var logout_exports = {};
+// node_modules/drizzle-orm/sqlite-core/query-builders/insert.js
+var _a29, SQLiteInsertBuilder = class {
+  constructor(table, session, dialect) {
+    this.table = table, this.session = session, this.dialect = dialect;
+  }
+  values(values) {
+    if (values = Array.isArray(values) ? values : [values], values.length === 0)
+      throw new Error("values() must be called with at least one value");
+    let mappedValues = values.map((entry2) => {
+      let result = {}, cols = this.table[Table.Symbol.Columns];
+      for (let colKey of Object.keys(entry2)) {
+        let colValue = entry2[colKey];
+        result[colKey] = is2(colValue, SQL) ? colValue : new Param(colValue, cols[colKey]);
+      }
+      return result;
+    });
+    return new SQLiteInsertBase(this.table, mappedValues, this.session, this.dialect);
+  }
+};
+_a29 = entityKind, __publicField(SQLiteInsertBuilder, _a29, "SQLiteInsertBuilder");
+var _a30, SQLiteInsertBase = class extends QueryPromise {
+  constructor(table, values, session, dialect) {
+    super(), this.session = session, this.dialect = dialect, this.config = { table, values };
+  }
+  /** @internal */
+  config;
+  returning(fields = this.config.table[SQLiteTable.Symbol.Columns]) {
+    return this.config.returning = orderSelectedFields(fields), this;
+  }
+  /**
+   * Adds an `on conflict do nothing` clause to the query.
+   *
+   * Calling this method simply avoids inserting a row as its alternative action.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/insert#on-conflict-do-nothing}
+   *
+   * @param config The `target` and `where` clauses.
+   *
+   * @example
+   * ```ts
+   * // Insert one row and cancel the insert if there's a conflict
+   * await db.insert(cars)
+   *   .values({ id: 1, brand: 'BMW' })
+   *   .onConflictDoNothing();
+   *
+   * // Explicitly specify conflict target
+   * await db.insert(cars)
+   *   .values({ id: 1, brand: 'BMW' })
+   *   .onConflictDoNothing({ target: cars.id });
+   * ```
+   */
+  onConflictDoNothing(config = {}) {
+    if (config.target === void 0)
+      this.config.onConflict = sql`do nothing`;
+    else {
+      let targetSql = Array.isArray(config.target) ? sql`${config.target}` : sql`${[config.target]}`, whereSql = config.where ? sql` where ${config.where}` : sql``;
+      this.config.onConflict = sql`${targetSql} do nothing${whereSql}`;
+    }
+    return this;
+  }
+  /**
+   * Adds an `on conflict do update` clause to the query.
+   *
+   * Calling this method will update the existing row that conflicts with the row proposed for insertion as its alternative action.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/insert#upserts-and-conflicts}
+   *
+   * @param config The `target`, `set` and `where` clauses.
+   *
+   * @example
+   * ```ts
+   * // Update the row if there's a conflict
+   * await db.insert(cars)
+   *   .values({ id: 1, brand: 'BMW' })
+   *   .onConflictDoUpdate({
+   *     target: cars.id,
+   *     set: { brand: 'Porsche' }
+   *   });
+   *
+   * // Upsert with 'where' clause
+   * await db.insert(cars)
+   *   .values({ id: 1, brand: 'BMW' })
+   *   .onConflictDoUpdate({
+   *     target: cars.id,
+   *     set: { brand: 'newBMW' },
+   *     where: sql`${cars.createdAt} > '2023-01-01'::date`,
+   *   });
+   * ```
+   */
+  onConflictDoUpdate(config) {
+    let targetSql = Array.isArray(config.target) ? sql`${config.target}` : sql`${[config.target]}`, whereSql = config.where ? sql` where ${config.where}` : sql``, setSql = this.dialect.buildUpdateSet(this.config.table, mapUpdateSet(this.config.table, config.set));
+    return this.config.onConflict = sql`${targetSql} do update set ${setSql}${whereSql}`, this;
+  }
+  /** @internal */
+  getSQL() {
+    return this.dialect.buildInsertQuery(this.config);
+  }
+  toSQL() {
+    let { typings: _typings, ...rest } = this.dialect.sqlToQuery(this.getSQL());
+    return rest;
+  }
+  /** @internal */
+  _prepare(isOneTimeQuery = !0) {
+    return this.session[isOneTimeQuery ? "prepareOneTimeQuery" : "prepareQuery"](
+      this.dialect.sqlToQuery(this.getSQL()),
+      this.config.returning,
+      this.config.returning ? "all" : "run"
+    );
+  }
+  prepare() {
+    return this._prepare(!1);
+  }
+  run = (placeholderValues) => this._prepare().run(placeholderValues);
+  all = (placeholderValues) => this._prepare().all(placeholderValues);
+  get = (placeholderValues) => this._prepare().get(placeholderValues);
+  values = (placeholderValues) => this._prepare().values(placeholderValues);
+  async execute() {
+    return this.config.returning ? this.all() : this.run();
+  }
+  $dynamic() {
+    return this;
+  }
+};
+_a30 = entityKind, __publicField(SQLiteInsertBase, _a30, "SQLiteInsert");
 
-// app/routes/login.tsx
-var login_exports = {};
-__export(login_exports, {
-  default: () => login_default
+// node_modules/drizzle-orm/errors.js
+var _a31, DrizzleError = class extends Error {
+  constructor({ message, cause }) {
+    super(message), this.name = "DrizzleError", this.cause = cause;
+  }
+};
+_a31 = entityKind, __publicField(DrizzleError, _a31, "DrizzleError");
+var _a32, TransactionRollbackError = class extends DrizzleError {
+  constructor() {
+    super({ message: "Rollback" });
+  }
+};
+_a32 = entityKind, __publicField(TransactionRollbackError, _a32, "TransactionRollbackError");
+
+// node_modules/drizzle-orm/column-builder.js
+var _a33, ColumnBuilder = class {
+  config;
+  constructor(name, dataType, columnType) {
+    this.config = {
+      name,
+      notNull: !1,
+      default: void 0,
+      hasDefault: !1,
+      primaryKey: !1,
+      isUnique: !1,
+      uniqueName: void 0,
+      uniqueType: void 0,
+      dataType,
+      columnType
+    };
+  }
+  /**
+   * Changes the data type of the column. Commonly used with `json` columns. Also, useful for branded types.
+   *
+   * @example
+   * ```ts
+   * const users = pgTable('users', {
+   * 	id: integer('id').$type<UserId>().primaryKey(),
+   * 	details: json('details').$type<UserDetails>().notNull(),
+   * });
+   * ```
+   */
+  $type() {
+    return this;
+  }
+  /**
+   * Adds a `not null` clause to the column definition.
+   *
+   * Affects the `select` model of the table - columns *without* `not null` will be nullable on select.
+   */
+  notNull() {
+    return this.config.notNull = !0, this;
+  }
+  /**
+   * Adds a `default <value>` clause to the column definition.
+   *
+   * Affects the `insert` model of the table - columns *with* `default` are optional on insert.
+   *
+   * If you need to set a dynamic default value, use {@link $defaultFn} instead.
+   */
+  default(value) {
+    return this.config.default = value, this.config.hasDefault = !0, this;
+  }
+  /**
+   * Adds a dynamic default value to the column.
+   * The function will be called when the row is inserted, and the returned value will be used as the column value.
+   *
+   * **Note:** This value does not affect the `drizzle-kit` behavior, it is only used at runtime in `drizzle-orm`.
+   */
+  $defaultFn(fn) {
+    return this.config.defaultFn = fn, this.config.hasDefault = !0, this;
+  }
+  /**
+   * Alias for {@link $defaultFn}.
+   */
+  $default = this.$defaultFn;
+  /**
+   * Adds a `primary key` clause to the column definition. This implicitly makes the column `not null`.
+   *
+   * In SQLite, `integer primary key` implicitly makes the column auto-incrementing.
+   */
+  primaryKey() {
+    return this.config.primaryKey = !0, this.config.notNull = !0, this;
+  }
+};
+_a33 = entityKind, __publicField(ColumnBuilder, _a33, "ColumnBuilder");
+
+// node_modules/drizzle-orm/sqlite-core/foreign-keys.js
+var _a34, ForeignKeyBuilder = class {
+  /** @internal */
+  reference;
+  /** @internal */
+  _onUpdate;
+  /** @internal */
+  _onDelete;
+  constructor(config, actions) {
+    this.reference = () => {
+      let { name, columns, foreignColumns } = config();
+      return { name, columns, foreignTable: foreignColumns[0].table, foreignColumns };
+    }, actions && (this._onUpdate = actions.onUpdate, this._onDelete = actions.onDelete);
+  }
+  onUpdate(action3) {
+    return this._onUpdate = action3, this;
+  }
+  onDelete(action3) {
+    return this._onDelete = action3, this;
+  }
+  /** @internal */
+  build(table) {
+    return new ForeignKey(table, this);
+  }
+};
+_a34 = entityKind, __publicField(ForeignKeyBuilder, _a34, "SQLiteForeignKeyBuilder");
+var _a35, ForeignKey = class {
+  constructor(table, builder) {
+    this.table = table, this.reference = builder.reference, this.onUpdate = builder._onUpdate, this.onDelete = builder._onDelete;
+  }
+  reference;
+  onUpdate;
+  onDelete;
+  getName() {
+    let { name, columns, foreignColumns } = this.reference(), columnNames = columns.map((column) => column.name), foreignColumnNames = foreignColumns.map((column) => column.name), chunks = [
+      this.table[SQLiteTable.Symbol.Name],
+      ...columnNames,
+      foreignColumns[0].table[SQLiteTable.Symbol.Name],
+      ...foreignColumnNames
+    ];
+    return name ?? `${chunks.join("_")}_fk`;
+  }
+};
+_a35 = entityKind, __publicField(ForeignKey, _a35, "SQLiteForeignKey");
+
+// node_modules/drizzle-orm/sqlite-core/unique-constraint.js
+function uniqueKeyName(table, columns) {
+  return `${table[SQLiteTable.Symbol.Name]}_${columns.join("_")}_unique`;
+}
+var _a36, UniqueConstraintBuilder = class {
+  constructor(columns, name) {
+    this.name = name, this.columns = columns;
+  }
+  /** @internal */
+  columns;
+  /** @internal */
+  build(table) {
+    return new UniqueConstraint(table, this.columns, this.name);
+  }
+};
+_a36 = entityKind, __publicField(UniqueConstraintBuilder, _a36, "SQLiteUniqueConstraintBuilder");
+var _a37, UniqueOnConstraintBuilder = class {
+  /** @internal */
+  name;
+  constructor(name) {
+    this.name = name;
+  }
+  on(...columns) {
+    return new UniqueConstraintBuilder(columns, this.name);
+  }
+};
+_a37 = entityKind, __publicField(UniqueOnConstraintBuilder, _a37, "SQLiteUniqueOnConstraintBuilder");
+var _a38, UniqueConstraint = class {
+  constructor(table, columns, name) {
+    this.table = table, this.columns = columns, this.name = name ?? uniqueKeyName(this.table, this.columns.map((column) => column.name));
+  }
+  columns;
+  name;
+  getName() {
+    return this.name;
+  }
+};
+_a38 = entityKind, __publicField(UniqueConstraint, _a38, "SQLiteUniqueConstraint");
+
+// node_modules/drizzle-orm/sqlite-core/columns/common.js
+var _a39, SQLiteColumnBuilder = class extends ColumnBuilder {
+  foreignKeyConfigs = [];
+  references(ref, actions = {}) {
+    return this.foreignKeyConfigs.push({ ref, actions }), this;
+  }
+  unique(name) {
+    return this.config.isUnique = !0, this.config.uniqueName = name, this;
+  }
+  /** @internal */
+  buildForeignKeys(column, table) {
+    return this.foreignKeyConfigs.map(({ ref, actions }) => ((ref2, actions2) => {
+      let builder = new ForeignKeyBuilder(() => {
+        let foreignColumn = ref2();
+        return { columns: [column], foreignColumns: [foreignColumn] };
+      });
+      return actions2.onUpdate && builder.onUpdate(actions2.onUpdate), actions2.onDelete && builder.onDelete(actions2.onDelete), builder.build(table);
+    })(ref, actions));
+  }
+};
+_a39 = entityKind, __publicField(SQLiteColumnBuilder, _a39, "SQLiteColumnBuilder");
+var _a40, SQLiteColumn = class extends Column {
+  constructor(table, config) {
+    config.uniqueName || (config.uniqueName = uniqueKeyName(table, [config.name])), super(table, config), this.table = table;
+  }
+};
+_a40 = entityKind, __publicField(SQLiteColumn, _a40, "SQLiteColumn");
+
+// node_modules/drizzle-orm/sqlite-core/columns/integer.js
+var _a41, SQLiteBaseIntegerBuilder = class extends SQLiteColumnBuilder {
+  constructor(name, dataType, columnType) {
+    super(name, dataType, columnType), this.config.autoIncrement = !1;
+  }
+  primaryKey(config) {
+    return config?.autoIncrement && (this.config.autoIncrement = !0), this.config.hasDefault = !0, super.primaryKey();
+  }
+};
+_a41 = entityKind, __publicField(SQLiteBaseIntegerBuilder, _a41, "SQLiteBaseIntegerBuilder");
+var _a42, SQLiteBaseInteger = class extends SQLiteColumn {
+  autoIncrement = this.config.autoIncrement;
+  getSQLType() {
+    return "integer";
+  }
+};
+_a42 = entityKind, __publicField(SQLiteBaseInteger, _a42, "SQLiteBaseInteger");
+var _a43, SQLiteIntegerBuilder = class extends SQLiteBaseIntegerBuilder {
+  constructor(name) {
+    super(name, "number", "SQLiteInteger");
+  }
+  build(table) {
+    return new SQLiteInteger(
+      table,
+      this.config
+    );
+  }
+};
+_a43 = entityKind, __publicField(SQLiteIntegerBuilder, _a43, "SQLiteIntegerBuilder");
+var _a44, SQLiteInteger = class extends SQLiteBaseInteger {
+};
+_a44 = entityKind, __publicField(SQLiteInteger, _a44, "SQLiteInteger");
+var _a45, SQLiteTimestampBuilder = class extends SQLiteBaseIntegerBuilder {
+  constructor(name, mode2) {
+    super(name, "date", "SQLiteTimestamp"), this.config.mode = mode2;
+  }
+  /**
+   * @deprecated Use `default()` with your own expression instead.
+   *
+   * Adds `DEFAULT (cast((julianday('now') - 2440587.5)*86400000 as integer))` to the column, which is the current epoch timestamp in milliseconds.
+   */
+  defaultNow() {
+    return this.default(sql`(cast((julianday('now') - 2440587.5)*86400000 as integer))`);
+  }
+  build(table) {
+    return new SQLiteTimestamp(
+      table,
+      this.config
+    );
+  }
+};
+_a45 = entityKind, __publicField(SQLiteTimestampBuilder, _a45, "SQLiteTimestampBuilder");
+var _a46, SQLiteTimestamp = class extends SQLiteBaseInteger {
+  mode = this.config.mode;
+  mapFromDriverValue(value) {
+    return this.config.mode === "timestamp" ? new Date(value * 1e3) : new Date(value);
+  }
+  mapToDriverValue(value) {
+    let unix = value.getTime();
+    return this.config.mode === "timestamp" ? Math.floor(unix / 1e3) : unix;
+  }
+};
+_a46 = entityKind, __publicField(SQLiteTimestamp, _a46, "SQLiteTimestamp");
+var _a47, SQLiteBooleanBuilder = class extends SQLiteBaseIntegerBuilder {
+  constructor(name, mode2) {
+    super(name, "boolean", "SQLiteBoolean"), this.config.mode = mode2;
+  }
+  build(table) {
+    return new SQLiteBoolean(
+      table,
+      this.config
+    );
+  }
+};
+_a47 = entityKind, __publicField(SQLiteBooleanBuilder, _a47, "SQLiteBooleanBuilder");
+var _a48, SQLiteBoolean = class extends SQLiteBaseInteger {
+  mode = this.config.mode;
+  mapFromDriverValue(value) {
+    return Number(value) === 1;
+  }
+  mapToDriverValue(value) {
+    return value ? 1 : 0;
+  }
+};
+_a48 = entityKind, __publicField(SQLiteBoolean, _a48, "SQLiteBoolean");
+function integer(name, config) {
+  return config?.mode === "timestamp" || config?.mode === "timestamp_ms" ? new SQLiteTimestampBuilder(name, config.mode) : config?.mode === "boolean" ? new SQLiteBooleanBuilder(name, config.mode) : new SQLiteIntegerBuilder(name);
+}
+
+// node_modules/drizzle-orm/sqlite-core/columns/text.js
+var _a49, SQLiteTextBuilder = class extends SQLiteColumnBuilder {
+  constructor(name, config) {
+    super(name, "string", "SQLiteText"), this.config.enumValues = config.enum, this.config.length = config.length;
+  }
+  /** @internal */
+  build(table) {
+    return new SQLiteText(table, this.config);
+  }
+};
+_a49 = entityKind, __publicField(SQLiteTextBuilder, _a49, "SQLiteTextBuilder");
+var _a50, SQLiteText = class extends SQLiteColumn {
+  enumValues = this.config.enumValues;
+  length = this.config.length;
+  constructor(table, config) {
+    super(table, config);
+  }
+  getSQLType() {
+    return `text${this.config.length ? `(${this.config.length})` : ""}`;
+  }
+};
+_a50 = entityKind, __publicField(SQLiteText, _a50, "SQLiteText");
+var _a51, SQLiteTextJsonBuilder = class extends SQLiteColumnBuilder {
+  constructor(name) {
+    super(name, "json", "SQLiteTextJson");
+  }
+  /** @internal */
+  build(table) {
+    return new SQLiteTextJson(
+      table,
+      this.config
+    );
+  }
+};
+_a51 = entityKind, __publicField(SQLiteTextJsonBuilder, _a51, "SQLiteTextJsonBuilder");
+var _a52, SQLiteTextJson = class extends SQLiteColumn {
+  getSQLType() {
+    return "text";
+  }
+  mapFromDriverValue(value) {
+    return JSON.parse(value);
+  }
+  mapToDriverValue(value) {
+    return JSON.stringify(value);
+  }
+};
+_a52 = entityKind, __publicField(SQLiteTextJson, _a52, "SQLiteTextJson");
+function text(name, config = {}) {
+  return config.mode === "json" ? new SQLiteTextJsonBuilder(name) : new SQLiteTextBuilder(name, config);
+}
+
+// node_modules/drizzle-orm/sqlite-core/view-base.js
+var _a53, SQLiteViewBase = class extends View {
+};
+_a53 = entityKind, __publicField(SQLiteViewBase, _a53, "SQLiteViewBase");
+
+// node_modules/drizzle-orm/sqlite-core/dialect.js
+var _a54, SQLiteDialect = class {
+  escapeName(name) {
+    return `"${name}"`;
+  }
+  escapeParam(_num) {
+    return "?";
+  }
+  escapeString(str) {
+    return `'${str.replace(/'/g, "''")}'`;
+  }
+  buildDeleteQuery({ table, where, returning }) {
+    let returningSql = returning ? sql` returning ${this.buildSelection(returning, { isSingleTable: !0 })}` : void 0, whereSql = where ? sql` where ${where}` : void 0;
+    return sql`delete from ${table}${whereSql}${returningSql}`;
+  }
+  buildUpdateSet(table, set2) {
+    let setEntries = Object.entries(set2), setSize = setEntries.length;
+    return sql.join(
+      setEntries.flatMap(([colName, value], i) => {
+        let col = table[Table.Symbol.Columns][colName], res = sql`${sql.identifier(col.name)} = ${value}`;
+        return i < setSize - 1 ? [res, sql.raw(", ")] : [res];
+      })
+    );
+  }
+  buildUpdateQuery({ table, set: set2, where, returning }) {
+    let setSql = this.buildUpdateSet(table, set2), returningSql = returning ? sql` returning ${this.buildSelection(returning, { isSingleTable: !0 })}` : void 0, whereSql = where ? sql` where ${where}` : void 0;
+    return sql`update ${table} set ${setSql}${whereSql}${returningSql}`;
+  }
+  /**
+   * Builds selection SQL with provided fields/expressions
+   *
+   * Examples:
+   *
+   * `select <selection> from`
+   *
+   * `insert ... returning <selection>`
+   *
+   * If `isSingleTable` is true, then columns won't be prefixed with table name
+   */
+  buildSelection(fields, { isSingleTable = !1 } = {}) {
+    let columnsLen = fields.length, chunks = fields.flatMap(({ field }, i) => {
+      let chunk = [];
+      if (is2(field, SQL.Aliased) && field.isSelectionField)
+        chunk.push(sql.identifier(field.fieldAlias));
+      else if (is2(field, SQL.Aliased) || is2(field, SQL)) {
+        let query = is2(field, SQL.Aliased) ? field.sql : field;
+        isSingleTable ? chunk.push(
+          new SQL(
+            query.queryChunks.map((c) => is2(c, Column) ? sql.identifier(c.name) : c)
+          )
+        ) : chunk.push(query), is2(field, SQL.Aliased) && chunk.push(sql` as ${sql.identifier(field.fieldAlias)}`);
+      } else if (is2(field, Column)) {
+        let tableName = field.table[Table.Symbol.Name], columnName = field.name;
+        isSingleTable ? chunk.push(sql.identifier(columnName)) : chunk.push(sql`${sql.identifier(tableName)}.${sql.identifier(columnName)}`);
+      }
+      return i < columnsLen - 1 && chunk.push(sql`, `), chunk;
+    });
+    return sql.join(chunks);
+  }
+  buildSelectQuery({
+    withList,
+    fields,
+    fieldsFlat,
+    where,
+    having,
+    table,
+    joins,
+    orderBy,
+    groupBy,
+    limit,
+    offset,
+    distinct,
+    setOperators
+  }) {
+    let fieldsList = fieldsFlat ?? orderSelectedFields(fields);
+    for (let f2 of fieldsList)
+      if (is2(f2.field, Column) && getTableName(f2.field.table) !== (is2(table, Subquery) ? table[SubqueryConfig].alias : is2(table, SQLiteViewBase) ? table[ViewBaseConfig].name : is2(table, SQL) ? void 0 : getTableName(table)) && !((table2) => joins?.some(
+        ({ alias }) => alias === (table2[Table.Symbol.IsAlias] ? getTableName(table2) : table2[Table.Symbol.BaseName])
+      ))(f2.field.table)) {
+        let tableName = getTableName(f2.field.table);
+        throw new Error(
+          `Your "${f2.path.join("->")}" field references a column "${tableName}"."${f2.field.name}", but the table "${tableName}" is not part of the query! Did you forget to join it?`
+        );
+      }
+    let isSingleTable = !joins || joins.length === 0, withSql;
+    if (withList?.length) {
+      let withSqlChunks = [sql`with `];
+      for (let [i, w2] of withList.entries())
+        withSqlChunks.push(sql`${sql.identifier(w2[SubqueryConfig].alias)} as (${w2[SubqueryConfig].sql})`), i < withList.length - 1 && withSqlChunks.push(sql`, `);
+      withSqlChunks.push(sql` `), withSql = sql.join(withSqlChunks);
+    }
+    let distinctSql = distinct ? sql` distinct` : void 0, selection = this.buildSelection(fieldsList, { isSingleTable }), tableSql = (() => is2(table, Table) && table[Table.Symbol.OriginalName] !== table[Table.Symbol.Name] ? sql`${sql.identifier(table[Table.Symbol.OriginalName])} ${sql.identifier(table[Table.Symbol.Name])}` : table)(), joinsArray = [];
+    if (joins)
+      for (let [index, joinMeta] of joins.entries()) {
+        index === 0 && joinsArray.push(sql` `);
+        let table2 = joinMeta.table;
+        if (is2(table2, SQLiteTable)) {
+          let tableName = table2[SQLiteTable.Symbol.Name], tableSchema = table2[SQLiteTable.Symbol.Schema], origTableName = table2[SQLiteTable.Symbol.OriginalName], alias = tableName === origTableName ? void 0 : joinMeta.alias;
+          joinsArray.push(
+            sql`${sql.raw(joinMeta.joinType)} join ${tableSchema ? sql`${sql.identifier(tableSchema)}.` : void 0}${sql.identifier(origTableName)}${alias && sql` ${sql.identifier(alias)}`} on ${joinMeta.on}`
+          );
+        } else
+          joinsArray.push(
+            sql`${sql.raw(joinMeta.joinType)} join ${table2} on ${joinMeta.on}`
+          );
+        index < joins.length - 1 && joinsArray.push(sql` `);
+      }
+    let joinsSql = sql.join(joinsArray), whereSql = where ? sql` where ${where}` : void 0, havingSql = having ? sql` having ${having}` : void 0, orderByList = [];
+    if (orderBy)
+      for (let [index, orderByValue] of orderBy.entries())
+        orderByList.push(orderByValue), index < orderBy.length - 1 && orderByList.push(sql`, `);
+    let groupByList = [];
+    if (groupBy)
+      for (let [index, groupByValue] of groupBy.entries())
+        groupByList.push(groupByValue), index < groupBy.length - 1 && groupByList.push(sql`, `);
+    let groupBySql = groupByList.length > 0 ? sql` group by ${sql.join(groupByList)}` : void 0, orderBySql = orderByList.length > 0 ? sql` order by ${sql.join(orderByList)}` : void 0, limitSql = limit ? sql` limit ${limit}` : void 0, offsetSql = offset ? sql` offset ${offset}` : void 0, finalQuery = sql`${withSql}select${distinctSql} ${selection} from ${tableSql}${joinsSql}${whereSql}${groupBySql}${havingSql}${orderBySql}${limitSql}${offsetSql}`;
+    return setOperators.length > 0 ? this.buildSetOperations(finalQuery, setOperators) : finalQuery;
+  }
+  buildSetOperations(leftSelect, setOperators) {
+    let [setOperator, ...rest] = setOperators;
+    if (!setOperator)
+      throw new Error("Cannot pass undefined values to any set operator");
+    return rest.length === 0 ? this.buildSetOperationQuery({ leftSelect, setOperator }) : this.buildSetOperations(
+      this.buildSetOperationQuery({ leftSelect, setOperator }),
+      rest
+    );
+  }
+  buildSetOperationQuery({
+    leftSelect,
+    setOperator: { type, isAll, rightSelect, limit, orderBy, offset }
+  }) {
+    let leftChunk = sql`${leftSelect.getSQL()} `, rightChunk = sql`${rightSelect.getSQL()}`, orderBySql;
+    if (orderBy && orderBy.length > 0) {
+      let orderByValues = [];
+      for (let singleOrderBy of orderBy)
+        if (is2(singleOrderBy, SQLiteColumn))
+          orderByValues.push(sql.identifier(singleOrderBy.name));
+        else if (is2(singleOrderBy, SQL)) {
+          for (let i = 0; i < singleOrderBy.queryChunks.length; i++) {
+            let chunk = singleOrderBy.queryChunks[i];
+            is2(chunk, SQLiteColumn) && (singleOrderBy.queryChunks[i] = sql.identifier(chunk.name));
+          }
+          orderByValues.push(sql`${singleOrderBy}`);
+        } else
+          orderByValues.push(sql`${singleOrderBy}`);
+      orderBySql = sql` order by ${sql.join(orderByValues, sql`, `)}`;
+    }
+    let limitSql = limit ? sql` limit ${limit}` : void 0, operatorChunk = sql.raw(`${type} ${isAll ? "all " : ""}`), offsetSql = offset ? sql` offset ${offset}` : void 0;
+    return sql`${leftChunk}${operatorChunk}${rightChunk}${orderBySql}${limitSql}${offsetSql}`;
+  }
+  buildInsertQuery({ table, values, onConflict, returning }) {
+    let valuesSqlList = [], columns = table[Table.Symbol.Columns], colEntries = Object.entries(columns), insertOrder = colEntries.map(([, column]) => sql.identifier(column.name));
+    for (let [valueIndex, value] of values.entries()) {
+      let valueList = [];
+      for (let [fieldName, col] of colEntries) {
+        let colValue = value[fieldName];
+        if (colValue === void 0 || is2(colValue, Param) && colValue.value === void 0) {
+          let defaultValue;
+          if (col.default !== null && col.default !== void 0)
+            defaultValue = is2(col.default, SQL) ? col.default : sql.param(col.default, col);
+          else if (col.defaultFn !== void 0) {
+            let defaultFnResult = col.defaultFn();
+            defaultValue = is2(defaultFnResult, SQL) ? defaultFnResult : sql.param(defaultFnResult, col);
+          } else
+            defaultValue = sql`null`;
+          valueList.push(defaultValue);
+        } else
+          valueList.push(colValue);
+      }
+      valuesSqlList.push(valueList), valueIndex < values.length - 1 && valuesSqlList.push(sql`, `);
+    }
+    let valuesSql = sql.join(valuesSqlList), returningSql = returning ? sql` returning ${this.buildSelection(returning, { isSingleTable: !0 })}` : void 0, onConflictSql = onConflict ? sql` on conflict ${onConflict}` : void 0;
+    return sql`insert into ${table} ${insertOrder} values ${valuesSql}${onConflictSql}${returningSql}`;
+  }
+  sqlToQuery(sql2) {
+    return sql2.toQuery({
+      escapeName: this.escapeName,
+      escapeParam: this.escapeParam,
+      escapeString: this.escapeString
+    });
+  }
+  buildRelationalQuery({
+    fullSchema,
+    schema,
+    tableNamesMap,
+    table,
+    tableConfig,
+    queryConfig: config,
+    tableAlias,
+    nestedQueryRelation,
+    joinOn
+  }) {
+    let selection = [], limit, offset, orderBy = [], where, joins = [];
+    if (config === !0)
+      selection = Object.entries(tableConfig.columns).map(([key, value]) => ({
+        dbKey: value.name,
+        tsKey: key,
+        field: aliasedTableColumn(value, tableAlias),
+        relationTableTsKey: void 0,
+        isJson: !1,
+        selection: []
+      }));
+    else {
+      let aliasedColumns = Object.fromEntries(
+        Object.entries(tableConfig.columns).map(([key, value]) => [key, aliasedTableColumn(value, tableAlias)])
+      );
+      if (config.where) {
+        let whereSql = typeof config.where == "function" ? config.where(aliasedColumns, getOperators()) : config.where;
+        where = whereSql && mapColumnsInSQLToAlias(whereSql, tableAlias);
+      }
+      let fieldsSelection = [], selectedColumns = [];
+      if (config.columns) {
+        let isIncludeMode = !1;
+        for (let [field, value] of Object.entries(config.columns))
+          value !== void 0 && field in tableConfig.columns && (!isIncludeMode && value === !0 && (isIncludeMode = !0), selectedColumns.push(field));
+        selectedColumns.length > 0 && (selectedColumns = isIncludeMode ? selectedColumns.filter((c) => config.columns?.[c] === !0) : Object.keys(tableConfig.columns).filter((key) => !selectedColumns.includes(key)));
+      } else
+        selectedColumns = Object.keys(tableConfig.columns);
+      for (let field of selectedColumns) {
+        let column = tableConfig.columns[field];
+        fieldsSelection.push({ tsKey: field, value: column });
+      }
+      let selectedRelations = [];
+      config.with && (selectedRelations = Object.entries(config.with).filter((entry2) => !!entry2[1]).map(([tsKey, queryConfig]) => ({ tsKey, queryConfig, relation: tableConfig.relations[tsKey] })));
+      let extras;
+      if (config.extras) {
+        extras = typeof config.extras == "function" ? config.extras(aliasedColumns, { sql }) : config.extras;
+        for (let [tsKey, value] of Object.entries(extras))
+          fieldsSelection.push({
+            tsKey,
+            value: mapColumnsInAliasedSQLToAlias(value, tableAlias)
+          });
+      }
+      for (let { tsKey, value } of fieldsSelection)
+        selection.push({
+          dbKey: is2(value, SQL.Aliased) ? value.fieldAlias : tableConfig.columns[tsKey].name,
+          tsKey,
+          field: is2(value, Column) ? aliasedTableColumn(value, tableAlias) : value,
+          relationTableTsKey: void 0,
+          isJson: !1,
+          selection: []
+        });
+      let orderByOrig = typeof config.orderBy == "function" ? config.orderBy(aliasedColumns, getOrderByOperators()) : config.orderBy ?? [];
+      Array.isArray(orderByOrig) || (orderByOrig = [orderByOrig]), orderBy = orderByOrig.map((orderByValue) => is2(orderByValue, Column) ? aliasedTableColumn(orderByValue, tableAlias) : mapColumnsInSQLToAlias(orderByValue, tableAlias)), limit = config.limit, offset = config.offset;
+      for (let {
+        tsKey: selectedRelationTsKey,
+        queryConfig: selectedRelationConfigValue,
+        relation
+      } of selectedRelations) {
+        let normalizedRelation = normalizeRelation(schema, tableNamesMap, relation), relationTableName = relation.referencedTable[Table.Symbol.Name], relationTableTsName = tableNamesMap[relationTableName], relationTableAlias = `${tableAlias}_${selectedRelationTsKey}`, joinOn2 = and(
+          ...normalizedRelation.fields.map(
+            (field2, i) => eq(
+              aliasedTableColumn(normalizedRelation.references[i], relationTableAlias),
+              aliasedTableColumn(field2, tableAlias)
+            )
+          )
+        ), builtRelation = this.buildRelationalQuery({
+          fullSchema,
+          schema,
+          tableNamesMap,
+          table: fullSchema[relationTableTsName],
+          tableConfig: schema[relationTableTsName],
+          queryConfig: is2(relation, One) ? selectedRelationConfigValue === !0 ? { limit: 1 } : { ...selectedRelationConfigValue, limit: 1 } : selectedRelationConfigValue,
+          tableAlias: relationTableAlias,
+          joinOn: joinOn2,
+          nestedQueryRelation: relation
+        }), field = sql`(${builtRelation.sql})`.as(selectedRelationTsKey);
+        selection.push({
+          dbKey: selectedRelationTsKey,
+          tsKey: selectedRelationTsKey,
+          field,
+          relationTableTsKey: relationTableTsName,
+          isJson: !0,
+          selection: builtRelation.selection
+        });
+      }
+    }
+    if (selection.length === 0)
+      throw new DrizzleError({
+        message: `No fields selected for table "${tableConfig.tsName}" ("${tableAlias}"). You need to have at least one item in "columns", "with" or "extras". If you need to select all columns, omit the "columns" key or set it to undefined.`
+      });
+    let result;
+    if (where = and(joinOn, where), nestedQueryRelation) {
+      let field = sql`json_array(${sql.join(
+        selection.map(
+          ({ field: field2 }) => is2(field2, SQLiteColumn) ? sql.identifier(field2.name) : is2(field2, SQL.Aliased) ? field2.sql : field2
+        ),
+        sql`, `
+      )})`;
+      is2(nestedQueryRelation, Many) && (field = sql`coalesce(json_group_array(${field}), json_array())`);
+      let nestedSelection = [{
+        dbKey: "data",
+        tsKey: "data",
+        field: field.as("data"),
+        isJson: !0,
+        relationTableTsKey: tableConfig.tsName,
+        selection
+      }];
+      limit !== void 0 || offset !== void 0 || orderBy.length > 0 ? (result = this.buildSelectQuery({
+        table: aliasedTable(table, tableAlias),
+        fields: {},
+        fieldsFlat: [
+          {
+            path: [],
+            field: sql.raw("*")
+          }
+        ],
+        where,
+        limit,
+        offset,
+        orderBy,
+        setOperators: []
+      }), where = void 0, limit = void 0, offset = void 0, orderBy = void 0) : result = aliasedTable(table, tableAlias), result = this.buildSelectQuery({
+        table: is2(result, SQLiteTable) ? result : new Subquery(result, {}, tableAlias),
+        fields: {},
+        fieldsFlat: nestedSelection.map(({ field: field2 }) => ({
+          path: [],
+          field: is2(field2, Column) ? aliasedTableColumn(field2, tableAlias) : field2
+        })),
+        joins,
+        where,
+        limit,
+        offset,
+        orderBy,
+        setOperators: []
+      });
+    } else
+      result = this.buildSelectQuery({
+        table: aliasedTable(table, tableAlias),
+        fields: {},
+        fieldsFlat: selection.map(({ field }) => ({
+          path: [],
+          field: is2(field, Column) ? aliasedTableColumn(field, tableAlias) : field
+        })),
+        joins,
+        where,
+        limit,
+        offset,
+        orderBy,
+        setOperators: []
+      });
+    return {
+      tableTsKey: tableConfig.tsName,
+      sql: result,
+      selection
+    };
+  }
+};
+_a54 = entityKind, __publicField(SQLiteDialect, _a54, "SQLiteDialect");
+var _a55, SQLiteSyncDialect = class extends SQLiteDialect {
+  migrate(migrations, session) {
+    let migrationTableCreate = sql`
+			CREATE TABLE IF NOT EXISTS "__drizzle_migrations" (
+				id SERIAL PRIMARY KEY,
+				hash text NOT NULL,
+				created_at numeric
+			)
+		`;
+    session.run(migrationTableCreate);
+    let lastDbMigration = session.values(
+      sql`SELECT id, hash, created_at FROM "__drizzle_migrations" ORDER BY created_at DESC LIMIT 1`
+    )[0] ?? void 0;
+    session.run(sql`BEGIN`);
+    try {
+      for (let migration of migrations)
+        if (!lastDbMigration || Number(lastDbMigration[2]) < migration.folderMillis) {
+          for (let stmt of migration.sql)
+            session.run(sql.raw(stmt));
+          session.run(
+            sql`INSERT INTO "__drizzle_migrations" ("hash", "created_at") VALUES(${migration.hash}, ${migration.folderMillis})`
+          );
+        }
+      session.run(sql`COMMIT`);
+    } catch (e) {
+      throw session.run(sql`ROLLBACK`), e;
+    }
+  }
+};
+_a55 = entityKind, __publicField(SQLiteSyncDialect, _a55, "SQLiteSyncDialect");
+var _a56, SQLiteAsyncDialect = class extends SQLiteDialect {
+  async migrate(migrations, session) {
+    let migrationTableCreate = sql`
+			CREATE TABLE IF NOT EXISTS "__drizzle_migrations" (
+				id SERIAL PRIMARY KEY,
+				hash text NOT NULL,
+				created_at numeric
+			)
+		`;
+    await session.run(migrationTableCreate);
+    let lastDbMigration = (await session.values(
+      sql`SELECT id, hash, created_at FROM "__drizzle_migrations" ORDER BY created_at DESC LIMIT 1`
+    ))[0] ?? void 0;
+    await session.transaction(async (tx) => {
+      for (let migration of migrations)
+        if (!lastDbMigration || Number(lastDbMigration[2]) < migration.folderMillis) {
+          for (let stmt of migration.sql)
+            await tx.run(sql.raw(stmt));
+          await tx.run(
+            sql`INSERT INTO "__drizzle_migrations" ("hash", "created_at") VALUES(${migration.hash}, ${migration.folderMillis})`
+          );
+        }
+    });
+  }
+};
+_a56 = entityKind, __publicField(SQLiteAsyncDialect, _a56, "SQLiteAsyncDialect");
+
+// node_modules/drizzle-orm/query-builders/query-builder.js
+var _a57, TypedQueryBuilder = class {
+  /** @internal */
+  getSelectedFields() {
+    return this._.selectedFields;
+  }
+};
+_a57 = entityKind, __publicField(TypedQueryBuilder, _a57, "TypedQueryBuilder");
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/select.js
+var _a58, SQLiteSelectBuilder = class {
+  fields;
+  session;
+  dialect;
+  withList;
+  distinct;
+  constructor(config) {
+    this.fields = config.fields, this.session = config.session, this.dialect = config.dialect, this.withList = config.withList, this.distinct = config.distinct;
+  }
+  from(source) {
+    let isPartialSelect = !!this.fields, fields;
+    return this.fields ? fields = this.fields : is2(source, Subquery) ? fields = Object.fromEntries(
+      Object.keys(source[SubqueryConfig].selection).map((key) => [key, source[key]])
+    ) : is2(source, SQLiteViewBase) ? fields = source[ViewBaseConfig].selectedFields : is2(source, SQL) ? fields = {} : fields = getTableColumns(source), new SQLiteSelectBase({
+      table: source,
+      fields,
+      isPartialSelect,
+      session: this.session,
+      dialect: this.dialect,
+      withList: this.withList,
+      distinct: this.distinct
+    });
+  }
+};
+_a58 = entityKind, __publicField(SQLiteSelectBuilder, _a58, "SQLiteSelectBuilder");
+var _a59, SQLiteSelectQueryBuilderBase = class extends TypedQueryBuilder {
+  _;
+  /** @internal */
+  config;
+  joinsNotNullableMap;
+  tableName;
+  isPartialSelect;
+  session;
+  dialect;
+  constructor({ table, fields, isPartialSelect, session, dialect, withList, distinct }) {
+    super(), this.config = {
+      withList,
+      table,
+      fields: { ...fields },
+      distinct,
+      setOperators: []
+    }, this.isPartialSelect = isPartialSelect, this.session = session, this.dialect = dialect, this._ = {
+      selectedFields: fields
+    }, this.tableName = getTableLikeName(table), this.joinsNotNullableMap = typeof this.tableName == "string" ? { [this.tableName]: !0 } : {};
+  }
+  createJoin(joinType) {
+    return (table, on) => {
+      let baseTableName = this.tableName, tableName = getTableLikeName(table);
+      if (typeof tableName == "string" && this.config.joins?.some((join) => join.alias === tableName))
+        throw new Error(`Alias "${tableName}" is already used in this query`);
+      if (!this.isPartialSelect && (Object.keys(this.joinsNotNullableMap).length === 1 && typeof baseTableName == "string" && (this.config.fields = {
+        [baseTableName]: this.config.fields
+      }), typeof tableName == "string" && !is2(table, SQL))) {
+        let selection = is2(table, Subquery) ? table[SubqueryConfig].selection : is2(table, View) ? table[ViewBaseConfig].selectedFields : table[Table.Symbol.Columns];
+        this.config.fields[tableName] = selection;
+      }
+      if (typeof on == "function" && (on = on(
+        new Proxy(
+          this.config.fields,
+          new SelectionProxyHandler({ sqlAliasedBehavior: "sql", sqlBehavior: "sql" })
+        )
+      )), this.config.joins || (this.config.joins = []), this.config.joins.push({ on, table, joinType, alias: tableName }), typeof tableName == "string")
+        switch (joinType) {
+          case "left": {
+            this.joinsNotNullableMap[tableName] = !1;
+            break;
+          }
+          case "right": {
+            this.joinsNotNullableMap = Object.fromEntries(
+              Object.entries(this.joinsNotNullableMap).map(([key]) => [key, !1])
+            ), this.joinsNotNullableMap[tableName] = !0;
+            break;
+          }
+          case "inner": {
+            this.joinsNotNullableMap[tableName] = !0;
+            break;
+          }
+          case "full": {
+            this.joinsNotNullableMap = Object.fromEntries(
+              Object.entries(this.joinsNotNullableMap).map(([key]) => [key, !1])
+            ), this.joinsNotNullableMap[tableName] = !1;
+            break;
+          }
+        }
+      return this;
+    };
+  }
+  /**
+   * Executes a `left join` operation by adding another table to the current query.
+   *
+   * Calling this method associates each row of the table with the corresponding row from the joined table, if a match is found. If no matching row exists, it sets all columns of the joined table to null.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/joins#left-join}
+   *
+   * @param table the table to join.
+   * @param on the `on` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all users and their pets
+   * const usersWithPets: { user: User; pets: Pet | null }[] = await db.select()
+   *   .from(users)
+   *   .leftJoin(pets, eq(users.id, pets.ownerId))
+   *
+   * // Select userId and petId
+   * const usersIdsAndPetIds: { userId: number; petId: number | null }[] = await db.select({
+   *   userId: users.id,
+   *   petId: pets.id,
+   * })
+   *   .from(users)
+   *   .leftJoin(pets, eq(users.id, pets.ownerId))
+   * ```
+   */
+  leftJoin = this.createJoin("left");
+  /**
+   * Executes a `right join` operation by adding another table to the current query.
+   *
+   * Calling this method associates each row of the joined table with the corresponding row from the main table, if a match is found. If no matching row exists, it sets all columns of the main table to null.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/joins#right-join}
+   *
+   * @param table the table to join.
+   * @param on the `on` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all users and their pets
+   * const usersWithPets: { user: User | null; pets: Pet }[] = await db.select()
+   *   .from(users)
+   *   .rightJoin(pets, eq(users.id, pets.ownerId))
+   *
+   * // Select userId and petId
+   * const usersIdsAndPetIds: { userId: number | null; petId: number }[] = await db.select({
+   *   userId: users.id,
+   *   petId: pets.id,
+   * })
+   *   .from(users)
+   *   .rightJoin(pets, eq(users.id, pets.ownerId))
+   * ```
+   */
+  rightJoin = this.createJoin("right");
+  /**
+   * Executes an `inner join` operation, creating a new table by combining rows from two tables that have matching values.
+   *
+   * Calling this method retrieves rows that have corresponding entries in both joined tables. Rows without matching entries in either table are excluded, resulting in a table that includes only matching pairs.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/joins#inner-join}
+   *
+   * @param table the table to join.
+   * @param on the `on` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all users and their pets
+   * const usersWithPets: { user: User; pets: Pet }[] = await db.select()
+   *   .from(users)
+   *   .innerJoin(pets, eq(users.id, pets.ownerId))
+   *
+   * // Select userId and petId
+   * const usersIdsAndPetIds: { userId: number; petId: number }[] = await db.select({
+   *   userId: users.id,
+   *   petId: pets.id,
+   * })
+   *   .from(users)
+   *   .innerJoin(pets, eq(users.id, pets.ownerId))
+   * ```
+   */
+  innerJoin = this.createJoin("inner");
+  /**
+   * Executes a `full join` operation by combining rows from two tables into a new table.
+   *
+   * Calling this method retrieves all rows from both main and joined tables, merging rows with matching values and filling in `null` for non-matching columns.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/joins#full-join}
+   *
+   * @param table the table to join.
+   * @param on the `on` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all users and their pets
+   * const usersWithPets: { user: User | null; pets: Pet | null }[] = await db.select()
+   *   .from(users)
+   *   .fullJoin(pets, eq(users.id, pets.ownerId))
+   *
+   * // Select userId and petId
+   * const usersIdsAndPetIds: { userId: number | null; petId: number | null }[] = await db.select({
+   *   userId: users.id,
+   *   petId: pets.id,
+   * })
+   *   .from(users)
+   *   .fullJoin(pets, eq(users.id, pets.ownerId))
+   * ```
+   */
+  fullJoin = this.createJoin("full");
+  createSetOperator(type, isAll) {
+    return (rightSelection) => {
+      let rightSelect = typeof rightSelection == "function" ? rightSelection(getSQLiteSetOperators()) : rightSelection;
+      if (!haveSameKeys(this.getSelectedFields(), rightSelect.getSelectedFields()))
+        throw new Error(
+          "Set operator error (union / intersect / except): selected fields are not the same or are in a different order"
+        );
+      return this.config.setOperators.push({ type, isAll, rightSelect }), this;
+    };
+  }
+  /**
+   * Adds `union` set operator to the query.
+   *
+   * Calling this method will combine the result sets of the `select` statements and remove any duplicate rows that appear across them.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/set-operations#union}
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all unique names from customers and users tables
+   * await db.select({ name: users.name })
+   *   .from(users)
+   *   .union(
+   *     db.select({ name: customers.name }).from(customers)
+   *   );
+   * // or
+   * import { union } from 'drizzle-orm/sqlite-core'
+   *
+   * await union(
+   *   db.select({ name: users.name }).from(users),
+   *   db.select({ name: customers.name }).from(customers)
+   * );
+   * ```
+   */
+  union = this.createSetOperator("union", !1);
+  /**
+   * Adds `union all` set operator to the query.
+   *
+   * Calling this method will combine the result-set of the `select` statements and keep all duplicate rows that appear across them.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/set-operations#union-all}
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all transaction ids from both online and in-store sales
+   * await db.select({ transaction: onlineSales.transactionId })
+   *   .from(onlineSales)
+   *   .unionAll(
+   *     db.select({ transaction: inStoreSales.transactionId }).from(inStoreSales)
+   *   );
+   * // or
+   * import { unionAll } from 'drizzle-orm/sqlite-core'
+   *
+   * await unionAll(
+   *   db.select({ transaction: onlineSales.transactionId }).from(onlineSales),
+   *   db.select({ transaction: inStoreSales.transactionId }).from(inStoreSales)
+   * );
+   * ```
+   */
+  unionAll = this.createSetOperator("union", !0);
+  /**
+   * Adds `intersect` set operator to the query.
+   *
+   * Calling this method will retain only the rows that are present in both result sets and eliminate duplicates.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/set-operations#intersect}
+   *
+   * @example
+   *
+   * ```ts
+   * // Select course names that are offered in both departments A and B
+   * await db.select({ courseName: depA.courseName })
+   *   .from(depA)
+   *   .intersect(
+   *     db.select({ courseName: depB.courseName }).from(depB)
+   *   );
+   * // or
+   * import { intersect } from 'drizzle-orm/sqlite-core'
+   *
+   * await intersect(
+   *   db.select({ courseName: depA.courseName }).from(depA),
+   *   db.select({ courseName: depB.courseName }).from(depB)
+   * );
+   * ```
+   */
+  intersect = this.createSetOperator("intersect", !1);
+  /**
+   * Adds `except` set operator to the query.
+   *
+   * Calling this method will retrieve all unique rows from the left query, except for the rows that are present in the result set of the right query.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/set-operations#except}
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all courses offered in department A but not in department B
+   * await db.select({ courseName: depA.courseName })
+   *   .from(depA)
+   *   .except(
+   *     db.select({ courseName: depB.courseName }).from(depB)
+   *   );
+   * // or
+   * import { except } from 'drizzle-orm/sqlite-core'
+   *
+   * await except(
+   *   db.select({ courseName: depA.courseName }).from(depA),
+   *   db.select({ courseName: depB.courseName }).from(depB)
+   * );
+   * ```
+   */
+  except = this.createSetOperator("except", !1);
+  /** @internal */
+  addSetOperators(setOperators) {
+    return this.config.setOperators.push(...setOperators), this;
+  }
+  /**
+   * Adds a `where` clause to the query.
+   *
+   * Calling this method will select only those rows that fulfill a specified condition.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#filtering}
+   *
+   * @param where the `where` clause.
+   *
+   * @example
+   * You can use conditional operators and `sql function` to filter the rows to be selected.
+   *
+   * ```ts
+   * // Select all cars with green color
+   * await db.select().from(cars).where(eq(cars.color, 'green'));
+   * // or
+   * await db.select().from(cars).where(sql`${cars.color} = 'green'`)
+   * ```
+   *
+   * You can logically combine conditional operators with `and()` and `or()` operators:
+   *
+   * ```ts
+   * // Select all BMW cars with a green color
+   * await db.select().from(cars).where(and(eq(cars.color, 'green'), eq(cars.brand, 'BMW')));
+   *
+   * // Select all cars with the green or blue color
+   * await db.select().from(cars).where(or(eq(cars.color, 'green'), eq(cars.color, 'blue')));
+   * ```
+   */
+  where(where) {
+    return typeof where == "function" && (where = where(
+      new Proxy(
+        this.config.fields,
+        new SelectionProxyHandler({ sqlAliasedBehavior: "sql", sqlBehavior: "sql" })
+      )
+    )), this.config.where = where, this;
+  }
+  /**
+   * Adds a `having` clause to the query.
+   *
+   * Calling this method will select only those rows that fulfill a specified condition. It is typically used with aggregate functions to filter the aggregated data based on a specified condition.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#aggregations}
+   *
+   * @param having the `having` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Select all brands with more than one car
+   * await db.select({
+   * 	brand: cars.brand,
+   * 	count: sql<number>`cast(count(${cars.id}) as int)`,
+   * })
+   *   .from(cars)
+   *   .groupBy(cars.brand)
+   *   .having(({ count }) => gt(count, 1));
+   * ```
+   */
+  having(having) {
+    return typeof having == "function" && (having = having(
+      new Proxy(
+        this.config.fields,
+        new SelectionProxyHandler({ sqlAliasedBehavior: "sql", sqlBehavior: "sql" })
+      )
+    )), this.config.having = having, this;
+  }
+  groupBy(...columns) {
+    if (typeof columns[0] == "function") {
+      let groupBy = columns[0](
+        new Proxy(
+          this.config.fields,
+          new SelectionProxyHandler({ sqlAliasedBehavior: "alias", sqlBehavior: "sql" })
+        )
+      );
+      this.config.groupBy = Array.isArray(groupBy) ? groupBy : [groupBy];
+    } else
+      this.config.groupBy = columns;
+    return this;
+  }
+  orderBy(...columns) {
+    if (typeof columns[0] == "function") {
+      let orderBy = columns[0](
+        new Proxy(
+          this.config.fields,
+          new SelectionProxyHandler({ sqlAliasedBehavior: "alias", sqlBehavior: "sql" })
+        )
+      ), orderByArray = Array.isArray(orderBy) ? orderBy : [orderBy];
+      this.config.setOperators.length > 0 ? this.config.setOperators.at(-1).orderBy = orderByArray : this.config.orderBy = orderByArray;
+    } else {
+      let orderByArray = columns;
+      this.config.setOperators.length > 0 ? this.config.setOperators.at(-1).orderBy = orderByArray : this.config.orderBy = orderByArray;
+    }
+    return this;
+  }
+  /**
+   * Adds a `limit` clause to the query.
+   *
+   * Calling this method will set the maximum number of rows that will be returned by this query.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#limit--offset}
+   *
+   * @param limit the `limit` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Get the first 10 people from this query.
+   * await db.select().from(people).limit(10);
+   * ```
+   */
+  limit(limit) {
+    return this.config.setOperators.length > 0 ? this.config.setOperators.at(-1).limit = limit : this.config.limit = limit, this;
+  }
+  /**
+   * Adds an `offset` clause to the query.
+   *
+   * Calling this method will skip a number of rows when returning results from this query.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#limit--offset}
+   *
+   * @param offset the `offset` clause.
+   *
+   * @example
+   *
+   * ```ts
+   * // Get the 10th-20th people from this query.
+   * await db.select().from(people).offset(10).limit(10);
+   * ```
+   */
+  offset(offset) {
+    return this.config.setOperators.length > 0 ? this.config.setOperators.at(-1).offset = offset : this.config.offset = offset, this;
+  }
+  /** @internal */
+  getSQL() {
+    return this.dialect.buildSelectQuery(this.config);
+  }
+  toSQL() {
+    let { typings: _typings, ...rest } = this.dialect.sqlToQuery(this.getSQL());
+    return rest;
+  }
+  as(alias) {
+    return new Proxy(
+      new Subquery(this.getSQL(), this.config.fields, alias),
+      new SelectionProxyHandler({ alias, sqlAliasedBehavior: "alias", sqlBehavior: "error" })
+    );
+  }
+  /** @internal */
+  getSelectedFields() {
+    return new Proxy(
+      this.config.fields,
+      new SelectionProxyHandler({ alias: this.tableName, sqlAliasedBehavior: "alias", sqlBehavior: "error" })
+    );
+  }
+  $dynamic() {
+    return this;
+  }
+};
+_a59 = entityKind, __publicField(SQLiteSelectQueryBuilderBase, _a59, "SQLiteSelectQueryBuilder");
+var _a60, SQLiteSelectBase = class extends SQLiteSelectQueryBuilderBase {
+  /** @internal */
+  _prepare(isOneTimeQuery = !0) {
+    if (!this.session)
+      throw new Error("Cannot execute a query on a query builder. Please use a database instance instead.");
+    let fieldsList = orderSelectedFields(this.config.fields), query = this.session[isOneTimeQuery ? "prepareOneTimeQuery" : "prepareQuery"](
+      this.dialect.sqlToQuery(this.getSQL()),
+      fieldsList,
+      "all"
+    );
+    return query.joinsNotNullableMap = this.joinsNotNullableMap, query;
+  }
+  prepare() {
+    return this._prepare(!1);
+  }
+  run = (placeholderValues) => this._prepare().run(placeholderValues);
+  all = (placeholderValues) => this._prepare().all(placeholderValues);
+  get = (placeholderValues) => this._prepare().get(placeholderValues);
+  values = (placeholderValues) => this._prepare().values(placeholderValues);
+  async execute() {
+    return this.all();
+  }
+};
+_a60 = entityKind, __publicField(SQLiteSelectBase, _a60, "SQLiteSelect");
+applyMixins(SQLiteSelectBase, [QueryPromise]);
+function createSetOperator(type, isAll) {
+  return (leftSelect, rightSelect, ...restSelects) => {
+    let setOperators = [rightSelect, ...restSelects].map((select) => ({
+      type,
+      isAll,
+      rightSelect: select
+    }));
+    for (let setOperator of setOperators)
+      if (!haveSameKeys(leftSelect.getSelectedFields(), setOperator.rightSelect.getSelectedFields()))
+        throw new Error(
+          "Set operator error (union / intersect / except): selected fields are not the same or are in a different order"
+        );
+    return leftSelect.addSetOperators(setOperators);
+  };
+}
+var getSQLiteSetOperators = () => ({
+  union,
+  unionAll,
+  intersect,
+  except
+}), union = createSetOperator("union", !1), unionAll = createSetOperator("union", !0), intersect = createSetOperator("intersect", !1), except = createSetOperator("except", !1);
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/query-builder.js
+var _a61, QueryBuilder = class {
+  dialect;
+  $with(alias) {
+    let queryBuilder = this;
+    return {
+      as(qb) {
+        return typeof qb == "function" && (qb = qb(queryBuilder)), new Proxy(
+          new WithSubquery(qb.getSQL(), qb.getSelectedFields(), alias, !0),
+          new SelectionProxyHandler({ alias, sqlAliasedBehavior: "alias", sqlBehavior: "error" })
+        );
+      }
+    };
+  }
+  with(...queries) {
+    let self = this;
+    function select(fields) {
+      return new SQLiteSelectBuilder({
+        fields: fields ?? void 0,
+        session: void 0,
+        dialect: self.getDialect(),
+        withList: queries
+      });
+    }
+    function selectDistinct(fields) {
+      return new SQLiteSelectBuilder({
+        fields: fields ?? void 0,
+        session: void 0,
+        dialect: self.getDialect(),
+        withList: queries,
+        distinct: !0
+      });
+    }
+    return { select, selectDistinct };
+  }
+  select(fields) {
+    return new SQLiteSelectBuilder({ fields: fields ?? void 0, session: void 0, dialect: this.getDialect() });
+  }
+  selectDistinct(fields) {
+    return new SQLiteSelectBuilder({
+      fields: fields ?? void 0,
+      session: void 0,
+      dialect: this.getDialect(),
+      distinct: !0
+    });
+  }
+  // Lazy load dialect to avoid circular dependency
+  getDialect() {
+    return this.dialect || (this.dialect = new SQLiteSyncDialect()), this.dialect;
+  }
+};
+_a61 = entityKind, __publicField(QueryBuilder, _a61, "SQLiteQueryBuilder");
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/update.js
+var _a62, SQLiteUpdateBuilder = class {
+  constructor(table, session, dialect) {
+    this.table = table, this.session = session, this.dialect = dialect;
+  }
+  set(values) {
+    return new SQLiteUpdateBase(this.table, mapUpdateSet(this.table, values), this.session, this.dialect);
+  }
+};
+_a62 = entityKind, __publicField(SQLiteUpdateBuilder, _a62, "SQLiteUpdateBuilder");
+var _a63, SQLiteUpdateBase = class extends QueryPromise {
+  constructor(table, set2, session, dialect) {
+    super(), this.session = session, this.dialect = dialect, this.config = { set: set2, table };
+  }
+  /** @internal */
+  config;
+  /**
+   * Adds a 'where' clause to the query.
+   *
+   * Calling this method will update only those rows that fulfill a specified condition.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/update}
+   *
+   * @param where the 'where' clause.
+   *
+   * @example
+   * You can use conditional operators and `sql function` to filter the rows to be updated.
+   *
+   * ```ts
+   * // Update all cars with green color
+   * db.update(cars).set({ color: 'red' })
+   *   .where(eq(cars.color, 'green'));
+   * // or
+   * db.update(cars).set({ color: 'red' })
+   *   .where(sql`${cars.color} = 'green'`)
+   * ```
+   *
+   * You can logically combine conditional operators with `and()` and `or()` operators:
+   *
+   * ```ts
+   * // Update all BMW cars with a green color
+   * db.update(cars).set({ color: 'red' })
+   *   .where(and(eq(cars.color, 'green'), eq(cars.brand, 'BMW')));
+   *
+   * // Update all cars with the green or blue color
+   * db.update(cars).set({ color: 'red' })
+   *   .where(or(eq(cars.color, 'green'), eq(cars.color, 'blue')));
+   * ```
+   */
+  where(where) {
+    return this.config.where = where, this;
+  }
+  returning(fields = this.config.table[SQLiteTable.Symbol.Columns]) {
+    return this.config.returning = orderSelectedFields(fields), this;
+  }
+  /** @internal */
+  getSQL() {
+    return this.dialect.buildUpdateQuery(this.config);
+  }
+  toSQL() {
+    let { typings: _typings, ...rest } = this.dialect.sqlToQuery(this.getSQL());
+    return rest;
+  }
+  /** @internal */
+  _prepare(isOneTimeQuery = !0) {
+    return this.session[isOneTimeQuery ? "prepareOneTimeQuery" : "prepareQuery"](
+      this.dialect.sqlToQuery(this.getSQL()),
+      this.config.returning,
+      this.config.returning ? "all" : "run"
+    );
+  }
+  prepare() {
+    return this._prepare(!1);
+  }
+  run = (placeholderValues) => this._prepare().run(placeholderValues);
+  all = (placeholderValues) => this._prepare().all(placeholderValues);
+  get = (placeholderValues) => this._prepare().get(placeholderValues);
+  values = (placeholderValues) => this._prepare().values(placeholderValues);
+  async execute() {
+    return this.config.returning ? this.all() : this.run();
+  }
+  $dynamic() {
+    return this;
+  }
+};
+_a63 = entityKind, __publicField(SQLiteUpdateBase, _a63, "SQLiteUpdate");
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/query.js
+var _a64, RelationalQueryBuilder = class {
+  constructor(mode2, fullSchema, schema, tableNamesMap, table, tableConfig, dialect, session) {
+    this.mode = mode2, this.fullSchema = fullSchema, this.schema = schema, this.tableNamesMap = tableNamesMap, this.table = table, this.tableConfig = tableConfig, this.dialect = dialect, this.session = session;
+  }
+  findMany(config) {
+    return this.mode === "sync" ? new SQLiteSyncRelationalQuery(
+      this.fullSchema,
+      this.schema,
+      this.tableNamesMap,
+      this.table,
+      this.tableConfig,
+      this.dialect,
+      this.session,
+      config || {},
+      "many"
+    ) : new SQLiteRelationalQuery(
+      this.fullSchema,
+      this.schema,
+      this.tableNamesMap,
+      this.table,
+      this.tableConfig,
+      this.dialect,
+      this.session,
+      config || {},
+      "many"
+    );
+  }
+  findFirst(config) {
+    return this.mode === "sync" ? new SQLiteSyncRelationalQuery(
+      this.fullSchema,
+      this.schema,
+      this.tableNamesMap,
+      this.table,
+      this.tableConfig,
+      this.dialect,
+      this.session,
+      config ? { ...config, limit: 1 } : { limit: 1 },
+      "first"
+    ) : new SQLiteRelationalQuery(
+      this.fullSchema,
+      this.schema,
+      this.tableNamesMap,
+      this.table,
+      this.tableConfig,
+      this.dialect,
+      this.session,
+      config ? { ...config, limit: 1 } : { limit: 1 },
+      "first"
+    );
+  }
+};
+_a64 = entityKind, __publicField(RelationalQueryBuilder, _a64, "SQLiteAsyncRelationalQueryBuilder");
+var _a65, SQLiteRelationalQuery = class extends QueryPromise {
+  constructor(fullSchema, schema, tableNamesMap, table, tableConfig, dialect, session, config, mode2) {
+    super(), this.fullSchema = fullSchema, this.schema = schema, this.tableNamesMap = tableNamesMap, this.table = table, this.tableConfig = tableConfig, this.dialect = dialect, this.session = session, this.config = config, this.mode = mode2;
+  }
+  /** @internal */
+  mode;
+  /** @internal */
+  getSQL() {
+    return this.dialect.buildRelationalQuery({
+      fullSchema: this.fullSchema,
+      schema: this.schema,
+      tableNamesMap: this.tableNamesMap,
+      table: this.table,
+      tableConfig: this.tableConfig,
+      queryConfig: this.config,
+      tableAlias: this.tableConfig.tsName
+    }).sql;
+  }
+  /** @internal */
+  _prepare(isOneTimeQuery = !1) {
+    let { query, builtQuery } = this._toSQL();
+    return this.session[isOneTimeQuery ? "prepareOneTimeQuery" : "prepareQuery"](
+      builtQuery,
+      void 0,
+      this.mode === "first" ? "get" : "all",
+      (rawRows, mapColumnValue) => {
+        let rows = rawRows.map(
+          (row) => mapRelationalRow(this.schema, this.tableConfig, row, query.selection, mapColumnValue)
+        );
+        return this.mode === "first" ? rows[0] : rows;
+      }
+    );
+  }
+  prepare() {
+    return this._prepare(!1);
+  }
+  _toSQL() {
+    let query = this.dialect.buildRelationalQuery({
+      fullSchema: this.fullSchema,
+      schema: this.schema,
+      tableNamesMap: this.tableNamesMap,
+      table: this.table,
+      tableConfig: this.tableConfig,
+      queryConfig: this.config,
+      tableAlias: this.tableConfig.tsName
+    }), builtQuery = this.dialect.sqlToQuery(query.sql);
+    return { query, builtQuery };
+  }
+  toSQL() {
+    return this._toSQL().builtQuery;
+  }
+  /** @internal */
+  executeRaw() {
+    return this.mode === "first" ? this._prepare(!1).get() : this._prepare(!1).all();
+  }
+  async execute() {
+    return this.executeRaw();
+  }
+};
+_a65 = entityKind, __publicField(SQLiteRelationalQuery, _a65, "SQLiteAsyncRelationalQuery");
+var _a66, SQLiteSyncRelationalQuery = class extends SQLiteRelationalQuery {
+  sync() {
+    return this.executeRaw();
+  }
+};
+_a66 = entityKind, __publicField(SQLiteSyncRelationalQuery, _a66, "SQLiteSyncRelationalQuery");
+
+// node_modules/drizzle-orm/sqlite-core/query-builders/raw.js
+var _a67, SQLiteRaw = class extends QueryPromise {
+  constructor(execute, getSQL, action3, dialect, mapBatchResult) {
+    super(), this.execute = execute, this.getSQL = getSQL, this.dialect = dialect, this.mapBatchResult = mapBatchResult, this.config = { action: action3 };
+  }
+  /** @internal */
+  config;
+  getQuery() {
+    return this.dialect.sqlToQuery(this.getSQL());
+  }
+  mapResult(result, isFromBatch) {
+    return isFromBatch ? this.mapBatchResult(result) : result;
+  }
+  _prepare() {
+    return this;
+  }
+};
+_a67 = entityKind, __publicField(SQLiteRaw, _a67, "SQLiteRaw");
+
+// node_modules/drizzle-orm/sqlite-core/db.js
+var _a68, BaseSQLiteDatabase = class {
+  constructor(resultKind, dialect, session, schema) {
+    this.resultKind = resultKind, this.dialect = dialect, this.session = session, this._ = schema ? { schema: schema.schema, tableNamesMap: schema.tableNamesMap } : { schema: void 0, tableNamesMap: {} }, this.query = {};
+    let query = this.query;
+    if (this._.schema)
+      for (let [tableName, columns] of Object.entries(this._.schema))
+        query[tableName] = new RelationalQueryBuilder(
+          resultKind,
+          schema.fullSchema,
+          this._.schema,
+          this._.tableNamesMap,
+          schema.fullSchema[tableName],
+          columns,
+          dialect,
+          session
+        );
+  }
+  query;
+  /**
+   * Creates a subquery that defines a temporary named result set as a CTE.
+   *
+   * It is useful for breaking down complex queries into simpler parts and for reusing the result set in subsequent parts of the query.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#with-clause}
+   *
+   * @param alias The alias for the subquery.
+   *
+   * Failure to provide an alias will result in a DrizzleTypeError, preventing the subquery from being referenced in other queries.
+   *
+   * @example
+   *
+   * ```ts
+   * // Create a subquery with alias 'sq' and use it in the select query
+   * const sq = db.$with('sq').as(db.select().from(users).where(eq(users.id, 42)));
+   *
+   * const result = await db.with(sq).select().from(sq);
+   * ```
+   *
+   * To select arbitrary SQL values as fields in a CTE and reference them in other CTEs or in the main query, you need to add aliases to them:
+   *
+   * ```ts
+   * // Select an arbitrary SQL value as a field in a CTE and reference it in the main query
+   * const sq = db.$with('sq').as(db.select({
+   *   name: sql<string>`upper(${users.name})`.as('name'),
+   * })
+   * .from(users));
+   *
+   * const result = await db.with(sq).select({ name: sq.name }).from(sq);
+   * ```
+   */
+  $with(alias) {
+    return {
+      as(qb) {
+        return typeof qb == "function" && (qb = qb(new QueryBuilder())), new Proxy(
+          new WithSubquery(qb.getSQL(), qb.getSelectedFields(), alias, !0),
+          new SelectionProxyHandler({ alias, sqlAliasedBehavior: "alias", sqlBehavior: "error" })
+        );
+      }
+    };
+  }
+  /**
+   * Incorporates a previously defined CTE (using `$with`) into the main query.
+   *
+   * This method allows the main query to reference a temporary named result set.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/select#with-clause}
+   *
+   * @param queries The CTEs to incorporate into the main query.
+   *
+   * @example
+   *
+   * ```ts
+   * // Define a subquery 'sq' as a CTE using $with
+   * const sq = db.$with('sq').as(db.select().from(users).where(eq(users.id, 42)));
+   *
+   * // Incorporate the CTE 'sq' into the main query and select from it
+   * const result = await db.with(sq).select().from(sq);
+   * ```
+   */
+  with(...queries) {
+    let self = this;
+    function select(fields) {
+      return new SQLiteSelectBuilder({
+        fields: fields ?? void 0,
+        session: self.session,
+        dialect: self.dialect,
+        withList: queries
+      });
+    }
+    function selectDistinct(fields) {
+      return new SQLiteSelectBuilder({
+        fields: fields ?? void 0,
+        session: self.session,
+        dialect: self.dialect,
+        withList: queries,
+        distinct: !0
+      });
+    }
+    function update(table) {
+      return new SQLiteUpdateBuilder(table, self.session, self.dialect);
+    }
+    function insert(into) {
+      return new SQLiteInsertBuilder(into, self.session, self.dialect);
+    }
+    function delete_(from) {
+      return new SQLiteDeleteBase(from, self.session, self.dialect);
+    }
+    return { select, selectDistinct, update, insert, delete: delete_ };
+  }
+  select(fields) {
+    return new SQLiteSelectBuilder({ fields: fields ?? void 0, session: this.session, dialect: this.dialect });
+  }
+  selectDistinct(fields) {
+    return new SQLiteSelectBuilder({
+      fields: fields ?? void 0,
+      session: this.session,
+      dialect: this.dialect,
+      distinct: !0
+    });
+  }
+  /**
+   * Creates an update query.
+   *
+   * Calling this method without `.where()` clause will update all rows in a table. The `.where()` clause specifies which rows should be updated.
+   *
+   * Use `.set()` method to specify which values to update.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/update}
+   *
+   * @param table The table to update.
+   *
+   * @example
+   *
+   * ```ts
+   * // Update all rows in the 'cars' table
+   * await db.update(cars).set({ color: 'red' });
+   *
+   * // Update rows with filters and conditions
+   * await db.update(cars).set({ color: 'red' }).where(eq(cars.brand, 'BMW'));
+   *
+   * // Update with returning clause
+   * const updatedCar: Car[] = await db.update(cars)
+   *   .set({ color: 'red' })
+   *   .where(eq(cars.id, 1))
+   *   .returning();
+   * ```
+   */
+  update(table) {
+    return new SQLiteUpdateBuilder(table, this.session, this.dialect);
+  }
+  /**
+   * Creates an insert query.
+   *
+   * Calling this method will create new rows in a table. Use `.values()` method to specify which values to insert.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/insert}
+   *
+   * @param table The table to insert into.
+   *
+   * @example
+   *
+   * ```ts
+   * // Insert one row
+   * await db.insert(cars).values({ brand: 'BMW' });
+   *
+   * // Insert multiple rows
+   * await db.insert(cars).values([{ brand: 'BMW' }, { brand: 'Porsche' }]);
+   *
+   * // Insert with returning clause
+   * const insertedCar: Car[] = await db.insert(cars)
+   *   .values({ brand: 'BMW' })
+   *   .returning();
+   * ```
+   */
+  insert(into) {
+    return new SQLiteInsertBuilder(into, this.session, this.dialect);
+  }
+  /**
+   * Creates a delete query.
+   *
+   * Calling this method without `.where()` clause will delete all rows in a table. The `.where()` clause specifies which rows should be deleted.
+   *
+   * See docs: {@link https://orm.drizzle.team/docs/delete}
+   *
+   * @param table The table to delete from.
+   *
+   * @example
+   *
+   * ```ts
+   * // Delete all rows in the 'cars' table
+   * await db.delete(cars);
+   *
+   * // Delete rows with filters and conditions
+   * await db.delete(cars).where(eq(cars.color, 'green'));
+   *
+   * // Delete with returning clause
+   * const deletedCar: Car[] = await db.delete(cars)
+   *   .where(eq(cars.id, 1))
+   *   .returning();
+   * ```
+   */
+  delete(from) {
+    return new SQLiteDeleteBase(from, this.session, this.dialect);
+  }
+  run(query) {
+    let sql2 = query.getSQL();
+    return this.resultKind === "async" ? new SQLiteRaw(
+      async () => this.session.run(sql2),
+      () => sql2,
+      "run",
+      this.dialect,
+      this.session.extractRawRunValueFromBatchResult.bind(this.session)
+    ) : this.session.run(sql2);
+  }
+  all(query) {
+    let sql2 = query.getSQL();
+    return this.resultKind === "async" ? new SQLiteRaw(
+      async () => this.session.all(sql2),
+      () => sql2,
+      "all",
+      this.dialect,
+      this.session.extractRawAllValueFromBatchResult.bind(this.session)
+    ) : this.session.all(sql2);
+  }
+  get(query) {
+    let sql2 = query.getSQL();
+    return this.resultKind === "async" ? new SQLiteRaw(
+      async () => this.session.get(sql2),
+      () => sql2,
+      "get",
+      this.dialect,
+      this.session.extractRawGetValueFromBatchResult.bind(this.session)
+    ) : this.session.get(sql2);
+  }
+  values(query) {
+    let sql2 = query.getSQL();
+    return this.resultKind === "async" ? new SQLiteRaw(
+      async () => this.session.values(sql2),
+      () => sql2,
+      "values",
+      this.dialect,
+      this.session.extractRawValuesValueFromBatchResult.bind(this.session)
+    ) : this.session.values(sql2);
+  }
+  transaction(transaction, config) {
+    return this.session.transaction(transaction, config);
+  }
+};
+_a68 = entityKind, __publicField(BaseSQLiteDatabase, _a68, "BaseSQLiteDatabase");
+
+// node_modules/drizzle-orm/sqlite-core/session.js
+var _a69, ExecuteResultSync = class extends QueryPromise {
+  constructor(resultCb) {
+    super(), this.resultCb = resultCb;
+  }
+  async execute() {
+    return this.resultCb();
+  }
+  sync() {
+    return this.resultCb();
+  }
+};
+_a69 = entityKind, __publicField(ExecuteResultSync, _a69, "ExecuteResultSync");
+var _a70, SQLitePreparedQuery = class {
+  constructor(mode2, executeMethod, query) {
+    this.mode = mode2, this.executeMethod = executeMethod, this.query = query;
+  }
+  /** @internal */
+  joinsNotNullableMap;
+  getQuery() {
+    return this.query;
+  }
+  mapRunResult(result, _isFromBatch) {
+    return result;
+  }
+  mapAllResult(_result, _isFromBatch) {
+    throw new Error("Not implemented");
+  }
+  mapGetResult(_result, _isFromBatch) {
+    throw new Error("Not implemented");
+  }
+  execute(placeholderValues) {
+    return this.mode === "async" ? this[this.executeMethod](placeholderValues) : new ExecuteResultSync(() => this[this.executeMethod](placeholderValues));
+  }
+  mapResult(response, isFromBatch) {
+    switch (this.executeMethod) {
+      case "run":
+        return this.mapRunResult(response, isFromBatch);
+      case "all":
+        return this.mapAllResult(response, isFromBatch);
+      case "get":
+        return this.mapGetResult(response, isFromBatch);
+    }
+  }
+};
+_a70 = entityKind, __publicField(SQLitePreparedQuery, _a70, "PreparedQuery");
+var _a71, SQLiteSession = class {
+  constructor(dialect) {
+    this.dialect = dialect;
+  }
+  prepareOneTimeQuery(query, fields, executeMethod) {
+    return this.prepareQuery(query, fields, executeMethod);
+  }
+  run(query) {
+    let staticQuery = this.dialect.sqlToQuery(query);
+    try {
+      return this.prepareOneTimeQuery(staticQuery, void 0, "run").run();
+    } catch (err) {
+      throw new DrizzleError({ cause: err, message: `Failed to run the query '${staticQuery.sql}'` });
+    }
+  }
+  /** @internal */
+  extractRawRunValueFromBatchResult(result) {
+    return result;
+  }
+  all(query) {
+    return this.prepareOneTimeQuery(this.dialect.sqlToQuery(query), void 0, "run").all();
+  }
+  /** @internal */
+  extractRawAllValueFromBatchResult(_result) {
+    throw new Error("Not implemented");
+  }
+  get(query) {
+    return this.prepareOneTimeQuery(this.dialect.sqlToQuery(query), void 0, "run").get();
+  }
+  /** @internal */
+  extractRawGetValueFromBatchResult(_result) {
+    throw new Error("Not implemented");
+  }
+  values(query) {
+    return this.prepareOneTimeQuery(this.dialect.sqlToQuery(query), void 0, "run").values();
+  }
+  /** @internal */
+  extractRawValuesValueFromBatchResult(_result) {
+    throw new Error("Not implemented");
+  }
+};
+_a71 = entityKind, __publicField(SQLiteSession, _a71, "SQLiteSession");
+var _a72, SQLiteTransaction = class extends BaseSQLiteDatabase {
+  constructor(resultType, dialect, session, schema, nestedIndex = 0) {
+    super(resultType, dialect, session, schema), this.schema = schema, this.nestedIndex = nestedIndex;
+  }
+  rollback() {
+    throw new TransactionRollbackError();
+  }
+};
+_a72 = entityKind, __publicField(SQLiteTransaction, _a72, "SQLiteTransaction");
+
+// node_modules/drizzle-orm/d1/session.js
+var _a73, SQLiteD1Session = class extends SQLiteSession {
+  constructor(client, dialect, schema, options = {}) {
+    super(dialect), this.client = client, this.schema = schema, this.options = options, this.logger = options.logger ?? new NoopLogger();
+  }
+  logger;
+  prepareQuery(query, fields, executeMethod, customResultMapper) {
+    let stmt = this.client.prepare(query.sql);
+    return new D1PreparedQuery(stmt, query, this.logger, fields, executeMethod, customResultMapper);
+  }
+  /*override */
+  async batch(queries) {
+    let preparedQueries = [], builtQueries = [];
+    for (let query of queries) {
+      let preparedQuery = query._prepare(), builtQuery = preparedQuery.getQuery();
+      if (preparedQueries.push(preparedQuery), builtQuery.params.length > 0)
+        builtQueries.push(preparedQuery.stmt.bind(...builtQuery.params));
+      else {
+        let builtQuery2 = preparedQuery.getQuery();
+        builtQueries.push(
+          this.client.prepare(builtQuery2.sql).bind(...builtQuery2.params)
+        );
+      }
+    }
+    return (await this.client.batch(builtQueries)).map((result, i) => preparedQueries[i].mapResult(result, !0));
+  }
+  extractRawAllValueFromBatchResult(result) {
+    return result.results;
+  }
+  extractRawGetValueFromBatchResult(result) {
+    return result.results[0];
+  }
+  extractRawValuesValueFromBatchResult(result) {
+    return d1ToRawMapping(result.results);
+  }
+  async transaction(transaction, config) {
+    let tx = new D1Transaction("async", this.dialect, this, this.schema);
+    await this.run(sql.raw(`begin${config?.behavior ? " " + config.behavior : ""}`));
+    try {
+      let result = await transaction(tx);
+      return await this.run(sql`commit`), result;
+    } catch (err) {
+      throw await this.run(sql`rollback`), err;
+    }
+  }
+};
+_a73 = entityKind, __publicField(SQLiteD1Session, _a73, "SQLiteD1Session");
+var _a74, _D1Transaction = class extends SQLiteTransaction {
+  async transaction(transaction) {
+    let savepointName = `sp${this.nestedIndex}`, tx = new _D1Transaction("async", this.dialect, this.session, this.schema, this.nestedIndex + 1);
+    await this.session.run(sql.raw(`savepoint ${savepointName}`));
+    try {
+      let result = await transaction(tx);
+      return await this.session.run(sql.raw(`release savepoint ${savepointName}`)), result;
+    } catch (err) {
+      throw await this.session.run(sql.raw(`rollback to savepoint ${savepointName}`)), err;
+    }
+  }
+}, D1Transaction = _D1Transaction;
+_a74 = entityKind, __publicField(D1Transaction, _a74, "D1Transaction");
+function d1ToRawMapping(results) {
+  let rows = [];
+  for (let row of results) {
+    let entry2 = Object.keys(row).map((k2) => row[k2]);
+    rows.push(entry2);
+  }
+  return rows;
+}
+var _a75, D1PreparedQuery = class extends SQLitePreparedQuery {
+  constructor(stmt, query, logger, fields, executeMethod, customResultMapper) {
+    super("async", executeMethod, query), this.logger = logger, this.customResultMapper = customResultMapper, this.fields = fields, this.stmt = stmt;
+  }
+  /** @internal */
+  customResultMapper;
+  /** @internal */
+  fields;
+  /** @internal */
+  stmt;
+  run(placeholderValues) {
+    let params = fillPlaceholders(this.query.params, placeholderValues ?? {});
+    return this.logger.logQuery(this.query.sql, params), this.stmt.bind(...params).run();
+  }
+  async all(placeholderValues) {
+    let { fields, query, logger, stmt, customResultMapper } = this;
+    if (!fields && !customResultMapper) {
+      let params = fillPlaceholders(query.params, placeholderValues ?? {});
+      return logger.logQuery(query.sql, params), stmt.bind(...params).all().then(({ results }) => this.mapAllResult(results));
+    }
+    let rows = await this.values(placeholderValues);
+    return this.mapAllResult(rows);
+  }
+  mapAllResult(rows, isFromBatch) {
+    return isFromBatch && (rows = d1ToRawMapping(rows.results)), !this.fields && !this.customResultMapper ? rows : this.customResultMapper ? this.customResultMapper(rows) : rows.map((row) => mapResultRow(this.fields, row, this.joinsNotNullableMap));
+  }
+  async get(placeholderValues) {
+    let { fields, joinsNotNullableMap, query, logger, stmt, customResultMapper } = this;
+    if (!fields && !customResultMapper) {
+      let params = fillPlaceholders(query.params, placeholderValues ?? {});
+      return logger.logQuery(query.sql, params), stmt.bind(...params).all().then(({ results }) => results[0]);
+    }
+    let rows = await this.values(placeholderValues);
+    if (rows[0])
+      return customResultMapper ? customResultMapper(rows) : mapResultRow(fields, rows[0], joinsNotNullableMap);
+  }
+  mapGetResult(result, isFromBatch) {
+    return isFromBatch && (result = d1ToRawMapping(result.results)[0]), !this.fields && !this.customResultMapper ? result : this.customResultMapper ? this.customResultMapper([result]) : mapResultRow(this.fields, result, this.joinsNotNullableMap);
+  }
+  values(placeholderValues) {
+    let params = fillPlaceholders(this.query.params, placeholderValues ?? {});
+    return this.logger.logQuery(this.query.sql, params), this.stmt.bind(...params).raw();
+  }
+};
+_a75 = entityKind, __publicField(D1PreparedQuery, _a75, "D1PreparedQuery");
+
+// node_modules/drizzle-orm/d1/driver.js
+var _a76, DrizzleD1Database = class extends BaseSQLiteDatabase {
+  async batch(batch) {
+    return this.session.batch(batch);
+  }
+};
+_a76 = entityKind, __publicField(DrizzleD1Database, _a76, "LibSQLDatabase");
+function drizzle(client, config = {}) {
+  let dialect = new SQLiteAsyncDialect(), logger;
+  config.logger === !0 ? logger = new DefaultLogger() : config.logger !== !1 && (logger = config.logger);
+  let schema;
+  if (config.schema) {
+    let tablesConfig = extractTablesRelationalConfig(
+      config.schema,
+      createTableRelationsHelpers
+    );
+    schema = {
+      fullSchema: config.schema,
+      schema: tablesConfig.tables,
+      tableNamesMap: tablesConfig.tableNamesMap
+    };
+  }
+  let session = new SQLiteD1Session(client, dialect, schema, { logger });
+  return new DrizzleD1Database("async", dialect, session, schema);
+}
+
+// database/sqlite/user.ts
+var user = sqliteTable("user", {
+  id: integer("id").primaryKey({ autoIncrement: !0 }),
+  // SQLite uses INTEGER for auto-increment primary keys
+  username: text("username").notNull().unique(),
+  // Assuming email should be unique
+  password: text("password").notNull(),
+  role: text("role", { enum: ["1", "2", "3"] }),
+  createdAt: integer("createdAt").notNull(),
+  // Using integer for Unix timestamp
+  updatedAt: integer("updatedAt").notNull()
 });
-var import_react6 = __toESM(require_react(), 1);
-var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1), Login = () => {
-  let [username, setUsername] = (0, import_react6.useState)(""), [password, setPassword] = (0, import_react6.useState)(""), actionData = useActionData2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+
+// api_v2/repository/userRepository.ts
+var UserRepository = class {
+  db;
+  constructor(env) {
+    console.log(env, "env in userRepo"), this.db = drizzle(env.DB);
+  }
+  async findUserByUsername(username) {
+    let result = await this.db.select().from(user).where(eq(user.username, username)).execute();
+    return result.length > 0 ? result[0] : null;
+  }
+  async addUser(userData) {
+    let unixTimestamp = Math.floor(Date.now() / 1e3), result = await this.db.insert(user).values({
+      ...userData,
+      createdAt: unixTimestamp,
+      updatedAt: unixTimestamp
+    }).returning({ insertedId: user.id }).execute();
+    return result.length > 0 ? result[0].insertedId : null;
+  }
+}, userRepository_default = UserRepository;
+
+// node_modules/bcrypt-ts/dist/browser.mjs
+var A = "./ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""), I = Array.from({ length: 64 }, (n, r) => r), f = (n) => Array(n).fill(-1), E = [...f(46), 0, 1, ...I.slice(54, 64), ...f(7), ...I.slice(2, 28), ...f(6), ...I.slice(28, 54), ...f(5)], L = [608135816, 2242054355, 320440878, 57701188, 2752067618, 698298832, 137296536, 3964562569, 1160258022, 953160567, 3193202383, 887688300, 3232508343, 3380367581, 1065670069, 3041331479, 2450970073, 2306472731], b = [3509652390, 2564797868, 805139163, 3491422135, 3101798381, 1780907670, 3128725573, 4046225305, 614570311, 3012652279, 134345442, 2240740374, 1667834072, 1901547113, 2757295779, 4103290238, 227898511, 1921955416, 1904987480, 2182433518, 2069144605, 3260701109, 2620446009, 720527379, 3318853667, 677414384, 3393288472, 3101374703, 2390351024, 1614419982, 1822297739, 2954791486, 3608508353, 3174124327, 2024746970, 1432378464, 3864339955, 2857741204, 1464375394, 1676153920, 1439316330, 715854006, 3033291828, 289532110, 2706671279, 2087905683, 3018724369, 1668267050, 732546397, 1947742710, 3462151702, 2609353502, 2950085171, 1814351708, 2050118529, 680887927, 999245976, 1800124847, 3300911131, 1713906067, 1641548236, 4213287313, 1216130144, 1575780402, 4018429277, 3917837745, 3693486850, 3949271944, 596196993, 3549867205, 258830323, 2213823033, 772490370, 2760122372, 1774776394, 2652871518, 566650946, 4142492826, 1728879713, 2882767088, 1783734482, 3629395816, 2517608232, 2874225571, 1861159788, 326777828, 3124490320, 2130389656, 2716951837, 967770486, 1724537150, 2185432712, 2364442137, 1164943284, 2105845187, 998989502, 3765401048, 2244026483, 1075463327, 1455516326, 1322494562, 910128902, 469688178, 1117454909, 936433444, 3490320968, 3675253459, 1240580251, 122909385, 2157517691, 634681816, 4142456567, 3825094682, 3061402683, 2540495037, 79693498, 3249098678, 1084186820, 1583128258, 426386531, 1761308591, 1047286709, 322548459, 995290223, 1845252383, 2603652396, 3431023940, 2942221577, 3202600964, 3727903485, 1712269319, 422464435, 3234572375, 1170764815, 3523960633, 3117677531, 1434042557, 442511882, 3600875718, 1076654713, 1738483198, 4213154764, 2393238008, 3677496056, 1014306527, 4251020053, 793779912, 2902807211, 842905082, 4246964064, 1395751752, 1040244610, 2656851899, 3396308128, 445077038, 3742853595, 3577915638, 679411651, 2892444358, 2354009459, 1767581616, 3150600392, 3791627101, 3102740896, 284835224, 4246832056, 1258075500, 768725851, 2589189241, 3069724005, 3532540348, 1274779536, 3789419226, 2764799539, 1660621633, 3471099624, 4011903706, 913787905, 3497959166, 737222580, 2514213453, 2928710040, 3937242737, 1804850592, 3499020752, 2949064160, 2386320175, 2390070455, 2415321851, 4061277028, 2290661394, 2416832540, 1336762016, 1754252060, 3520065937, 3014181293, 791618072, 3188594551, 3933548030, 2332172193, 3852520463, 3043980520, 413987798, 3465142937, 3030929376, 4245938359, 2093235073, 3534596313, 375366246, 2157278981, 2479649556, 555357303, 3870105701, 2008414854, 3344188149, 4221384143, 3956125452, 2067696032, 3594591187, 2921233993, 2428461, 544322398, 577241275, 1471733935, 610547355, 4027169054, 1432588573, 1507829418, 2025931657, 3646575487, 545086370, 48609733, 2200306550, 1653985193, 298326376, 1316178497, 3007786442, 2064951626, 458293330, 2589141269, 3591329599, 3164325604, 727753846, 2179363840, 146436021, 1461446943, 4069977195, 705550613, 3059967265, 3887724982, 4281599278, 3313849956, 1404054877, 2845806497, 146425753, 1854211946, 1266315497, 3048417604, 3681880366, 3289982499, 290971e4, 1235738493, 2632868024, 2414719590, 3970600049, 1771706367, 1449415276, 3266420449, 422970021, 1963543593, 2690192192, 3826793022, 1062508698, 1531092325, 1804592342, 2583117782, 2714934279, 4024971509, 1294809318, 4028980673, 1289560198, 2221992742, 1669523910, 35572830, 157838143, 1052438473, 1016535060, 1802137761, 1753167236, 1386275462, 3080475397, 2857371447, 1040679964, 2145300060, 2390574316, 1461121720, 2956646967, 4031777805, 4028374788, 33600511, 2920084762, 1018524850, 629373528, 3691585981, 3515945977, 2091462646, 2486323059, 586499841, 988145025, 935516892, 3367335476, 2599673255, 2839830854, 265290510, 3972581182, 2759138881, 3795373465, 1005194799, 847297441, 406762289, 1314163512, 1332590856, 1866599683, 4127851711, 750260880, 613907577, 1450815602, 3165620655, 3734664991, 3650291728, 3012275730, 3704569646, 1427272223, 778793252, 1343938022, 2676280711, 2052605720, 1946737175, 3164576444, 3914038668, 3967478842, 3682934266, 1661551462, 3294938066, 4011595847, 840292616, 3712170807, 616741398, 312560963, 711312465, 1351876610, 322626781, 1910503582, 271666773, 2175563734, 1594956187, 70604529, 3617834859, 1007753275, 1495573769, 4069517037, 2549218298, 2663038764, 504708206, 2263041392, 3941167025, 2249088522, 1514023603, 1998579484, 1312622330, 694541497, 2582060303, 2151582166, 1382467621, 776784248, 2618340202, 3323268794, 2497899128, 2784771155, 503983604, 4076293799, 907881277, 423175695, 432175456, 1378068232, 4145222326, 3954048622, 3938656102, 3820766613, 2793130115, 2977904593, 26017576, 3274890735, 3194772133, 1700274565, 1756076034, 4006520079, 3677328699, 720338349, 1533947780, 354530856, 688349552, 3973924725, 1637815568, 332179504, 3949051286, 53804574, 2852348879, 3044236432, 1282449977, 3583942155, 3416972820, 4006381244, 1617046695, 2628476075, 3002303598, 1686838959, 431878346, 2686675385, 1700445008, 1080580658, 1009431731, 832498133, 3223435511, 2605976345, 2271191193, 2516031870, 1648197032, 4164389018, 2548247927, 300782431, 375919233, 238389289, 3353747414, 2531188641, 2019080857, 1475708069, 455242339, 2609103871, 448939670, 3451063019, 1395535956, 2413381860, 1841049896, 1491858159, 885456874, 4264095073, 4001119347, 1565136089, 3898914787, 1108368660, 540939232, 1173283510, 2745871338, 3681308437, 4207628240, 3343053890, 4016749493, 1699691293, 1103962373, 3625875870, 2256883143, 3830138730, 1031889488, 3479347698, 1535977030, 4236805024, 3251091107, 2132092099, 1774941330, 1199868427, 1452454533, 157007616, 2904115357, 342012276, 595725824, 1480756522, 206960106, 497939518, 591360097, 863170706, 2375253569, 3596610801, 1814182875, 2094937945, 3421402208, 1082520231, 3463918190, 2785509508, 435703966, 3908032597, 1641649973, 2842273706, 3305899714, 1510255612, 2148256476, 2655287854, 3276092548, 4258621189, 236887753, 3681803219, 274041037, 1734335097, 3815195456, 3317970021, 1899903192, 1026095262, 4050517792, 356393447, 2410691914, 3873677099, 3682840055, 3913112168, 2491498743, 4132185628, 2489919796, 1091903735, 1979897079, 3170134830, 3567386728, 3557303409, 857797738, 1136121015, 1342202287, 507115054, 2535736646, 337727348, 3213592640, 1301675037, 2528481711, 1895095763, 1721773893, 3216771564, 62756741, 2142006736, 835421444, 2531993523, 1442658625, 3659876326, 2882144922, 676362277, 1392781812, 170690266, 3921047035, 1759253602, 3611846912, 1745797284, 664899054, 1329594018, 3901205900, 3045908486, 2062866102, 2865634940, 3543621612, 3464012697, 1080764994, 553557557, 3656615353, 3996768171, 991055499, 499776247, 1265440854, 648242737, 3940784050, 980351604, 3713745714, 1749149687, 3396870395, 4211799374, 3640570775, 1161844396, 3125318951, 1431517754, 545492359, 4268468663, 3499529547, 1437099964, 2702547544, 3433638243, 2581715763, 2787789398, 1060185593, 1593081372, 2418618748, 4260947970, 69676912, 2159744348, 86519011, 2512459080, 3838209314, 1220612927, 3339683548, 133810670, 1090789135, 1078426020, 1569222167, 845107691, 3583754449, 4072456591, 1091646820, 628848692, 1613405280, 3757631651, 526609435, 236106946, 48312990, 2942717905, 3402727701, 1797494240, 859738849, 992217954, 4005476642, 2243076622, 3870952857, 3732016268, 765654824, 3490871365, 2511836413, 1685915746, 3888969200, 1414112111, 2273134842, 3281911079, 4080962846, 172450625, 2569994100, 980381355, 4109958455, 2819808352, 2716589560, 2568741196, 3681446669, 3329971472, 1835478071, 660984891, 3704678404, 4045999559, 3422617507, 3040415634, 1762651403, 1719377915, 3470491036, 2693910283, 3642056355, 3138596744, 1364962596, 2073328063, 1983633131, 926494387, 3423689081, 2150032023, 4096667949, 1749200295, 3328846651, 309677260, 2016342300, 1779581495, 3079819751, 111262694, 1274766160, 443224088, 298511866, 1025883608, 3806446537, 1145181785, 168956806, 3641502830, 3584813610, 1689216846, 3666258015, 3200248200, 1692713982, 2646376535, 4042768518, 1618508792, 1610833997, 3523052358, 4130873264, 2001055236, 3610705100, 2202168115, 4028541809, 2961195399, 1006657119, 2006996926, 3186142756, 1430667929, 3210227297, 1314452623, 4074634658, 4101304120, 2273951170, 1399257539, 3367210612, 3027628629, 1190975929, 2062231137, 2333990788, 2221543033, 2438960610, 1181637006, 548689776, 2362791313, 3372408396, 3104550113, 3145860560, 296247880, 1970579870, 3078560182, 3769228297, 1714227617, 3291629107, 3898220290, 166772364, 1251581989, 493813264, 448347421, 195405023, 2709975567, 677966185, 3703036547, 1463355134, 2715995803, 1338867538, 1343315457, 2802222074, 2684532164, 233230375, 2599980071, 2000651841, 3277868038, 1638401717, 4028070440, 3237316320, 6314154, 819756386, 300326615, 590932579, 1405279636, 3267499572, 3150704214, 2428286686, 3959192993, 3461946742, 1862657033, 1266418056, 963775037, 2089974820, 2263052895, 1917689273, 448879540, 3550394620, 3981727096, 150775221, 3627908307, 1303187396, 508620638, 2975983352, 2726630617, 1817252668, 1876281319, 1457606340, 908771278, 3720792119, 3617206836, 2455994898, 1729034894, 1080033504, 976866871, 3556439503, 2881648439, 1522871579, 1555064734, 1336096578, 3548522304, 2579274686, 3574697629, 3205460757, 3593280638, 3338716283, 3079412587, 564236357, 2993598910, 1781952180, 1464380207, 3163844217, 3332601554, 1699332808, 1393555694, 1183702653, 3581086237, 1288719814, 691649499, 2847557200, 2895455976, 3193889540, 2717570544, 1781354906, 1676643554, 2592534050, 3230253752, 1126444790, 2770207658, 2633158820, 2210423226, 2615765581, 2414155088, 3127139286, 673620729, 2805611233, 1269405062, 4015350505, 3341807571, 4149409754, 1057255273, 2012875353, 2162469141, 2276492801, 2601117357, 993977747, 3918593370, 2654263191, 753973209, 36408145, 2530585658, 25011837, 3520020182, 2088578344, 530523599, 2918365339, 1524020338, 1518925132, 3760827505, 3759777254, 1202760957, 3985898139, 3906192525, 674977740, 4174734889, 2031300136, 2019492241, 3983892565, 4153806404, 3822280332, 352677332, 2297720250, 60907813, 90501309, 3286998549, 1016092578, 2535922412, 2839152426, 457141659, 509813237, 4120667899, 652014361, 1966332200, 2975202805, 55981186, 2327461051, 676427537, 3255491064, 2882294119, 3433927263, 1307055953, 942726286, 933058658, 2468411793, 3933900994, 4215176142, 1361170020, 2001714738, 2830558078, 3274259782, 1222529897, 1679025792, 2729314320, 3714953764, 1770335741, 151462246, 3013232138, 1682292957, 1483529935, 471910574, 1539241949, 458788160, 3436315007, 1807016891, 3718408830, 978976581, 1043663428, 3165965781, 1927990952, 4200891579, 2372276910, 3208408903, 3533431907, 1412390302, 2931980059, 4132332400, 1947078029, 3881505623, 4168226417, 2941484381, 1077988104, 1320477388, 886195818, 18198404, 3786409e3, 2509781533, 112762804, 3463356488, 1866414978, 891333506, 18488651, 661792760, 1628790961, 3885187036, 3141171499, 876946877, 2693282273, 1372485963, 791857591, 2686433993, 3759982718, 3167212022, 3472953795, 2716379847, 445679433, 3561995674, 3504004811, 3574258232, 54117162, 3331405415, 2381918588, 3769707343, 4154350007, 1140177722, 4074052095, 668550556, 3214352940, 367459370, 261225585, 2610173221, 4209349473, 3468074219, 3265815641, 314222801, 3066103646, 3808782860, 282218597, 3406013506, 3773591054, 379116347, 1285071038, 846784868, 2669647154, 3771962079, 3550491691, 2305946142, 453669953, 1268987020, 3317592352, 3279303384, 3744833421, 2610507566, 3859509063, 266596637, 3847019092, 517658769, 3462560207, 3443424879, 370717030, 4247526661, 2224018117, 4143653529, 4112773975, 2788324899, 2477274417, 1456262402, 2901442914, 1517677493, 1846949527, 2295493580, 3734397586, 2176403920, 1280348187, 1908823572, 3871786941, 846861322, 1172426758, 3287448474, 3383383037, 1655181056, 3139813346, 901632758, 1897031941, 2986607138, 3066810236, 3447102507, 1393639104, 373351379, 950779232, 625454576, 3124240540, 4148612726, 2007998917, 544563296, 2244738638, 2330496472, 2058025392, 1291430526, 424198748, 50039436, 29584100, 3605783033, 2429876329, 2791104160, 1057563949, 3255363231, 3075367218, 3463963227, 1469046755, 985887462], C = [1332899944, 1700884034, 1701343084, 1684370003, 1668446532, 1869963892], S = (n, r) => {
+  if (r <= 0 || r > n.length)
+    throw Error(`Illegal len: ${r}`);
+  let o = 0, t, e, l = [];
+  for (; o < r; ) {
+    if (t = n[o++] & 255, l.push(A[t >> 2 & 63]), t = (t & 3) << 4, o >= r) {
+      l.push(A[t & 63]);
+      break;
+    }
+    if (e = n[o++] & 255, t |= e >> 4 & 15, l.push(A[t & 63]), t = (e & 15) << 2, o >= r) {
+      l.push(A[t & 63]);
+      break;
+    }
+    e = n[o++] & 255, t |= e >> 6 & 3, l.push(A[t & 63]), l.push(A[e & 63]);
+  }
+  return l.join("");
+}, O = (n, r) => {
+  if (r <= 0)
+    throw Error(`Illegal len: ${r}`);
+  let o = n.length, t = 0, e = 0, l, s, h, u, i, p, g = [];
+  for (; t < o - 1 && e < r && (p = n.charCodeAt(t++), l = p < E.length ? E[p] : -1, p = n.charCodeAt(t++), s = p < E.length ? E[p] : -1, !(l == -1 || s == -1 || (i = l << 2 >>> 0, i |= (s & 48) >> 4, g.push(String.fromCharCode(i)), ++e >= r || t >= o) || (p = n.charCodeAt(t++), h = p < E.length ? E[p] : -1, h == -1) || (i = (s & 15) << 4 >>> 0, i |= (h & 60) >> 2, g.push(String.fromCharCode(i)), ++e >= r || t >= o))); )
+    p = n.charCodeAt(t++), u = p < E.length ? E[p] : -1, i = (h & 3) << 6 >>> 0, i |= u, g.push(String.fromCharCode(i)), ++e;
+  return g.map((c) => c.charCodeAt(0));
+}, D = (n, r) => {
+  let o = null;
+  for (typeof n == "number" && (o = n, n = () => null); o !== null || (o = n()) !== null; )
+    o < 128 ? r(o & 127) : o < 2048 ? (r(o >> 6 & 31 | 192), r(o & 63 | 128)) : o < 65536 ? (r(o >> 12 & 15 | 224), r(o >> 6 & 63 | 128), r(o & 63 | 128)) : (r(o >> 18 & 7 | 240), r(o >> 12 & 63 | 128), r(o >> 6 & 63 | 128), r(o & 63 | 128)), o = null;
+}, B = (n, r) => {
+  let o, t = null;
+  for (; (o = t !== null ? t : n()) !== null; ) {
+    if (o >= 55296 && o <= 57343 && (t = n()) !== null && t >= 56320 && t <= 57343) {
+      r((o - 55296) * 1024 + t - 56320 + 65536), t = null;
+      continue;
+    }
+    r(o);
+  }
+  t !== null && r(t);
+}, j = (n, r) => {
+  B(n, function(o) {
+    D(o, r);
+  });
+}, w = typeof process == "object" && process.env.NEXT_RUNTIME === "edge" ? setTimeout : typeof setImmediate == "function" ? setImmediate : typeof process == "object" && typeof process.nextTick == "function" ? process.nextTick : setTimeout, k = (n) => {
+  let r = [], o = 0;
+  return j(() => o >= n.length ? null : n.charCodeAt(o++), (t) => {
+    r.push(t);
+  }), r;
+}, _ = (n, r, o, t) => {
+  let e, l = n[r], s = n[r + 1];
+  return l ^= o[0], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[1], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[2], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[3], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[4], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[5], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[6], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[7], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[8], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[9], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[10], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[11], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[12], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[13], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[14], e = t[l >>> 24], e += t[256 | l >> 16 & 255], e ^= t[512 | l >> 8 & 255], e += t[768 | l & 255], s ^= e ^ o[15], e = t[s >>> 24], e += t[256 | s >> 16 & 255], e ^= t[512 | s >> 8 & 255], e += t[768 | s & 255], l ^= e ^ o[16], n[r] = s ^ o[17], n[r + 1] = l, n;
+}, T = (n, r) => {
+  let o = 0;
+  for (let t = 0; t < 4; ++t)
+    o = o << 8 | n[r] & 255, r = (r + 1) % n.length;
+  return { key: o, offp: r };
+}, N = (n, r, o) => {
+  let t = r.length, e = o.length, l = 0, s = [0, 0], h;
+  for (let u = 0; u < t; u++)
+    h = T(n, l), l = h.offp, r[u] = r[u] ^ h.key;
+  for (let u = 0; u < t; u += 2)
+    s = _(s, 0, r, o), r[u] = s[0], r[u + 1] = s[1];
+  for (let u = 0; u < e; u += 2)
+    s = _(s, 0, r, o), o[u] = s[0], o[u + 1] = s[1];
+}, F = (n, r, o, t) => {
+  let e = o.length, l = t.length, s = 0, h = [0, 0], u;
+  for (let i = 0; i < e; i++)
+    u = T(r, s), s = u.offp, o[i] = o[i] ^ u.key;
+  s = 0;
+  for (let i = 0; i < e; i += 2)
+    u = T(n, s), s = u.offp, h[0] ^= u.key, u = T(n, s), s = u.offp, h[1] ^= u.key, h = _(h, 0, o, t), o[i] = h[0], o[i + 1] = h[1];
+  for (let i = 0; i < l; i += 2)
+    u = T(n, s), s = u.offp, h[0] ^= u.key, u = T(n, s), s = u.offp, h[1] ^= u.key, h = _(h, 0, o, t), t[i] = h[0], t[i + 1] = h[1];
+}, R = (n, r, o, t, e) => {
+  let l = C.slice(), s = l.length;
+  if (o < 4 || o > 31) {
+    let c = new Error(`Illegal number of rounds (4-31): ${o}`);
+    if (t === !1)
+      return Promise.reject(c);
+    throw c;
+  }
+  if (r.length !== 16) {
+    let c = new Error(`Illegal salt length: ${r.length} != 16`);
+    if (t === !1)
+      return Promise.reject(c);
+    throw c;
+  }
+  o = 1 << o >>> 0;
+  let h, u, i = 0, p;
+  Int32Array ? (h = new Int32Array(L), u = new Int32Array(b)) : (h = L.slice(), u = b.slice()), F(r, n, h, u);
+  let g = () => {
+    if (e && e(i / o), i < o) {
+      let c = Date.now();
+      for (; i < o && (i = i + 1, N(n, h, u), N(r, h, u), !(Date.now() - c > 100)); )
+        ;
+    } else {
+      for (i = 0; i < 64; i++)
+        for (p = 0; p < s >> 1; p++)
+          _(l, p << 1, h, u);
+      let c = [];
+      for (i = 0; i < s; i++)
+        c.push((l[i] >> 24 & 255) >>> 0), c.push((l[i] >> 16 & 255) >>> 0), c.push((l[i] >> 8 & 255) >>> 0), c.push((l[i] & 255) >>> 0);
+      return t === !1 ? Promise.resolve(c) : c;
+    }
+    if (t === !1)
+      return new Promise((c) => w(() => {
+        g().then(c);
+      }));
+  };
+  if (t === !1)
+    return g();
+  {
+    let c;
+    for (; ; )
+      if (typeof (c = g()) < "u")
+        return c || [];
+  }
+}, G = (n) => {
+  try {
+    let r;
+    typeof window < "u" ? r = window.crypto ?? window.msCrypto : r = globalThis.crypto;
+    let o = new Uint32Array(n);
+    return r?.getRandomValues(o), Array.from(o);
+  } catch {
+    throw Error("WebCryptoAPI is not available");
+  }
+}, m = (n = 10) => {
+  if (typeof n != "number")
+    throw Error("Illegal arguments: " + typeof n);
+  n < 4 ? n = 4 : n > 31 && (n = 31);
+  let r = [];
+  return r.push("$2a$"), n < 10 && r.push("0"), r.push(n.toString()), r.push("$"), r.push(S(G(16), 16)), r.join("");
+}, $ = (n = 10) => {
+  if (typeof n != "number")
+    throw Error("illegal arguments: " + typeof n);
+  return new Promise((r, o) => w(() => {
+    try {
+      r(m(n));
+    } catch (t) {
+      o(t);
+    }
+  }));
+};
+function d(n, r, o, t) {
+  if (typeof n != "string" || typeof r != "string") {
+    let a = new Error("Invalid string / salt: Not a string");
+    if (o === !1)
+      return Promise.reject(a);
+    throw a;
+  }
+  let e, l;
+  if (r.charAt(0) !== "$" || r.charAt(1) !== "2") {
+    let a = new Error("Invalid salt version: " + r.substring(0, 2));
+    if (o === !1)
+      return Promise.reject(a);
+    throw a;
+  }
+  if (r.charAt(2) === "$")
+    e = "\0", l = 3;
+  else {
+    if (e = r.charAt(2), e !== "a" && e !== "b" && e !== "y" || r.charAt(3) !== "$") {
+      let a = Error("Invalid salt revision: " + r.substring(2, 4));
+      if (o === !1)
+        return Promise.reject(a);
+      throw a;
+    }
+    l = 4;
+  }
+  if (r.charAt(l + 2) > "$") {
+    let a = new Error("Missing salt rounds");
+    if (o === !1)
+      return Promise.reject(a);
+    throw a;
+  }
+  let s = parseInt(r.substring(l, l + 1), 10) * 10, h = parseInt(r.substring(l + 1, l + 2), 10), u = s + h, i = r.substring(l + 3, l + 25);
+  n += e >= "a" ? "\0" : "";
+  let p = k(n), g = O(i, 16), c = (a) => {
+    let y = [];
+    return y.push("$2"), e >= "a" && y.push(e), y.push("$"), u < 10 && y.push("0"), y.push(u.toString()), y.push("$"), y.push(S(g, g.length)), y.push(S(a, C.length * 4 - 1)), y.join("");
+  };
+  return o === !1 ? R(p, g, u, !1, t).then((a) => c(a)) : c(R(p, g, u, !0, t));
+}
+var P = function(n, r, o) {
+  return typeof n == "string" && typeof r == "number" ? $(r).then((t) => d(n, t, !1, o)) : typeof n == "string" && typeof r == "string" ? d(n, r, !1, o) : Promise.reject(new Error(`Illegal arguments: ${typeof n}, ${typeof r}`));
+};
+var v = (n, r, o) => new Promise((t, e) => {
+  if (typeof n != "string" || typeof r != "string") {
+    w(() => e(new Error(`Illegal arguments: ${typeof n}, ${typeof r}`)));
+    return;
+  }
+  if (r.length !== 60) {
+    w(() => e(!1));
+    return;
+  }
+  P(n, r.substring(0, 29), o).then((l) => t(l === r)).catch((l) => e(l));
+});
+
+// node_modules/@tsndr/cloudflare-worker-jwt/index.js
+function bytesToByteString(bytes) {
+  let byteStr = "";
+  for (let i = 0; i < bytes.byteLength; i++)
+    byteStr += String.fromCharCode(bytes[i]);
+  return byteStr;
+}
+function byteStringToBytes(byteStr) {
+  let bytes = new Uint8Array(byteStr.length);
+  for (let i = 0; i < byteStr.length; i++)
+    bytes[i] = byteStr.charCodeAt(i);
+  return bytes;
+}
+function arrayBufferToBase64String(arrayBuffer) {
+  return btoa(bytesToByteString(new Uint8Array(arrayBuffer)));
+}
+function base64StringToArrayBuffer(b64str) {
+  return byteStringToBytes(atob(b64str)).buffer;
+}
+function textToArrayBuffer(str) {
+  return byteStringToBytes(decodeURI(encodeURIComponent(str)));
+}
+function arrayBufferToBase64Url(arrayBuffer) {
+  return arrayBufferToBase64String(arrayBuffer).replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+}
+function base64UrlToArrayBuffer(b64url) {
+  return base64StringToArrayBuffer(b64url.replace(/-/g, "+").replace(/_/g, "/").replace(/\s/g, ""));
+}
+function textToBase64Url(str) {
+  let charCodes = new TextEncoder().encode(str), binaryStr = String.fromCharCode(...charCodes);
+  return btoa(binaryStr).replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+}
+function pemToBinary(pem) {
+  return base64StringToArrayBuffer(pem.replace(/-+(BEGIN|END).*/g, "").replace(/\s/g, ""));
+}
+async function importTextSecret(key, algorithm, keyUsages) {
+  return await crypto.subtle.importKey("raw", textToArrayBuffer(key), algorithm, !0, keyUsages);
+}
+async function importJwk(key, algorithm, keyUsages) {
+  return await crypto.subtle.importKey("jwk", key, algorithm, !0, keyUsages);
+}
+async function importPublicKey(key, algorithm, keyUsages) {
+  return await crypto.subtle.importKey("spki", pemToBinary(key), algorithm, !0, keyUsages);
+}
+async function importPrivateKey(key, algorithm, keyUsages) {
+  return await crypto.subtle.importKey("pkcs8", pemToBinary(key), algorithm, !0, keyUsages);
+}
+async function importKey(key, algorithm, keyUsages) {
+  if (typeof key == "object")
+    return importJwk(key, algorithm, keyUsages);
+  if (typeof key != "string")
+    throw new Error("Unsupported key type!");
+  return key.includes("PUBLIC") ? importPublicKey(key, algorithm, keyUsages) : key.includes("PRIVATE") ? importPrivateKey(key, algorithm, keyUsages) : importTextSecret(key, algorithm, keyUsages);
+}
+function decodePayload(raw) {
+  try {
+    let bytes = Array.from(atob(raw), (char) => char.charCodeAt(0)), decodedString = new TextDecoder("utf-8").decode(new Uint8Array(bytes));
+    return JSON.parse(decodedString);
+  } catch {
+    return;
+  }
+}
+if (typeof crypto > "u" || !crypto.subtle)
+  throw new Error("SubtleCrypto not supported!");
+var algorithms = {
+  ES256: { name: "ECDSA", namedCurve: "P-256", hash: { name: "SHA-256" } },
+  ES384: { name: "ECDSA", namedCurve: "P-384", hash: { name: "SHA-384" } },
+  ES512: { name: "ECDSA", namedCurve: "P-521", hash: { name: "SHA-512" } },
+  HS256: { name: "HMAC", hash: { name: "SHA-256" } },
+  HS384: { name: "HMAC", hash: { name: "SHA-384" } },
+  HS512: { name: "HMAC", hash: { name: "SHA-512" } },
+  RS256: { name: "RSASSA-PKCS1-v1_5", hash: { name: "SHA-256" } },
+  RS384: { name: "RSASSA-PKCS1-v1_5", hash: { name: "SHA-384" } },
+  RS512: { name: "RSASSA-PKCS1-v1_5", hash: { name: "SHA-512" } }
+};
+async function sign(payload, secret, options = "HS256") {
+  if (typeof options == "string" && (options = { algorithm: options }), options = { algorithm: "HS256", header: { typ: "JWT" }, ...options }, !payload || typeof payload != "object")
+    throw new Error("payload must be an object");
+  if (!secret || typeof secret != "string" && typeof secret != "object")
+    throw new Error("secret must be a string, a JWK object or a CryptoKey object");
+  if (typeof options.algorithm != "string")
+    throw new Error("options.algorithm must be a string");
+  let algorithm = algorithms[options.algorithm];
+  if (!algorithm)
+    throw new Error("algorithm not found");
+  payload.iat || (payload.iat = Math.floor(Date.now() / 1e3));
+  let partialToken = `${textToBase64Url(JSON.stringify({ ...options.header, alg: options.algorithm }))}.${textToBase64Url(JSON.stringify(payload))}`, key = secret instanceof CryptoKey ? secret : await importKey(secret, algorithm, ["sign"]), signature = await crypto.subtle.sign(algorithm, key, textToArrayBuffer(partialToken));
+  return `${partialToken}.${arrayBufferToBase64Url(signature)}`;
+}
+async function verify(token, secret, options = "HS256") {
+  if (typeof options == "string" && (options = { algorithm: options }), options = { algorithm: "HS256", clockTolerance: 0, throwError: !1, ...options }, typeof token != "string")
+    throw new Error("token must be a string");
+  if (typeof secret != "string" && typeof secret != "object")
+    throw new Error("secret must be a string, a JWK object or a CryptoKey object");
+  if (typeof options.algorithm != "string")
+    throw new Error("options.algorithm must be a string");
+  let tokenParts = token.split(".");
+  if (tokenParts.length !== 3)
+    throw new Error("token must consist of 3 parts");
+  let algorithm = algorithms[options.algorithm];
+  if (!algorithm)
+    throw new Error("algorithm not found");
+  let { header, payload } = decode(token);
+  if (header?.alg !== options.algorithm) {
+    if (options.throwError)
+      throw new Error("ALG_MISMATCH");
+    return !1;
+  }
+  try {
+    if (!payload)
+      throw new Error("PARSE_ERROR");
+    let now = Math.floor(Date.now() / 1e3);
+    if (payload.nbf && payload.nbf > now && Math.abs(payload.nbf - now) > (options.clockTolerance ?? 0))
+      throw new Error("NOT_YET_VALID");
+    if (payload.exp && payload.exp <= now && Math.abs(payload.exp - now) > (options.clockTolerance ?? 0))
+      throw new Error("EXPIRED");
+    let key = secret instanceof CryptoKey ? secret : await importKey(secret, algorithm, ["verify"]);
+    return await crypto.subtle.verify(algorithm, key, base64UrlToArrayBuffer(tokenParts[2]), textToArrayBuffer(`${tokenParts[0]}.${tokenParts[1]}`));
+  } catch (err) {
+    if (options.throwError)
+      throw err;
+    return !1;
+  }
+}
+function decode(token) {
+  return {
+    header: decodePayload(token.split(".")[0].replace(/-/g, "+").replace(/_/g, "/")),
+    payload: decodePayload(token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))
+  };
+}
+var src_default = {
+  sign,
+  verify,
+  decode
+};
+
+// app/utils/auth/auth-service.ts
+var Auth = class {
+  static async hashPassword(password, saltRounds = 10) {
+    return await P(password, saltRounds);
+  }
+  static async verifyPassword(password, hashedPassword) {
+    return await v(password, hashedPassword);
+  }
+  static async generateToken(payload, secretKey, options) {
+    return options?.expiresIn && (payload = {
+      ...payload,
+      exp: Math.floor(Date.now() / 1e3) + Auth.parseDurationToSeconds(options.expiresIn)
+    }), options?.notBefore && (payload = {
+      ...payload,
+      nbf: Math.floor(Date.now() / 1e3) + Auth.parseDurationToSeconds(options.notBefore)
+    }), await src_default.sign(payload, secretKey);
+  }
+  static async verifyToken(token, secretKey) {
+    return await src_default.verify(token, secretKey);
+  }
+  static decodeToken(token) {
+    return src_default.decode(token);
+  }
+  // Helper method to parse a duration string (e.g., "1h", "30m") into seconds
+  static parseDurationToSeconds(duration) {
+    let unit = duration.slice(-1), value = parseInt(duration.slice(0, -1), 10);
+    switch (unit) {
+      case "h":
+        return value * 60 * 60;
+      case "m":
+        return value * 60;
+      case "s":
+        return value;
+      default:
+        throw new Error("Invalid duration unit");
+    }
+  }
+}, auth_service_default = Auth;
+
+// api_v2/services/userService.ts
+var UserService2 = class {
+  userRepository;
+  constructor(env) {
+    this.userRepository = new userRepository_default(env);
+  }
+  async loginUser(userData) {
+    let user2 = await this.userRepository.findUserByUsername(userData.username);
+    return user2 ? await auth_service_default.verifyPassword(userData.password, user2.password) ? user2.username && typeof user2.id == "number" && user2.createdAt && user2.updatedAt && user2.role ? { success: !0, user: {
+      username: user2.username,
+      role: user2.role,
+      id: user2.id,
+      createdAt: user2.createdAt,
+      updatedAt: user2.updatedAt
+    }, message: "User logged in successfully." } : { success: !1, message: "User data incomplete." } : { success: !1, message: "Incorrect password." } : { success: !1, message: "User does not exist." };
+  }
+  async registerUser(userData) {
+    if (await this.userRepository.findUserByUsername(userData.username))
+      return { success: !1, message: "User already exists." };
+    userData.password = await auth_service_default.hashPassword(userData.password);
+    let userId = await this.userRepository.addUser(userData);
+    return userId ? { success: !0, userId, message: "User registered successfully." } : { success: !1, message: "Failed to register user." };
+  }
+}, userService_default = UserService2;
+
+// app/routes/_auth.login.tsx
+var import_jsx_dev_runtime17 = __toESM(require_jsx_dev_runtime(), 1), loader = async ({ request, context }) => await isAuthenticated(request, context) ? (0, import_cloudflare4.redirect)("/home") : (0, import_cloudflare4.json)({}), action2 = async ({
+  request,
+  context
+}) => {
+  let mySession = context.session, myEnv = context.env;
+  console.log(context, "context.env");
+  let userService = new userService_default(myEnv), formData = await request.formData(), actionType = formData.get("actionType");
+  if (actionType === "login") {
+    let userData = {
+      username: formData.get("username"),
+      password: formData.get("password"),
+      role: formData.get("role")
+    }, loginResult = await userService.loginUser(userData);
+    return loginResult.success && loginResult.user ? (console.log("loginResult", loginResult), mySession.set("auth", { ...loginResult.user }), new Response(null, {
+      status: 303,
+      // or 302, depending on your use case
+      headers: {
+        Location: "/home"
+      }
+    })) : (mySession.flash("error", "Invalid username or password."), new Response(null, {
+      status: 303,
+      headers: {
+        Location: "/login"
+      }
+    }));
+  }
+  return (0, import_cloudflare4.json)({ error: "Invalid action type." });
+}, LoginOrRegister = () => {
+  let [username, setUsername] = (0, import_react6.useState)(""), [password, setPassword] = (0, import_react6.useState)(""), [role, setRole] = (0, import_react6.useState)(""), [actionType, setActionType] = (0, import_react6.useState)("login"), actionData = useActionData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
     "form",
     {
       action: "/login",
       method: "post",
-      className: "max-w-lg mx-auto mt-10 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
+      className: "max-w-lg mx-auto mt-2 p-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg shadow-2xl",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("input", { type: "hidden", name: "actionType", value: actionType }, void 0, !1, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 114,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "label",
             {
-              className: "block text-gray-300 text-base font-semibold mb-2",
               htmlFor: "username",
-              children: "Email"
+              className: "block text-gray-300 text-base font-semibold mb-2",
+              children: "Username"
             },
             void 0,
             !1,
             {
-              fileName: "app/routes/login.tsx",
-              lineNumber: 21,
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 117,
               columnNumber: 9
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "input",
             {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
-              id: "username",
               type: "text",
               name: "username",
+              id: "username",
               value: username,
-              placeholder: "Enter your email",
-              onChange: (e) => setUsername(e.target.value)
+              onChange: (e) => setUsername(e.target.value),
+              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 leading-tight focus:outline-none focus:border-blue-500",
+              placeholder: "Enter your username"
             },
             void 0,
             !1,
             {
-              fileName: "app/routes/login.tsx",
-              lineNumber: 27,
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 123,
               columnNumber: 9
             },
             this
           )
         ] }, void 0, !0, {
-          fileName: "app/routes/login.tsx",
-          lineNumber: 20,
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 116,
           columnNumber: 7
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "label",
             {
-              className: "block text-gray-300 text-base font-semibold mb-2",
               htmlFor: "password",
+              className: "block text-gray-300 text-base font-semibold mb-2",
               children: "Password"
             },
             void 0,
             !1,
             {
-              fileName: "app/routes/login.tsx",
-              lineNumber: 39,
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 135,
               columnNumber: 9
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "input",
             {
-              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 mb-3 leading-tight focus:outline-none focus:border-blue-500",
-              id: "password",
               type: "password",
               name: "password",
+              id: "password",
               value: password,
-              placeholder: "Enter your password",
-              onChange: (e) => setPassword(e.target.value)
+              onChange: (e) => setPassword(e.target.value),
+              className: "shadow appearance-none border-2 border-gray-700 rounded-lg w-full py-3 px-4 text-white bg-gray-800 mb-3 leading-tight focus:outline-none focus:border-blue-500",
+              placeholder: "Enter your password"
             },
             void 0,
             !1,
             {
-              fileName: "app/routes/login.tsx",
-              lineNumber: 45,
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 141,
               columnNumber: 9
             },
             this
           )
         ] }, void 0, !0, {
-          fileName: "app/routes/login.tsx",
-          lineNumber: 38,
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 134,
           columnNumber: 7
         }, this),
-        actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
-          fileName: "app/routes/login.tsx",
-          lineNumber: 57,
+        actionType === "register" && // Add additional fields for registration as needed
+        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
+            "label",
+            {
+              htmlFor: "role",
+              className: "block text-gray-300 text-base font-semibold mb-2",
+              children: "Role"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 155,
+              columnNumber: 11
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
+            "select",
+            {
+              name: "role",
+              id: "role",
+              value: role,
+              onChange: (e) => setRole(e.target.value),
+              className: "shadow border-2 border-gray-700 rounded-lg w-full py-3 px-4 bg-gray-800 text-white leading-tight focus:outline-none focus:border-blue-500",
+              children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("option", { value: "", children: "Select a role" }, void 0, !1, {
+                  fileName: "app/routes/_auth.login.tsx",
+                  lineNumber: 168,
+                  columnNumber: 13
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("option", { value: "2", children: "User" }, void 0, !1, {
+                  fileName: "app/routes/_auth.login.tsx",
+                  lineNumber: 169,
+                  columnNumber: 13
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("option", { value: "1", children: "Admin" }, void 0, !1, {
+                  fileName: "app/routes/_auth.login.tsx",
+                  lineNumber: 170,
+                  columnNumber: 13
+                }, this)
+              ]
+            },
+            void 0,
+            !0,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 161,
+              columnNumber: 11
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 154,
           columnNumber: 9
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex items-center justify-between", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-          "button",
-          {
-            className: "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50",
-            type: "submit",
-            children: "Login"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/login.tsx",
-            lineNumber: 61,
-            columnNumber: 9
-          },
-          this
-        ) }, void 0, !1, {
-          fileName: "app/routes/login.tsx",
-          lineNumber: 60,
+        actionData?.error && /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "text-red-500 text-xs italic", children: actionData.error }, void 0, !1, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 176,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex items-center justify-between space-x-4", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
+            "button",
+            {
+              className: "bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105",
+              type: "submit",
+              onClick: () => setActionType("login"),
+              children: "Login"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 180,
+              columnNumber: 9
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
+            "button",
+            {
+              className: "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105",
+              type: "submit",
+              onClick: () => setActionType("register"),
+              children: "Register"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/_auth.login.tsx",
+              lineNumber: 187,
+              columnNumber: 9
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/routes/_auth.login.tsx",
+          lineNumber: 179,
           columnNumber: 7
         }, this)
       ]
@@ -33073,16 +37612,696 @@ var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1), Login = () 
     void 0,
     !0,
     {
-      fileName: "app/routes/login.tsx",
-      lineNumber: 15,
+      fileName: "app/routes/_auth.login.tsx",
+      lineNumber: 108,
       columnNumber: 5
     },
     this
   );
-}, login_default = Login;
+}, auth_login_default = LoginOrRegister;
+
+// app/routes/info._index.tsx
+var info_index_exports = {};
+__export(info_index_exports, {
+  default: () => info_index_default
+});
+init_dist2();
+var import_jsx_dev_runtime18 = __toESM(require_jsx_dev_runtime(), 1), Info_Index = () => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex justify-center space-x-4", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+    "a",
+    {
+      href: "/info/privacy",
+      className: "block bg-white shadow-md rounded-lg p-6 max-w-sm hover:bg-gray-100",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-2", children: "Privacy Policy" }, void 0, !1, {
+          fileName: "app/routes/info._index.tsx",
+          lineNumber: 11,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("p", { className: "text-gray-600", children: "Read our privacy policy to understand how we handle your data." }, void 0, !1, {
+          fileName: "app/routes/info._index.tsx",
+          lineNumber: 14,
+          columnNumber: 7
+        }, this)
+      ]
+    },
+    void 0,
+    !0,
+    {
+      fileName: "app/routes/info._index.tsx",
+      lineNumber: 7,
+      columnNumber: 5
+    },
+    this
+  ),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+    "a",
+    {
+      href: "/info/terms",
+      className: "block bg-white shadow-md rounded-lg p-6 max-w-sm hover:bg-gray-100",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("h2", { className: "text-xl font-semibold text-gray-800 mb-2", children: "Terms of Service" }, void 0, !1, {
+          fileName: "app/routes/info._index.tsx",
+          lineNumber: 23,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("p", { className: "text-gray-600", children: "Review our terms of service to learn about the rules and regulations." }, void 0, !1, {
+          fileName: "app/routes/info._index.tsx",
+          lineNumber: 26,
+          columnNumber: 7
+        }, this)
+      ]
+    },
+    void 0,
+    !0,
+    {
+      fileName: "app/routes/info._index.tsx",
+      lineNumber: 19,
+      columnNumber: 5
+    },
+    this
+  ),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(Outlet, {}, void 0, !1, {
+    fileName: "app/routes/info._index.tsx",
+    lineNumber: 31,
+    columnNumber: 5
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/routes/info._index.tsx",
+  lineNumber: 6,
+  columnNumber: 5
+}, this), info_index_default = Info_Index;
+
+// app/routes/_clearance.tsx
+var clearance_exports = {};
+__export(clearance_exports, {
+  default: () => Clearance10,
+  loader: () => loader2,
+  meta: () => meta
+});
+var import_cloudflare5 = __toESM(require_dist(), 1);
+
+// app/state/hooks/user.tsx
+var useTypedSelector = useSelector, useDispatch2 = () => useDispatch();
+
+// app/components/base/navigation.tsx
+var import_jsx_dev_runtime19 = __toESM(require_jsx_dev_runtime(), 1), Navigation = ({ context }) => {
+  let fetcher = useFetcher2(), dispatch = useDispatch2(), navigate = useNavigate(), handleLogout = () => {
+    fetcher.submit({}, { method: "post", action: "/logout" }), dispatch(setLogout());
+  };
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_jsx_dev_runtime19.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("nav", { className: "bg-white shadow-md py-4 px-5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("ul", { className: "flex space-x-4", children: context.isLoggedIn ? /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_jsx_dev_runtime19.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+      Link2,
+      {
+        className: "text-blue-600 hover:text-blue-800 font-semibold",
+        to: "/info",
+        prefetch: "intent",
+        children: "Info"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 61,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 60,
+      columnNumber: 15
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+      "button",
+      {
+        className: "text-red-600 hover:text-red-800 font-semibold",
+        onClick: handleLogout,
+        children: "Logout"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 69,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 68,
+      columnNumber: 15
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 50,
+    columnNumber: 13
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_jsx_dev_runtime19.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+      Link2,
+      {
+        className: "text-blue-600 hover:text-blue-800 font-semibold",
+        to: "/login",
+        prefetch: "intent",
+        children: "Login"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 31,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 30,
+      columnNumber: 15
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+      Link2,
+      {
+        className: "text-blue-600 hover:text-blue-800 font-semibold",
+        to: "/register",
+        prefetch: "intent",
+        children: "Register"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/base/navigation.tsx",
+        lineNumber: 40,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/base/navigation.tsx",
+      lineNumber: 39,
+      columnNumber: 15
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 29,
+    columnNumber: 13
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 27,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 26,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/navigation.tsx",
+    lineNumber: 25,
+    columnNumber: 5
+  }, this);
+}, navigation_default = Navigation;
+
+// app/components/base/header.tsx
+var import_jsx_dev_runtime20 = __toESM(require_jsx_dev_runtime(), 1), Header = ({ context }) => /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("header", { className: "header-content", children: /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(navigation_default, { context }, void 0, !1, {
+  fileName: "app/components/base/header.tsx",
+  lineNumber: 19,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/header.tsx",
+  lineNumber: 18,
+  columnNumber: 5
+}, this), header_default = Header;
+
+// app/components/base/footer.tsx
+var import_jsx_dev_runtime21 = __toESM(require_jsx_dev_runtime(), 1), Footer = () => /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("footer", { className: "bg-gray-800 text-white p-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { className: "container mx-auto flex justify-between items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { className: "flex", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("a", { href: "/info/terms", className: "text-white hover:text-gray-300 mr-4", children: "Terms of Service" }, void 0, !1, {
+    fileName: "app/components/base/footer.tsx",
+    lineNumber: 9,
+    columnNumber: 11
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("a", { href: "/info/privacy", className: "text-white hover:text-gray-300", children: "Privacy Policy" }, void 0, !1, {
+    fileName: "app/components/base/footer.tsx",
+    lineNumber: 12,
+    columnNumber: 11
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/base/footer.tsx",
+  lineNumber: 8,
+  columnNumber: 9
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/footer.tsx",
+  lineNumber: 6,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/footer.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), footer_default = Footer;
+
+// app/components/base/pageTemplate.tsx
+var import_jsx_dev_runtime22 = __toESM(require_jsx_dev_runtime(), 1), PageTemplate = ({ children, user: user2, context }) => context.isLoading === !0 || context.isLoading === null ? /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("header", { className: "header-content", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "loader", children: "Loading..." }, void 0, !1, {
+  fileName: "app/components/base/pageTemplate.tsx",
+  lineNumber: 17,
+  columnNumber: 9
+}, this) }, void 0, !1, {
+  fileName: "app/components/base/pageTemplate.tsx",
+  lineNumber: 16,
+  columnNumber: 7
+}, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex flex-col min-h-screen", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(header_default, { user: user2, context }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 24,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 23,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("main", { className: "main-content flex-grow py-8 max-w-7xl px-4 sm:px-6 lg:px-8", children }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 26,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(footer_default, {}, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 30,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/pageTemplate.tsx",
+    lineNumber: 29,
+    columnNumber: 7
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/base/pageTemplate.tsx",
+  lineNumber: 22,
+  columnNumber: 5
+}, this), pageTemplate_default = PageTemplate;
+
+// app/components/base/userStatus.tsx
+var import_react9 = __toESM(require_react(), 1), import_jsx_dev_runtime23 = __toESM(require_jsx_dev_runtime(), 1), UserStatus = ({ user: user2, context }) => {
+  let [date, setDate] = (0, import_react9.useState)(""), [time, setTime] = (0, import_react9.useState)("");
+  return (0, import_react9.useEffect)(() => {
+    let setClock = (now) => {
+      if (context.locale) {
+        let date2 = now.toLocaleDateString(context.locale), time2 = now.toLocaleTimeString(context.locale);
+        setDate(date2), setTime(time2);
+      }
+    };
+    setClock(/* @__PURE__ */ new Date());
+    let interval = setInterval(() => setClock(/* @__PURE__ */ new Date()), 1e3);
+    return () => clearInterval(interval);
+  }, [context.locale]), /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "max-w-lg mx-auto p-6 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg shadow-lg", children: context.isLoggedIn && user2.id ? /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(import_jsx_dev_runtime23.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "text-lg font-semibold text-white", children: [
+      "Welcome, ",
+      user2.username
+    ] }, void 0, !0, {
+      fileName: "app/components/base/userStatus.tsx",
+      lineNumber: 35,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "mt-2 text-sm text-gray-400", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { children: date }, void 0, !1, {
+        fileName: "app/components/base/userStatus.tsx",
+        lineNumber: 37,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { children: time }, void 0, !1, {
+        fileName: "app/components/base/userStatus.tsx",
+        lineNumber: 38,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/base/userStatus.tsx",
+      lineNumber: 36,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/base/userStatus.tsx",
+    lineNumber: 34,
+    columnNumber: 7
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(import_jsx_dev_runtime23.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "text-lg font-semibold text-red-600", children: "Not logged in" }, void 0, !1, {
+      fileName: "app/components/base/userStatus.tsx",
+      lineNumber: 43,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "mt-2 text-sm text-gray-400", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { children: date }, void 0, !1, {
+        fileName: "app/components/base/userStatus.tsx",
+        lineNumber: 45,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { children: time }, void 0, !1, {
+        fileName: "app/components/base/userStatus.tsx",
+        lineNumber: 46,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/base/userStatus.tsx",
+      lineNumber: 44,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/base/userStatus.tsx",
+    lineNumber: 42,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
+    fileName: "app/components/base/userStatus.tsx",
+    lineNumber: 32,
+    columnNumber: 5
+  }, this);
+}, userStatus_default = UserStatus;
+
+// app/routes/_clearance.tsx
+var import_react11 = __toESM(require_react(), 1);
+
+// app/utils/checkAuthentication.ts
+async function checkAuthentication(context) {
+  console.log(context, "contexttt");
+  let session = await createSessionStorage(context.env).getSession(context.request.headers.get("Cookie"));
+  if (console.log("CheckSession", session.data.auth), session.has("auth"))
+    try {
+      let parsedCookieData = session.get(
+        "auth"
+      );
+      return console.log("parsedCookieData", parsedCookieData), parsedCookieData;
+    } catch (error) {
+      console.error("Error parsing cookie data:", error);
+    }
+  return !1;
+}
+
+// app/routes/_clearance.tsx
+var import_jsx_dev_runtime24 = __toESM(require_jsx_dev_runtime(), 1), meta = () => [
+  { title: "New Remix App" },
+  { name: "description", content: "Welcome to Remix!" }
+], loader2 = async ({
+  request,
+  context: { context }
+}) => {
+  let url = new URL(request.url), user2 = await checkAuthentication(context);
+  try {
+    return console.log(user2, "user"), user2 ? (0, import_cloudflare5.json)({ user: user2 }) : (0, import_cloudflare5.redirect)("/login");
+  } catch {
+    return url.pathname, (0, import_cloudflare5.redirect)("/login");
+    return (0, import_cloudflare5.json)({ error: "User is not authenticated" });
+  }
+};
+function Clearance10() {
+  let { user: user2 } = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
+  return (0, import_react11.useEffect)(() => {
+    dispatch(user2 ? setUser(user2) : setLogout());
+  }, [user2, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
+    fileName: "app/routes/_clearance.tsx",
+    lineNumber: 76,
+    columnNumber: 11
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_jsx_dev_runtime24.Fragment, { children: [
+    ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, !1, {
+      fileName: "app/routes/_clearance.tsx",
+      lineNumber: 79,
+      columnNumber: 32
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(Outlet, {}, void 0, !1, {
+      fileName: "app/routes/_clearance.tsx",
+      lineNumber: 80,
+      columnNumber: 13
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/_clearance.tsx",
+    lineNumber: 78,
+    columnNumber: 11
+  }, this) }, void 0, !1, {
+    fileName: "app/routes/_clearance.tsx",
+    lineNumber: 74,
+    columnNumber: 7
+  }, this);
+}
+
+// app/routes/info.terms.tsx
+var info_terms_exports = {};
+__export(info_terms_exports, {
+  default: () => info_terms_default
+});
+var import_jsx_dev_runtime25 = __toESM(require_jsx_dev_runtime(), 1), TermsAndConditions = () => /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h1", { children: "Terms of Use" }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 6,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("p", { children: "These Terms of Use (these \u201CTerms\u201D) are our rules for our production application environments." }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 7,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("p", { children: "By clicking \u201CI agree\u201D (or a similar checkbox or button) or accessing or using the Services, you indicate your assent to be bound by these Terms. If you do not agree to these Terms, do not use or access the Services. These Terms contain mandatory arbitration provisions that require the use of arbitration to resolve disputes. Please read it carefully." }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 11,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("p", { children: "These Terms are between International Communications Management Inc. (ICM), a Washington corporation (\u201CICM\u201D) and a \u201CClient\u201D entity or person accessing or using ICM's application. If you are accessing or using the ICM application on behalf of another entity, then that entity is the Client. ICM may modify these Terms from time to time in accordance with Section 10 (Modifications) below." }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 18,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h2", { children: "1. ACCESS RIGHTS; RESTRICTIONS" }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 26,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h3", { children: "1.1 Access" }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 27,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("p", { children: "Subject to the Client's compliance with the terms and conditions of these Terms, ICM hereby agrees that during the term of these Terms, the Client has the non-exclusive right to:" }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 28,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("ul", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("li", { children: "use the package of application programming interface materials provided by ICM solely as necessary to make an application owned and operated by the Client (the \u201CClient Application\u201D) interoperate with the ICM services." }, void 0, !1, {
+      fileName: "app/routes/info.terms.tsx",
+      lineNumber: 34,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("li", { children: "use the Services in such Client Application provided to end users (consumers or businesses) (the \u201CEnd Users\u201D) solely for internal evaluation of the Services, and" }, void 0, !1, {
+      fileName: "app/routes/info.terms.tsx",
+      lineNumber: 40,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("li", { children: "All use of the Services and Output must be only as provided in these Terms, only in accordance with ICM's applicable technical user documentation and subject to the internal evaluation use case" }, void 0, !1, {
+      fileName: "app/routes/info.terms.tsx",
+      lineNumber: 45,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 33,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h2", { children: "10. MODIFICATIONS" }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 51,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("p", { children: "From time to time, ICM may modify these Terms. ICM will use commercially reasonable efforts to notify Client of the modifications and the effective date of such modifications through communications via Client\u2019s account, email, or other means. Client must accept the modifications to continue accessing or using Development Accounts. If Client objects to the modifications, its exclusive remedy is to cease any and all access and use of Development Accounts. Client may be required to click to accept or otherwise agree to the modified Terms in order to continue accessing or using the Services, and in any event continued access or use of the Services after the modified version of these Terms goes into effect will constitute Client's acceptance of such modified version." }, void 0, !1, {
+    fileName: "app/routes/info.terms.tsx",
+    lineNumber: 52,
+    columnNumber: 7
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/routes/info.terms.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), info_terms_default = TermsAndConditions;
+
+// app/routes/_public.tsx
+var public_exports = {};
+__export(public_exports, {
+  default: () => Public2,
+  loader: () => loader3,
+  meta: () => meta2
+});
+var import_cloudflare6 = __toESM(require_dist(), 1);
+var import_react13 = __toESM(require_react(), 1);
+var import_jsx_dev_runtime26 = __toESM(require_jsx_dev_runtime(), 1), meta2 = () => [
+  { title: "New Remix App" },
+  { name: "description", content: "Welcome to Remix!" }
+], loader3 = async ({
+  request,
+  context: { context }
+}) => {
+  let url = new URL(request.url), user2 = await checkAuthentication(context);
+  try {
+    return console.log(user2, "user"), user2 ? (0, import_cloudflare6.json)({ user: user2 }) : (0, import_cloudflare6.redirect)("/login");
+  } catch {
+    return url.pathname, (0, import_cloudflare6.redirect)("/login");
+    return (0, import_cloudflare6.json)({ error: "User is not authenticated" });
+  }
+};
+function Public2() {
+  let { user: user2 } = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value), dispatch = useDispatch2();
+  return (0, import_react13.useEffect)(() => {
+    dispatch(user2 ? setUser(user2) : setLogout());
+  }, [user2, dispatch]), /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(pageTemplate_default, { user: ReduxUser.user, context: ReduxUser.context, children: ReduxUser.context.isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { children: "Loading..." }, void 0, !1, {
+    fileName: "app/routes/_public.tsx",
+    lineNumber: 76,
+    columnNumber: 9
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(import_jsx_dev_runtime26.Fragment, { children: [
+    ReduxUser.user && /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(userStatus_default, { user: ReduxUser.user, context: ReduxUser.context }, void 0, !1, {
+      fileName: "app/routes/_public.tsx",
+      lineNumber: 79,
+      columnNumber: 30
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(Outlet, {}, void 0, !1, {
+      fileName: "app/routes/_public.tsx",
+      lineNumber: 80,
+      columnNumber: 11
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/_public.tsx",
+    lineNumber: 78,
+    columnNumber: 9
+  }, this) }, void 0, !1, {
+    fileName: "app/routes/_public.tsx",
+    lineNumber: 74,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/welcome.tsx
+var welcome_exports = {};
+__export(welcome_exports, {
+  default: () => welcome
+});
+var import_jsx_dev_runtime27 = __toESM(require_jsx_dev_runtime(), 1);
+function welcome() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { children: "welcome" }, void 0, !1, {
+    fileName: "app/routes/welcome.tsx",
+    lineNumber: 5,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/_auth.tsx
+var auth_exports = {};
+__export(auth_exports, {
+  default: () => Auth2,
+  meta: () => meta3
+});
+var import_jsx_dev_runtime28 = __toESM(require_jsx_dev_runtime(), 1), meta3 = () => [
+  { title: "New Remix App" },
+  { name: "description", content: "Welcome to Remix!" }
+];
+function Auth2() {
+  let data = useLoaderData2(), ReduxUser = useTypedSelector((state) => state.user.value);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)(Outlet, {}, void 0, !1, {
+    fileName: "app/routes/_auth.tsx",
+    lineNumber: 39,
+    columnNumber: 7
+  }, this);
+}
+
+// app/routes/index.tsx
+var routes_exports = {};
+
+// app/routes/$404.tsx
+var __exports = {};
+__export(__exports, {
+  default: () => __default,
+  loader: () => loader4
+});
+var import_cloudflare7 = __toESM(require_dist(), 1);
+var import_jsx_dev_runtime29 = __toESM(require_jsx_dev_runtime(), 1), loader4 = async ({ request }) => {
+  let url = new URL(request.url);
+  return console.warn(`Page not found: ${url.pathname}`), (0, import_cloudflare7.json)({ pathname: url.pathname });
+}, NotFoundPage = () => {
+  let data = useLoaderData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "min-h-screen bg-gray-100 flex flex-col items-center justify-center px-4", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("h1", { className: "text-4xl font-bold text-gray-800 mb-4", children: "404: Page Not Found" }, void 0, !1, {
+      fileName: "app/routes/$404.tsx",
+      lineNumber: 23,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-lg text-gray-600 mb-6", children: [
+      "The requested URL ",
+      data.pathname,
+      " was not found on this server."
+    ] }, void 0, !0, {
+      fileName: "app/routes/$404.tsx",
+      lineNumber: 24,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
+      Link2,
+      {
+        to: "/",
+        className: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110",
+        children: "Go to Home"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/$404.tsx",
+        lineNumber: 25,
+        columnNumber: 5
+      },
+      this
+    )
+  ] }, void 0, !0, {
+    fileName: "app/routes/$404.tsx",
+    lineNumber: 22,
+    columnNumber: 5
+  }, this);
+}, __default = NotFoundPage;
+
+// app/routes/home.tsx
+var home_exports = {};
+__export(home_exports, {
+  Home: () => Home,
+  default: () => home_default
+});
+var import_jsx_dev_runtime30 = __toESM(require_jsx_dev_runtime(), 1), Home = () => /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(import_jsx_dev_runtime30.Fragment, { children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(Outlet, {}, void 0, !1, {
+    fileName: "app/routes/home.tsx",
+    lineNumber: 11,
+    columnNumber: 7
+  }, this),
+  "Hello"
+] }, void 0, !0, {
+  fileName: "app/routes/home.tsx",
+  lineNumber: 10,
+  columnNumber: 5
+}, this), home_default = Home;
+
+// app/routes/api.tsx
+var api_exports = {};
+__export(api_exports, {
+  default: () => Index,
+  meta: () => meta4
+});
+var import_jsx_dev_runtime31 = __toESM(require_jsx_dev_runtime(), 1), meta4 = () => [
+  { title: "New Remix App" },
+  { name: "description", content: "Welcome to Remix!" }
+];
+function Index() {
+  let user2 = useTypedSelector((state) => state.user.value);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(pageTemplate_default, { user: user2, children: [
+    user2.user && /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(userStatus_default, { user: user2 }, void 0, !1, {
+      fileName: "app/routes/api.tsx",
+      lineNumber: 31,
+      columnNumber: 21
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(Outlet, {}, void 0, !1, {
+      fileName: "app/routes/api.tsx",
+      lineNumber: 34,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/api.tsx",
+    lineNumber: 30,
+    columnNumber: 5
+  }, this);
+}
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-433DKAX6.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-VRWZAJPC.js", "/build/_shared/chunk-AX36ETJU.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-COJOTNSP.js", imports: void 0, hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-XI65JAAE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/login": { id: "routes/login", parentId: "root", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/login-UOMI6VOR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/logout": { id: "routes/logout", parentId: "root", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/logout-FACVNVNY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/register": { id: "routes/register", parentId: "root", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/register-UT7HIW5P.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-SG2FFPT5.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "e07fa3ac", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708562563961 }, url: "/build/manifest-E07FA3AC.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-4PHSFXTG.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-GYLQYPPK.js", "/build/_shared/chunk-EB64VCHI.js", "/build/_shared/chunk-JVVCMFL4.js", "/build/_shared/chunk-FSHJZDJN.js", "/build/_shared/chunk-E5WO37RD.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-4FV6DEOC.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-A65DS7ZJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/$404": { id: "routes/$404", parentId: "root", path: ":404", index: void 0, caseSensitive: void 0, module: "/build/routes/$404-XUUWW76Z.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth": { id: "routes/_auth", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_auth-EG4VZDOE.js", imports: ["/build/_shared/chunk-XQZ2HSLL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.login": { id: "routes/_auth.login", parentId: "routes/_auth", path: "login", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.login-E5QKXBOJ.js", imports: ["/build/_shared/chunk-GSWGJEGV.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.logout": { id: "routes/_auth.logout", parentId: "routes/_auth", path: "logout", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.logout-YPE3SW36.js", imports: void 0, hasAction: !0, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_auth.register": { id: "routes/_auth.register", parentId: "routes/_auth", path: "register", index: void 0, caseSensitive: void 0, module: "/build/routes/_auth.register-7S2MFXFA.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance": { id: "routes/_clearance", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance-D7VR7A3I.js", imports: ["/build/_shared/chunk-DSHWOZZD.js", "/build/_shared/chunk-XQZ2HSLL.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.landing": { id: "routes/_clearance.landing", parentId: "routes/_clearance", path: "landing", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.landing-2XMUHKJ3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page1": { id: "routes/_clearance.page1", parentId: "routes/_clearance", path: "page1", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page1-5SXTXQNH.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page2": { id: "routes/_clearance.page2", parentId: "routes/_clearance", path: "page2", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page2-3CMULZSK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page3": { id: "routes/_clearance.page3", parentId: "routes/_clearance", path: "page3", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page3-3625EQ6D.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page4": { id: "routes/_clearance.page4", parentId: "routes/_clearance", path: "page4", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page4-AWYSWNHV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page5": { id: "routes/_clearance.page5", parentId: "routes/_clearance", path: "page5", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page5-DKIEYM4C.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page6": { id: "routes/_clearance.page6", parentId: "routes/_clearance", path: "page6", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page6-VUQEEH54.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page7": { id: "routes/_clearance.page7", parentId: "routes/_clearance", path: "page7", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page7-25MLTX6N.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_clearance.page8": { id: "routes/_clearance.page8", parentId: "routes/_clearance", path: "page8", index: void 0, caseSensitive: void 0, module: "/build/routes/_clearance.page8-CNS52QNK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public": { id: "routes/_public", parentId: "root", path: void 0, index: void 0, caseSensitive: void 0, module: "/build/routes/_public-ECCF5L4B.js", imports: ["/build/_shared/chunk-DSHWOZZD.js", "/build/_shared/chunk-XQZ2HSLL.js", "/build/_shared/chunk-GSWGJEGV.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public._index": { id: "routes/_public._index", parentId: "routes/_public", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_public._index-LFGPDWTE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.dashboard": { id: "routes/_public.dashboard", parentId: "routes/_public", path: "dashboard", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.dashboard-Q7YOO4D7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.info": { id: "routes/_public.info", parentId: "routes/_public", path: "info", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.info-SBXQS3PL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_public.landingpage": { id: "routes/_public.landingpage", parentId: "routes/_public", path: "landingpage", index: void 0, caseSensitive: void 0, module: "/build/routes/_public.landingpage-3NWPNM6V.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/api": { id: "routes/api", parentId: "root", path: "api", index: void 0, caseSensitive: void 0, module: "/build/routes/api-SOJU2A5G.js", imports: ["/build/_shared/chunk-DSHWOZZD.js", "/build/_shared/chunk-XQZ2HSLL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/home": { id: "routes/home", parentId: "root", path: "home", index: void 0, caseSensitive: void 0, module: "/build/routes/home-5LCY3IJG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: "index", index: void 0, caseSensitive: void 0, module: "/build/routes/index-5P6H5OEU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info._index": { id: "routes/info._index", parentId: "root", path: "info", index: !0, caseSensitive: void 0, module: "/build/routes/info._index-R55ZT443.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.privacy": { id: "routes/info.privacy", parentId: "root", path: "info/privacy", index: void 0, caseSensitive: void 0, module: "/build/routes/info.privacy-FMO4ZIWY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/info.terms": { id: "routes/info.terms", parentId: "root", path: "info/terms", index: void 0, caseSensitive: void 0, module: "/build/routes/info.terms-TF4X3YSR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/welcome": { id: "routes/welcome", parentId: "root", path: "welcome", index: void 0, caseSensitive: void 0, module: "/build/routes/welcome-A5KC7LFP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "1f4814d9", hmr: { runtime: "/build/_shared/chunk-4FV6DEOC.js", timestamp: 1708903779777 }, url: "/build/manifest-1F4814D9.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -33094,13 +38313,173 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     caseSensitive: void 0,
     module: root_exports
   },
-  "routes/register": {
-    id: "routes/register",
-    parentId: "root",
+  "routes/_public.landingpage": {
+    id: "routes/_public.landingpage",
+    parentId: "routes/_public",
+    path: "landingpage",
+    index: void 0,
+    caseSensitive: void 0,
+    module: public_landingpage_exports
+  },
+  "routes/_clearance.landing": {
+    id: "routes/_clearance.landing",
+    parentId: "routes/_clearance",
+    path: "landing",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_landing_exports
+  },
+  "routes/_public.dashboard": {
+    id: "routes/_public.dashboard",
+    parentId: "routes/_public",
+    path: "dashboard",
+    index: void 0,
+    caseSensitive: void 0,
+    module: public_dashboard_exports
+  },
+  "routes/_clearance.page1": {
+    id: "routes/_clearance.page1",
+    parentId: "routes/_clearance",
+    path: "page1",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page1_exports
+  },
+  "routes/_clearance.page2": {
+    id: "routes/_clearance.page2",
+    parentId: "routes/_clearance",
+    path: "page2",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page2_exports
+  },
+  "routes/_clearance.page3": {
+    id: "routes/_clearance.page3",
+    parentId: "routes/_clearance",
+    path: "page3",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page3_exports
+  },
+  "routes/_clearance.page4": {
+    id: "routes/_clearance.page4",
+    parentId: "routes/_clearance",
+    path: "page4",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page4_exports
+  },
+  "routes/_clearance.page5": {
+    id: "routes/_clearance.page5",
+    parentId: "routes/_clearance",
+    path: "page5",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page5_exports
+  },
+  "routes/_clearance.page6": {
+    id: "routes/_clearance.page6",
+    parentId: "routes/_clearance",
+    path: "page6",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page6_exports
+  },
+  "routes/_clearance.page7": {
+    id: "routes/_clearance.page7",
+    parentId: "routes/_clearance",
+    path: "page7",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page7_exports
+  },
+  "routes/_clearance.page8": {
+    id: "routes/_clearance.page8",
+    parentId: "routes/_clearance",
+    path: "page8",
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_page8_exports
+  },
+  "routes/_auth.register": {
+    id: "routes/_auth.register",
+    parentId: "routes/_auth",
     path: "register",
     index: void 0,
     caseSensitive: void 0,
-    module: register_exports
+    module: auth_register_exports
+  },
+  "routes/_public._index": {
+    id: "routes/_public._index",
+    parentId: "routes/_public",
+    path: void 0,
+    index: !0,
+    caseSensitive: void 0,
+    module: public_index_exports
+  },
+  "routes/_auth.logout": {
+    id: "routes/_auth.logout",
+    parentId: "routes/_auth",
+    path: "logout",
+    index: void 0,
+    caseSensitive: void 0,
+    module: auth_logout_exports
+  },
+  "routes/_public.info": {
+    id: "routes/_public.info",
+    parentId: "routes/_public",
+    path: "info",
+    index: void 0,
+    caseSensitive: void 0,
+    module: public_info_exports
+  },
+  "routes/info.privacy": {
+    id: "routes/info.privacy",
+    parentId: "root",
+    path: "info/privacy",
+    index: void 0,
+    caseSensitive: void 0,
+    module: info_privacy_exports
+  },
+  "routes/_auth.login": {
+    id: "routes/_auth.login",
+    parentId: "routes/_auth",
+    path: "login",
+    index: void 0,
+    caseSensitive: void 0,
+    module: auth_login_exports
+  },
+  "routes/info._index": {
+    id: "routes/info._index",
+    parentId: "root",
+    path: "info",
+    index: !0,
+    caseSensitive: void 0,
+    module: info_index_exports
+  },
+  "routes/_clearance": {
+    id: "routes/_clearance",
+    parentId: "root",
+    path: void 0,
+    index: void 0,
+    caseSensitive: void 0,
+    module: clearance_exports
+  },
+  "routes/info.terms": {
+    id: "routes/info.terms",
+    parentId: "root",
+    path: "info/terms",
+    index: void 0,
+    caseSensitive: void 0,
+    module: info_terms_exports
+  },
+  "routes/_public": {
+    id: "routes/_public",
+    parentId: "root",
+    path: void 0,
+    index: void 0,
+    caseSensitive: void 0,
+    module: public_exports
   },
   "routes/welcome": {
     id: "routes/welcome",
@@ -33110,49 +38489,61 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     caseSensitive: void 0,
     module: welcome_exports
   },
-  "routes/_index": {
-    id: "routes/_index",
+  "routes/_auth": {
+    id: "routes/_auth",
     parentId: "root",
     path: void 0,
-    index: !0,
-    caseSensitive: void 0,
-    module: index_exports
-  },
-  "routes/logout": {
-    id: "routes/logout",
-    parentId: "root",
-    path: "logout",
     index: void 0,
     caseSensitive: void 0,
-    module: logout_exports
+    module: auth_exports
   },
-  "routes/login": {
-    id: "routes/login",
+  "routes/index": {
+    id: "routes/index",
     parentId: "root",
-    path: "login",
+    path: "index",
     index: void 0,
     caseSensitive: void 0,
-    module: login_exports
+    module: routes_exports
+  },
+  "routes/$404": {
+    id: "routes/$404",
+    parentId: "root",
+    path: ":404",
+    index: void 0,
+    caseSensitive: void 0,
+    module: __exports
+  },
+  "routes/home": {
+    id: "routes/home",
+    parentId: "root",
+    path: "home",
+    index: void 0,
+    caseSensitive: void 0,
+    module: home_exports
+  },
+  "routes/api": {
+    id: "routes/api",
+    parentId: "root",
+    path: "api",
+    index: void 0,
+    caseSensitive: void 0,
+    module: api_exports
   }
 };
 
 // server.ts
-(0, import_cloudflare4.logDevReady)(server_build_exports);
+(0, import_cloudflare8.logDevReady)(server_build_exports);
 async function onRequest(context) {
-  console.log(context, "context in SERVER");
-  let { getSession, commitSession, destroySession } = createSessionStorage(context.env), session = await getSession(
-    context.request.headers.get("Cookie")
-  ), response = await createPagesFunctionHandler({
+  let { getSession, commitSession } = createSessionStorage(context.env), session = await getSession(context.request.headers.get("Cookie"));
+  console.log(session.data, "SERVER SESSION");
+  let response = await createPagesFunctionHandler({
     build: server_build_exports,
     mode,
     getLoadContext(context2) {
-      return { context: context2, session };
+      return { ...context2, session };
     }
   })(context);
-  return response.headers.append(
-    "Set-Cookie",
-    await commitSession(session)
-  ), response;
+  return response.headers.append("Set-Cookie", await commitSession(session)), response;
 }
 export {
   onRequest

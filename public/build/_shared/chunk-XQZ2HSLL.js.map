@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/state/hooks/user.tsx"],
+  "sourcesContent": ["// REMIX HMR BEGIN\nimport * as __hmr__ from \"remix:hmr\";\nif (import.meta) {\nimport.meta.hot = __hmr__.createHotContext(\n//@ts-expect-error\n\"app/state/hooks/user.tsx\"\n);\nimport.meta.hot.lastModified = \"1703882956527.179\";\n}\n// REMIX HMR END\n\n// src/hooks.ts\nimport { useDispatch as reduxUseDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';\nimport { RootState, AppDispatch } from '~/state/store';\n\n\n// Typed useSelector hook\nexport const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;\n\n// Typed useDispatch hook\nexport const useDispatch = () => reduxUseDispatch<AppDispatch>();\n"],
+  "mappings": ";;;;;;;;;AAEA,IAAI,aAAa;AACjB,cAAY,MAAc;AAAA;AAAA,IAE1B;AAAA,EACA;AACA,cAAY,IAAI,eAAe;AAC/B;AASO,IAAM,mBAAoD;AAG1D,IAAMA,eAAc,MAAM,YAA8B;",
+  "names": ["useDispatch"]
+}
