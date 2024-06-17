@@ -1,8 +1,8 @@
 // src/state/store.js
 
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./counter/counterSlice";
 import userReducer from "./user/userSlice";
+import stepperReducer from "./user/formSice";
 
 
 // Function to initialize the store
@@ -10,8 +10,7 @@ export const initializeStore = (preloadedState = {}) => {
   return configureStore({
     reducer: {
       user: userReducer,
-      counter: counterReducer,
-
+      stepper: stepperReducer
     },
     preloadedState,
   });

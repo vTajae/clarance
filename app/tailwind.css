@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  src: url("/font/inter-roman-latin-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  src: url("/font/inter-italic-latin-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  src: url("/font/source-code-pro-roman-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  src: url("/font/source-code-pro-italic-var.woff2") format("woff2");
+}
+
+
+/* Add this part to your Tailwind CSS file */
+@layer components {
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-white;
+  }
+}
+
+.navbar {
+  background: linear-gradient(180deg, #021834 80%, rgba(0,212,255,0) 100%);
+  height: min-content;
+}
+
+
+
+.loader {
+    /* Example loader styling */
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .full-page-loader {
+    position: fixed; /* Use fixed to cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Cover the full viewport width */
+    height: 100vh; /* Cover the full viewport height */
+    background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+    display: flex;
+    justify-content: center; /* Center loader horizontally */
+    align-items: center; /* Center loader vertically */
+    z-index: 9999; /* Ensure it's above other content */
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Add this inside your global CSS file */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+  z-index: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: white; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Roundness of the scrollbar thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Color of the scrollbar track */
+}

@@ -1,6 +1,5 @@
 name = "cloudfl"
 
-main = "./server.ts"
 assets = "./public/build"
 workers_dev = true
 compatibility_date = "2023-04-20"
@@ -21,3 +20,7 @@ binding = "theform"
 id = "7e6ae0281b6343f0859b258fecdd9adf"
 preview_id = "042ecf04833d49f7be136850c4758d39"
 
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "clarance"
+database_id = "8cf2d477-afea-4398-b732-b1d56c658507"

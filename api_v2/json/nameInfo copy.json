@@ -1,0 +1,38 @@
+[
+  {
+    "id": "isNotApplicable",
+    "label": "I don't have a SSN",
+    "type": "checkbox",
+    "name": "isNotApplicable"
+  },
+  {
+    "id": "firstName",
+    "label": "First Name",
+    "type": "text",
+    "name": "firstName",
+    "dependsOn": {
+      "field": "isNotApplicable",
+      "value": true
+    }
+  },
+  {
+    "id": "middleName",
+    "label": "Middle Name",
+    "type": "text",
+    "name": "middleName",
+    "dependsOn": {
+      "field": "isNotApplicable",
+      "value": true
+    }
+  },
+  {
+    "id": "lastName",
+    "label": "Last Name",
+    "type": "text",
+    "name": "lastName",
+    "dependsOn": {
+      "field": "isNotApplicable",
+      "value": true
+    }
+  }
+]

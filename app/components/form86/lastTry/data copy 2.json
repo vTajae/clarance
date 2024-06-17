@@ -1,0 +1,319 @@
+{
+  "formSections": [
+    {
+      "id": "personalInfo",
+      "title": "Personal Information",
+      "questions": [
+        {
+          "id": "lastName",
+          "label": "Last Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "firstName",
+          "label": "First Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "middleName",
+          "label": "Middle Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "suffix",
+          "label": "Suffix",
+          "type": "dropdown",
+          "enumKey": "SuffixOptions",
+          "condition": null
+        },
+        {
+          "id": "gender",
+          "label": "Gender",
+          "type": "dropdown",
+          "enumKey": "Gender",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "id": "aknowledgementInfo",
+      "title": "Acknowledge Information",
+      "questions": [
+        {
+          "id": "aknowledge",
+          "label": "Do you Aknowledge?",
+          "type": "radio",
+          "enumKey": "YesNo",
+          "condition": null
+        },
+        {
+          "id": "ssn",
+          "label": "Social Security Number",
+          "type": "text",
+          "condition": {
+            "dependsOn": "aknowledge",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "names",
+      "title": "Applicant Names",
+      "questions": [
+        {
+          "id": "nameID",
+          "label": "Name ID",
+          "type": "number",
+          "condition": null
+        },
+        {
+          "id": "lastName",
+          "label": "Last Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "firstName",
+          "label": "First Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "middleName",
+          "label": "Middle Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "suffix",
+          "label": "Suffix",
+          "type": "dropdown",
+          "enumKey": "SuffixOptions",
+          "condition": null
+        },
+        {
+          "id": "nameStarted",
+          "label": "Name Start Date",
+          "type": "date",
+          "condition": null
+        },
+        {
+          "id": "isStartDateEst",
+          "label": "Is Start Date Estimated?",
+          "type": "checkbox",
+          "condition": null
+        },
+        {
+          "id": "nameEnded",
+          "label": "Name End Date",
+          "type": "date",
+          "condition": null
+        },
+        {
+          "id": "isNamePresent",
+          "label": "Is Name Current?",
+          "type": "checkbox",
+          "condition": null
+        },
+        {
+          "id": "isEndDateEst",
+          "label": "Is End Date Estimated?",
+          "type": "checkbox",
+          "condition": null
+        },
+        {
+          "id": "isMaidenName",
+          "label": "Is Maiden Name?",
+          "type": "checkbox",
+          "condition": null
+        },
+        {
+          "id": "reasonChanged",
+          "label": "Reason for Name Change",
+          "type": "text",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "id": "birthInfo",
+      "title": "Applicant Birth Information",
+      "questions": [
+        {
+          "id": "birthDate",
+          "label": "Birth Date",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "isBirthDateEstimate",
+          "label": "Is Birth Date Estimated?",
+          "type": "checkbox",
+          "condition": null
+        },
+        {
+          "id": "birthCity",
+          "label": "Birth City",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "birthState",
+          "label": "Birth State",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "birthCountry",
+          "label": "Birth Country",
+          "type": "text",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "id": "physicalAttributes",
+      "title": "Applicant Physical Attributes",
+      "questions": [
+        {
+          "id": "heightFeet",
+          "label": "Height (Feet)",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "heightInch",
+          "label": "Height (Inches)",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "weight",
+          "label": "Weight (Pounds)",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "hairColor",
+          "label": "Hair Color",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "eyeColor",
+          "label": "Eye Color",
+          "type": "text",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "id": "passportInfo",
+      "title": "Applicant Passport Information",
+      "questions": [
+        {
+          "id": "passportID",
+          "label": "Passport ID",
+          "type": "number",
+          "condition": null
+        },
+        {
+          "id": "passportNum",
+          "label": "Passport Number",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "issueDate",
+          "label": "Issue Date",
+          "type": "date",
+          "condition": null
+        },
+        {
+          "id": "isIssuedEst",
+          "label": "Is Issue Date Estimated?",
+          "type": "checkbox",
+          "condition": null
+        },
+        {
+          "id": "expirationDate",
+          "label": "Expiration Date",
+          "type": "date",
+          "condition": null
+        },
+        {
+          "id": "isExpirationEst",
+          "label": "Is Expiration Date Estimated?",
+          "type": "checkbox",
+          "condition": null
+        },
+        {
+          "id": "passportLName",
+          "label": "Passport Last Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "passportFName",
+          "label": "Passport First Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "passportMName",
+          "label": "Passport Middle Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "passportSuffix",
+          "label": "Passport Suffix",
+          "type": "dropdown",
+          "enumKey": "SuffixOptions",
+          "condition": null
+        },
+        {
+          "id": "hasPassport",
+          "label": "Do you have a passport?",
+          "type": "checkbox",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "id": "contactInfo",
+      "title": "Applicant Contact Information",
+      "questions": [
+        {
+          "id": "contactID",
+          "label": "Contact ID",
+          "type": "number",
+          "condition": null
+        },
+        {
+          "id": "homeEmail",
+          "label": "Home Email",
+          "type": "email",
+          "condition": null
+        },
+        {
+          "id": "workEmail",
+          "label": "Work Email",
+          "type": "email",
+          "condition": null
+        },
+        {
+          "id": "contactNumber",
+          "label": "Contact Numbers",
+          "type": "composite",
+          "compositeType": "ApplicantContactNumber",
+          "condition": null
+        }
+      ]
+    }
+  ]
+}

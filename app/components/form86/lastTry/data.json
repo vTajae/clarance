@@ -1,0 +1,216 @@
+{
+  "formSections": [
+    {
+      "id": "personalInfo",
+      "title": "Personal Information",
+      "questions": [
+        {
+          "id": "lastName",
+          "label": "Last Name",
+          "type": "text"
+        },
+        {
+          "id": "firstName",
+          "label": "First Name",
+          "type": "text"
+        },
+        {
+          "id": "middleName",
+          "label": "Middle Name",
+          "type": "text"
+        },
+        {
+          "id": "suffix",
+          "label": "Suffix",
+          "type": "dropdown",
+          "enumKey": "SuffixOptions"
+        },
+        {
+          "id": "gender",
+          "label": "Gender",
+          "type": "dropdown",
+          "enumKey": "Gender"
+        },
+        {
+          "id": "NotApplicable",
+          "label": "Do you have a Social Security Number?",
+          "type": "radio",
+          "enumKey": "YesNo"
+        },
+        {
+          "id": "ssn",
+          "label": "Social Security Number",
+          "type": "text",
+          "condition": {
+            "dependsOn": "NotApplicable",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "aknowledgementInfo",
+      "title": "Acknowledge Information",
+      "questions": [
+        {
+          "id": "aknowledge",
+          "label": "Do you Aknowledge?",
+          "type": "radio",
+          "enumKey": "YesNo"
+        },
+        {
+          "id": "ssn",
+          "label": "Social Security Number",
+          "type": "text",
+          "condition": {
+            "dependsOn": "aknowledge",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "birthInfo",
+      "title": "Applicant Birth Information",
+      "questions": [
+        {
+          "id": "birthDate",
+          "label": "Birth Date",
+          "type": "date"
+        },
+        {
+          "id": "isBirthDateEstimate",
+          "label": "Is Birth Date Estimated?",
+          "type": "checkbox"
+        },
+        {
+          "id": "birthCity",
+          "label": "Birth City",
+          "type": "text"
+        },
+        {
+          "id": "birthState",
+          "label": "Birth State",
+          "type": "text"
+        },
+        {
+          "id": "birthCountry",
+          "label": "Birth Country",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "id": "names",
+      "title": "Applicant Names",
+      "questions": [
+        {
+          "id": "hasNames",
+          "label": "Do you have other names?",
+          "type": "radio",
+          "enumKey": "YesNo"
+        },
+        {
+          "id": "firstName",
+          "label": "First Name",
+          "type": "text",
+          "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        },
+        {
+          "id": "middleName",
+          "label": "Middle Name",
+          "type": "text",
+           "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        },
+        {
+          "id": "lastName",
+          "label": "Last Name",
+          "type": "text",
+           "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        },
+        {
+          "id": "suffix",
+          "label": "Suffix",
+          "type": "dropdown",
+          "enumKey": "SuffixOptions",
+           "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        },
+        {
+          "id": "nameStarted",
+          "label": "Name Start Date",
+          "type": "date",
+           "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        },
+        {
+          "id": "isStartDateEst",
+          "label": "Is Start Date Estimated?",
+          "type": "checkbox",
+           "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        },
+        {
+          "id": "nameEnded",
+          "label": "Name End Date",
+          "type": "date",
+           "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        },
+        {
+          "id": "isEndDateEst",
+          "label": "Is End Date Estimated?",
+          "type": "checkbox",
+           "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        },
+        {
+          "id": "isNamePresent",
+          "label": "Is Name Current?",
+          "type": "checkbox",
+           "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        },
+        {
+          "id": "isMaidenName",
+          "label": "Is Maiden Name?",
+          "type": "checkbox",
+           "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        },
+        {
+          "id": "reasonChanged",
+          "label": "Reason for Name Change",
+          "type": "text",
+           "condition": {
+            "dependsOn": "hasNames",
+            "equals": true
+          }
+        }
+      ]
+    }
+  ]
+}

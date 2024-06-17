@@ -1,0 +1,45 @@
+[
+  {
+    "id": "firstName",
+    "label": "First Name",
+    "type": "text",
+    "name": "firstName"
+  },
+  {
+    "id": "middleName",
+    "label": "Middle Name",
+    "type": "text",
+    "name": "middleName"
+  },
+  {
+    "id": "lastName",
+    "label": "Last Name",
+    "type": "text",
+    "name": "lastName"
+  },
+  {
+    "id": "suffix",
+    "label": "Suffix",
+    "type": "dropdown",
+    "name": "suffix",
+    "options": []
+  },
+  {
+    "id": "gender",
+    "label": "Gender",
+    "type": "text",
+    "name": "gender"
+  },
+  {
+    "id": "ssn",
+    "label": "SSN",
+    "type": "text",
+    "name": "ssn"
+  },
+  {
+    "id": "isNotApplicable",
+    "label": "I dont have a SSN",
+    "type": "checkbox",
+    "name": "isNotApplicable"
+  }
+]

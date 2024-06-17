@@ -1,44 +1,35 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store";
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import {UserService} from '../../../api/services/user_service'; // Adjust the path to your auth service
-import { Credentials } from "~/props/credentials";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '../store';
 
-
-// // Define TypeScript interfaces for your user model and tokens
-interface UserModel {
+export interface UserModel {
   id: number;
   username: string;
+  role: string;
 }
 
-interface UserToken {
-  access_token: string;
-  refresh_token: string;
-}
-
-interface UserResponse {
-  user: UserModel;
-}
-
-// // Define the state structure
-interface UserState {
-  user: UserModel | null;
-  tokens: UserToken | null;
+export interface UserContext {
   isLoading: boolean;
   isLoggedIn: boolean;
-  locale: null | string;
+  locale: string;
   error: string | null;
+  isModalOpen: boolean; // New field to track if a modal is open
+}
+
+export interface UserState {
+  user: UserModel | null;
+  context: UserContext;
 }
 
 const initialStateValue: UserState = {
   user: null,
-  tokens: null,
-  isLoading: true,
-  isLoggedIn: false,
-  locale: "en-US",
-  error: null,
+  context: {
+    isLoading: true,
+    isLoggedIn: false,
+    locale: "en-US",
+    error: null,
+    isModalOpen: false, // Initialize modal state as closed
+  }
 };
-
 
 const userSlice = createSlice({
   name: "user",
@@ -46,60 +37,34 @@ const userSlice = createSlice({
   reducers: {
     setUser: (state, action: PayloadAction<UserModel>) => {
       state.value.user = action.payload;
-      state.value.isLoggedIn = true;
-      state.value.isLoading = false;
-      state.value.error = null;
+      state.value.context.isLoggedIn = true;
+      state.value.context.isLoading = false;
+      state.value.context.error = null;
     },
     setLogout: (state) => {
       state.value.user = null;
-      state.value.tokens = null;
-      state.value.isLoggedIn = false;
+      state.value.context.isLoggedIn = false;
     },
     setLoading: (state, action: PayloadAction<boolean>) => {
-      state.value.isLoading = action.payload;
+      state.value.context.isLoading = action.payload;
     },
-    // Optionally, you can add a reset action to set the state back to its initial value
+    openModal: (state) => {
+      state.value.context.isModalOpen = true; // Open modal
+    },
+    closeModal: (state) => {
+      state.value.context.isModalOpen = false; // Close modal
+    },
     resetState: (state) => {
-      state.value = initialStateValue;
+      state.value = initialStateValue; // Reset state to initial
     },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(loginUser.fulfilled, (state, action) => {
-        state.value.user = action.payload;
-        state.value.isLoggedIn = true;
-        state.value.isLoading = false;
-        state.value.error = null;
-      })
-      .addCase(loginUser.rejected, (state, action) => {
-        // Handle failed login attempt
-        state.value.error = 'Login failed';
-        state.value.isLoading = false;
-      });
   },
 });
 
-// In your Redux slice or action file
-export const loginUser = createAsyncThunk(
-  'user/loginUser',
-  async (credentials: any, { dispatch }) => {
-    try {
-      const response = await UserService.loginUser(credentials.username, credentials.password);
-      const user = response.user;
-      dispatch(setUser(user)); // Update Redux state
-      return user;
-    } catch (error) {
-      throw error;
-    }
-  }
-);
-
-
-
-// Update the selectors to reflect the new structure
-export const selectIsLoggedIn = (state: RootState) => state.user.value.isLoggedIn;
-export const selectIsLoading = (state: RootState) => state.user.value.isLoading;
-
-export const { setUser, setLogout, setLoading, resetState } = userSlice.actions;
+export const { setUser, setLogout, setLoading, openModal, closeModal, resetState } = userSlice.actions;
 
 export default userSlice.reducer;
+
+// Selectors
+export const selectIsLoggedIn = (state: RootState) => state.user.value.context.isLoggedIn;
+export const selectIsLoading = (state: RootState) => state.user.value.context.isLoading;
+export const selectIsModalOpen = (state: RootState) => state.user.value.context.isModalOpen; // New selector for modal state

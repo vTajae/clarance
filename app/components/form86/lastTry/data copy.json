@@ -1,0 +1,89 @@
+{
+  "formSections": [
+    {
+      "id": "personalInfo",
+      "title": "Personal Information",
+      "questions": [
+        {
+          "id": "lastName",
+          "label": "Last Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "firstName",
+          "label": "First Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "middleName",
+          "label": "Middle Name",
+          "type": "text",
+          "condition": null
+        },
+        {
+          "id": "suffix",
+          "label": "Suffix",
+          "type": "dropdown",
+          "enumKey": "SuffixOptions",
+          "condition": null
+        },
+        {
+          "id": "gender",
+          "label": "Gender",
+          "type": "dropdown",
+          "enumKey": "Gender",
+          "condition": null
+        },
+        {
+          "id": "ssn",
+          "label": "Social Security Number",
+          "type": "text",
+          "condition": {
+            "dependsOn": "NotApplicable",
+            "equals": true
+          }
+        },
+        {
+          "id": "test",
+          "label": "test",
+          "type": "text",
+          "condition": {
+            "dependsOn": "ssn",
+            "equals": true
+          }
+        },
+        {
+          "id": "NotApplicable",
+          "label": "Do you have a Social Security Number?",
+          "type": "radio",
+          "enumKey": "YesNo",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "id": "aknowledgementInfo",
+      "title": "Acknowledge Information",
+      "questions": [
+        {
+          "id": "aknowledge",
+          "label": "Do you Aknowledge?",
+          "type": "radio",
+          "enumKey": "YesNo",
+          "condition": null
+        },
+        {
+          "id": "ssn",
+          "label": "Social Security Number",
+          "type": "text",
+          "condition": {
+            "dependsOn": "aknowledge",
+            "equals": true
+          }
+        }
+      ]
+    }
+  ]
+}
