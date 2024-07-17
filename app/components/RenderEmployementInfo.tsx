@@ -159,7 +159,7 @@ const RenderEmploymentInfo: React.FC<FormProps> = ({
                 handleInputChange(path, value);
               }}
               
-              path={`${path}[${index}].section13A1`}
+              path={`${path}[${index}]`}
               isReadOnlyField={isReadOnlyField}
             />
           )}

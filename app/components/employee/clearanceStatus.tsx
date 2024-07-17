@@ -36,7 +36,7 @@ const ClearanceComponent: React.FC<{ clearance: ClearanceType[] }> = ({
 
   return (
     <div>
-      {" "}
+      
       {clearance.map((status, index) => {
         const clearanceDetail = clearanceMapping[status.clearance_name];
         if (!clearanceDetail) {

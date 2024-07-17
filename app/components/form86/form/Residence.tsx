@@ -58,7 +58,7 @@ const Residence: React.FC<ResidenceFormProps> = ({ updateResidenceInfo }) => {
               name="residenceStartDateEstimate"
               checked={formState.residenceStartDateEstimate}
               onChange={handleInputChange}
-            />{" "}
+            />
             Estimate
           </label>
 
@@ -77,7 +77,7 @@ const Residence: React.FC<ResidenceFormProps> = ({ updateResidenceInfo }) => {
               name="residenceEndDatePresent"
               checked={formState.residenceEndDatePresent}
               onChange={handleInputChange}
-            />{" "}
+            />
             Present
           </label>
           <label>
@@ -86,7 +86,7 @@ const Residence: React.FC<ResidenceFormProps> = ({ updateResidenceInfo }) => {
               name="residenceEndDateEstimate"
               checked={formState.residenceEndDateEstimate}
               onChange={handleInputChange}
-            />{" "}
+            />
             Estimate
           </label>
 
@@ -103,7 +103,7 @@ const Residence: React.FC<ResidenceFormProps> = ({ updateResidenceInfo }) => {
                 value="owned"
                 checked={formState.relationshipToResidence === "owned"}
                 onChange={handleInputChange}
-              />{" "}
+              />
               Owned By You
             </label>
             {/* Repeat for other options */}

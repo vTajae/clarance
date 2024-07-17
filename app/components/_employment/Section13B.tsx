@@ -50,7 +50,7 @@ const RenderSection13B: React.FC<Section13BProps> = ({
     <div className="p-4 bg-gray-100 rounded-lg shadow space-y-4">
       <div className="p-4 bg-gray-50 rounded-lg shadow space-y-4">
         <h3 className="text-lg font-semibold">
-          Section 13B - Employment Activities - Former Federal Service{" "}
+          Section 13B - Employment Activities - Former Federal Service
         </h3>
 
         <label className="block">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import lodash, { has } from "lodash";
+import lodash from "lodash";
 import { useEmployee } from "~/state/contexts/new-context";
 import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition";
 import { RenderBasicInfo } from "../components/RenderBasicInfo";
@@ -23,6 +23,15 @@ import { RenderMilitaryInfo } from "~/components/RenderMilitaryInfo";
 import { RenderPeopleThatKnow } from "~/components/RenderPeopleThatKnow";
 import { RenderRelationshipInfo } from "~/components/RenderRelationshipInfo";
 import { RenderRelativesInfo } from "~/components/RenderRelativesInfo";
+import { RenderForeignContacts } from "~/components/RenderForeignContacts";
+import { RenderForeignActivities } from "~/components/RenderForeignActivities";
+import { RenderMentalHealth } from "~/components/RenderMentalHealth";
+import { RenderPolice } from "~/components/RenderPolice";
+import { RenderDrugActivity } from "~/components/RenderDrugActivity";
+import { RenderAlcoholUse } from "~/components/RenderAlcoholUse";
+import { RenderInvestigationsInfo } from "~/components/RenderInvestigationsInfo";
+import { RenderFinances } from "~/components/RenderFinances";
+import { RenderTechnology } from "~/components/RenderTechnology";
 
 const { set, get, cloneDeep, merge } = lodash;
 
@@ -91,13 +100,13 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
 
   const handleAddEntry = (path: string, updatedItem: any) => {
     const updatedFormData = cloneDeep(formData);
-    const currentData = get(updatedFormData, path);
+    let currentData = get(updatedFormData, path);
 
     console.log(`Path: ${path}`);
     console.log(`Current Data before push: ${JSON.stringify(currentData)}`);
     console.log(`Updated Item to be added: ${JSON.stringify(updatedItem)}`);
 
-    if (Array.isArray(currentData)) {
+    if (Array.isArray(updatedItem)) {
       console.log("THIS IS AN ARRAY");
 
       // Ensure updatedItem is not an array itself
@@ -106,6 +115,11 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
         : updatedItem;
 
       console.log(`Item to be pushed: ${JSON.stringify(itemToPush)}`);
+
+      // Initialize currentData as an array if it is undefined
+      if (!Array.isArray(currentData)) {
+        currentData = [];
+      }
 
       // Push the itemToPush into the currentData array
       currentData.push(itemToPush);
@@ -126,6 +140,11 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
   const handleRemoveEntry = (path: string, index: number) => {
     const updatedFormData = cloneDeep(formData);
     const list = get(updatedFormData, path, []);
+
+    console.log(list, "LIST");
+    console.log(path, "path");
+
+    console.log(updatedFormData.foreignActivities.section20A1, "HELP");
     if (list && Array.isArray(list)) {
       list.splice(index, 1);
       set(updatedFormData, path, list);
@@ -1036,7 +1055,6 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
           ],
         },
       },
-
       relativesInfo: {
         _id: Math.random(),
         relativeTypes: [],
@@ -1187,6 +1205,1363 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
           },
         ],
       },
+      foreignContacts: {
+        hasForeignContact: false,
+        entries: [
+          {
+            _id: 1, // Default ID, can be dynamically assigned
+            lastName: "",
+            firstName: "",
+            middleName: null,
+            suffix: null,
+            approximateFirstContactDate: null,
+            approximateLastContactDate: null,
+            contactMethods: [],
+            contactFrequency: [],
+            relationshipNature: [],
+            otherNames: [
+              {
+                lastName: "",
+                firstName: "",
+                middleName: null,
+                suffix: null,
+              },
+            ],
+            citizenships: [
+              {
+                country: "",
+              },
+            ],
+            dateOfBirth: null,
+            placeOfBirth: {
+              city: null,
+              country: null,
+            },
+            currentAddress: {
+              street: null,
+              city: null,
+              state: null,
+              zipCode: null,
+              country: null,
+            },
+            apoFpoAddress: {
+              address: null,
+              stateCode: null,
+              zipCode: null,
+            },
+            currentEmployer: {
+              name: null,
+              address: {
+                street: null,
+                city: null,
+                state: null,
+                zipCode: null,
+                country: null,
+              },
+            },
+            affiliatedWithForeignGov: null,
+            foreignGovAffiliationDetails: null,
+          },
+        ],
+      },
+      foreignActivities: {
+        _id: Math.random(),
+        hasForeignFinancialInterest: false,
+        hasForeignInterestOnBehalf: false,
+        wantForeignRealEstate: false,
+        hasForeignSupport: false,
+        providedForeignSupport: false,
+        providedForeignAdvice: false,
+        familyProvidedForeignAdvice: false,
+        offeredForeignJob: false,
+        offeredBuisnessVenture: false,
+        foreignConferences: false,
+        contactForeignGovernment: false,
+        sponsoredForeignNational: false,
+        foreignPoliticalOffice: false,
+        foreignVote: false,
+        traveledOutsideUSA: false,
+        traveledOutsideUSA_Government: false,
+        section20A1: [
+          {
+            id_: Math.random(),
+            ownershipType: [{ _id: Math.random(), type: "" }],
+            financialInterestType: "",
+            dateAcquired: { date: "", estimated: false },
+            howAcquired: "",
+            costAtAcquisition: { value: 0, estimated: false },
+            currentValue: { value: 0, estimated: false },
+            dateControlRelinquished: { date: "", estimated: false },
+            disposalExplanation: "",
+            hasCoOwners: false,
+            coOwners: [
+              {
+                _id: Math.random(),
+                lastName: "",
+                firstName: "",
+                middleName: "",
+                suffix: "",
+                address: {
+                  street: "",
+                  city: "",
+                  state: "",
+                  zipCode: "",
+                  country: "",
+                },
+                citizenships: [
+                  {
+                    _id: Math.random(),
+                    type: "",
+                  },
+                ],
+                relationship: "",
+              },
+            ],
+          },
+        ],
+        section20A2: [
+          {
+            id_: Math.random(),
+            ownershipType: [{ type: "" }],
+            financialInterestType: "",
+            controllerInfo: {
+              lastName: "",
+              firstName: "",
+              middleName: "",
+              suffix: "",
+              relationship: "",
+            },
+            dateAcquired: { date: "", estimated: false },
+            costAtAcquisition: { value: 0, estimated: false },
+            currentValue: { value: 0, estimated: false },
+            dateDisposed: { date: "", estimated: false },
+            disposalExplanation: "",
+            hasCoOwners: false,
+            coOwners: [
+              {
+                _id: Math.random(),
+                lastName: "",
+                firstName: "",
+                middleName: "",
+                suffix: "",
+                address: {
+                  street: "",
+                  city: "",
+                  state: "",
+                  zipCode: "",
+                  country: "",
+                },
+                citizenships: [
+                  {
+                    _id: Math.random(),
+                    type: "",
+                  },
+                ],
+                relationship: "",
+              },
+            ],
+          },
+        ],
+        section20A3: [
+          {
+            id_: Math.random(),
+            ownershipType: [{ _id: Math.random(), type: "" }],
+            realEstateType: "",
+            location: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            dateOfPurchase: { date: "", estimated: false },
+            howAcquired: "",
+            dateSold: { date: "", estimated: false },
+            costAtAcquisition: { value: 0, estimated: false },
+            hasCoOwners: true,
+            coOwners: [
+              {
+                _id: Math.random(),
+                lastName: "",
+                firstName: "",
+                middleName: "",
+                suffix: "",
+                address: {
+                  street: "",
+                  city: "",
+                  state: "",
+                  zipCode: "",
+                  country: "",
+                },
+                citizenships: [{ _id: Math.random(), type: "" }],
+                relationship: "",
+              },
+            ],
+          },
+        ],
+        section20A4: [
+          {
+            id_: Math.random(), // Unique identifier for each entry
+            ownershipType: [
+              {
+                _id: Math.random(),
+                type: "", // Default as empty, expected to be one of the specified types later
+              },
+            ],
+            benefitType: {
+              _id: Math.random(),
+              type: "", // Default as empty, will be one of "Educational", "Medical", etc.
+              other: "", // Optional, included but empty by default
+            },
+            benefitFrequency: {
+              type: "", // Default as empty, will be one of "Onetime benefit", "Future benefit", etc.
+              other: "", // Optional, included but empty by default
+            },
+            oneTimeBenefit: {
+              dateReceived: {
+                date: "", // Default as empty, to be filled in with specific date
+                estimated: false, // Sensible default
+              },
+              countryProviding: "", // Default as empty
+              totalValue: {
+                value: 0, // Sensible default as 0
+                estimated: false, // Sensible default
+              },
+              reason: "", // Default as empty
+              obligatedToForeignCountry: false, // Sensible default
+              explanation: "", // Optional, included but empty by default
+              frequency: {
+                _id: Math.random(),
+                type: "", // Default as empty, will be "Annually", "Monthly", etc.
+                other: "", // Optional, included but empty by default
+              },
+            },
+            futureBenefit: {
+              dateReceived: {
+                date: "",
+                estimated: false,
+              },
+              countryProviding: "",
+              totalValue: {
+                value: 0,
+                estimated: false,
+              },
+              reason: "",
+              obligatedToForeignCountry: false,
+              explanation: "",
+              frequency: {
+                _id: Math.random(),
+                type: "",
+                other: "",
+              },
+            },
+            continuingBenefit: {
+              dateReceived: {
+                date: "",
+                estimated: false,
+              },
+              countryProviding: "",
+              totalValue: {
+                value: 0,
+                estimated: false,
+              },
+              reason: "",
+              obligatedToForeignCountry: false,
+              explanation: "",
+              frequency: {
+                _id: Math.random(),
+                type: "",
+                other: "",
+              },
+            },
+          },
+        ],
+        section20A5: [
+          {
+            id_: Math.random(),
+            lastName: "",
+            firstName: "",
+            middleName: "",
+            suffix: "",
+            address: { street: "", city: "", country: "" },
+            relationship: "",
+            amountProvided: { value: 0, estimated: false },
+            citizenships: [{ _id: Math.random(), type: "" }],
+            frequency: { type: "", explanation: "" },
+          },
+        ],
+        section20B1: [
+          {
+            id_: Math.random(),
+            description: "",
+            individual: {
+              lastName: "",
+              firstName: "",
+              middleName: "",
+              suffix: "",
+              relationship: "",
+            },
+            organization: "",
+            organizationCountry: "",
+            dateFrom: { date: "", estimated: false },
+            dateTo: { date: "", estimated: false },
+            compensation: "",
+          },
+        ],
+        section20B2: [
+          {
+            id_: Math.random(),
+            lastName: "",
+            firstName: "",
+            middleName: "",
+            suffix: "",
+            agency: "",
+            country: "",
+            dateOfRequest: { date: "", estimated: false },
+            circumstances: "",
+          },
+        ],
+        section20B3: [
+          {
+            id_: Math.random(),
+            lastName: "",
+            firstName: "",
+            middleName: "",
+            suffix: "",
+            positionDescription: "",
+            dateOffered: { date: "", estimated: false },
+            accepted: false,
+            explanation: "",
+            location: { street: "", city: "", country: "" },
+          },
+        ],
+        section20B4: [
+          {
+            id_: Math.random(),
+            lastName: "",
+            firstName: "",
+            middleName: "",
+            suffix: "",
+            address: { street: "", city: "", country: "" },
+            citizenships: [],
+            ventureDescription: "",
+            dateFrom: { date: "", estimated: false },
+            dateTo: { date: "", estimated: false },
+            natureOfAssociation: "",
+            positionHeld: "",
+            financialSupport: { value: 0, estimated: false },
+            compensationDescription: "",
+          },
+        ],
+        section20B5: [
+          {
+            id_: Math.random(),
+            eventDescription: "",
+            eventDates: {
+              fromDate: { date: "", estimated: false },
+              toDate: { date: "", estimated: false },
+              present: false,
+            },
+            purpose: "",
+            sponsoringOrganization: "",
+            eventLocation: { street: "", city: "", country: "" },
+            hasContacts: false,
+            subsequentContacts: [
+              { _id: Math.random(), contactExplanation: "" },
+            ],
+          },
+        ],
+        section20B6: [
+          {
+            id_: Math.random(),
+            individual: {
+              lastName: "",
+              firstName: "",
+              middleName: "",
+              suffix: "",
+              relationship: "",
+            },
+            contactLocation: { street: "", city: "", country: "" },
+            contactDate: { date: "", estimated: false },
+            establishmentType: "",
+            foreignRepresentatives: "",
+            purposeCircumstances: "",
+            hasContact: false,
+            subsequentContact: [
+              {
+                _id: Math.random(),
+                purpose: "",
+                dateOfMostRecentContact: { date: "", estimated: false },
+                plansForFutureContact: "",
+              },
+            ],
+          },
+        ],
+        section20B7: [
+          {
+            id_: Math.random(),
+            lastName: "",
+            firstName: "",
+            middleName: "",
+            suffix: "",
+            dateOfBirth: { date: "", estimated: false },
+            placeOfBirth: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            currentAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            citizenships: [{ _id: Math.random(), type: "" }],
+            sponsoringOrganization: {
+              name: "",
+              notApplicable: false,
+              address: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+            },
+            datesOfStay: {
+              fromDate: { date: "", estimated: false },
+              toDate: { date: "", estimated: false },
+              present: false,
+            },
+            addressDuringStay: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            purposeOfStay: "",
+            purposeOfSponsorship: "",
+          },
+        ],
+        section20B8: [
+          {
+            id_: Math.random(),
+            positionHeld: "",
+            datesHeld: {
+              fromDate: { date: "", estimated: false },
+              toDate: { date: "", estimated: false },
+              present: false,
+            },
+            reasonForActivities: "",
+            currentEligibility: "",
+            countryInvolved: "",
+          },
+        ],
+        section20B9: [
+          {
+            id_: Math.random(),
+            dateVoted: { date: "", estimated: false },
+            countryInvolved: "",
+            reasons: "",
+            currentEligibility: "",
+          },
+        ],
+        section20C: [
+          {
+            id_: Math.random(),
+            countryVisited: "",
+            travelDates: {
+              fromDate: { date: "", estimated: false },
+              toDate: { date: "", estimated: false },
+              present: false,
+            },
+            numberOfDays: "",
+            purposeOfTravel: [],
+            questionedOrSearched: false,
+            questionedOrSearchedExplanation: "",
+            encounterWithPolice: false,
+            encounterWithPoliceExplanation: "",
+            contactWithForeignIntelligence: false,
+            contactWithForeignIntelligenceExplanation: "",
+            counterintelligenceIssues: false,
+            counterintelligenceIssuesExplanation: "",
+            contactExhibitingInterest: false,
+            contactExhibitingInterestExplanation: "",
+            contactAttemptingToObtainInfo: false,
+            contactAttemptingToObtainInfoExplanation: "",
+            threatenedOrCoerced: false,
+            threatenedOrCoercedExplanation: "",
+          },
+        ],
+      },
+      mentalHealth: {
+        _id: Math.random(),
+        declaredMentallyIncompetent: false,
+        consultMentalHealth: false,
+        hospitalizedMentalHealth: false,
+        beenDiagnosed: false,
+        delayedTreatment: false,
+        currentlyInTreatment: false,
+        substantialAffects: false,
+        counseling: false,
+        section21A: [
+          {
+            _id: Math.random(),
+            dateOccurred: "",
+            estimated: false,
+            courtAgency: {
+              name: "",
+              address: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+            },
+            appealed: false,
+            appeals: [
+              {
+                _id: Math.random(),
+                courtAgency: {
+                  name: "",
+                  address: {
+                    street: "",
+                    city: "",
+                    state: "",
+                    zipCode: "",
+                    country: "",
+                  },
+                },
+                finalDisposition: "",
+              },
+            ],
+          },
+        ],
+        section21B: [
+          {
+            _id: Math.random(),
+            dateOccurred: "",
+            estimated: false,
+            courtAgency: {
+              name: "",
+              address: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+            },
+            finalDisposition: "",
+            appealed: false,
+            appeals: [
+              {
+                _id: Math.random(),
+                courtAgency: {
+                  name: "",
+                  address: {
+                    street: "",
+                    city: "",
+                    state: "",
+                    zipCode: "",
+                    country: "",
+                  },
+                },
+                finalDisposition: "",
+              },
+            ],
+          },
+        ],
+        section21C: [
+          {
+            voluntary: false,
+            explanation: "",
+            facility: {
+              name: "",
+              address: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+            },
+            fromDate: "",
+            toDate: "",
+            present: false,
+            estimatedFrom: false,
+            estimatedTo: false,
+          },
+        ],
+        section21D: [
+          {
+            diagnosis: "",
+            datesOfDiagnosis: {
+              fromDate: "",
+              toDate: "",
+              present: false,
+              estimatedFrom: false,
+              estimatedTo: false,
+            },
+            healthCareProfessional: {
+              name: "",
+              telephoneNumber: "",
+              extension: "",
+              day: false,
+              night: false,
+              internationalOrDsnPhoneNumber: false,
+              address: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+            },
+            agencyOrFacility: {
+              name: "",
+              address: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+              telephoneNumber: "",
+              extension: "",
+              day: false,
+              night: false,
+              internationalOrDsnPhoneNumber: false,
+            },
+            counselingEffective: false,
+            counselingExplanation: "",
+          },
+        ],
+        section21D1: [
+          {
+            healthCareProfessional: {
+              name: "",
+              telephoneNumber: "",
+              extension: "",
+              day: false,
+              night: false,
+              internationalOrDsnPhoneNumber: false,
+              address: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+            },
+          },
+        ],
+        section21E: [
+          {
+            fromDate: "",
+            toDate: "",
+            present: false,
+            estimatedFrom: false,
+            estimatedTo: false,
+            healthCareProfessional: {
+              name: "",
+              telephoneNumber: "",
+              extension: "",
+              day: false,
+              night: false,
+              internationalOrDsnPhoneNumber: false,
+              address: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+            },
+            agencyOrFacility: {
+              name: "",
+              address: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+              telephoneNumber: "",
+              extension: "",
+              day: false,
+              night: false,
+              internationalOrDsnPhoneNumber: false,
+            },
+            choseNotToFollow: false,
+            explanation: "",
+          },
+        ],
+      },
+      policeRecord: {
+        _id: Math.random(),
+        part1Questions: false,
+        part2Questions: false,
+        restrainingOrder: false,
+        section22_1: [
+          {
+            dateOfOffense: { date: "", estimated: false },
+            description: "",
+            involvedDomesticViolence: false,
+            involvedFirearms: false,
+            involvedAlcoholDrugs: false,
+            offenseLocation: {
+              city: "",
+              county: "",
+              state: "",
+              zip: "",
+              country: "",
+            },
+            arrestedSummonedCited: false,
+            lawEnforcementAgencyName: "",
+            lawEnforcementLocation: {
+              city: "",
+              county: "",
+              state: "",
+              zip: "",
+              country: "",
+            },
+            chargedConvicted: false,
+            courtName: "",
+            courtLocation: {
+              city: "",
+              county: "",
+              state: "",
+              zip: "",
+              country: "",
+            },
+            charges: [
+              {
+                _id: Math.random(),
+                felonyMisdemeanor: "Felony",
+                charge: "",
+                outcome: "",
+                dateInfo: { date: "", estimated: false },
+              },
+            ],
+            sentenced: false,
+            sentenceDescription: "",
+            imprisonmentTermExceeding1Year: false,
+            imprisonmentLessThan1Year: false,
+            imprisonmentDates: {
+              from: "",
+              to: "",
+              estimated: false,
+              present: false,
+            },
+            probationParoleDates: {
+              from: "",
+              to: "",
+              estimated: false,
+              present: false,
+            },
+            awaitingTrial: false,
+            awaitingTrialExplanation: "",
+          },
+        ],
+        section22_2: [
+          {
+            dateOfOffense: { date: "", estimated: false },
+            description: "",
+            involvedDomesticViolence: false,
+            involvedFirearms: false,
+            involvedAlcoholDrugs: false,
+            courtName: "",
+            courtLocation: {
+              city: "",
+              county: "",
+              state: "",
+              zip: "",
+              country: "",
+            },
+            charges: [
+              {
+                _id: Math.random(),
+                felonyMisdemeanor: "Felony",
+                charge: "",
+                outcome: "",
+                dateInfo: { date: "", estimated: false },
+              },
+            ],
+            sentenced: false,
+            sentenceDescription: "",
+            imprisonmentTermExceeding1Year: false,
+            imprisonmentLessThan1Year: false,
+            imprisonmentDates: [
+              { from: "", to: "", estimated: false, present: false },
+            ],
+            probationParoleDates: [
+              { from: "", to: "", estimated: false, present: false },
+            ],
+            awaitingTrial: false,
+            awaitingTrialExplanation: "",
+          },
+        ],
+        section22_3: [
+          {
+            hasRestrainingOrder: false,
+            orders: [
+              {
+                explanation: "",
+                dateIssued: { date: "", estimated: false },
+                courtAgencyName: "",
+                courtAgencyLocation: {
+                  city: "",
+                  county: "",
+                  state: "",
+                  zip: "",
+                  country: "",
+                },
+              },
+            ],
+          },
+        ],
+      },
+      drugActivity: {
+        _id: Math.random(),
+        hasUsed: false,
+        hasInvolvement: false,
+        illegalWhileProcessing: false,
+        usedWhilePublicSaftey: false,
+        usedNotPerscribed: false,
+        suggestedCounsoling: false,
+        voluntaryCounsoling: false,
+        section23_1: [
+          {
+            typeOfDrug: [
+              {
+                _id: Math.random(),
+                type: "",
+              },
+            ],
+            otherDrugExplanation: "",
+            firstUse: {
+              date: "",
+              estimated: false,
+            },
+            mostRecentUse: {
+              date: "",
+              estimated: false,
+            },
+            natureOfUseFrequencyTimes: "",
+            useWhileEmployedInPublicSafety: false,
+            useWhilePossessingSecurityClearance: false,
+            intendToUseInFuture: false,
+            futureUseExplanation: "",
+          },
+        ],
+        section23_2: [
+          {
+            typeOfDrug: [],
+            otherDrugExplanation: "",
+            firstInvolvement: {
+              date: "",
+              estimated: false,
+            },
+            mostRecentInvolvement: {
+              date: "",
+              estimated: false,
+            },
+            natureAndFrequencyOfActivity: "",
+            reasonsForActivity: "",
+            involvementWhileEmployedInPublicSafety: false,
+            involvementWhilePossessingSecurityClearance: false,
+            intendToEngageInFuture: false,
+            futureEngagementExplanation: "",
+          },
+        ],
+        section23_3: [
+          {
+            descriptionOfInvolvement: "",
+            dateRange: {
+              from: "",
+              to: "",
+              estimated: false,
+              present: false,
+            },
+            numberOfTimesInvolved: "",
+          },
+        ],
+        section23_4: [
+          {
+            descriptionOfInvolvement: "",
+            dateRange: {
+              from: "",
+              to: "",
+              estimated: false,
+              present: false,
+            },
+            numberOfTimesInvolved: "",
+          },
+        ],
+        section23_5: [
+          {
+            nameOfPrescriptionDrug: "",
+            dateRange: {
+              from: "",
+              to: "",
+              estimated: false,
+              present: false,
+            },
+            reasonsForMisuse: "",
+            involvementWhileEmployedInPublicSafety: false,
+            involvementWhilePossessingSecurityClearance: false,
+          },
+        ],
+        section23_6: [
+          {
+            orderedBy: [{ _id: Math.random(), type: "" }],
+            orderedExplanation: "",
+            receivedTreatment: false,
+            noTreatmentExplanation: "",
+            typeOfDrug: [{ _id: Math.random(), type: "" }],
+            otherDrugExplanation: "",
+            treatmentProviderName: {
+              firstName: "",
+              lastName: "",
+            },
+            treatmentProviderAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            treatmentProviderPhone: {
+              number: "",
+              international: false,
+              timeOfDay: "Day",
+            },
+            dateRange: {
+              from: "",
+              to: "",
+              estimated: false,
+              present: false,
+            },
+            successfullyCompleted: false,
+            completionExplanation: "",
+          },
+        ],
+        section23_7: [
+          {
+            typeOfDrug: [
+              {
+                _id: Math.random(),
+                type: "",
+              },
+            ],
+            otherDrugExplanation: "",
+            treatmentProviderName: {
+              firstName: "",
+              lastName: "",
+            },
+            treatmentProviderAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            treatmentProviderPhone: {
+              number: "",
+              international: false,
+              timeOfDay: "Day",
+            },
+            dateRange: {
+              from: "",
+              to: "",
+              estimated: false,
+              present: false,
+            },
+            successfullyCompleted: false,
+            completionExplanation: "",
+          },
+        ],
+      },
+      alcoholUse: {
+        _id: Math.random(),
+        negativeImpact: false,
+        suggestedCounseling: false,
+        voluntaryCounseling: false,
+        additionalCounseling: false,
+        section24_1: [
+          {
+            id_: Math.random(),
+            negativeImpactDate: {
+              date: "",
+              estimated: false,
+            },
+            datesOfInvolvement: {
+              from: "",
+              to: "",
+              estimated: false,
+              present: false,
+            },
+            circumstances: "",
+            negativeImpact: "",
+          },
+        ],
+        section24_2: [
+          {
+            _id: Math.random(),
+            orderedBy: [{ _id: Math.random(), type: "" }],
+            actionTaken: false,
+            noActionExplanation: "",
+            actionDetails: {
+              dateRange: {
+                from: {
+                  date: "",
+                  estimated: false,
+                },
+                to: {
+                  date: "",
+                  estimated: false,
+                },
+                present: false,
+              },
+              providerName: "",
+              providerAddress: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+              providerPhone: "",
+              phoneExtension: "",
+              internationalPhone: false,
+              phoneDayNight: "Day",
+              treatmentCompletion: false,
+              completionExplanation: "",
+            },
+          },
+        ],
+        section24_3: [
+          {
+            _id: Math.random(),
+            dateRange: {
+              from: "",
+              to: "",
+              estimated: false,
+              present: false,
+            },
+            providerName: "",
+            providerAddress: {
+              city: "",
+              county: "",
+              state: "",
+              zip: "",
+              country: "",
+            },
+            providerPhone: "",
+            phoneExtension: "",
+            internationalPhone: false,
+            phoneDayNight: "Day",
+            treatmentCompletion: false,
+            completionExplanation: "",
+          },
+        ],
+        section24_4: [
+          {
+            _id: Math.random(),
+            counselorName: "",
+            counselorAddress: {
+              city: "",
+              county: "",
+              state: "",
+              zip: "",
+              country: "",
+            },
+            agencyName: "",
+            agencyAddress: {
+              city: "",
+              county: "",
+              state: "",
+              zip: "",
+              country: "",
+            },
+            dateRange: {
+              from: "",
+              to: "",
+              estimated: false,
+              present: false,
+            },
+            treatmentCompletion: false,
+            completionExplanation: "",
+          },
+        ],
+      },
+      investigationsInfo: {
+        _id: Math.random(),
+        governmentInvestigated: false,
+        revocation: false,
+        debarred: false,
+        section25_1: [
+          {
+            investigatingAgency: [{ _id: Math.random(), agency: "" }],
+            otherAgency: "",
+            issuedAgency: "",
+            investigationCompletionDate: "",
+            clearanceEligibilityDate: "",
+            levelOfClearance: [{ _id: Math.random(), level: "" }],
+          },
+        ],
+        section25_2: [
+          {
+            denialDate: "",
+            agency: "",
+            explanation: "",
+          },
+        ],
+        section25_3: [
+          {
+            debarmentDate: "",
+            agency: "",
+            explanation: "",
+          },
+        ],
+      },
+      finances: {
+        _id: Math.random(),
+        filedBankruptcy: false,
+        gamblingProblem: false,
+        missedTaxes: false,
+        companyViolation: false,
+        counseling: false,
+        delinquent: false,
+        reposessions: false,
+        section26_1: [
+          {
+            _id: Math.random(),
+            bankruptcyPetitionType: [
+              {
+                _id: Math.random(),
+                type: "",
+              },
+            ],
+            courtDocketNumber: "",
+            dateFiled: { date: "", estimated: false },
+            dateDischarged: { date: "", estimated: false },
+            amountInvolved: { amount: 0, estimated: false },
+            debtRecordedUnder: {
+              lastName: "",
+              firstName: "",
+              middleName: "",
+              suffix: "",
+            },
+            courtName: "",
+            courtAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            chapter13Details: {
+              trusteeName: "",
+              trusteeAddress: {
+                street: "",
+                city: "",
+                state: "",
+                zipCode: "",
+                country: "",
+              },
+            },
+            dischargedOfAllDebts: false,
+            dischargeExplanation: "",
+          },
+        ],
+        section26_2: [
+          {
+            _id: Math.random(),
+            financialProblemsDueToGambling: false,
+            dateRange: {
+              from: { date: "", estimated: false },
+              to: { date: "", estimated: false },
+              present: false,
+            },
+            gamblingLosses: { amount: 0, estimated: false },
+            descriptionOfFinancialProblems: "",
+            actionsTaken: "",
+          },
+        ],
+        section26_3: [
+          {
+            _id: Math.random(),
+            failedToFileOrPay: [
+              {
+                _id: Math.random(),
+                type: "File",
+              },
+            ],
+            yearFailed: { date: "", estimated: false },
+            failureReason: "",
+            agencyName: "",
+            taxType: "",
+            amount: { amount: 0, estimated: false },
+            dateSatisfied: { date: "", estimated: false },
+            actionsTaken: "",
+          },
+        ],
+        section26_4: [
+          {
+            _id: Math.random(),
+            agencyOrCompanyName: "",
+            agencyOrCompanyAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            counselingWarningDisciplinaryDate: { date: "", estimated: false },
+            counselingWarningDisciplinaryReason: "",
+            violationAmount: { amount: 0, estimated: false },
+            rectifyingActions: "",
+          },
+        ],
+        section26_5: [
+          {
+            _id: Math.random(),
+            explanation: "",
+            creditCounselingOrganizationName: "",
+            creditCounselingOrganizationPhoneNumber: {
+              number: "",
+              extension: "",
+              isInternationalOrDSN: false,
+              timeOfDay: "Day",
+            },
+            creditCounselingOrganizationLocation: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            counselingActions: "",
+          },
+        ],
+        section26_6: [
+          {
+            _id: Math.random(),
+            agencyName: "",
+            doesInclude: true,
+            financialIssueTypes: [
+              {
+                _id: Math.random(),
+                type: "",
+              },
+            ],
+            loanAccountNumbers: "",
+            propertyInvolved: "",
+            amount: { amount: 0, estimated: false },
+            issueReason: "",
+            currentStatus: "",
+            issueDate: { date: "", estimated: false },
+            resolutionDate: { date: "", estimated: false },
+            courtName: "",
+            courtAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            actionsTaken: "",
+          },
+        ],
+        section26_7: [
+          {
+            _id: Math.random(),
+            agencyName: "",
+            doesInclude: true,
+            financialIssueTypes: [
+              {
+                _id: Math.random(),
+                type: "",
+              },
+            ],
+            loanAccountNumbers: "",
+            propertyInvolved: "",
+            amount: { amount: 0, estimated: false },
+            issueReason: "",
+            currentStatus: "",
+            issueDate: { date: "", estimated: false },
+            resolutionDate: { date: "", estimated: false },
+            courtName: "",
+            courtAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            actionsTaken: "",
+          },
+        ],
+      },
+      technology: {
+        _id: Math.random(),
+        illegalAccess: false, 
+        illegalModification: false, 
+        unauthorizedUse: false, 
+        section27_1: [
+          {
+            _id: Math.random(),
+
+            incidentDate: { date: "", estimated: true },
+            description: "",
+            location: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            actionDescription: "",
+          },
+        ],
+        section27_2: [
+          {
+            _id: Math.random(),
+            incidentDate: { date: "", estimated: false },
+            description: "",
+            location: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            actionDescription: "",
+          },
+        ],
+        section27_3: [
+          {
+            _id: Math.random(),
+            incidentDate: { date: "", estimated: false },
+            description: "",
+            location: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            actionDescription: "",
+          },
+        ],
+      },
     };
 
     console.log(`Path: ${path}`);
@@ -1220,6 +2595,60 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
       militaryHistoryInfo: ["section15_1", "section15_2", "section15_3"],
       relationshipInfo: ["section17_1", "otherNames"],
       relativesInfo: ["entries", "section18_1", "section18_2", "section18_3"],
+      foreignContacts: ["entries", "otherNames", "citizenships"],
+      foreignActivities: [
+        "section20A1",
+        "section20A2",
+        "section20A3",
+        "section20A4",
+        "section20A5",
+        "section20B1",
+        "section20B2",
+        "section20B3",
+        "section20B4",
+        "section20B5",
+        "section20B6",
+        "section20B7",
+        "section20B8",
+        "section20B9",
+        "section20C",
+        "coOwners",
+        "ownershipType",
+        "subsequentContacts",
+      ],
+      mentalHealth: [
+        "section21A",
+        "section21B",
+        "section21C",
+        "section21D",
+        "section21D1",
+        "section21E",
+      ],
+      policeRecord: [
+        "section22A",
+        "section22B",
+        "section22C",
+        "section22D",
+        "charges",
+      ],
+      drugActivity: [
+        "section23_1",
+        "section23_2",
+        "section23_3",
+        "section23_4",
+      ],
+      alcoholUse: ["section24_1", "section24_2", "section24_3", "section24_4"],
+      investigationsInfo: ["section25_1", "section25_2", "section25_3"],
+      finances: [
+        "section26_1",
+        "section26_2",
+        "section26_3",
+        "section26_4",
+        "section26_5",
+        "section26_6",
+        "section26_7",
+      ],
+      technology: ["section27_1", "section27_2", "section27_3"],
     };
 
     const findNestedTemplate = (pathSegments, templates) => {
@@ -1369,6 +2798,28 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
         return <RenderRelationshipInfo {...props} />;
       case "relativesInfo":
         return <RenderRelativesInfo {...props} />;
+      case "foreignContacts":
+        return <RenderForeignContacts {...props} />;
+      case "foreignActivities":
+        return <RenderForeignActivities {...props} />;
+      case "mentalHealth":
+        return <RenderMentalHealth {...props} />;
+      case "policeRecord":
+        return <RenderPolice {...props} />;
+      case "drugActivity":
+        return <RenderDrugActivity {...props} />;
+      case "alcoholUse":
+        return <RenderAlcoholUse {...props} />;
+      case "investigationsInfo":
+        return <RenderInvestigationsInfo {...props} />;
+      case "finances":
+        return <RenderFinances {...props} />;
+      case "technology":
+        return <RenderTechnology {...props} />;
+      // case "NonCrimincalCourtInfo":
+      //   return <NonCrimincalCourtInfo {...props} />;
+      // case "AssociationInfo":
+      //   return <AssociationInfo {...props} />;
 
       default:
         return (

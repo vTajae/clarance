@@ -61,6 +61,7 @@ const RenderRelativesInfo: React.FC<FormProps> = ({
   const handleInputChange = (fieldPath: string, value: any) => {
     onInputChange(fieldPath, value);
   };
+  
 
   const handleCheckboxChange = (type: RelativeType) => {
     // Check if the type is already selected

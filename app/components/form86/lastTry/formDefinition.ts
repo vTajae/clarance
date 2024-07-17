@@ -2,11 +2,21 @@ import { CitizenshipNaturalizationInfo } from "api_v2/interfaces/Citizenship";
 import { DualCitizenshipFormData } from "api_v2/interfaces/DuelCitizenship";
 import { ApplicantResidency } from "api_v2/interfaces/Residency";
 import { EmploymentInfo } from "api_v2/interfaces/employmentInfo";
+import { ForeignActivities } from "api_v2/interfaces/foreignActivities";
+import { ForeignContacts } from "api_v2/interfaces/foreignContacts";
 import { MilitaryHistoryInfo } from "api_v2/interfaces/militaryHistoryInfo";
 import { PeopleThatKnow } from "api_v2/interfaces/peopleThatKnow";
 import { RelationshipInfo } from "api_v2/interfaces/relationshipInfo";
 import { RelativesInfo } from "api_v2/interfaces/relativesInfo";
 import { SchoolInfo } from "api_v2/interfaces/schoolInfo";
+import { MentalHealth } from "api_v2/interfaces/mentalHealth";
+import { PoliceRecord } from "api_v2/interfaces/policeRecord";
+import { DrugActivity } from "api_v2/interfaces/drugsActivity";
+import { AlcoholUse } from "api_v2/interfaces/alcoholUse";
+import { InvestigationsInfo } from "api_v2/interfaces/InvestigationsInfo";
+import { Finances } from "api_v2/interfaces/finances";
+import { Technology } from "api_v2/interfaces/technology";
+
 
 export enum QuestionType {
   Text = "text",
@@ -118,7 +128,17 @@ interface ApplicantFormValues {
   peopleThatKnow: PeopleThatKnow[];
   relationshipInfo: RelationshipInfo;
   relativesInfo: RelativesInfo;
+  foreignContacts: ForeignContacts;
+  foreignActivities: ForeignActivities;
+  mentalHealth: MentalHealth;
+  policeRecord: PoliceRecord;
+  drugActivity: DrugActivity;
+  alcoholUse: AlcoholUse;
+  investigationsInfo: InvestigationsInfo;
+  finances: Finances;
+  technology: Technology;
 }
+
 
 interface ServiceInfo {
   bornAfter1959: boolean | null; // null to represent unanswered state
@@ -128,11 +148,11 @@ interface ServiceInfo {
 }
 
 
-
 interface NamesInfo {
   hasNames: boolean;
   names: ApplicantNames[];
 }
+
 
 interface ApplicantNames {
   _id: number;

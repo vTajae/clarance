@@ -98,7 +98,7 @@ const Section1 = () => {
                 )
               }
             />
-          </div>{" "}
+          </div>
           {/* Add the rest of the inputs based on the CitizenshipDetail interface */}
           <div>
             <label htmlFor={`isCitizenshipStartEstimated-${index}`}>

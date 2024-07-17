@@ -12,8 +12,8 @@ export interface StepperState {
 
 const initialStateValue: StepperState = {
   stepper: {
-    currentStep: 16,
-    totalSteps: 20, // Assuming there are 5 steps by default, adjust as necessary
+    currentStep: 25,
+    totalSteps: 30, // Assuming there are 5 steps by default, adjust as necessary
   }
 };
 

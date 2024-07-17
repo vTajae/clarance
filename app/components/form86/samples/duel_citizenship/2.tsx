@@ -270,7 +270,7 @@ const PassportDetailsForm = () => {
                             e.target.checked
                           )
                         }
-                      />{" "}
+                      />
                       Est.
                     </label>
                   </div>
@@ -303,7 +303,7 @@ const PassportDetailsForm = () => {
                             e.target.checked
                           )
                         }
-                      />{" "}
+                      />
                       Est.
                     </label>
                     <label>
@@ -318,7 +318,7 @@ const PassportDetailsForm = () => {
                             e.target.checked
                           )
                         }
-                      />{" "}
+                      />
                       Present
                     </label>
                   </div>

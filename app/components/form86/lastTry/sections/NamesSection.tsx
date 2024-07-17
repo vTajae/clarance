@@ -182,7 +182,7 @@ const renderQuestion = (
           <span>{question.label}</span>
           {question.options?.map((option, index) => (
             <div key={index} className="inline-flex items-center ml-4">
-              {" "}
+              
               {/* Adjusted margin left for spacing */}
               <input
                 type="radio"

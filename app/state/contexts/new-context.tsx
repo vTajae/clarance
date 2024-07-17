@@ -205,8 +205,88 @@ const defaultFormData: ApplicantFormValues = {
   relativesInfo: {
     _id: Math.random(),
     relativeTypes: [],
-    entries: []
-  }
+    entries: [],
+  },
+  foreignContacts: {
+    _id: Math.random(),
+    hasForeignContact: false,
+    entries: [],
+  },
+  foreignActivities: {
+    _id: Math.random(),
+    hasForeignFinancialInterest: false,
+    hasForeignInterestOnBehalf: false,
+    wantForeignRealEstate: false,
+    hasForeignSupport: false,
+    providedForeignSupport: false,
+    providedForeignAdvice: false,
+    familyProvidedForeignAdvice: false,
+    offeredForeignJob: false,
+    offeredBuisnessVenture: false,
+    foreignConferences: false,
+    contactForeignGovernment: false,
+    sponsoredForeignNational: false,
+    foreignPoliticalOffice: false,
+    foreignVote: false,
+    traveledOutsideUSA: false,
+    traveledOutsideUSA_Government: false,
+  },
+  mentalHealth: {
+    _id: Math.random(),
+    declaredMentallyIncompetent: false,
+    consultMentalHealth: false,
+    hospitalizedMentalHealth: false,
+    beenDiagnosed: false,
+    delayedTreatment: false,
+    currentlyInTreatment: false,
+    substantialAffects: false,
+    counseling: false,
+  },
+  policeRecord: {
+    _id: Math.random(),
+    part1Questions: false,
+    part2Questions: false,
+    restrainingOrder: false,
+  },
+  drugActivity: {
+    _id: Math.random(),
+    hasUsed: false,
+    hasInvolvement: false,
+    illegalWhileProcessing: false,
+    usedWhilePublicSaftey: false,
+    usedNotPerscribed: false,
+    suggestedCounsoling: false,
+    voluntaryCounsoling: false,
+  },
+  alcoholUse: {
+    _id: Math.random(),
+    negativeImpact: false,
+    suggestedCounseling: false,
+    voluntaryCounseling: false,
+    additionalCounseling: false,
+  },
+  investigationsInfo: {
+    _id: Math.random(),
+    governmentInvestigated: false,
+    revocation: false,
+    debarred: false,
+  },
+  finances: {
+    _id: Math.random(),
+    filedBankruptcy: false,
+    gamblingProblem: false,
+    missedTaxes: false,
+    companyViolation: false,
+    counseling: false,
+    delinquent: false,
+    reposessions: false,
+  },
+  technology: {
+    _id: Math.random(),
+    illegalAccess: false,
+    illegalModification: false,
+    unauthorizedUse: false,
+  },
 };
 
 export const EmployeeProvider2: React.FC<EmployeeProviderProps> = ({
@@ -386,8 +466,15 @@ export const EmployeeProvider2: React.FC<EmployeeProviderProps> = ({
       "militaryHistoryInfo",
       "relativesInfo",
       "relationshipInfo",
-      "relativesInfo"
-      // Exclude array fields as they are already handled above
+      "relativesInfo",
+      "foreignContacts",
+      "foreignActivities",
+      "mentalHealth",
+      "policeRecord",
+      "drugActivity",
+      "alcoholUse",
+      "investigationsInfo",
+      "finances",
     ];
 
     fields.forEach((field) => {
