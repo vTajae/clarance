@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Standard Form 86</title>
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+      </style>
+    </head>
+    <body>
+        <!-- nav menu -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
+            <div class="container">
+              <a href="https://icm-consulting.us" class="navbar-brand"
+                >ICM Consulting</a
+              >
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navmenu"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a href="#learn" class="nav-link">What You'll learn</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#questions" class="nav-link">Questions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#instructors" class="nav-link">Instructors</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- Showcase -->
+    <section class="p-5 text-center text-sm-start">
+        <div class="container">
+            <p>Please select the following that best describes you</p>
+
+            <p>	<input id="Section9Applicant_95440" type="Radio" name="CitizenshipStatus" value=0 Class="Section9 HasEntry0"></input><!--9544-->
+            <label for=Section9Applicant_95440 Class="Section9" ></label>I am a U.S. citizen or national by birth in the U.S. or U.S. territory/commonwealth</p>
+    
+            <p>		<input id="Section9Applicant_95431" type="Radio" name="CitizenshipStatus" value=1 Class="Section9 HasEntry1"></input><!--9543-->
+            <label for=Section9Applicant_95431 Class="Section9" ></label>I am a U.S. citizen or national by birth, born to U.S. parent(s), in a foreign country</p>
+    
+            <p>	<input id="Section9Applicant_95422" type="Radio" name="CitizenshipStatus" value=2 Class="Section9 HasEntry2"></input><!--9542-->
+            <label for=Section9Applicant_95422 Class="Section9" ></label>I am a naturalized U.S. citizen.</p>	
+    
+            <p>	<input id="Section9Applicant_95413" type="Radio" name="CitizenshipStatus" value=3 Class="Section9 HasEntry3"></input><!--9541-->
+            <label for=Section9Applicant_95413 Class="Section9" ></label>I am a derived U.S. citizen. </p>
+    
+            <p>	<input id="Section9Applicant_95404" type="Radio" name="CitizenshipStatus" value=4 Class="Section9 HasEntry4"></input><!--9540-->
+            <label for=Section9Applicant_95404 Class="Section9" ></label>I am not a U.S. citizen.</p>
+    
+    
+    
+    
+    
+            <div hidden Class="Hidden1">
+    
+                <p>Provide the type of documentation for being a U.S citizen born abroad</p>
+            <p><input id="Section9Applicant_95170" type="Radio" name="BornAbroad" value=0 Class="Section9"></input>FS 240</p>		<!--9517-->
+            <label for=Section9Applicant_95170 Class="Section9" ></label>
+    
+            <p><input id="Section9Applicant_95161" type="Radio" name="BornAbroad" value=1 Class="Section9"></input>DS 1350</p>		<!--9516-->
+            <label for=Section9Applicant_95161 Class="Section9" ></label>
+    
+            <p><input id="Section9Applicant_95152" type="Radio" name="BornAbroad" value=2 Class="Section9"></input>FS 545</p>		<!--9515-->
+            <label for=Section9Applicant_95152 Class="Section9" ></label>
+    
+            <p><input id="Section9Applicant_95143" type="Radio" name="BornAbroad" value=3 Class="Section9"></input>Other</p>		<!--9514-->
+            <label for=Section9Applicant_95143 Class="Section9" ></label>
+    
+            <p>If you selected other, please provide an explanation</p>
+            <input type="Text" id="Section9Applicant_9539" Class="Section9"><!--9539-->
+    
+    
+            <p>Provide document number for U.S. citizen born abroad.</p>
+            <input type="Text" id="Section9Applicant_9538" Class="Section9"><!--9538-->
+    
+            <p>Provide the date the document was issued.</p>
+            <input type="Date" id="Section9Applicant_9522" Class="Section9 FullDate"><!--9522-->
+    
+            <p><input type= "checkbox" id="Section9Applicant_9521" Class="Section9">Select this box if this date was an Select this box if the date provided was an estimate</p><!--9521-->
+    
+            <p>Provide the place of issuance. Provide City and Country. If its within the United States, please provide the state. </p>
+    
+            <p>City</p>
+            <input type="Text" id="Section9Applicant_9535" Class="Section9"><!--9535-->
+    
+            <p>Country</p>
+            <select id="Section9ApplicantCountry_9537" Class="Section9 IDCountry" ><!--9537-->
+    
+
+</select>		<p>State</p>
+            <select id="Section9ApplicantState_9536" Class="Section9 IDState" ><!--9536-->
+    
+    <option value=""></option>
+
+         
+            </select>
+                                <p>Provide the name in which document was issued. Last name.</p>
+            <input type="Text" id="Section9ApplicantLastName_9533" Class="Section9 IDLastName"><!--9533-->
+    
+            <p>First name</p>
+            <input type="Text" id="Section9ApplicantFirstName_9532" Class="Section9 IDFirstName"><!--9532-->
+    
+            <p>Middle name</p>
+            <input type="Text" id="Section9ApplicantMiddleName_9534" Class="Section9 IDMiddleName"><!--9534-->
+    
+            <p>Suffix</p>
+            <select id="Section9ApplicantSuffix_9531" Class="Section9 IDSuffix" ><!--9531-->
+    
+    </select>		
+                
+                <p><input type= "checkbox" id="Section9Applicant_9518" Class="Section9">Select this box if the date provided was an estimate</p><!--9518-->
+    
+            <p>Provide your Certificate of Citizenship number.</p>
+            <input type="Text" id="Section9Applicant_9520" Class="Section9"><!--9520-->
+    
+            <p>Provide the date the certificate was issued.</p>
+            <input type="Date" id="Section9Applicant_9519" Class="Section9 FullDate"><!--9519-->
+    
+            <p>Provide the name in which the certificate was issued. Last name.</p>
+            <input type="Text" id="Section9ApplicantLastName_9529" Class="Section9 IDLastName"><!--9529-->
+    
+            <p>First name</p>
+            <input type="Text" id="Section9ApplicantFirstName_9528" Class="Section9 IDFirstName"><!--9528-->
+    
+            <p>Middle name</p>
+            <input type="Text" id="Section9ApplicantMiddleName_9530" Class="Section9 IDMiddleName"><!--9530-->
+    
+            <p>Suffix</p>
+            <select id="Section9ApplicantSuffix_9527" Class="Section9 IDSuffix" ><!--9527-->
+    
+    </select>		
+                
+                <p>Provide the name of the base.</p>
+            <input type="Text" id="Section9Applicant_9556" Class="Section9"><!--9556-->
+    
+            <p> Were you born on a US Military Installation?</p>
+            <p><input id="Section9Applicant_9526" type="Radio" name="BornOnBase" value=0 Class="Section9"></input>Yes</p>		<!--9526-->
+            <label for=Section9Applicant_95260 Class="Section9" ></label>
+    
+            <p><input id="Section9Applicant_9525" type="Radio" name="BornOnBase" value=1 Class="Section9"></input>No</p>		<!--9525-->
+            <label for=Section9Applicant_95251 Class="Section9" ></label>
+
+    
+        </div>
+    
+        <div hidden class="Hidden2">
+    
+            <p>Provide the location of entry into the U.S. City.</p>
+            <input type="Text" id="Section9Applicant_9588" Class="Section9"><!--9588-->
+    
+            <p>Complete the following if you answered that you are a naturalized U.S. citizen. </p>
+                
+                <p>Provide the date of entry into the U. S.</p>
+            <input type="Date" id="Section9Applicant_9591" Class="Section9 FullDate"><!--9591-->
+            <p>Select this box if the date provided was an estimate<input type= "checkbox" id="Section9Applicant_9590" Class="Section9"></p><!--9590-->
+    
+            <p>State</p>
+            <select id="Section9ApplicantState_9589" Class="Section9 IDState" ><!--9589-->
+    
+    <option value=""></option>
+    <option value="AK">AK</option>
+         
+            </select>
+                                
+            <p>Provide country(ies) of prior citizenship. If there are more than 2 countries, write details in the notes tool</p>
+            <select id="Section9ApplicantCountry_9587" Class="Section9 IDCountry" ><!--9587-->
+            <p>Country #1</p>
+
+           
+</select>
+            
+            <p>Do you have an alien registration number?</p>
+            <p><input id="Section9Applicant_9585" type="Radio" name="Section9Applicant_9585" value=0 Class="Section9"></input><!--9585-->Yes</p>		
+            
+    
+            <p><input id="Section9Applicant_95841" type="Radio" name="Section9Applicant_9584" value=1 Class="Section9"></input>No</p>		<!--9584-->
+
+
+            <p>Provide your U.S. alien registration number on Certificate of Naturalization USCIS, CI, or INS registration, I-551, I-766.</p>
+            <input type="Text" id="Section9Applicant_9586" Class="Section9"><!--9586-->
+            
+    
+            <p>Provide your Certificate of Naturalization number (N550 or N570).</p>
+            <input type="Text" id="Section9Applicant_9616" Class="Section9"><!--9616-->
+    
+            <p>Provide the date the naturalization certificate was issued.</p>
+            <input type="Date" id="Section9Applicant_9618" Class="Section9 FullDate"><!--9618-->
+            <p><input type= "checkbox" id="Section9Applicant_9617" Class="Section9">Select this box if the date provided was an estimate</p><!--9617-->
+    
+    
+            <p>Provide the name of the court that issued the Certificate of Naturalization.</p>
+            <input type="Text" id="Section9Applicant_9592" Class="Section9"><!--9592-->
+    
+            <p>Provide the address of the court that issued the naturalization certificate. Street</p>
+            <input type="Text" id="Section9ApplicantStreet_9620" Class="Section9 IDStreet"><!--9620-->
+    
+            <p>City</p>
+            <input type="Text" id="Section9ApplicantCity_9625" Class="Section9 IDCity"><!--9625-->
+    
+            <p>Zip Code</p>
+            <input type="Text" id="Section9ApplicantZIP_9619" Class="Section9 IDZIP"><!--9619-->
+    
+            <p>State</p>
+            <select id="Section9ApplicantState_9626" Class="Section9 IDState" ><!--9626-->
+    
+    <option value=""></option>
+    <option value="AK">AK</option>
+         
+            </select>
+            <p>Provide the name in which the Certificate of Naturalization was issued.</p>
+            <p>Last name</p>
+            <input type="Text" id="Section9ApplicantLastName_9623" Class="Section9 IDLastName"><!--9623-->
+    
+            <p>First name</p>
+            <input type="Text" id="Section9ApplicantFirstName_9622" Class="Section9 IDFirstName"><!--9622-->
+    
+            <p>Middle name</p>
+            <input type="Text" id="Section9ApplicantMiddleName_9624" Class="Section9 IDMiddleName"><!--9624-->
+    
+            <p>Suffix</p>
+            <select id="Section9ApplicantSuffix_9621" Class="Section9 IDSuffix" ><!--9621-->
+    
+    </select>		
+                
+                <p><input type= "checkbox" id="Section9Applicant_9599" Class="Section9">Provide the basis of naturalization. Based on my own individual naturalization application.</p><!--9599-->
+    
+            <p>Other (provide explanation)<input type= "checkbox" id="Section9Applicant_9600" Class="Section9"></p><!--9600-->
+    
+            <p>(Provide explanation)</p>
+            <input type="Text" id="Section9Applicant_9614" Class="Section9"><!--9614-->
+    
+        </div>
+    
+        <div hidden class="Hidden3">
+    
+            <p>9.3  Complete the following if you answered that you are a derived U.S. Citizen. Provide your alien registration number (on Certificate of Citizenship utilize USCIS, CIS or INS registration number).</p>
+            <input type="Text" id="Section9Applicant_9578" Class="Section9"><!--9578-->
+    
+            <p>Provide your Permanent Resident Card number (I-551)</p>
+            <input type="Text" id="Section9Applicant_9577" Class="Section9"><!--9577-->
+    
+            <p>Provide your Certificate of Citizenship number (N560 or N561)</p>
+            <input type="Text" id="Section9Applicant_9576" Class="Section9"><!--9576-->
+    
+            <p>Provide the name in which the document was issued. Last name.</p>
+            <input type="Text" id="Section9ApplicantLastName_9574" Class="Section9 IDLastName"><!--9574-->
+    
+            <p>First name</p>
+            <input type="Text" id="Section9ApplicantFirstName_9573" Class="Section9 IDFirstName"><!--9573-->
+    
+            <p>Middle name</p>
+            <input type="Text" id="Section9ApplicantMiddleName_9575" Class="Section9 IDMiddleName"><!--9575-->
+    
+            <p>Suffix</p>
+            <select id="Section9ApplicantSuffix_9572" Class="Section9 IDSuffix" ><!--9572-->
+    
+    </select>		
+                
+            
+    
+            
+    
+            <p>Provide the date document was issued.</p>
+            <input type="Date" id="Section9Applicant_9568" Class="Section9 FullDate"><!--9568-->
+            <p><input type= "checkbox" id="Section9Applicant_9567" Class="Section9">Select this box if the date provided was an estimate</p><!--9567-->
+    
+            <p>Provide the basis of derived citizenship. 
+                
+            <p><input type= "checkbox" id="Section9Applicant_9569" Class="Section9">By operation of law through my U.S. citizen parent.</p><!--9569-->
+    
+    
+            <p><input type= "checkbox" id="Section9Applicant_9570" Class="Section9">Other</p><!--9570-->
+    
+            <p>If you selected other, please provide an explanation</p>
+            <input type="Text" id="Section9Applicant_9571" Class="Section9"><!--9571-->
+    
+        </div>
+    
+        <div hidden class="Hidden4">
+            <p><input type= "checkbox" id="Section9Applicant_9612" Class="Section9">Select this box if the date provided was an estimate</p><!--9612-->
+    
+            <p>Complete the following if you answered that you are not a U.S. Citizen. </p>
+            
+            <p>Provide your residence status.</p>
+            <input type="Text" id="Section9Applicant_9611" Class="Section9"><!--9611-->
+    
+            <p>Provide your date of entry into the U.S.</p>
+            <input type="Date" id="Section9Applicant_9613" Class="Section9 FullDate"><!--9613-->
+    
+            <p>Provide country(ies) of citizenship.</p>
+            
+            <p>#1 Country</p>
+            <select id="Section9ApplicantCountry_9580" Class="Section9 IDCountry" ><!--9580-->
+    
+
+</select>		
+            
+            
+            <p>Country #2</p>
+            <select id="Section9ApplicantCountry_9579" Class="Section9 IDCountry" ><!--9579-->
+    
+
+</select>		
+            
+            
+    
+            <p>Provide your place of entry in the U.S. City</p>
+            <input type="Text" id="Section9Applicant_9581" Class="Section9"><!--9581-->
+    
+            <p>Provide your alien registration number (I-551, I-766)</p>
+            <input type="Text" id="Section9Applicant_9608" Class="Section9"><!--9608-->
+    
+            <p>Provide the document expiration date (I-766 ONLY).</p>
+            <input type="Date" id="Section9Applicant_9566" Class="Section9 FullDate"><!--9566-->
+            <p><input type= "checkbox" id="Section9Applicant_9565" Class="Section9">Select this box if the date provided was an estimate</p><!--9565-->
+    
+            <p>State</p>
+            <select id="Section9ApplicantState_9582" Class="Section9 IDState" ><!--9582-->
+    
+    <option value=""></option>
+
+         
+            </select>
+                                
+            <p>Please provide the type of documentation that you have</p>
+            <p><input id="Section9Applicant_9598" type="Radio" name="NonCitizen" value=0 Class="Section9"></input>I-94</p>		<!--9598-->
+            <label for=Section9Applicant_9598 Class="Section9" ></label>
+    
+            <p><input id="Section9Applicant_9597" type="Radio" name="NonCitizen" value=1 Class="Section9"></input>U.S. Visa (red foil number)</p>		<!--9597-->
+            <label for=Section9Applicant_9597 Class="Section9" ></label>
+    
+            <p><input id="Section9Applicant_9596" type="Radio" name="NonCitizen" value=2 Class="Section9"></input>I-20</p>		<!--9596-->
+            <label for=Section9Applicant_9596 Class="Section9" ></label>
+    
+            <p><input id="Section9Applicant_9595" type="Radio" name="NonCitizen" value=3 Class="Section9"></input>DS-2019</p>		<!--9595-->
+            <label for=Section9Applicant_9595 Class="Section9" ></label>
+    
+            <p><input id="Section9Applicant_9594" type="Radio" name="NonCitizen" value=4 Class="Section9"></input>Other</p>		<!--9594-->
+            <label for=Section9Applicant_9594 Class="Section9" ></label>
+    
+            <p>If you selected other, please provide an explanation</p>
+            <input type="Text" id="Section9Applicant_9593" Class="Section9"><!--9593-->
+    
+            
+    
+            
+    
+            <p>Provide document number.</p>
+            <input type="Text" id="Section9Applicant_9602" Class="Section9"><!--9602-->
+    
+            <p>Provide the date document was issued. </p>
+            <input type="Date" id="Section9Applicant_9610" Class="Section9 FullDate"><!--9610-->
+            <p><input type= "checkbox" id="Section9Applicant_9609" Class="Section9">Select this box if the date provided was an estimate</p><!--9609-->
+    
+            <p>Provide the expiration date of visa. </p>
+            <input type="Date" id="Section9Applicant_9603" Class="Section9 FullDate"><!--9603-->
+            <p><input type= "checkbox" id="Section9Applicant_9601" Class="Section9">Select this box if the date provided was an estimate</p><!--9601-->
+    
+            <p>Provide the name in which the certificate was issued. </p>
+            <p>Last name.</p>
+            <input type="Text" id="Section9ApplicantLastName_9606" Class="Section9 IDLastName"><!--9606-->
+    
+            <p>First name</p>
+            <input type="Text" id="Section9ApplicantFirstName_9605" Class="Section9 IDFirstName"><!--9605-->
+    
+            <p>Middle name</p>
+            <input type="Text" id="Section9ApplicantMiddleName_9607" Class="Section9 IDMiddleName"><!--9607-->
+    
+            <p>Suffix</p>
+            <select id="Section9ApplicantSuffix_9604" Class="Section9 IDSuffix" ><!--9604-->
+    
+    </select>
+    
+            </div>
+              
+           
+        </section>
+      
+        <footer class="foot foot-expand-lg text-light fixed-bottom bg-dark foot-dark py-3">
+
+            
+            <form>
+                <input
+                  type="button"
+                  value="Back"
+                  class="backButton"
+                  onclick="history.back()"
+                />
+              </form>
+              <button id="sendDataButton">
+                <a href="http://127.0.0.1:3000/section10">Next</a></button>
+            <label for="ProgressBar">29% Complete</label>
+            <progress id="ProgressBar" value="8" max="28"> 29% Complete </progress>
+            </footer> 
+            </div>
+            
+        		<script>
+var radio0 = document.querySelector(".HasEntry0");
+var radio1 = document.querySelector(".HasEntry1");
+var radio2 = document.querySelector(".HasEntry2");
+var radio3 = document.querySelector(".HasEntry3");
+var radio4 = document.querySelector(".HasEntry4");
+
+var Entry1List = document.querySelectorAll('.Hidden1');
+var Entry2List = document.querySelectorAll('.Hidden2');
+var Entry3List = document.querySelectorAll('.Hidden3');
+var Entry4List = document.querySelectorAll('.Hidden4');
+
+radio0.addEventListener('click', function() {
+    toggleHidden(!radio0.checked, Entry1List);
+    toggleHidden(!radio0.checked, Entry2List);
+    toggleHidden(!radio0.checked, Entry3List);
+    toggleHidden(!radio0.checked, Entry4List);
+});
+
+radio1.addEventListener('click', function() {
+    toggleHidden(radio1.checked, Entry1List);
+    toggleHidden(!radio1.checked, Entry2List);
+    toggleHidden(!radio1.checked, Entry3List);
+    toggleHidden(!radio1.checked, Entry4List);
+});
+
+radio2.addEventListener('click', function() {
+    toggleHidden(!radio2.checked, Entry1List);
+    toggleHidden(radio2.checked, Entry2List);
+    toggleHidden(!radio2.checked, Entry3List);
+    toggleHidden(!radio2.checked, Entry4List);
+});
+
+radio3.addEventListener('click', function() {
+    toggleHidden(!radio3.checked, Entry1List);
+    toggleHidden(!radio3.checked, Entry2List);
+    toggleHidden(radio3.checked, Entry3List);
+    toggleHidden(!radio3.checked, Entry4List);
+});
+
+radio4.addEventListener('click', function() {
+    toggleHidden(!radio4.checked, Entry1List);
+    toggleHidden(!radio4.checked, Entry2List);
+    toggleHidden(!radio4.checked, Entry3List);
+    toggleHidden(radio4.checked, Entry4List);
+});
+
+function toggleHidden(isChecked, elementList) {
+    for (var i = 0; i < elementList.length; i++) {
+        if (isChecked) {
+            elementList[i].removeAttribute('hidden');
+        } else {
+            elementList[i].setAttribute('hidden', 'true');
+        }
+    }
+}
+
+
+        SSNhtml= localStorage.getItem("SSNNumber")
+        SectionHTML="Section9"              
+
+        var sendDataButton = document.querySelector("#sendDataButton");
+                     function radioValue(radioGroupName){
+            var ele= document.getElementsByName(radioGroupName)
+
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked) {
+                    return ele[i].value
+                    break} }
+                     
+            
+            return ''
+            
+        }
+
+        function checkboxvalue(checkboxname){
+            var checkboxhtml = document.getElementById(checkboxname)
+            
+            if(checkboxhtml.checked ==true){
+                var checkboxAsBit=1}
+            else {
+                var checkboxAsBit=0
+            }
+            console.log(checkboxAsBit)
+            return checkboxAsBit
+
+        }
+
+        function emptydata(PossibleEmpty) {
+            if (document.getElementById(PossibleEmpty).value === undefined) {
+                return '';
+            }
+            }        
+
+            sendDataButton.addEventListener("click", () => {
+                     var Section9Applicant_9544HTML = radioValue("Section9Applicant_9544");
+var Section9Applicant_9541HTML = radioValue("Section9Applicant_9541");
+var Section9Applicant_9540HTML = radioValue("Section9Applicant_9540");
+var Section9Applicant_9543HTML = radioValue("Section9Applicant_9543");
+var Section9Applicant_9542HTML = radioValue("Section9Applicant_9542");
+var Section9Applicant_9517HTML = radioValue("Section9Applicant_9517");
+var Section9Applicant_9516HTML = radioValue("Section9Applicant_9516");
+var Section9Applicant_9515HTML = radioValue("Section9Applicant_9515");
+var Section9Applicant_9514HTML = radioValue("Section9Applicant_9514");
+var Section9Applicant_9539HTML =document.querySelector(`[id="Section9Applicant_9539"]`).value;
+var Section9Applicant_9521HTML = checkboxvalue("Section9Applicant_9521");
+var Section9Applicant_9538HTML =document.querySelector(`[id="Section9Applicant_9538"]`).value;
+var Section9Applicant_9522HTML =document.querySelector(`[id="Section9Applicant_9522"]`).value;
+var Section9Applicant_9535HTML =document.querySelector(`[id="Section9Applicant_9535"]`).value;
+var Section9ApplicantCountry_9537HTML =document.querySelector(`[id="Section9ApplicantCountry_9537"]`).value;
+var Section9ApplicantState_9536HTML =document.querySelector(`[id="Section9ApplicantState_9536"]`).value;
+var Section9ApplicantLastName_9533HTML =document.querySelector(`[id="Section9ApplicantLastName_9533"]`).value;
+var Section9ApplicantFirstName_9532HTML =document.querySelector(`[id="Section9ApplicantFirstName_9532"]`).value;
+var Section9ApplicantMiddleName_9534HTML =document.querySelector(`[id="Section9ApplicantMiddleName_9534"]`).value;
+var Section9ApplicantSuffix_9531HTML =document.querySelector(`[id="Section9ApplicantSuffix_9531"]`).value;
+var Section9Applicant_9518HTML = checkboxvalue("Section9Applicant_9518");
+var Section9Applicant_9520HTML =document.querySelector(`[id="Section9Applicant_9520"]`).value;
+var Section9Applicant_9519HTML =document.querySelector(`[id="Section9Applicant_9519"]`).value;
+var Section9ApplicantLastName_9529HTML =document.querySelector(`[id="Section9ApplicantLastName_9529"]`).value;
+var Section9ApplicantFirstName_9528HTML =document.querySelector(`[id="Section9ApplicantFirstName_9528"]`).value;
+var Section9ApplicantMiddleName_9530HTML =document.querySelector(`[id="Section9ApplicantMiddleName_9530"]`).value;
+var Section9ApplicantSuffix_9527HTML =document.querySelector(`[id="Section9ApplicantSuffix_9527"]`).value;
+var Section9Applicant_9556HTML =document.querySelector(`[id="Section9Applicant_9556"]`).value;
+var Section9Applicant_9526HTML = radioValue("Section9Applicant_9526");
+var Section9Applicant_9525HTML = radioValue("Section9Applicant_9525");
+var Section9Applicant_9590HTML = checkboxvalue("Section9Applicant_9590");
+var Section9Applicant_9588HTML =document.querySelector(`[id="Section9Applicant_9588"]`).value;
+var Section9Applicant_9591HTML =document.querySelector(`[id="Section9Applicant_9591"]`).value;
+var Section9ApplicantState_9589HTML =document.querySelector(`[id="Section9ApplicantState_9589"]`).value;
+var Section9ApplicantCountry_9587HTML =document.querySelector(`[id="Section9ApplicantCountry_9587"]`).value;
+var Section9ApplicantCountry_9583HTML =document.querySelector(`[id="Section9ApplicantCountry_9583"]`).value;
+var Section9Applicant_9585HTML = radioValue("Section9Applicant_9585");
+var Section9Applicant_9586HTML =document.querySelector(`[id="Section9Applicant_9586"]`).value;
+var Section9Applicant_9584HTML = radioValue("Section9Applicant_9584");
+var Section9Applicant_9617HTML = checkboxvalue("Section9Applicant_9617");
+var Section9Applicant_9616HTML =document.querySelector(`[id="Section9Applicant_9616"]`).value;
+var Section9Applicant_9618HTML =document.querySelector(`[id="Section9Applicant_9618"]`).value;
+var Section9Applicant_9592HTML =document.querySelector(`[id="Section9Applicant_9592"]`).value;
+var Section9ApplicantStreet_9620HTML =document.querySelector(`[id="Section9ApplicantStreet_9620"]`).value;
+var Section9ApplicantCity_9625HTML =document.querySelector(`[id="Section9ApplicantCity_9625"]`).value;
+var Section9ApplicantZIP_9619HTML =document.querySelector(`[id="Section9ApplicantZIP_9619"]`).value;
+var Section9ApplicantState_9626HTML =document.querySelector(`[id="Section9ApplicantState_9626"]`).value;
+var Section9ApplicantLastName_9623HTML =document.querySelector(`[id="Section9ApplicantLastName_9623"]`).value;
+var Section9ApplicantFirstName_9622HTML =document.querySelector(`[id="Section9ApplicantFirstName_9622"]`).value;
+var Section9ApplicantMiddleName_9624HTML =document.querySelector(`[id="Section9ApplicantMiddleName_9624"]`).value;
+var Section9ApplicantSuffix_9621HTML =document.querySelector(`[id="Section9ApplicantSuffix_9621"]`).value;
+var Section9Applicant_9599HTML = checkboxvalue("Section9Applicant_9599");
+var Section9Applicant_9600HTML = checkboxvalue("Section9Applicant_9600");
+var Section9Applicant_9614HTML =document.querySelector(`[id="Section9Applicant_9614"]`).value;
+var Section9Applicant_9578HTML =document.querySelector(`[id="Section9Applicant_9578"]`).value;
+var Section9Applicant_9577HTML =document.querySelector(`[id="Section9Applicant_9577"]`).value;
+var Section9Applicant_9576HTML =document.querySelector(`[id="Section9Applicant_9576"]`).value;
+var Section9ApplicantLastName_9574HTML =document.querySelector(`[id="Section9ApplicantLastName_9574"]`).value;
+var Section9ApplicantFirstName_9573HTML =document.querySelector(`[id="Section9ApplicantFirstName_9573"]`).value;
+var Section9ApplicantMiddleName_9575HTML =document.querySelector(`[id="Section9ApplicantMiddleName_9575"]`).value;
+var Section9ApplicantSuffix_9572HTML =document.querySelector(`[id="Section9ApplicantSuffix_9572"]`).value;
+var Section9Applicant_9569HTML = checkboxvalue("Section9Applicant_9569");
+var Section9Applicant_9567HTML = checkboxvalue("Section9Applicant_9567");
+var Section9Applicant_9568HTML =document.querySelector(`[id="Section9Applicant_9568"]`).value;
+var Section9Applicant_9570HTML = checkboxvalue("Section9Applicant_9570");
+var Section9Applicant_9571HTML =document.querySelector(`[id="Section9Applicant_9571"]`).value;
+var Section9Applicant_9612HTML = checkboxvalue("Section9Applicant_9612");
+var Section9Applicant_9611HTML =document.querySelector(`[id="Section9Applicant_9611"]`).value;
+var Section9Applicant_9613HTML =document.querySelector(`[id="Section9Applicant_9613"]`).value;
+var Section9ApplicantCountry_9580HTML =document.querySelector(`[id="Section9ApplicantCountry_9580"]`).value;
+var Section9ApplicantCountry_9579HTML =document.querySelector(`[id="Section9ApplicantCountry_9579"]`).value;
+var Section9Applicant_9565HTML = checkboxvalue("Section9Applicant_9565");
+var Section9Applicant_9581HTML =document.querySelector(`[id="Section9Applicant_9581"]`).value;
+var Section9Applicant_9608HTML =document.querySelector(`[id="Section9Applicant_9608"]`).value;
+var Section9Applicant_9566HTML =document.querySelector(`[id="Section9Applicant_9566"]`).value;
+var Section9ApplicantState_9582HTML =document.querySelector(`[id="Section9ApplicantState_9582"]`).value;
+var Section9Applicant_9598HTML = radioValue("Section9Applicant_9598");
+var Section9Applicant_9597HTML = radioValue("Section9Applicant_9597");
+var Section9Applicant_9596HTML = radioValue("Section9Applicant_9596");
+var Section9Applicant_9595HTML = radioValue("Section9Applicant_9595");
+var Section9Applicant_9594HTML = radioValue("Section9Applicant_9594");
+var Section9Applicant_9593HTML =document.querySelector(`[id="Section9Applicant_9593"]`).value;
+var Section9Applicant_9609HTML = checkboxvalue("Section9Applicant_9609");
+var Section9Applicant_9601HTML = checkboxvalue("Section9Applicant_9601");
+var Section9Applicant_9602HTML =document.querySelector(`[id="Section9Applicant_9602"]`).value;
+var Section9Applicant_9610HTML =document.querySelector(`[id="Section9Applicant_9610"]`).value;
+var Section9Applicant_9603HTML =document.querySelector(`[id="Section9Applicant_9603"]`).value;
+var Section9ApplicantLastName_9606HTML =document.querySelector(`[id="Section9ApplicantLastName_9606"]`).value;
+var Section9ApplicantFirstName_9605HTML =document.querySelector(`[id="Section9ApplicantFirstName_9605"]`).value;
+var Section9ApplicantMiddleName_9607HTML =document.querySelector(`[id="Section9ApplicantMiddleName_9607"]`).value;
+var Section9ApplicantSuffix_9604HTML =document.querySelector(`[id="Section9ApplicantSuffix_9604"]`).value;
+var Section9Applicant_9615HTML =document.querySelector(`[id="Section9Applicant_9615"]`).value;
+	
+                     
+                     
+                     var obj= {
+
+
+        Table: "Section9",
+        SSN: SSNhtml,             
+        Section9Applicant_9615:Section9Applicant_9615HTML,
+} 
+    
+fetch("/ToSQL", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(obj)
+            })
+            .then((response) => {
+                if (response.ok) {
+                    console.log("Data sent successfully");
+                    alert("Data Sent Properly!")
+                } else {
+                    console.error("Failed to send data");
+                    alert("Something went wrong")
+                }
+            });                     
+                     
+})                     
+		</script>
+
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+crossorigin="anonymous"
+></script>             
+	</body>
+
+</html>
+

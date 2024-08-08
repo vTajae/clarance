@@ -1,15 +1,15 @@
-import { Form, FormMethod, json, useLoaderData } from "@remix-run/react";
-import { FormEvent, Suspense, useCallback, useEffect, useState } from "react";
-import { useEmployee } from "../state/contexts/new-context";
+import { Form, json, useLoaderData } from "@remix-run/react";
+import { FormEvent, Suspense, useState } from "react";
+import { useEmployee } from "../state/contexts/new-context copy";
 import DynamicForm3 from "../utils/formHandler";
 import FormInfo from "api_v2/interfaces/FormInfo";
 import { useDispatch, useTypedSelector } from "~/state/hooks/user";
 import { RootState } from "~/state/store";
-import { closeModal, openModal, setLoading } from "~/state/user/userSlice";
-import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition";
-import { LoaderFunctionArgs } from "@remix-run/cloudflare";
+import { closeModal, openModal } from "~/state/user/userSlice";
+import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition copy 2";
 import BasicInfo from "~/components/employee/BasicInfo";
 import DynamicService from "../../api_v2/service/dynamicService";
+import { RenderPrintPDF } from "~/components/Rendered/RenderPrintPDF";
 
 type LoaderData = {
   formInfo: FormInfo;
@@ -17,7 +17,7 @@ type LoaderData = {
 };
 
 // Assuming this is part of a Remix loader function
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader() {
   // const userService = new UserService();
   try {
     // const result = await userService.loadUserFormData("applicantData");
@@ -45,10 +45,8 @@ const EmployeeIDPage = () => {
 
   const { loadEmployee, isLoading, data, getChanges } = useEmployee();
 
-
-
   const handleStartClick = async () => {
-    const newUserID = `user_${Math.random().toString(36).substr(2, 9)}`;
+    const newUserID = `user_${Math.random().toString(36)}`;
     const updatedData = {
       ...data,
       personalInfo: {
@@ -74,9 +72,7 @@ const EmployeeIDPage = () => {
     }
   };
 
-  
   // const { employee, isLoading } = loaderData;
-
 
   if (isLoading)
     return <div className="animate-pulse flex space-x-4">Loading ...</div>;
@@ -96,11 +92,9 @@ const EmployeeIDPage = () => {
 
     const changes = await getChanges();
 
-    
     if (Object.keys(changes).length > 0) {
       try {
-
-        console.log(changes, "Changes being sent")
+        console.log(changes, "Changes being sent");
         const dynamicService = new DynamicService();
         const response = await dynamicService.updateUserData(
           "applicantData",
@@ -110,12 +104,7 @@ const EmployeeIDPage = () => {
 
         await loadEmployee();
 
-
-
-
         // window.location.reload();
-
-
       } catch (error) {
         console.error("Failed to apply changes:", error);
       }
@@ -129,9 +118,6 @@ const EmployeeIDPage = () => {
 
     window.scrollTo(0, 0); // Scrolls to the top each time mode is toggled
   };
-
-
-
 
   return (
     <Suspense fallback={<div>Hi</div>}>
@@ -198,6 +184,10 @@ const EmployeeIDPage = () => {
               >
                 Edit Employee
               </button>
+            </div>
+
+            <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
+              <RenderPrintPDF data={data} />
             </div>
           </div>
         </div>

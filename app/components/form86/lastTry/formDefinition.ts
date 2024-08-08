@@ -16,14 +16,16 @@ import { AlcoholUse } from "api_v2/interfaces/alcoholUse";
 import { InvestigationsInfo } from "api_v2/interfaces/InvestigationsInfo";
 import { Finances } from "api_v2/interfaces/finances";
 import { Technology } from "api_v2/interfaces/technology";
-
+import { Association } from "api_v2/interfaces/association";
+import { Civil } from "api_v2/interfaces/civil";
+import { Signature } from "api_v2/interfaces/signature";
 
 export enum QuestionType {
   Text = "text",
   Checkbox = "checkbox",
   Dropdown = "dropdown",
   Radio = "radio",
-  Date = "date"
+  Date = "date",
 }
 
 export type AnswerValue = string | boolean | undefined;
@@ -101,14 +103,12 @@ interface ApplicantPersonalInfo {
   firstName: string;
   middleName: string;
   suffix: string;
-
 }
 
 interface ApplicantAknowledgeInfo {
   ssn?: string;
   notApplicable: boolean;
 }
-
 
 interface ApplicantFormValues {
   personalInfo: ApplicantPersonalInfo;
@@ -121,7 +121,7 @@ interface ApplicantFormValues {
   citizenshipInfo: CitizenshipNaturalizationInfo;
   dualCitizenshipInfo: DualCitizenshipFormData;
   residencyInfo: ApplicantResidency[];
-  employmentInfo: EmploymentInfo[]
+  employmentInfo: EmploymentInfo[];
   schoolInfo: SchoolInfo;
   serviceInfo: ServiceInfo;
   militaryHistoryInfo: MilitaryHistoryInfo;
@@ -137,22 +137,23 @@ interface ApplicantFormValues {
   investigationsInfo: InvestigationsInfo;
   finances: Finances;
   technology: Technology;
+  civil: Civil;
+  association: Association;
+  signature: Signature;
+  print: boolean;
 }
-
 
 interface ServiceInfo {
   bornAfter1959: boolean | null; // null to represent unanswered state
-  registeredWithSSS: 'yes' | 'no' | 'dontKnow' | null; // null to represent unanswered state
+  registeredWithSSS: "yes" | "no" | "dontKnow" | null; // null to represent unanswered state
   registrationNumber?: string; // Optional, only required if registeredWithSSS is 'yes'
   explanation?: string; // Optional, only required if registeredWithSSS is 'no' or 'dontKnow'
 }
-
 
 interface NamesInfo {
   hasNames: boolean;
   names: ApplicantNames[];
 }
-
 
 interface ApplicantNames {
   _id: number;
@@ -168,7 +169,6 @@ interface ApplicantNames {
   isMaidenName: boolean;
   reasonChanged: string;
 }
-
 
 interface ApplicantBirthInfo {
   birthDate: string;
@@ -274,5 +274,5 @@ export type {
   ApplicantPhysicalAttributes,
   ApplicantContactInfo,
   ApplicantPassportInfo,
-  ServiceInfo
+  ServiceInfo,
 };

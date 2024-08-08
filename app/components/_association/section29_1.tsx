@@ -38,7 +38,61 @@ const RenderSection29_1: React.FC<Section29_1Props> = ({
     <div key={index} className="space-y-4 p-4 border rounded-lg">
       <h3>Entry #{index + 1}</h3>
 
-     
+      <div>
+        <label htmlFor={`activityDescription-${index}`}>Activity Description</label>
+        <textarea
+          id={`activityDescription-${index}`}
+          value={item.activityDescription}
+          onChange={handleInputChange(index, "activityDescription")}
+          readOnly={isReadOnlyField(`section29_1[${index}].activityDescription`)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor={`from-date-${index}`}>From Date</label>
+        <input
+          type="date"
+          id={`from-date-${index}`}
+          value={item.dateRange.from.date}
+          onChange={handleInputChange(index, "dateRange.from.date")}
+          readOnly={isReadOnlyField(`section29_1[${index}].dateRange.from.date`)}
+        />
+        <label htmlFor={`from-estimated-${index}`}>Estimated</label>
+        <input
+          type="checkbox"
+          id={`from-estimated-${index}`}
+          checked={item.dateRange.from.estimated}
+          onChange={handleInputChange(index, "dateRange.from.estimated")}
+          readOnly={isReadOnlyField(`section29_1[${index}].dateRange.from.estimated`)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor={`to-date-${index}`}>To Date</label>
+        <input
+          type="date"
+          id={`to-date-${index}`}
+          value={item.dateRange.to.date}
+          onChange={handleInputChange(index, "dateRange.to.date")}
+          readOnly={isReadOnlyField(`section29_1[${index}].dateRange.to.date`)}
+        />
+        <label htmlFor={`to-estimated-${index}`}>Estimated</label>
+        <input
+          type="checkbox"
+          id={`to-estimated-${index}`}
+          checked={item.dateRange.to.estimated}
+          onChange={handleInputChange(index, "dateRange.to.estimated")}
+          readOnly={isReadOnlyField(`section29_1[${index}].dateRange.to.estimated`)}
+        />
+        <label htmlFor={`present-${index}`}>Present</label>
+        <input
+          type="checkbox"
+          id={`present-${index}`}
+          checked={item.dateRange.present}
+          onChange={handleInputChange(index, "dateRange.present")}
+          readOnly={isReadOnlyField(`section29_1[${index}].dateRange.present`)}
+        />
+      </div>
 
       <button
         onClick={(event) => {

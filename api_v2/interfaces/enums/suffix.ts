@@ -20,3 +20,21 @@ export enum StateOptions {
   CA = "California",
   // Add more states
 }
+
+
+
+
+// "Black">Black
+// "Blue">Blue
+// "Brown">Brown
+// "Gray">Gray
+// "Green">Green
+// "Hazel">Hazel
+// "Maroon">Maroon
+// "Multicolored">Multicolored
+// "Pink">Pink
+// "Unknown">Unknown
+
+
+// Ft 1 - 9
+// Inches 1 - 11

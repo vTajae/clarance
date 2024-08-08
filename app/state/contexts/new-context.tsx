@@ -287,6 +287,27 @@ const defaultFormData: ApplicantFormValues = {
     illegalModification: false,
     unauthorizedUse: false,
   },
+  civil: {
+    _id: Math.random(),
+    civilCourt: false,
+  },
+  association: {
+    _id: Math.random(),
+    terrorismMember: false,
+    actsOfTerrorism: false,
+    overthrowByForce: false,
+    dedicatedViolent: false,
+    advocatesViolence: false,
+    engagedInOverthrow: false,
+    terrorismAssociate: false
+  },
+  signature: {
+    _id: Math.random(),
+    information: false,
+    medical: false,
+    credit: false
+  },
+  print: false
 };
 
 export const EmployeeProvider2: React.FC<EmployeeProviderProps> = ({
@@ -475,6 +496,10 @@ export const EmployeeProvider2: React.FC<EmployeeProviderProps> = ({
       "alcoholUse",
       "investigationsInfo",
       "finances",
+      "technology",
+      "civil",
+      "association",
+      "signature"
     ];
 
     fields.forEach((field) => {

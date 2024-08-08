@@ -50,4 +50,6 @@ interface DualCitizenshipFormData {
     isVisitCurrent: boolean;
   }
 
+  
+
   export type { DualCitizenshipFormData, CitizenshipDetail, PassportDetail, PassportUse }; 

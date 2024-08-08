@@ -1,12 +1,12 @@
 interface Association {
     _id: number;
-    section1: boolean; // (If NO, proceed to 29.2)
-    section2: boolean; // (If NO, proceed to 29.3)
-    section3: boolean; // (If NO, proceed to 29.4)
-    section4: boolean; // (If NO, proceed to 29.5)
-    section5: boolean; // (If NO, proceed to 29.6)
-    section6: boolean; // (If NO, proceed to 29.7)
-    section7: boolean;
+    terrorismMember: boolean; // (If NO, proceed to 29.2)
+    actsOfTerrorism: boolean; // (If NO, proceed to 29.3)
+    overthrowByForce: boolean; // (If NO, proceed to 29.4)
+    dedicatedViolent: boolean; // (If NO, proceed to 29.5)
+    advocatesViolence: boolean; // (If NO, proceed to 29.6)
+    engagedInOverthrow: boolean; // (If NO, proceed to 29.7)
+    terrorismAssociate: boolean;
     section29_1?: Section29_1[];
     section29_2?: Section29_2[];
     section29_3?: Section29_3[];

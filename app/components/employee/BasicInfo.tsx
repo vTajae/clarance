@@ -1,4 +1,4 @@
-import { ApplicantFormValues } from "../form86/lastTry/formDefinition";
+import { ApplicantFormValues } from "../form86/lastTry/formDefinition copy 2";
 
 interface BasicInfoProps {
   user: ApplicantFormValues;
@@ -28,6 +28,9 @@ const BasicInfo: React.FC<BasicInfoProps> = ({ user }: BasicInfoProps) => {
             </div>         
           </>
         )}
+
+        <div>
+        </div>
       </div>
     </section>
   );

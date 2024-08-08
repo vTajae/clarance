@@ -21,6 +21,8 @@
     "drizzle-orm": "^0.30.4",
     "isbot": "^4.1.0",
     "miniflare": "^3.20231030.4",
+    "pdf-lib": "^1.17.1",
+    "pdfkit": "^0.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.2",

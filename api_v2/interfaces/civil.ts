@@ -9,7 +9,7 @@ interface Civil {
     courtName: string;
     courtAddress: Address;
     description: string;
-    principalParties: string[];
+    principalParties: PrincipalParties[];
   }
   
   interface DateInfo {
@@ -29,6 +29,11 @@ interface Civil {
     state: string;
     zipCode: string;
     country: string;
+  }
+
+  interface PrincipalParties {
+    _id: number;
+    name: string;
   }
   
   export type { Civil, Section28_1, DateInfo, DateRange, Address };

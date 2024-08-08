@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Standard Form 86</title>
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+    </style>
+    </head>
+    <body>
+      <!-- nav menu -->
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
+        <div class="container">
+          <a href="https://icm-consulting.us" class="navbar-brand"
+            >ICM Consulting</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navmenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a href="#learn" class="nav-link">What You'll learn</a>
+              </li>
+              <li class="nav-item">
+                <a href="#questions" class="nav-link">Questions</a>
+              </li>
+              <li class="nav-item">
+                <a href="#instructors" class="nav-link">Instructors</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Showcase -->
+    <section class="p-5 text-center text-sm-start">
+      <div class="container">
+ 
+	
+       	
+        <body>
+
+          <p>Are you a male born after December 31, 1959?</p>
+          <p>	<input id="Section14BranchServed_11448" type="Radio" name="form1_0_Section14_1_0_area_11_RadioButtonList_6" value=0 Class="Section14 TableBranchServed Entry2 withToggle" data-target="QualifySSS"  ></input><!--11448-->Yes	</p>
+      
+          <p><input id="Section14BranchServed_11447" type="Radio" name="form1_0_Section14_1_0_area_11_RadioButtonList_6" value=1 Class="Section14 TableBranchServed Entry2 withToggle" data-hide-target="QualifySSS"  ></input><!--11447-->No		</p>
+
+
+          <div style="display:none" Class="QualifySSS" >
+          <p>Have you registered with the Selective Service System (SSS)?</p>
+          <p>	<input id="Section14Applicant_11410" type="Radio" name="form1_0_Section14_1_0_area_0_RadioButtonList_0" value=0 Class="Section14 withToggle" data-target="YesRegistration" data-hide-target="NoRegistration RegistrationUnknown"></input><!--11410-->Yes	</p>
+      
+ 
+          <p>	<input id="Section14Applicant_11409" type="Radio" name="form1_0_Section14_1_0_area_0_RadioButtonList_0" value=1 Class="Section14 withToggle" data-target="NoRegistration" data-hide-target="YesRegistration RegistrationUnknown"></input><!--11409-->No</p>  
+        
+          <p>	<input id="Section14Applicant_11408" type="Radio" name="form1_0_Section14_1_0_area_0_RadioButtonList_0" value=2 Class="Section14 withToggle" data-target="RegistrationUnknown" data-hide-target="YesRegistration NoRegistration"></input>I Don't Know if I registered	<!--11408--></p>
+      
+        </div>
+
+         <div style="display:none" class="YesRegistration">
+          <p>Provide registration number</p>
+          <input type="Text" id="Section14Applicant_11407" Class="Section14"><!--11407-->
+
+          <br>
+          <br>
+          <p>If you don't know your social security number, you can find it at <a href=" https://www.sss.gov/verify/" target="_blank">https://www.sss.gov/verify/</a> </p>
+          <p>You will need to provide your name, social security number and birthdate</p>
+        </div>
+        <div style="display:none" class="NoRegistration">
+          <p>Provide reason you have not registered</p>
+          <input type="Text" id="Section14Applicant_11406" Class="Section14"><!--11406-->
+          </div>
+      
+          <div style="display:none" class="RegistrationUnknown">
+          <p>Why is this information unknown?</p>
+          <input type="Text" id="Section14Applicant_11405" Class="Section14"><!--11405-->
+          </div>
+      
+          <!--Provide Link for SSS information-->
+      
+      
+      
+                         
+      
+</section>
+                         
+      
+</section>
+
+<footer class="foot foot-expand-lg text-light fixed-bottom bg-dark foot-dark py-3">
+
+			
+			<form>
+                <input
+                  type="button"
+                  value="Back"
+                  class="backButton"
+                  onclick="history.back()"
+                />
+              </form>
+              <button id="sendDataButton"><a href="http://127.0.0.1:3000/section15">Next</a></button>
+            <label for="ProgressBar">43% Complete</label>
+			<progress id="ProgressBar" value="12" max="28"> 43% Complete </progress>
+			</footer> 
+        
+    </div>
+		<script>
+
+
+      SSNhtml= localStorage.getItem("SSNNumber")
+      SectionHTML="Section14"              
+
+      var sendDataButton = document.querySelector("#sendDataButton");
+                   function radioValue(radioGroupName){
+          var ele= document.getElementsByName(radioGroupName)
+
+          for (i = 0; i < ele.length; i++) {
+              if (ele[i].checked) {
+                  return ele[i].value
+                  break} }
+                   
+          
+          return ''
+          
+      }
+
+      function checkboxvalue(checkboxname){
+          var checkboxhtml = document.getElementById(checkboxname)
+          
+          if(checkboxhtml.checked ==true){
+              var checkboxAsBit=1}
+          else {
+              var checkboxAsBit=0
+          }
+          console.log(checkboxAsBit)
+          return checkboxAsBit
+
+      }
+
+      function emptydata(PossibleEmpty) {
+          if (document.getElementById(PossibleEmpty).value === undefined) {
+              return '';
+          }
+          }        
+
+          sendDataButton.addEventListener("click", () => {
+                   var Section14BranchServed_11448HTML = radioValue("Section14BranchServed_11448");
+var Section14BranchServed_11447HTML = radioValue("Section14BranchServed_11447");
+var Section14Applicant_11410HTML = radioValue("Section14Applicant_11410");
+var Section14Applicant_11407HTML =document.querySelector(`[id="Section14Applicant_11407"]`).value;
+var Section14Applicant_11409HTML = radioValue("Section14Applicant_11409");
+var Section14Applicant_11406HTML =document.querySelector(`[id="Section14Applicant_11406"]`).value;
+var Section14Applicant_11408HTML = radioValue("Section14Applicant_11408");
+var Section14Applicant_11405HTML =document.querySelector(`[id="Section14Applicant_11405"]`).value;
+
+                   
+                   
+                   var obj= {
+
+
+      Table: "Section14",
+      SSN: SSNhtml,             
+      } })
+
+      function toggleHiddenByAttribute(show, attribute, values) {
+var elements = [];
+values.split(' ').forEach(function (value) {
+  var selector = '[' + attribute + '*="' + value + '"]';
+  console.log(selector)
+  elements = elements.concat(Array.from(document.querySelectorAll(selector)));
+});
+
+elements.forEach(function (element) {
+  element.style.display = show ? 'block' : 'none';
+});
+}
+
+// New function to handle radio changes
+function handleRadioChange(radio) {
+var targetAttribute = radio.getAttribute('data-target');
+var hideTargetAttribute = radio.getAttribute('data-hide-target');
+
+if (targetAttribute) {
+  toggleHiddenByAttribute(radio.checked, 'class', targetAttribute);
+}
+
+if (hideTargetAttribute) {
+  toggleHiddenByAttribute(!radio.checked, 'class', hideTargetAttribute);
+}
+}
+
+// Attach event listeners to radio buttons with the 'withToggle' or 'ToggleOff' class
+var radioButtons = document.querySelectorAll('input[type="radio"].withToggle, input[type="radio"].ToggleOff');
+console.log('Radio Buttons:', radioButtons);
+radioButtons.forEach(function (radio) {
+radio.addEventListener('change', function () {
+  console.log('Radio Change Event:', radio);
+  handleRadioChange(radio);
+});
+});
+  
+// fetch("/ToSQL", {
+//                 method: "POST",
+//                 headers: {
+//                     "Content-type": "application/json"
+//                 },
+//                 body: JSON.stringify(obj)
+//             })
+//             .then((response) => {
+//                 if (response.ok) {
+//                     console.log("Data sent successfully");
+//                     alert("Data Sent Properly!")
+//                 } else {
+//                     console.error("Failed to send data");
+//                     alert("Something went wrong")
+//                 }
+//             });                     
+                   
+// })                     
+  </script>
+
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>        
+</body>
+
+</html>
+

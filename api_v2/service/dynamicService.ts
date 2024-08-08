@@ -1,8 +1,5 @@
+import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition copy 2";
 import DynamicRepository from "../repository/dynamicRepository";
-import {
-  ApplicantFormValues,
-} from "~/components/form86/lastTry/formDefinition";
-import Utils from "~/utils/forms";
 import pkg from "lodash";
 
 interface UserServiceResponse {
@@ -13,11 +10,9 @@ interface UserServiceResponse {
 
 class DynamicService {
   private dynamicRepo: DynamicRepository;
-  private utils: Utils;
 
   constructor() {
     this.dynamicRepo = new DynamicRepository();
-    this.utils = new Utils();
   }
 
   async saveUserFormData(
@@ -41,6 +36,8 @@ class DynamicService {
     try {
       const formData: ApplicantFormValues | null =
         await this.dynamicRepo.getFormData(key);
+
+        // console.log(formData, "formData")
 
       if (formData) {
         console.log("Form data retrieved successfully for section", key);

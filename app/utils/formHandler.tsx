@@ -1,37 +1,41 @@
 import React, { useState } from "react";
 import lodash from "lodash";
-import { useEmployee } from "~/state/contexts/new-context";
-import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition";
-import { RenderBasicInfo } from "../components/RenderBasicInfo";
-import { RenderBirthInfo } from "../components/RenderBirthInfo";
-import { RenderAcknowledgementInfo } from "../components/RenderAcknowledgementInfo";
-import { RenderNames } from "../components/RenderNames";
+import { useEmployee } from "~/state/contexts/new-context copy";
+import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition copy 2";
+import { RenderBasicInfo } from "../components/Rendered/RenderBasicInfo";
+import { RenderBirthInfo } from "../components/Rendered/RenderBirthInfo";
+import { RenderAcknowledgementInfo } from "../components/Rendered/RenderAcknowledgementInfo";
+import { RenderNames } from "../components/Rendered/RenderNames";
 import FormInfo from "api_v2/interfaces/FormInfo";
 import { goToStep, selectCurrentStep } from "../state/user/formSice";
 import StepperFooter from "../components/form86/samples/stepperFooter";
 import { useDispatch, useTypedSelector } from "~/state/hooks/user";
-import { RenderPhysicalsInfo } from "~/components/RenderPhysicals";
-import { RenderContactInfo } from "~/components/RenderContactInfo";
-import { RenderPassportInfo } from "~/components/RenderPassportInfo";
-import { RenderCitizenshipInfo } from "~/components/RenderCitizenshipInfo";
-import { RenderDualCitizenshipInfo } from "~/components/RenderDuelCitizenship";
-import { RenderResidencyInfo } from "~/components/RenderResidencyInfo";
-import { RenderSchoolInfo } from "~/components/RenderSchoolInfo";
-import { RenderEmploymentInfo } from "~/components/RenderEmployementInfo";
-import { RenderServiceInfo } from "~/components/RenderServiceInfo";
-import { RenderMilitaryInfo } from "~/components/RenderMilitaryInfo";
-import { RenderPeopleThatKnow } from "~/components/RenderPeopleThatKnow";
-import { RenderRelationshipInfo } from "~/components/RenderRelationshipInfo";
-import { RenderRelativesInfo } from "~/components/RenderRelativesInfo";
-import { RenderForeignContacts } from "~/components/RenderForeignContacts";
-import { RenderForeignActivities } from "~/components/RenderForeignActivities";
-import { RenderMentalHealth } from "~/components/RenderMentalHealth";
-import { RenderPolice } from "~/components/RenderPolice";
-import { RenderDrugActivity } from "~/components/RenderDrugActivity";
-import { RenderAlcoholUse } from "~/components/RenderAlcoholUse";
-import { RenderInvestigationsInfo } from "~/components/RenderInvestigationsInfo";
-import { RenderFinances } from "~/components/RenderFinances";
-import { RenderTechnology } from "~/components/RenderTechnology";
+import { RenderPhysicalsInfo } from "~/components/Rendered/RenderPhysicals";
+import { RenderContactInfo } from "~/components/Rendered/RenderContactInfo";
+import { RenderPassportInfo } from "~/components/Rendered/RenderPassportInfo";
+import { RenderCitizenshipInfo } from "~/components/Rendered/RenderCitizenshipInfo";
+import { RenderDualCitizenshipInfo } from "~/components/Rendered/RenderDuelCitizenship";
+import { RenderResidencyInfo } from "~/components/Rendered/RenderResidencyInfo";
+import { RenderSchoolInfo } from "~/components/Rendered/RenderSchoolInfo";
+import { RenderEmploymentInfo } from "~/components/Rendered/RenderEmployementInfo";
+import { RenderServiceInfo } from "~/components/Rendered/RenderServiceInfo";
+import { RenderMilitaryInfo } from "~/components/Rendered/RenderMilitaryInfo";
+import { RenderPeopleThatKnow } from "~/components/Rendered/RenderPeopleThatKnow";
+import { RenderRelationshipInfo } from "~/components/Rendered/RenderRelationshipInfo";
+import { RenderRelativesInfo } from "~/components/Rendered/RenderRelativesInfo";
+import { RenderForeignContacts } from "~/components/Rendered/RenderForeignContacts";
+import { RenderForeignActivities } from "~/components/Rendered/RenderForeignActivities";
+import { RenderMentalHealth } from "~/components/Rendered/RenderMentalHealth";
+import { RenderPolice } from "~/components/Rendered/RenderPolice";
+import { RenderDrugActivity } from "~/components/Rendered/RenderDrugActivity";
+import { RenderAlcoholUse } from "~/components/Rendered/RenderAlcoholUse";
+import { RenderInvestigationsInfo } from "~/components/Rendered/RenderInvestigationsInfo";
+import { RenderFinances } from "~/components/Rendered/RenderFinances";
+import { RenderTechnology } from "~/components/Rendered/RenderTechnology";
+import { RenderCivil } from "~/components/Rendered/RenderCivil";
+import { RenderAssociation } from "~/components/Rendered/RenderAssociation";
+import { RenderSignature } from "~/components/Rendered/RenderSignature";
+import {RenderPrintPDF} from "~/components/Rendered/RenderPrintPDF";
 
 const { set, get, cloneDeep, merge } = lodash;
 
@@ -2512,9 +2516,9 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
       },
       technology: {
         _id: Math.random(),
-        illegalAccess: false, 
-        illegalModification: false, 
-        unauthorizedUse: false, 
+        illegalAccess: false,
+        illegalModification: false,
+        unauthorizedUse: false,
         section27_1: [
           {
             _id: Math.random(),
@@ -2559,6 +2563,219 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
               country: "",
             },
             actionDescription: "",
+          },
+        ],
+      },
+      civil: {
+        _id: Math.random(),
+        civilCourt: false,
+        section28_1: [
+          {
+            dateOfAction: {
+              date: "",
+              estimated: false,
+            },
+            courtName: "",
+            courtAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            description: "",
+            principalParties: [
+              {
+                _id: Math.random(),
+                name: "",
+              },
+            ],
+          },
+        ],
+      },
+      association: {
+        _id: Math.random(),
+        terrorismMember: false,
+        actsOfTerrorism: false,
+        overthrowByForce: false,
+        dedicatedViolent: false,
+        advocatesViolence: false,
+        engagedInOverthrow: false,
+        terrorismAssociate: false,
+        section29_1: [
+          {
+            activityDescription: "",
+            dateRange: {
+              from: {
+                date: "",
+                estimated: false,
+              },
+              to: {
+                date: "",
+                estimated: false,
+              },
+              present: false,
+            },
+          },
+        ],
+        section29_2: [
+          {
+            organizationName: "",
+            organizationAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            involvementDateRange: {
+              from: {
+                date: "",
+                estimated: false,
+              },
+              to: {
+                date: "",
+                estimated: false,
+              },
+              present: false,
+            },
+            positionsHeld: "",
+            contributions: "",
+            natureOfInvolvement: "",
+          },
+        ],
+        section29_3: [
+          {
+            reasonsForAdvocacy: "",
+            dateRange: {
+              from: {
+                date: "",
+                estimated: false,
+              },
+              to: {
+                date: "",
+                estimated: false,
+              },
+              present: false,
+            },
+          },
+        ],
+        section29_4: [
+          {
+            organizationName: "",
+            organizationAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            involvementDateRange: {
+              from: {
+                date: "",
+                estimated: false,
+              },
+              to: {
+                date: "",
+                estimated: false,
+              },
+              present: false,
+            },
+            positionsHeld: "",
+            contributions: "",
+            natureOfInvolvement: "",
+          },
+        ],
+        section29_5: [
+          {
+            organizationName: "",
+            organizationAddress: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            involvementDateRange: {
+              from: {
+                date: "",
+                estimated: false,
+              },
+              to: {
+                date: "",
+                estimated: false,
+              },
+              present: false,
+            },
+            positionsHeld: "",
+            contributions: "",
+            natureOfInvolvement: "",
+          },
+        ],
+        section29_6: [
+          {
+            activityDescription: "",
+            dateRange: {
+              from: {
+                date: "",
+                estimated: false,
+              },
+              to: {
+                date: "",
+                estimated: false,
+              },
+              present: false,
+            },
+          },
+        ],
+        section29_7: [
+          {
+            explanation: "",
+          },
+        ],
+      },
+      signature: {
+        _id: Math.random(),
+        information: false,
+        medical: false,
+        credit: false,
+        section30_1: [
+          {
+            _id: 0,
+            fullName: "",
+            dateSigned: "",
+            otherNamesUsed: "",
+            address: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            telephoneNumber: ""
+          },
+        ],
+        section30_2: [
+          {
+            _id: 0,
+            fullName: "",
+            dateSigned: "",
+            otherNamesUsed: "",
+            address: {
+              street: "",
+              city: "",
+              state: "",
+              zipCode: "",
+              country: "",
+            },
+            telephoneNumber: ""
+          },
+        ],
+        section30_3: [
+          {
+            _id: 0,
+            fullName: "",
+            dateSigned: ""
           },
         ],
       },
@@ -2649,6 +2866,16 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
         "section26_7",
       ],
       technology: ["section27_1", "section27_2", "section27_3"],
+      civil: ["section28_1"],
+      association: [
+        "section29_1",
+        "section29_2",
+        "section29_3",
+        "section29_4",
+        "section29_5",
+        "section29_6",
+        "section29_7",
+      ],
     };
 
     const findNestedTemplate = (pathSegments, templates) => {
@@ -2816,10 +3043,16 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
         return <RenderFinances {...props} />;
       case "technology":
         return <RenderTechnology {...props} />;
-      // case "NonCrimincalCourtInfo":
-      //   return <NonCrimincalCourtInfo {...props} />;
-      // case "AssociationInfo":
-      //   return <AssociationInfo {...props} />;
+      case "civil":
+        return <RenderCivil {...props} />;
+      case "association":
+        return <RenderAssociation {...props} />;
+      case "signature":
+        return <RenderSignature {...props} />;
+      case "print":
+        return <RenderPrintPDF {...props} />;
+
+
 
       default:
         return (
@@ -2828,6 +3061,7 @@ const DynamicForm3: React.FC<DynamicFormProps> = ({
           </div>
         );
     }
+    
   };
 
   const handleStepChange = (step: number) => {

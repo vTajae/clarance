@@ -1,4 +1,4 @@
-import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition";
+import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition copy 2";
 
 class DynamicRepository {
   private dbName: string;
