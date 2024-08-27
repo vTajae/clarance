@@ -1,45 +1,72 @@
 import React from "react";
-import PdfService from "../../../api_v2/service/pdfService"; // Adjust the path as necessary
-import { ApplicantFormValues } from "../form86/lastTry/formDefinition";
-import { ActionFunction, json } from "@remix-run/cloudflare";
 import { Form, useActionData } from "@remix-run/react";
-import { action } from "~/routes/_a.printPDF._index";
 import { useEmployee } from "~/state/contexts/new-context copy";
-
-
+import { ApplicantFormValues } from "../form86/lastTry/formDefinition copy 2";
+import DynamicService from "api_v2/service/dynamicService";
 
 interface FormProps {
   data: ApplicantFormValues;
 }
 
 interface ActionData {
-    success: boolean;
-    message: string;
+  success: boolean;
+  message: string;
 }
 
 const RenderPrintPDF: React.FC<FormProps> = () => {
-    const actionData = useActionData<ActionData>();
-    const { data } = useEmployee();
+  const actionData = useActionData<ActionData>();
+  const { data } = useEmployee();
 
-    // Convert data to JSON string for the hidden input field
-    const dataJSON = JSON.stringify(data);
+  // Convert data to JSON string for the hidden input field
+  const dataJSON = JSON.stringify(data);
 
-    return (
-      <div>
-        <h1>{actionData?.message}</h1>
-        {actionData?.message && <p>{actionData.message}</p>}
-        <Form method="post" action="/printPDF">
-          {/* Include form fields for the PDF data here */}
-          <input type="hidden" name="data" value={dataJSON} />
+  const ClearForm = async ()  => {
+
+    // Clear the form data from the IndexedDB
+    const dynamicService = new DynamicService();
+    await dynamicService.deleteFormData();
+
+    window.location.reload();
+  }
+
+
+  return (
+    <div>
+      <h1 className="text-2xl font-semibold text-gray-800 mb-4">
+        {actionData?.message}
+      </h1>
+      {actionData?.message && (
+        <p className="text-gray-600 mb-6">{actionData.message}</p>
+      )}
+      <Form method="post" action="/printPDF">
+        <input type="hidden" name="data" value={dataJSON} />
+        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
           <button
-                type="submit"
-                className="px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-600 transition duration-150 ease-in-out"
-              >
-           Generate PDF
-              </button>
-        </Form>
-      </div>
-    );
+            type="submit"
+            name="actionType"
+            value="generatePDF"
+            className="px-6 py-3 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition duration-150 ease-in-out shadow-md"
+          >
+            Generate PDF
+          </button>
+          <button
+            type="submit"
+            name="actionType"
+            value="generateJSON"
+            className="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-150 ease-in-out shadow-md"
+          >
+            Generate JSON
+          </button>
+          <button
+           onClick={() => ClearForm()}
+            className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-150 ease-in-out shadow-md"
+          >
+           Clear IndexDB
+          </button>
+        </div>
+      </Form>
+    </div>
+  );
 };
 
 export { RenderPrintPDF };

@@ -59,16 +59,16 @@ class DynamicService {
     }
   }
 
-  async deleteUserFormData(section: string): Promise<UserServiceResponse> {
-    try {
-      await this.dynamicRepo.deleteFormData(section);
-      console.log("Form data deleted successfully for section", section);
-      return { success: true, message: "Form data deleted successfully." };
-    } catch (error) {
-      console.error("Error deleting form data:", error);
-      return { success: false, message: "Failed to delete form data." };
-    }
-  }
+  // async deleteUserFormData(section: string): Promise<UserServiceResponse> {
+  //   try {
+  //     await this.dynamicRepo.deleteFormData(section);
+  //     console.log("Form data deleted successfully for section", section);
+  //     return { success: true, message: "Form data deleted successfully." };
+  //   } catch (error) {
+  //     console.error("Error deleting form data:", error);
+  //     return { success: false, message: "Failed to delete form data." };
+  //   }
+  // }
 
   async updateUserData(
     section: string,
@@ -154,6 +154,18 @@ class DynamicService {
         success: false,
         message: "Failed to update form data due to a client-side error.",
       };
+    }
+  }
+
+
+  async deleteFormData(): Promise<UserServiceResponse> {
+    try {
+      await this.dynamicRepo.deleteDatabase();
+      console.log("Form data deleted successfully");
+      return { success: true, message: "Form data deleted successfully." };
+    } catch (error) {
+      console.error("Error deleting form data:", error);
+      return { success: false, message: "Failed to delete form data." };
     }
   }
   

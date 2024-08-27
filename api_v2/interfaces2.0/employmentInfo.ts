@@ -2,7 +2,14 @@ import { Field } from "~/components/form86/lastTry/formDefinition copy 2";
 
 interface EmploymentInfo {
   _id: number;
-  employmentActivity: EmploymentActivity;
+  section13A?: Section13A[];
+  section13B?: Section13B; // Undo Undefined Tagg
+  section13C?: Section13C; // Undo Undefined Tagg
+}
+
+interface Section13A {
+  _id: number;
+  employmentActivity?: EmploymentActivity; // Undo Undefined Tagg
   otherExplanation?: Field<string>;
   section13A1?: Section13A1;
   section13A2?: Section13A2;
@@ -10,41 +17,40 @@ interface EmploymentInfo {
   section13A4?: Section13A4;
   section13A5?: Section13A5;
   section13A6?: Section13A6;
-  section13B: Section13B;
-  section13C: Section13C;
 }
 
 interface DateInfo {
   date: Field<string>;
-  estimated: Field<"YES" | "NO">;
+  estimated: Field<"Yes" | "No">;
+  present?: Field<"Yes" | "No">;
 }
 
 interface EmploymentEntry {
   _id: number;
   fromDate: Field<string>;
   toDate: Field<string>;
-  present: Field<"YES" | "NO">;
-  estimated: Field<"YES" | "NO">;
+  present: Field<"Yes" | "No">;
+  estimated: Field<"Yes" | "No">;
   agencyName: Field<string>;
   positionTitle: Field<string>;
   location: Address;
 }
 
 interface Section13B {
-  hasFormerFederalEmployment: Field<"YES" | "NO">;
+  hasFormerFederalEmployment: Field<"Yes" | "No">;
   employmentEntries: EmploymentEntry[];
 }
 
 interface EmploymentRecord {
-  fired: Field<"YES" | "NO">;
-  quitAfterToldWouldBeFired: Field<"YES" | "NO">;
-  leftByMutualAgreementMisconduct: Field<"YES" | "NO">;
-  leftByMutualAgreementPerformance: Field<"YES" | "NO">;
-  writtenWarning: Field<"YES" | "NO">;
+  fired: Field<"Yes" | "No">;
+  quitAfterToldWouldBeFired: Field<"Yes" | "No">;
+  leftByMutualAgreementMisconduct: Field<"Yes" | "No">;
+  leftByMutualAgreementPerformance: Field<"Yes" | "No">;
+  writtenWarning: Field<"Yes" | "No">;
 }
 
 interface Section13C {
-  employmentRecordIssues: Field<"YES" | "NO">;
+  employmentRecordIssues: Field<"Yes" | "No">;
   employmentRecord: EmploymentRecord;
 }
 
@@ -62,53 +68,52 @@ type EmploymentActivity = Field<
 interface Section13A1 {
   fromDate: DateInfo;
   toDate: DateInfo;
-  present: Field<"YES" | "NO">;
   employmentStatus: EmploymentStatus;
   dutyStation: Field<string>;
   rankOrPosition: Field<string>;
   address: Address;
   telephone: Telephone;
-  apoFpoAddress: ApoFpoAddress;
-  supervisor: Supervisor;
+  aLocation?: Address;
+  supervisor: Supervisor13A1;
+  hasAPOFPOAddress: Field<"YES " | "NO (If NO, proceed to (b))">;
+  apoFPOAddress?: ApoFpoAddress;
 }
 
 interface Section13A2 {
   fromDate: DateInfo;
   toDate: DateInfo;
-  present: Field<"YES" | "NO">;
   employmentStatus: EmploymentStatus;
   positionTitle: Field<string>;
   employerName: Field<string>;
   employerAddress: Address;
   telephone: Telephone;
+  periodsNotApplicable: Field<"Yes" | "No">;
   additionalPeriods: AdditionalPeriod[];
   physicalWorkAddress: PhysicalWorkAddress;
+  supervisor: Supervisor13A2;
 }
 
 interface Section13A3 {
   fromDate: DateInfo;
   toDate: DateInfo;
-  present: Field<"YES" | "NO">;
   employmentStatus: EmploymentStatus;
   positionTitle: Field<string>;
   employmentName: Field<string>;
   employmentAddress: Address;
   telephone: Telephone;
   physicalWorkAddress: PhysicalWorkAddress;
-  apoFpoAddress: ApoFpoAddress;
   selfEmploymentVerifier: SelfEmploymentVerifier;
 }
 
 interface Section13A4 {
   fromDate: DateInfo;
   toDate: DateInfo;
-  present: Field<"YES" | "NO">;
   verifier: Verifier;
 }
 
 interface Section13A5 {
   reasonForLeaving: Field<string>;
-  incidentInLastSevenYears: Field<"YES" | "NO">;
+  incidentInLastSevenYears: Field<"YES " | "NO (If NO, proceed to 13A.6)">;
   incidentDetails?: IncidentDetails[];
 }
 
@@ -121,7 +126,7 @@ interface IncidentDetails {
   type: IncidentType;
   reason: Field<string>;
   departureDate: Field<string>;
-  estimated: Field<"YES" | "NO">;
+  estimated: Field<"Yes" | "No">;
 }
 
 interface WarningDetails {
@@ -129,25 +134,29 @@ interface WarningDetails {
   date: DateInfo;
 }
 
-type IncidentType = Field<
-  | "fired"
-  | "quit"
-  | "mutualAgreementMisconduct"
-  | "mutualAgreementUnsatisfactory"
->;
+// type IncidentType = Field<
+//   | "fired"
+//   | "quit"
+//   | "mutualAgreementMisconduct"
+//   | "mutualAgreementUnsatisfactory"
+// >;
+
+type IncidentType = Field<"Yes" | "No">;
 
 interface AdditionalPeriod {
   _id: number;
   fromDate: DateInfo;
   toDate: DateInfo;
-  present: Field<"YES" | "NO">;
   positionTitle: Field<string>;
   supervisor: Field<string>;
 }
 
 interface PhysicalWorkAddress {
-  differentThanEmployer: Field<"YES" | "NO">;
-  address: Address;
+  differentThanEmployer: Field<"YES" | "NO (If NO, proceed to (b))">;
+  aLocation?: Address;
+  hasApoFpoAddress: Field<"YES " | "NO">;
+  b1Location?: Address;
+  apoFpoAddress?: ApoFpoAddress;
   telephone: Telephone;
 }
 
@@ -155,13 +164,16 @@ interface SelfEmploymentVerifier {
   lastName: Field<string>;
   firstName: Field<string>;
   address: Address;
+  aLocation?: Address;
   telephone: Telephone;
-  apoFpoAddress: ApoFpoAddress;
+  hasAPOFPOAddress: Field<"YES " | "NO">;
+  apoFpoAddress?: ApoFpoAddress;
 }
 
 interface Verifier {
-  hasApoAddress: Field<"YES" | "NO">;
-  apoFpoAddress: ApoFpoAddress;
+  hasApoFpoAddress: Field<"YES " | "NO">;
+  apoFpoAddress: PartialApoFpoAddress;
+  aLocation: Address;
   lastName: Field<string>;
   firstName: Field<string>;
   address: Address;
@@ -169,8 +181,8 @@ interface Verifier {
 }
 
 interface EmploymentStatus {
-  fullTime: Field<"YES" | "NO">;
-  partTime: Field<"YES" | "NO">;
+  fullTime: Field<"Yes" | "No">;
+  partTime: Field<"Yes" | "No">;
 }
 
 interface Address {
@@ -184,32 +196,52 @@ interface Address {
 interface Telephone {
   number: Field<string>;
   extension?: Field<string>;
-  internationalOrDsn: Field<"YES" | "NO">;
-  day: Field<"YES" | "NO">;
-  night: Field<"YES" | "NO">;
+  internationalOrDsn: Field<"Yes" | "No">;
+  day: Field<"Yes" | "No">;
+  night: Field<"Yes" | "No">;
 }
 
 interface ApoFpoAddress {
-  dutyLocation: Address;
-  physicalWorkLocation: Address;
+  street: Field<string>;
   apoOrFpo: Field<string>;
   apoFpoStateCode: Field<string>;
+  zipCode: Field<string>;
 }
 
-interface Supervisor {
+interface PartialApoFpoAddress {
+  dutyLocation: Field<string>;
+  apoOrFpo: Field<string>;
+  apoFpoStateCode: Field<string>;
+  zipCode: Field<string>;
+}
+
+
+interface Supervisor13A1 {
   name: Field<string>;
   rankOrPosition: Field<string>;
   email: Field<string>;
-  emailUnknown: Field<"YES" | "NO">;
+  emailUnknown: Field<"Yes" | "No">;
   phone: Telephone;
   physicalWorkLocation: Address;
+  apoFpoAddress?: Address;
+}
+
+interface Supervisor13A2 {
+  name: Field<string>;
+  rankOrPosition: Field<string>;
+  email: Field<string>;
+  emailUnknown: Field<"Yes" | "No">;
+  phone: Telephone;
+  hasAPOFPOAddress: Field<"YES " | "NO">;
+  physicalWorkLocation: Address;
+  aLocation?: Address;
+  apoFPOAddress?: ApoFpoAddress;
 }
 
 export type {
   IncidentDetails,
   AdditionalPeriod,
   Address,
-  Supervisor,
   ApoFpoAddress,
   Telephone,
   Verifier,

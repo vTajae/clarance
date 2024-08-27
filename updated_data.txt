@@ -1,0 +1,1464 @@
+{
+    "_id": 2,
+    "employmentActivity": {
+        "value": "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)",
+        "id": "",
+        "type": "PDFRadioGroup"
+    },
+    "otherExplanation": {
+        "value": "13OtherExplanation",
+        "id": "",
+        "type": "PDFTextField"
+    },
+    "section13A1": {
+        "fromDate": {
+            "date": {
+                "value": "13A1StartDate",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "estimated": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "toDate": {
+            "date": {
+                "value": "13A1ToDate",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "estimated": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "present": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "employmentStatus": {
+            "fullTime": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "partTime": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "dutyStation": {
+            "value": "13A1DutyStation",
+            "id": "",
+            "type": "PDFTextField"
+        },
+        "rankOrPosition": {
+            "value": "13A1RankTitle",
+            "id": "",
+            "type": "PDFTextField"
+        },
+        "address": {
+            "street": {
+                "value": "13A1DutyStreet",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "city": {
+                "value": "13A1DutyCity",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "state": {
+                "value": "AL",
+                "id": "",
+                "type": "PDFDropdown"
+            },
+            "zipCode": {
+                "value": "13A1DutyZip",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "country": {
+                "value": "Afghanistan",
+                "id": "",
+                "type": "PDFDropdown"
+            }
+        },
+        "telephone": {
+            "number": {
+                "value": "13A1Phone",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "extension": {
+                "value": "1",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "internationalOrDsn": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "day": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "night": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "aLocation": {
+            "street": {
+                "value": "13A1SupervisorAddress",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "city": {
+                "value": "13A1SupervisorCity",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "state": {
+                "value": "DC",
+                "id": "",
+                "type": "PDFDropdown"
+            },
+            "zipCode": {
+                "value": "13A1Superviso",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "country": {
+                "value": "Argentina",
+                "id": "",
+                "type": "PDFDropdown"
+            }
+        },
+        "hasAPOFPOAddress": {
+            "value": "YES ",
+            "id": "",
+            "type": "PDFRadioGroup"
+        },
+        "apoFPOAddress": {
+            "street": {
+                "value": "10512",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "apoOrFpo": {
+                "value": "APO",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "apoFpoStateCode": {
+                "value": "APO/FPO Europe",
+                "id": "",
+                "type": "PDFDropdown"
+            },
+            "zipCode": {
+                "value": "bZip",
+                "id": "",
+                "type": "PDFTextField"
+            }
+        },
+        "supervisor": {
+            "name": {
+                "value": "13A1SupervisorName",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "rankOrPosition": {
+                "value": "13A1SupervisorRankTitle",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "email": {
+                "value": "13A1SupervisorEmail",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "emailUnknown": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "phone": {
+                "number": {
+                    "value": "13A1SupervisorPhone",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "extension": {
+                    "value": "13A1Sup",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "internationalOrDsn": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "day": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "night": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            "physicalWorkLocation": {
+                "street": {
+                    "value": "13A1SupervisorAddress",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "13A1SupervisorCity",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "DC",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "13A1Superviso",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Argentina",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "apoFpoAddress": {
+                "street": {
+                    "value": "a13A1Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "a13A1City",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "AS",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "a13A1Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Angola",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            }
+        }
+    },
+    "section13A2": {
+        "fromDate": {
+            "date": {
+                "value": "13A2FromDate",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "estimated": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "toDate": {
+            "date": {
+                "value": "13A2ToDate",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "estimated": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "present": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "employmentStatus": {
+            "fullTime": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "partTime": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "positionTitle": {
+            "value": "13A2RecentTitle",
+            "id": "",
+            "type": "PDFTextField"
+        },
+        "employerName": {
+            "value": "13A2RecentEmployer",
+            "id": "",
+            "type": "PDFTextField"
+        },
+        "employerAddress": {
+            "street": {
+                "value": "13A2Street",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "city": {
+                "value": "13A2City",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "state": {
+                "value": "AK",
+                "id": "",
+                "type": "PDFDropdown"
+            },
+            "zipCode": {
+                "value": "13A2Zip",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "country": {
+                "value": "Afghanistan",
+                "id": "",
+                "type": "PDFDropdown"
+            }
+        },
+        "telephone": {
+            "number": {
+                "value": "13A2Phone",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "extension": {
+                "value": "1",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "internationalOrDsn": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "day": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "night": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "periodsNotApplicable": {
+            "value": "Yes",
+            "id": "",
+            "type": "PDFCheckBox"
+        },
+        "additionalPeriods": [
+            {
+                "_id": 1,
+                "fromDate": {
+                    "date": {
+                        "value": "13A2FromDate1",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                },
+                "toDate": {
+                    "date": {
+                        "value": "13A2ToDate1",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                },
+                "positionTitle": {
+                    "value": "PositionTitle1",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "supervisor": {
+                    "value": "Supervisor1",
+                    "id": "",
+                    "type": "PDFTextField"
+                }
+            },
+            {
+                "_id": 2,
+                "fromDate": {
+                    "date": {
+                        "value": "13A2FromDate2",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                },
+                "toDate": {
+                    "date": {
+                        "value": "13A2ToDate2",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                },
+                "positionTitle": {
+                    "value": "PositionTitle2",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "supervisor": {
+                    "value": "Supervisor2",
+                    "id": "",
+                    "type": "PDFTextField"
+                }
+            },
+            {
+                "_id": 3,
+                "fromDate": {
+                    "date": {
+                        "value": "13A2FromDate3",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                },
+                "toDate": {
+                    "date": {
+                        "value": "13A2ToDate3",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                },
+                "positionTitle": {
+                    "value": "PositionTitle3",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "supervisor": {
+                    "value": "Supervisor3",
+                    "id": "",
+                    "type": "PDFTextField"
+                }
+            },
+            {
+                "_id": 4,
+                "fromDate": {
+                    "date": {
+                        "value": "13A2FromDate4",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                },
+                "toDate": {
+                    "date": {
+                        "value": "13A2ToDate4",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                },
+                "positionTitle": {
+                    "value": "PositionTitle4",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "supervisor": {
+                    "value": "Supervisor4",
+                    "id": "",
+                    "type": "PDFTextField"
+                }
+            }
+        ],
+        "physicalWorkAddress": {
+            "differentThanEmployer": {
+                "value": "NO (If NO, proceed to (b))",
+                "id": "",
+                "type": "PDFRadioGroup"
+            },
+            "aLocation": {
+                "street": {
+                    "value": "a13A2Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "a13A2City",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "AL",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "a13A2Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Albania",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "telephone": {
+                "number": {
+                    "value": "a13A2Phone",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "extension": {
+                    "value": "1",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "internationalOrDsn": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "day": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "night": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            "b1Location": {
+                "street": {
+                    "value": "b1Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "b1City",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "AK",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "b1Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Afghanistan",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "apoFpoAddress": {
+                "street": {
+                    "value": "b2Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "apoFpoStateCode": {
+                    "value": "b2Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "apoOrFpo": {
+                    "value": "b2Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "zipCode": {
+                    "value": "b2Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                }
+            },
+            "hasApoFpoAddress": {
+                "value": "NO",
+                "id": "",
+                "type": "PDFRadioGroup"
+            }
+        },
+        "supervisor": {
+            "name": {
+                "value": "13A2SupervisorName",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "rankOrPosition": {
+                "value": "13A2SupervisorTitle",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "email": {
+                "value": "13A2SupervisorEmail",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "emailUnknown": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "phone": {
+                "number": {
+                    "value": "13A2SupervisorPhone",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "extension": {
+                    "value": "1",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "internationalOrDsn": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "day": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "night": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            "physicalWorkLocation": {
+                "street": {
+                    "value": "13A2SupervisorStreet",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "13A2SupervisorCity",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "CA",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "13A2Supervisor",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Bahrain",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "hasAPOFPOAddress": {
+                "value": "YES ",
+                "id": "",
+                "type": "PDFRadioGroup"
+            },
+            "apoFPOAddress": {
+                "street": {
+                    "value": "b13A2SupervisorAddress",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "apoOrFpo": {
+                    "value": "b13A2SupervisorAPO",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "apoFpoStateCode": {
+                    "value": "APO/FPO Pacific",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "b13A2SupervisorZip",
+                    "id": "",
+                    "type": "PDFTextField"
+                }
+            },
+            "aLocation": {
+                "street": {
+                    "value": "13A2SupervisorStreet",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "13A2SupervisorCity",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "CA",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "13A2Supervisor",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Bahrain",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            }
+        }
+    },
+    "section13A3": {
+        "fromDate": {
+            "date": {
+                "value": "FromDate",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "estimated": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "toDate": {
+            "date": {
+                "value": "ToDate",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "estimated": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "present": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "employmentStatus": {
+            "fullTime": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "partTime": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "positionTitle": {
+            "value": "RecentPositionTitle",
+            "id": "",
+            "type": "PDFTextField"
+        },
+        "employmentName": {
+            "value": "NameOfEmployment",
+            "id": "",
+            "type": "PDFTextField"
+        },
+        "employmentAddress": {
+            "street": {
+                "value": "EmploymentStreet",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "city": {
+                "value": "EmploymentCity",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "state": {
+                "value": "AK",
+                "id": "",
+                "type": "PDFDropdown"
+            },
+            "zipCode": {
+                "value": "EmploymentZip",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "country": {
+                "value": "Afghanistan",
+                "id": "",
+                "type": "PDFDropdown"
+            }
+        },
+        "telephone": {
+            "number": {
+                "value": "EmploymentPhone",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "extension": {
+                "value": "EXT",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "internationalOrDsn": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "day": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "night": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "physicalWorkAddress": {
+            "differentThanEmployer": {
+                "value": "YES",
+                "id": "",
+                "type": "PDFRadioGroup"
+            },
+            "aLocation": {
+                "street": {
+                    "value": "aWorkStreet",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "aWorkCity",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "AR",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "aWorkZip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Albania",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "telephone": {
+                "number": {
+                    "value": "aWorkPhone",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "extension": {
+                    "value": "aEXT",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "internationalOrDsn": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "day": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "night": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            "hasApoFpoAddress": {
+                "value": "YES ",
+                "id": "",
+                "type": "PDFRadioGroup"
+            },
+            "b1Location": {
+                "street": {
+                    "value": "b1Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "b1City",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "DC",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "b1Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Bahrain",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "apoFpoAddress": {
+                "street": {
+                    "value": "b2Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "apoOrFpo": {
+                    "value": "b2APO",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "apoFpoStateCode": {
+                    "value": "APO/FPO America",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "b2Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                }
+            }
+        },
+        "selfEmploymentVerifier": {
+            "lastName": {
+                "value": "VerifyerLastName",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "firstName": {
+                "value": "VerifyerFirstName",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "address": {
+                "street": {
+                    "value": "VerifyerStreet",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "VeryfierCity",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "CT",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "VeryfierZip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Argentina",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "telephone": {
+                "number": {
+                    "value": "VeryfierPhone",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "extension": {
+                    "value": "VeryfierEX",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "internationalOrDsn": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "day": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "night": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            "aLocation": {
+                "street": {
+                    "value": "13A3Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "13A3City",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "CT",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "13A3Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Argentina",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "hasAPOFPOAddress": {
+                "value": "YES ",
+                "id": "",
+                "type": "PDFRadioGroup"
+            },
+            "apoFpoAddress": {
+                "street": {
+                    "value": "b2Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "apoOrFpo": {
+                    "value": "b2APO",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "apoFpoStateCode": {
+                    "value": "APO/FPO America",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "b2Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                }
+            }
+        }
+    },
+    "section13A4": {
+        "fromDate": {
+            "date": {
+                "value": "13A4FromDate",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "estimated": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "toDate": {
+            "date": {
+                "value": "13A4ToDate",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "estimated": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "present": {
+                "value": "Yes",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "verifier": {
+            "lastName": {
+                "value": "13A4LName",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "firstName": {
+                "value": "13A4FName",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "address": {
+                "street": {
+                    "value": "13A4Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "13A4City",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "AL",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "13A4Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Antarctica",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "telephone": {
+                "number": {
+                    "value": "13A4Phone",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "extension": {
+                    "value": "13A4Ext",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "internationalOrDsn": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "day": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "night": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            "hasApoFpoAddress": {
+                "value": "YES ",
+                "id": "",
+                "type": "PDFRadioGroup"
+            },
+            "aLocation": {
+                "street": {
+                    "value": "a13A4Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "a13A4City",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "AR",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "a13A4Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "Anguilla",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "apoFpoAddress": {
+                "dutyLocation": {
+                    "value": "b13A4Street",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "apoOrFpo": {
+                    "value": "b13A4APO",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "apoFpoStateCode": {
+                    "value": "APO/FPO Pacific",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "b13A4Zip",
+                    "id": "",
+                    "type": "PDFTextField"
+                }
+            }
+        }
+    },
+    "section13A5": {
+        "reasonForLeaving": {
+            "value": "13A5ResonForLEaving",
+            "id": "",
+            "type": "PDFTextField"
+        },
+        "incidentInLastSevenYears": {
+            "value": "NO (If NO, proceed to 13A.6)",
+            "id": "",
+            "type": "PDFRadioGroup"
+        },
+        "incidentDetails": [
+            {
+                "type": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "reason": {
+                    "value": "13A5ReasonForBeingFired",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "departureDate": {
+                    "value": "13A5DateFired",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "estimated": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            {
+                "type": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "reason": {
+                    "value": "13A5ReasonForQuitting",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "departureDate": {
+                    "value": "13A5DateQuit",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "estimated": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            {
+                "type": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "reason": {
+                    "value": "13A5ChargesorAllegations",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "departureDate": {
+                    "value": "13A5DateLeft",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "estimated": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            {
+                "type": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "reason": {
+                    "value": "13A5ReasonforUnsatisfactory",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "departureDate": {
+                    "value": "13A5DateLeftMutual",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "estimated": {
+                    "value": "Yes",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            }
+        ]
+    },
+    "section13A6": {
+        "warnedInLastSevenYears": {
+            "value": "YES",
+            "id": "",
+            "type": "PDFRadioGroup"
+        },
+        "warningDetails": [
+            {
+                "reason": {
+                    "value": "13A6Reason1",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "date": {
+                    "date": {
+                        "value": "13A6Date1",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                }
+            },
+            {
+                "reason": {
+                    "value": "13A6Reason2",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "date": {
+                    "date": {
+                        "value": "13A6Date2",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                }
+            },
+            {
+                "reason": {
+                    "value": "13A6Reason3",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "date": {
+                    "date": {
+                        "value": "13A6Date3",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                }
+            },
+            {
+                "reason": {
+                    "value": "13A6Reason4",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "date": {
+                    "date": {
+                        "value": "13A6Date4",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "Yes",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                }
+            }
+        ]
+    }
+}

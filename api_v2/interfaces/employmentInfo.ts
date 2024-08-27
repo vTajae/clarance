@@ -2,7 +2,7 @@ interface EmploymentInfo {
   _id: number;
   employmentActivity: EmploymentActivity;
   otherExplanation?: string; 
-  section13A1?: Section13A1;
+  section13A1?: Section13A1[];
   section13A2?: Section13A2;
   section13A3?: Section13A3;
   section13A4?: Section13A4;

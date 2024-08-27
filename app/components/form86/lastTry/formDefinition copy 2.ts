@@ -45,7 +45,7 @@ interface ApplicantFormValues {
   citizenshipInfo?: CitizenshipNaturalizationInfo;
   dualCitizenshipInfo?: DualCitizenshipFormData;
   residencyInfo?: ApplicantResidency[];
-  employmentInfo?: EmploymentInfo[];
+  employmentInfo?: EmploymentInfo;
   schoolInfo?: SchoolInfo;
   serviceInfo?: ServiceInfo;
   militaryHistoryInfo?: MilitaryHistoryInfo;

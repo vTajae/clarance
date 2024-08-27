@@ -25,7 +25,7 @@ class DynamicRepository {
     });
   }
 
-   async saveFormData(
+  async saveFormData(
     section: string,
     data: ApplicantFormValues
   ): Promise<boolean> {
@@ -39,9 +39,7 @@ class DynamicRepository {
     });
   }
 
-  async getFormData(
-    section: string
-  ): Promise<ApplicantFormValues | null> {
+  async getFormData(section: string): Promise<ApplicantFormValues | null> {
     const db = await this.openDB();
     const transaction = db.transaction(["FormData"], "readonly");
     const store = transaction.objectStore("FormData");
@@ -53,16 +51,28 @@ class DynamicRepository {
     });
   }
 
-  async deleteFormData(section: string): Promise<boolean> {
-    const db = await this.openDB();
-    const transaction = db.transaction(["FormData"], "readwrite");
-    const store = transaction.objectStore("FormData");
+  async deleteDatabase(): Promise<boolean> {
     return new Promise((resolve, reject) => {
-      const request = store.delete(section);
+      if (!window.indexedDB) {
+        return reject(
+          new Error(
+            "Your browser doesn't support a stable version of IndexedDB."
+          )
+        );
+      }
+
+      const request = indexedDB.deleteDatabase(this.dbName);
       request.onerror = () => reject(request.error);
       request.onsuccess = () => resolve(true);
+      request.onblocked = () =>
+        reject(
+          new Error(
+            "Database deletion blocked. Close all tabs or windows that have this database open."
+          )
+        );
     });
   }
+  
 }
 
 export default DynamicRepository;

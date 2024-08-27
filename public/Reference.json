@@ -1333,8 +1333,7 @@
   {
     "name": "form1[0].Section10-2[0].SSN[0]",
     "id": "9726 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].Section10-2[0].DropDownList14[0]",
@@ -3834,56 +3833,49 @@
   {
     "name": "form1[0].section_13_1-2[0].TextField11[0]",
     "id": "10270 0 R",
-    "type": "PDFTextField",
-    "value": "13A1SupervisorName"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[1]",
     "id": "10269 0 R",
-    "type": "PDFTextField",
-    "value": "13A1SupervisorRank"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].p3-t68[0]",
     "id": "10268 0 R",
-    "type": "PDFTextField",
-    "value": "13A1SupervisorPhone"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[2]",
     "id": "10267 0 R",
-    "type": "PDFTextField",
-    "value": "13A1Sup"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[3]",
     "id": "10266 0 R",
-    "type": "PDFTextField",
-    "value": "13A1SupervisorAddress"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[4]",
     "id": "10265 0 R",
-    "type": "PDFTextField",
-    "value": "13A1SupervisorCity"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].School6_State[0]",
     "id": "10264 0 R",
     "type": "PDFDropdown",
-    "value": "DC"
+    "value": []
   },
   {
     "name": "form1[0].section_13_1-2[0].DropDownList18[0]",
     "id": "10263 0 R",
     "type": "PDFDropdown",
-    "value": "Argentina"
+    "value": []
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[5]",
     "id": "10262 0 R",
-    "type": "PDFTextField",
-    "value": "13A1Superviso"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[6]",
@@ -3916,49 +3908,46 @@
     "name": "form1[0].section_13_1-2[0].#field[15]",
     "id": "10256 0 R",
     "type": "PDFCheckBox",
-    "value": "YES"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].#field[16]",
     "id": "10255 0 R",
     "type": "PDFCheckBox",
-    "value": "YES"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].#field[17]",
     "id": "10254 0 R",
     "type": "PDFCheckBox",
-    "value": "YES"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[9]",
     "id": "10253 0 R",
-    "type": "PDFTextField",
-    "value": "13A1DutyStreet"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[10]",
     "id": "10252 0 R",
-    "type": "PDFTextField",
-    "value": "13A1DutyCity"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].School6_State[2]",
     "id": "10251 0 R",
     "type": "PDFDropdown",
-    "value": "AL"
+    "value": []
   },
   {
     "name": "form1[0].section_13_1-2[0].DropDownList20[0]",
     "id": "10250 0 R",
     "type": "PDFDropdown",
-    "value": "Afghanistan"
+    "value": []
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[11]",
     "id": "10249 0 R",
-    "type": "PDFTextField",
-    "value": "13A1DutyZip"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].SSN[0]",
@@ -3968,44 +3957,41 @@
   {
     "name": "form1[0].section_13_1-2[0].p3-t68[1]",
     "id": "10247 0 R",
-    "type": "PDFTextField",
-    "value": "13A1Phone"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[12]",
     "id": "10246 0 R",
-    "type": "PDFTextField",
-    "value": "1"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].#field[26]",
     "id": "10245 0 R",
     "type": "PDFCheckBox",
-    "value": "YES"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].#field[27]",
     "id": "10244 0 R",
     "type": "PDFCheckBox",
-    "value": "YES"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].#field[28]",
     "id": "10243 0 R",
     "type": "PDFCheckBox",
-    "value": "YES"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].p3-t68[2]",
     "id": "10242 0 R",
-    "type": "PDFTextField",
-    "value": "13A1SupervisorEmail"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].#field[30]",
     "id": "10241 0 R",
     "type": "PDFCheckBox",
-    "value": "YES"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[13]",
@@ -4022,79 +4008,72 @@
     "name": "form1[0].section_13_1-2[0].#field[33]",
     "id": "10238 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].p13a-1-1cb[0]",
     "id": "10237 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].From_Datefield_Name_2[0]",
     "id": "10236 0 R",
-    "type": "PDFTextField",
-    "value": "13A1StartDat"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].#field[36]",
     "id": "10235 0 R",
     "type": "PDFCheckBox",
-    "value": "YES"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].#field[37]",
     "id": "10234 0 R",
     "type": "PDFCheckBox",
-    "value": "YES"
+    "value": "No"
   },
   {
     "name": "form1[0].section_13_1-2[0].From_Datefield_Name_2[1]",
     "id": "10233 0 R",
-    "type": "PDFTextField",
-    "value": "13A1ToDate"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].p3-t68[3]",
     "id": "10232 0 R",
-    "type": "PDFTextField",
-    "value": "13A1RankTitle"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].p3-t68[4]",
     "id": "10231 0 R",
-    "type": "PDFTextField",
-    "value": "13A1DustyStation"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].RadioButtonList[0]",
     "id": "17167 0 R",
-    "type": "PDFRadioGroup",
-    "value": "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)"
+    "type": "PDFRadioGroup"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[14]",
     "id": "10220 0 R",
-    "type": "PDFTextField",
-    "value": "a13A1Street"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[15]",
     "id": "10219 0 R",
-    "type": "PDFTextField",
-    "value": "a13A1City"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].School6_State[3]",
     "id": "10218 0 R",
     "type": "PDFDropdown",
-    "value": "AS"
+    "value": []
   },
   {
     "name": "form1[0].section_13_1-2[0].DropDownList4[0]",
     "id": "10217 0 R",
     "type": "PDFDropdown",
-    "value": "Angola"
+    "value": []
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[16]",
@@ -4104,20 +4083,18 @@
   {
     "name": "form1[0].section_13_1-2[0].TextField11[17]",
     "id": "10215 0 R",
-    "type": "PDFTextField",
-    "value": "APO"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].School6_State[4]",
     "id": "10214 0 R",
     "type": "PDFDropdown",
-    "value": "APO/FPO Europe"
+    "value": []
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[18]",
     "id": "10213 0 R",
-    "type": "PDFTextField",
-    "value": "a13A1Zip"
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section_13_1-2[0].TextField11[19]",
@@ -4147,32 +4124,29 @@
   {
     "name": "form1[0].section13_2-2[0].TextField11[2]",
     "id": "10307 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].TextField11[3]",
     "id": "10306 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].School6_State[0]",
     "id": "10305 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_2-2[0].DropDownList16[0]",
     "id": "10304 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_2-2[0].TextField11[4]",
     "id": "10303 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].TextField11[5]",
@@ -4204,92 +4178,85 @@
   {
     "name": "form1[0].section13_2-2[0].p3-t68[0]",
     "id": "10297 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].TextField11[8]",
     "id": "10296 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].#field[16]",
     "id": "10295 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_2-2[0].#field[17]",
     "id": "10294 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_2-2[0].#field[18]",
     "id": "10293 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_2-2[0].p3-t68[1]",
     "id": "10292 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].TextField11[9]",
     "id": "10291 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].#field[21]",
     "id": "10290 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_2-2[0].TextField11[10]",
     "id": "10289 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].TextField11[11]",
     "id": "10288 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].School6_State[2]",
     "id": "10287 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_2-2[0].DropDownList15[0]",
     "id": "10286 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_2-2[0].TextField11[12]",
     "id": "10285 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].#field[27]",
     "id": "10284 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_2-2[0].#field[28]",
     "id": "10283 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_2-2[0].RadioButtonList[0]",
@@ -4311,44 +4278,40 @@
   {
     "name": "form1[0].section13_2-2[0].p3-t68[2]",
     "id": "10278 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].p3-t68[3]",
     "id": "10277 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].#field[33]",
     "id": "10276 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_2-2[0].#field[34]",
     "id": "10275 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_2-2[0].From_Datefield_Name_2[0]",
     "id": "10274 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].#field[36]",
     "id": "10273 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_2-2[0].From_Datefield_Name_2[1]",
     "id": "10272 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].#field[38]",
@@ -4381,14 +4344,12 @@
   {
     "name": "form1[0].section13_2-2[0].Table1[0].Row1[0].#field[4]",
     "id": "10359 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].Table1[0].Row1[0].#field[5]",
     "id": "10358 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_2-2[0].Table1[0].Row2[0].Cell2[0]",
@@ -4639,44 +4600,39 @@
   {
     "name": "form1[0].section13_3-2[0].TextField11[0]",
     "id": "10380 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[1]",
     "id": "10379 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[2]",
     "id": "10378 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[3]",
     "id": "10377 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].School6_State[0]",
     "id": "10376 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_3-2[0].DropDownList9[0]",
     "id": "10375 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[4]",
     "id": "10374 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].RadioButtonList[0]",
@@ -4686,32 +4642,29 @@
   {
     "name": "form1[0].section13_3-2[0].TextField11[5]",
     "id": "10371 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[6]",
     "id": "10370 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].School6_State[1]",
     "id": "10369 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_3-2[0].DropDownList10[0]",
     "id": "10368 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[7]",
     "id": "10367 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].p3-t68[0]",
@@ -4744,92 +4697,85 @@
   {
     "name": "form1[0].section13_3-2[0].TextField11[9]",
     "id": "10427 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[10]",
     "id": "10426 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].School6_State[2]",
     "id": "10425 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_3-2[0].DropDownList11[0]",
     "id": "10424 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[11]",
     "id": "10423 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].p3-t68[1]",
     "id": "10422 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[12]",
     "id": "10421 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].#field[26]",
     "id": "10420 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_3-2[0].#field[27]",
     "id": "10419 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_3-2[0].#field[28]",
     "id": "10418 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_3-2[0].p3-t68[2]",
     "id": "10417 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[13]",
     "id": "10416 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].#field[31]",
     "id": "10415 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_3-2[0].#field[32]",
     "id": "10414 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_3-2[0].#field[33]",
     "id": "10413 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_3-2[0].#field[34]",
@@ -4846,14 +4792,12 @@
   {
     "name": "form1[0].section13_3-2[0].p3-t68[3]",
     "id": "10410 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].p3-t68[4]",
     "id": "10409 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].#field[38]",
@@ -4865,7 +4809,7 @@
     "name": "form1[0].section13_3-2[0].#field[39]",
     "id": "10407 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_3-2[0].From_Datefield_Name_2[0]",
@@ -4886,26 +4830,24 @@
   {
     "name": "form1[0].section13_3-2[0].TextField11[14]",
     "id": "10403 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[15]",
     "id": "10402 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].School6_State[3]",
     "id": "10401 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_3-2[0].DropDownList4[0]",
     "id": "10400 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[16]",
@@ -4915,14 +4857,13 @@
   {
     "name": "form1[0].section13_3-2[0].TextField11[17]",
     "id": "10398 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].School6_State[4]",
     "id": "10397 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_3-2[0].TextField11[18]",
@@ -4932,8 +4873,7 @@
   {
     "name": "form1[0].section13_3-2[0].TextField11[19]",
     "id": "10395 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_3-2[0].RadioButtonList[1]",
@@ -4996,32 +4936,29 @@
   {
     "name": "form1[0].section13_4[0].TextField11[0]",
     "id": "10491 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].TextField11[1]",
     "id": "10490 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].#field[3]",
     "id": "10489 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_4[0].#field[4]",
     "id": "10488 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_4[0].From_Datefield_Name_2[0]",
     "id": "10487 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].#field[6]",
@@ -5032,68 +4969,62 @@
   {
     "name": "form1[0].section13_4[0].From_Datefield_Name_2[1]",
     "id": "10485 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].TextField11[2]",
     "id": "10484 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].TextField11[3]",
     "id": "10483 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].School6_State[0]",
     "id": "10482 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_4[0].DropDownList6[0]",
     "id": "10481 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_4[0].TextField11[4]",
     "id": "10480 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].p3-t68[0]",
     "id": "10479 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].TextField11[5]",
     "id": "10478 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].#field[15]",
     "id": "10477 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_4[0].#field[16]",
     "id": "10476 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_4[0].#field[17]",
     "id": "10475 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_4[0].SSN[0]",
@@ -5103,8 +5034,7 @@
   {
     "name": "form1[0].section13_4[0].TextField11[6]",
     "id": "10473 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].RadioButtonList[0]",
@@ -5138,74 +5068,66 @@
   {
     "name": "form1[0].section13_4[0].#area[1].#field[24]",
     "id": "10466 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].#area[1].#field[25]",
     "id": "10465 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].#area[1].#field[26]",
     "id": "10464 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].#area[1].#field[27]",
     "id": "10463 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].#field[28]",
     "id": "10462 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_4[0].From_Datefield_Name_2[2]",
     "id": "10461 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].From_Datefield_Name_2[3]",
     "id": "10460 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].#field[31]",
     "id": "10459 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_4[0].From_Datefield_Name_2[4]",
     "id": "10458 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].#field[33]",
     "id": "10457 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_4[0].From_Datefield_Name_2[5]",
     "id": "10456 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].#field[35]",
     "id": "10455 0 R",
     "type": "PDFCheckBox",
-    "value": "NO"
+    "value": "No"
   },
   {
     "name": "form1[0].section13_4[0].#area[2].#field[36]",
@@ -5301,32 +5223,28 @@
   {
     "name": "form1[0].section13_4[0].TextField11[9]",
     "id": "10436 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].TextField11[10]",
     "id": "10435 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].School6_State[2]",
     "id": "10434 0 R",
     "type": "PDFDropdown",
-    "value": ""
+    "value": []
   },
   {
     "name": "form1[0].section13_4[0].TextField11[11]",
     "id": "10433 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].TextField11[12]",
     "id": "10432 0 R",
-    "type": "PDFTextField",
-    "value": ""
+    "type": "PDFTextField"
   },
   {
     "name": "form1[0].section13_4[0].RadioButtonList[2]",
@@ -9281,95 +9199,104 @@
   {
     "name": "form1[0].section13_4[3].TextField11[0]",
     "id": "11337 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "13A4LName"
   },
   {
     "name": "form1[0].section13_4[3].TextField11[1]",
     "id": "11336 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "13A4FName"
   },
   {
     "name": "form1[0].section13_4[3].#field[3]",
     "id": "11335 0 R",
     "type": "PDFCheckBox",
-    "value": "No"
+    "value": "Yes"
   },
   {
     "name": "form1[0].section13_4[3].#field[4]",
     "id": "11334 0 R",
     "type": "PDFCheckBox",
-    "value": "No"
+    "value": "Yes"
   },
   {
     "name": "form1[0].section13_4[3].From_Datefield_Name_2[0]",
     "id": "11333 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "13A4ToDate"
   },
   {
     "name": "form1[0].section13_4[3].#field[6]",
     "id": "11332 0 R",
     "type": "PDFCheckBox",
-    "value": "No"
+    "value": "Yes"
   },
   {
     "name": "form1[0].section13_4[3].From_Datefield_Name_2[1]",
     "id": "11331 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "13A4FromDate"
   },
   {
     "name": "form1[0].section13_4[3].TextField11[2]",
     "id": "11330 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "13A4Street"
   },
   {
     "name": "form1[0].section13_4[3].TextField11[3]",
     "id": "11329 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "13A4City"
   },
   {
     "name": "form1[0].section13_4[3].School6_State[0]",
     "id": "11328 0 R",
     "type": "PDFDropdown",
-    "value": []
+    "value": "AL"
   },
   {
     "name": "form1[0].section13_4[3].DropDownList6[0]",
     "id": "11327 0 R",
     "type": "PDFDropdown",
-    "value": []
+    "value": "Antarctica"
   },
   {
     "name": "form1[0].section13_4[3].TextField11[4]",
     "id": "11326 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "13A4Zip"
   },
   {
     "name": "form1[0].section13_4[3].p3-t68[0]",
     "id": "11325 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "13A4Phone"
   },
   {
     "name": "form1[0].section13_4[3].TextField11[5]",
     "id": "11324 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "13A4Ext"
   },
   {
     "name": "form1[0].section13_4[3].#field[15]",
     "id": "11323 0 R",
     "type": "PDFCheckBox",
-    "value": "No"
+    "value": "Yes"
   },
   {
     "name": "form1[0].section13_4[3].#field[16]",
     "id": "11322 0 R",
     "type": "PDFCheckBox",
-    "value": "No"
+    "value": "Yes"
   },
   {
     "name": "form1[0].section13_4[3].#field[17]",
     "id": "11321 0 R",
     "type": "PDFCheckBox",
-    "value": "No"
+    "value": "Yes"
   },
   {
     "name": "form1[0].section13_4[3].SSN[0]",
@@ -9546,55 +9473,62 @@
   {
     "name": "form1[0].section13_4[3].TextField11[7]",
     "id": "11286 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "a13A4Street"
   },
   {
     "name": "form1[0].section13_4[3].TextField11[8]",
     "id": "11285 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "a13A4City"
   },
   {
     "name": "form1[0].section13_4[3].School6_State[1]",
     "id": "11284 0 R",
     "type": "PDFDropdown",
-    "value": []
+    "value": "AR"
   },
   {
     "name": "form1[0].section13_4[3].DropDownList4[0]",
     "id": "11283 0 R",
     "type": "PDFDropdown",
-    "value": []
+    "value": "Anguilla"
   },
   {
     "name": "form1[0].section13_4[3].TextField11[9]",
     "id": "11282 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "b13A4Street"
   },
   {
     "name": "form1[0].section13_4[3].TextField11[10]",
     "id": "11281 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "b13A4APO"
   },
   {
     "name": "form1[0].section13_4[3].School6_State[2]",
     "id": "11280 0 R",
     "type": "PDFDropdown",
-    "value": []
+    "value": "APO/FPO Pacific"
   },
   {
     "name": "form1[0].section13_4[3].TextField11[11]",
     "id": "11279 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "b13A4Zip"
   },
   {
     "name": "form1[0].section13_4[3].TextField11[12]",
     "id": "11278 0 R",
-    "type": "PDFTextField"
+    "type": "PDFTextField",
+    "value": "a13A4Zip"
   },
   {
     "name": "form1[0].section13_4[3].RadioButtonList[2]",
     "id": "17098 0 R",
-    "type": "PDFRadioGroup"
+    "type": "PDFRadioGroup",
+    "value": "YES "
   },
   {
     "name": "form1[0].section13_5[0].SSN[0]",
