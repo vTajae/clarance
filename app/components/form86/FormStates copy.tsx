@@ -13,7 +13,7 @@ import {
   CitizenshipInfo,
   DualCitizenshipInfo,
   ResidenceForm,
-} from "../../../api_v2/interfaces/form";
+} from "../../../api/interfaces/form";
 import DualCitizenshipForm from "./form/DuelCitizenship";
 import Residence from "./form/Residence";
 import Personal from "./form/Personal";

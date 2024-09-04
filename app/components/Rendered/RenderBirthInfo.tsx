@@ -1,4 +1,4 @@
-import { ApplicantBirthInfo } from "../form86/lastTry/formDefinition";
+import { ApplicantBirthInfo } from "../../../api/interfaces2.0/formDefinition";
 import FormInfo from "api_v2/interfaces/FormInfo";
 
 interface FormProps {

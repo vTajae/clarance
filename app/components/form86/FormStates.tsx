@@ -6,7 +6,7 @@ import {
   CitizenshipInfo,
   DualCitizenshipInfo,
   ResidenceForm,
-} from "../../../api_v2/interfaces/form";
+} from "../../../api/interfaces/form";
 import { ApplicantPersonalInfo, ApplicantNames } from "api_v2/interfaces/form2";
 import Birth from "./formv2/Birth";
 import Alias from "./samples/new_Alias";

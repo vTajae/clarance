@@ -60,7 +60,7 @@ const RenderSection26_6: React.FC<Section26_6Props> = ({
     value: boolean,
     onChange: (value: boolean) => void
   ) => (
-    <div className="flex flex-col space-y-2 p-4 bg-white shadow-md rounded-lg">
+    <div className="flex flex-col space-y-2 p-4  shadow-md rounded-lg">
       <span className="">{label}</span>
       <div className="flex items-center space-x-4 mt-2">
         <div>

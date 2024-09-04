@@ -12,7 +12,7 @@ const TechnicalExperience: React.FC<{ skills: EmployeeSkillType[] }> = ({
   };
 
   return (
-    <section className="container mx-auto p-4 bg-white rounded-lg">
+    <section className="container mx-auto p-4  rounded-lg">
       <h2 className="text-3xl font-semibold mb-8 text-center text-gray-800">
         Technical Experience
       </h2>
@@ -20,7 +20,7 @@ const TechnicalExperience: React.FC<{ skills: EmployeeSkillType[] }> = ({
         {skills.map((skill, index) => (
           <div
             key={skill.skill_id}
-            className="bg-white rounded-md shadow-sm overflow-hidden"
+            className=" rounded-md shadow-sm overflow-hidden"
           >
             <button
               className="cursor-pointer w-full text-left px-4 py-2 sm:px-5 sm:py-3 font-semibold text-base sm:text-lg flex justify-between items-center text-gray-800 hover:bg-gray-50"

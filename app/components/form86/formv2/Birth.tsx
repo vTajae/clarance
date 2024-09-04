@@ -1,5 +1,5 @@
 import React from "react";
-import { ApplicantBirthInfo } from "../../../../api_v2/interfaces/form2"; // Adjusted path as per your structure
+import { ApplicantBirthInfo } from "../../../../api/interfaces/form2"; // Adjusted path as per your structure
 
 interface DOBFormProps {
   updatePersonalInfo: (info: Partial<ApplicantBirthInfo>) => void;

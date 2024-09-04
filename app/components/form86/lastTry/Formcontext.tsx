@@ -7,7 +7,7 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
-import { ApplicantFormValues, FormConfig } from "./formDefinition";
+import { ApplicantFormValues, FormConfig } from "../../../../api/interfaces2.0/formDefinition";
 
 interface FormContextType {
   formValues: ApplicantFormValues;

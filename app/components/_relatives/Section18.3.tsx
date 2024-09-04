@@ -36,7 +36,7 @@ const RenderSection18_3: React.FC<RenderSection18_3Props> = ({
   return (
     <div className="space-y-6">
       {data.citizenshipDocuments.map((doc, index) => (
-        <div key={index} className="bg-white p-4 rounded-lg shadow-md space-y-4">
+        <div key={index} className=" p-4 rounded-lg shadow-md space-y-4">
           <div className="space-y-1">
             <label htmlFor={`citizenshipDocumentType-${index}`} className="block text-sm font-medium text-gray-700">
               Citizenship Document Type:
@@ -73,7 +73,7 @@ const RenderSection18_3: React.FC<RenderSection18_3Props> = ({
       {data.citizenshipDocuments.some(
         (doc) => doc.type === "CertificateOfNaturalizationN550orN570"
       ) && data.courtDetails && (
-        <div className="bg-white p-4 rounded-lg shadow-md space-y-4">
+        <div className=" p-4 rounded-lg shadow-md space-y-4">
           <h4 className="text-lg font-medium text-gray-900">Court Details:</h4>
           <div className="space-y-1">
             <label htmlFor="courtDetails-street" className="block text-sm font-medium text-gray-700">

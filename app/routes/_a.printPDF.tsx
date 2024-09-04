@@ -1,7 +1,7 @@
 import type { ActionFunction, MetaFunction } from "@remix-run/cloudflare";
 import { json, Outlet, redirect } from "@remix-run/react";
-import DynamicService from "api_v2/service/dynamicService";
-import PdfService from "api_v2/service/pdfService";
+import DynamicService from "api/service/dynamicService";
+import PdfService from "api/service/pdfService";
 
 export const meta: MetaFunction = () => {
   return [

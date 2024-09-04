@@ -33,7 +33,7 @@ const RenderSection18_5: React.FC<Section18_5Props> = ({
   ];
 
   return (
-    <div className="space-y-6 p-6 bg-white shadow rounded-md">
+    <div className="space-y-6 p-6  shadow rounded-md">
       <div className="space-y-4">
         <div className="flex flex-col">
           <label

@@ -686,7 +686,7 @@ const RenderCertifications = ({
         return (
           <div
             key={certification.certification_id}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start p-4 bg-white shadow rounded-lg"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start p-4  shadow rounded-lg"
           >
             <div className="md:col-span-2">
               <label
@@ -768,7 +768,7 @@ const RenderCertifications = ({
               />
             </div>
 
-            <div className="bg-white p-4 mt-4 rounded-lg shadow space-y-4 flex flex-col md:col-span-3">
+            <div className=" p-4 mt-4 rounded-lg shadow space-y-4 flex flex-col md:col-span-3">
               <strong className="text-sm text-gray-800 font-semibold">
                 Titles:
               </strong>
@@ -837,7 +837,7 @@ const RenderCertifications = ({
                 </button>
               </div>
 
-              {/* <div className="flex flex-col space-y-2 bg-white p-2 rounded-lg shadow">
+              {/* <div className="flex flex-col space-y-2  p-2 rounded-lg shadow">
                 <input
                   type="text"
                   value={input}
@@ -939,7 +939,7 @@ const RenderExperiences = ({
         return (
           <div
             key={experience.experience_id}
-            className="space-y-4 p-4 rounded-lg mb-4 bg-white shadow"
+            className="space-y-4 p-4 rounded-lg mb-4  shadow"
           >
             <div className="md:grid md:grid-cols-2 md:gap-4">
               <div className="flex flex-col">
@@ -1044,7 +1044,7 @@ const RenderExperiences = ({
                     }`}
                   >
                     <span
-                      className={`absolute left-0 top-0 w-6 h-6 transition-transform transform bg-white rounded-full shadow ${
+                      className={`absolute left-0 top-0 w-6 h-6 transition-transform transform  rounded-full shadow ${
                         isCurrent ? "translate-x-6" : "translate-x-0"
                       }`}
                       style={{ bottom: "1px" }}
@@ -1199,7 +1199,7 @@ console.log(data)
             readOnly={isReadOnlyField("skill_name")}
           />
 
-          <div className="bg-white p-4 rounded-lg shadow-md flex flex-col">
+          <div className=" p-4 rounded-lg shadow-md flex flex-col">
             <strong className="text-sm text-gray-800 font-semibold">
               Subskills:
             </strong>

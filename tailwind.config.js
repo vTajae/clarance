@@ -22,7 +22,8 @@ export default {
       yellow: colors.yellow,
       blue: colors.blue,
       green: colors.green,
-      red: colors.red
+      red: colors.red,
+      sky:colors.sky
     },
   },
   plugins: [],

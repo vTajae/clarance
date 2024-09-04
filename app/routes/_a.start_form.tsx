@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PageTemplate from "~/components/form86/Template";
 import FormStates from "~/components/form86/FormStates";
-import { Alias, PersonalInfo, CitizenshipInfo } from "../../api_v2/interfaces/form";
+import { Alias, PersonalInfo, CitizenshipInfo } from "../../api/interfaces/form";
 
 const StartForm = () => {
   const [currentStep, setCurrentStep] = useState<number>(0);

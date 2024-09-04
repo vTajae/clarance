@@ -2,7 +2,7 @@ import {
   ApplicantFormValues,
   EnumMappings,
   FormConfig,
-} from "./formDefinition";
+} from "../../../../api/interfaces2.0/formDefinition";
 
 type FormValue = string | boolean | number | string[]; // Align this with your AnswerValue definition
 

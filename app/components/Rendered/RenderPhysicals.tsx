@@ -1,5 +1,5 @@
 import FormInfo from "api_v2/interfaces/FormInfo";
-import { ApplicantPhysicalAttributes } from "../form86/lastTry/formDefinition";
+import { ApplicantPhysicalAttributes } from "../../../api/interfaces2.0/formDefinition";
 
 type FormProps = {
   data: ApplicantPhysicalAttributes;

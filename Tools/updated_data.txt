@@ -1,0 +1,295 @@
+{
+    "_id": 1,
+     "neverEntered": {
+      "value": "Yes",
+      "id": "11749",
+      "type": "PDFCheckBox"
+    },
+    "currentlyIn": {
+      "value": "Yes",
+      "id": "11749",
+      "type": "PDFCheckBox"
+    },
+    "separated": {
+      "value": "Yes",
+      "id": "11748",
+      "type": "PDFCheckBox"
+    },
+    "annulled": {
+      "value": "Yes",
+      "id": "11747",
+      "type": "PDFCheckBox"
+    },
+    "divorcedDissolved": {
+      "value": "Yes",
+      "id": "11745",
+      "type": "PDFCheckBox"
+    },
+    "widowed": {
+      "value": "Yes",
+      "id": "11744",
+      "type": "PDFCheckBox"
+    },
+    "section17_1": {
+        "_id": 1,
+        "fullName": {
+            "lastName": {
+                "value": "",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "firstName": {
+                "value": "",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "middleName": {
+                "value": "",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "suffix": {
+                "value": "",
+                "id": "",
+                "type": "PDFDropdown"
+            }
+        },
+        "placeOfBirth": {
+            "city": {
+                "value": "",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "county": {
+                "value": "",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "state": {
+                "value": "",
+                "id": "",
+                "type": "PDFDropdown"
+            },
+            "country": {
+                "value": "",
+                "id": "",
+                "type": "PDFDropdown"
+            }
+        },
+        "dateOfBirth": {
+            "date": {
+                "value": "",
+                "id": "",
+                "type": "date"
+            },
+            "estimated": {
+                "value": "",
+                "id": "",
+                "type": "PDFCheckBox"
+            }
+        },
+        "citizenship": [
+            {
+                "_id": 1,
+                "country": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            }
+        ],
+        "documentation": {
+            "type": {
+                "value": "",
+                "id": "",
+                "type": "PDFCheckBox"
+            },
+            "documentNumber": {
+                "value": "",
+                "id": "",
+                "type": "PDFTextField"
+            },
+            "documentExpirationDate": {
+                "date": {
+                    "value": "",
+                    "id": "",
+                    "type": "date"
+                },
+                "estimated": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            "otherExplanation": {
+                "value": "",
+                "id": "",
+                "type": "PDFTextField"
+            }
+        },
+        "notApplicable_OtherNames": {
+            "value": "",
+            "id": "",
+            "type": "PDFCheckbox"
+        },
+        "notApplicable_SSN": {
+            "value": "",
+            "id": "",
+            "type": "PDFCheckbox"
+        },
+        "usSocialSecurityNumber": {
+            "value": "",
+            "id": "",
+            "type": "PDFTextField"
+        },
+        "otherNames": [
+            {
+                "_id": 1,
+                "lastName": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "firstName": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "middleName": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "suffix": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "maidenName": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                },
+                "fromDate": {
+                    "date": {
+                        "value": "",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                },
+                "toDate": {
+                    "date": {
+                        "value": "",
+                        "id": "",
+                        "type": "PDFTextField"
+                    },
+                    "estimated": {
+                        "value": "",
+                        "id": "",
+                        "type": "PDFCheckBox"
+                    }
+                }
+            }
+        ],
+        "relationshipStatus": {
+            "value": "",
+            "id": "",
+            "type": "PDFCheckBox"
+        },
+        "statusDetails": {
+            "location": {
+                "city": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "county": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "country": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "date": {
+                "date": {
+                    "value": "",
+                    "id": "",
+                    "type": "date"
+                },
+                "estimated": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFCheckBox"
+                }
+            },
+            "recordLocation": {
+                "city": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "county": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "country": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            },
+            "deceased": {
+                "value": "",
+                "id": "",
+                "type": "PDFRadioGroup"
+            },
+            "lastKnownAddress": {
+                "street": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "city": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "state": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFDropdown"
+                },
+                "zipCode": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFTextField"
+                },
+                "country": {
+                    "value": "",
+                    "id": "",
+                    "type": "PDFDropdown"
+                }
+            }
+        }
+    }
+}

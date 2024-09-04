@@ -1,4 +1,4 @@
-import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition";
+import { ApplicantFormValues } from "api/interfaces2.0/formDefinition";
 
 
 const dbName = "UserFormDB";

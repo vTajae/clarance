@@ -7,10 +7,11 @@ import React, {
   useCallback,
 } from "react";
 import pkg from "lodash";
-import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition";
-import DynamicService from "../../../api_v2/service/dynamicService";
-
+import DynamicService from "api/service/dynamicService";
 const { set, isEqual, cloneDeep } = pkg;
+import defaultFormData from "./updatedModel copy"
+import { ApplicantFormValues } from "api/interfaces2.0/formDefinition";
+
 
 interface EmployeeContextType {
   data: ApplicantFormValues;
@@ -37,278 +38,7 @@ interface EmployeeProviderProps {
   children: ReactNode;
 }
 
-const defaultFormData: ApplicantFormValues = {
-  personalInfo: {
-    lastName: "",
-    firstName: "",
-    middleName: "",
-    suffix: "",
-  },
-  birthInfo: {
-    birthDate: "None",
-    isBirthDateEstimate: false,
-    birthCity: "",
-    birthState: "",
-    birthCountry: "",
-  },
-  aknowledgementInfo: {
-    notApplicable: false,
-  },
-  namesInfo: {
-    hasNames: false,
-    names: [],
-  },
-  physicalAttributes: {
-    heightFeet: 0,
-    heightInch: 0,
-    weight: 0,
-    hairColor: "None",
-    eyeColor: "None",
-  },
-  contactInfo: {
-    homeEmail: "",
-    workEmail: "",
-    contactNumbers: [
-      {
-        _id: Math.random(),
-        numberType: "Home", // Default type, can be changed by the user
-        phoneNumber: "",
-        phoneExtension: "",
-        isUsableDay: false,
-        isUsableNight: false,
-        internationalOrDSN: false,
-      },
-    ],
-  },
-  passportInfo: {
-    passportNum: "",
-    issueDate: "",
-    isIssuedEst: false,
-    expirationDate: "",
-    isExpirationEst: false,
-    passportLName: "",
-    passportFName: "",
-    passportMName: "",
-    passportSuffix: "",
-    hasPassport: false,
-  },
-  citizenshipInfo: {
-    citizenship_status_code: "None",
-  },
-  dualCitizenshipInfo: {
-    heldMultipleCitizenships: false,
-    citizenships: [],
-    hadNonUSPassport: false,
-    passports: [],
-  },
-  residencyInfo: [],
-  schoolInfo: {
-    hasAttendedSchool: false,
-    hasReceivedDegree: false,
-    schoolEntry: [],
-  },
-  employmentInfo: [
-    {
-      _id: Math.random(),
-      employmentActivity: "none",
-      section13B: {
-        hasFormerFederalEmployment: false,
-        employmentEntries: [
-          {
-            _id: Math.random(),
-            fromDate: "",
-            toDate: "",
-            present: false,
-            estimated: false,
-            agencyName: "",
-            positionTitle: "",
-            location: {
-              street: "",
-              city: "",
-              state: "",
-              zipCode: "",
-              country: "",
-            },
-          },
-        ],
-      },
-      section13C: {
-        employmentRecordIssues: false,
-        employmentRecord: {
-          fired: false,
-          quitAfterToldWouldBeFired: false,
-          leftByMutualAgreementMisconduct: false,
-          leftByMutualAgreementPerformance: false,
-          writtenWarning: false,
-        },
-      },
-    },
-  ],
-  serviceInfo: {
-    bornAfter1959: null,
-    registeredWithSSS: null,
-  },
-  militaryHistoryInfo: {
-    everServedInUSMilitary: false,
-    disciplinaryProcedure: false,
-    everServedInForeignMilitary: false,
-    section15_1: [],
-    section15_2: [],
-    section15_3: [],
-  },
-  peopleThatKnow: [
-    {
-      _id: Math.random(),
-      knownFromDate: "",
-      knownToDate: null,
-      present: true,
-      estimatedFromDate: false,
-      estimatedToDate: false,
-      lastName: "",
-      firstName: "",
-      middleName: "",
-      suffix: "",
-      emailAddress: "",
-      emailUnknown: false,
-      rankOrTitle: "",
-      rankOrTitleNotApplicable: false,
-      relationshipToApplicant: {
-        neighbor: false,
-        workAssociate: false,
-        friend: false,
-        schoolmate: false,
-        other: "",
-      },
-      phoneNumber: "",
-      phoneNumberUnknown: false,
-      phoneExtension: "",
-      phoneType: "DSN",
-      mobileNumber: "",
-      preferredContactTime: {
-        day: false,
-        night: false,
-      },
-      address: {
-        street: "",
-        city: "",
-        state: "",
-        zipCode: "",
-        country: "",
-      },
-    },
-  ],
-  relationshipInfo: {
-    _id: Math.random(),
-    currentStatus: "NeverEntered",
-  },
 
-  relativesInfo: {
-    _id: Math.random(),
-    relativeTypes: [],
-    entries: [],
-  },
-  foreignContacts: {
-    _id: Math.random(),
-    hasForeignContact: false,
-    entries: [],
-  },
-  foreignActivities: {
-    _id: Math.random(),
-    hasForeignFinancialInterest: false,
-    hasForeignInterestOnBehalf: false,
-    wantForeignRealEstate: false,
-    hasForeignSupport: false,
-    providedForeignSupport: false,
-    providedForeignAdvice: false,
-    familyProvidedForeignAdvice: false,
-    offeredForeignJob: false,
-    offeredBuisnessVenture: false,
-    foreignConferences: false,
-    contactForeignGovernment: false,
-    sponsoredForeignNational: false,
-    foreignPoliticalOffice: false,
-    foreignVote: false,
-    traveledOutsideUSA: false,
-    traveledOutsideUSA_Government: false,
-  },
-  mentalHealth: {
-    _id: Math.random(),
-    declaredMentallyIncompetent: false,
-    consultMentalHealth: false,
-    hospitalizedMentalHealth: false,
-    beenDiagnosed: false,
-    delayedTreatment: false,
-    currentlyInTreatment: false,
-    substantialAffects: false,
-    counseling: false,
-  },
-  policeRecord: {
-    _id: Math.random(),
-    part1Questions: false,
-    part2Questions: false,
-    restrainingOrder: false,
-  },
-  drugActivity: {
-    _id: Math.random(),
-    hasUsed: false,
-    hasInvolvement: false,
-    illegalWhileProcessing: false,
-    usedWhilePublicSaftey: false,
-    usedNotPerscribed: false,
-    suggestedCounsoling: false,
-    voluntaryCounsoling: false,
-  },
-  alcoholUse: {
-    _id: Math.random(),
-    negativeImpact: false,
-    suggestedCounseling: false,
-    voluntaryCounseling: false,
-    additionalCounseling: false,
-  },
-  investigationsInfo: {
-    _id: Math.random(),
-    governmentInvestigated: false,
-    revocation: false,
-    debarred: false,
-  },
-  finances: {
-    _id: Math.random(),
-    filedBankruptcy: false,
-    gamblingProblem: false,
-    missedTaxes: false,
-    companyViolation: false,
-    counseling: false,
-    delinquent: false,
-    reposessions: false,
-  },
-  technology: {
-    _id: Math.random(),
-    illegalAccess: false,
-    illegalModification: false,
-    unauthorizedUse: false,
-  },
-  civil: {
-    _id: Math.random(),
-    civilCourt: false,
-  },
-  association: {
-    _id: Math.random(),
-    terrorismMember: false,
-    actsOfTerrorism: false,
-    overthrowByForce: false,
-    dedicatedViolent: false,
-    advocatesViolence: false,
-    engagedInOverthrow: false,
-    terrorismAssociate: false
-  },
-  signature: {
-    _id: Math.random(),
-    information: false,
-    medical: false,
-    credit: false
-  },
-  print: false
-};
 
 export const EmployeeProvider2: React.FC<EmployeeProviderProps> = ({
   children,
@@ -338,7 +68,7 @@ export const EmployeeProvider2: React.FC<EmployeeProviderProps> = ({
     const employee = await dynamicService.loadUserFormData("applicantData");
 
     if (initialData === defaultFormData && employee.formData) {
-      // console.log(employee, "employee");
+      console.log(employee, "employee");
 
       setInitialData(employee.formData);
       setUpdatedData(employee.formData);
@@ -358,162 +88,168 @@ export const EmployeeProvider2: React.FC<EmployeeProviderProps> = ({
     });
   };
 
-  const getChanges = () => {
-    const changes: {
-      added: any;
-      modified: any;
-      deleted: any;
-    } = {
-      added: {},
-      modified: {},
-      deleted: {},
-    };
+  const getChanges =
+    () =>
+    (initialData: ApplicantFormValues, updatedData: ApplicantFormValues) => {
+      const changes: {
+        added: any;
+        modified: any;
+        deleted: any;
+      } = {
+        added: {},
+        modified: {},
+        deleted: {},
+      };
 
-    const compareObjectsForModifications = (base: any, updated: any): any => {
-      const modified: any = {};
-      const keysToAlwaysInclude: string[] = []; // Add more keys as needed
+      const compareObjectsForModifications = (base: any, updated: any): any => {
+        const modified: any = {};
+        const keysToAlwaysInclude: string[] = []; // Add more keys as needed
 
-      Object.keys(updated).forEach((key: string) => {
-        if (
-          !isEqual(base[key], updated[key]) ||
-          keysToAlwaysInclude.includes(key)
-        ) {
-          modified[key] = updated[key];
-        }
-      });
+        if (!base || !updated) return modified; // Ensure base and updated are not undefined or null
 
-      return modified;
-    };
+        Object.keys(updated).forEach((key: string) => {
+          if (
+            !isEqual(base[key]?.value, updated[key]?.value) ||
+            keysToAlwaysInclude.includes(key)
+          ) {
+            modified[key] = updated[key];
+          }
+        });
 
-    const compareArrays = (
-      base: any[],
-      updated: any[],
-      idKey: string,
-      arrayName: string
-    ) => {
-      const baseMap = new Map(base.map((item: any) => [item[idKey], item]));
-      const updatedMap = new Map<string, any>();
-      const newEntries: any[] = [];
+        return modified;
+      };
 
-      updated.forEach((item: any) => {
-        if (item[idKey] !== undefined) {
-          updatedMap.set(item[idKey], item);
-        } else {
-          newEntries.push(item);
-        }
-      });
+      const compareArrays = (
+        base: any[],
+        updated: any[],
+        idKey: string,
+        arrayName: string
+      ) => {
+        const baseMap = new Map(base.map((item: any) => [item[idKey], item]));
+        const updatedMap = new Map<string, any>();
+        const newEntries: any[] = [];
 
-      const added: any[] = [];
-      const modified: any[] = [];
-      const deleted: any[] = [];
+        updated.forEach((item: any) => {
+          if (item[idKey] !== undefined) {
+            updatedMap.set(item[idKey], item);
+          } else {
+            newEntries.push(item);
+          }
+        });
 
-      // Identify added and modified entries
-      for (const [id, updatedItem] of updatedMap.entries()) {
-        if (!baseMap.has(id)) {
-          added.push(updatedItem); // Entire new entry is added
-        } else {
-          const baseItem = baseMap.get(id);
-          const modifications = compareObjectsForModifications(
-            baseItem,
-            updatedItem
-          );
-          if (Object.keys(modifications).length > 0) {
-            modified.push(modifications); // Only modified fields are included in modified
+        const added: any[] = [];
+        const modified: any[] = [];
+        const deleted: any[] = [];
+
+        // Identify added and modified entries
+        for (const [id, updatedItem] of updatedMap.entries()) {
+          if (!baseMap.has(id)) {
+            added.push(updatedItem); // Entire new entry is added
+          } else {
+            const baseItem = baseMap.get(id);
+            const modifications = compareObjectsForModifications(
+              baseItem,
+              updatedItem
+            );
+            if (Object.keys(modifications).length > 0) {
+              modified.push(modifications); // Only modified fields are included in modified
+            }
           }
         }
-      }
 
-      // Identify new entries (shouldn't filter out any fields)
-      newEntries.forEach((item) => {
-        added.push(item);
+        // Identify new entries (shouldn't filter out any fields)
+        newEntries.forEach((item) => {
+          added.push(item);
+        });
+
+        // Identify deleted entries
+        for (const [id, baseItem] of baseMap.entries()) {
+          if (!updatedMap.has(id)) {
+            deleted.push(baseItem);
+          }
+        }
+
+        if (added.length > 0) {
+          changes.added[arrayName] = added;
+        }
+        if (modified.length > 0) {
+          changes.modified[arrayName] = modified;
+        }
+        if (deleted.length > 0) {
+          changes.deleted[arrayName] = deleted;
+        }
+      };
+
+      // Define all array fields in the form
+      const arrayFields: (keyof ApplicantFormValues)[] = [
+        "residencyInfo",
+        "schoolInfo",
+        "employmentInfo",
+        "peopleThatKnow",
+      ];
+
+      // Special case handling for initially empty arrays
+      arrayFields.forEach((field) => {
+        if (
+          Array.isArray(initialData[field]) &&
+          Array.isArray(updatedData[field])
+        ) {
+          if (
+            initialData[field].length === 0 &&
+            updatedData[field].length > 0
+          ) {
+            changes.added[field] = updatedData[field];
+          } else {
+            compareArrays(
+              initialData[field] as any[], // Type assertion
+              updatedData[field] as any[], // Type assertion
+              "_id", // Ensure that each array type has a consistent id key
+              field
+            );
+          }
+        }
       });
 
-      // Identify deleted entries
-      for (const [id, baseItem] of baseMap.entries()) {
-        if (!updatedMap.has(id)) {
-          deleted.push(baseItem);
-        }
-      }
+      const fields: (keyof ApplicantFormValues)[] = [
+        "personalInfo",
+        "birthInfo",
+        "contactInfo",
+        "citizenshipInfo",
+        "dualCitizenshipInfo",
+        "physicalAttributes",
+        "namesInfo",
+        "aknowledgementInfo",
+        "passportInfo",
+        "serviceInfo",
+        "militaryHistoryInfo",
+        "relativesInfo",
+        "relationshipInfo",
+        "foreignContacts",
+        "foreignActivities",
+        "mentalHealth",
+        "policeRecord",
+        "drugActivity",
+        "alcoholUse",
+        "investigationsInfo",
+        "finances",
+        "technology",
+        "civil",
+        "association",
+        "signature",
+      ];
 
-      if (added.length > 0) {
-        changes.added[arrayName] = added;
-      }
-      if (modified.length > 0) {
-        changes.modified[arrayName] = modified;
-      }
-      if (deleted.length > 0) {
-        changes.deleted[arrayName] = deleted;
-      }
+      fields.forEach((field) => {
+        const modifications = compareObjectsForModifications(
+          initialData[field],
+          updatedData[field]
+        );
+        if (Object.keys(modifications).length > 0) {
+          changes.modified[field] = modifications;
+        }
+      });
+
+      return changes;
     };
-
-    // Define all array fields in the form
-    const arrayFields: (keyof ApplicantFormValues)[] = [
-      "residencyInfo",
-      "schoolInfo",
-      "employmentInfo",
-      "peopleThatKnow",
-    ];
-
-    // Special case handling for initially empty arrays
-    arrayFields.forEach((field) => {
-      if (
-        Array.isArray(initialData[field]) &&
-        Array.isArray(updatedData[field])
-      ) {
-        if (initialData[field].length === 0 && updatedData[field].length > 0) {
-          changes.added[field] = updatedData[field];
-        } else {
-          compareArrays(
-            initialData[field] as any[], // Type assertion
-            updatedData[field] as any[], // Type assertion
-            "_id", // Ensure that each array type has a consistent id key
-            field
-          );
-        }
-      }
-    });
-
-    const fields: (keyof ApplicantFormValues)[] = [
-      "personalInfo",
-      "birthInfo",
-      "contactInfo",
-      "citizenshipInfo",
-      "dualCitizenshipInfo",
-      "physicalAttributes",
-      "namesInfo",
-      "aknowledgementInfo",
-      "passportInfo",
-      "serviceInfo",
-      "militaryHistoryInfo",
-      "relativesInfo",
-      "relationshipInfo",
-      "relativesInfo",
-      "foreignContacts",
-      "foreignActivities",
-      "mentalHealth",
-      "policeRecord",
-      "drugActivity",
-      "alcoholUse",
-      "investigationsInfo",
-      "finances",
-      "technology",
-      "civil",
-      "association",
-      "signature"
-    ];
-
-    fields.forEach((field) => {
-      const modifications = compareObjectsForModifications(
-        initialData[field],
-        updatedData[field]
-      );
-      if (Object.keys(modifications).length > 0) {
-        changes.modified[field] = modifications;
-      }
-    });
-
-    return changes;
-  };
 
   return (
     <EmployeeContext.Provider

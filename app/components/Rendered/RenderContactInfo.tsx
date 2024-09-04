@@ -1,6 +1,6 @@
 import {
   ApplicantContactInfo,
-} from "../form86/lastTry/formDefinition"; // Ensure the path and exports are correct
+} from "../../../api/interfaces2.0/formDefinition"; // Ensure the path and exports are correct
 
 interface FormProps {
   data: ApplicantContactInfo;

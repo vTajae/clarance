@@ -1,6 +1,6 @@
 import React from "react";
 import FormInfo from "api_v2/interfaces/FormInfo";
-import { ServiceInfo } from "../form86/lastTry/formDefinition";
+import { ServiceInfo } from "../../../api/interfaces2.0/formDefinition";
 
 type FormProps = {
   data: ServiceInfo;

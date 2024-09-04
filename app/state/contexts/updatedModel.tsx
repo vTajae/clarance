@@ -1,28 +1,48 @@
-import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition copy 2";
+import { ApplicantFormValues } from "api/interfaces2.0/formDefinition";
+import { aknowledgementInfo } from "./sections/aknowledgementInfo";
+import { birthInfo } from "./sections/birthInfo";
+import { citizenshipInfo } from "./sections/citizenshipInfo";
+import { contactInfo } from "./sections/contactInfo";
+import { dualCitizenshipInfo } from "./sections/dualCitizenshipInfo";
+import { employmentInfo } from "./sections/employmentInfo";
+import { foreignActivities } from "./sections/foreignActivities";
+import { foreignContacts } from "./sections/foreignContacts";
+import { militaryHistoryInfo } from "./sections/militaryHistoryInfo";
+import { namesInfo } from "./sections/namesInfo";
+import { passportInfo } from "./sections/passportInfo";
+import { peopleThatKnow } from "./sections/peopleThatKnow";
+import { personalInfo } from "./sections/personalInfo";
+import { physicalAttributes } from "./sections/physicalAttributes";
+import { relationshipInfo } from "./sections/relationshipInfo";
+import { relativesInfo } from "./sections/relativesInfo";
+import { residencyInfo } from "./sections/residencyInfo";
+import { schoolInfo } from "./sections/schoolInfo";
+import { serviceInfo } from "./sections/serviceInfo";
+
 
 const defaultFormData: ApplicantFormValues = {
-  // personalInfo: {
-  //   lastName: {
-  //     value: "lastName",
-  //     id: "9449",
-  //     type: "PDFTextField",
-  //   },
-  //   firstName: {
-  //     value: "firstName",
-  //     id: "9448",
-  //     type: "PDFTextField",
-  //   },
-  //   middleName: {
-  //     value: "middleName",
-  //     id: "9447",
-  //     type: "PDFTextField",
-  //   },
-  //   suffix: {
-  //     value: "suffix",
-  //     id: "9435",
-  //     type: "PDFDropdown",
-  //   },
-  // },
+  personalInfo: {
+    lastName: {
+      value: "Smith",
+      id: "9449",
+      type: "PDFTextField",
+    },
+    firstName: {
+      value: "JohnI",
+      id: "9448",
+      type: "PDFTextField",
+    },
+    middleName: {
+      value: "Doe",
+      id: "9447",
+      type: "PDFTextField",
+    },
+    suffix: {
+      value: "IV",
+      id: "9435",
+      type: "PDFDropdown",
+    },
+  },
   // birthInfo: {
   //   birthDate: {
   //     value: "birthDate",
@@ -436,7 +456,7 @@ const defaultFormData: ApplicantFormValues = {
   //         id: "9511",
   //         type: "PDFTextField",
   //       },
-  //       phoneExtension: {
+  //       extension: {
   //         value: "1",
   //         id: "9510",
   //         type: "PDFTextField",
@@ -469,7 +489,7 @@ const defaultFormData: ApplicantFormValues = {
   //         id: "9506",
   //         type: "PDFTextField",
   //       },
-  //       phoneExtension: {
+  //       extension: {
   //         value: "2",
   //         id: "9505",
   //         type: "PDFTextField",
@@ -502,7 +522,7 @@ const defaultFormData: ApplicantFormValues = {
   //         id: "9561",
   //         type: "PDFTextField",
   //       },
-  //       phoneExtension: {
+  //       extension: {
   //         value: "3",
   //         id: "9560",
   //         type: "PDFTextField",
@@ -3768,6130 +3788,6826 @@ const defaultFormData: ApplicantFormValues = {
   //   ],
   // },
 
-  employmentInfo: {
-    _id: 1,
+  // employmentInfo: {
+  //   _id: 1,
 
-    section13A: [
-      // {
-      //   _id: 1,
-      //   employmentActivity: {
-      //     value:
-      //       "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)",
-      //     id: "17167",
-      //     type: "PDFRadioGroup",
-      //   },
-      //   otherExplanation: {
-      //     value: "13OtherExplanation",
-      //     id: "10240",
-      //   // {
-      //   _id: 1,
-      //   employmentActivity: {
-      //     value:
-      //       "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)",
-      //     id: "17167",
-      //     type: "PDFRadioGroup",
-      //   },
-      //   otherExplanation: {
-      //     value: "13OtherExplanation",
-      //     id: "10240",
-      //     type: "PDFTextField",
-      //   },
-      //   section13A1: {
-      //     fromDate: {
-      //       date: {
-      //         value: "13A1StartDate",
-      //         id: "10236",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10235",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     toDate: {
-      //       date: {
-      //         value: "13A1ToDate",
-      //         id: "10233",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10239",
-      //         type: "PDFCheckBox",
-      //       },
-      //       present: {
-      //         value: "Yes",
-      //         id: "10234",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     employmentStatus: {
-      //       fullTime: {
-      //         value: "Yes",
-      //         id: "10238",
-      //         type: "PDFCheckBox",
-      //       },
-      //       partTime: {
-      //         value: "Yes",
-      //         id: "10237",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     dutyStation: {
-      //       value: "13A1DutyStation",
-      //       id: "10231",
-      //       type: "PDFTextField",
-      //     },
-      //     rankOrPosition: {
-      //       value: "13A1RankTitle",
-      //       id: "10232",
-      //       type: "PDFTextField",
-      //     },
-      //     address: {
-      //       street: {
-      //         value: "13A1DutyStreet",
-      //         id: "10253",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "13A1DutyCity",
-      //         id: "10252",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "AL",
-      //         id: "10251",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "13A1DutyZip",
-      //         id: "10249",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Afghanistan",
-      //         id: "10250",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     telephone: {
-      //       number: {
-      //         value: "13A1Phone",
-      //         id: "10247",
-      //         type: "PDFTextField",
-      //       },
-      //       extension: {
-      //         value: "1",
-      //         id: "10246",
-      //         type: "PDFTextField",
-      //       },
-      //       internationalOrDsn: {
-      //         value: "Yes",
-      //         id: "10245",
-      //         type: "PDFCheckBox",
-      //       },
-      //       day: {
-      //         value: "Yes",
-      //         id: "10244",
-      //         type: "PDFCheckBox",
-      //       },
-      //       night: {
-      //         value: "Yes",
-      //         id: "10243",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     aLocation: {
-      //       street: {
-      //         value: "13A1SupervisorAddress",
-      //         id: "10220",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "13A1SupervisorCity",
-      //         id: "10265",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "DC",
-      //         id: "10264",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "13A1Superviso",
-      //         id: "10212",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Argentina",
-      //         id: "10263",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     hasAPOFPOAddress: {
-      //       value: "YES ",
-      //       id: "17168",
-      //       type: "PDFRadioGroup",
-      //     },
-      //     apoFPOAddress: {
-      //       street: {
-      //         value: "a13A1Street",
-      //         id: "10216",
-      //         type: "PDFTextField",
-      //       },
-      //       zipCode: {
-      //         value: "a13A1Zip",
-      //         id: "10213",
-      //         type: "PDFTextField",
-      //       },
-      //       apoOrFpo: {
-      //         value: "APO",
-      //         id: "10215",
-      //         type: "PDFTextField",
-      //       },
-      //       apoFpoStateCode: {
-      //         value: "APO/FPO Europe",
-      //         id: "10214",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     supervisor: {
-      //       name: {
-      //         value: "13A1SupervisorName",
-      //         id: "10270",
-      //         type: "PDFTextField",
-      //       },
-      //       rankOrPosition: {
-      //         value: "13A1SupervisorRank",
-      //         id: "10269",
-      //         type: "PDFTextField",
-      //       },
-      //       email: {
-      //         value: "13A1SupervisorEmail",
-      //         id: "10242",
-      //         type: "PDFTextField",
-      //       },
-      //       emailUnknown: {
-      //         value: "Yes",
-      //         id: "10241",
-      //         type: "PDFCheckBox",
-      //       },
-      //       phone: {
-      //         number: {
-      //           value: "13A1SupervisorPhone",
-      //           id: "10268",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "13A1Sup",
-      //           id: "10267",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10256",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10255",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10254",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       physicalWorkLocation: {
-      //         street: {
-      //           value: "13A1SupervisorAddress",
-      //           id: "10266",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "13A1SupervisorCity",
-      //           id: "10265",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "DC",
-      //           id: "10264",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "13A1Superviso",
-      //           id: "10262",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Argentina",
-      //           id: "10263",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       apoFpoAddress: {
-      //         street: {
-      //           value: "a13A1Street",
-      //           id: "10261",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "a13A1City",
-      //           id: "10260",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AS",
-      //           id: "10259",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "a13A1Zip",
-      //           id: "10257",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Angola",
-      //           id: "10258",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //     },
-      //   },
+  //   section13A: [
+  //     {
+  //       _id: 1,
+  //       employmentActivity: {
+  //         value:
+  //           "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)",
+  //         id: "17167",
+  //         type: "PDFRadioGroup",
+  //       },
+  //       otherExplanation: {
+  //         value: "13OtherExplanation",
+  //         id: "10240",
+  //         type: "PDFTextField",
+  //       },
+  //       section13A1: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A1StartDate",
+  //             id: "10236",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10235",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "13A1ToDate",
+  //             id: "10233",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10239",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "10234",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "10238",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "10237",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         dutyStation: {
+  //           value: "13A1DutyStation",
+  //           id: "10231",
+  //           type: "PDFTextField",
+  //         },
+  //         rankOrPosition: {
+  //           value: "13A1RankTitle",
+  //           id: "10232",
+  //           type: "PDFTextField",
+  //         },
+  //         address: {
+  //           street: {
+  //             value: "13A1DutyStreet",
+  //             id: "10253",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A1DutyCity",
+  //             id: "10252",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AL",
+  //             id: "10251",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A1DutyZip",
+  //             id: "10249",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "10250",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "13A1Phone",
+  //             id: "10247",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "1",
+  //             id: "10246",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "10245",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "10244",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "10243",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         aLocation: {
+  //           street: {
+  //             value: "13A1SupervisorAddress",
+  //             id: "10220",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A1SupervisorCity",
+  //             id: "10265",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "DC",
+  //             id: "10264",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A1Superviso",
+  //             id: "10212",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Argentina",
+  //             id: "10263",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         hasAPOFPOAddress: {
+  //           value: "YES ",
+  //           id: "17168",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         apoFPOAddress: {
+  //           street: {
+  //             value: "a13A1Street",
+  //             id: "10216",
+  //             type: "PDFTextField",
+  //           },
+  //           zipCode: {
+  //             value: "a13A1Zip",
+  //             id: "10213",
+  //             type: "PDFTextField",
+  //           },
+  //           apoOrFpo: {
+  //             value: "APO",
+  //             id: "10215",
+  //             type: "PDFTextField",
+  //           },
+  //           apoFpoStateCode: {
+  //             value: "APO/FPO Europe",
+  //             id: "10214",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         supervisor: {
+  //           name: {
+  //             value: "13A1SupervisorName",
+  //             id: "10270",
+  //             type: "PDFTextField",
+  //           },
+  //           rankOrPosition: {
+  //             value: "13A1SupervisorRank",
+  //             id: "10269",
+  //             type: "PDFTextField",
+  //           },
+  //           email: {
+  //             value: "13A1SupervisorEmail",
+  //             id: "10242",
+  //             type: "PDFTextField",
+  //           },
+  //           emailUnknown: {
+  //             value: "Yes",
+  //             id: "10241",
+  //             type: "PDFCheckBox",
+  //           },
+  //           phone: {
+  //             number: {
+  //               value: "13A1SupervisorPhone",
+  //               id: "10268",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "13A1Sup",
+  //               id: "10267",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10256",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10255",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10254",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           physicalWorkLocation: {
+  //             street: {
+  //               value: "13A1SupervisorAddress",
+  //               id: "10266",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A1SupervisorCity",
+  //               id: "10265",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "DC",
+  //               id: "10264",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A1Superviso",
+  //               id: "10262",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "10263",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "a13A1Street",
+  //               id: "10261",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A1City",
+  //               id: "10260",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AS",
+  //               id: "10259",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A1Zip",
+  //               id: "10257",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Angola",
+  //               id: "10258",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      //   section13A2: {
-      //     fromDate: {
-      //       date: {
-      //         value: "13A2FromDate",
-      //         id: "10272",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10273",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     toDate: {
-      //       date: {
-      //         value: "13A2ToDate",
-      //         id: "10274",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10276",
-      //         type: "PDFCheckBox",
-      //       },
-      //       present: {
-      //         value: "Yes",
-      //         id: "10275",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     employmentStatus: {
-      //       fullTime: {
-      //         value: "Yes",
-      //         id: "10280",
-      //         type: "PDFCheckBox",
-      //       },
-      //       partTime: {
-      //         value: "Yes",
-      //         id: "10279",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     positionTitle: {
-      //       value: "13A2RecentTitle",
-      //       id: "10277",
-      //       type: "PDFTextField",
-      //     },
-      //     employerName: {
-      //       value: "13A2RecentEmployer",
-      //       id: "10278",
-      //       type: "PDFTextField",
-      //     },
-      //     employerAddress: {
-      //       street: {
-      //         value: "13A2Street",
-      //         id: "10307",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "13A2City",
-      //         id: "10306",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "CA",
-      //         id: "10305",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "13A2Zip",
-      //         id: "10303",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Afghanistan",
-      //         id: "10304",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     telephone: {
-      //       number: {
-      //         value: "13A2Phone",
-      //         id: "10297",
-      //         type: "PDFTextField",
-      //       },
-      //       extension: {
-      //         value: "1",
-      //         id: "10296",
-      //         type: "PDFTextField",
-      //       },
-      //       internationalOrDsn: {
-      //         value: "Yes",
-      //         id: "10295",
-      //         type: "PDFCheckBox",
-      //       },
-      //       day: {
-      //         value: "Yes",
-      //         id: "10294",
-      //         type: "PDFCheckBox",
-      //       },
-      //       night: {
-      //         value: "Yes",
-      //         id: "10293",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     periodsNotApplicable: {
-      //       value: "Yes",
-      //       id: "10271",
-      //       type: "PDFCheckBox",
-      //     },
-      //     additionalPeriods: [
-      //       {
-      //         _id: 1,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate1",
-      //             id: "10363",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10362",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate1",
-      //             id: "10361",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10360",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle1",
-      //           id: "10359",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor1",
-      //           id: "10358",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       {
-      //         _id: 2,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate2",
-      //             id: "10357",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10356",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate2",
-      //             id: "10355",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10354",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle2",
-      //           id: "10353",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor2",
-      //           id: "10352",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       {
-      //         _id: 3,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate3",
-      //             id: "10351",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10350",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate3",
-      //             id: "10349",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10348",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle3",
-      //           id: "10347",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor3",
-      //           id: "10346",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       {
-      //         _id: 4,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate4",
-      //             id: "10345",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10344",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate4",
-      //             id: "10343",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10342",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle4",
-      //           id: "10341",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor4",
-      //           id: "10340",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     ],
-      //     physicalWorkAddress: {
-      //       differentThanEmployer: {
-      //         value: "YES ",
-      //         id: "17159",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "a13A2Street",
-      //           id: "10289",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "a13A2City",
-      //           id: "10288",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AZ",
-      //           id: "10287",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "a13A2Zip",
-      //           id: "10285",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Antarctica",
-      //           id: "10286",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "a13A2Phone",
-      //           id: "10292",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "1",
-      //           id: "10291",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10290",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10284",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10283",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       b1Location: {
-      //         street: {
-      //           value: "a13A2Street",
-      //           id: "10332",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "a13A2City",
-      //           id: "10331",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AZ",
-      //           id: "10330",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "a13A2Zip",
-      //           id: "10324",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Antarctica",
-      //           id: "10329",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
+  //       section13A2: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A2FromDate",
+  //             id: "10272",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10273",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "13A2ToDate",
+  //             id: "10274",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10276",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "10275",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "10280",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "10279",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         positionTitle: {
+  //           value: "13A2RecentTitle",
+  //           id: "10277",
+  //           type: "PDFTextField",
+  //         },
+  //         employerName: {
+  //           value: "13A2RecentEmployer",
+  //           id: "10278",
+  //           type: "PDFTextField",
+  //         },
+  //         employerAddress: {
+  //           street: {
+  //             value: "13A2Street",
+  //             id: "10307",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A2City",
+  //             id: "10306",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "CA",
+  //             id: "10305",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A2Zip",
+  //             id: "10303",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "10304",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "13A2Phone",
+  //             id: "10297",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "1",
+  //             id: "10296",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "10295",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "10294",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "10293",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         periodsNotApplicable: {
+  //           value: "Yes",
+  //           id: "10271",
+  //           type: "PDFCheckBox",
+  //         },
+  //         additionalPeriods: [
+  //           {
+  //             _id: 1,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate1",
+  //                 id: "10363",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10362",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate1",
+  //                 id: "10361",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10360",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle1",
+  //               id: "10359",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor1",
+  //               id: "10358",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 2,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate2",
+  //                 id: "10357",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10356",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate2",
+  //                 id: "10355",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10354",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle2",
+  //               id: "10353",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor2",
+  //               id: "10352",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 3,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate3",
+  //                 id: "10351",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10350",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate3",
+  //                 id: "10349",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10348",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle3",
+  //               id: "10347",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor3",
+  //               id: "10346",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 4,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate4",
+  //                 id: "10345",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10344",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate4",
+  //                 id: "10343",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10342",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle4",
+  //               id: "10341",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor4",
+  //               id: "10340",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         ],
+  //         physicalWorkAddress: {
+  //           differentThanEmployer: {
+  //             value: "YES ",
+  //             id: "17159",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "a13A2Street",
+  //               id: "10289",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A2City",
+  //               id: "10288",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AZ",
+  //               id: "10287",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A2Zip",
+  //               id: "10285",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Antarctica",
+  //               id: "10286",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "a13A2Phone",
+  //               id: "10292",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "1",
+  //               id: "10291",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10290",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10284",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10283",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           b1Location: {
+  //             street: {
+  //               value: "a13A2Street",
+  //               id: "10332",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A2City",
+  //               id: "10331",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AZ",
+  //               id: "10330",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A2Zip",
+  //               id: "10324",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Antarctica",
+  //               id: "10329",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
 
-      //       hasApoFpoAddress: {
-      //         value: "YES ",
-      //         id: "17161",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       apoFpoAddress: {
-      //         dutyLocation: {
-      //           value: "a13A1Street",
-      //           id: "10328",
-      //           type: "PDFTextField",
-      //         },
+  //           hasApoFpoAddress: {
+  //             value: "YES ",
+  //             id: "17161",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           apoFpoAddress: {
+  //             dutyLocation: {
+  //               value: "a13A1Street",
+  //               id: "10328",
+  //               type: "PDFTextField",
+  //             },
 
-      //         apoOrFpo: {
-      //           value: "APO",
-      //           id: "10327",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO Europe",
-      //           id: "10326",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipcode: {
-      //           value: "zipcode",
-      //           id: "10325",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     },
-      //     supervisor: {
-      //       name: {
-      //         value: "13A2SupervisorName",
-      //         id: "10309",
-      //         type: "PDFTextField",
-      //       },
-      //       rankOrPosition: {
-      //         value: "13A2SupervisorTitle",
-      //         id: "10308",
-      //         type: "PDFTextField",
-      //       },
-      //       email: {
-      //         value: "13A2SupervisorEmail",
-      //         id: "10334",
-      //         type: "PDFTextField",
-      //       },
-      //       emailUnknown: {
-      //         value: "Yes",
-      //         id: "10333",
-      //         type: "PDFCheckBox",
-      //       },
-      //       phone: {
-      //         number: {
-      //           value: "13A2SupervisorPhone",
-      //           id: "10339",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "1",
-      //           id: "10338",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10337",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10336",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10335",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       physicalWorkLocation: {
-      //         street: {
-      //           value: "13A2SupervisorStreet",
-      //           id: "10302",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "13A2SupervisorCity",
-      //           id: "10301",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "CA",
-      //           id: "10300",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "13A2Supervisor",
-      //           id: "10298",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Bahrain",
-      //           id: "10299",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       hasAPOFPOAddress: {
-      //         value: "YES ",
-      //         id: "17162",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       apoFPOAddress: {
-      //         dutyLocation: {
-      //           value: "b13A2SupervisorAddress",
-      //           id: "10317",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b13A2SupervisorAPO",
-      //           id: "10316",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO Pacific",
-      //           id: "10315",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipcode: {
-      //           value: "b13A2SupervisorZip",
-      //           id: "10314",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "13A2SupervisorStreet",
-      //           id: "10321",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "13A2SupervisorCity",
-      //           id: "10320",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "CA",
-      //           id: "10319",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "13A2Supervisor",
-      //           id: "10313",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Bahrain",
-      //           id: "10318",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //     },
-      //   },
-      //   section13A3: {
-      //     fromDate: {
-      //       date: { value: "13A3Start", id: "10404", type: "PDFTextField" },
-      //       estimated: { value: "Yes", id: "10405", type: "PDFCheckBox" },
-      //     },
-      //     toDate: {
-      //       date: { value: "13A3To", id: "10406", type: "PDFTextField" },
-      //       estimated: { value: "Yes", id: "10408", type: "PDFCheckBox" },
-      //       present: { value: "Yes", id: "10407", type: "PDFCheckBox" },
-      //     },
-      //     employmentStatus: {
-      //       fullTime: { value: "Yes", id: "10412", type: "PDFCheckBox" },
-      //       partTime: { value: "Yes", id: "10411", type: "PDFCheckBox" },
-      //     },
-      //     positionTitle: {
-      //       value: "13A3PositionTitle",
-      //       id: "10409",
-      //       type: "PDFTextField",
-      //     },
-      //     employmentName: {
-      //       value: "13A3Employment",
-      //       id: "10410",
-      //       type: "PDFTextField",
-      //     },
-      //     employmentAddress: {
-      //       street: { value: "13AStreet", id: "10427", type: "PDFTextField" },
-      //       city: { value: "13A3City", id: "10426", type: "PDFTextField" },
-      //       state: { value: "CT", id: "10425", type: "PDFDropdown" },
-      //       zipCode: { value: "13A3Zip", id: "10423", type: "PDFTextField" },
-      //       country: { value: "Algeria", id: "10424", type: "PDFDropdown" },
-      //     },
-      //     telephone: {
-      //       number: { value: "13A3Phone", id: "10422", type: "PDFTextField" },
-      //       extension: {
-      //         value: "13A3Ext",
-      //         id: "10421",
-      //         type: "PDFTextField",
-      //       },
-      //       internationalOrDsn: {
-      //         value: "Yes",
-      //         id: "10420",
-      //         type: "PDFCheckBox",
-      //       },
-      //       day: { value: "Yes", id: "10419", type: "PDFCheckBox" },
-      //       night: { value: "Yes", id: "10418", type: "PDFCheckBox" },
-      //     },
-      //     physicalWorkAddress: {
-      //       differentThanEmployer: {
-      //         value: "YES",
-      //         id: "17156",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "a13A3Street",
-      //           id: "10371",
-      //           type: "PDFTextField",
-      //         },
-      //         city: { value: "a13A3City", id: "10370", type: "PDFTextField" },
-      //         state: { value: "CA", id: "10369", type: "PDFDropdown" },
-      //         zipCode: { value: "13aZip", id: "10367", type: "PDFTextField" },
-      //         country: {
-      //           value: "Antarctica",
-      //           id: "10368",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "a13A3Phone",
-      //           id: "10366",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "a13A3ext",
-      //           id: "10365",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10364",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: { value: "Yes", id: "10429", type: "PDFCheckBox" },
-      //         night: { value: "Yes", id: "10428", type: "PDFCheckBox" },
-      //       },
-      //       hasApoFpoAddress: {
-      //         value: "YES ",
-      //         id: "17157",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       b1Location: {
-      //         street: {
-      //           value: "b1_13A3Street",
-      //           id: "10403",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "b1_13A3City",
-      //           id: "10402",
-      //           type: "PDFTextField",
-      //         },
-      //         state: { value: "DC", id: "10401", type: "PDFDropdown" },
-      //         zipCode: {
-      //           value: "b1_13A3Zip",
-      //           id: "10395",
-      //           type: "PDFTextField",
-      //         },
-      //         country: { value: "Bahrain", id: "10400", type: "PDFDropdown" },
-      //       },
-      //       apoFpoAddress: {
-      //         dutyLocation: {
-      //           value: "b2_13A3Street",
-      //           id: "10399",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "13b2APO",
-      //           id: "10398",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO Europe",
-      //           id: "10397",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipcode: {
-      //           value: "13b2ZipCod",
-      //           id: "10396",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     },
-      //     selfEmploymentVerifier: {
-      //       lastName: {
-      //         value: "13A3LName",
-      //         id: "10380",
-      //         type: "PDFTextField",
-      //       },
-      //       firstName: {
-      //         value: "13A3FName",
-      //         id: "10379",
-      //         type: "PDFTextField",
-      //       },
-      //       address: {
-      //         street: {
-      //           value: "13A3Street",
-      //           id: "10378",
-      //           type: "PDFTextField",
-      //         },
-      //         city: { value: "13A3City", id: "10377", type: "PDFTextField" },
-      //         state: { value: "CT", id: "10376", type: "PDFDropdown" },
-      //         zipCode: {
-      //           value: "13A3Zip",
-      //           id: "10374",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Argentina",
-      //           id: "10375",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "13A3phone",
-      //           id: "10417",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "13A3Ext",
-      //           id: "10416",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10415",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: { value: "Yes", id: "10414", type: "PDFCheckBox" },
-      //         night: { value: "Yes", id: "10413", type: "PDFCheckBox" },
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "13A3Street",
-      //           id: "10392",
-      //           type: "PDFTextField",
-      //         },
-      //         city: { value: "13A3City", id: "10391", type: "PDFTextField" },
-      //         state: { value: "CT", id: "10390", type: "PDFDropdown" },
-      //         zipCode: {
-      //           value: "13A3Zip",
-      //           id: "10384",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Argentina",
-      //           id: "10389",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       hasAPOFPOAddress: {
-      //         value: "YES ",
-      //         id: "17158",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       apoFpoAddress: {
-      //         dutyLocation: {
-      //           value: "bb13A3Street",
-      //           id: "10388",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "bb13A3APO",
-      //           id: "10387",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO Pacific",
-      //           id: "10386",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "bb13A3Zip",
-      //           id: "10385",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     },
-      //   },
-      //   section13A4: {
-      //     fromDate: {
-      //       date: {
-      //         value: "13A4FromDate",
-      //         id: "10485",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: { value: "Yes", id: "10486", type: "PDFCheckBox" },
-      //     },
-      //     toDate: {
-      //       date: { value: "13A4ToDate", id: "10487", type: "PDFTextField" },
-      //       estimated: { value: "Yes", id: "10488", type: "PDFCheckBox" },
-      //       present: { value: "Yes", id: "10489", type: "PDFCheckBox" },
-      //     },
-      //     verifier: {
-      //       lastName: {
-      //         value: "13A4LName",
-      //         id: "10491",
-      //         type: "PDFTextField",
-      //       },
-      //       firstName: {
-      //         value: "13A4FName",
-      //         id: "10490",
-      //         type: "PDFTextField",
-      //       },
-      //       address: {
-      //         street: {
-      //           value: "13A4Street",
-      //           id: "10484",
-      //           type: "PDFTextField",
-      //         },
-      //         city: { value: "13A4City", id: "10483", type: "PDFTextField" },
-      //         state: { value: "AL", id: "10482", type: "PDFDropdown" },
-      //         zipCode: {
-      //           value: "13A4Zip",
-      //           id: "10480",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Antarctica",
-      //           id: "10481",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "13A4Phone",
-      //           id: "10479",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "13A4Ext",
-      //           id: "10478",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10477",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: { value: "Yes", id: "10476", type: "PDFCheckBox" },
-      //         night: { value: "Yes", id: "10475", type: "PDFCheckBox" },
-      //       },
-      //       hasApoFpoAddress: {
-      //         value: "YES ",
-      //         id: "17155",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "a13A4Street",
-      //           id: "10440",
-      //           type: "PDFTextField",
-      //         },
-      //         city: { value: "a13A4City", id: "10439", type: "PDFTextField" },
-      //         state: { value: "AR", id: "10438", type: "PDFDropdown" },
-      //         zipCode: {
-      //           value: "a13A4Zip",
-      //           id: "10432",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Anguilla",
-      //           id: "10437",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       apoFpoAddress: {
-      //         dutyLocation: {
-      //           value: "b13A4Street",
-      //           id: "10436",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b13A4APO",
-      //           id: "10435",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO Pacific",
-      //           id: "10434",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b13A4Zip",
-      //           id: "10433",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     },
-      //   },
-      //   section13A5: {
-      //     reasonForLeaving: {
-      //       value: "13A5ResonForLEaving",
-      //       id: "10473",
-      //       type: "PDFTextField",
-      //     },
-      //     incidentInLastSevenYears: {
-      //       value: "NO (If NO, proceed to 13A.6)",
-      //       id: "17150",
-      //       type: "PDFRadioGroup",
-      //     },
-      //     incidentDetails: [
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "10470",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ReasonForBeingFired",
-      //           id: "10463",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateFired",
-      //           id: "10461",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "10462",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "10469",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ReasonForQuitting",
-      //           id: "10464",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateQuit",
-      //           id: "10460",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "10459",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "10468",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ChargesorAllegations",
-      //           id: "10465",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateLeft",
-      //           id: "10456",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "10455",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "10467",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ReasonforUnsatisfactory",
-      //           id: "10466",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateLeftMutual",
-      //           id: "10458",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "10457",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //     ],
-      //   },
-      //   section13A6: {
-      //     warnedInLastSevenYears: {
-      //       value: "YES",
-      //       id: "17154",
-      //       type: "PDFRadioGroup",
-      //     },
-      //     warningDetails: [
-      //       {
-      //         reason: {
-      //           value: "13A6Reason1",
-      //           id: "10453",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date1",
-      //             id: "10451",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10452",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //       {
-      //         reason: {
-      //           value: "13A6Reason2",
-      //           id: "10454",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date2",
-      //             id: "10450",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10449",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //       {
-      //         reason: {
-      //           value: "13A6Reason3",
-      //           id: "10447",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date3",
-      //             id: "10445",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10446",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //       {
-      //         reason: {
-      //           value: "13A6Reason4",
-      //           id: "10448",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date4",
-      //             id: "10444",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10443",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //     ],
-      //   },
-      // },
+  //             apoOrFpo: {
+  //               value: "APO",
+  //               id: "10327",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Europe",
+  //               id: "10326",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipcode: {
+  //               value: "zipcode",
+  //               id: "10325",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //         supervisor: {
+  //           name: {
+  //             value: "13A2SupervisorName",
+  //             id: "10309",
+  //             type: "PDFTextField",
+  //           },
+  //           rankOrPosition: {
+  //             value: "13A2SupervisorTitle",
+  //             id: "10308",
+  //             type: "PDFTextField",
+  //           },
+  //           email: {
+  //             value: "13A2SupervisorEmail",
+  //             id: "10334",
+  //             type: "PDFTextField",
+  //           },
+  //           emailUnknown: {
+  //             value: "Yes",
+  //             id: "10333",
+  //             type: "PDFCheckBox",
+  //           },
+  //           phone: {
+  //             number: {
+  //               value: "13A2SupervisorPhone",
+  //               id: "10339",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "1",
+  //               id: "10338",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10337",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10336",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10335",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           physicalWorkLocation: {
+  //             street: {
+  //               value: "13A2SupervisorStreet",
+  //               id: "10302",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A2SupervisorCity",
+  //               id: "10301",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CA",
+  //               id: "10300",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A2Supervisor",
+  //               id: "10298",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "10299",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           hasAPOFPOAddress: {
+  //             value: "YES ",
+  //             id: "17162",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           apoFPOAddress: {
+  //             dutyLocation: {
+  //               value: "b13A2SupervisorAddress",
+  //               id: "10317",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b13A2SupervisorAPO",
+  //               id: "10316",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Pacific",
+  //               id: "10315",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipcode: {
+  //               value: "b13A2SupervisorZip",
+  //               id: "10314",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "13A2SupervisorStreet",
+  //               id: "10321",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A2SupervisorCity",
+  //               id: "10320",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CA",
+  //               id: "10319",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A2Supervisor",
+  //               id: "10313",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "10318",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //         },
+  //       },
+  //       section13A3: {
+  //         fromDate: {
+  //           date: { value: "13A3Start", id: "10404", type: "PDFTextField" },
+  //           estimated: { value: "Yes", id: "10405", type: "PDFCheckBox" },
+  //         },
+  //         toDate: {
+  //           date: { value: "13A3To", id: "10406", type: "PDFTextField" },
+  //           estimated: { value: "Yes", id: "10408", type: "PDFCheckBox" },
+  //           present: { value: "Yes", id: "10407", type: "PDFCheckBox" },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: { value: "Yes", id: "10412", type: "PDFCheckBox" },
+  //           partTime: { value: "Yes", id: "10411", type: "PDFCheckBox" },
+  //         },
+  //         positionTitle: {
+  //           value: "13A3PositionTitle",
+  //           id: "10409",
+  //           type: "PDFTextField",
+  //         },
+  //         employmentName: {
+  //           value: "13A3Employment",
+  //           id: "10410",
+  //           type: "PDFTextField",
+  //         },
+  //         employmentAddress: {
+  //           street: { value: "13AStreet", id: "10427", type: "PDFTextField" },
+  //           city: { value: "13A3City", id: "10426", type: "PDFTextField" },
+  //           state: { value: "CT", id: "10425", type: "PDFDropdown" },
+  //           zipCode: { value: "13A3Zip", id: "10423", type: "PDFTextField" },
+  //           country: { value: "Algeria", id: "10424", type: "PDFDropdown" },
+  //         },
+  //         telephone: {
+  //           number: { value: "13A3Phone", id: "10422", type: "PDFTextField" },
+  //           extension: {
+  //             value: "13A3Ext",
+  //             id: "10421",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "10420",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: { value: "Yes", id: "10419", type: "PDFCheckBox" },
+  //           night: { value: "Yes", id: "10418", type: "PDFCheckBox" },
+  //         },
+  //         physicalWorkAddress: {
+  //           differentThanEmployer: {
+  //             value: "YES",
+  //             id: "17156",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "a13A3Street",
+  //               id: "10371",
+  //               type: "PDFTextField",
+  //             },
+  //             city: { value: "a13A3City", id: "10370", type: "PDFTextField" },
+  //             state: { value: "CA", id: "10369", type: "PDFDropdown" },
+  //             zipCode: { value: "13aZip", id: "10367", type: "PDFTextField" },
+  //             country: {
+  //               value: "Antarctica",
+  //               id: "10368",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "a13A3Phone",
+  //               id: "10366",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "a13A3ext",
+  //               id: "10365",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10364",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: { value: "Yes", id: "10429", type: "PDFCheckBox" },
+  //             night: { value: "Yes", id: "10428", type: "PDFCheckBox" },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "YES ",
+  //             id: "17157",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           b1Location: {
+  //             street: {
+  //               value: "b1_13A3Street",
+  //               id: "10403",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "b1_13A3City",
+  //               id: "10402",
+  //               type: "PDFTextField",
+  //             },
+  //             state: { value: "DC", id: "10401", type: "PDFDropdown" },
+  //             zipCode: {
+  //               value: "b1_13A3Zip",
+  //               id: "10395",
+  //               type: "PDFTextField",
+  //             },
+  //             country: { value: "Bahrain", id: "10400", type: "PDFDropdown" },
+  //           },
+  //           apoFpoAddress: {
+  //             dutyLocation: {
+  //               value: "b2_13A3Street",
+  //               id: "10399",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "13b2APO",
+  //               id: "10398",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Europe",
+  //               id: "10397",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipcode: {
+  //               value: "13b2ZipCod",
+  //               id: "10396",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //         selfEmploymentVerifier: {
+  //           lastName: {
+  //             value: "13A3LName",
+  //             id: "10380",
+  //             type: "PDFTextField",
+  //           },
+  //           firstName: {
+  //             value: "13A3FName",
+  //             id: "10379",
+  //             type: "PDFTextField",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "13A3Street",
+  //               id: "10378",
+  //               type: "PDFTextField",
+  //             },
+  //             city: { value: "13A3City", id: "10377", type: "PDFTextField" },
+  //             state: { value: "CT", id: "10376", type: "PDFDropdown" },
+  //             zipCode: {
+  //               value: "13A3Zip",
+  //               id: "10374",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "10375",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "13A3phone",
+  //               id: "10417",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "13A3Ext",
+  //               id: "10416",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10415",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: { value: "Yes", id: "10414", type: "PDFCheckBox" },
+  //             night: { value: "Yes", id: "10413", type: "PDFCheckBox" },
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "13A3Street",
+  //               id: "10392",
+  //               type: "PDFTextField",
+  //             },
+  //             city: { value: "13A3City", id: "10391", type: "PDFTextField" },
+  //             state: { value: "CT", id: "10390", type: "PDFDropdown" },
+  //             zipCode: {
+  //               value: "13A3Zip",
+  //               id: "10384",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "10389",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           hasAPOFPOAddress: {
+  //             value: "YES ",
+  //             id: "17158",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           apoFpoAddress: {
+  //             dutyLocation: {
+  //               value: "bb13A3Street",
+  //               id: "10388",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "bb13A3APO",
+  //               id: "10387",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Pacific",
+  //               id: "10386",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "bb13A3Zip",
+  //               id: "10385",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //       },
+  //       section13A4: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A4FromDate",
+  //             id: "10485",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: { value: "Yes", id: "10486", type: "PDFCheckBox" },
+  //         },
+  //         toDate: {
+  //           date: { value: "13A4ToDate", id: "10487", type: "PDFTextField" },
+  //           estimated: { value: "Yes", id: "10488", type: "PDFCheckBox" },
+  //           present: { value: "Yes", id: "10489", type: "PDFCheckBox" },
+  //         },
+  //         verifier: {
+  //           lastName: {
+  //             value: "13A4LName",
+  //             id: "10491",
+  //             type: "PDFTextField",
+  //           },
+  //           firstName: {
+  //             value: "13A4FName",
+  //             id: "10490",
+  //             type: "PDFTextField",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "13A4Street",
+  //               id: "10484",
+  //               type: "PDFTextField",
+  //             },
+  //             city: { value: "13A4City", id: "10483", type: "PDFTextField" },
+  //             state: { value: "AL", id: "10482", type: "PDFDropdown" },
+  //             zipCode: {
+  //               value: "13A4Zip",
+  //               id: "10480",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Antarctica",
+  //               id: "10481",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "13A4Phone",
+  //               id: "10479",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "13A4Ext",
+  //               id: "10478",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10477",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: { value: "Yes", id: "10476", type: "PDFCheckBox" },
+  //             night: { value: "Yes", id: "10475", type: "PDFCheckBox" },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "YES ",
+  //             id: "17155",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "a13A4Street",
+  //               id: "10440",
+  //               type: "PDFTextField",
+  //             },
+  //             city: { value: "a13A4City", id: "10439", type: "PDFTextField" },
+  //             state: { value: "AR", id: "10438", type: "PDFDropdown" },
+  //             zipCode: {
+  //               value: "a13A4Zip",
+  //               id: "10432",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Anguilla",
+  //               id: "10437",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             dutyLocation: {
+  //               value: "b13A4Street",
+  //               id: "10436",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b13A4APO",
+  //               id: "10435",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Pacific",
+  //               id: "10434",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b13A4Zip",
+  //               id: "10433",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //       },
+  //       section13A5: {
+  //         reasonForLeaving: {
+  //           value: "13A5ResonForLEaving",
+  //           id: "10473",
+  //           type: "PDFTextField",
+  //         },
+  //         incidentInLastSevenYears: {
+  //           value: "NO (If NO, proceed to 13A.6)",
+  //           id: "17150",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         incidentDetails: [
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "10470",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonForBeingFired",
+  //               id: "10463",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateFired",
+  //               id: "10461",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "10462",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "10469",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonForQuitting",
+  //               id: "10464",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateQuit",
+  //               id: "10460",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "10459",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "10468",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ChargesorAllegations",
+  //               id: "10465",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateLeft",
+  //               id: "10456",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "10455",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "10467",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonforUnsatisfactory",
+  //               id: "10466",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateLeftMutual",
+  //               id: "10458",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "10457",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //         ],
+  //       },
+  //       section13A6: {
+  //         warnedInLastSevenYears: {
+  //           value: "YES",
+  //           id: "17154",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         warningDetails: [
+  //           {
+  //             reason: {
+  //               value: "13A6Reason1",
+  //               id: "10453",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date1",
+  //                 id: "10451",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10452",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason2",
+  //               id: "10454",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date2",
+  //                 id: "10450",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10449",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason3",
+  //               id: "10447",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date3",
+  //                 id: "10445",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10446",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason4",
+  //               id: "10448",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date4",
+  //                 id: "10444",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10443",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //         ],
+  //       },
+  //     },
 
-      // {
-      //   _id: 2,
-      //   employmentActivity: {
-      //     value:
-      //       "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)",
-      //     id: "17148",
-      //     type: "PDFRadioGroup",
-      //   },
-      //   otherExplanation: {
-      //     value: "13OtherExplanation",
-      //     id: "10536",
-      //     type: "PDFTextField",
-      //   },
-      //   section13A1: {
-      //     fromDate: {
-      //       date: {
-      //         value: "13A1StartDate",
-      //         id: "10532",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10535",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     toDate: {
-      //       date: {
-      //         value: "13A1ToDate",
-      //         id: "10529",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10534",
-      //         type: "PDFCheckBox",
-      //       },
-      //       present: {
-      //         value: "Yes",
-      //         id: "10533",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     employmentStatus: {
-      //       fullTime: {
-      //         value: "Yes",
-      //         id: "10531",
-      //         type: "PDFCheckBox",
-      //       },
-      //       partTime: {
-      //         value: "Yes",
-      //         id: "10530",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     dutyStation: {
-      //       value: "13A1DutyStation",
-      //       id: "10527",
-      //       type: "PDFTextField",
-      //     },
-      //     rankOrPosition: {
-      //       value: "13A1RankTitle",
-      //       id: "10528",
-      //       type: "PDFTextField",
-      //     },
-      //     address: {
-      //       street: {
-      //         value: "13A1DutyStreet",
-      //         id: "10549",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "13A1DutyCity",
-      //         id: "10548",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "AL",
-      //         id: "10547",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "13A1DutyZip",
-      //         id: "10545",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Afghanistan",
-      //         id: "10546",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     telephone: {
-      //       number: {
-      //         value: "13A1Phone",
-      //         id: "10543",
-      //         type: "PDFTextField",
-      //       },
-      //       extension: {
-      //         value: "1",
-      //         id: "10542",
-      //         type: "PDFTextField",
-      //       },
-      //       internationalOrDsn: {
-      //         value: "Yes",
-      //         id: "10541",
-      //         type: "PDFCheckBox",
-      //       },
-      //       day: {
-      //         value: "Yes",
-      //         id: "10540",
-      //         type: "PDFCheckBox",
-      //       },
-      //       night: {
-      //         value: "Yes",
-      //         id: "10539",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     aLocation: {
-      //       street: {
-      //         value: "13A1SupervisorAddress",
-      //         id: "10516",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "13A1SupervisorCity",
-      //         id: "10515",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "DC",
-      //         id: "10514",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "13A1Superviso",
-      //         id: "10508",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Argentina",
-      //         id: "10513",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     hasAPOFPOAddress: {
-      //       value: "YES ",
-      //       id: "17149",
-      //       type: "PDFRadioGroup",
-      //     },
-      //     apoFPOAddress: {
-      //       street: {
-      //         value: "10512",
-      //         id: "10512",
-      //         type: "PDFTextField",
-      //       },
-      //       apoOrFpo: {
-      //         value: "APO",
-      //         id: "10511",
-      //         type: "PDFTextField",
-      //       },
-      //       apoFpoStateCode: {
-      //         value: "APO/FPO Europe",
-      //         id: "10510",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "bZip",
-      //         id: "10509",
-      //         type: "PDFTextField",
-      //       },
-      //     },
-      //     supervisor: {
-      //       name: {
-      //         value: "13A1SupervisorName",
-      //         id: "10505",
-      //         type: "PDFTextField",
-      //       },
-      //       rankOrPosition: {
-      //         value: "13A1SupervisorRankTitle",
-      //         id: "10504",
-      //         type: "PDFTextField",
-      //       },
-      //       email: {
-      //         value: "13A1SupervisorEmail",
-      //         id: "10538",
-      //         type: "PDFTextField",
-      //       },
-      //       emailUnknown: {
-      //         value: "Yes",
-      //         id: "10537",
-      //         type: "PDFCheckBox",
-      //       },
-      //       phone: {
-      //         number: {
-      //           value: "13A1SupervisorPhone",
-      //           id: "10503",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "13A1Sup",
-      //           id: "10502",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10552",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10551",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10550",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       physicalWorkLocation: {
-      //         street: {
-      //           value: "13A1SupervisorAddress",
-      //           id: "10501",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "13A1SupervisorCity",
-      //           id: "10500",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "DC",
-      //           id: "10499",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "13A1Superviso",
-      //           id: "10497",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Argentina",
-      //           id: "10498",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       apoFpoAddress: {
-      //         street: {
-      //           value: "a13A1Street",
-      //           id: "10496",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "a13A1City",
-      //           id: "10495",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AS",
-      //           id: "10494",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "a13A1Zip",
-      //           id: "10492",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Angola",
-      //           id: "10493",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //     },
-      //   },
+  //     {
+  //       _id: 2,
+  //       employmentActivity: {
+  //         value:
+  //           "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)",
+  //         id: "17148",
+  //         type: "PDFRadioGroup",
+  //       },
+  //       otherExplanation: {
+  //         value: "13OtherExplanation",
+  //         id: "10536",
+  //         type: "PDFTextField",
+  //       },
+  //       section13A1: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A1StartDate",
+  //             id: "10532",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10535",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "13A1ToDate",
+  //             id: "10529",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10534",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "10533",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "10531",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "10530",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         dutyStation: {
+  //           value: "13A1DutyStation",
+  //           id: "10527",
+  //           type: "PDFTextField",
+  //         },
+  //         rankOrPosition: {
+  //           value: "13A1RankTitle",
+  //           id: "10528",
+  //           type: "PDFTextField",
+  //         },
+  //         address: {
+  //           street: {
+  //             value: "13A1DutyStreet",
+  //             id: "10549",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A1DutyCity",
+  //             id: "10548",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AL",
+  //             id: "10547",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A1DutyZip",
+  //             id: "10545",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "10546",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "13A1Phone",
+  //             id: "10543",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "1",
+  //             id: "10542",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "10541",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "10540",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "10539",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         aLocation: {
+  //           street: {
+  //             value: "13A1SupervisorAddress",
+  //             id: "10516",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A1SupervisorCity",
+  //             id: "10515",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "DC",
+  //             id: "10514",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A1Superviso",
+  //             id: "10508",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Argentina",
+  //             id: "10513",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         hasAPOFPOAddress: {
+  //           value: "YES ",
+  //           id: "17149",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         apoFPOAddress: {
+  //           street: {
+  //             value: "10512",
+  //             id: "10512",
+  //             type: "PDFTextField",
+  //           },
+  //           apoOrFpo: {
+  //             value: "APO",
+  //             id: "10511",
+  //             type: "PDFTextField",
+  //           },
+  //           apoFpoStateCode: {
+  //             value: "APO/FPO Europe",
+  //             id: "10510",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "bZip",
+  //             id: "10509",
+  //             type: "PDFTextField",
+  //           },
+  //         },
+  //         supervisor: {
+  //           name: {
+  //             value: "13A1SupervisorName",
+  //             id: "10505",
+  //             type: "PDFTextField",
+  //           },
+  //           rankOrPosition: {
+  //             value: "13A1SupervisorRankTitle",
+  //             id: "10504",
+  //             type: "PDFTextField",
+  //           },
+  //           email: {
+  //             value: "13A1SupervisorEmail",
+  //             id: "10538",
+  //             type: "PDFTextField",
+  //           },
+  //           emailUnknown: {
+  //             value: "Yes",
+  //             id: "10537",
+  //             type: "PDFCheckBox",
+  //           },
+  //           phone: {
+  //             number: {
+  //               value: "13A1SupervisorPhone",
+  //               id: "10503",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "13A1Sup",
+  //               id: "10502",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10552",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10551",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10550",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           physicalWorkLocation: {
+  //             street: {
+  //               value: "13A1SupervisorAddress",
+  //               id: "10501",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A1SupervisorCity",
+  //               id: "10500",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "DC",
+  //               id: "10499",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A1Superviso",
+  //               id: "10497",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "10498",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "a13A1Street",
+  //               id: "10496",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A1City",
+  //               id: "10495",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AS",
+  //               id: "10494",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A1Zip",
+  //               id: "10492",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Angola",
+  //               id: "10493",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      //   section13A2: {
-      //     fromDate: {
-      //       date: {
-      //         value: "13A2FromDate",
-      //         id: "10613",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10614",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     toDate: {
-      //       date: {
-      //         value: "13A2ToDate",
-      //         id: "10615",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10612",
-      //         type: "PDFCheckBox",
-      //       },
-      //       present: {
-      //         value: "Yes",
-      //         id: "10617",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     employmentStatus: {
-      //       fullTime: {
-      //         value: "Yes",
-      //         id: "10620",
-      //         type: "PDFCheckBox",
-      //       },
-      //       partTime: {
-      //         value: "Yes",
-      //         id: "10616",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     positionTitle: {
-      //       value: "13A2RecentTitle",
-      //       id: "10618",
-      //       type: "PDFTextField",
-      //     },
-      //     employerName: {
-      //       value: "13A2RecentEmployer",
-      //       id: "10619",
-      //       type: "PDFTextField",
-      //     },
-      //     employerAddress: {
-      //       street: {
-      //         value: "13A2Street",
-      //         id: "10555",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "13A2City",
-      //         id: "10554",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "AK",
-      //         id: "10553",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "13A2Zip",
-      //         id: "10644",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Afghanistan",
-      //         id: "10645",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     telephone: {
-      //       number: {
-      //         value: "13A2Phone",
-      //         id: "10638",
-      //         type: "PDFTextField",
-      //       },
-      //       extension: {
-      //         value: "1",
-      //         id: "10637",
-      //         type: "PDFTextField",
-      //       },
-      //       internationalOrDsn: {
-      //         value: "Yes",
-      //         id: "10636",
-      //         type: "PDFCheckBox",
-      //       },
-      //       day: {
-      //         value: "Yes",
-      //         id: "10635",
-      //         type: "PDFCheckBox",
-      //       },
-      //       night: {
-      //         value: "Yes",
-      //         id: "10634",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     periodsNotApplicable: {
-      //       value: "Yes",
-      //       id: "10621",
-      //       type: "PDFCheckBox",
-      //     },
-      //     additionalPeriods: [
-      //       {
-      //         _id: 1,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate1",
-      //             id: "10611",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10610",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate1",
-      //             id: "10609",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10608",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle1",
-      //           id: "10607",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor1",
-      //           id: "10606",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       {
-      //         _id: 2,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate2",
-      //             id: "10605",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10604",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate2",
-      //             id: "10603",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10602",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle2",
-      //           id: "10601",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor2",
-      //           id: "10600",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       {
-      //         _id: 3,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate3",
-      //             id: "10599",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10598",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate3",
-      //             id: "10597",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10596",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle3",
-      //           id: "10595",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor3",
-      //           id: "10594",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       {
-      //         _id: 4,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate4",
-      //             id: "10593",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10592",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate4",
-      //             id: "10591",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10590",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle4",
-      //           id: "10589",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor4",
-      //           id: "10588",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     ],
-      //     physicalWorkAddress: {
-      //       differentThanEmployer: {
-      //         value: "NO (If NO, proceed to (b))",
-      //         id: "17140",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "a13A2Street",
-      //           id: "10630",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "a13A2City",
-      //           id: "10629",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AL",
-      //           id: "10628",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "a13A2Zip",
-      //           id: "10626",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Albania",
-      //           id: "10627",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "a13A2Phone",
-      //           id: "10633",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "1",
-      //           id: "10632",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10631",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10625",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10624",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       b1Location: {
-      //         street: {
-      //           value: "b1Street",
-      //           id: "10580",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "b1City",
-      //           id: "10579",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AK",
-      //           id: "10578",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b1Zip",
-      //           id: "10572",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Afghanistan",
-      //           id: "10577",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       apoFpoAddress: {
-      //         street: {
-      //           value: "b2Street",
-      //           id: "10576",
-      //           type: "PDFTextField",
-      //         },
+  //       section13A2: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A2FromDate",
+  //             id: "10613",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10614",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "13A2ToDate",
+  //             id: "10615",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10612",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "10617",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "10620",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "10616",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         positionTitle: {
+  //           value: "13A2RecentTitle",
+  //           id: "10618",
+  //           type: "PDFTextField",
+  //         },
+  //         employerName: {
+  //           value: "13A2RecentEmployer",
+  //           id: "10619",
+  //           type: "PDFTextField",
+  //         },
+  //         employerAddress: {
+  //           street: {
+  //             value: "13A2Street",
+  //             id: "10555",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A2City",
+  //             id: "10554",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AK",
+  //             id: "10553",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A2Zip",
+  //             id: "10644",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "10645",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "13A2Phone",
+  //             id: "10638",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "1",
+  //             id: "10637",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "10636",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "10635",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "10634",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         periodsNotApplicable: {
+  //           value: "Yes",
+  //           id: "10621",
+  //           type: "PDFCheckBox",
+  //         },
+  //         additionalPeriods: [
+  //           {
+  //             _id: 1,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate1",
+  //                 id: "10611",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10610",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate1",
+  //                 id: "10609",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10608",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle1",
+  //               id: "10607",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor1",
+  //               id: "10606",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 2,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate2",
+  //                 id: "10605",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10604",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate2",
+  //                 id: "10603",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10602",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle2",
+  //               id: "10601",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor2",
+  //               id: "10600",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 3,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate3",
+  //                 id: "10599",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10598",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate3",
+  //                 id: "10597",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10596",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle3",
+  //               id: "10595",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor3",
+  //               id: "10594",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 4,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate4",
+  //                 id: "10593",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10592",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate4",
+  //                 id: "10591",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10590",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle4",
+  //               id: "10589",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor4",
+  //               id: "10588",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         ],
+  //         physicalWorkAddress: {
+  //           differentThanEmployer: {
+  //             value: "NO (If NO, proceed to (b))",
+  //             id: "17140",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "a13A2Street",
+  //               id: "10630",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A2City",
+  //               id: "10629",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AL",
+  //               id: "10628",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A2Zip",
+  //               id: "10626",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Albania",
+  //               id: "10627",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "a13A2Phone",
+  //               id: "10633",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "1",
+  //               id: "10632",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10631",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10625",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10624",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           b1Location: {
+  //             street: {
+  //               value: "b1Street",
+  //               id: "10580",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "b1City",
+  //               id: "10579",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AK",
+  //               id: "10578",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b1Zip",
+  //               id: "10572",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Afghanistan",
+  //               id: "10577",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "b2Street",
+  //               id: "10576",
+  //               type: "PDFTextField",
+  //             },
 
-      //         apoFpoStateCode: {
-      //           value: "b2Zip",
-      //           id: "10574",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b2Zip",
-      //           id: "10575",
-      //           type: "PDFTextField",
-      //         },
-      //         zipCode: {
-      //           value: "b2Zip",
-      //           id: "10573",
-      //           type: "PDFTextField",
-      //         },
+  //             apoFpoStateCode: {
+  //               value: "b2Zip",
+  //               id: "10574",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b2Zip",
+  //               id: "10575",
+  //               type: "PDFTextField",
+  //             },
+  //             zipCode: {
+  //               value: "b2Zip",
+  //               id: "10573",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "NO",
+  //             id: "17142",
+  //             type: "PDFRadioGroup",
+  //           },
+  //         },
+  //         supervisor: {
+  //           name: {
+  //             value: "13A2SupervisorName",
+  //             id: "10557",
+  //             type: "PDFTextField",
+  //           },
+  //           rankOrPosition: {
+  //             value: "13A2SupervisorTitle",
+  //             id: "10556",
+  //             type: "PDFTextField",
+  //           },
+  //           email: {
+  //             value: "13A2SupervisorEmail",
+  //             id: "10582",
+  //             type: "PDFTextField",
+  //           },
+  //           emailUnknown: {
+  //             value: "Yes",
+  //             id: "10581",
+  //             type: "PDFCheckBox",
+  //           },
+  //           phone: {
+  //             number: {
+  //               value: "13A2SupervisorPhone",
+  //               id: "10587",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "1",
+  //               id: "10586",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10585",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10584",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10583",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           physicalWorkLocation: {
+  //             street: {
+  //               value: "13A2SupervisorStreet",
+  //               id: "10643",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A2SupervisorCity",
+  //               id: "10642",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CA",
+  //               id: "10641",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A2Supervisor",
+  //               id: "10639",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "10640",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           hasAPOFPOAddress: {
+  //             value: "YES ",
+  //             id: "17143",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           apoFPOAddress: {
+  //             street: {
+  //               value: "b13A2SupervisorAddress",
+  //               id: "10565",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b13A2SupervisorAPO",
+  //               id: "10564",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Pacific",
+  //               id: "10563",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b13A2SupervisorZip",
+  //               id: "10562",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "13A2SupervisorStreet",
+  //               id: "10569",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A2SupervisorCity",
+  //               id: "10568",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CA",
+  //               id: "10567",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A2Supervisor",
+  //               id: "10561",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "10566",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      //       },
-      //       hasApoFpoAddress: {
-      //         value: "NO",
-      //         id: "17142",
-      //         type: "PDFRadioGroup",
-      //       },
-      //     },
-      //     supervisor: {
-      //             name: {
-      //               value: "13A2SupervisorName",
-      //               id: "10557",
-      //               type: "PDFTextField",
-      //             },
-      //             rankOrPosition: {
-      //               value: "13A2SupervisorTitle",
-      //               id: "10556",
-      //               type: "PDFTextField",
-      //             },
-      //             email: {
-      //               value: "13A2SupervisorEmail",
-      //               id: "10582",
-      //               type: "PDFTextField",
-      //             },
-      //             emailUnknown: {
-      //               value: "Yes",
-      //               id: "10581",
-      //               type: "PDFCheckBox",
-      //             },
-      //             phone: {
-      //               number: {
-      //                 value: "13A2SupervisorPhone",
-      //                 id: "10587",
-      //                 type: "PDFTextField",
-      //               },
-      //               extension: {
-      //                 value: "1",
-      //                 id: "10586",
-      //                 type: "PDFTextField",
-      //               },
-      //               internationalOrDsn: {
-      //                 value: "Yes",
-      //                 id: "10585",
-      //                 type: "PDFCheckBox",
-      //               },
-      //               day: {
-      //                 value: "Yes",
-      //                 id: "10584",
-      //                 type: "PDFCheckBox",
-      //               },
-      //               night: {
-      //                 value: "Yes",
-      //                 id: "10583",
-      //                 type: "PDFCheckBox",
-      //               },
-      //             },
-      //             physicalWorkLocation: {
-      //               street: {
-      //                 value: "13A2SupervisorStreet",
-      //                 id: "10643",
-      //                 type: "PDFTextField",
-      //               },
-      //               city: {
-      //                 value: "13A2SupervisorCity",
-      //                 id: "10642",
-      //                 type: "PDFTextField",
-      //               },
-      //               state: {
-      //                 value: "CA",
-      //                 id: "10641",
-      //                 type: "PDFDropdown",
-      //               },
-      //               zipCode: {
-      //                 value: "13A2Supervisor",
-      //                 id: "10639",
-      //                 type: "PDFTextField",
-      //               },
-      //               country: {
-      //                 value: "Bahrain",
-      //                 id: "10640",
-      //                 type: "PDFDropdown",
-      //               },
-      //             },
-      //             hasAPOFPOAddress: {
-      //               value: "YES ",
-      //               id: "17143",
-      //               type: "PDFRadioGroup",
-      //             },
-      //             apoFPOAddress: {
-      //               street: {
-      //                 value: "b13A2SupervisorAddress",
-      //                 id: "10565",
-      //                 type: "PDFTextField",
-      //               },
-      //               apoOrFpo: {
-      //                 value: "b13A2SupervisorAPO",
-      //                 id: "10564",
-      //                 type: "PDFTextField",
-      //               },
-      //               apoFpoStateCode: {
-      //                 value: "APO/FPO Pacific",
-      //                 id: "10563",
-      //                 type: "PDFDropdown",
-      //               },
-      //               zipCode: {
-      //                 value: "b13A2SupervisorZip",
-      //                 id: "10562",
-      //                 type: "PDFTextField",
-      //               },
-      //             },
-      //             aLocation: {
-      //               street: {
-      //                 value: "13A2SupervisorStreet",
-      //                 id: "10569",
-      //                 type: "PDFTextField",
-      //               },
-      //               city: {
-      //                 value: "13A2SupervisorCity",
-      //                 id: "10568",
-      //                 type: "PDFTextField",
-      //               },
-      //               state: {
-      //                 value: "CA",
-      //                 id: "10567",
-      //                 type: "PDFDropdown",
-      //               },
-      //               zipCode: {
-      //                 value: "13A2Supervisor",
-      //                 id: "10561",
-      //                 type: "PDFTextField",
-      //               },
-      //               country: {
-      //                 value: "Bahrain",
-      //                 id: "10566",
-      //                 type: "PDFDropdown",
-      //               },
-      //             },
+  //       section13A3: {
+  //         fromDate: {
+  //           date: {
+  //             value: "FromDate",
+  //             id: "10668",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10669",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "ToDate",
+  //             id: "10670",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10672",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "10671",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "10676",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "10675",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         positionTitle: {
+  //           value: "RecentPositionTitle",
+  //           id: "10673",
+  //           type: "PDFTextField",
+  //         },
+  //         employmentName: {
+  //           value: "NameOfEmployment",
+  //           id: "10674",
+  //           type: "PDFTextField",
+  //         },
+  //         employmentAddress: {
+  //           street: {
+  //             value: "EmploymentStreet",
+  //             id: "10691",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "EmploymentCity",
+  //             id: "10690",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AK",
+  //             id: "10689",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "EmploymentZip",
+  //             id: "10687",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "10688",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "EmploymentPhone",
+  //             id: "10686",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "EXT",
+  //             id: "10685",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "10684",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "10683",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "10682",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         physicalWorkAddress: {
+  //           differentThanEmployer: {
+  //             value: "YES",
+  //             id: "17137",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "aWorkStreet",
+  //               id: "10701",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "aWorkCity",
+  //               id: "10700",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AR",
+  //               id: "10699",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "aWorkZip",
+  //               id: "10697",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Albania",
+  //               id: "10698",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "aWorkPhone",
+  //               id: "10696",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "aEXT",
+  //               id: "10695",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10694",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10693",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10692",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "YES ",
+  //             id: "17138",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           b1Location: {
+  //             street: {
+  //               value: "b1Street",
+  //               id: "10667",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "b1City",
+  //               id: "10666",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "DC",
+  //               id: "10665",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b1Zip",
+  //               id: "10620",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "10664",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "b2Street",
+  //               id: "10663",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b2APO",
+  //               id: "10662",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO America",
+  //               id: "10661",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b2Zip",
+  //               id: "10660",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //         selfEmploymentVerifier: {
+  //           lastName: {
+  //             value: "VerifyerLastName",
+  //             id: "10710",
+  //             type: "PDFTextField",
+  //           },
+  //           firstName: {
+  //             value: "VerifyerFirstName",
+  //             id: "10709",
+  //             type: "PDFTextField",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "VerifyerStreet",
+  //               id: "10708",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "VeryfierCity",
+  //               id: "10707",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CT",
+  //               id: "10706",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "VeryfierZip",
+  //               id: "10704",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "10705",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "VeryfierPhone",
+  //               id: "10681",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "VeryfierEX",
+  //               id: "10680",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10679",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10678",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10677",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "13A3Street",
+  //               id: "10656",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A3City",
+  //               id: "10655",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CT",
+  //               id: "10654",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A3Zip",
+  //               id: "10648",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "10653",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           hasAPOFPOAddress: {
+  //             value: "YES ",
+  //             id: "17139",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "b2Street",
+  //               id: "10652",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b2APO",
+  //               id: "10651",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO America",
+  //               id: "10650",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b2Zip",
+  //               id: "10649",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      //     }
-      //   },
+  //       section13A4: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A4FromDate",
+  //             id: "10738",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: { value: "Yes", id: "10739", type: "PDFCheckBox" },
+  //         },
+  //         toDate: {
+  //           date: { value: "13A4ToDate", id: "10740", type: "PDFTextField" },
+  //           estimated: { value: "Yes", id: "10742", type: "PDFCheckBox" },
+  //           present: { value: "Yes", id: "10741", type: "PDFCheckBox" },
+  //         },
+  //         verifier: {
+  //           lastName: {
+  //             value: "13A4LName",
+  //             id: "10744",
+  //             type: "PDFTextField",
+  //           },
+  //           firstName: {
+  //             value: "13A4FName",
+  //             id: "10743",
+  //             type: "PDFTextField",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "13A4Street",
+  //               id: "10737",
+  //               type: "PDFTextField",
+  //             },
+  //             city: { value: "13A4City", id: "10736", type: "PDFTextField" },
+  //             state: { value: "AL", id: "10735", type: "PDFDropdown" },
+  //             zipCode: {
+  //               value: "13A4Zip",
+  //               id: "10733",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Antarctica",
+  //               id: "10734",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "13A4Phone",
+  //               id: "10732",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "13A4Ext",
+  //               id: "10731",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10730",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: { value: "Yes", id: "10729", type: "PDFCheckBox" },
+  //             night: { value: "Yes", id: "10728", type: "PDFCheckBox" },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "YES ",
+  //             id: "17136",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "a13A4Street",
+  //               id: "10755",
+  //               type: "PDFTextField",
+  //             },
+  //             city: { value: "a13A4City", id: "10754", type: "PDFTextField" },
+  //             state: { value: "AR", id: "10753", type: "PDFDropdown" },
+  //             zipCode: {
+  //               value: "a13A4Zip",
+  //               id: "10747",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Anguilla",
+  //               id: "10752",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             dutyLocation: {
+  //               value: "b13A4Street",
+  //               id: "10751",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b13A4APO",
+  //               id: "10750",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Pacific",
+  //               id: "10749",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b13A4Zip",
+  //               id: "10748",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      //   section13A3: {
-      //     fromDate: {
-      //       date: {
-      //         value: "FromDate",
-      //         id: "10668",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10669",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     toDate: {
-      //       date: {
-      //         value: "ToDate",
-      //         id: "10670",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10672",
-      //         type: "PDFCheckBox",
-      //       },
-      //       present: {
-      //         value: "Yes",
-      //         id: "10671",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     employmentStatus: {
-      //       fullTime: {
-      //         value: "Yes",
-      //         id: "10676",
-      //         type: "PDFCheckBox",
-      //       },
-      //       partTime: {
-      //         value: "Yes",
-      //         id: "10675",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     positionTitle: {
-      //       value: "RecentPositionTitle",
-      //       id: "10673",
-      //       type: "PDFTextField",
-      //     },
-      //     employmentName: {
-      //       value: "NameOfEmployment",
-      //       id: "10674",
-      //       type: "PDFTextField",
-      //     },
-      //     employmentAddress: {
-      //       street: {
-      //         value: "EmploymentStreet",
-      //         id: "10691",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "EmploymentCity",
-      //         id: "10690",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "AK",
-      //         id: "10689",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "EmploymentZip",
-      //         id: "10687",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Afghanistan",
-      //         id: "10688",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     telephone: {
-      //       number: {
-      //         value: "EmploymentPhone",
-      //         id: "10686",
-      //         type: "PDFTextField",
-      //       },
-      //       extension: {
-      //         value: "EXT",
-      //         id: "10685",
-      //         type: "PDFTextField",
-      //       },
-      //       internationalOrDsn: {
-      //         value: "Yes",
-      //         id: "10684",
-      //         type: "PDFCheckBox",
-      //       },
-      //       day: {
-      //         value: "Yes",
-      //         id: "10683",
-      //         type: "PDFCheckBox",
-      //       },
-      //       night: {
-      //         value: "Yes",
-      //         id: "10682",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     physicalWorkAddress: {
-      //       differentThanEmployer: {
-      //         value: "YES",
-      //         id: "17137",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "aWorkStreet",
-      //           id: "10701",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "aWorkCity",
-      //           id: "10700",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AR",
-      //           id: "10699",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "aWorkZip",
-      //           id: "10697",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Albania",
-      //           id: "10698",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "aWorkPhone",
-      //           id: "10696",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "aEXT",
-      //           id: "10695",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10694",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10693",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10692",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       hasApoFpoAddress: {
-      //         value: "YES ",
-      //         id: "17138",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       b1Location: {
-      //         street: {
-      //           value: "b1Street",
-      //           id: "10667",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "b1City",
-      //           id: "10666",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "DC",
-      //           id: "10665",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b1Zip",
-      //           id: "10620",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Bahrain",
-      //           id: "10664",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       apoFpoAddress: {
-      //         street: {
-      //           value: "b2Street",
-      //           id: "10663",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b2APO",
-      //           id: "10662",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO America",
-      //           id: "10661",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b2Zip",
-      //           id: "10660",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     },
-      //     selfEmploymentVerifier: {
-      //       lastName: {
-      //         value: "VerifyerLastName",
-      //         id: "10710",
-      //         type: "PDFTextField",
-      //       },
-      //       firstName: {
-      //         value: "VerifyerFirstName",
-      //         id: "10709",
-      //         type: "PDFTextField",
-      //       },
-      //       address: {
-      //         street: {
-      //           value: "VerifyerStreet",
-      //           id: "10708",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "VeryfierCity",
-      //           id: "10707",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "CT",
-      //           id: "10706",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "VeryfierZip",
-      //           id: "10704",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Argentina",
-      //           id: "10705",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "VeryfierPhone",
-      //           id: "10681",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "VeryfierEX",
-      //           id: "10680",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10679",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10678",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10677",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "13A3Street",
-      //           id: "10656",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "13A3City",
-      //           id: "10655",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "CT",
-      //           id: "10654",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "13A3Zip",
-      //           id: "10648",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Argentina",
-      //           id: "10653",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       hasAPOFPOAddress: {
-      //         value: "YES ",
-      //         id: "17139",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       apoFpoAddress: {
-      //         street: {
-      //           value: "b2Street",
-      //           id: "10652",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b2APO",
-      //           id: "10651",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO America",
-      //           id: "10650",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b2Zip",
-      //           id: "10649",
-      //           type: "PDFTextField",
-      //         },
-      //       }
-      //     },
-      //   },
+  //       section13A5: {
+  //         reasonForLeaving: {
+  //           value: "13A5ResonForLEaving",
+  //           id: "10726",
+  //           type: "PDFTextField",
+  //         },
+  //         incidentInLastSevenYears: {
+  //           value: "NO (If NO, proceed to 13A.6)",
+  //           id: "17131",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         incidentDetails: [
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "10723",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonForBeingFired",
+  //               id: "10716",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateFired",
+  //               id: "10714",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "10715",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "10722",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonForQuitting",
+  //               id: "10717",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateQuit",
+  //               id: "10713",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "10712",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "10721",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ChargesorAllegations",
+  //               id: "10718",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateLeft",
+  //               id: "10771",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "10772",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "10720",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonforUnsatisfactory",
+  //               id: "10719",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateLeftMutual",
+  //               id: "10773",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "10770",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //         ],
+  //       },
 
-      //   section13A4: {
-      //     fromDate: {
-      //       date: {
-      //         value: "13A4FromDate",
-      //         id: "10738",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: { value: "Yes", id: "10739", type: "PDFCheckBox" },
-      //     },
-      //     toDate: {
-      //       date: { value: "13A4ToDate", id: "10740", type: "PDFTextField" },
-      //       estimated: { value: "Yes", id: "10742", type: "PDFCheckBox" },
-      //       present: { value: "Yes", id: "10741", type: "PDFCheckBox" },
-      //     },
-      //     verifier: {
-      //       lastName: {
-      //         value: "13A4LName",
-      //         id: "10744",
-      //         type: "PDFTextField",
-      //       },
-      //       firstName: {
-      //         value: "13A4FName",
-      //         id: "10743",
-      //         type: "PDFTextField",
-      //       },
-      //       address: {
-      //         street: {
-      //           value: "13A4Street",
-      //           id: "10737",
-      //           type: "PDFTextField",
-      //         },
-      //         city: { value: "13A4City", id: "10736", type: "PDFTextField" },
-      //         state: { value: "AL", id: "10735", type: "PDFDropdown" },
-      //         zipCode: {
-      //           value: "13A4Zip",
-      //           id: "10733",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Antarctica",
-      //           id: "10734",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "13A4Phone",
-      //           id: "10732",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "13A4Ext",
-      //           id: "10731",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10730",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: { value: "Yes", id: "10729", type: "PDFCheckBox" },
-      //         night: { value: "Yes", id: "10728", type: "PDFCheckBox" },
-      //       },
-      //       hasApoFpoAddress: {
-      //         value: "YES ",
-      //         id: "17136",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "a13A4Street",
-      //           id: "10755",
-      //           type: "PDFTextField",
-      //         },
-      //         city: { value: "a13A4City", id: "10754", type: "PDFTextField" },
-      //         state: { value: "AR", id: "10753", type: "PDFDropdown" },
-      //         zipCode: {
-      //           value: "a13A4Zip",
-      //           id: "10747",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Anguilla",
-      //           id: "10752",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       apoFpoAddress: {
-      //         dutyLocation: {
-      //           value: "b13A4Street",
-      //           id: "10751",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b13A4APO",
-      //           id: "10750",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO Pacific",
-      //           id: "10749",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b13A4Zip",
-      //           id: "10748",
-      //           type: "PDFTextField",
-      //         },
-      //       },
+  //       section13A6: {
+  //         warnedInLastSevenYears: {
+  //           value: "YES",
+  //           id: "17135",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         warningDetails: [
+  //           {
+  //             reason: {
+  //               value: "13A6Reason1",
+  //               id: "10768",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date1",
+  //                 id: "10766",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10767",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason2",
+  //               id: "10769",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date2",
+  //                 id: "10765",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10764",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason3",
+  //               id: "10762",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date3",
+  //                 id: "10760",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10761",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason4",
+  //               id: "10763",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date4",
+  //                 id: "10759",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10758",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //         ],
+  //       },
+  //     },
 
-      //     },
-      //   },
+  //     {
+  //       _id: 3,
+  //       employmentActivity: {
+  //         value:
+  //           "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)",
+  //         id: "17129",
+  //         type: "PDFRadioGroup",
+  //       },
+  //       otherExplanation: {
+  //         value: "13OtherExplanation",
+  //         id: "10779",
+  //         type: "PDFTextField",
+  //       },
+  //       section13A1: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A1StartDate",
+  //             id: "10775",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10774",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "13A1ToDate",
+  //             id: "10833",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10778",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "10834",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "10777",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "10776",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         dutyStation: {
+  //           value: "13A1DutyStation",
+  //           id: "10831",
+  //           type: "PDFTextField",
+  //         },
+  //         rankOrPosition: {
+  //           value: "13A1RankTitle",
+  //           id: "10832",
+  //           type: "PDFTextField",
+  //         },
+  //         address: {
+  //           street: {
+  //             value: "13A1DutyStreet",
+  //             id: "10792",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A1DutyCity",
+  //             id: "10791",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AL",
+  //             id: "10790",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A1DutyZip",
+  //             id: "10788",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "10789",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "13A1Phone",
+  //             id: "10786",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "1",
+  //             id: "10785",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "10784",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "10783",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "10782",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         aLocation: {
+  //           street: {
+  //             value: "13A1SupervisorAddress",
+  //             id: "10820",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A1SupervisorCity",
+  //             id: "10819",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "DC",
+  //             id: "10818",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A1Superviso",
+  //             id: "10812",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Argentina",
+  //             id: "10817",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         hasAPOFPOAddress: {
+  //           value: "YES ",
+  //           id: "17130",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         apoFPOAddress: {
+  //           street: {
+  //             value: "Address",
+  //             id: "10816",
+  //             type: "PDFTextField",
+  //           },
+  //           apoOrFpo: {
+  //             value: "APO",
+  //             id: "10815",
+  //             type: "PDFTextField",
+  //           },
+  //           apoFpoStateCode: {
+  //             value: "APO/FPO Europe",
+  //             id: "10814",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "bZip",
+  //             id: "10813",
+  //             type: "PDFTextField",
+  //           },
+  //         },
+  //         supervisor: {
+  //           name: {
+  //             value: "13A1SupervisorName",
+  //             id: "10809",
+  //             type: "PDFTextField",
+  //           },
+  //           rankOrPosition: {
+  //             value: "13A1SupervisorRankTitle",
+  //             id: "10808",
+  //             type: "PDFTextField",
+  //           },
+  //           email: {
+  //             value: "13A1SupervisorEmail",
+  //             id: "10781",
+  //             type: "PDFTextField",
+  //           },
+  //           emailUnknown: {
+  //             value: "Yes",
+  //             id: "10780",
+  //             type: "PDFCheckBox",
+  //           },
+  //           phone: {
+  //             number: {
+  //               value: "13A1SupervisorPhone",
+  //               id: "10807",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "13A1Sup",
+  //               id: "10806",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10795",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10794",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10793",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           physicalWorkLocation: {
+  //             street: {
+  //               value: "13A1SupervisorAddress",
+  //               id: "10805",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A1SupervisorCity",
+  //               id: "10804",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "DC",
+  //               id: "10803",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A1Superviso",
+  //               id: "10801",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "10802",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "a13A1Street",
+  //               id: "10800",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A1City",
+  //               id: "10799",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AS",
+  //               id: "10798",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A1Zip",
+  //               id: "10796",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Angola",
+  //               id: "10797",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      //   section13A5: {
-      //     reasonForLeaving: {
-      //       value: "13A5ResonForLEaving",
-      //       id: "10726",
-      //       type: "PDFTextField",
-      //     },
-      //     incidentInLastSevenYears: {
-      //       value: "NO (If NO, proceed to 13A.6)",
-      //       id: "17131",
-      //       type: "PDFRadioGroup",
-      //     },
-      //     incidentDetails: [
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "10723",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ReasonForBeingFired",
-      //           id: "10716",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateFired",
-      //           id: "10714",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "10715",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "10722",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ReasonForQuitting",
-      //           id: "10717",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateQuit",
-      //           id: "10713",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "10712",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "10721",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ChargesorAllegations",
-      //           id: "10718",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateLeft",
-      //           id: "10771",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "10772",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "10720",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ReasonforUnsatisfactory",
-      //           id: "10719",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateLeftMutual",
-      //           id: "10773",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "10770",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //     ],
-      //   },
+  //       section13A2: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A2FromDate",
+  //             id: "10920",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10921",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "13A2ToDate",
+  //             id: "10922",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10924",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "10923",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "10835",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "10927",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         positionTitle: {
+  //           value: "13A2RecentTitle",
+  //           id: "10925",
+  //           type: "PDFTextField",
+  //         },
+  //         employerName: {
+  //           value: "13A2RecentEmployer",
+  //           id: "10926",
+  //           type: "PDFTextField",
+  //         },
+  //         employerAddress: {
+  //           street: {
+  //             value: "13A2Street",
+  //             id: "10862",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A2City",
+  //             id: "10861",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AK",
+  //             id: "10860",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A2Zip",
+  //             id: "10858",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "10859",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "13A2Phone",
+  //             id: "10852",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "1",
+  //             id: "10851",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "10850",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "10849",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "10848",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         periodsNotApplicable: {
+  //           value: "Yes",
+  //           id: "10919",
+  //           type: "PDFCheckBox",
+  //         },
+  //         additionalPeriods: [
+  //           {
+  //             _id: 1,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate1",
+  //                 id: "10918",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10917",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate1",
+  //                 id: "10916",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10915",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle1",
+  //               id: "10914",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor1",
+  //               id: "10913",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 2,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate2",
+  //                 id: "10912",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10911",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate2",
+  //                 id: "10910",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10909",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle2",
+  //               id: "10908",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor2",
+  //               id: "10907",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 3,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate3",
+  //                 id: "10906",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10905",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate3",
+  //                 id: "10904",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10903",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle3",
+  //               id: "10902",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor3",
+  //               id: "10901",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 4,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate4",
+  //                 id: "10900",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10899",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate4",
+  //                 id: "10898",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "10897",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle4",
+  //               id: "10896",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor4",
+  //               id: "10895",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         ],
+  //         physicalWorkAddress: {
+  //           differentThanEmployer: {
+  //             value: "NO (If NO, proceed to (b))",
+  //             id: "17121",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "a13A2Street",
+  //               id: "10844",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A2City",
+  //               id: "10843",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AL",
+  //               id: "10842",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A2Zip",
+  //               id: "10840",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Albania",
+  //               id: "10841",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "a13A2Phone",
+  //               id: "10847",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "1",
+  //               id: "10846",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10845",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10839",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10838",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           b1Location: {
+  //             street: {
+  //               value: "b1Street",
+  //               id: "10887",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "b1City",
+  //               id: "10886",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AK",
+  //               id: "10885",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b1Zip",
+  //               id: "10879",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Afghanistan",
+  //               id: "10884",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "b2Street",
+  //               id: "10883",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "b2Zip",
+  //               id: "10881",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b2Zip",
+  //               id: "10882",
+  //               type: "PDFTextField",
+  //             },
+  //             zipCode: {
+  //               value: "b2Zip",
+  //               id: "10880",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "NO",
+  //             id: "17123",
+  //             type: "PDFRadioGroup",
+  //           },
+  //         },
+  //         supervisor: {
+  //           name: {
+  //             value: "13A2SupervisorName",
+  //             id: "10864",
+  //             type: "PDFTextField",
+  //           },
+  //           rankOrPosition: {
+  //             value: "13A2SupervisorTitle",
+  //             id: "10863",
+  //             type: "PDFTextField",
+  //           },
+  //           email: {
+  //             value: "13A2SupervisorEmail",
+  //             id: "10889",
+  //             type: "PDFTextField",
+  //           },
+  //           emailUnknown: {
+  //             value: "Yes",
+  //             id: "10888",
+  //             type: "PDFCheckBox",
+  //           },
+  //           phone: {
+  //             number: {
+  //               value: "13A2SupervisorPhone",
+  //               id: "10894",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "1",
+  //               id: "10893",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10892",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10891",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10890",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           physicalWorkLocation: {
+  //             street: {
+  //               value: "13A2SupervisorStreet",
+  //               id: "10857",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A2SupervisorCity",
+  //               id: "10856",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CA",
+  //               id: "10855",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A2Supervisor",
+  //               id: "10853",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "10854",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           hasAPOFPOAddress: {
+  //             value: "NO",
+  //             id: "17124",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           apoFPOAddress: {
+  //             street: {
+  //               value: "b13A2SupervisorAddress",
+  //               id: "10872",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b13A2SupervisorAPO",
+  //               id: "10871",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Pacific",
+  //               id: "10870",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b13A2SupervisorZip",
+  //               id: "10869",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "13A2SupervisorStreet",
+  //               id: "10876",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A2SupervisorCity",
+  //               id: "10875",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CA",
+  //               id: "10874",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A2Supervisor",
+  //               id: "10868",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "10873",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      //   section13A6: {
-      //     warnedInLastSevenYears: {
-      //       value: "YES",
-      //       id: "17135",
-      //       type: "PDFRadioGroup",
-      //     },
-      //     warningDetails: [
-      //       {
-      //         reason: {
-      //           value: "13A6Reason1",
-      //           id: "10768",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date1",
-      //             id: "10766",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10767",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //       {
-      //         reason: {
-      //           value: "13A6Reason2",
-      //           id: "10769",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date2",
-      //             id: "10765",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10764",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //       {
-      //         reason: {
-      //           value: "13A6Reason3",
-      //           id: "10762",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date3",
-      //             id: "10760",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10761",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //       {
-      //         reason: {
-      //           value: "13A6Reason4",
-      //           id: "10763",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date4",
-      //             id: "10759",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10758",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //     ],
-      //   },
-      // },
+  //       section13A3: {
+  //         fromDate: {
+  //           date: {
+  //             value: "FromDate",
+  //             id: "10950",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10951",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "ToDate",
+  //             id: "10952",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "10954",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "10953",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "10958",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "10957",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         positionTitle: {
+  //           value: "RecentPositionTitle",
+  //           id: "10955",
+  //           type: "PDFTextField",
+  //         },
+  //         employmentName: {
+  //           value: "NameOfEmployment",
+  //           id: "10956",
+  //           type: "PDFTextField",
+  //         },
+  //         employmentAddress: {
+  //           street: {
+  //             value: "EmploymentStreet",
+  //             id: "10973",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "EmploymentCity",
+  //             id: "10972",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AK",
+  //             id: "10971",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "EmploymentZip",
+  //             id: "10969",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "10970",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "EmploymentPhone",
+  //             id: "10968",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "EXT",
+  //             id: "10967",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "10966",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "10965",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "10964",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         physicalWorkAddress: {
+  //           differentThanEmployer: {
+  //             value: "NO (If NO, proceed to (b))",
+  //             id: "17118",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "aWorkStreet",
+  //               id: "10938",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "aWorkCity",
+  //               id: "10937",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AR",
+  //               id: "10936",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "aWorkZip",
+  //               id: "10930",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Albania",
+  //               id: "10935",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "aWorkPhone",
+  //               id: "10963",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "aEXT",
+  //               id: "10962",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "10976",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "10975",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "10974",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "YES ",
+  //             id: "17119",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           b1Location: {
+  //             street: {
+  //               value: "b1Street",
+  //               id: "10949",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "b1City",
+  //               id: "10948",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "DC",
+  //               id: "10947",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b1Zip",
+  //               id: "10941",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "10946",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "b2Street",
+  //               id: "10945",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b2APO",
+  //               id: "10944",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO America",
+  //               id: "10943",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b2Zip",
+  //               id: "10942",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //         selfEmploymentVerifier: {
+  //           lastName: {
+  //             value: "VerifyerLastName",
+  //             id: "10992",
+  //             type: "PDFTextField",
+  //           },
+  //           firstName: {
+  //             value: "VerifyerFirstName",
+  //             id: "10991",
+  //             type: "PDFTextField",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "VerifyerStreet",
+  //               id: "10990",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "VeryfierCity",
+  //               id: "10989",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CT",
+  //               id: "10988",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "VeryfierZip",
+  //               id: "10986",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "10987",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "VeryfierPhone",
+  //               id: "10978",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "VeryfierEX",
+  //               id: "10977",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "13A3Street",
+  //               id: "10983",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A3City",
+  //               id: "10982",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CT",
+  //               id: "10981",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A3Zip",
+  //               id: "10979",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "10980",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           hasAPOFPOAddress: {
+  //             value: "NO",
+  //             id: "17120",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "b2Street",
+  //               id: "10934",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b2APO",
+  //               id: "10933",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO America",
+  //               id: "10932",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b2Zip",
+  //               id: "10931",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      // {
-      //   _id: 3,
-      //   employmentActivity: {
-      //     value:
-      //       "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)",
-      //     id: "17129",
-      //     type: "PDFRadioGroup",
-      //   },
-      //   otherExplanation: {
-      //     value: "13OtherExplanation",
-      //     id: "10779",
-      //     type: "PDFTextField",
-      //   },
-      //   section13A1: {
-      //     fromDate: {
-      //       date: {
-      //         value: "13A1StartDate",
-      //         id: "10775",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10774",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     toDate: {
-      //       date: {
-      //         value: "13A1ToDate",
-      //         id: "10833",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10778",
-      //         type: "PDFCheckBox",
-      //       },
-      //       present: {
-      //         value: "Yes",
-      //         id: "10834",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     employmentStatus: {
-      //       fullTime: {
-      //         value: "Yes",
-      //         id: "10777",
-      //         type: "PDFCheckBox",
-      //       },
-      //       partTime: {
-      //         value: "Yes",
-      //         id: "10776",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     dutyStation: {
-      //       value: "13A1DutyStation",
-      //       id: "10831",
-      //       type: "PDFTextField",
-      //     },
-      //     rankOrPosition: {
-      //       value: "13A1RankTitle",
-      //       id: "10832",
-      //       type: "PDFTextField",
-      //     },
-      //     address: {
-      //       street: {
-      //         value: "13A1DutyStreet",
-      //         id: "10792",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "13A1DutyCity",
-      //         id: "10791",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "AL",
-      //         id: "10790",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "13A1DutyZip",
-      //         id: "10788",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Afghanistan",
-      //         id: "10789",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     telephone: {
-      //       number: {
-      //         value: "13A1Phone",
-      //         id: "10786",
-      //         type: "PDFTextField",
-      //       },
-      //       extension: {
-      //         value: "1",
-      //         id: "10785",
-      //         type: "PDFTextField",
-      //       },
-      //       internationalOrDsn: {
-      //         value: "Yes",
-      //         id: "10784",
-      //         type: "PDFCheckBox",
-      //       },
-      //       day: {
-      //         value: "Yes",
-      //         id: "10783",
-      //         type: "PDFCheckBox",
-      //       },
-      //       night: {
-      //         value: "Yes",
-      //         id: "10782",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     aLocation: {
-      //       street: {
-      //         value: "13A1SupervisorAddress",
-      //         id: "10820",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "13A1SupervisorCity",
-      //         id: "10819",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "DC",
-      //         id: "10818",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "13A1Superviso",
-      //         id: "10812",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Argentina",
-      //         id: "10817",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     hasAPOFPOAddress: {
-      //       value: "YES ",
-      //       id: "17130",
-      //       type: "PDFRadioGroup",
-      //     },
-      //     apoFPOAddress: {
-      //       street: {
-      //         value: "Address",
-      //         id: "10816",
-      //         type: "PDFTextField",
-      //       },
-      //       apoOrFpo: {
-      //         value: "APO",
-      //         id: "10815",
-      //         type: "PDFTextField",
-      //       },
-      //       apoFpoStateCode: {
-      //         value: "APO/FPO Europe",
-      //         id: "10814",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "bZip",
-      //         id: "10813",
-      //         type: "PDFTextField",
-      //       },
-      //     },
-      //     supervisor: {
-      //       name: {
-      //         value: "13A1SupervisorName",
-      //         id: "10809",
-      //         type: "PDFTextField",
-      //       },
-      //       rankOrPosition: {
-      //         value: "13A1SupervisorRankTitle",
-      //         id: "10808",
-      //         type: "PDFTextField",
-      //       },
-      //       email: {
-      //         value: "13A1SupervisorEmail",
-      //         id: "10781",
-      //         type: "PDFTextField",
-      //       },
-      //       emailUnknown: {
-      //         value: "Yes",
-      //         id: "10780",
-      //         type: "PDFCheckBox",
-      //       },
-      //       phone: {
-      //         number: {
-      //           value: "13A1SupervisorPhone",
-      //           id: "10807",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "13A1Sup",
-      //           id: "10806",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10795",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10794",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10793",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       physicalWorkLocation: {
-      //         street: {
-      //           value: "13A1SupervisorAddress",
-      //           id: "10805",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "13A1SupervisorCity",
-      //           id: "10804",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "DC",
-      //           id: "10803",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "13A1Superviso",
-      //           id: "10801",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Argentina",
-      //           id: "10802",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       apoFpoAddress: {
-      //         street: {
-      //           value: "a13A1Street",
-      //           id: "10800",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "a13A1City",
-      //           id: "10799",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AS",
-      //           id: "10798",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "a13A1Zip",
-      //           id: "10796",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Angola",
-      //           id: "10797",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //     },
-      //   },
+  //       section13A4: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A4FromDate",
+  //             id: "11048",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "11049",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "13A4ToDate",
+  //             id: "11050",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "11052",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "11051",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         verifier: {
+  //           lastName: {
+  //             value: "13A4LName",
+  //             id: "11054",
+  //             type: "PDFTextField",
+  //           },
+  //           firstName: {
+  //             value: "13A4FName",
+  //             id: "11053",
+  //             type: "PDFTextField",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "13A4Street",
+  //               id: "11047",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A4City",
+  //               id: "11046",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AL",
+  //               id: "11045",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A4Zip",
+  //               id: "11043",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Antarctica",
+  //               id: "11044",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "13A4Phone",
+  //               id: "11042",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "13A4Ext",
+  //               id: "11041",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "11040",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "11039",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "11038",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "YES ",
+  //             id: "17117",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "a13A4Street",
+  //               id: "11003",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A4City",
+  //               id: "11002",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AR",
+  //               id: "11001",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A4Zip",
+  //               id: "10995",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Anguilla",
+  //               id: "11000",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             dutyLocation: {
+  //               value: "b13A4Street",
+  //               id: "10999",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b13A4APO",
+  //               id: "10998",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Pacific",
+  //               id: "10997",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b13A4Zip",
+  //               id: "10996",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      //   section13A2: {
-      //     fromDate: {
-      //       date: {
-      //         value: "13A2FromDate",
-      //         id: "10920",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10921",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     toDate: {
-      //       date: {
-      //         value: "13A2ToDate",
-      //         id: "10922",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10924",
-      //         type: "PDFCheckBox",
-      //       },
-      //       present: {
-      //         value: "Yes",
-      //         id: "10923",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     employmentStatus: {
-      //       fullTime: {
-      //         value: "Yes",
-      //         id: "10835",
-      //         type: "PDFCheckBox",
-      //       },
-      //       partTime: {
-      //         value: "Yes",
-      //         id: "10927",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     positionTitle: {
-      //       value: "13A2RecentTitle",
-      //       id: "10925",
-      //       type: "PDFTextField",
-      //     },
-      //     employerName: {
-      //       value: "13A2RecentEmployer",
-      //       id: "10926",
-      //       type: "PDFTextField",
-      //     },
-      //     employerAddress: {
-      //       street: {
-      //         value: "13A2Street",
-      //         id: "10862",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "13A2City",
-      //         id: "10861",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "AK",
-      //         id: "10860",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "13A2Zip",
-      //         id: "10858",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Afghanistan",
-      //         id: "10859",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     telephone: {
-      //       number: {
-      //         value: "13A2Phone",
-      //         id: "10852",
-      //         type: "PDFTextField",
-      //       },
-      //       extension: {
-      //         value: "1",
-      //         id: "10851",
-      //         type: "PDFTextField",
-      //       },
-      //       internationalOrDsn: {
-      //         value: "Yes",
-      //         id: "10850",
-      //         type: "PDFCheckBox",
-      //       },
-      //       day: {
-      //         value: "Yes",
-      //         id: "10849",
-      //         type: "PDFCheckBox",
-      //       },
-      //       night: {
-      //         value: "Yes",
-      //         id: "10848",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     periodsNotApplicable: {
-      //       value: "Yes",
-      //       id: "10919",
-      //       type: "PDFCheckBox",
-      //     },
-      //     additionalPeriods: [
-      //       {
-      //         _id: 1,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate1",
-      //             id: "10918",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10917",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate1",
-      //             id: "10916",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10915",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle1",
-      //           id: "10914",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor1",
-      //           id: "10913",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       {
-      //         _id: 2,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate2",
-      //             id: "10912",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10911",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate2",
-      //             id: "10910",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10909",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle2",
-      //           id: "10908",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor2",
-      //           id: "10907",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       {
-      //         _id: 3,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate3",
-      //             id: "10906",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10905",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate3",
-      //             id: "10904",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10903",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle3",
-      //           id: "10902",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor3",
-      //           id: "10901",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       {
-      //         _id: 4,
-      //         fromDate: {
-      //           date: {
-      //             value: "13A2FromDate4",
-      //             id: "10900",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10899",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         toDate: {
-      //           date: {
-      //             value: "13A2ToDate4",
-      //             id: "10898",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "10897",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //         positionTitle: {
-      //           value: "PositionTitle4",
-      //           id: "10896",
-      //           type: "PDFTextField",
-      //         },
-      //         supervisor: {
-      //           value: "Supervisor4",
-      //           id: "10895",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     ],
-      //     physicalWorkAddress: {
-      //       differentThanEmployer: {
-      //         value: "NO (If NO, proceed to (b))",
-      //         id: "17121",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "a13A2Street",
-      //           id: "10844",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "a13A2City",
-      //           id: "10843",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AL",
-      //           id: "10842",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "a13A2Zip",
-      //           id: "10840",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Albania",
-      //           id: "10841",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "a13A2Phone",
-      //           id: "10847",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "1",
-      //           id: "10846",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10845",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10839",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10838",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       b1Location: {
-      //         street: {
-      //           value: "b1Street",
-      //           id: "10887",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "b1City",
-      //           id: "10886",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AK",
-      //           id: "10885",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b1Zip",
-      //           id: "10879",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Afghanistan",
-      //           id: "10884",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       apoFpoAddress: {
-      //         street: {
-      //           value: "b2Street",
-      //           id: "10883",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "b2Zip",
-      //           id: "10881",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b2Zip",
-      //           id: "10882",
-      //           type: "PDFTextField",
-      //         },
-      //         zipCode: {
-      //           value: "b2Zip",
-      //           id: "10880",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       hasApoFpoAddress: {
-      //         value: "NO",
-      //         id: "17123",
-      //         type: "PDFRadioGroup",
-      //       },
-      //     },
-      //     supervisor: {
-      //       name: {
-      //         value: "13A2SupervisorName",
-      //         id: "10864",
-      //         type: "PDFTextField",
-      //       },
-      //       rankOrPosition: {
-      //         value: "13A2SupervisorTitle",
-      //         id: "10863",
-      //         type: "PDFTextField",
-      //       },
-      //       email: {
-      //         value: "13A2SupervisorEmail",
-      //         id: "10889",
-      //         type: "PDFTextField",
-      //       },
-      //       emailUnknown: {
-      //         value: "Yes",
-      //         id: "10888",
-      //         type: "PDFCheckBox",
-      //       },
-      //       phone: {
-      //         number: {
-      //           value: "13A2SupervisorPhone",
-      //           id: "10894",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "1",
-      //           id: "10893",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10892",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10891",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10890",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       physicalWorkLocation: {
-      //         street: {
-      //           value: "13A2SupervisorStreet",
-      //           id: "10857",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "13A2SupervisorCity",
-      //           id: "10856",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "CA",
-      //           id: "10855",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "13A2Supervisor",
-      //           id: "10853",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Bahrain",
-      //           id: "10854",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       hasAPOFPOAddress: {
-      //         value: "NO",
-      //         id: "17124",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       apoFPOAddress: {
-      //         street: {
-      //           value: "b13A2SupervisorAddress",
-      //           id: "10872",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b13A2SupervisorAPO",
-      //           id: "10871",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO Pacific",
-      //           id: "10870",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b13A2SupervisorZip",
-      //           id: "10869",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "13A2SupervisorStreet",
-      //           id: "10876",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "13A2SupervisorCity",
-      //           id: "10875",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "CA",
-      //           id: "10874",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "13A2Supervisor",
-      //           id: "10868",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Bahrain",
-      //           id: "10873",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //     },
-      //   },
+  //       section13A5: {
+  //         reasonForLeaving: {
+  //           value: "13A5ResonForLEaving",
+  //           id: "11036",
+  //           type: "PDFTextField",
+  //         },
+  //         incidentInLastSevenYears: {
+  //           value: "NO (If NO, proceed to 13A.6)",
+  //           id: "17112",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         incidentDetails: [
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "11033",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonForBeingFired",
+  //               id: "11026",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateFired",
+  //               id: "11024",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "11025",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "11032",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonForQuitting",
+  //               id: "11027",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateQuit",
+  //               id: "11023",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "11022",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "11031",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ChargesorAllegations",
+  //               id: "11028",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateLeft",
+  //               id: "11019",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "11018",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "11030",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonforUnsatisfactory",
+  //               id: "11029",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateLeftMutual",
+  //               id: "11021",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "11020",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //         ],
+  //       },
 
-      //   section13A3: {
-      //     fromDate: {
-      //       date: {
-      //         value: "FromDate",
-      //         id: "10950",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10951",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     toDate: {
-      //       date: {
-      //         value: "ToDate",
-      //         id: "10952",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "10954",
-      //         type: "PDFCheckBox",
-      //       },
-      //       present: {
-      //         value: "Yes",
-      //         id: "10953",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     employmentStatus: {
-      //       fullTime: {
-      //         value: "Yes",
-      //         id: "10958",
-      //         type: "PDFCheckBox",
-      //       },
-      //       partTime: {
-      //         value: "Yes",
-      //         id: "10957",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     positionTitle: {
-      //       value: "RecentPositionTitle",
-      //       id: "10955",
-      //       type: "PDFTextField",
-      //     },
-      //     employmentName: {
-      //       value: "NameOfEmployment",
-      //       id: "10956",
-      //       type: "PDFTextField",
-      //     },
-      //     employmentAddress: {
-      //       street: {
-      //         value: "EmploymentStreet",
-      //         id: "10973",
-      //         type: "PDFTextField",
-      //       },
-      //       city: {
-      //         value: "EmploymentCity",
-      //         id: "10972",
-      //         type: "PDFTextField",
-      //       },
-      //       state: {
-      //         value: "AK",
-      //         id: "10971",
-      //         type: "PDFDropdown",
-      //       },
-      //       zipCode: {
-      //         value: "EmploymentZip",
-      //         id: "10969",
-      //         type: "PDFTextField",
-      //       },
-      //       country: {
-      //         value: "Afghanistan",
-      //         id: "10970",
-      //         type: "PDFDropdown",
-      //       },
-      //     },
-      //     telephone: {
-      //       number: {
-      //         value: "EmploymentPhone",
-      //         id: "10968",
-      //         type: "PDFTextField",
-      //       },
-      //       extension: {
-      //         value: "EXT",
-      //         id: "10967",
-      //         type: "PDFTextField",
-      //       },
-      //       internationalOrDsn: {
-      //         value: "Yes",
-      //         id: "10966",
-      //         type: "PDFCheckBox",
-      //       },
-      //       day: {
-      //         value: "Yes",
-      //         id: "10965",
-      //         type: "PDFCheckBox",
-      //       },
-      //       night: {
-      //         value: "Yes",
-      //         id: "10964",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     physicalWorkAddress: {
-      //       differentThanEmployer: {
-      //         value: "NO (If NO, proceed to (b))",
-      //         id: "17118",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "aWorkStreet",
-      //           id: "10938",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "aWorkCity",
-      //           id: "10937",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AR",
-      //           id: "10936",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "aWorkZip",
-      //           id: "10930",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Albania",
-      //           id: "10935",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "aWorkPhone",
-      //           id: "10963",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "aEXT",
-      //           id: "10962",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "10976",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "10975",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "10974",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       hasApoFpoAddress: {
-      //         value: "YES ",
-      //         id: "17119",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       b1Location: {
-      //         street: {
-      //           value: "b1Street",
-      //           id: "10949",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "b1City",
-      //           id: "10948",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "DC",
-      //           id: "10947",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b1Zip",
-      //           id: "10941",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Bahrain",
-      //           id: "10946",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       apoFpoAddress: {
-      //         street: {
-      //           value: "b2Street",
-      //           id: "10945",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b2APO",
-      //           id: "10944",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO America",
-      //           id: "10943",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b2Zip",
-      //           id: "10942",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     },
-      //     selfEmploymentVerifier: {
-      //       lastName: {
-      //         value: "VerifyerLastName",
-      //         id: "10992",
-      //         type: "PDFTextField",
-      //       },
-      //       firstName: {
-      //         value: "VerifyerFirstName",
-      //         id: "10991",
-      //         type: "PDFTextField",
-      //       },
-      //       address: {
-      //         street: {
-      //           value: "VerifyerStreet",
-      //           id: "10990",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "VeryfierCity",
-      //           id: "10989",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "CT",
-      //           id: "10988",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "VeryfierZip",
-      //           id: "10986",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Argentina",
-      //           id: "10987",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "VeryfierPhone",
-      //           id: "10978",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "VeryfierEX",
-      //           id: "10977",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "13A3Street",
-      //           id: "10983",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "13A3City",
-      //           id: "10982",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "CT",
-      //           id: "10981",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "13A3Zip",
-      //           id: "10979",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Argentina",
-      //           id: "10980",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       hasAPOFPOAddress: {
-      //         value: "NO",
-      //         id: "17120",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       apoFpoAddress: {
-      //         street: {
-      //           value: "b2Street",
-      //           id: "10934",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b2APO",
-      //           id: "10933",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO America",
-      //           id: "10932",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b2Zip",
-      //           id: "10931",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     },
-      //   },
+  //       section13A6: {
+  //         warnedInLastSevenYears: {
+  //           value: "YES",
+  //           id: "17116",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         warningDetails: [
+  //           {
+  //             reason: {
+  //               value: "13A6Reason1",
+  //               id: "11016",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date1",
+  //                 id: "11014",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11015",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason2",
+  //               id: "11017",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date2",
+  //                 id: "11013",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11012",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason3",
+  //               id: "11010",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date3",
+  //                 id: "11009",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11009",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason4",
+  //               id: "11011",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date4",
+  //                 id: "11007",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11006",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //         ],
+  //       },
+  //     },
 
-      //   section13A4: {
-      //     fromDate: {
-      //       date: {
-      //         value: "13A4FromDate",
-      //         id: "11048",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "11049",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     toDate: {
-      //       date: {
-      //         value: "13A4ToDate",
-      //         id: "11050",
-      //         type: "PDFTextField",
-      //       },
-      //       estimated: {
-      //         value: "Yes",
-      //         id: "11052",
-      //         type: "PDFCheckBox",
-      //       },
-      //       present: {
-      //         value: "Yes",
-      //         id: "11051",
-      //         type: "PDFCheckBox",
-      //       },
-      //     },
-      //     verifier: {
-      //       lastName: {
-      //         value: "13A4LName",
-      //         id: "11054",
-      //         type: "PDFTextField",
-      //       },
-      //       firstName: {
-      //         value: "13A4FName",
-      //         id: "11053",
-      //         type: "PDFTextField",
-      //       },
-      //       address: {
-      //         street: {
-      //           value: "13A4Street",
-      //           id: "11047",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "13A4City",
-      //           id: "11046",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AL",
-      //           id: "11045",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "13A4Zip",
-      //           id: "11043",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Antarctica",
-      //           id: "11044",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       telephone: {
-      //         number: {
-      //           value: "13A4Phone",
-      //           id: "11042",
-      //           type: "PDFTextField",
-      //         },
-      //         extension: {
-      //           value: "13A4Ext",
-      //           id: "11041",
-      //           type: "PDFTextField",
-      //         },
-      //         internationalOrDsn: {
-      //           value: "Yes",
-      //           id: "11040",
-      //           type: "PDFCheckBox",
-      //         },
-      //         day: {
-      //           value: "Yes",
-      //           id: "11039",
-      //           type: "PDFCheckBox",
-      //         },
-      //         night: {
-      //           value: "Yes",
-      //           id: "11038",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       hasApoFpoAddress: {
-      //         value: "YES ",
-      //         id: "17117",
-      //         type: "PDFRadioGroup",
-      //       },
-      //       aLocation: {
-      //         street: {
-      //           value: "a13A4Street",
-      //           id: "11003",
-      //           type: "PDFTextField",
-      //         },
-      //         city: {
-      //           value: "a13A4City",
-      //           id: "11002",
-      //           type: "PDFTextField",
-      //         },
-      //         state: {
-      //           value: "AR",
-      //           id: "11001",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "a13A4Zip",
-      //           id: "10995",
-      //           type: "PDFTextField",
-      //         },
-      //         country: {
-      //           value: "Anguilla",
-      //           id: "11000",
-      //           type: "PDFDropdown",
-      //         },
-      //       },
-      //       apoFpoAddress: {
-      //         dutyLocation: {
-      //           value: "b13A4Street",
-      //           id: "10999",
-      //           type: "PDFTextField",
-      //         },
-      //         apoOrFpo: {
-      //           value: "b13A4APO",
-      //           id: "10998",
-      //           type: "PDFTextField",
-      //         },
-      //         apoFpoStateCode: {
-      //           value: "APO/FPO Pacific",
-      //           id: "10997",
-      //           type: "PDFDropdown",
-      //         },
-      //         zipCode: {
-      //           value: "b13A4Zip",
-      //           id: "10996",
-      //           type: "PDFTextField",
-      //         },
-      //       },
-      //     },
-      //   },
+  //     {
+  //       _id: 4,
+  //       employmentActivity: {
+  //         value:
+  //           "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)",
+  //         id: "17110",
+  //         type: "PDFRadioGroup",
+  //       },
+  //       otherExplanation: {
+  //         value: "13OtherExplanation",
+  //         id: "11086",
+  //         type: "PDFTextField",
+  //       },
 
-      //   section13A5: {
-      //     reasonForLeaving: {
-      //       value: "13A5ResonForLEaving",
-      //       id: "11036",
-      //       type: "PDFTextField",
-      //     },
-      //     incidentInLastSevenYears: {
-      //       value: "NO (If NO, proceed to 13A.6)",
-      //       id: "17112",
-      //       type: "PDFRadioGroup",
-      //     },
-      //     incidentDetails: [
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "11033",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ReasonForBeingFired",
-      //           id: "11026",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateFired",
-      //           id: "11024",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "11025",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "11032",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ReasonForQuitting",
-      //           id: "11027",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateQuit",
-      //           id: "11023",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "11022",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "11031",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ChargesorAllegations",
-      //           id: "11028",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateLeft",
-      //           id: "11019",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "11018",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //       {
-      //         type: {
-      //           value: "Yes",
-      //           id: "11030",
-      //           type: "PDFCheckBox",
-      //         },
-      //         reason: {
-      //           value: "13A5ReasonforUnsatisfactory",
-      //           id: "11029",
-      //           type: "PDFTextField",
-      //         },
-      //         departureDate: {
-      //           value: "13A5DateLeftMutual",
-      //           id: "11021",
-      //           type: "PDFTextField",
-      //         },
-      //         estimated: {
-      //           value: "Yes",
-      //           id: "11020",
-      //           type: "PDFCheckBox",
-      //         },
-      //       },
-      //     ],
-      //   },
+  //       section13A1: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A1StartDate",
+  //             id: "11082",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "11081",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "13A1ToDate",
+  //             id: "11079",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "11085",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "11080",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "11084",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "11083",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         dutyStation: {
+  //           value: "13A1DutyStation",
+  //           id: "11077",
+  //           type: "PDFTextField",
+  //         },
+  //         rankOrPosition: {
+  //           value: "13A1RankTitle",
+  //           id: "11078",
+  //           type: "PDFTextField",
+  //         },
+  //         address: {
+  //           street: {
+  //             value: "13A1DutyStreet",
+  //             id: "11099",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A1DutyCity",
+  //             id: "11098",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AL",
+  //             id: "11097",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A1DutyZip",
+  //             id: "11095",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "11096",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "13A1Phone",
+  //             id: "11093",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "1",
+  //             id: "11092",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "11091",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "11090",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "11089",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         aLocation: {
+  //           street: {
+  //             value: "13A1SupervisorAddress",
+  //             id: "11066",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A1SupervisorCity",
+  //             id: "11065",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "DC",
+  //             id: "11064",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A1Superviso",
+  //             id: "11058",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Argentina",
+  //             id: "11063",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         hasAPOFPOAddress: {
+  //           value: "YES ",
+  //           id: "17111",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         apoFPOAddress: {
+  //           street: {
+  //             value: "10512",
+  //             id: "11062",
+  //             type: "PDFTextField",
+  //           },
+  //           apoOrFpo: {
+  //             value: "APO",
+  //             id: "11061",
+  //             type: "PDFTextField",
+  //           },
+  //           apoFpoStateCode: {
+  //             value: "APO/FPO Europe",
+  //             id: "11060",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "bZip",
+  //             id: "11059",
+  //             type: "PDFTextField",
+  //           },
+  //         },
+  //         supervisor: {
+  //           name: {
+  //             value: "13A1SupervisorName",
+  //             id: "11116",
+  //             type: "PDFTextField",
+  //           },
+  //           rankOrPosition: {
+  //             value: "13A1SupervisorRankTitle",
+  //             id: "11115",
+  //             type: "PDFTextField",
+  //           },
+  //           email: {
+  //             value: "13A1SupervisorEmail",
+  //             id: "11088",
+  //             type: "PDFTextField",
+  //           },
+  //           emailUnknown: {
+  //             value: "Yes",
+  //             id: "11087",
+  //             type: "PDFCheckBox",
+  //           },
+  //           phone: {
+  //             number: {
+  //               value: "13A1SupervisorPhone",
+  //               id: "11114",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "13A1Sup",
+  //               id: "11113",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "11102",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "11101",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "11100",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           physicalWorkLocation: {
+  //             street: {
+  //               value: "13A1SupervisorAddress",
+  //               id: "11112",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A1SupervisorCity",
+  //               id: "11111",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "DC",
+  //               id: "11110",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A1Superviso",
+  //               id: "11108",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "11109",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "a13A1Street",
+  //               id: "11107",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A1City",
+  //               id: "11106",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AS",
+  //               id: "11105",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A1Zip",
+  //               id: "11103",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Angola",
+  //               id: "11104",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      //   section13A6: {
-      //     warnedInLastSevenYears: {
-      //       value: "YES",
-      //       id: "17116",
-      //       type: "PDFRadioGroup",
-      //     },
-      //     warningDetails: [
-      //       {
-      //         reason: {
-      //           value: "13A6Reason1",
-      //           id: "11016",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date1",
-      //             id: "11014",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "11015",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //       {
-      //         reason: {
-      //           value: "13A6Reason2",
-      //           id: "11017",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date2",
-      //             id: "11013",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "11012",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //       {
-      //         reason: {
-      //           value: "13A6Reason3",
-      //           id: "11010",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date3",
-      //             id: "11009",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "11009",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //       {
-      //         reason: {
-      //           value: "13A6Reason4",
-      //           id: "11011",
-      //           type: "PDFTextField",
-      //         },
-      //         date: {
-      //           date: {
-      //             value: "13A6Date4",
-      //             id: "11007",
-      //             type: "PDFTextField",
-      //           },
-      //           estimated: {
-      //             value: "Yes",
-      //             id: "11006",
-      //             type: "PDFCheckBox",
-      //           },
-      //         },
-      //       },
-      //     ],
-      //   },
-      // },
+  //       section13A2: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A2FromDate",
+  //             id: "11171",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "11172",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "13A2ToDate",
+  //             id: "11173",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "11175",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "11174",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "11179",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "11178",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         positionTitle: {
+  //           value: "13A2RecentTitle",
+  //           id: "11176",
+  //           type: "PDFTextField",
+  //         },
+  //         employerName: {
+  //           value: "13A2RecentEmployer",
+  //           id: "11177",
+  //           type: "PDFTextField",
+  //         },
+  //         employerAddress: {
+  //           street: {
+  //             value: "13A2Street",
+  //             id: "11206",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "13A2City",
+  //             id: "11205",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AK",
+  //             id: "11204",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "13A2Zip",
+  //             id: "11202",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "11203",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "13A2Phone",
+  //             id: "11196",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "1",
+  //             id: "11195",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "11194",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "11193",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "11192",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         periodsNotApplicable: {
+  //           value: "Yes",
+  //           id: "11170",
+  //           type: "PDFCheckBox",
+  //         },
+  //         additionalPeriods: [
+  //           {
+  //             _id: 1,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate1",
+  //                 id: "11169",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11168",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate1",
+  //                 id: "11167",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11166",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle1",
+  //               id: "11165",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor1",
+  //               id: "11164",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 2,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate2",
+  //                 id: "11163",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11162",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate2",
+  //                 id: "11161",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11160",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle2",
+  //               id: "11159",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor2",
+  //               id: "11158",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 3,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate3",
+  //                 id: "11157",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11156",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate3",
+  //                 id: "11155",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11154",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle3",
+  //               id: "11153",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor3",
+  //               id: "11152",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           {
+  //             _id: 4,
+  //             fromDate: {
+  //               date: {
+  //                 value: "13A2FromDate4",
+  //                 id: "11151",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11150",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             toDate: {
+  //               date: {
+  //                 value: "13A2ToDate4",
+  //                 id: "11149",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11148",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //             positionTitle: {
+  //               value: "PositionTitle4",
+  //               id: "11147",
+  //               type: "PDFTextField",
+  //             },
+  //             supervisor: {
+  //               value: "Supervisor4",
+  //               id: "11146",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         ],
+  //         physicalWorkAddress: {
+  //           differentThanEmployer: {
+  //             value: "NO (If NO, proceed to (b))",
+  //             id: "17102",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "a13A2Street",
+  //               id: "11188",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A2City",
+  //               id: "11187",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AL",
+  //               id: "11186",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A2Zip",
+  //               id: "11184",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Albania",
+  //               id: "11185",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "a13A2Phone",
+  //               id: "11191",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "1",
+  //               id: "11190",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "11189",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "11183",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "11182",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           b1Location: {
+  //             street: {
+  //               value: "b1Street",
+  //               id: "11138",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "b1City",
+  //               id: "11137",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AK",
+  //               id: "11136",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b1Zip",
+  //               id: "11130",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Afghanistan",
+  //               id: "11135",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "b2Street",
+  //               id: "11134",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "b2Zip",
+  //               id: "11132",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b2Zip",
+  //               id: "11133",
+  //               type: "PDFTextField",
+  //             },
+  //             zipCode: {
+  //               value: "b2Zip",
+  //               id: "11131",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "NO",
+  //             id: "17104",
+  //             type: "PDFRadioGroup",
+  //           },
+  //         },
+  //         supervisor: {
+  //           name: {
+  //             value: "13A2SupervisorName",
+  //             id: "11208",
+  //             type: "PDFTextField",
+  //           },
+  //           rankOrPosition: {
+  //             value: "13A2SupervisorTitle",
+  //             id: "11207",
+  //             type: "PDFTextField",
+  //           },
+  //           email: {
+  //             value: "13A2SupervisorEmail",
+  //             id: "11140",
+  //             type: "PDFTextField",
+  //           },
+  //           emailUnknown: {
+  //             value: "Yes",
+  //             id: "11139",
+  //             type: "PDFCheckBox",
+  //           },
+  //           phone: {
+  //             number: {
+  //               value: "13A2SupervisorPhone",
+  //               id: "11145",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "1",
+  //               id: "11144",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "11143",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "11142",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "11141",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           physicalWorkLocation: {
+  //             street: {
+  //               value: "13A2SupervisorStreet",
+  //               id: "11201",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A2SupervisorCity",
+  //               id: "11200",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CA",
+  //               id: "11199",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A2Supervisor",
+  //               id: "11197",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "11198",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           hasAPOFPOAddress: {
+  //             value: "YES ",
+  //             id: "17105",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           apoFPOAddress: {
+  //             street: {
+  //               value: "b13A2SupervisorAddress",
+  //               id: "11123",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b13A2SupervisorAPO",
+  //               id: "11122",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Pacific",
+  //               id: "11121",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b13A2SupervisorZip",
+  //               id: "11120",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "13A2SupervisorStreet",
+  //               id: "11127",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A2SupervisorCity",
+  //               id: "11126",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CA",
+  //               id: "11125",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A2Supervisor",
+  //               id: "11119",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "11124",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //         },
+  //       },
 
-      {
-        _id: 4,
-        // employmentActivity: {
-        //   value:
-        //     "Other (Provide explanation and complete 13A.2, 13A.5 and 13A.6)",
-        //   id: "17110",
-        //   type: "PDFRadioGroup",
-        // },
-        // otherExplanation: {
-        //   value: "13OtherExplanation",
-        //   id: "11086",
-        //   type: "PDFTextField",
-        // },
+  //       section13A3: {
+  //         fromDate: {
+  //           date: {
+  //             value: "FromDate",
+  //             id: "11262",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "11263",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "ToDate",
+  //             id: "11264",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "11266",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "11265",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         employmentStatus: {
+  //           fullTime: {
+  //             value: "Yes",
+  //             id: "11270",
+  //             type: "PDFCheckBox",
+  //           },
+  //           partTime: {
+  //             value: "Yes",
+  //             id: "11269",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         positionTitle: {
+  //           value: "RecentPositionTitle",
+  //           id: "11267",
+  //           type: "PDFTextField",
+  //         },
+  //         employmentName: {
+  //           value: "NameOfEmployment",
+  //           id: "11268",
+  //           type: "PDFTextField",
+  //         },
+  //         employmentAddress: {
+  //           street: {
+  //             value: "EmploymentStreet",
+  //             id: "11219",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "EmploymentCity",
+  //             id: "11218",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AK",
+  //             id: "11217",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "EmploymentZip",
+  //             id: "11215",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Afghanistan",
+  //             id: "11216",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //         telephone: {
+  //           number: {
+  //             value: "EmploymentPhone",
+  //             id: "11214",
+  //             type: "PDFTextField",
+  //           },
+  //           extension: {
+  //             value: "EXT",
+  //             id: "11213",
+  //             type: "PDFTextField",
+  //           },
+  //           internationalOrDsn: {
+  //             value: "Yes",
+  //             id: "11212",
+  //             type: "PDFCheckBox",
+  //           },
+  //           day: {
+  //             value: "Yes",
+  //             id: "11211",
+  //             type: "PDFCheckBox",
+  //           },
+  //           night: {
+  //             value: "Yes",
+  //             id: "11210",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         physicalWorkAddress: {
+  //           differentThanEmployer: {
+  //             value: "NO (If NO, proceed to (b))",
+  //             id: "17099",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "aWorkStreet",
+  //               id: "11229",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "aWorkCity",
+  //               id: "11228",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AR",
+  //               id: "11227",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "aWorkZip",
+  //               id: "11225",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Albania",
+  //               id: "11226",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "aWorkPhone",
+  //               id: "11224",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "aEXT",
+  //               id: "11223",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "11222",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "11221",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "11220",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "YES ",
+  //             id: "17100",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           b1Location: {
+  //             street: {
+  //               value: "b1Street",
+  //               id: "11261",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "b1City",
+  //               id: "11260",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "DC",
+  //               id: "11259",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b1Zip",
+  //               id: "11253",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Bahrain",
+  //               id: "11258",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "b2Street",
+  //               id: "11257",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b2APO",
+  //               id: "11256",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO America",
+  //               id: "11255",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b2Zip",
+  //               id: "11254",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //         selfEmploymentVerifier: {
+  //           lastName: {
+  //             value: "VerifyerLastName",
+  //             id: "11238",
+  //             type: "PDFTextField",
+  //           },
+  //           firstName: {
+  //             value: "VerifyerFirstName",
+  //             id: "11237",
+  //             type: "PDFTextField",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "VerifyerStreet",
+  //               id: "11236",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "VeryfierCity",
+  //               id: "11235",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CT",
+  //               id: "11234",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "VeryfierZip",
+  //               id: "11232",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "11233",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "VeryfierPhone",
+  //               id: "11275",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "VeryfierEX",
+  //               id: "11274",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "11273",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "11272",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "11271",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "13A3Street",
+  //               id: "11250",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A3City",
+  //               id: "11249",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CT",
+  //               id: "11248",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A3Zip",
+  //               id: "11242",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Argentina",
+  //               id: "11247",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           hasAPOFPOAddress: {
+  //             value: "YES ",
+  //             id: "17101",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           apoFpoAddress: {
+  //             street: {
+  //               value: "b2Street",
+  //               id: "11246",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b2APO",
+  //               id: "11245",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO America",
+  //               id: "11244",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b2Zip",
+  //               id: "11243",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //       },
 
-        // section13A1: {
-        //   fromDate: {
-        //     date: {
-        //       value: "13A1StartDate",
-        //       id: "11082",
-        //       type: "PDFTextField",
-        //     },
-        //     estimated: {
-        //       value: "Yes",
-        //       id: "11081",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   toDate: {
-        //     date: {
-        //       value: "13A1ToDate",
-        //       id: "11079",
-        //       type: "PDFTextField",
-        //     },
-        //     estimated: {
-        //       value: "Yes",
-        //       id: "11085",
-        //       type: "PDFCheckBox",
-        //     },
-        //     present: {
-        //       value: "Yes",
-        //       id: "11080",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   employmentStatus: {
-        //     fullTime: {
-        //       value: "Yes",
-        //       id: "11084",
-        //       type: "PDFCheckBox",
-        //     },
-        //     partTime: {
-        //       value: "Yes",
-        //       id: "11083",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   dutyStation: {
-        //     value: "13A1DutyStation",
-        //     id: "11077",
-        //     type: "PDFTextField",
-        //   },
-        //   rankOrPosition: {
-        //     value: "13A1RankTitle",
-        //     id: "11078",
-        //     type: "PDFTextField",
-        //   },
-        //   address: {
-        //     street: {
-        //       value: "13A1DutyStreet",
-        //       id: "11099",
-        //       type: "PDFTextField",
-        //     },
-        //     city: {
-        //       value: "13A1DutyCity",
-        //       id: "11098",
-        //       type: "PDFTextField",
-        //     },
-        //     state: {
-        //       value: "AL",
-        //       id: "11097",
-        //       type: "PDFDropdown",
-        //     },
-        //     zipCode: {
-        //       value: "13A1DutyZip",
-        //       id: "11095",
-        //       type: "PDFTextField",
-        //     },
-        //     country: {
-        //       value: "Afghanistan",
-        //       id: "11096",
-        //       type: "PDFDropdown",
-        //     },
-        //   },
-        //   telephone: {
-        //     number: {
-        //       value: "13A1Phone",
-        //       id: "11093",
-        //       type: "PDFTextField",
-        //     },
-        //     extension: {
-        //       value: "1",
-        //       id: "11092",
-        //       type: "PDFTextField",
-        //     },
-        //     internationalOrDsn: {
-        //       value: "Yes",
-        //       id: "11091",
-        //       type: "PDFCheckBox",
-        //     },
-        //     day: {
-        //       value: "Yes",
-        //       id: "11090",
-        //       type: "PDFCheckBox",
-        //     },
-        //     night: {
-        //       value: "Yes",
-        //       id: "11089",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   aLocation: {
-        //     street: {
-        //       value: "13A1SupervisorAddress",
-        //       id: "11066",
-        //       type: "PDFTextField",
-        //     },
-        //     city: {
-        //       value: "13A1SupervisorCity",
-        //       id: "11065",
-        //       type: "PDFTextField",
-        //     },
-        //     state: {
-        //       value: "DC",
-        //       id: "11064",
-        //       type: "PDFDropdown",
-        //     },
-        //     zipCode: {
-        //       value: "13A1Superviso",
-        //       id: "11058",
-        //       type: "PDFTextField",
-        //     },
-        //     country: {
-        //       value: "Argentina",
-        //       id: "11063",
-        //       type: "PDFDropdown",
-        //     },
-        //   },
-        //   hasAPOFPOAddress: {
-        //     value: "YES ",
-        //     id: "17111",
-        //     type: "PDFRadioGroup",
-        //   },
-        //   apoFPOAddress: {
-        //     street: {
-        //       value: "10512",
-        //       id: "11062",
-        //       type: "PDFTextField",
-        //     },
-        //     apoOrFpo: {
-        //       value: "APO",
-        //       id: "11061",
-        //       type: "PDFTextField",
-        //     },
-        //     apoFpoStateCode: {
-        //       value: "APO/FPO Europe",
-        //       id: "11060",
-        //       type: "PDFDropdown",
-        //     },
-        //     zipCode: {
-        //       value: "bZip",
-        //       id: "11059",
-        //       type: "PDFTextField",
-        //     },
-        //   },
-        //   supervisor: {
-        //     name: {
-        //       value: "13A1SupervisorName",
-        //       id: "11116",
-        //       type: "PDFTextField",
-        //     },
-        //     rankOrPosition: {
-        //       value: "13A1SupervisorRankTitle",
-        //       id: "11115",
-        //       type: "PDFTextField",
-        //     },
-        //     email: {
-        //       value: "13A1SupervisorEmail",
-        //       id: "11088",
-        //       type: "PDFTextField",
-        //     },
-        //     emailUnknown: {
-        //       value: "Yes",
-        //       id: "11087",
-        //       type: "PDFCheckBox",
-        //     },
-        //     phone: {
-        //       number: {
-        //         value: "13A1SupervisorPhone",
-        //         id: "11114",
-        //         type: "PDFTextField",
-        //       },
-        //       extension: {
-        //         value: "13A1Sup",
-        //         id: "11113",
-        //         type: "PDFTextField",
-        //       },
-        //       internationalOrDsn: {
-        //         value: "Yes",
-        //         id: "11102",
-        //         type: "PDFCheckBox",
-        //       },
-        //       day: {
-        //         value: "Yes",
-        //         id: "11101",
-        //         type: "PDFCheckBox",
-        //       },
-        //       night: {
-        //         value: "Yes",
-        //         id: "11100",
-        //         type: "PDFCheckBox",
-        //       },
-        //     },
-        //     physicalWorkLocation: {
-        //       street: {
-        //         value: "13A1SupervisorAddress",
-        //         id: "11112",
-        //         type: "PDFTextField",
-        //       },
-        //       city: {
-        //         value: "13A1SupervisorCity",
-        //         id: "11111",
-        //         type: "PDFTextField",
-        //       },
-        //       state: {
-        //         value: "DC",
-        //         id: "11110",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "13A1Superviso",
-        //         id: "11108",
-        //         type: "PDFTextField",
-        //       },
-        //       country: {
-        //         value: "Argentina",
-        //         id: "11109",
-        //         type: "PDFDropdown",
-        //       },
-        //     },
-        //     apoFpoAddress: {
-        //       street: {
-        //         value: "a13A1Street",
-        //         id: "11107",
-        //         type: "PDFTextField",
-        //       },
-        //       city: {
-        //         value: "a13A1City",
-        //         id: "11106",
-        //         type: "PDFTextField",
-        //       },
-        //       state: {
-        //         value: "AS",
-        //         id: "11105",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "a13A1Zip",
-        //         id: "11103",
-        //         type: "PDFTextField",
-        //       },
-        //       country: {
-        //         value: "Angola",
-        //         id: "11104",
-        //         type: "PDFDropdown",
-        //       },
-        //     },
-        //   },
-        // },
+  //       section13A4: {
+  //         fromDate: {
+  //           date: {
+  //             value: "13A4FromDate",
+  //             id: "11331",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "11332",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         toDate: {
+  //           date: {
+  //             value: "13A4ToDate",
+  //             id: "11333",
+  //             type: "PDFTextField",
+  //           },
+  //           estimated: {
+  //             value: "Yes",
+  //             id: "11335",
+  //             type: "PDFCheckBox",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "11334",
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         verifier: {
+  //           lastName: {
+  //             value: "13A4LName",
+  //             id: "11337",
+  //             type: "PDFTextField",
+  //           },
+  //           firstName: {
+  //             value: "13A4FName",
+  //             id: "11336",
+  //             type: "PDFTextField",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "13A4Street",
+  //               id: "11330",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "13A4City",
+  //               id: "11329",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AL",
+  //               id: "11328",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "13A4Zip",
+  //               id: "11326",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Antarctica",
+  //               id: "11327",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           telephone: {
+  //             number: {
+  //               value: "13A4Phone",
+  //               id: "11325",
+  //               type: "PDFTextField",
+  //             },
+  //             extension: {
+  //               value: "13A4Ext",
+  //               id: "11324",
+  //               type: "PDFTextField",
+  //             },
+  //             internationalOrDsn: {
+  //               value: "Yes",
+  //               id: "11323",
+  //               type: "PDFCheckBox",
+  //             },
+  //             day: {
+  //               value: "Yes",
+  //               id: "11322",
+  //               type: "PDFCheckBox",
+  //             },
+  //             night: {
+  //               value: "Yes",
+  //               id: "11321",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           hasApoFpoAddress: {
+  //             value: "YES ",
+  //             id: "17098",
+  //             type: "PDFRadioGroup",
+  //           },
+  //           aLocation: {
+  //             street: {
+  //               value: "a13A4Street",
+  //               id: "11286",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "a13A4City",
+  //               id: "11285",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AR",
+  //               id: "11284",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "a13A4Zip",
+  //               id: "11278",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Anguilla",
+  //               id: "11283",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           apoFpoAddress: {
+  //             dutyLocation: {
+  //               value: "b13A4Street",
+  //               id: "11282",
+  //               type: "PDFTextField",
+  //             },
+  //             apoOrFpo: {
+  //               value: "b13A4APO",
+  //               id: "11281",
+  //               type: "PDFTextField",
+  //             },
+  //             apoFpoStateCode: {
+  //               value: "APO/FPO Pacific",
+  //               id: "11280",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "b13A4Zip",
+  //               id: "11279",
+  //               type: "PDFTextField",
+  //             },
+  //           },
+  //         },
+  //       },
 
-        // section13A2: {
-        //   fromDate: {
-        //     date: {
-        //       value: "13A2FromDate",
-        //       id: "11171",
-        //       type: "PDFTextField",
-        //     },
-        //     estimated: {
-        //       value: "Yes",
-        //       id: "11172",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   toDate: {
-        //     date: {
-        //       value: "13A2ToDate",
-        //       id: "11173",
-        //       type: "PDFTextField",
-        //     },
-        //     estimated: {
-        //       value: "Yes",
-        //       id: "11175",
-        //       type: "PDFCheckBox",
-        //     },
-        //     present: {
-        //       value: "Yes",
-        //       id: "11174",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   employmentStatus: {
-        //     fullTime: {
-        //       value: "Yes",
-        //       id: "11179",
-        //       type: "PDFCheckBox",
-        //     },
-        //     partTime: {
-        //       value: "Yes",
-        //       id: "11178",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   positionTitle: {
-        //     value: "13A2RecentTitle",
-        //     id: "11176",
-        //     type: "PDFTextField",
-        //   },
-        //   employerName: {
-        //     value: "13A2RecentEmployer",
-        //     id: "11177",
-        //     type: "PDFTextField",
-        //   },
-        //   employerAddress: {
-        //     street: {
-        //       value: "13A2Street",
-        //       id: "11206",
-        //       type: "PDFTextField",
-        //     },
-        //     city: {
-        //       value: "13A2City",
-        //       id: "11205",
-        //       type: "PDFTextField",
-        //     },
-        //     state: {
-        //       value: "AK",
-        //       id: "11204",
-        //       type: "PDFDropdown",
-        //     },
-        //     zipCode: {
-        //       value: "13A2Zip",
-        //       id: "11202",
-        //       type: "PDFTextField",
-        //     },
-        //     country: {
-        //       value: "Afghanistan",
-        //       id: "11203",
-        //       type: "PDFDropdown",
-        //     },
-        //   },
-        //   telephone: {
-        //     number: {
-        //       value: "13A2Phone",
-        //       id: "11196",
-        //       type: "PDFTextField",
-        //     },
-        //     extension: {
-        //       value: "1",
-        //       id: "11195",
-        //       type: "PDFTextField",
-        //     },
-        //     internationalOrDsn: {
-        //       value: "Yes",
-        //       id: "11194",
-        //       type: "PDFCheckBox",
-        //     },
-        //     day: {
-        //       value: "Yes",
-        //       id: "11193",
-        //       type: "PDFCheckBox",
-        //     },
-        //     night: {
-        //       value: "Yes",
-        //       id: "11192",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   periodsNotApplicable: {
-        //     value: "Yes",
-        //     id: "11170",
-        //     type: "PDFCheckBox",
-        //   },
-        //   additionalPeriods: [
-        //     {
-        //       _id: 1,
-        //       fromDate: {
-        //         date: {
-        //           value: "13A2FromDate1",
-        //           id: "11169",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "11168",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //       toDate: {
-        //         date: {
-        //           value: "13A2ToDate1",
-        //           id: "11167",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "11166",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //       positionTitle: {
-        //         value: "PositionTitle1",
-        //         id: "11165",
-        //         type: "PDFTextField",
-        //       },
-        //       supervisor: {
-        //         value: "Supervisor1",
-        //         id: "11164",
-        //         type: "PDFTextField",
-        //       },
-        //     },
-        //     {
-        //       _id: 2,
-        //       fromDate: {
-        //         date: {
-        //           value: "13A2FromDate2",
-        //           id: "11163",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "11162",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //       toDate: {
-        //         date: {
-        //           value: "13A2ToDate2",
-        //           id: "11161",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "11160",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //       positionTitle: {
-        //         value: "PositionTitle2",
-        //         id: "11159",
-        //         type: "PDFTextField",
-        //       },
-        //       supervisor: {
-        //         value: "Supervisor2",
-        //         id: "11158",
-        //         type: "PDFTextField",
-        //       },
-        //     },
-        //     {
-        //       _id: 3,
-        //       fromDate: {
-        //         date: {
-        //           value: "13A2FromDate3",
-        //           id: "11157",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "11156",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //       toDate: {
-        //         date: {
-        //           value: "13A2ToDate3",
-        //           id: "11155",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "11154",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //       positionTitle: {
-        //         value: "PositionTitle3",
-        //         id: "11153",
-        //         type: "PDFTextField",
-        //       },
-        //       supervisor: {
-        //         value: "Supervisor3",
-        //         id: "11152",
-        //         type: "PDFTextField",
-        //       },
-        //     },
-        //     {
-        //       _id: 4,
-        //       fromDate: {
-        //         date: {
-        //           value: "13A2FromDate4",
-        //           id: "11151",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "11150",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //       toDate: {
-        //         date: {
-        //           value: "13A2ToDate4",
-        //           id: "11149",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "11148",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //       positionTitle: {
-        //         value: "PositionTitle4",
-        //         id: "11147",
-        //         type: "PDFTextField",
-        //       },
-        //       supervisor: {
-        //         value: "Supervisor4",
-        //         id: "11146",
-        //         type: "PDFTextField",
-        //       },
-        //     },
-        //   ],
-        //   physicalWorkAddress: {
-        //     differentThanEmployer: {
-        //       value: "NO (If NO, proceed to (b))",
-        //       id: "17102",
-        //       type: "PDFRadioGroup",
-        //     },
-        //     aLocation: {
-        //       street: {
-        //         value: "a13A2Street",
-        //         id: "11188",
-        //         type: "PDFTextField",
-        //       },
-        //       city: {
-        //         value: "a13A2City",
-        //         id: "11187",
-        //         type: "PDFTextField",
-        //       },
-        //       state: {
-        //         value: "AL",
-        //         id: "11186",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "a13A2Zip",
-        //         id: "11184",
-        //         type: "PDFTextField",
-        //       },
-        //       country: {
-        //         value: "Albania",
-        //         id: "11185",
-        //         type: "PDFDropdown",
-        //       },
-        //     },
-        //     telephone: {
-        //       number: {
-        //         value: "a13A2Phone",
-        //         id: "11191",
-        //         type: "PDFTextField",
-        //       },
-        //       extension: {
-        //         value: "1",
-        //         id: "11190",
-        //         type: "PDFTextField",
-        //       },
-        //       internationalOrDsn: {
-        //         value: "Yes",
-        //         id: "11189",
-        //         type: "PDFCheckBox",
-        //       },
-        //       day: {
-        //         value: "Yes",
-        //         id: "11183",
-        //         type: "PDFCheckBox",
-        //       },
-        //       night: {
-        //         value: "Yes",
-        //         id: "11182",
-        //         type: "PDFCheckBox",
-        //       },
-        //     },
-        //     b1Location: {
-        //       street: {
-        //         value: "b1Street",
-        //         id: "11138",
-        //         type: "PDFTextField",
-        //       },
-        //       city: {
-        //         value: "b1City",
-        //         id: "11137",
-        //         type: "PDFTextField",
-        //       },
-        //       state: {
-        //         value: "AK",
-        //         id: "11136",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "b1Zip",
-        //         id: "11130",
-        //         type: "PDFTextField",
-        //       },
-        //       country: {
-        //         value: "Afghanistan",
-        //         id: "11135",
-        //         type: "PDFDropdown",
-        //       },
-        //     },
-        //     apoFpoAddress: {
-        //       street: {
-        //         value: "b2Street",
-        //         id: "11134",
-        //         type: "PDFTextField",
-        //       },
-        //       apoFpoStateCode: {
-        //         value: "b2Zip",
-        //         id: "11132",
-        //         type: "PDFTextField",
-        //       },
-        //       apoOrFpo: {
-        //         value: "b2Zip",
-        //         id: "11133",
-        //         type: "PDFTextField",
-        //       },
-        //       zipCode: {
-        //         value: "b2Zip",
-        //         id: "11131",
-        //         type: "PDFTextField",
-        //       },
-        //     },
-        //     hasApoFpoAddress: {
-        //       value: "NO",
-        //       id: "17104",
-        //       type: "PDFRadioGroup",
-        //     },
-        //   },
-        //   supervisor: {
-        //     name: {
-        //       value: "13A2SupervisorName",
-        //       id: "11208",
-        //       type: "PDFTextField",
-        //     },
-        //     rankOrPosition: {
-        //       value: "13A2SupervisorTitle",
-        //       id: "11207",
-        //       type: "PDFTextField",
-        //     },
-        //     email: {
-        //       value: "13A2SupervisorEmail",
-        //       id: "11140",
-        //       type: "PDFTextField",
-        //     },
-        //     emailUnknown: {
-        //       value: "Yes",
-        //       id: "11139",
-        //       type: "PDFCheckBox",
-        //     },
-        //     phone: {
-        //       number: {
-        //         value: "13A2SupervisorPhone",
-        //         id: "11145",
-        //         type: "PDFTextField",
-        //       },
-        //       extension: {
-        //         value: "1",
-        //         id: "11144",
-        //         type: "PDFTextField",
-        //       },
-        //       internationalOrDsn: {
-        //         value: "Yes",
-        //         id: "11143",
-        //         type: "PDFCheckBox",
-        //       },
-        //       day: {
-        //         value: "Yes",
-        //         id: "11142",
-        //         type: "PDFCheckBox",
-        //       },
-        //       night: {
-        //         value: "Yes",
-        //         id: "11141",
-        //         type: "PDFCheckBox",
-        //       },
-        //     },
-        //     physicalWorkLocation: {
-        //       street: {
-        //         value: "13A2SupervisorStreet",
-        //         id: "11201",
-        //         type: "PDFTextField",
-        //       },
-        //       city: {
-        //         value: "13A2SupervisorCity",
-        //         id: "11200",
-        //         type: "PDFTextField",
-        //       },
-        //       state: {
-        //         value: "CA",
-        //         id: "11199",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "13A2Supervisor",
-        //         id: "11197",
-        //         type: "PDFTextField",
-        //       },
-        //       country: {
-        //         value: "Bahrain",
-        //         id: "11198",
-        //         type: "PDFDropdown",
-        //       },
-        //     },
-        //     hasAPOFPOAddress: {
-        //       value: "YES ",
-        //       id: "17105",
-        //       type: "PDFRadioGroup",
-        //     },
-        //     apoFPOAddress: {
-        //       street: {
-        //         value: "b13A2SupervisorAddress",
-        //         id: "11123",
-        //         type: "PDFTextField",
-        //       },
-        //       apoOrFpo: {
-        //         value: "b13A2SupervisorAPO",
-        //         id: "11122",
-        //         type: "PDFTextField",
-        //       },
-        //       apoFpoStateCode: {
-        //         value: "APO/FPO Pacific",
-        //         id: "11121",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "b13A2SupervisorZip",
-        //         id: "11120",
-        //         type: "PDFTextField",
-        //       },
-        //     },
-        //     aLocation: {
-        //       street: {
-        //         value: "13A2SupervisorStreet",
-        //         id: "11127",
-        //         type: "PDFTextField",
-        //       },
-        //       city: {
-        //         value: "13A2SupervisorCity",
-        //         id: "11126",
-        //         type: "PDFTextField",
-        //       },
-        //       state: {
-        //         value: "CA",
-        //         id: "11125",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "13A2Supervisor",
-        //         id: "11119",
-        //         type: "PDFTextField",
-        //       },
-        //       country: {
-        //         value: "Bahrain",
-        //         id: "11124",
-        //         type: "PDFDropdown",
-        //       },
-        //     },
-        //   },
-        // },
+  //       section13A5: {
+  //         reasonForLeaving: {
+  //           value: "13A5ResonForLEaving",
+  //           id: "11319",
+  //           type: "PDFTextField",
+  //         },
+  //         incidentInLastSevenYears: {
+  //           value: "NO (If NO, proceed to 13A.6)",
+  //           id: "17093",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         incidentDetails: [
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "11316",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonForBeingFired",
+  //               id: "11309",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateFired",
+  //               id: "11307",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "11308",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "11315",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonForQuitting",
+  //               id: "11310",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateQuit",
+  //               id: "11306",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "11305",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "11314",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ChargesorAllegations",
+  //               id: "11311",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateLeft",
+  //               id: "11302",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "11303",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //           {
+  //             type: {
+  //               value: "Yes",
+  //               id: "11313",
+  //               type: "PDFCheckBox",
+  //             },
+  //             reason: {
+  //               value: "13A5ReasonforUnsatisfactory",
+  //               id: "11312",
+  //               type: "PDFTextField",
+  //             },
+  //             departureDate: {
+  //               value: "13A5DateLeftMutual",
+  //               id: "11304",
+  //               type: "PDFTextField",
+  //             },
+  //             estimated: {
+  //               value: "Yes",
+  //               id: "11301",
+  //               type: "PDFCheckBox",
+  //             },
+  //           },
+  //         ],
+  //       },
 
-        // section13A3: {
-        //   fromDate: {
-        //     date: {
-        //       value: "FromDate",
-        //       id: "11262",
-        //       type: "PDFTextField",
-        //     },
-        //     estimated: {
-        //       value: "Yes",
-        //       id: "11263",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   toDate: {
-        //     date: {
-        //       value: "ToDate",
-        //       id: "11264",
-        //       type: "PDFTextField",
-        //     },
-        //     estimated: {
-        //       value: "Yes",
-        //       id: "11266",
-        //       type: "PDFCheckBox",
-        //     },
-        //     present: {
-        //       value: "Yes",
-        //       id: "11265",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   employmentStatus: {
-        //     fullTime: {
-        //       value: "Yes",
-        //       id: "11270",
-        //       type: "PDFCheckBox",
-        //     },
-        //     partTime: {
-        //       value: "Yes",
-        //       id: "11269",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   positionTitle: {
-        //     value: "RecentPositionTitle",
-        //     id: "11267",
-        //     type: "PDFTextField",
-        //   },
-        //   employmentName: {
-        //     value: "NameOfEmployment",
-        //     id: "11268",
-        //     type: "PDFTextField",
-        //   },
-        //   employmentAddress: {
-        //     street: {
-        //       value: "EmploymentStreet",
-        //       id: "11219",
-        //       type: "PDFTextField",
-        //     },
-        //     city: {
-        //       value: "EmploymentCity",
-        //       id: "11218",
-        //       type: "PDFTextField",
-        //     },
-        //     state: {
-        //       value: "AK",
-        //       id: "11217",
-        //       type: "PDFDropdown",
-        //     },
-        //     zipCode: {
-        //       value: "EmploymentZip",
-        //       id: "11215",
-        //       type: "PDFTextField",
-        //     },
-        //     country: {
-        //       value: "Afghanistan",
-        //       id: "11216",
-        //       type: "PDFDropdown",
-        //     },
-        //   },
-        //   telephone: {
-        //     number: {
-        //       value: "EmploymentPhone",
-        //       id: "11214",
-        //       type: "PDFTextField",
-        //     },
-        //     extension: {
-        //       value: "EXT",
-        //       id: "11213",
-        //       type: "PDFTextField",
-        //     },
-        //     internationalOrDsn: {
-        //       value: "Yes",
-        //       id: "11212",
-        //       type: "PDFCheckBox",
-        //     },
-        //     day: {
-        //       value: "Yes",
-        //       id: "11211",
-        //       type: "PDFCheckBox",
-        //     },
-        //     night: {
-        //       value: "Yes",
-        //       id: "11210",
-        //       type: "PDFCheckBox",
-        //     },
-        //   },
-        //   physicalWorkAddress: {
-        //     differentThanEmployer: {
-        //       value: "NO (If NO, proceed to (b))",
-        //       id: "17099",
-        //       type: "PDFRadioGroup",
-        //     },
-        //     aLocation: {
-        //       street: {
-        //         value: "aWorkStreet",
-        //         id: "11229",
-        //         type: "PDFTextField",
-        //       },
-        //       city: {
-        //         value: "aWorkCity",
-        //         id: "11228",
-        //         type: "PDFTextField",
-        //       },
-        //       state: {
-        //         value: "AR",
-        //         id: "11227",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "aWorkZip",
-        //         id: "11225",
-        //         type: "PDFTextField",
-        //       },
-        //       country: {
-        //         value: "Albania",
-        //         id: "11226",
-        //         type: "PDFDropdown",
-        //       },
-        //     },
-        //     telephone: {
-        //       number: {
-        //         value: "aWorkPhone",
-        //         id: "11224",
-        //         type: "PDFTextField",
-        //       },
-        //       extension: {
-        //         value: "aEXT",
-        //         id: "11223",
-        //         type: "PDFTextField",
-        //       },
-        //       internationalOrDsn: {
-        //         value: "Yes",
-        //         id: "11222",
-        //         type: "PDFCheckBox",
-        //       },
-        //       day: {
-        //         value: "Yes",
-        //         id: "11221",
-        //         type: "PDFCheckBox",
-        //       },
-        //       night: {
-        //         value: "Yes",
-        //         id: "11220",
-        //         type: "PDFCheckBox",
-        //       },
-        //     },
-        //     hasApoFpoAddress: {
-        //       value: "YES ",
-        //       id: "17100",
-        //       type: "PDFRadioGroup",
-        //     },
-        //     b1Location: {
-        //       street: {
-        //         value: "b1Street",
-        //         id: "11261",
-        //         type: "PDFTextField",
-        //       },
-        //       city: {
-        //         value: "b1City",
-        //         id: "11260",
-        //         type: "PDFTextField",
-        //       },
-        //       state: {
-        //         value: "DC",
-        //         id: "11259",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "b1Zip",
-        //         id: "11253",
-        //         type: "PDFTextField",
-        //       },
-        //       country: {
-        //         value: "Bahrain",
-        //         id: "11258",
-        //         type: "PDFDropdown",
-        //       },
-        //     },
-        //     apoFpoAddress: {
-        //       street: {
-        //         value: "b2Street",
-        //         id: "11257",
-        //         type: "PDFTextField",
-        //       },
-        //       apoOrFpo: {
-        //         value: "b2APO",
-        //         id: "11256",
-        //         type: "PDFTextField",
-        //       },
-        //       apoFpoStateCode: {
-        //         value: "APO/FPO America",
-        //         id: "11255",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "b2Zip",
-        //         id: "11254",
-        //         type: "PDFTextField",
-        //       },
-        //     },
-        //   },
-        //   selfEmploymentVerifier: {
-        //     lastName: {
-        //       value: "VerifyerLastName",
-        //       id: "11238",
-        //       type: "PDFTextField",
-        //     },
-        //     firstName: {
-        //       value: "VerifyerFirstName",
-        //       id: "11237",
-        //       type: "PDFTextField",
-        //     },
-        //     address: {
-        //       street: {
-        //         value: "VerifyerStreet",
-        //         id: "11236",
-        //         type: "PDFTextField",
-        //       },
-        //       city: {
-        //         value: "VeryfierCity",
-        //         id: "11235",
-        //         type: "PDFTextField",
-        //       },
-        //       state: {
-        //         value: "CT",
-        //         id: "11234",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "VeryfierZip",
-        //         id: "11232",
-        //         type: "PDFTextField",
-        //       },
-        //       country: {
-        //         value: "Argentina",
-        //         id: "11233",
-        //         type: "PDFDropdown",
-        //       },
-        //     },
-        //     telephone: {
-        //       number: {
-        //         value: "VeryfierPhone",
-        //         id: "11275",
-        //         type: "PDFTextField",
-        //       },
-        //       extension: {
-        //         value: "VeryfierEX",
-        //         id: "11274",
-        //         type: "PDFTextField",
-        //       },
-        //       internationalOrDsn: {
-        //         value: "Yes",
-        //         id: "11273",
-        //         type: "PDFCheckBox",
-        //       },
-        //       day: {
-        //         value: "Yes",
-        //         id: "11272",
-        //         type: "PDFCheckBox",
-        //       },
-        //       night: {
-        //         value: "Yes",
-        //         id: "11271",
-        //         type: "PDFCheckBox",
-        //       },
-        //     },
-        //     aLocation: {
-        //       street: {
-        //         value: "13A3Street",
-        //         id: "11250",
-        //         type: "PDFTextField",
-        //       },
-        //       city: {
-        //         value: "13A3City",
-        //         id: "11249",
-        //         type: "PDFTextField",
-        //       },
-        //       state: {
-        //         value: "CT",
-        //         id: "11248",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "13A3Zip",
-        //         id: "11242",
-        //         type: "PDFTextField",
-        //       },
-        //       country: {
-        //         value: "Argentina",
-        //         id: "11247",
-        //         type: "PDFDropdown",
-        //       },
-        //     },
-        //     hasAPOFPOAddress: {
-        //       value: "YES ",
-        //       id: "17101",
-        //       type: "PDFRadioGroup",
-        //     },
-        //     apoFpoAddress: {
-        //       street: {
-        //         value: "b2Street",
-        //         id: "11246",
-        //         type: "PDFTextField",
-        //       },
-        //       apoOrFpo: {
-        //         value: "b2APO",
-        //         id: "11245",
-        //         type: "PDFTextField",
-        //       },
-        //       apoFpoStateCode: {
-        //         value: "APO/FPO America",
-        //         id: "11244",
-        //         type: "PDFDropdown",
-        //       },
-        //       zipCode: {
-        //         value: "b2Zip",
-        //         id: "11243",
-        //         type: "PDFTextField",
-        //       },
-        //     },
-        //   },
-        // },
+  //       section13A6: {
+  //         warnedInLastSevenYears: {
+  //           value: "YES",
+  //           id: "17097",
+  //           type: "PDFRadioGroup",
+  //         },
+  //         warningDetails: [
+  //           {
+  //             reason: {
+  //               value: "13A6Reason1",
+  //               id: "11299",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date1",
+  //                 id: "11297",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11298",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason2",
+  //               id: "11300",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date2",
+  //                 id: "11296",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "11298",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason3",
+  //               id: "11293",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date3",
+  //                 id: "11291",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //           {
+  //             reason: {
+  //               value: "13A6Reason4",
+  //               id: "11294",
+  //               type: "PDFTextField",
+  //             },
+  //             date: {
+  //               date: {
+  //                 value: "13A6Date4",
+  //                 id: "11290",
+  //                 type: "PDFTextField",
+  //               },
+  //               estimated: {
+  //                 value: "Yes",
+  //                 id: "",
+  //                 type: "PDFCheckBox",
+  //               },
+  //             },
+  //           },
+  //         ],
+  //       },
+  //     },
+  //   ],
 
+  //   section13B: {
+  //     hasFormerFederalEmployment: {
+  //       value: "NO (If NO, proceed to Section 13C)", // Mapped from form1[0].section13_5[0].RadioButtonList[0]
+  //       id: "17090",
+  //       type: "PDFRadioGroup",
+  //     },
+  //     employmentEntries: [
+  //       {
+  //         _id: 1,
+  //         fromDate: {
+  //           value: "fromDate1",
+  //           id: "11387",
+  //           type: "PDFTextField",
+  //         },
+  //         toDate: {
+  //           value: "toDate1",
+  //           id: "11385",
+  //           type: "PDFTextField",
+  //         },
+  //         present: {
+  //           value: "Yes",
+  //           id: "11386",
+  //           type: "PDFCheckBox",
+  //         },
+  //         estimated: {
+  //           value: "Yes",
+  //           id: "11344",
+  //           type: "PDFCheckBox",
+  //         },
+  //         agencyName: {
+  //           value: "agencyName1",
+  //           id: "11340",
+  //           type: "PDFTextField",
+  //         },
+  //         positionTitle: {
+  //           value: "positionTitle1",
+  //           id: "11341",
+  //           type: "PDFTextField",
+  //         },
+  //         location: {
+  //           street: {
+  //             value: "street1",
+  //             id: "11339",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "city1",
+  //             id: "11338",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AK",
+  //             id: "11390",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "zip1",
+  //             id: "11388",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Akrotiri Sovereign Base",
+  //             id: "11389",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //       },
+  //       {
+  //         _id: 2,
+  //         fromDate: {
+  //           value: "fromDate2",
+  //           id: "11348",
+  //           type: "PDFTextField",
+  //         },
+  //         toDate: {
+  //           value: "toDate2",
+  //           id: "11346",
+  //           type: "PDFTextField",
+  //         },
+  //         present: {
+  //           value: "Yes",
+  //           id: "11347",
+  //           type: "PDFCheckBox",
+  //         },
+  //         estimated: {
+  //           value: "Yes",
+  //           id: "11383",
+  //           type: "PDFCheckBox",
+  //         },
+  //         agencyName: {
+  //           value: "agencyName2",
+  //           id: "11354",
+  //           type: "PDFTextField",
+  //         },
+  //         positionTitle: {
+  //           value: "positionTitle2",
+  //           id: "11355",
+  //           type: "PDFTextField",
+  //         },
+  //         location: {
+  //           street: {
+  //             value: "street2",
+  //             id: "11353",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "city2",
+  //             id: "11352",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AL",
+  //             id: "11351",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "zip2",
+  //             id: "11349",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Anguilla",
+  //             id: "11350",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //       },
+  //       {
+  //         _id: 3,
+  //         fromDate: {
+  //           value: "fromDate3",
+  //           id: "11363",
+  //           type: "PDFTextField",
+  //         },
+  //         toDate: {
+  //           value: "toDate3",
+  //           id: "11361",
+  //           type: "PDFTextField",
+  //         },
+  //         present: {
+  //           value: "Yes",
+  //           id: "11362",
+  //           type: "PDFCheckBox",
+  //         },
+  //         estimated: {
+  //           value: "Yes",
+  //           id: "11371",
+  //           type: "PDFCheckBox",
+  //         },
+  //         agencyName: {
+  //           value: "agencyName3",
+  //           id: "11369",
+  //           type: "PDFTextField",
+  //         },
+  //         positionTitle: {
+  //           value: "positionTitle3",
+  //           id: "11370",
+  //           type: "PDFTextField",
+  //         },
+  //         location: {
+  //           street: {
+  //             value: "street3",
+  //             id: "11368",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "city3",
+  //             id: "11367",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "AZ",
+  //             id: "11366",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "zip3",
+  //             id: "11364",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Austria",
+  //             id: "11365",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //       },
+  //       {
+  //         _id: 4,
+  //         fromDate: {
+  //           value: "fromDate4",
+  //           id: "11375",
+  //           type: "PDFTextField",
+  //         },
+  //         toDate: {
+  //           value: "toDate4",
+  //           id: "11373",
+  //           type: "PDFTextField",
+  //         },
+  //         present: {
+  //           value: "Yes",
+  //           id: "11374",
+  //           type: "PDFCheckBox",
+  //         },
+  //         estimated: {
+  //           value: "Yes",
+  //           id: "11359",
+  //           type: "PDFCheckBox",
+  //         },
+  //         agencyName: {
+  //           value: "agencyName4",
+  //           id: "11381",
+  //           type: "PDFTextField",
+  //         },
+  //         positionTitle: {
+  //           value: "positionTitle4",
+  //           id: "11382",
+  //           type: "PDFTextField",
+  //         },
+  //         location: {
+  //           street: {
+  //             value: "street4",
+  //             id: "11380",
+  //             type: "PDFTextField",
+  //           },
+  //           city: {
+  //             value: "city4",
+  //             id: "11379",
+  //             type: "PDFTextField",
+  //           },
+  //           state: {
+  //             value: "CT",
+  //             id: "11378",
+  //             type: "PDFDropdown",
+  //           },
+  //           zipCode: {
+  //             value: "zip4",
+  //             id: "11376",
+  //             type: "PDFTextField",
+  //           },
+  //           country: {
+  //             value: "Bolivia",
+  //             id: "11377",
+  //             type: "PDFDropdown",
+  //           },
+  //         },
+  //       },
+  //     ],
+  //   },
 
-        section13A4: {
-          fromDate: {
-            date: {
-              value: "13A4FromDate",
-              id: "11331",
-              type: "PDFTextField",
-            },
-            estimated: {
-              value: "Yes",
-              id: "11332",
-              type: "PDFCheckBox",
-            },
-          },
-          toDate: {
-            date: {
-              value: "13A4ToDate",
-              id: "11333",
-              type: "PDFTextField",
-            },
-            estimated: {
-              value: "Yes",
-              id: "11335",
-              type: "PDFCheckBox",
-            },
-            present: {
-              value: "Yes",
-              id: "11334",
-              type: "PDFCheckBox",
-            },
-          },
-          verifier: {
-            lastName: {
-              value: "13A4LName",
-              id: "11337",
-              type: "PDFTextField",
-            },
-            firstName: {
-              value: "13A4FName",
-              id: "11336",
-              type: "PDFTextField",
-            },
-            address: {
-              street: {
-                value: "13A4Street",
-                id: "11330",
-                type: "PDFTextField",
-              },
-              city: {
-                value: "13A4City",
-                id: "11329",
-                type: "PDFTextField",
-              },
-              state: {
-                value: "AL",
-                id: "11328",
-                type: "PDFDropdown",
-              },
-              zipCode: {
-                value: "13A4Zip",
-                id: "11326",
-                type: "PDFTextField",
-              },
-              country: {
-                value: "Antarctica",
-                id: "11327",
-                type: "PDFDropdown",
-              },
-            },
-            telephone: {
-              number: {
-                value: "13A4Phone",
-                id: "11325",
-                type: "PDFTextField",
-              },
-              extension: {
-                value: "13A4Ext",
-                id: "11324",
-                type: "PDFTextField",
-              },
-              internationalOrDsn: {
-                value: "Yes",
-                id: "11323",
-                type: "PDFCheckBox",
-              },
-              day: {
-                value: "Yes",
-                id: "11322",
-                type: "PDFCheckBox",
-              },
-              night: {
-                value: "Yes",
-                id: "11321",
-                type: "PDFCheckBox",
-              },
-            },
-            hasApoFpoAddress: {
-              value: "YES ",
-              id: "17098",
-              type: "PDFRadioGroup",
-            },
-            aLocation: {
-              street: {
-                value: "a13A4Street",
-                id: "11286",
-                type: "PDFTextField",
-              },
-              city: {
-                value: "a13A4City",
-                id: "11285",
-                type: "PDFTextField",
-              },
-              state: {
-                value: "AR",
-                id: "11284",
-                type: "PDFDropdown",
-              },
-              zipCode: {
-                value: "a13A4Zip",
-                id: "11278",
-                type: "PDFTextField",
-              },
-              country: {
-                value: "Anguilla",
-                id: "11283",
-                type: "PDFDropdown",
-              },
-            },
-            apoFpoAddress: {
-              dutyLocation: {
-                value: "b13A4Street",
-                id: "11282",
-                type: "PDFTextField",
-              },
-              apoOrFpo: {
-                value: "b13A4APO",
-                id: "11281",
-                type: "PDFTextField",
-              },
-              apoFpoStateCode: {
-                value: "APO/FPO Pacific",
-                id: "11280",
-                type: "PDFDropdown",
-              },
-              zipCode: {
-                value: "b13A4Zip",
-                id: "11279",
-                type: "PDFTextField",
-              },
-            },
-          },
-        },
-
-
-        // section13A5: {
-        //   reasonForLeaving: {
-        //     value: "13A5ResonForLEaving",
-        //     id: "",
-        //     type: "PDFTextField",
-        //   },
-        //   incidentInLastSevenYears: {
-        //     value: "NO (If NO, proceed to 13A.6)",
-        //     id: "",
-        //     type: "PDFRadioGroup",
-        //   },
-        //   incidentDetails: [
-        //     {
-        //       type: {
-        //         value: "Yes",
-        //         id: "",
-        //         type: "PDFCheckBox",
-        //       },
-        //       reason: {
-        //         value: "13A5ReasonForBeingFired",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       departureDate: {
-        //         value: "13A5DateFired",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       estimated: {
-        //         value: "Yes",
-        //         id: "",
-        //         type: "PDFCheckBox",
-        //       },
-        //     },
-        //     {
-        //       type: {
-        //         value: "Yes",
-        //         id: "",
-        //         type: "PDFCheckBox",
-        //       },
-        //       reason: {
-        //         value: "13A5ReasonForQuitting",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       departureDate: {
-        //         value: "13A5DateQuit",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       estimated: {
-        //         value: "Yes",
-        //         id: "",
-        //         type: "PDFCheckBox",
-        //       },
-        //     },
-        //     {
-        //       type: {
-        //         value: "Yes",
-        //         id: "",
-        //         type: "PDFCheckBox",
-        //       },
-        //       reason: {
-        //         value: "13A5ChargesorAllegations",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       departureDate: {
-        //         value: "13A5DateLeft",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       estimated: {
-        //         value: "Yes",
-        //         id: "",
-        //         type: "PDFCheckBox",
-        //       },
-        //     },
-        //     {
-        //       type: {
-        //         value: "Yes",
-        //         id: "",
-        //         type: "PDFCheckBox",
-        //       },
-        //       reason: {
-        //         value: "13A5ReasonforUnsatisfactory",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       departureDate: {
-        //         value: "13A5DateLeftMutual",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       estimated: {
-        //         value: "Yes",
-        //         id: "",
-        //         type: "PDFCheckBox",
-        //       },
-        //     },
-        //   ],
-        // },
-        // section13A6: {
-        //   warnedInLastSevenYears: {
-        //     value: "YES",
-        //     id: "",
-        //     type: "PDFRadioGroup",
-        //   },
-        //   warningDetails: [
-        //     {
-        //       reason: {
-        //         value: "13A6Reason1",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       date: {
-        //         date: {
-        //           value: "13A6Date1",
-        //           id: "",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //     },
-        //     {
-        //       reason: {
-        //         value: "13A6Reason2",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       date: {
-        //         date: {
-        //           value: "13A6Date2",
-        //           id: "",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //     },
-        //     {
-        //       reason: {
-        //         value: "13A6Reason3",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       date: {
-        //         date: {
-        //           value: "13A6Date3",
-        //           id: "",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //     },
-        //     {
-        //       reason: {
-        //         value: "13A6Reason4",
-        //         id: "",
-        //         type: "PDFTextField",
-        //       },
-        //       date: {
-        //         date: {
-        //           value: "13A6Date4",
-        //           id: "",
-        //           type: "PDFTextField",
-        //         },
-        //         estimated: {
-        //           value: "Yes",
-        //           id: "",
-        //           type: "PDFCheckBox",
-        //         },
-        //       },
-        //     },
-        //   ],
-        // },
-      },
-    ],
-
-    // section13B: {
-    //   hasFormerFederalEmployment: {
-    //     value: "Yes",
-    //     id: "10442", // Example ID, please replace with actual ID if needed
-    //     type: "PDFRadioButton",
-    //   },
-    //   employmentEntries: [
-    //     {
-    //       _id: 1, // Example ID, this can be dynamically generated or assigned
-    //       fromDate: {
-    //         value: "",
-    //         id: "10485", // Example ID, please replace with actual ID if needed
-    //         type: "PDFTextField",
-    //       },
-    //       toDate: {
-    //         value: "",
-    //         id: "10487", // Example ID, please replace with actual ID if needed
-    //         type: "PDFTextField",
-    //       },
-    //       present: {
-    //         value: "Yes",
-    //         id: "10488", // Example ID, please replace with actual ID if needed
-    //         type: "PDFCheckBox",
-    //       },
-    //       estimated: {
-    //         value: "Yes",
-    //         id: "10489", // Example ID, please replace with actual ID if needed
-    //         type: "PDFCheckBox",
-    //       },
-    //       agencyName: {
-    //         value: "",
-    //         id: "agencyNameId", // Example ID, please replace with actual ID if needed
-    //         type: "PDFTextField",
-    //       },
-    //       positionTitle: {
-    //         value: "",
-    //         id: "positionTitleId", // Example ID, please replace with actual ID if needed
-    //         type: "PDFTextField",
-    //       },
-    //       location: {
-    //         street: {
-    //           value: "",
-    //           id: "Section13EmploymentStreet_10440", // Example ID, please replace with actual ID if needed
-    //           type: "PDFTextField",
-    //         },
-    //         city: {
-    //           value: "",
-    //           id: "Section13Employment_10439", // Example ID, please replace with actual ID if needed
-    //           type: "PDFTextField",
-    //         },
-    //         state: {
-    //           value: "",
-    //           id: "Section13EmploymentState_10438", // Example ID, please replace with actual ID if needed
-    //           type: "PDFSelect",
-    //         },
-    //         zipCode: {
-    //           value: "",
-    //           id: "Section13EmploymentZIP_10432", // Example ID, please replace with actual ID if needed
-    //           type: "PDFTextField",
-    //         },
-    //         country: {
-    //           value: "",
-    //           id: "Section13EmploymentCountry_10437", // Example ID, please replace with actual ID if needed
-    //           type: "PDFSelect",
-    //         },
-    //       },
-    //     },
-    //   ],
-    // },
-
-    // section13C: {
-    //   employmentRecordIssues: { value: "Yes", id: "", type: "PDFRadioGroup" },
-    //   employmentRecord: {
-    //     fired: { value: "Yes", id: "11342", type: "PDFRadioGroup" },
-    //     quitAfterToldWouldBeFired: {
-    //       value: "Yes",
-    //       id: "11342",
-    //       type: "PDFRadioGroup",
-    //     },
-    //     leftByMutualAgreementMisconduct: {
-    //       value: "Yes",
-    //       id: "11342",
-    //       type: "PDFRadioGroup",
-    //     },
-    //     leftByMutualAgreementPerformance: {
-    //       value: "Yes",
-    //       id: "11342",
-    //       type: "PDFRadioGroup",
-    //     },
-    //     writtenWarning: { value: "Yes", id: "11342", type: "PDFRadioGroup" },
-    //   },
-    // },
-  },
+  //   section13C: {
+  //     employmentRecordIssues: {
+  //       value:
+  //         "YES (If YES, you will be required to add an additional employment in Section 13A)",
+  //       id: "17092",
+  //       type: "PDFRadioGroup",
+  //     },
+  //   },
+  // },
 
   // serviceInfo: {
   //   bornAfter1959: {
-  //     value: "Yes",
-  //     id: "11447",
+  //     value: "YES",
+  //     id: "17089",
   //     type: "PDFRadioGroup",
   //   },
   //   registeredWithSSS: {
-  //     value: "dontKnow",
-  //     id: "11408",
+  //     value: "No", // Corresponds to the "No" radio button
+  //     id: "17089",
   //     type: "PDFRadioGroup",
   //   },
+  //   explanations: {
+  //     Yes: {
+  //       value: "Hello", // Explanation text corresponding to "YES"
+  //       id: "11407",
+  //       type: "PDFTextField",
+  //     },
+  //     No: {
+  //       value: "hello1", // Explanation text corresponding to "NO"
+  //       id: "11406",
+  //       type: "PDFTextField",
+  //     },
+  //     "I don't know": {
+  //       value: "HELLO@", // Explanation text corresponding to "I don't know"
+  //       id: "11405",
+  //       type: "PDFTextField",
+  //     },
+  //   },
   // },
+
   // militaryHistoryInfo: {
   //   everServedInUSMilitary: {
-  //     value: "Yes",
-  //     id: "11402",
+  //     value: "NO (If NO, proceed to Section 15.2) ",
+  //     id: "17088",
   //     type: "PDFRadioGroup",
   //   },
   //   disciplinaryProcedure: {
-  //     value: "Yes",
-  //     id: "11479",
+  //     value: "NO (If NO, proceed to Section 15.3) ",
+  //     id: "17060",
   //     type: "PDFRadioGroup",
   //   },
   //   everServedInForeignMilitary: {
-  //     value: "Yes",
-  //     id: "11491",
+  //     value: "NO (If NO, proceed to Section 16)",
+  //     id: "17050",
   //     type: "PDFRadioGroup",
   //   },
+
   //   section15_1: [
   //     {
-  //       _id: Math.random(),
-  //       branch: { value: "Army", id: "11401", type: "PDFRadioGroup" },
-  //       stateOfService: { value: "", id: "11394", type: "PDFDropdown" },
-  //       status: { value: "ActiveDuty", id: "11446", type: "PDFRadioGroup" },
+  //       _id: 1,
+  //       branch: { value: "5", id: "17087", type: "PDFRadioGroup" },
+  //       stateOfService: { value: "TX", id: "11394", type: "PDFDropdown" },
+  //       status: { value: "3", id: "17081", type: "PDFRadioGroup" },
   //       officerOrEnlisted: {
-  //         value: "NotApplicable",
-  //         id: "11392",
+  //         value: "3",
+  //         id: "17085",
   //         type: "PDFRadioGroup",
   //       },
-  //       serviceNumber: { value: "", id: "11427", type: "PDFTextField" },
-  //       serviceFromDate: { value: "", id: "11466", type: "PDFTextField" },
-  //       serviceToDate: { value: "", id: "11464", type: "PDFTextField" },
-  //       present: { value: "Yes", id: "11463", type: "PDFPDFCheckBox" },
+  //       serviceNumber: {
+  //         value: "serviceNumber",
+  //         id: "11461",
+  //         type: "PDFTextField",
+  //       },
+  //       serviceFromDate: {
+  //         value: "fromDate",
+  //         id: "11466",
+  //         type: "PDFTextField",
+  //       },
+  //       serviceToDate: { value: "toDate", id: "11464", type: "PDFTextField" },
+  //       present: { value: "Yes", id: "11463", type: "PDFCheckBox" },
   //       estimatedFromDate: {
   //         value: "Yes",
   //         id: "11465",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
-  //       estimatedToDate: { value: "Yes", id: "11462", type: "PDFPDFCheckBox" },
-  //       discharged: { value: "Yes", id: "11443", type: "PDFRadioGroup" },
-  //       typeOfDischarge: { value: "Other", id: "11457", type: "PDFRadioGroup" },
-  //       dischargeTypeOther: { value: "", id: "11450", type: "PDFTextField" },
-  //       dischargeDate: { value: "", id: "11452", type: "PDFTextField" },
+  //       estimatedToDate: { value: "Yes", id: "11462", type: "PDFCheckBox" },
+  //       discharged: { value: "YES", id: "17084", type: "PDFRadioGroup" },
+  //       typeOfDischarge: { value: "4", id: "17083", type: "PDFRadioGroup" },
+  //       dischargeTypeOther: {
+  //         value: "Other",
+  //         id: "11450",
+  //         type: "PDFTextField",
+  //       },
+  //       dischargeDate: { value: "date", id: "11452", type: "PDFTextField" },
   //       estimatedDischargeDate: {
   //         value: "Yes",
   //         id: "11451",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
-  //       dischargeReason: { value: "", id: "11449", type: "PDFTextField" },
+  //       dischargeReason: { value: "dischargeReadon", id: "11449", type: "PDFTextField" },
   //     },
-  //   ],
-  //   section15_2: [
   //     {
-  //       _id: Math.random(),
-  //       date: { value: "", id: "11477", type: "PDFTextField" },
-  //       estimatedDate: { value: "Yes", id: "11478", type: "PDFPDFCheckBox" },
-  //       descriptionOfOffense: { value: "", id: "11476", type: "PDFTextField" },
-  //       nameOfProcedure: { value: "", id: "11475", type: "PDFTextField" },
-  //       courtDescription: { value: "", id: "11474", type: "PDFTextField" },
-  //       outcomeDescription: { value: "", id: "11473", type: "PDFTextField" },
-  //     },
-  //   ],
-  //   section15_3: [
-  //     {
-  //       _id: Math.random(),
-  //       organizationType: {
-  //         value: "Other",
-  //         id: "11490",
+  //       _id: 2,
+  //       branch: {
+  //         value: "5",
+  //         id: "17080", // Updated from JSON
   //         type: "PDFRadioGroup",
   //       },
-  //       organizationTypeOther: { value: "", id: "11494", type: "PDFTextField" },
-  //       organizationName: { value: "", id: "11534", type: "PDFTextField" },
-  //       country: { value: "", id: "11533", type: "PDFDropdown" },
-  //       periodOfServiceFrom: { value: "", id: "11483", type: "PDFTextField" },
-  //       periodOfServiceTo: { value: "", id: "11537", type: "PDFTextField" },
-  //       present: { value: "Yes", id: "11535", type: "PDFPDFCheckBox" },
+  //       stateOfService: {
+  //         value: "AS", // Changed from "TX" to "AS" to match the JSON value
+  //         id: "11436", // Updated from JSON
+  //         type: "PDFDropdown",
+  //       },
+  //       status: {
+  //         value: "3",
+  //         id: "17078", // Updated from JSON
+  //         type: "PDFRadioGroup",
+  //       },
+  //       officerOrEnlisted: {
+  //         value: "3",
+  //         id: "17085", // Updated from JSON to match the "status" field
+  //         type: "PDFRadioGroup",
+  //       },
+  //       serviceNumber: {
+  //         value: "serviceNmber", // Fixed the value to match JSON spelling
+  //         id: "11427", // Updated from JSON
+  //         type: "PDFTextField",
+  //       },
+  //       serviceFromDate: {
+  //         value: "fromDate",
+  //         id: "11432", // Updated from JSON
+  //         type: "PDFTextField",
+  //       },
+  //       serviceToDate: {
+  //         value: "ToDate",
+  //         id: "11430", // Updated from JSON
+  //         type: "PDFTextField",
+  //       },
+  //       present: {
+  //         value: "Yes",
+  //         id: "11431", // Updated from JSON
+  //         type: "PDFCheckBox",
+  //       },
+  //       estimatedFromDate: {
+  //         value: "Yes",
+  //         id: "11429", // Updated from JSON
+  //         type: "PDFCheckBox",
+  //       },
+  //       estimatedToDate: {
+  //         value: "Yes",
+  //         id: "11428", // Updated from JSON
+  //         type: "PDFCheckBox",
+  //       },
+  //       discharged: {
+  //         value: "NO ", // Fixed the value to remove extra space
+  //         id: "17077", // Updated from JSON
+  //         type: "PDFRadioGroup",
+  //       },
+  //       typeOfDischarge: {
+  //         value: "4",
+  //         id: "17076", // Updated from JSON
+  //         type: "PDFRadioGroup",
+  //       },
+  //       dischargeTypeOther: {
+  //         value: "otherExpalin", // Fixed the spelling to match the JSON
+  //         id: "11416", // Updated from JSON
+  //         type: "PDFTextField",
+  //       },
+  //       dischargeDate: {
+  //         value: "dischargeDate",
+  //         id: "11418", // Updated from JSON
+  //         type: "PDFTextField",
+  //       },
+  //       estimatedDischargeDate: {
+  //         value: "Yes",
+  //         id: "11417", // Updated from JSON
+  //         type: "PDFCheckBox",
+  //       },
+  //       dischargeReason: {
+  //         value: "reasonsForDischarge",
+  //         id: "11415", // Updated from JSON
+  //         type: "PDFTextField",
+  //       },
+  //     }
+
+  //   ],
+
+  //   section15_2: [
+  //     {
+  //       _id: 1,
+  //       date: {
+  //         value: "DateOfCourt1",
+  //         id: "11477", // Matched from JSON
+  //         type: "PDFTextField"
+  //       },
+  //       estimatedDate: {
+  //         value: "Yes",
+  //         id: "11478", // Matched from JSON
+  //         type: "PDFCheckBox"
+  //       },
+  //       descriptionOfOffense: {
+  //         value: "OffencesCharged1",
+  //         id: "11476", // Matched from JSON
+  //         type: "PDFTextField"
+  //       },
+  //       nameOfProcedure: {
+  //         value: "DisplinaryProcedure1", // Updated to match the JSON value
+  //         id: "11475", // Matched from JSON
+  //         type: "PDFTextField"
+  //       },
+  //       courtDescription: {
+  //         value: "CourtCharged1", // Updated to match the JSON value
+  //         id: "11474", // Matched from JSON
+  //         type: "PDFTextField"
+  //       },
+  //       outcomeDescription: {
+  //         value: "FinalOutcome1", // Updated to match the JSON value
+  //         id: "11473", // Matched from JSON
+  //         type: "PDFTextField"
+  //       },
+  //     },
+  //     {
+  //       _id: 2,
+  //       date: {
+  //         value: "DateOfCourt2",
+  //         id: "11471", // Matched from JSON
+  //         type: "PDFTextField"
+  //       },
+  //       estimatedDate: {
+  //         value: "Yes",
+  //         id: "11472", // Matched from JSON
+  //         type: "PDFCheckBox"
+  //       },
+  //       descriptionOfOffense: {
+  //         value: "OffencesCharged2",
+  //         id: "11470", // Matched from JSON
+  //         type: "PDFTextField"
+  //       },
+  //       nameOfProcedure: {
+  //         value: "DisplinaryProcedure2", // Updated to match the JSON value
+  //         id: "11469", // Matched from JSON
+  //         type: "PDFTextField"
+  //       },
+  //       courtDescription: {
+  //         value: "CourtCharged2", // Updated to match the JSON value
+  //         id: "11468", // Matched from JSON
+  //         type: "PDFTextField"
+  //       },
+  //       outcomeDescription: {
+  //         value: "FinalOutcome2", // Updated to match the JSON value
+  //         id: "11467", // Matched from JSON
+  //         type: "PDFTextField"
+  //       },
+  //     },
+  //   ],
+
+  //   section15_3: [
+  //     {
+  //       _id: 1,
+  //       organizationType: {
+  //         value: "7",
+  //         id: "17051", // Matched from JSON
+  //         type: "PDFRadioGroup",
+  //       },
+  //       organizationTypeOther: {
+  //         value: "Non-Profit", // Added random value
+  //         id: "11494", // Matched from JSON for "OtherExpalin"
+  //         type: "PDFTextField",
+  //       },
+  //       organizationName: {
+  //         value: "NameOfORg",
+  //         id: "11534", // Matched from JSON
+  //         type: "PDFTextField",
+  //       },
+  //       country: {
+  //         value: "United States", // Added random value
+  //         id: "11533", // Matched from JSON for "Andorra"
+  //         type: "PDFDropdown",
+  //       },
+  //       periodOfServiceFrom: {
+  //         value: "2020-01-01",
+  //         id: "11483", // Matched from JSON
+  //         type: "PDFTextField",
+  //       },
+  //       periodOfServiceTo: {
+  //         value: "2023-01-01",
+  //         id: "11537", // Matched from JSON
+  //         type: "PDFTextField",
+  //       },
+  //       present: {
+  //         value: "Yes",
+  //         id: "11536", // Matched from JSON
+  //         type: "PDFCheckBox",
+  //       },
   //       estimatedPeriodFrom: {
   //         value: "Yes",
-  //         id: "11482",
-  //         type: "PDFPDFCheckBox",
+  //         id: "11482", // Matched from JSON
+  //         type: "PDFCheckBox",
   //       },
   //       estimatedPeriodTo: {
   //         value: "Yes",
-  //         id: "11536",
-  //         type: "PDFPDFCheckBox",
+  //         id: "11535", // Matched from JSON
+  //         type: "PDFCheckBox",
   //       },
-  //       highestRank: { value: "", id: "11532", type: "PDFTextField" },
-  //       departmentOrOffice: { value: "", id: "11531", type: "PDFTextField" },
-  //       associationDescription: {
-  //         value: "",
-  //         id: "11529",
+  //       highestRank: {
+  //         value: "Manager", // Added random value
+  //         id: "11532", // Matched from JSON for "hihestRank"
   //         type: "PDFTextField",
   //       },
-  //       reasonForLeaving: { value: "", id: "11530", type: "PDFTextField" },
-  //       maintainsContact: { value: "Yes", id: "11514", type: "PDFRadioGroup" },
+  //       departmentOrOffice: {
+  //         value: "Human Resources", // Added random value
+  //         id: "11531", // Matched from JSON for "Division"
+  //         type: "PDFTextField",
+  //       },
+  //       associationDescription: {
+  //         value: "Team Collaboration", // Added random value
+  //         id: "11529", // Matched from JSON for "DescriotionofCircumstances"
+  //         type: "PDFTextField",
+  //       },
+  //       reasonForLeaving: {
+  //         value: "Personal Reasons", // Added random value
+  //         id: "11530", // Matched from JSON for "DescriptionOfReason"
+  //         type: "PDFTextField",
+  //       },
+  //       maintainsContact: {
+  //         value: "YES",
+  //         id: "17054", // Matched from JSON
+  //         type: "PDFRadioGroup",
+  //       },
   //       contacts: [
   //         {
-  //           _id: Math.random(),
-  //           lastName: { value: "", id: "11522", type: "PDFTextField" },
-  //           firstName: { value: "", id: "11521", type: "PDFTextField" },
-  //           middleName: { value: "", id: "11523", type: "PDFTextField" },
-  //           suffix: { value: "", id: "11520", type: "PDFDropdown" },
-  //           address: {
-  //             street: { value: "", id: "11528", type: "PDFTextField" },
-  //             city: { value: "", id: "11527", type: "PDFTextField" },
-  //             state: { value: "", id: "11526", type: "PDFDropdown" },
-  //             zipCode: { value: "", id: "11524", type: "PDFTextField" },
-  //             country: { value: "", id: "11525", type: "PDFDropdown" },
-  //           },
-  //           officialTitle: { value: "", id: "11511", type: "PDFTextField" },
-  //           frequencyOfContact: {
-  //             value: "",
-  //             id: "11512",
+  //           _id: 1,
+  //           lastName: {
+  //             value: "Doe", // Added random value
+  //             id: "11522", // Matched from JSON for "Contact1LastName"
   //             type: "PDFTextField",
   //           },
-  //           associationFrom: { value: "", id: "11519", type: "PDFTextField" },
-  //           associationTo: { value: "", id: "11517", type: "PDFTextField" },
-  //           present: { value: "Yes", id: "11515", type: "PDFPDFCheckBox" },
+  //           firstName: {
+  //             value: "John", // Added random value
+  //             id: "11521", // Matched from JSON for "Contact1FirstName"
+  //             type: "PDFTextField",
+  //           },
+  //           middleName: {
+  //             value: "Michael", // Added random value
+  //             id: "11523", // Matched from JSON for "Contact1MiddleName"
+  //             type: "PDFTextField",
+  //           },
+  //           suffix: {
+  //             value: "Jr.", // Added random value
+  //             id: "11520", // Matched from JSON for "III"
+  //             type: "PDFDropdown",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "123 Main St", // Added random value
+  //               id: "11528", // Matched from JSON for "Contact1Street"
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "Anytown", // Added random value
+  //               id: "11527", // Matched from JSON for "Contact1City"
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "CA", // Added random value
+  //               id: "11526", // Matched from JSON for "CA"
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "90210", // Added random value
+  //               id: "11524", // Matched from JSON for "Contact1Zip"
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "USA", // Added random value
+  //               id: "11525", // Matched from JSON for "Andorra"
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           officialTitle: {
+  //             value: "CEO", // Added random value
+  //             id: "11511", // Matched from JSON for "Contact1OfficalTitle"
+  //             type: "PDFTextField",
+  //           },
+  //           frequencyOfContact: {
+  //             value: "Monthly", // Added random value
+  //             id: "11512", // Matched from JSON for "Contact1FrequencyContact"
+  //             type: "PDFTextField",
+  //           },
+  //           associationFrom: {
+  //             value: "2019-01-01", // Added random value
+  //             id: "11519", // Matched from JSON for "Contact1From"
+  //             type: "PDFTextField",
+  //           },
+  //           associationTo: {
+  //             value: "2021-01-01", // Added random value
+  //             id: "11517", // Matched from JSON for "Contact1ToDa"
+  //             type: "PDFTextField",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "11515", // Matched from JSON
+  //             type: "PDFCheckBox",
+  //           },
   //           estimatedAssociationFrom: {
   //             value: "Yes",
-  //             id: "11518",
-  //             type: "PDFPDFCheckBox",
+  //             id: "11518", // Matched from JSON
+  //             type: "PDFCheckBox",
   //           },
   //           estimatedAssociationTo: {
   //             value: "Yes",
-  //             id: "11516",
-  //             type: "PDFPDFCheckBox",
+  //             id: "11498", // Matched from JSON
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //         {
+  //           _id: 2,
+  //           lastName: {
+  //             value: "Smith", // Added random value
+  //             id: "11504", // Matched from JSON for "Contact2LastName"
+  //             type: "PDFTextField",
+  //           },
+  //           firstName: {
+  //             value: "Jane", // Added random value
+  //             id: "11503", // Matched from JSON for "Contact2FirstName"
+  //             type: "PDFTextField",
+  //           },
+  //           middleName: {
+  //             value: "Elizabeth", // Added random value
+  //             id: "11505", // Matched from JSON for "Contact2MiddleName"
+  //             type: "PDFTextField",
+  //           },
+  //           suffix: {
+  //             value: "Sr.", // Added random value
+  //             id: "11502", // Matched from JSON for "VI"
+  //             type: "PDFDropdown",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "456 Elm St", // Added random value
+  //               id: "11510", // Matched from JSON for "Contact2Street"
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "Somecity", // Added random value
+  //               id: "11509", // Matched from JSON for "Contact2City"
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "AZ", // Added random value
+  //               id: "11508", // Matched from JSON for "AZ"
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "85001", // Added random value
+  //               id: "11506", // Matched from JSON for "Contact2Zip"
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "Afghanistan", // Added random value
+  //               id: "11507", // Matched from JSON for "Afghanistan"
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           officialTitle: {
+  //             value: "COO", // Added random value
+  //             id: "11496", // Matched from JSON for "Contact2OfficialTitle"
+  //             type: "PDFTextField",
+  //           },
+  //           frequencyOfContact: {
+  //             value: "Weekly", // Added random value
+  //             id: "11495", // Matched from JSON for "Contact2FrequencyContact"
+  //             type: "PDFTextField",
+  //           },
+  //           associationFrom: {
+  //             value: "2018-06-01", // Added random value
+  //             id: "11501", // Matched from JSON for "Contact2From"
+  //             type: "PDFTextField",
+  //           },
+  //           associationTo: {
+  //             value: "2020-06-01", // Added random value
+  //             id: "11499", // Matched from JSON for "Contact2ToDa"
+  //             type: "PDFTextField",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "11500", // Matched from JSON
+  //             type: "PDFCheckBox",
+  //           },
+  //           estimatedAssociationFrom: {
+  //             value: "Yes",
+  //             id: "11500", // Matched from JSON (same as `present`)
+  //             type: "PDFCheckBox",
+  //           },
+  //           estimatedAssociationTo: {
+  //             value: "Yes",
+  //             id: "11497", // Matched from JSON
+  //             type: "PDFCheckBox",
+  //           },
+  //         },
+  //       ],
+  //     },
+
+  //     {
+  //       _id: 2,
+  //       organizationType: {
+  //         value: "7",
+  //         id: "17042",
+  //         type: "PDFRadioGroup",
+  //       },
+  //       organizationTypeOther: {
+  //         value: "",
+  //         id: "11578",
+  //         type: "PDFTextField",
+  //       },
+  //       organizationName: {
+  //         value: "",
+  //         id: "11578",
+  //         type: "PDFTextField",
+  //       },
+  //       country: {
+  //         value: "",
+  //         id: "11577",
+  //         type: "PDFDropdown",
+  //       },
+  //       periodOfServiceFrom: {
+  //         value: "fromDate",
+  //         id: "11583",
+  //         type: "PDFTextField",
+  //       },
+  //       periodOfServiceTo: {
+  //         value: "",
+  //         id: "11581",
+  //         type: "PDFTextField",
+  //       },
+  //       present: {
+  //         value: "Yes",
+  //         id: "11579",
+  //         type: "PDFCheckBox",
+  //       },
+  //       estimatedPeriodFrom: {
+  //         value: "Yes",
+  //         id: "11582",
+  //         type: "PDFCheckBox",
+  //       },
+  //       estimatedPeriodTo: {
+  //         value: "Yes",
+  //         id: "11580",
+  //         type: "PDFCheckBox",
+  //       },
+  //       highestRank: {
+  //         value: "",
+  //         id: "11576",
+  //         type: "PDFTextField",
+  //       },
+  //       departmentOrOffice: {
+  //         value: "",
+  //         id: "11575",
+  //         type: "PDFTextField",
+  //       },
+  //       associationDescription: {
+  //         value: "",
+  //         id: "11574",
+  //         type: "PDFTextField",
+  //       },
+  //       reasonForLeaving: {
+  //         value: "",
+  //         id: "11573",
+  //         type: "PDFTextField",
+  //       },
+  //       maintainsContact: {
+  //         value: "YES",
+  //         id: "17045",
+  //         type: "PDFRadioGroup",
+  //       },
+  //       contacts: [
+  //         {
+  //           _id: 1,
+  //           lastName: {
+  //             value: "",
+  //             id: "11566",
+  //             type: "PDFTextField",
+  //           },
+  //           firstName: {
+  //             value: "",
+  //             id: "11565",
+  //             type: "PDFTextField",
+  //           },
+  //           middleName: {
+  //             value: "",
+  //             id: "11567",
+  //             type: "PDFTextField",
+  //           },
+  //           suffix: {
+  //             value: "",
+  //             id: "11564",
+  //             type: "PDFDropdown",
+  //           },
+  //           address: {
+  //             street: {
+  //               value: "",
+  //               id: "11572",
+  //               type: "PDFTextField",
+  //             },
+  //             city: {
+  //               value: "",
+  //               id: "11571",
+  //               type: "PDFTextField",
+  //             },
+  //             state: {
+  //               value: "",
+  //               id: "11570",
+  //               type: "PDFDropdown",
+  //             },
+  //             zipCode: {
+  //               value: "",
+  //               id: "11568",
+  //               type: "PDFTextField",
+  //             },
+  //             country: {
+  //               value: "",
+  //               id: "11569",
+  //               type: "PDFDropdown",
+  //             },
+  //           },
+  //           officialTitle: {
+  //             value: "",
+  //             id: "11555",
+  //             type: "PDFTextField",
+  //           },
+  //           frequencyOfContact: {
+  //             value: "",
+  //             id: "11556",
+  //             type: "PDFTextField",
+  //           },
+  //           associationFrom: {
+  //             value: "",
+  //             id: "11563",
+  //             type: "PDFTextField",
+  //           },
+  //           associationTo: {
+  //             value: "",
+  //             id: "11561",
+  //             type: "PDFTextField",
+  //           },
+  //           present: {
+  //             value: "Yes",
+  //             id: "11560",
+  //             type: "PDFCheckBox",
+  //           },
+  //           estimatedAssociationFrom: {
+  //             value: "Yes",
+  //             id: "11562",
+  //             type: "PDFCheckBox",
+  //           },
+  //           estimatedAssociationTo: {
+  //             value: "Yes",
+  //             id: "11559",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //       ],
   //     },
   //   ],
   // },
+
   // peopleThatKnow: [
   //   {
-  //     _id: Math.random(),
+  //     _id: 1,
   //     knownFromDate: {
-  //       value: "",
+  //       value: "fromDate",
   //       id: "11612",
   //       type: "PDFTextField",
   //     },
   //     knownToDate: {
-  //       value: "",
+  //       value: "toDate",
   //       id: "11610",
   //       type: "PDFTextField",
   //     },
   //     present: {
   //       value: "Yes",
   //       id: "11609",
-  //       type: "PDFPDFCheckBox",
+  //       type: "PDFCheckBox",
   //     },
   //     estimatedFromDate: {
   //       value: "Yes",
   //       id: "11608",
-  //       type: "PDFPDFCheckBox",
+  //       type: "PDFCheckBox",
   //     },
   //     estimatedToDate: {
   //       value: "Yes",
   //       id: "11611",
-  //       type: "PDFPDFCheckBox",
+  //       type: "PDFCheckBox",
   //     },
   //     lastName: {
-  //       value: "",
+  //       value: "Lastname",
   //       id: "11618",
   //       type: "PDFTextField",
   //     },
   //     firstName: {
-  //       value: "",
+  //       value: "FirstName",
   //       id: "11619",
   //       type: "PDFTextField",
   //     },
   //     middleName: {
-  //       value: "",
+  //       value: "MiddleName",
   //       id: "11620",
   //       type: "PDFTextField",
   //     },
   //     suffix: {
-  //       value: "",
+  //       value: "III",
   //       id: "11616",
   //       type: "PDFDropdown",
   //     },
   //     emailAddress: {
-  //       value: "",
+  //       value: "Email",
   //       id: "11617",
   //       type: "PDFTextField",
   //     },
   //     emailUnknown: {
   //       value: "Yes",
   //       id: "11593",
-  //       type: "PDFPDFCheckBox",
+  //       type: "PDFCheckBox",
   //     },
   //     rankOrTitle: {
-  //       value: "",
+  //       value: "rank",
   //       id: "11598",
   //       type: "PDFTextField",
   //     },
   //     rankOrTitleNotApplicable: {
   //       value: "Yes",
   //       id: "11594",
-  //       type: "PDFPDFCheckBox",
+  //       type: "PDFCheckBox",
   //     },
   //     relationshipToApplicant: {
   //       neighbor: {
   //         value: "Yes",
   //         id: "11596",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       workAssociate: {
   //         value: "Yes",
   //         id: "11592",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       friend: {
   //         value: "Yes",
   //         id: "11597",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       schoolmate: {
   //         value: "Yes",
   //         id: "11600",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       other: {
-  //         value: "",
+  //         value: "Yes",
   //         id: "11599",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
+  //       },
+  //       otherExplain: {
+  //         value: "OtherExplain",
+  //         id: "11595",
+  //         type: "PDFCheckBox",
   //       },
   //     },
-  //     phoneNumber: {
-  //       value: "",
-  //       id: "11615",
-  //       type: "PDFTextField",
-  //     },
-  //     phoneNumberUnknown: {
-  //       value: "Yes",
-  //       id: "11601",
-  //       type: "PDFPDFCheckBox",
-  //     },
-  //     phoneExtension: {
-  //       value: "",
-  //       id: "11613",
-  //       type: "PDFTextField",
-  //     },
-  //     phoneType: {
-  //       value: "DSN",
-  //       id: "11614",
-  //       type: "PDFPDFCheckBox",
-  //     },
-  //     mobileNumber: {
-  //       value: "",
-  //       id: "11602",
-  //       type: "PDFTextField",
-  //     },
-  //     preferredContactTime: {
+  //     telePhone: {
+  //       number: {
+  //         value: "telephone",
+  //         id: "11615",
+  //         type: "PDFTextField",
+  //       },
+  //       numberUnknown: {
+  //         value: "Yes",
+  //         id: "11601",
+  //         type: "PDFCheckBox",
+  //       },
+  //       internationalOrDsn: {
+  //         value: "Yes",
+  //         id: "11614",
+  //         type: "PDFCheckBox",
+  //       },
+  //       extension: {
+  //         value: "ext",
+  //         id: "11613",
+  //         type: "PDFTextField",
+  //       },
   //       day: {
   //         value: "Yes",
   //         id: "11700",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       night: {
   //         value: "Yes",
   //         id: "11621",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
+  //       },
+  //     },
+  //     mobilePhone: {
+  //       number: {
+  //         value: "cell",
+  //         id: "11602",
+  //         type: "PDFTextField",
+  //       },
+  //       numberUnknown: {
+  //         value: "Yes",
+  //         id: "11699",
+  //         type: "PDFCheckBox",
+  //       },
+  //       internationalOrDsn: {
+  //         value: "Yes",
+  //         id: "11697",
+  //         type: "PDFCheckBox",
+  //       },
+  //       extension: {
+  //         value: "ext",
+  //         id: "11696",
+  //         type: "PDFTextField",
+  //       },
+  //       day: {
+  //         value: "Yes",
+  //         id: "11698",
+  //         type: "PDFCheckBox",
+  //       },
+  //       night: {
+  //         value: "Yes",
+  //         id: "11695",
+  //         type: "PDFCheckBox",
   //       },
   //     },
   //     address: {
   //       street: {
-  //         value: "",
+  //         value: "street",
   //         id: "11606",
   //         type: "PDFTextField",
   //       },
   //       city: {
-  //         value: "",
+  //         value: "city",
   //         id: "11607",
   //         type: "PDFTextField",
   //       },
   //       state: {
-  //         value: "",
+  //         value: "CA",
   //         id: "11605",
   //         type: "PDFDropdown",
   //       },
   //       zipCode: {
-  //         value: "",
+  //         value: "zip",
   //         id: "11603",
   //         type: "PDFTextField",
   //       },
   //       country: {
-  //         value: "",
+  //         value: "Angola",
   //         id: "11604",
   //         type: "PDFDropdown",
   //       },
   //     },
   //   },
   //   {
-  //     _id: Math.random(),
+  //     _id: 2,
   //     knownFromDate: {
-  //       value: "",
+  //       value: "fromDateE2",
   //       id: "11685",
   //       type: "PDFTextField",
   //     },
   //     knownToDate: {
-  //       value: "",
+  //       value: "toDateE2",
   //       id: "11683",
   //       type: "PDFTextField",
   //     },
   //     present: {
   //       value: "Yes",
-  //       id: "11682",
+  //       id: "11684",
   //       type: "PDFPDFCheckBox",
   //     },
   //     estimatedFromDate: {
@@ -9901,31 +10617,31 @@ const defaultFormData: ApplicantFormValues = {
   //     },
   //     estimatedToDate: {
   //       value: "Yes",
-  //       id: "11684",
+  //       id: "11682",
   //       type: "PDFPDFCheckBox",
   //     },
   //     lastName: {
-  //       value: "",
+  //       value: "LnameE2",
   //       id: "11691",
   //       type: "PDFTextField",
   //     },
   //     firstName: {
-  //       value: "",
+  //       value: "FnameE2",
   //       id: "11692",
   //       type: "PDFTextField",
   //     },
   //     middleName: {
-  //       value: "",
+  //       value: "MnameE2",
   //       id: "11693",
   //       type: "PDFTextField",
   //     },
   //     suffix: {
-  //       value: "",
+  //       value: "VIII",
   //       id: "11689",
   //       type: "PDFDropdown",
   //     },
   //     emailAddress: {
-  //       value: "",
+  //       value: "emailE2",
   //       id: "11690",
   //       type: "PDFTextField",
   //     },
@@ -9935,13 +10651,13 @@ const defaultFormData: ApplicantFormValues = {
   //       type: "PDFPDFCheckBox",
   //     },
   //     rankOrTitle: {
-  //       value: "",
+  //       value: "RankE2",
   //       id: "11673",
   //       type: "PDFTextField",
   //     },
   //     rankOrTitleNotApplicable: {
   //       value: "Yes",
-  //       id: "11670",
+  //       id: "11694",
   //       type: "PDFPDFCheckBox",
   //     },
   //     relationshipToApplicant: {
@@ -9952,898 +10668,630 @@ const defaultFormData: ApplicantFormValues = {
   //       },
   //       workAssociate: {
   //         value: "Yes",
-  //         id: "11668",
+  //         id: "11675",
   //         type: "PDFPDFCheckBox",
   //       },
   //       friend: {
-  //         value: "NO",
+  //         value: "Yes",
   //         id: "11672",
   //         type: "PDFPDFCheckBox",
   //       },
   //       schoolmate: {
-  //         value: "NO",
+  //         value: "Yes",
   //         id: "11674",
   //         type: "PDFPDFCheckBox",
   //       },
   //       other: {
-  //         value: "",
+  //         value: "Yes",
   //         id: "11626",
   //         type: "PDFPDFCheckBox",
   //       },
+  //       otherExplain: {
+  //         value: "OtherExplainE2",
+  //         id: "11625",
+  //         type: "PDFPDFCheckBox",
+  //       },
   //     },
-  //     phoneNumber: {
-  //       value: "",
-  //       id: "11688",
-  //       type: "PDFTextField",
-  //     },
-  //     phoneNumberUnknown: {
-  //       value: "NO",
-  //       id: "11675",
-  //       type: "PDFPDFCheckBox",
-  //     },
-  //     phoneExtension: {
-  //       value: "",
-  //       id: "11663",
-  //       type: "PDFTextField",
-  //     },
-  //     phoneType: {
-  //       value: "DSN",
-  //       id: "11687",
-  //       type: "PDFPDFCheckBox",
-  //     },
-  //     mobileNumber: {
-  //       value: "",
-  //       id: "11676",
-  //       type: "PDFTextField",
-  //     },
-  //     preferredContactTime: {
+  //     telePhone: {
+  //       number: {
+  //         value: "telenumbeE2",
+  //         id: "11688",
+  //         type: "PDFTextField",
+  //       },
+  //       numberUnknown: {
+  //         value: "Yes",
+  //         id: "11668",
+  //         type: "PDFPDFCheckBox",
+  //       },
+  //       extension: {
+  //         value: "teleExtE",
+  //         id: "11686",
+  //         type: "PDFTextField",
+  //       },
+  //       internationalOrDsn: {
+  //         value: "Yes",
+  //         id: "11687",
+  //         type: "PDFPDFCheckBox",
+  //       },
+
   //       day: {
-  //         value: "NO",
-  //         id: "11667",
+  //         value: "Yes",
+  //         id: "11670",
   //         type: "PDFPDFCheckBox",
   //       },
   //       night: {
-  //         value: "NO",
-  //         id: "11694",
+  //         value: "Yes",
+  //         id: "11667",
+  //         type: "PDFPDFCheckBox",
+  //       },
+  //     },
+  //     mobilePhone: {
+  //       number: {
+  //         value: "mobilee2",
+  //         id: "11676",
+  //         type: "PDFTextField",
+  //       },
+  //       numberUnknown: {
+  //         value: "Yes",
+  //         id: "11665",
+  //         type: "PDFPDFCheckBox",
+  //       },
+  //       extension: {
+  //         value: "teleExtE",
+  //         id: "11663",
+  //         type: "PDFTextField",
+  //       },
+  //       internationalOrDsn: {
+  //         value: "Yes",
+  //         id: "11664",
+  //         type: "PDFPDFCheckBox",
+  //       },
+
+  //       day: {
+  //         value: "Yes",
+  //         id: "11662",
+  //         type: "PDFPDFCheckBox",
+  //       },
+  //       night: {
+  //         value: "Yes",
+  //         id: "11666",
   //         type: "PDFPDFCheckBox",
   //       },
   //     },
   //     address: {
   //       street: {
-  //         value: "",
+  //         value: "streetE2",
   //         id: "11679",
   //         type: "PDFTextField",
   //       },
   //       city: {
-  //         value: "",
+  //         value: "cityE2",
   //         id: "11680",
   //         type: "PDFTextField",
   //       },
   //       state: {
-  //         value: "",
+  //         value: "DC",
   //         id: "11678",
   //         type: "PDFDropdown",
   //       },
   //       zipCode: {
-  //         value: "",
+  //         value: "zipE2",
   //         id: "11677",
   //         type: "PDFTextField",
   //       },
   //       country: {
-  //         value: "",
-  //         id: "11627",
+  //         value: "Bangladesh",
+  //         id: "11644",
   //         type: "PDFDropdown",
   //       },
   //     },
   //   },
   //   {
-  //     _id: Math.random(),
+  //     _id: 3,
   //     knownFromDate: {
-  //       value: "",
+  //       value: "fromDatE3",
   //       id: "11652",
   //       type: "PDFTextField",
   //     },
   //     knownToDate: {
-  //       value: "",
+  //       value: "toDateE3",
   //       id: "11650",
   //       type: "PDFTextField",
   //     },
   //     present: {
-  //       value: "NO",
-  //       id: "11649",
+  //       value: "Yes",
+  //       id: "11651",
   //       type: "PDFPDFCheckBox",
   //     },
   //     estimatedFromDate: {
-  //       value: "NO",
+  //       value: "Yes",
   //       id: "11648",
   //       type: "PDFPDFCheckBox",
   //     },
   //     estimatedToDate: {
-  //       value: "NO",
-  //       id: "11651",
+  //       value: "Yes",
+  //       id: "11649",
   //       type: "PDFPDFCheckBox",
   //     },
   //     lastName: {
-  //       value: "",
+  //       value: "LNameE3",
   //       id: "11658",
   //       type: "PDFTextField",
   //     },
   //     firstName: {
-  //       value: "",
+  //       value: "FnameE3",
   //       id: "11659",
   //       type: "PDFTextField",
   //     },
   //     middleName: {
-  //       value: "",
+  //       value: "MNameE3",
   //       id: "11660",
   //       type: "PDFTextField",
   //     },
   //     suffix: {
-  //       value: "",
+  //       value: "IX",
   //       id: "11656",
   //       type: "PDFDropdown",
   //     },
   //     emailAddress: {
-  //       value: "",
+  //       value: "emailE3",
   //       id: "11657",
   //       type: "PDFTextField",
   //     },
   //     emailUnknown: {
-  //       value: "NO",
+  //       value: "Yes",
   //       id: "11635",
   //       type: "PDFPDFCheckBox",
   //     },
   //     rankOrTitle: {
-  //       value: "",
+  //       value: "RankE3",
   //       id: "11639",
   //       type: "PDFTextField",
   //     },
   //     rankOrTitleNotApplicable: {
-  //       value: "NO",
+  //       value: "Yes",
   //       id: "11636",
   //       type: "PDFPDFCheckBox",
   //     },
   //     relationshipToApplicant: {
   //       neighbor: {
-  //         value: "NO",
+  //         value: "Yes",
   //         id: "11637",
   //         type: "PDFPDFCheckBox",
   //       },
   //       workAssociate: {
-  //         value: "NO",
+  //         value: "Yes",
   //         id: "11634",
   //         type: "PDFPDFCheckBox",
   //       },
   //       friend: {
-  //         value: "NO",
+  //         value: "Yes",
   //         id: "11638",
   //         type: "PDFPDFCheckBox",
   //       },
   //       schoolmate: {
-  //         value: "NO",
+  //         value: "Yes",
   //         id: "11640",
   //         type: "PDFPDFCheckBox",
   //       },
   //       other: {
-  //         value: "",
+  //         value: "Yes",
   //         id: "11624",
   //         type: "PDFPDFCheckBox",
   //       },
-  //     },
-  //     phoneNumber: {
-  //       value: "",
-  //       id: "11655",
-  //       type: "PDFTextField",
-  //     },
-  //     phoneNumberUnknown: {
-  //       value: "NO",
-  //       id: "11641",
-  //       type: "PDFPDFCheckBox",
-  //     },
-  //     phoneExtension: {
-  //       value: "",
-  //       id: "11653",
-  //       type: "PDFTextField",
-  //     },
-  //     phoneType: {
-  //       value: "DSN",
-  //       id: "11654",
-  //       type: "PDFPDFCheckBox",
-  //     },
-  //     mobileNumber: {
-  //       value: "",
-  //       id: "11642",
-  //       type: "PDFTextField",
-  //     },
-  //     preferredContactTime: {
-  //       day: {
-  //         value: "NO",
-  //         id: "11633",
+  //       otherExplain: {
+  //         value: "OtherExampleE3",
+  //         id: "11623",
   //         type: "PDFPDFCheckBox",
   //       },
-  //       night: {
-  //         value: "NO",
+  //     },
+  //     telePhone: {
+  //       number: {
+  //         value: "telenumberE3",
+  //         id: "11655",
+  //         type: "PDFTextField",
+  //       },
+  //       numberUnknown: {
+  //         value: "Yes",
   //         id: "11661",
   //         type: "PDFPDFCheckBox",
   //       },
+  //       extension: {
+  //         value: "teleExtE",
+  //         id: "11653",
+  //         type: "PDFTextField",
+  //       },
+  //       internationalOrDsn: {
+  //         value: "Yes",
+  //         id: "11654",
+  //         type: "PDFPDFCheckBox",
+  //       },
+
+  //       day: {
+  //         value: "Yes",
+  //         id: "11641",
+  //         type: "PDFPDFCheckBox",
+  //       },
+  //       night: {
+  //         value: "Yes",
+  //         id: "11633",
+  //         type: "PDFPDFCheckBox",
+  //       },
   //     },
+  //     mobilePhone: {
+  //       number: {
+  //         value: "mobilenumberE3",
+  //         id: "11642",
+  //         type: "PDFTextField",
+  //       },
+  //       numberUnknown: {
+  //         value: "Yes",
+  //         id: "11630",
+  //         type: "PDFPDFCheckBox",
+  //       },
+  //       extension: {
+  //         value: "teleExtE",
+  //         id: "11629",
+  //         type: "PDFTextField",
+  //       },
+  //       internationalOrDsn: {
+  //         value: "Yes",
+  //         id: "11628",
+  //         type: "PDFPDFCheckBox",
+  //       },
+
+  //       day: {
+  //         value: "Yes",
+  //         id: "11632",
+  //         type: "PDFPDFCheckBox",
+  //       },
+  //       night: {
+  //         value: "Yes",
+  //         id: "11631",
+  //         type: "PDFPDFCheckBox",
+  //       },
+  //     },
+
   //     address: {
   //       street: {
-  //         value: "",
+  //         value: "streetE3",
   //         id: "11646",
   //         type: "PDFTextField",
   //       },
   //       city: {
-  //         value: "",
+  //         value: "cityE3",
   //         id: "11647",
   //         type: "PDFTextField",
   //       },
   //       state: {
-  //         value: "",
+  //         value: "CT",
   //         id: "11645",
   //         type: "PDFDropdown",
   //       },
   //       zipCode: {
-  //         value: "",
+  //         value: "ZipE3",
   //         id: "11643",
   //         type: "PDFTextField",
   //       },
   //       country: {
-  //         value: "",
+  //         value: "Bangladesh",
   //         id: "11644",
   //         type: "PDFDropdown",
   //       },
   //     },
   //   },
   // ],
-  // relationshipInfo: {
-  //   _id: Math.random(),
-  //   currentStatus: {
-  //     value: "Never Entered",
-  //     id: "11745",
-  //     type: "PDFPDFCheckBox",
-  //   },
-  //   section17_1: {
-  //     _id: Math.random(),
-  //     fullName: {
-  //       lastName: {
-  //         value: "",
-  //         id: "11741",
-  //         type: "PDFTextField",
-  //       },
-  //       firstName: {
-  //         value: "",
-  //         id: "11740",
-  //         type: "PDFTextField",
-  //       },
-  //       middleName: {
-  //         value: "",
-  //         id: "11743",
-  //         type: "PDFTextField",
-  //       },
-  //       suffix: {
-  //         value: "",
-  //         id: "11742",
-  //         type: "PDFDropdown",
-  //       },
-  //     },
-  //     placeOfBirth: {
-  //       city: {
-  //         value: "",
-  //         id: "11727",
-  //         type: "PDFTextField",
-  //       },
-  //       county: {
-  //         value: "",
-  //         id: "11726",
-  //         type: "PDFTextField",
-  //       },
-  //       state: {
-  //         value: "",
-  //         id: "11725",
-  //         type: "PDFDropdown",
-  //       },
-  //       country: {
-  //         value: "",
-  //         id: "11724",
-  //         type: "PDFDropdown",
-  //       },
-  //     },
-  //     dateOfBirth: {
-  //       date: {
-  //         value: "",
-  //         id: "11738",
-  //         type: "date",
-  //       },
-  //       estimated: {
-  //         value: "NO",
-  //         id: "11739",
-  //         type: "PDFPDFCheckBox",
-  //       },
-  //     },
-  //     citizenship: [
-  //       {
-  //         _id: Math.random(),
-  //         country: {
-  //           value: "",
-  //           id: "11774",
-  //           type: "PDFDropdown",
-  //         },
-  //       },
-  //     ],
-  //     documentation: {
-  //       type: {
-  //         value: "Other",
-  //         id: "11732",
-  //         type: "PDFPDFCheckBox",
-  //       },
-  //       documentNumber: {
-  //         value: "",
-  //         id: "11730",
-  //         type: "PDFTextField",
-  //       },
-  //       documentExpirationDate: {
-  //         date: {
-  //           value: "",
-  //           id: "11778",
-  //           type: "date",
-  //         },
-  //         estimated: {
-  //           value: "NO",
-  //           id: "11777",
-  //           type: "PDFPDFCheckBox",
-  //         },
-  //       },
-  //       otherExplanation: {
-  //         value: "",
-  //         id: "11728",
-  //         type: "PDFTextField",
-  //       },
-  //     },
-  //     notApplicable_OtherNames: {
-  //       value: "NO",
-  //       id: "",
-  //       type: "PDFCheckbox",
-  //     },
-  //     notApplicable_SSN: {
-  //       value: "NO",
-  //       id: "",
-  //       type: "PDFCheckbox",
-  //     },
 
-  //     usSocialSecurityNumber: {
-  //       value: "",
-  //       id: "11776",
-  //       type: "PDFTextField",
-  //     },
-  //     otherNames: [
-  //       {
-  //         _id: Math.random(),
-  //         lastName: {
-  //           value: "",
-  //           id: "11770",
-  //           type: "PDFTextField",
-  //         },
-  //         firstName: {
-  //           value: "",
-  //           id: "11771",
-  //           type: "PDFTextField",
-  //         },
-  //         middleName: {
-  //           value: "",
-  //           id: "11772",
-  //           type: "PDFTextField",
-  //         },
-  //         suffix: {
-  //           value: "",
-  //           id: "11767",
-  //           type: "PDFDropdown",
-  //         },
-  //         maidenName: {
-  //           value: "NO",
-  //           id: "11764",
-  //           type: "PDFPDFCheckBox",
-  //         },
-  //         fromDate: {
-  //           date: {
-  //             value: "",
-  //             id: "11769",
-  //             type: "PDFTextField",
-  //           },
-  //           estimated: {
-  //             value: "NO",
-  //             id: "11766",
-  //             type: "PDFPDFCheckBox",
-  //           },
-  //         },
-  //         toDate: {
-  //           date: {
-  //             value: "",
-  //             id: "11768",
-  //             type: "PDFTextField",
-  //           },
-  //           estimated: {
-  //             value: "NO",
-  //             id: "11765",
-  //             type: "PDFPDFCheckBox",
-  //           },
-  //         },
-  //       },
-  //     ],
-  //     relationshipStatus: {
-  //       value: "Divorced",
-  //       id: "11749",
-  //       type: "PDFPDFCheckBox",
-  //     },
-  //     statusDetails: {
-  //       location: {
-  //         city: {
-  //           value: "",
-  //           id: "11801",
-  //           type: "PDFTextField",
-  //         },
-  //         county: {
-  //           value: "",
-  //           id: "11815",
-  //           type: "PDFTextField",
-  //         },
-  //         state: {
-  //           value: "",
-  //           id: "11800",
-  //           type: "PDFDropdown",
-  //         },
-  //         country: {
-  //           value: "",
-  //           id: "11799",
-  //           type: "PDFDropdown",
-  //         },
-  //       },
-  //       date: {
-  //         date: {
-  //           value: "",
-  //           id: "11802",
-  //           type: "date",
-  //         },
-  //         estimated: {
-  //           value: "NO",
-  //           id: "11817",
-  //           type: "PDFPDFCheckBox",
-  //         },
-  //       },
-  //       recordLocation: {
-  //         city: {
-  //           value: "",
-  //           id: "11840",
-  //           type: "PDFTextField",
-  //         },
-  //         county: {
-  //           value: "",
-  //           id: "11846",
-  //           type: "PDFTextField",
-  //         },
-  //         state: {
-  //           value: "",
-  //           id: "11839",
-  //           type: "PDFDropdown",
-  //         },
-  //         country: {
-  //           value: "",
-  //           id: "11838",
-  //           type: "PDFDropdown",
-  //         },
-  //       },
-  //       deceased: {
-  //         value: "NO",
-  //         id: "11842",
-  //         type: "PDFRadioGroup",
-  //       },
-  //       lastKnownAddress: {
-  //         street: {
-  //           value: "",
-  //           id: "11836",
-  //           type: "PDFTextField",
-  //         },
-  //         city: {
-  //           value: "",
-  //           id: "11835",
-  //           type: "PDFTextField",
-  //         },
-  //         state: {
-  //           value: "",
-  //           id: "11834",
-  //           type: "PDFDropdown",
-  //         },
-  //         zipCode: {
-  //           value: "",
-  //           id: "11832",
-  //           type: "PDFTextField",
-  //         },
-  //         country: {
-  //           value: "",
-  //           id: "11833",
-  //           type: "PDFDropdown",
-  //         },
-  //       },
-  //     },
-  //   },
-  //   section17_2: [
-  //     {
-  //       _id: Math.random(),
-  //       marriageStatus: {
-  //         value: "",
-  //         id: "11875",
-  //         type: "PDFRadioGroup",
-  //       },
-  //       dateOfMarriage: {
-  //         date: {
-  //           value: "",
-  //           id: "11900",
-  //           type: "date",
-  //         },
-  //         estimated: {
-  //           value: "NO",
-  //           id: "11899",
-  //           type: "PDFPDFCheckBox",
-  //         },
-  //       },
-  //       placeOfMarriage: {
-  //         city: {
-  //           value: "",
-  //           id: "11879",
-  //           type: "PDFTextField",
-  //         },
-  //         county: {
-  //           value: "",
-  //           id: "11815",
-  //           type: "PDFTextField",
-  //         },
-  //         state: {
-  //           value: "",
-  //           id: "11878",
-  //           type: "PDFDropdown",
-  //         },
-  //         country: {
-  //           value: "",
-  //           id: "11877",
-  //           type: "PDFDropdown",
-  //         },
-  //       },
-  //       spouseName: {
-  //         lastName: {
-  //           value: "",
-  //           id: "11854",
-  //           type: "PDFTextField",
-  //         },
-  //         firstName: {
-  //           value: "",
-  //           id: "11853",
-  //           type: "PDFTextField",
-  //         },
-  //         middleName: {
-  //           value: "",
-  //           id: "11856",
-  //           type: "PDFTextField",
-  //         },
-  //         suffix: {
-  //           value: "",
-  //           id: "11855",
-  //           type: "PDFDropdown",
-  //         },
-  //       },
-  //       spousePlaceOfBirth: {
-  //         city: {
-  //           value: "",
-  //           id: "11850",
-  //           type: "PDFTextField",
-  //         },
-  //         county: {
-  //           value: "",
-  //           id: "11815",
-  //           type: "PDFTextField",
-  //         },
-  //         state: {
-  //           value: "",
-  //           id: "11849",
-  //           type: "PDFDropdown",
-  //         },
-  //         country: {
-  //           value: "",
-  //           id: "11848",
-  //           type: "PDFDropdown",
-  //         },
-  //       },
-  //       spouseDateOfBirth: {
-  //         date: {
-  //           value: "",
-  //           id: "11851",
-  //           type: "date",
-  //         },
-  //         estimated: {
-  //           value: "NO",
-  //           id: "11852",
-  //           type: "PDFPDFCheckBox",
-  //         },
-  //       },
-  //       spouseCitizenship: [
-  //         {
-  //           _id: Math.random(),
-  //           country: {
-  //             value: "",
-  //             id: "11891",
-  //             type: "PDFDropdown",
-  //           },
-  //         },
-  //       ],
-  //       spouseDocumentation: {
-  //         type: {
-  //           value: "Other",
-  //           id: "11983",
-  //           type: "PDFPDFCheckBox",
-  //         },
-  //         documentNumber: {
-  //           value: "",
-  //           id: "11993",
-  //           type: "PDFTextField",
-  //         },
-  //         documentExpirationDate: {
-  //           date: {
-  //             value: "",
-  //             id: "11991",
-  //             type: "date",
-  //           },
-  //           estimated: {
-  //             value: "NO",
-  //             id: "11990",
-  //             type: "PDFPDFCheckBox",
-  //           },
-  //         },
-  //         otherExplanation: {
-  //           value: "",
-  //           id: "12043",
-  //           type: "PDFTextField",
-  //         },
-  //       },
-  //       spouseUsSocialSecurityNumber: {
-  //         value: "",
-  //         id: "12042",
-  //         type: "PDFTextField",
-  //       },
-  //       spouseOtherNames: [
-  //         {
-  //           _id: Math.random(),
-  //           lastName: {
-  //             value: "",
-  //             id: "12058",
-  //             type: "PDFTextField",
-  //           },
-  //           firstName: {
-  //             value: "",
-  //             id: "12059",
-  //             type: "PDFTextField",
-  //           },
-  //           middleName: {
-  //             value: "",
-  //             id: "12060",
-  //             type: "PDFTextField",
-  //           },
-  //           suffix: {
-  //             value: "",
-  //             id: "12055",
-  //             type: "PDFDropdown",
-  //           },
-  //           maidenName: {
-  //             value: "NO",
-  //             id: "12050",
-  //             type: "PDFRadioGroup",
-  //           },
-  //           fromDate: {
-  //             date: {
-  //               value: "",
-  //               id: "12057",
-  //               type: "PDFTextField",
-  //             },
-  //             estimated: {
-  //               value: "NO",
-  //               id: "12054",
-  //               type: "PDFPDFCheckBox",
-  //             },
-  //           },
-  //           toDate: {
-  //             date: {
-  //               value: "",
-  //               id: "12056",
-  //               type: "PDFTextField",
-  //             },
-  //             estimated: {
-  //               value: "NO",
-  //               id: "12053",
-  //               type: "PDFPDFCheckBox",
-  //             },
-  //           },
-  //         },
-  //       ],
-  //     },
-  //   ],
-  //   section17_3: {
-  //     _id: Math.random(),
-  //     hasCohabitant: {
-  //       value: "NO",
-  //       id: "11954",
-  //       type: "PDFRadioGroup",
-  //     },
-  //     cohabitants: [
-  //       {
-  //         _id: Math.random(),
-  //         fullName: {
-  //           lastName: {
-  //             value: "",
-  //             id: "11926",
-  //             type: "PDFTextField",
-  //           },
-  //           firstName: {
-  //             value: "",
-  //             id: "11925",
-  //             type: "PDFTextField",
-  //           },
-  //           middleName: {
-  //             value: "",
-  //             id: "11928",
-  //             type: "PDFTextField",
-  //           },
-  //           suffix: {
-  //             value: "",
-  //             id: "11927",
-  //             type: "PDFDropdown",
-  //           },
-  //         },
-  //         placeOfBirth: {
-  //           city: {
-  //             value: "",
-  //             id: "11922",
-  //             type: "PDFTextField",
-  //           },
-  //           county: {
-  //             value: "",
-  //             id: "11921",
-  //             type: "PDFDropdown",
-  //           },
-  //           state: {
-  //             value: "",
-  //             id: "11921",
-  //             type: "PDFDropdown",
-  //           },
-  //           country: {
-  //             value: "",
-  //             id: "11920",
-  //             type: "PDFDropdown",
-  //           },
-  //         },
-  //         dateOfBirth: {
-  //           date: {
-  //             value: "",
-  //             id: "11923",
-  //             type: "date",
-  //           },
-  //           estimated: {
-  //             value: "NO",
-  //             id: "11924",
-  //             type: "PDFPDFCheckBox",
-  //           },
-  //         },
-  //         citizenship: [
-  //           {
-  //             _id: Math.random(),
-  //             country: {
-  //               value: "",
-  //               id: "11931",
-  //               type: "PDFDropdown",
-  //             },
-  //           },
-  //         ],
-  //         documentation: {
-  //           type: {
-  //             value: "Other",
-  //             id: "11966",
-  //             type: "PDFPDFCheckBox",
-  //           },
-  //           documentNumber: {
-  //             value: "",
-  //             id: "11976",
-  //             type: "PDFTextField",
-  //           },
-  //           documentExpirationDate: {
-  //             date: {
-  //               value: "",
-  //               id: "11973",
-  //               type: "date",
-  //             },
-  //             estimated: {
-  //               value: "NO",
-  //               id: "11972",
-  //               type: "PDFPDFCheckBox",
-  //             },
-  //           },
-  //           otherExplanation: {
-  //             value: "",
-  //             id: "11965",
-  //             type: "PDFTextField",
-  //           },
-  //         },
-  //         usSocialSecurityNumber: {
-  //           value: "",
-  //           id: "11975",
-  //           type: "PDFTextField",
-  //         },
-  //         otherNames: [
-  //           {
-  //             _id: Math.random(),
-  //             lastName: {
-  //               value: "",
-  //               id: "11951",
-  //               type: "PDFTextField",
-  //             },
-  //             firstName: {
-  //               value: "",
-  //               id: "11952",
-  //               type: "PDFTextField",
-  //             },
-  //             middleName: {
-  //               value: "",
-  //               id: "11953",
-  //               type: "PDFTextField",
-  //             },
-  //             suffix: {
-  //               value: "",
-  //               id: "11948",
-  //               type: "PDFDropdown",
-  //             },
-  //             maidenName: {
-  //               value: "NO",
-  //               id: "11943",
-  //               type: "PDFRadioGroup",
-  //             },
-  //             fromDate: {
-  //               date: {
-  //                 value: "",
-  //                 id: "11950",
-  //                 type: "PDFTextField",
-  //               },
-  //               estimated: {
-  //                 value: "NO",
-  //                 id: "11947",
-  //                 type: "PDFPDFCheckBox",
-  //               },
-  //             },
-  //             toDate: {
-  //               date: {
-  //                 value: "",
-  //                 id: "11949",
-  //                 type: "PDFTextField",
-  //               },
-  //               estimated: {
-  //                 value: "NO",
-  //                 id: "11946",
-  //                 type: "PDFPDFCheckBox",
-  //               },
-  //             },
-  //           },
-  //         ],
-  //         cohabitationStartDate: {
-  //           date: {
-  //             value: "",
-  //             id: "11930",
-  //             type: "date",
-  //           },
-  //           estimated: {
-  //             value: "NO",
-  //             id: "12022",
-  //             type: "PDFPDFCheckBox",
-  //           },
-  //         },
-  //       },
-  //     ],
-  //   },
-  // },
+  relationshipInfo: {
+    _id: 1,
+    neverEntered: {
+      value: "Yes",
+      id: "11749",
+      type: "PDFCheckBox",
+    },
+    currentlyIn: {
+      value: "Yes",
+      id: "11749",
+      type: "PDFCheckBox",
+    },
+    separated: {
+      value: "Yes",
+      id: "11748",
+      type: "PDFCheckBox",
+    },
+    annulled: {
+      value: "Yes",
+      id: "11747",
+      type: "PDFCheckBox",
+    },
+    divorcedDissolved: {
+      value: "Yes",
+      id: "11745",
+      type: "PDFCheckBox",
+    },
+    widowed: {
+      value: "Yes",
+      id: "11744",
+      type: "PDFCheckBox",
+    },
+
+
+    section17_1: {
+      _id: 1,
+      fullName: {
+        lastName: {
+          value: "lastName",
+          id: "11741",
+          type: "PDFTextField",
+        },
+        firstName: {
+          value: "firstName",
+          id: "11740",
+          type: "PDFTextField",
+        },
+        middleName: {
+          value: "middleName",
+          id: "11743",
+          type: "PDFTextField",
+        },
+        suffix: {
+          value: "suffix",
+          id: "11742",
+          type: "PDFDropdown",
+        },
+      },
+      placeOfBirth: {
+        city: {
+          value: "placeOfBirth",
+          id: "11727",
+          type: "PDFTextField",
+        },
+        county: {
+          value: "county",
+          id: "11726",
+          type: "PDFTextField",
+        },
+        state: {
+          value: "state",
+          id: "11725",
+          type: "PDFDropdown",
+        },
+        country: {
+          value: "",
+          id: "11724",
+          type: "PDFDropdown",
+        },
+      },
+      dateOfBirth: {
+        date: {
+          value: "",
+          id: "11738",
+          type: "date",
+        },
+        estimated: {
+          value: "Yes",
+          id: "11739",
+          type: "PDFCheckBox",
+        },
+      },
+      citizenship: [
+        {
+          _id: 1,
+          country: {
+            value: "Anguilla",
+            id: "11774",
+            type: "PDFDropdown",
+          },
+        },
+        {
+          _id: 2,
+          country: {
+            value: "Anguilla",
+            id: "11750",
+            type: "PDFDropdown",
+          },
+        },
+      ],
+
+      documentation: {
+        type: {
+          value: "",
+          id: "",
+          type: "PDFCheckBox",
+        },
+        documentNumber: {
+          value: "",
+          id: "11730",
+          type: "PDFTextField",
+        },
+        documentExpirationDate: {
+          date: {
+            value: "",
+            id: "11778",
+            type: "date",
+          },
+          estimated: {
+            value: "Yes",
+            id: "11777",
+            type: "PDFCheckBox",
+          },
+        },
+        otherExplanation: {
+          value: "",
+          id: "",
+          type: "PDFTextField",
+        },
+      },
+      
+      NA_OtherNames: {
+        value: "Yes",
+        id: "",
+        type: "PDFCheckbox",
+      },
+      NA_SSN: {
+        value: "Yes",
+        id: "",
+        type: "PDFCheckbox",
+      },
+      usSocialSecurityNumber: {
+        value: "",
+        id: "11731",
+        type: "PDFTextField",
+      },
+      otherNames: [
+        {
+          _id: 1,
+          lastName: {
+            value: "",
+            id: "",
+            type: "PDFTextField",
+          },
+          firstName: {
+            value: "",
+            id: "",
+            type: "PDFTextField",
+          },
+          middleName: {
+            value: "",
+            id: "",
+            type: "PDFTextField",
+          },
+          suffix: {
+            value: "",
+            id: "",
+            type: "PDFDropdown",
+          },
+          maidenName: {
+            value: "",
+            id: "",
+            type: "PDFCheckBox",
+          },
+          fromDate: {
+            date: {
+              value: "",
+              id: "",
+              type: "PDFTextField",
+            },
+            estimated: {
+              value: "",
+              id: "",
+              type: "PDFCheckBox",
+            },
+          },
+          toDate: {
+            date: {
+              value: "",
+              id: "",
+              type: "PDFTextField",
+            },
+            estimated: {
+              value: "",
+              id: "",
+              type: "PDFCheckBox",
+            },
+          },
+        },
+      ],
+      relationshipStatus: {
+        value: "",
+        id: "",
+        type: "PDFCheckBox",
+      },
+      statusDetails: {
+        location: {
+          city: {
+            value: "",
+            id: "",
+            type: "PDFTextField",
+          },
+          county: {
+            value: "",
+            id: "",
+            type: "PDFTextField",
+          },
+          state: {
+            value: "",
+            id: "",
+            type: "PDFDropdown",
+          },
+          country: {
+            value: "",
+            id: "",
+            type: "PDFDropdown",
+          },
+        },
+        date: {
+          date: {
+            value: "",
+            id: "",
+            type: "date",
+          },
+          estimated: {
+            value: "",
+            id: "",
+            type: "PDFCheckBox",
+          },
+        },
+        recordLocation: {
+          city: {
+            value: "",
+            id: "",
+            type: "PDFTextField",
+          },
+          county: {
+            value: "",
+            id: "",
+            type: "PDFTextField",
+          },
+          state: {
+            value: "",
+            id: "",
+            type: "PDFDropdown",
+          },
+          country: {
+            value: "",
+            id: "",
+            type: "PDFDropdown",
+          },
+        },
+        deceased: {
+          value: "",
+          id: "",
+          type: "PDFRadioGroup",
+        },
+        lastKnownAddress: {
+          street: {
+            value: "",
+            id: "",
+            type: "PDFTextField",
+          },
+          city: {
+            value: "",
+            id: "",
+            type: "PDFTextField",
+          },
+          state: {
+            value: "",
+            id: "",
+            type: "PDFDropdown",
+          },
+          zipCode: {
+            value: "",
+            id: "",
+            type: "PDFTextField",
+          },
+          country: {
+            value: "",
+            id: "",
+            type: "PDFDropdown",
+          },
+        },
+      },
+    },
+  },
+
+
+
   // relativesInfo: {
   //   _id: Math.random(),
   //   relativeTypes: [],
@@ -10963,12 +11411,12 @@ const defaultFormData: ApplicantFormValues = {
   //             sameAsListed: {
   //               value: "NO",
   //               id: "12132",
-  //               type: "PDFPDFCheckBox",
+  //               type: "PDFCheckBox",
   //             },
   //             iDontKnow: {
   //               value: "NO",
   //               id: "12131",
-  //               type: "PDFPDFCheckBox",
+  //               type: "PDFCheckBox",
   //             },
   //           },
   //           hasOtherNames: {
@@ -11017,12 +11465,12 @@ const defaultFormData: ApplicantFormValues = {
   //               estimatedFrom: {
   //                 value: "NO",
   //                 id: "12124",
-  //                 type: "PDFPDFCheckBox",
+  //                 type: "PDFCheckBox",
   //               },
   //               estimatedTo: {
   //                 value: "NO",
   //                 id: "12123",
-  //                 type: "PDFPDFCheckBox",
+  //                 type: "PDFCheckBox",
   //               },
   //               reasonForChange: {
   //                 value: "",
@@ -11333,34 +11781,34 @@ const defaultFormData: ApplicantFormValues = {
   //             {
   //               value: "In Person",
   //               id: "12247",
-  //               type: "PDFPDFCheckBox",
+  //               type: "PDFCheckBox",
   //             },
   //             {
   //               value: "Telephone",
   //               id: "12249",
-  //               type: "PDFPDFCheckBox",
+  //               type: "PDFCheckBox",
   //             },
   //             {
   //               value: "Electronic",
   //               id: "12248",
-  //               type: "PDFPDFCheckBox",
+  //               type: "PDFCheckBox",
   //             },
   //             {
   //               value: "Written Correspondence",
   //               id: "12246",
-  //               type: "PDFPDFCheckBox",
+  //               type: "PDFCheckBox",
   //             },
   //             {
   //               value: "Other",
   //               id: "12245",
-  //               type: "PDFPDFCheckBox",
+  //               type: "PDFCheckBox",
   //             },
   //           ],
   //           contactFrequency: {
   //             frequency: {
   //               value: "Daily",
   //               id: "12242",
-  //               type: "PDFPDFCheckBox",
+  //               type: "PDFCheckBox",
   //             },
   //             explanation: {
   //               value: "",
@@ -11404,7 +11852,7 @@ const defaultFormData: ApplicantFormValues = {
   //             unknown: {
   //               value: "NO",
   //               id: "12230",
-  //               type: "PDFPDFCheckBox",
+  //               type: "PDFCheckBox",
   //             },
   //           },
   //           foreignGovernmentAffiliation: {
@@ -11469,27 +11917,27 @@ const defaultFormData: ApplicantFormValues = {
   //         {
   //           value: "In Person",
   //           id: "13124",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         {
   //           value: "Telephone",
   //           id: "13126",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         {
   //           value: "Electronic",
   //           id: "13125",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         {
   //           value: "Written Correspondence",
   //           id: "13123",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         {
   //           value: "Other",
   //           id: "13121",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       ],
   //       contactFrequency: [
@@ -11528,22 +11976,22 @@ const defaultFormData: ApplicantFormValues = {
   //         {
   //           value: "Professional or Business",
   //           id: "13191",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         {
   //           value: "Personal",
   //           id: "13192",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         {
   //           value: "Obligation",
   //           id: "13189",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         {
   //           value: "Other",
   //           id: "13193",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       ],
   //       otherNames: [
@@ -11712,22 +12160,22 @@ const defaultFormData: ApplicantFormValues = {
   //   wantForeignRealEstate: {
   //     value: "NO",
   //     id: "13469",
-  //     type: "PDFPDFCheckBox",
+  //     type: "PDFCheckBox",
   //   },
   //   hasForeignSupport: {
   //     value: "NO",
   //     id: "13470",
-  //     type: "PDFPDFCheckBox",
+  //     type: "PDFCheckBox",
   //   },
   //   providedForeignSupport: {
   //     value: "NO",
   //     id: "13471",
-  //     type: "PDFPDFCheckBox",
+  //     type: "PDFCheckBox",
   //   },
   //   providedForeignAdvice: {
   //     value: "NO",
   //     id: "13472",
-  //     type: "PDFPDFCheckBox",
+  //     type: "PDFCheckBox",
   //   },
   //   familyProvidedForeignAdvice: {
   //     value: "NO",
@@ -11742,7 +12190,7 @@ const defaultFormData: ApplicantFormValues = {
   //   offeredBuisnessVenture: {
   //     value: "NO",
   //     id: "13446",
-  //     type: "PDFPDFCheckBox",
+  //     type: "PDFCheckBox",
   //   },
   //   foreignConferences: {
   //     value: "NO",
@@ -11757,7 +12205,7 @@ const defaultFormData: ApplicantFormValues = {
   //   sponsoredForeignNational: {
   //     value: "NO",
   //     id: "13466",
-  //     type: "PDFPDFCheckBox",
+  //     type: "PDFCheckBox",
   //   },
   //   foreignPoliticalOffice: {
   //     value: "NO",
@@ -11767,7 +12215,7 @@ const defaultFormData: ApplicantFormValues = {
   //   foreignVote: {
   //     value: "NO",
   //     id: "13464",
-  //     type: "PDFPDFCheckBox",
+  //     type: "PDFCheckBox",
   //   },
   //   traveledOutsideUSA: {
   //     value: "NO",
@@ -11777,7 +12225,7 @@ const defaultFormData: ApplicantFormValues = {
   //   traveledOutsideUSA_Government: {
   //     value: "NO",
   //     id: "13463",
-  //     type: "PDFPDFCheckBox",
+  //     type: "PDFCheckBox",
   //   },
   //   section20A1: [
   //     {
@@ -11806,7 +12254,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13543",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       howAcquired: {
@@ -11823,7 +12271,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13565",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       currentValue: {
@@ -11835,7 +12283,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13528",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       dateControlRelinquished: {
@@ -11847,7 +12295,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13529",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       disposalExplanation: {
@@ -11983,7 +12431,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13574",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       costAtAcquisition: {
@@ -11995,7 +12443,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13600",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       currentValue: {
@@ -12007,7 +12455,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13585",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       dateDisposed: {
@@ -12019,7 +12467,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13586",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       disposalExplanation: {
@@ -12175,7 +12623,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Yourself",
   //             id: "13755",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         {
@@ -12184,7 +12632,7 @@ const defaultFormData: ApplicantFormValues = {
   //             value:
   //               "Spouse or legally recognized civil union/domestic partner",
   //             id: "13747",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         {
@@ -12192,7 +12640,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Cohabitant",
   //             id: "13702",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         {
@@ -12200,7 +12648,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Dependent children",
   //             id: "13703",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //       ],
@@ -12245,7 +12693,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13745",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       howAcquired: {
@@ -12262,7 +12710,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13733",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       costAtAcquisition: {
@@ -12274,7 +12722,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13803",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       hasCoOwners: {
@@ -12425,7 +12873,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Yourself",
   //             id: "13755",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         {
@@ -12434,7 +12882,7 @@ const defaultFormData: ApplicantFormValues = {
   //             value:
   //               "Spouse or legally recognized civil union/domestic partner",
   //             id: "13747",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         {
@@ -12442,7 +12890,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Cohabitant",
   //             id: "13702",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         {
@@ -12450,7 +12898,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Dependent children",
   //             id: "13703",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //       ],
@@ -12481,7 +12929,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "13745",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         countryProviding: {
@@ -12498,7 +12946,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "13743",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         reason: {
@@ -12540,7 +12988,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "13733",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         countryProviding: {
@@ -12557,7 +13005,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "13743",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         reason: {
@@ -12599,7 +13047,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "13780",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         countryProviding: {
@@ -12616,7 +13064,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "13718",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         reason: {
@@ -12714,7 +13162,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13822",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       citizenships: [
@@ -12728,7 +13176,7 @@ const defaultFormData: ApplicantFormValues = {
   //           notApplicable: {
   //             value: "NO",
   //             id: "13818",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         {
@@ -12741,7 +13189,7 @@ const defaultFormData: ApplicantFormValues = {
   //           notApplicable: {
   //             value: "NO",
   //             id: "13818",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //       ],
@@ -12814,7 +13262,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13890",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       dateTo: {
@@ -12826,7 +13274,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13887",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       compensation: {
@@ -12878,7 +13326,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13860",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       circumstances: {
@@ -12925,7 +13373,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13910",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       accepted: {
@@ -13059,7 +13507,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13980",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       dateTo: {
@@ -13071,7 +13519,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13977",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       natureOfAssociation: {
@@ -13093,7 +13541,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "13972",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       compensationDescription: {
@@ -13121,7 +13569,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "13988",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         toDate: {
@@ -13133,13 +13581,13 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "13985",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         present: {
   //           value: "NO",
   //           id: "13986",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       purpose: {
@@ -13270,7 +13718,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "14040",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       establishmentType: {
@@ -13310,7 +13758,7 @@ const defaultFormData: ApplicantFormValues = {
   //             estimated: {
   //               value: "NO",
   //               id: "14036",
-  //               type: "PDFPDFCheckBox",
+  //               type: "PDFCheckBox",
   //             },
   //           },
   //           plansForFutureContact: {
@@ -13354,7 +13802,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "14106",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       placeOfBirth: {
@@ -13422,7 +13870,7 @@ const defaultFormData: ApplicantFormValues = {
   //           notApplicable: {
   //             value: "NO",
   //             id: "14119",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //       ],
@@ -13462,7 +13910,7 @@ const defaultFormData: ApplicantFormValues = {
   //         notApplicable: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       datesOfStay: {
@@ -13475,7 +13923,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "14127",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         toDate: {
@@ -13487,13 +13935,13 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "14129",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         present: {
   //           value: "NO",
   //           id: "14130",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       addressDuringStay: {
@@ -13553,7 +14001,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "14303",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         toDate: {
@@ -13565,13 +14013,13 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "14305",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         present: {
   //           value: "NO",
   //           id: "14306",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       reasonForActivities: {
@@ -13603,7 +14051,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "14302",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       countryInvolved: {
@@ -13888,7 +14336,7 @@ const defaultFormData: ApplicantFormValues = {
   //       estimated: {
   //         value: "NO",
   //         id: "14377",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       courtAgency: {
   //         name: {
@@ -13985,7 +14433,7 @@ const defaultFormData: ApplicantFormValues = {
   //       estimated: {
   //         value: "NO",
   //         id: "14454",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       courtAgency: {
   //         name: {
@@ -14082,7 +14530,7 @@ const defaultFormData: ApplicantFormValues = {
   //       voluntary: {
   //         value: "NO",
   //         id: "14520",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       explanation: {
   //         value: "",
@@ -14136,17 +14584,17 @@ const defaultFormData: ApplicantFormValues = {
   //       present: {
   //         value: "NO",
   //         id: "14522",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       estimatedFrom: {
   //         value: "NO",
   //         id: "14524",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       estimatedTo: {
   //         value: "NO",
   //         id: "14521",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //     },
   //   ],
@@ -14171,17 +14619,17 @@ const defaultFormData: ApplicantFormValues = {
   //         present: {
   //           value: "NO",
   //           id: "14569",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         estimatedFrom: {
   //           value: "NO",
   //           id: "14571",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         estimatedTo: {
   //           value: "NO",
   //           id: "14568",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       healthCareProfessional: {
@@ -14203,17 +14651,17 @@ const defaultFormData: ApplicantFormValues = {
   //         day: {
   //           value: "NO",
   //           id: "14567",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         night: {
   //           value: "NO",
   //           id: "14566",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         internationalOrDsnPhoneFieldNumber: {
   //           value: "NO",
   //           id: "14563",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         address: {
   //           street: {
@@ -14289,17 +14737,17 @@ const defaultFormData: ApplicantFormValues = {
   //         day: {
   //           value: "NO",
   //           id: "14600",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         night: {
   //           value: "NO",
   //           id: "14599",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         internationalOrDsnPhoneFieldNumber: {
   //           value: "NO",
   //           id: "14596",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       counselingEffective: {
@@ -14340,7 +14788,7 @@ const defaultFormData: ApplicantFormValues = {
   //           id: "",
   //           type: "PDFTextField",
   //         },
-  //         estimated: { value: "NO", id: "14920", type: "PDFPDFCheckBox" },
+  //         estimated: { value: "NO", id: "14920", type: "PDFCheckBox" },
   //       },
   //       description: { value: "", id: "14919", type: "PDFTextField" },
   //       involvedDomesticViolence: {
@@ -14348,11 +14796,11 @@ const defaultFormData: ApplicantFormValues = {
   //         id: "",
   //         type: "PDFRadioGroup",
   //       },
-  //       involvedFirearms: { value: "NO", id: "14876", type: "PDFPDFCheckBox" },
+  //       involvedFirearms: { value: "NO", id: "14876", type: "PDFCheckBox" },
   //       involvedAlcoholDrugs: {
   //         value: "NO",
   //         id: "14875",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       offenseLocation: {
   //         city: { value: "", id: "14918", type: "PDFTextField" },
@@ -14433,9 +14881,9 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
-  //         present: { value: "NO", id: "14931", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "14931", type: "PDFCheckBox" },
   //       },
   //       probationParoleDates: {
   //         from: { value: "", id: "14944", type: "PDFTextField" },
@@ -14443,9 +14891,9 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
-  //         present: { value: "NO", id: "14941", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "14941", type: "PDFCheckBox" },
   //       },
   //       awaitingTrial: {
   //         value: "NO",
@@ -14475,11 +14923,11 @@ const defaultFormData: ApplicantFormValues = {
   //         id: "",
   //         type: "PDFRadioGroup",
   //       },
-  //       involvedFirearms: { value: "NO", id: "14999", type: "PDFPDFCheckBox" },
+  //       involvedFirearms: { value: "NO", id: "14999", type: "PDFCheckBox" },
   //       involvedAlcoholDrugs: {
   //         value: "NO",
   //         id: "14998",
-  //         type: "PDFPDFCheckBox",
+  //         type: "PDFCheckBox",
   //       },
   //       courtName: { value: "", id: "14994", type: "PDFTextField" },
   //       courtLocation: {
@@ -14531,9 +14979,9 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
-  //         present: { value: "NO", id: "15011", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15011", type: "PDFCheckBox" },
   //       },
   //       probationParoleDates: {
   //         from: { value: "", id: "15009", type: "PDFTextField" },
@@ -14541,9 +14989,9 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
-  //         present: { value: "NO", id: "15006", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15006", type: "PDFCheckBox" },
   //       },
   //       awaitingTrial: {
   //         value: "NO",
@@ -14573,7 +15021,7 @@ const defaultFormData: ApplicantFormValues = {
   //               id: "",
   //               type: "PDFTextField",
   //             },
-  //             estimated: { value: "NO", id: "15169", type: "PDFPDFCheckBox" },
+  //             estimated: { value: "NO", id: "15169", type: "PDFCheckBox" },
   //           },
   //           courtAgencyName: { value: "", id: "15167", type: "PDFTextField" },
   //           courtAgencyLocation: {
@@ -14684,11 +15132,11 @@ const defaultFormData: ApplicantFormValues = {
   //       otherDrugExplanation: { value: "", id: "15213", type: "PDFTextField" },
   //       firstUse: {
   //         date: { value: "", id: "15184", type: "PDFTextField" },
-  //         estimated: { value: "NO", id: "15183", type: "PDFPDFCheckBox" },
+  //         estimated: { value: "NO", id: "15183", type: "PDFCheckBox" },
   //       },
   //       mostRecentUse: {
   //         date: { value: "", id: "15182", type: "PDFTextField" },
-  //         estimated: { value: "NO", id: "15181", type: "PDFPDFCheckBox" },
+  //         estimated: { value: "NO", id: "15181", type: "PDFCheckBox" },
   //       },
   //       natureOfUseFrequencyTimes: {
   //         value: "",
@@ -14772,11 +15220,11 @@ const defaultFormData: ApplicantFormValues = {
   //       otherDrugExplanation: { value: "", id: "15272", type: "PDFTextField" },
   //       firstInvolvement: {
   //         date: { value: "", id: "15270", type: "PDFTextField" },
-  //         estimated: { value: "NO", id: "15269", type: "PDFPDFCheckBox" },
+  //         estimated: { value: "NO", id: "15269", type: "PDFCheckBox" },
   //       },
   //       mostRecentInvolvement: {
   //         date: { value: "", id: "15268", type: "PDFTextField" },
-  //         estimated: { value: "NO", id: "15267", type: "PDFPDFCheckBox" },
+  //         estimated: { value: "NO", id: "15267", type: "PDFCheckBox" },
   //       },
   //       natureAndFrequencyOfActivity: {
   //         value: "",
@@ -14817,13 +15265,13 @@ const defaultFormData: ApplicantFormValues = {
   //       dateRange: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //     },
   //     {
@@ -14836,13 +15284,13 @@ const defaultFormData: ApplicantFormValues = {
   //       dateRange: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //     },
   //   ],
@@ -14857,13 +15305,13 @@ const defaultFormData: ApplicantFormValues = {
   //       dateRange: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //     },
   //     {
@@ -14876,13 +15324,13 @@ const defaultFormData: ApplicantFormValues = {
   //       dateRange: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //     },
   //   ],
@@ -14896,13 +15344,13 @@ const defaultFormData: ApplicantFormValues = {
   //       dateRange: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //       reasonsForMisuse: { value: "", id: "15311", type: "PDFTextField" },
   //       involvementWhileEmployedInPublicSafety: {
@@ -14925,13 +15373,13 @@ const defaultFormData: ApplicantFormValues = {
   //       dateRange: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //       reasonsForMisuse: { value: "", id: "15330", type: "PDFTextField" },
   //       involvementWhileEmployedInPublicSafety: {
@@ -15048,19 +15496,19 @@ const defaultFormData: ApplicantFormValues = {
   //       },
   //       treatmentProviderPhone: {
   //         number: { value: "", id: "15350", type: "PDFTextField" },
-  //         international: { value: "NO", id: "15348", type: "PDFPDFCheckBox" },
-  //         timeOfDay: { value: "Day", id: "15347", type: "PDFPDFCheckBox" },
+  //         international: { value: "NO", id: "15348", type: "PDFCheckBox" },
+  //         timeOfDay: { value: "Day", id: "15347", type: "PDFCheckBox" },
   //       },
   //       dateRange: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //       successfullyCompleted: {
   //         value: "NO",
@@ -15136,19 +15584,19 @@ const defaultFormData: ApplicantFormValues = {
   //       },
   //       treatmentProviderPhone: {
   //         number: { value: "", id: "15426", type: "PDFTextField" },
-  //         international: { value: "NO", id: "15424", type: "PDFPDFCheckBox" },
-  //         timeOfDay: { value: "Day", id: "15423", type: "PDFPDFCheckBox" },
+  //         international: { value: "NO", id: "15424", type: "PDFCheckBox" },
+  //         timeOfDay: { value: "Day", id: "15423", type: "PDFCheckBox" },
   //       },
   //       dateRange: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //       successfullyCompleted: {
   //         value: "NO",
@@ -15186,18 +15634,18 @@ const defaultFormData: ApplicantFormValues = {
   //       _id: Math.random(),
   //       negativeImpactDate: {
   //         date: { value: "", id: "15282", type: "PDFTextField" },
-  //         estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //         estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //       },
   //       datesOfInvolvement: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //       circumstances: {
   //         value: "",
@@ -15214,18 +15662,18 @@ const defaultFormData: ApplicantFormValues = {
   //       _id: Math.random(),
   //       negativeImpactDate: {
   //         date: { value: "", id: "15282", type: "PDFTextField" },
-  //         estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //         estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //       },
   //       datesOfInvolvement: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //       circumstances: {
   //         value: "",
@@ -15242,18 +15690,18 @@ const defaultFormData: ApplicantFormValues = {
   //       _id: Math.random(),
   //       negativeImpactDate: {
   //         date: { value: "", id: "15282", type: "PDFTextField" },
-  //         estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //         estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //       },
   //       datesOfInvolvement: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //       circumstances: {
   //         value: "",
@@ -15270,18 +15718,18 @@ const defaultFormData: ApplicantFormValues = {
   //       _id: Math.random(),
   //       negativeImpactDate: {
   //         date: { value: "", id: "15282", type: "PDFTextField" },
-  //         estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //         estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //       },
   //       datesOfInvolvement: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //       circumstances: {
   //         value: "",
@@ -15314,13 +15762,13 @@ const defaultFormData: ApplicantFormValues = {
   //         dateRange: {
   //           from: {
   //             date: { value: "", id: "15282", type: "PDFTextField" },
-  //             estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //             estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //           },
   //           to: {
   //             date: { value: "", id: "15280", type: "PDFTextField" },
-  //             estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //             estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //           },
-  //           present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //           present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //         },
   //         providerName: {
   //           value: "",
@@ -15363,12 +15811,12 @@ const defaultFormData: ApplicantFormValues = {
   //           isInternationalOrDSN: {
   //             value: "NO",
   //             id: "15573",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //           timeOfDay: {
   //             value: "Day",
   //             id: "15572",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //           extension: {
   //             value: "",
@@ -15396,13 +15844,13 @@ const defaultFormData: ApplicantFormValues = {
   //       dateRange: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //       providerName: {
   //         value: "",
@@ -15445,12 +15893,12 @@ const defaultFormData: ApplicantFormValues = {
   //         isInternationalOrDSN: {
   //           value: "NO",
   //           id: "15614",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         timeOfDay: {
   //           value: "Day",
   //           id: "15613",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         extension: {
   //           value: "",
@@ -15540,13 +15988,13 @@ const defaultFormData: ApplicantFormValues = {
   //       dateRange: {
   //         from: {
   //           date: { value: "", id: "15282", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15279", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15279", type: "PDFCheckBox" },
   //         },
   //         to: {
   //           date: { value: "", id: "15280", type: "PDFTextField" },
-  //           estimated: { value: "NO", id: "15281", type: "PDFPDFCheckBox" },
+  //           estimated: { value: "NO", id: "15281", type: "PDFCheckBox" },
   //         },
-  //         present: { value: "NO", id: "15275", type: "PDFPDFCheckBox" },
+  //         present: { value: "NO", id: "15275", type: "PDFCheckBox" },
   //       },
   //       treatmentCompletion: {
   //         value: "NO",
@@ -15609,12 +16057,12 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15726",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         unknown: {
   //           value: "NO",
   //           id: "15725",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
 
@@ -15623,12 +16071,12 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15723",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         unknown: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       levelOfClearance: [
@@ -15655,7 +16103,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15733",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       agency: {
@@ -15677,7 +16125,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15742",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       agency: {
@@ -15752,7 +16200,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15798",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       dateDischarged: {
@@ -15764,12 +16212,12 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15806",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         notApplicable: {
   //           value: "NO",
   //           id: "15796",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       amountInvolved: {
@@ -15781,7 +16229,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15794",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       debtRecordedUnder: {
@@ -15902,7 +16350,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "15857",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         to: {
@@ -15914,13 +16362,13 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "15855",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         present: {
   //           value: "NO",
   //           id: "15859",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       gamblingLosses: {
@@ -15932,7 +16380,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       descriptionOfFinancialProblems: {
@@ -15991,7 +16439,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15831",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       dateSatisfied: {
@@ -16003,7 +16451,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15839",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       actionsTaken: {
@@ -16057,7 +16505,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15908",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       counselingWarningDisciplinaryReason: {
@@ -16074,7 +16522,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       rectifyingActions: {
@@ -16111,12 +16559,12 @@ const defaultFormData: ApplicantFormValues = {
   //         isInternationalOrDSN: {
   //           value: "NO",
   //           id: "15878",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         timeOfDay: {
   //           value: "Day",
   //           id: "15877",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       creditCounselingOrganizationLocation: {
@@ -16172,7 +16620,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Delinquent on alimony or child support payments",
   //             id: "15919",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         {
@@ -16180,7 +16628,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Judgment entered against you",
   //             id: "15918",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         {
@@ -16188,7 +16636,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Lien placed against your property",
   //             id: "15917",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         {
@@ -16196,7 +16644,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Currently delinquent on any Federal debt",
   //             id: "15916",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //       ],
@@ -16220,7 +16668,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15936",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       issueReason: {
@@ -16242,7 +16690,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15930",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       resolutionDate: {
@@ -16254,12 +16702,12 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15928",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         notApplicable: {
   //           value: "NO",
   //           id: "15927",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       courtName: {
@@ -16320,7 +16768,7 @@ const defaultFormData: ApplicantFormValues = {
   //           type: {
   //             value: "Repossessed or foreclosed property",
   //             id: "15947",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //       ],
@@ -16344,7 +16792,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "15964",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       issueReason: {
@@ -16366,12 +16814,12 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         notApplicable: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       resolutionDate: {
@@ -16383,12 +16831,12 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //         notApplicable: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       courtName: {
@@ -16460,7 +16908,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "16020",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       description: {
@@ -16512,7 +16960,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "16020",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       description: {
@@ -16566,7 +17014,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "16020",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       description: {
@@ -16618,7 +17066,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       description: {
@@ -16672,7 +17120,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "16020",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       description: {
@@ -16724,7 +17172,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "16020",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       description: {
@@ -16785,7 +17233,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "16020",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       courtName: {
@@ -16851,7 +17299,7 @@ const defaultFormData: ApplicantFormValues = {
   //         estimated: {
   //           value: "NO",
   //           id: "16020",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       courtName: {
@@ -16963,7 +17411,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16123",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         to: {
@@ -16975,13 +17423,13 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16121",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         present: {
   //           value: "NO",
   //           id: "16125",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //     },
@@ -17030,7 +17478,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16123",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         to: {
@@ -17042,13 +17490,13 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16121",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         present: {
   //           value: "NO",
   //           id: "16125",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       positionsHeld: {
@@ -17085,7 +17533,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16148",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         to: {
@@ -17097,13 +17545,13 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16146",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         present: {
   //           value: "NO",
   //           id: "16150",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //     },
@@ -17152,7 +17600,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16171",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         to: {
@@ -17164,13 +17612,13 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16169",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         present: {
   //           value: "NO",
   //           id: "16173",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       positionsHeld: {
@@ -17234,7 +17682,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16206",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         to: {
@@ -17246,13 +17694,13 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16204",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         present: {
   //           value: "NO",
   //           id: "16208",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //       positionsHeld: {
@@ -17289,7 +17737,7 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16243",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         to: {
@@ -17301,13 +17749,13 @@ const defaultFormData: ApplicantFormValues = {
   //           estimated: {
   //             value: "NO",
   //             id: "16241",
-  //             type: "PDFPDFCheckBox",
+  //             type: "PDFCheckBox",
   //           },
   //         },
   //         present: {
   //           value: "NO",
   //           id: "16245",
-  //           type: "PDFPDFCheckBox",
+  //           type: "PDFCheckBox",
   //         },
   //       },
   //     },

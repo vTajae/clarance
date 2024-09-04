@@ -1,4 +1,4 @@
-import { NamesInfo } from "../form86/lastTry/formDefinition";
+import { NamesInfo } from "../../../api/interfaces2.0/formDefinition";
 
 interface FormProps {
   data: NamesInfo;
@@ -50,7 +50,7 @@ const RenderNames = ({
       {data.hasNames && (
         <div className="space-y-6">
           {data.names.map((name, index) => (
-            <div key={index} className="p-6 bg-white shadow-md rounded-lg">
+            <div key={index} className="p-6  shadow-md rounded-lg">
               <div className="grid grid-cols-1 md:grid-cols-6 gap-6 items-start">
                 {/** Text Inputs with more padding and subtle shadow */}
                 <input

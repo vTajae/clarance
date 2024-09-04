@@ -1,4 +1,4 @@
-import { ApplicantAknowledgeInfo } from "../form86/lastTry/formDefinition"; // Assuming this import path is correct
+import { ApplicantAknowledgeInfo } from "../../../api/interfaces2.0/formDefinition"; // Assuming this import path is correct
 import FormInfo from "api_v2/interfaces/FormInfo";
 
 interface FormProps {

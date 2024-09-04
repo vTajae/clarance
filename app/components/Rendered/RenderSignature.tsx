@@ -73,7 +73,7 @@ const RenderSignature: React.FC<FormProps> = ({
     };
 
     return (
-      <div className="flex flex-col space-y-4 p-4 bg-white shadow-md rounded-lg">
+      <div className="flex flex-col space-y-4 p-4  shadow-md rounded-lg">
         <div className="flex items-center space-x-4">
           <button
             onClick={toggleDetails}
@@ -340,7 +340,7 @@ const RenderSignature: React.FC<FormProps> = ({
     value: boolean,
     onChange: (value: boolean) => void
   ) => (
-    <div className="flex flex-col space-y-2 p-4 bg-white shadow-md rounded-lg">
+    <div className="flex flex-col space-y-2 p-4  shadow-md rounded-lg">
       <span className="">{label}</span>
       <div className="flex items-center space-x-4 mt-2">
         <div>

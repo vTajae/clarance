@@ -1,7 +1,7 @@
 import GenericFormField from "./templates/genericForm";
 import { useForm } from "../samples/formContext";
 import StepperControls from "./stepperControls";
-import formFieldsJson from "../../../../api_v2/json/nameInfo.json";
+import formFieldsJson from "../../../../api/json/nameInfo.json";
 import { ApplicantPersonalInfo } from "api_v2/interfaces/form4";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import ConditionalComponent from "./templates/conditionalForm";

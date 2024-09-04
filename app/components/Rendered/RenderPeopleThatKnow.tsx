@@ -36,7 +36,7 @@ const RenderPeopleThatKnow: React.FC<FormProps> = ({
       {data.map((entry, index) => (
         <div
           key={index}
-          className="space-y-4 border p-4 rounded-lg bg-white shadow"
+          className="space-y-4 border p-4 rounded-lg  shadow"
         >
           <div className="grid grid-cols-2 gap-4">
             <input

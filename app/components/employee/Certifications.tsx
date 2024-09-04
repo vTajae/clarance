@@ -2,7 +2,7 @@ import { CertificationType } from "api_v2/interfaces/employee";
 import React from "react";
 
 const CertificationCard: React.FC<CertificationType> = ({ logo, titles }) => (
-  <div className="flex flex-col items-center w-full px-4 py-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+  <div className="flex flex-col items-center w-full px-4 py-6  dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out">
     <div className="flex justify-center items-center h-12 overflow-hidden">
       <img
         src={logo._url}

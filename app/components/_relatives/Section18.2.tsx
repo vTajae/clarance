@@ -23,7 +23,7 @@ const RenderSection18_2: React.FC<Section18_2Props> = ({
 
   return (
     <div className="space-y-6">
-      <div className="bg-white p-4 rounded-lg shadow-md space-y-4">
+      <div className=" p-4 rounded-lg shadow-md space-y-4">
         <div className="space-y-1">
           <label htmlFor="street" className="block text-sm font-medium text-gray-700">Street:</label>
           <input

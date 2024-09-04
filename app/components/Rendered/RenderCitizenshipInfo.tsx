@@ -1,16 +1,9 @@
-import React from "react";
-import { SuffixOptions } from "api_v2/interfaces/enums/suffix";
-import FormInfo from "api_v2/interfaces/FormInfo";
-import {
-  CitizenshipByBirthInfo,
-  CitizenshipNaturalizationInfo,
-  DerivedCitizenInfo,
-  NaturalizedCitizenInfo,
-  NonCitizenInfo,
-} from "api_v2/interfaces2.0/citizenship";
+import FormInfo from "api/interfaces2.0/FormInfo";
+import { CitizenshipByBirthInfo, CitizenshipInfo } from "api/interfaces2.0/sections/citizenship";
+
 
 type FormProps = {
-  data: CitizenshipNaturalizationInfo;
+  data: CitizenshipInfo;
   onInputChange: (path: string, value: any) => void;
   onAddEntry: (path: string, newItem: any) => void;
   onRemoveEntry: (path: string, index: number) => void;
@@ -40,7 +33,7 @@ const RenderCitizenshipInfo: React.FC<FormProps> = ({
   path,
   getDefaultNewItem,
 }) => {
-  const citizenshipInfo = data as CitizenshipNaturalizationInfo;
+  const citizenshipInfo = data as CitizenshipInfo;
 
   const handleCitizenshipChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newStatusDescription = e.target.value;

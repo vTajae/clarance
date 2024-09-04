@@ -1,15 +1,16 @@
 import { Form, json, useLoaderData } from "@remix-run/react";
 import { FormEvent, Suspense, useState } from "react";
-import { useEmployee } from "../state/contexts/new-context copy";
+import { useEmployee } from "../state/contexts/new-context";
 import DynamicForm3 from "../utils/formHandler";
-import FormInfo from "api_v2/interfaces/FormInfo";
 import { useDispatch, useTypedSelector } from "~/state/hooks/user";
 import { RootState } from "~/state/store";
 import { closeModal, openModal } from "~/state/user/userSlice";
-import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition copy 2";
 import BasicInfo from "~/components/employee/BasicInfo";
-import DynamicService from "../../api_v2/service/dynamicService";
+import DynamicService from "../../api/service/dynamicService";
 import { RenderPrintPDF } from "~/components/Rendered/RenderPrintPDF";
+import Utils from "~/utils/utils";
+import FormInfo from "api/interfaces2.0/FormInfo";
+import { ApplicantFormValues } from "api/interfaces2.0/formDefinition";
 
 type LoaderData = {
   formInfo: FormInfo;
@@ -46,7 +47,7 @@ const EmployeeIDPage = () => {
   const { loadEmployee, isLoading, data, getChanges } = useEmployee();
 
   const handleStartClick = async () => {
-    const newUserID = `user_${Math.random().toString(36)}`;
+    const newUserID = Utils.generateUUIDv2();
     const updatedData = {
       ...data,
       personalInfo: {
@@ -122,7 +123,7 @@ const EmployeeIDPage = () => {
   return (
     <Suspense fallback={<div>Hi</div>}>
       {!data?.personalInfo?.applicantID ? (
-        <div className="p-4 bg-white rounded-lg">
+        <div className="p-4  rounded-lg">
           <button
             onClick={handleStartClick} // Ensure handleStartClick is defined in your component or context
             className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
@@ -131,7 +132,7 @@ const EmployeeIDPage = () => {
           </button>
         </div>
       ) : (
-        <div className="p-4 bg-white rounded-lg">
+        <div className="p-4  rounded-lg">
           {!isModalOpen ? (
             <div className="grid grid-cols-1 gap-4">
               <div className="flex items-center justify-center">
@@ -171,10 +172,10 @@ const EmployeeIDPage = () => {
         </div>
       )}
       {data?.personalInfo?.applicantID && !isModalOpen && (
-        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start w-full p-6 bg-white">
+        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start w-full p-6 ">
           <div className="w-full sm:w-auto mb-4 sm:mb-0">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-              Employee Panel
+              Applicant Panel
             </h2>
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mb-4">
               <button
@@ -182,7 +183,7 @@ const EmployeeIDPage = () => {
                 onClick={toggleEditMode}
                 className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-150 ease-in-out"
               >
-                Edit Employee
+                Edit Form
               </button>
             </div>
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">

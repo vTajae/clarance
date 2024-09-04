@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import lodash from "lodash";
-import { useEmployee } from "~/state/contexts/new-context copy";
-import { ApplicantFormValues } from "~/components/form86/lastTry/formDefinition copy 2";
+import { goToStep, selectCurrentStep } from "../state/user/formSice";
+import StepperFooter from "../components/form86/samples/stepperFooter";
+import { useDispatch, useTypedSelector } from "~/state/hooks/user";
+
 import { RenderBasicInfo } from "../components/Rendered/RenderBasicInfo";
 import { RenderBirthInfo } from "../components/Rendered/RenderBirthInfo";
 import { RenderAcknowledgementInfo } from "../components/Rendered/RenderAcknowledgementInfo";
 import { RenderNames } from "../components/Rendered/RenderNames";
-import FormInfo from "api_v2/interfaces/FormInfo";
-import { goToStep, selectCurrentStep } from "../state/user/formSice";
-import StepperFooter from "../components/form86/samples/stepperFooter";
-import { useDispatch, useTypedSelector } from "~/state/hooks/user";
 import { RenderPhysicalsInfo } from "~/components/Rendered/RenderPhysicals";
 import { RenderContactInfo } from "~/components/Rendered/RenderContactInfo";
 import { RenderPassportInfo } from "~/components/Rendered/RenderPassportInfo";
@@ -36,6 +34,10 @@ import { RenderCivil } from "~/components/Rendered/RenderCivil";
 import { RenderAssociation } from "~/components/Rendered/RenderAssociation";
 import { RenderSignature } from "~/components/Rendered/RenderSignature";
 import {RenderPrintPDF} from "~/components/Rendered/RenderPrintPDF";
+
+import { useEmployee } from "~/state/contexts/new-context";
+import { ApplicantFormValues } from "api/interfaces2.0/formDefinition";
+import FormInfo from "api/interfaces2.0/FormInfo";
 
 const { set, get, cloneDeep, merge } = lodash;
 

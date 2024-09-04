@@ -6,7 +6,7 @@ import {
   ApplicantFormValues,
   FormSection,
   AnswerValue,
-} from "../formDefinition"; // Ensure imports match your file structure
+} from "../../../../../api/interfaces2.0/formDefinition"; // Ensure imports match your file structure
 
 interface DynamicFormSectionComponentProps {
   sectionId: keyof ApplicantFormValues;

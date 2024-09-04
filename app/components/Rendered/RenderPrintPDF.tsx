@@ -1,8 +1,8 @@
 import React from "react";
 import { Form, useActionData } from "@remix-run/react";
-import { useEmployee } from "~/state/contexts/new-context copy";
-import { ApplicantFormValues } from "../form86/lastTry/formDefinition copy 2";
-import DynamicService from "api_v2/service/dynamicService";
+import { useEmployee } from "~/state/contexts/new-context";
+import { ApplicantFormValues } from "../../../api/interfaces2.0/formDefinition";
+import DynamicService from "api/service/dynamicService";
 
 interface FormProps {
   data: ApplicantFormValues;
@@ -20,15 +20,13 @@ const RenderPrintPDF: React.FC<FormProps> = () => {
   // Convert data to JSON string for the hidden input field
   const dataJSON = JSON.stringify(data);
 
-  const ClearForm = async ()  => {
-
+  const ClearForm = async () => {
     // Clear the form data from the IndexedDB
     const dynamicService = new DynamicService();
     await dynamicService.deleteFormData();
 
     window.location.reload();
-  }
-
+  };
 
   return (
     <div>
@@ -38,8 +36,12 @@ const RenderPrintPDF: React.FC<FormProps> = () => {
       {actionData?.message && (
         <p className="text-gray-600 mb-6">{actionData.message}</p>
       )}
+
       <Form method="post" action="/printPDF">
         <input type="hidden" name="data" value={dataJSON} />
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+          Form Actions
+        </h2>
         <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
           <button
             type="submit"
@@ -58,10 +60,10 @@ const RenderPrintPDF: React.FC<FormProps> = () => {
             Generate JSON
           </button>
           <button
-           onClick={() => ClearForm()}
+            onClick={() => ClearForm()}
             className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-150 ease-in-out shadow-md"
           >
-           Clear IndexDB
+            Clear IndexDB
           </button>
         </div>
       </Form>

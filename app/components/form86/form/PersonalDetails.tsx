@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PersonalInfo } from '../../../../api_v2/interfaces/form';
+import { PersonalInfo } from '../../../../api/interfaces/form';
 
 interface PersonalDetailsFormProps {
   updatePersonalInfo: (info: Partial<PersonalInfo>) => void;

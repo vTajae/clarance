@@ -1,9 +1,10 @@
-import { SuffixOptions } from "api_v2/interfaces/enums/suffix";
-import { ApplicantPersonalInfo } from "../form86/lastTry/formDefinition";
-import FormInfo from "api_v2/interfaces/FormInfo";
+import { SuffixOptions } from "api/enums/enums";
+import FormInfo from "api/interfaces2.0/FormInfo";
+import { PersonalInfo } from "api/interfaces2.0/sections/personalInfo";
+
 
 type FormProps = {
-  data: ApplicantPersonalInfo;
+  data: PersonalInfo;
   onInputChange: (path: string, value: any) => void; // Handles changes for the values from all keys in ApplicationFormValues
   onAddEntry: (path: string, newItem: any) => void; // Adds a default item
   onRemoveEntry: (path: string, index: number) => void; // Removes a default item
@@ -22,7 +23,7 @@ const RenderBasicInfo = ({
   isValidValue,
   path,
 }: FormProps) => {
-  const personalInfo = data as ApplicantPersonalInfo;
+  const personalInfo = data as PersonalInfo;
 
   return (
     <div className="p-4 bg-gray-50 rounded-lg shadow space-y-4">

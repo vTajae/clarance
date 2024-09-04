@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from "react";
-import { CitizenshipInfo } from "../../../../api_v2/interfaces/form";
+import { CitizenshipInfo } from "../../../../api/interfaces/form";
 import CitizenshipStatusOne from "../../citizenship/1";
 import CitizenshipStatusTwo from "~/components/citizenship/2";
 import CitizenshipStatusThree from "~/components/citizenship/3";
