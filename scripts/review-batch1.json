@@ -1,0 +1,21 @@
+{
+  "batch": "batch1_personal",
+  "total": 133,
+  "keep": 132,
+  "change": 1,
+  "flag": 0,
+  "corrections": [
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "PERSONS COMPLETING THIS FORM SHOULD BEGIN WITH THE QUESTIONS BELOW AFTER CAREFULLY READING",
+      "newLabel": "I have read the instructions and understand that withholding, misrepresenting, or falsifying information is subject to penalties",
+      "reason": "Current label is section instructions boilerplate, not the actual field prompt. This is a YES/NO certification radio button on page 5 where the applicant acknowledges understanding of consequences for false statements. The nearest text confirms the certification language."
+    }
+  ],
+  "notes": {
+    "ssnFieldsAnalysis": "131 of the 132 SSN fields have the label 'Your Social Security Number will auto-fill based on answer provided in section 4' (with or without trailing period), and 1 has 'Enter Social Security Number; this box will prefill on all other pages of the form'. All 132 are correctly labeled. These are header SSN auto-fill boxes appearing in the top-right of every PDF page. The 'mismatches' detected are false positives caused by nearby body text from unrelated sections on those pages (e.g., 'Suffix', 'Zip Code', 'Country', 'Est.', 'Date signed', 'Telephone number'). None of these nearby texts describe what the SSN field is -- they are simply the closest text elements on the page to the SSN header box. Changing any SSN field label to nearby page text would be incorrect.",
+    "ssnFieldsWithCandidates": "34 SSN fields had non-empty candidate lists. In every case the candidates were body text from unrelated form sections on the same page, at distances of 9.8-77.3 units away. The SSN field is a fixed header element; its label is correctly derived from the PDF tooltip, not from spatial proximity to body text.",
+    "radioButtonAnalysis": "The single RadioButtonList[0] on page 5 is a certification acknowledgment YES/NO radio. Its current label was incorrectly set to section header instructions rather than the actual certification question text."
+  }
+}

@@ -16,11 +16,16 @@ function pdfDateToIso(pdf: string): string {
   return `${yyyy}-${mm.padStart(2, '0')}-${dd.padStart(2, '0')}`;
 }
 
-/** Format an ISO "YYYY-MM-DD" string to "MM/DD/YYYY". */
+/** Format an ISO "YYYY-MM-DD" string to "MM/DD/YYYY". Validates date components. */
 function isoToPdfDate(iso: string): string {
   const match = iso.match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (!match) return iso;
   const [, yyyy, mm, dd] = match;
+  const m = parseInt(mm, 10);
+  const d = parseInt(dd, 10);
+  const y = parseInt(yyyy, 10);
+  // Basic range validation — reject obviously invalid dates
+  if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1900 || y > 2100) return '';
   return `${mm}/${dd}/${yyyy}`;
 }
 
@@ -59,7 +64,7 @@ function pdfSsnToDigits(pdf: string): string {
 
 function digitsToPdfSsn(digits: string): string {
   const clean = digits.replace(/\D/g, '');
-  if (clean.length !== 9) return clean;
+  if (clean.length !== 9) return ''; // Partial SSNs are invalid — return empty
   return `${clean.slice(0, 3)}-${clean.slice(3, 5)}-${clean.slice(5)}`;
 }
 
@@ -80,8 +85,12 @@ function uiPhoneToPdf(ui: string): string {
   const national = digits.length === 11 && digits.startsWith('1')
     ? digits.slice(1)
     : digits;
-  if (national.length !== 10) return national;
-  return `(${national.slice(0, 3)}) ${national.slice(3, 6)}-${national.slice(6)}`;
+  if (national.length === 10) {
+    return `(${national.slice(0, 3)}) ${national.slice(3, 6)}-${national.slice(6)}`;
+  }
+  // Non-US numbers: return digits as-is (SF-86 international phone fields
+  // accept free-form text, so we preserve the number rather than lose it).
+  return digits;
 }
 
 // ---------------------------------------------------------------------------
@@ -122,13 +131,23 @@ function reverseValueMap(
 /**
  * Forward-lookup a UI value in the field's `valueMap` to find its PDF value.
  * Falls back to the stringified UI value if no mapping matches.
+ *
+ * Uses exact match first, then a trim+case-insensitive fallback to handle
+ * registry options with trailing whitespace (e.g. "YES " vs "YES").
  */
 function forwardValueMap(
   field: FieldDefinition,
   uiValue: string,
 ): string {
   if (!field.valueMap) return uiValue;
-  return field.valueMap[uiValue] ?? uiValue;
+  // Exact match (fast path)
+  if (field.valueMap[uiValue] !== undefined) return field.valueMap[uiValue];
+  // Trim+case-insensitive fallback
+  const normalised = uiValue.trim().toLowerCase();
+  for (const [key, val] of Object.entries(field.valueMap)) {
+    if (key.trim().toLowerCase() === normalised) return val;
+  }
+  return uiValue;
 }
 
 // ---------------------------------------------------------------------------
@@ -154,6 +173,7 @@ export function pdfToUi(field: FieldDefinition, pdfValue: string): unknown {
     'checkbox',
     'ssn',
     'phone',
+    'telephone',
     'height',
   ]);
 
@@ -175,6 +195,7 @@ export function pdfToUi(field: FieldDefinition, pdfValue: string): unknown {
       return pdfSsnToDigits(pdfValue);
 
     case 'phone':
+    case 'telephone':
       return pdfPhoneToUi(pdfValue);
 
     case 'height':
@@ -203,13 +224,26 @@ export function uiToPdf(field: FieldDefinition, uiValue: unknown): string {
       return isoToPdfDate(String(uiValue));
 
     case 'checkbox':
-    case 'branch':
-      return boolToPdfCheckbox(Boolean(uiValue), field);
+    case 'branch': {
+      // Properly coerce string/boolean to boolean.
+      // Boolean("false") and Boolean("No") both return true in JS, which is wrong.
+      let boolVal: boolean;
+      if (typeof uiValue === 'boolean') {
+        boolVal = uiValue;
+      } else if (typeof uiValue === 'string') {
+        const lower = uiValue.toLowerCase();
+        boolVal = lower === 'true' || lower === 'yes' || lower === 'on' || lower === '1';
+      } else {
+        boolVal = !!uiValue;
+      }
+      return boolToPdfCheckbox(boolVal, field);
+    }
 
     case 'ssn':
       return digitsToPdfSsn(String(uiValue));
 
     case 'phone':
+    case 'telephone':
       return uiPhoneToPdf(String(uiValue));
 
     case 'height':

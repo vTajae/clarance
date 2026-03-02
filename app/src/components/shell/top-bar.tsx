@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useAppStore } from '@/lib/state/stores/app-store';
 import type { SaveStatus } from '@/lib/state/stores/app-store';
+import type { SyncStatus } from '@/lib/persistence/sync-engine';
+import { useExportPdf } from '@/lib/state/hooks/use-export-pdf';
 
 interface TopBarProps {
   submissionId: string;
@@ -11,6 +13,10 @@ interface TopBarProps {
   previewOpen: boolean;
   /** Overall form completion (0-1). */
   completionPercent?: number;
+  /** Server sync status. */
+  syncStatus?: SyncStatus;
+  /** Number of entries waiting to sync. */
+  pendingCount?: number;
 }
 
 const STATUS_MAP: Record<SaveStatus, { label: string; colorClass: string }> = {
@@ -26,15 +32,18 @@ export function TopBar({
   onTogglePreview,
   previewOpen,
   completionPercent = 0,
+  syncStatus,
+  pendingCount = 0,
 }: TopBarProps) {
   const saveStatus = useAppStore((s) => s.saveStatus);
   const lastSaved = useAppStore((s) => s.lastSaved);
+  const { exportPdf, status: exportStatus } = useExportPdf();
 
   const pct = Math.round(completionPercent * 100);
   const status = STATUS_MAP[saveStatus];
 
   return (
-    <header className="shrink-0 border-b border-gray-200 bg-white">
+    <header className="shrink-0 border-b border-gray-200 bg-white" role="banner">
       <div className="flex items-center justify-between px-4 py-3">
         {/* Left: hamburger + title */}
         <div className="flex items-center gap-3">
@@ -109,6 +118,12 @@ export function TopBar({
                 {lastSaved.toLocaleTimeString()}
               </span>
             )}
+            {syncStatus === 'syncing' && (
+              <span className="text-xs text-blue-500 animate-pulse">Syncing...</span>
+            )}
+            {syncStatus === 'error' && pendingCount > 0 && (
+              <span className="text-xs text-orange-500">{pendingCount} pending</span>
+            )}
           </div>
         </div>
 
@@ -141,15 +156,27 @@ export function TopBar({
           </button>
 
           {/* Export PDF */}
-          <Link
-            href={`/api/pdf/export?submissionId=${submissionId}`}
-            className="
-              rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white
-              transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500
-            "
+          <button
+            type="button"
+            onClick={exportPdf}
+            disabled={exportStatus === 'exporting'}
+            className={`
+              rounded-md px-3 py-1.5 text-sm font-medium text-white
+              transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500
+              ${exportStatus === 'error'
+                ? 'bg-red-600 hover:bg-red-700'
+                : exportStatus === 'exporting'
+                  ? 'bg-blue-400 cursor-wait'
+                  : 'bg-blue-600 hover:bg-blue-700'
+              }
+            `}
           >
-            Export PDF
-          </Link>
+            {exportStatus === 'exporting'
+              ? 'Exporting...'
+              : exportStatus === 'error'
+                ? 'Export Failed'
+                : 'Export PDF'}
+          </button>
         </div>
       </div>
     </header>

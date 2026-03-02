@@ -1,0 +1,208 @@
+{
+  "timestamp": "2026-02-27T00:16:15Z",
+  "model": "llama3.2-vision",
+  "summary": {
+    "total": 10,
+    "matches": 1,
+    "mismatches": 9,
+    "errors": 0,
+    "unknowns": 0,
+    "mismatchRate": 0.9
+  },
+  "mismatchesBySection": {
+    "employmentInfo": [
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[1]",
+        "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor",
+        "registryLabel": "Provide the rank/position title of your supervisor.",
+        "visionLabel": "**SF-86 Form Page 14 Analysis**\n\n**Section and Page Information**\n\n*   The page is from Section 13A of the SF-86 form.\n*   The page is page 14 of the form.\n\n**Field Label and Match**\n\n*   The field label is: \"Provide the rank/position title of your supervisor.\"\n*   The actual label on the page is: \"Provide the rank/position title of your supervisor.\"\n*   The match is: **YES**\n\nThe",
+        "similarity": 0.308,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[0]",
+        "semanticKey": "employmentInfo.0.provideSupervisorsTelephoneNumber",
+        "registryLabel": "Provide supervisor's telephone number.",
+        "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page is part of the SF-86 form, specifically Section 13A, which focuses on employment activities.\n\n**Visible Labels/Questions:**\n\n*   **Section 13A: Employment Activities**\n*   **Entry #1:** Select your employment activity\n*   **13A.1:** Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps\n*",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[2]",
+        "semanticKey": "employmentInfo.0.extension",
+        "registryLabel": "Extension",
+        "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page is part of the SF-86 form, which is used for national security positions. The section of the form being shown is **Section 13A - Employment Activities**.\n\nThe visible labels/questions on this page include:\n\n*   **Section 13A - Employment Activities**\n*   **Entry #1**\n*   **13A.1 Complete the following if employment type is Active Duty, National Guard/Reserve,",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[3]",
+        "semanticKey": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor",
+        "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+        "visionLabel": "**SF-86 Form Page 14 Analysis**\n\n**Section 13A - Employment Activities**\n\nThis page is part of Section 13A, which focuses on employment activities. The section is further divided into two parts: 13A.1 and 13A.2. The current page is part of 13A.1.\n\n**Visible Labels/Questions**\n\n*   **13A.1.1**: \"Provide dates of employment.\"\n*   **13A.1.2**:",
+        "similarity": 0.082,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[4]",
+        "semanticKey": "employmentInfo.0.city",
+        "registryLabel": "City",
+        "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page is part of the SF-86 form, which is used for national security positions. The section of the form being shown is **Section 13A: Employment Activities**.\n\n**Visible Labels/Questions:**\n\n*   **Section 13A: Employment Activities**\n*   **Entry #1: Select your employment activity**\n*   **13A.1: Complete the following if employment type is Active Duty, National Guard",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].School6_State[0]",
+        "semanticKey": "employmentInfo.0.state",
+        "registryLabel": "State",
+        "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page is part of the SF-86 form, which is used for national security positions. The section of the form being shown is **Section 13A: Employment Activities**.\n\n**Visible Labels/Questions:**\n\n*   **Section 13A: Employment Activities**\n*   **Entry #1: Select your employment activity:**\n    *   Active military duty station\n    *   State government (non-federal employment)",
+        "similarity": 0.027,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList18[0]",
+        "semanticKey": "employmentInfo.0.country",
+        "registryLabel": "Country",
+        "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page from the SF-86 form is Section 13A, which is titled \"Employment Activities.\" The section is further divided into two parts: 13A.1 and 13A.2.\n\n**Visible Labels/Questions:**\n\n*   **13A.1:** This section is titled \"Provide dates of employment.\" It has several fields for entering dates of employment, including \"From Date\" and \"To Date",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[5]",
+        "semanticKey": "employmentInfo.0.zipCode",
+        "registryLabel": "Zip Code",
+        "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page is part of the SF-86 form, which is used for national security positions. The page is titled \"Section 13A - Employment Activities\" and is part of the \"Employment Activities\" section of the form.\n\nThe page contains a table with several fields, including:\n\n*   **State Government (Non-Federal Employment)**: This field is located in the first row of the table and is used to report non",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[6]",
+        "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr",
+        "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+        "visionLabel": "**SF-86 Form Page 14 Analysis**\n\n**Section 13A - Employment Activities**\n\nThis page is part of Section 13A, which focuses on employment activities. The section is further divided into two parts: 13A.1 and 13A.2. The current page is part of 13A.1.\n\n**Visible Labels/Questions**\n\n*   **13A.1:**\n    *   \"Provide dates of employment.\"\n    *   \"Select the employment status",
+        "similarity": 0.033,
+        "confidence": 0.4,
+        "page": 17
+      }
+    ]
+  },
+  "mismatchesByConfidence": {
+    "high": 0,
+    "medium": 0,
+    "low": 9
+  },
+  "totalByConfidence": {
+    "high": 0,
+    "medium": 0,
+    "low": 10
+  },
+  "allMismatches": [
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[0]",
+      "semanticKey": "employmentInfo.0.provideSupervisorsTelephoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "Provide supervisor's telephone number.",
+      "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page is part of the SF-86 form, specifically Section 13A, which focuses on employment activities.\n\n**Visible Labels/Questions:**\n\n*   **Section 13A: Employment Activities**\n*   **Entry #1:** Select your employment activity\n*   **13A.1:** Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps\n*",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[2]",
+      "semanticKey": "employmentInfo.0.extension",
+      "section": "employmentInfo",
+      "registryLabel": "Extension",
+      "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page is part of the SF-86 form, which is used for national security positions. The section of the form being shown is **Section 13A - Employment Activities**.\n\nThe visible labels/questions on this page include:\n\n*   **Section 13A - Employment Activities**\n*   **Entry #1**\n*   **13A.1 Complete the following if employment type is Active Duty, National Guard/Reserve,",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[4]",
+      "semanticKey": "employmentInfo.0.city",
+      "section": "employmentInfo",
+      "registryLabel": "City",
+      "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page is part of the SF-86 form, which is used for national security positions. The section of the form being shown is **Section 13A: Employment Activities**.\n\n**Visible Labels/Questions:**\n\n*   **Section 13A: Employment Activities**\n*   **Entry #1: Select your employment activity**\n*   **13A.1: Complete the following if employment type is Active Duty, National Guard",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList18[0]",
+      "semanticKey": "employmentInfo.0.country",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page from the SF-86 form is Section 13A, which is titled \"Employment Activities.\" The section is further divided into two parts: 13A.1 and 13A.2.\n\n**Visible Labels/Questions:**\n\n*   **13A.1:** This section is titled \"Provide dates of employment.\" It has several fields for entering dates of employment, including \"From Date\" and \"To Date",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[5]",
+      "semanticKey": "employmentInfo.0.zipCode",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page is part of the SF-86 form, which is used for national security positions. The page is titled \"Section 13A - Employment Activities\" and is part of the \"Employment Activities\" section of the form.\n\nThe page contains a table with several fields, including:\n\n*   **State Government (Non-Federal Employment)**: This field is located in the first row of the table and is used to report non",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].School6_State[0]",
+      "semanticKey": "employmentInfo.0.state",
+      "section": "employmentInfo",
+      "registryLabel": "State",
+      "visionLabel": "**SF-86 Form Page 13A: Employment Activities**\n\nThis page is part of the SF-86 form, which is used for national security positions. The section of the form being shown is **Section 13A: Employment Activities**.\n\n**Visible Labels/Questions:**\n\n*   **Section 13A: Employment Activities**\n*   **Entry #1: Select your employment activity:**\n    *   Active military duty station\n    *   State government (non-federal employment)",
+      "similarity": 0.027,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[6]",
+      "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr",
+      "section": "employmentInfo",
+      "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+      "visionLabel": "**SF-86 Form Page 14 Analysis**\n\n**Section 13A - Employment Activities**\n\nThis page is part of Section 13A, which focuses on employment activities. The section is further divided into two parts: 13A.1 and 13A.2. The current page is part of 13A.1.\n\n**Visible Labels/Questions**\n\n*   **13A.1:**\n    *   \"Provide dates of employment.\"\n    *   \"Select the employment status",
+      "similarity": 0.033,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[3]",
+      "semanticKey": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+      "visionLabel": "**SF-86 Form Page 14 Analysis**\n\n**Section 13A - Employment Activities**\n\nThis page is part of Section 13A, which focuses on employment activities. The section is further divided into two parts: 13A.1 and 13A.2. The current page is part of 13A.1.\n\n**Visible Labels/Questions**\n\n*   **13A.1.1**: \"Provide dates of employment.\"\n*   **13A.1.2**:",
+      "similarity": 0.082,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[1]",
+      "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the rank/position title of your supervisor.",
+      "visionLabel": "**SF-86 Form Page 14 Analysis**\n\n**Section and Page Information**\n\n*   The page is from Section 13A of the SF-86 form.\n*   The page is page 14 of the form.\n\n**Field Label and Match**\n\n*   The field label is: \"Provide the rank/position title of your supervisor.\"\n*   The actual label on the page is: \"Provide the rank/position title of your supervisor.\"\n*   The match is: **YES**\n\nThe",
+      "similarity": 0.308,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    }
+  ]
+}

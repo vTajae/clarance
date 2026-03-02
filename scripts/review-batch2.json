@@ -1,0 +1,121 @@
+{
+  "batch": "batch2_employment",
+  "total": 52,
+  "keep": 36,
+  "change": 16,
+  "flag": 0,
+  "corrections": [
+    {
+      "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "newLabel": "Does your unemployment verifier have an APO/FPO address?",
+      "reason": "Field is in section13_4 (unemployment verification). RadioButtonList[2] has YES/NO options. Nearest text 'Does your unemployment verifier have an APO/FPO address?' exactly matches. Current label is a generic physical-location instruction that was incorrectly assigned."
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "newLabel": "Does your unemployment verifier have an APO/FPO address?",
+      "reason": "Repeat instance [1] of the same unemployment verifier APO/FPO question. Same YES/NO pattern with same nearest text."
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "newLabel": "Does your unemployment verifier have an APO/FPO address?",
+      "reason": "Repeat instance [2] of the same unemployment verifier APO/FPO question. Same YES/NO pattern with same nearest text."
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "newLabel": "Does your unemployment verifier have an APO/FPO address?",
+      "reason": "Repeat instance [3] of the same unemployment verifier APO/FPO question. Same YES/NO pattern with same nearest text."
+    },
+    {
+      "pdfFieldName": "form1[0].Section11[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide dates of residence.",
+      "newLabel": "Type of residence",
+      "reason": "Options are 1/2/3/4 mapping to housing types (Owned, Rented, Military housing, Other). Nearby text includes 'Military housing' and 'Other'. This is the housing type selector, not a date field. 'Provide dates of residence' is a nearby section instruction that was incorrectly assigned."
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide dates of residence.",
+      "newLabel": "Type of residence",
+      "reason": "Same housing type selector as Section11[0].RadioButtonList[0] but for second residence entry. Options 1/2/3/4 for housing types."
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide dates of residence.",
+      "newLabel": "Type of residence",
+      "reason": "Same housing type selector for third residence entry. Options 1/2/3/4 for housing types."
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Provide dates of residence.",
+      "newLabel": "Type of residence",
+      "reason": "Same housing type selector for fourth residence entry. Options 1/2/3/4, nearby text 'Military housing' and 'Other' confirm this is housing type, not dates."
+    },
+    {
+      "pdfFieldName": "form1[0].Section11[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "newLabel": "Do you have an APO/FPO address at this residence?",
+      "reason": "YES/NO radio group. Candidates include 'NO' and 'YES'. Current label is a generic physical-location instruction inherited from another field. In Section 11 (residency), RadioButtonList[1] follows the address fields and asks about APO/FPO."
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "newLabel": "Do you have an APO/FPO address at this residence?",
+      "reason": "Same APO/FPO question for second residence entry. YES/NO options confirm this is not a location-data instruction."
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "newLabel": "Do you have an APO/FPO address at this residence?",
+      "reason": "Same APO/FPO question for third residence entry."
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "newLabel": "Do you have an APO/FPO address at this residence?",
+      "reason": "Same APO/FPO question for fourth residence entry. Note: RadioButtonList index differs (0 vs 1) on this page variant but the YES/NO options and nearby text confirm the same question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[7].RadioButtonList[3]",
+      "action": "CHANGE",
+      "currentLabel": "Guard",
+      "newLabel": "Officer or enlisted",
+      "reason": "Options are 3 values. Nearest text is 'Officer', 'Officer or enlisted', 'Not Applicable'. This asks whether the service member was an officer or enlisted. 'Guard' is a nearby text fragment from the branch-of-service section that was incorrectly assigned."
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[10].RadioButtonList[5]",
+      "action": "CHANGE",
+      "currentLabel": "Were you discharged from this instance of U.S. military service, to include Reserves, or National Guard?",
+      "newLabel": "Provide the type of discharge you received",
+      "reason": "Options are 6 values mapping to discharge types. Nearest text shows 'General', 'Honorable Conditions', 'Dishonorable', and 'Provide the type of discharge you received:' is a candidate. Current label is the YES/NO discharge question (RadioButtonList[4]), not the discharge type selector. The YES/NO question is already correctly labeled on RadioButtonList[4]."
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[13].#area[14].RadioButtonList[8]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the reason(s) for the discharge, if discharge is other than Honorable",
+      "newLabel": "Branch of service (additional service instance)",
+      "reason": "Options are 7 values. Nearest text shows 'Coast Guard', 'Air Force', 'Guard' — these are military branches, not discharge reasons. This is the branch-of-service selector for the second military service instance. The nested #area[13].#area[14] path confirms it is in a repeating service block."
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[15].RadioButtonList[9]",
+      "action": "CHANGE",
+      "currentLabel": "Guard",
+      "newLabel": "Officer or enlisted (additional service instance)",
+      "reason": "Same pattern as RadioButtonList[3] but for second service instance. Options are 3 values, nearest text shows 'Officer', 'Officer or enlisted', 'Not Applicable'. 'Guard' was incorrectly picked up from nearby branch-of-service text."
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "batch": "batch4_relationships",
+  "total": 30,
+  "keep": 14,
+  "change": 16,
+  "flag": 0,
+  "corrections": [
+    {
+      "pdfFieldName": "form1[0].Section18_2[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "newLabel": "Is this relative a U.S. citizen?",
+      "reason": "RadioButtonList with NO and I don't know options indicates a citizenship question, not an address prompt. SF-86 18.2 asks 'Is this relative a U.S. citizen?' with YES/NO/I don't know."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[1].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "newLabel": "Is this relative a U.S. citizen?",
+      "reason": "Same repeating pattern as [0] instance. Radio options NO/I don't know confirm citizenship question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[2].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "newLabel": "Is this relative a U.S. citizen?",
+      "reason": "Same repeating pattern as [0] instance. Radio options NO/I don't know confirm citizenship question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[3].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "newLabel": "Is this relative a U.S. citizen?",
+      "reason": "Same repeating pattern as [0] instance. Radio options NO/I don't know confirm citizenship question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[4].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "newLabel": "Is this relative a U.S. citizen?",
+      "reason": "Same repeating pattern as [0] instance. Radio options NO/I don't know confirm citizenship question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[5].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "newLabel": "Is this relative a U.S. citizen?",
+      "reason": "Same repeating pattern as [0] instance. Radio options NO/I don't know confirm citizenship question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[0].TextField11[6]",
+      "action": "CHANGE",
+      "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+      "newLabel": "Relative's Current Address - Street",
+      "reason": "TextField directly below 'Street' label (distance 0.0, score 1.8) and below 'Provide your relative's current address' instruction. Current label is the section header, not the field label."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[1].TextField11[6]",
+      "action": "CHANGE",
+      "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+      "newLabel": "Relative's Current Address - Street",
+      "reason": "Same repeating pattern as [0] instance. Street label at distance 0.0 confirms this is the street address field."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[2].TextField11[6]",
+      "action": "CHANGE",
+      "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+      "newLabel": "Relative's Current Address - Street",
+      "reason": "Same repeating pattern as [0] instance. Street label at distance 0.0 confirms this is the street address field."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[3].TextField11[6]",
+      "action": "CHANGE",
+      "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+      "newLabel": "Relative's Current Address - Street",
+      "reason": "Same repeating pattern as [0] instance. Street label at distance 0.0 confirms this is the street address field."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[4].TextField11[6]",
+      "action": "CHANGE",
+      "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+      "newLabel": "Relative's Current Address - Street",
+      "reason": "Same repeating pattern as [0] instance. Street label at distance 0.0 confirms this is the street address field."
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[5].TextField11[6]",
+      "action": "CHANGE",
+      "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+      "newLabel": "Relative's Current Address - Street",
+      "reason": "Same repeating pattern as [0] instance. Street label at distance 0.0 confirms this is the street address field."
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].TextField11[7]",
+      "action": "CHANGE",
+      "currentLabel": "17.1  Complete the following if you selected \u201ccurrently in a civil marriage,\u201d \u201clegally recognized civil union,\" or \"legally recognized domestic partnership\u201d or \u201cSeparated.\u201d Complete the following abou",
+      "newLabel": "Spouse/Partner Last Name",
+      "reason": "'Last name' label at distance 0.0 above_left (score 1.8), 'First name' at 5.3 above. Current label is the section header. This is clearly the last name input for the current spouse/partner."
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1_2[0].TextField11[0]",
+      "action": "CHANGE",
+      "currentLabel": "If you have indicated an APO/FPO address, complete (a). If you have indicated an address outside of the United States, complete (b). Provide your spouse's APO/FPO address.  (Provide City and Country i",
+      "newLabel": "Spouse/Partner APO/FPO Street Address",
+      "reason": "'Street Address/Unit/Duty Location' at distance 0.0 above (score 2.0). Current label is instruction text, not the field label. This is the street address input for the spouse's APO/FPO address."
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide where the record of divorce/dissolution or annulment is located.  ( Provide City and Country if outside the U...",
+      "newLabel": "Is this former spouse a U.S. citizen?",
+      "reason": "Radio options include 'I don't know' (distance 4.2) which is characteristic of citizenship questions in SF-86. 'NO (If NO, complete (a))' pattern matches citizenship sub-questions. Current label refers to divorce record location which is a different field."
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2_2[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide where the record of divorce/dissolution or annulment is located.  ( Provide City and Country if outside the U...",
+      "newLabel": "Is this former spouse a U.S. citizen?",
+      "reason": "Same pattern as Section17_2[0]. Radio options include 'I don't know' confirming citizenship question. Second instance for a second former spouse."
+    }
+  ]
+}

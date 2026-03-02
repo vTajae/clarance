@@ -82,6 +82,8 @@ const DB_VERSION = 1;
 
 let dbPromise: Promise<IDBPDatabase<SF86DBSchema>> | null = null;
 
+const DB_OPEN_TIMEOUT_MS = 5000;
+
 /**
  * Return (or lazily create) a singleton database connection.
  *
@@ -89,11 +91,14 @@ let dbPromise: Promise<IDBPDatabase<SF86DBSchema>> | null = null;
  * concurrent callers share the same upgrade transaction.  If the browser
  * tab is terminated and the connection drops, calling `getDB()` again
  * will re-open it.
+ *
+ * Includes a timeout to prevent permanent hangs from stale HMR connections
+ * or blocked upgrades.
  */
 export function getDB(): Promise<IDBPDatabase<SF86DBSchema>> {
   if (dbPromise) return dbPromise;
 
-  dbPromise = openDB<SF86DBSchema>(DB_NAME, DB_VERSION, {
+  const openPromise = openDB<SF86DBSchema>(DB_NAME, DB_VERSION, {
     upgrade(db, oldVersion) {
       // -- sections store ---------------------------------------------------
       // Out-of-line key: we supply "submissionId:sectionKey" at put() time.
@@ -127,6 +132,21 @@ export function getDB(): Promise<IDBPDatabase<SF86DBSchema>> {
       // Clear the singleton so the next call re-opens.
       dbPromise = null;
     },
+  });
+
+  // Race against a timeout so a stale/blocked open never hangs forever.
+  dbPromise = Promise.race([
+    openPromise,
+    new Promise<never>((_, reject) =>
+      setTimeout(
+        () => reject(new Error('[SF86-IDB] openDB timed out — clearing singleton for retry')),
+        DB_OPEN_TIMEOUT_MS,
+      ),
+    ),
+  ]).catch((err) => {
+    // Clear the singleton so the next call retries with a fresh open.
+    dbPromise = null;
+    throw err;
   });
 
   return dbPromise;

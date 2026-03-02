@@ -1,0 +1,1378 @@
+[
+  {
+    "pdfFieldName": "form1[0].Section_23_5[0].TextField11[0]",
+    "semanticKey": "drugActivity.0.provideExplanation_7",
+    "section": "drugActivity",
+    "page": 109,
+    "pdfFieldType": "",
+    "currentLabel": "Provide explanation",
+    "nearestText": "NO  (If NO, complete (a))",
+    "suggestedLabel": "Did you take action to receive counseling or treatment?",
+    "similarity": 0.0,
+    "confidence": 0.55,
+    "candidates": [
+      {
+        "text": "Did you take action to receive counseling or treatment?",
+        "distance": 2.8,
+        "direction": "left",
+        "score": 0.395
+      },
+      {
+        "text": "A mental health professional",
+        "distance": 6.3,
+        "direction": "above_left",
+        "score": 0.2454
+      },
+      {
+        "text": "NO  (If NO, complete (a))",
+        "distance": 2.6,
+        "direction": "below",
+        "score": 0.2223
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6_1[0].TextField11[0]",
+    "semanticKey": "drugActivity.0.provideExplanation_10",
+    "section": "drugActivity",
+    "page": 110,
+    "pdfFieldType": "",
+    "currentLabel": "Provide explanation",
+    "nearestText": "NO  (If NO, complete (a))",
+    "suggestedLabel": "Did you take action to receive counseling or treatment?",
+    "similarity": 0.0,
+    "confidence": 0.55,
+    "candidates": [
+      {
+        "text": "Did you take action to receive counseling or treatment?",
+        "distance": 2.8,
+        "direction": "left",
+        "score": 0.3946
+      },
+      {
+        "text": "A mental health professional",
+        "distance": 6.3,
+        "direction": "above_left",
+        "score": 0.2456
+      },
+      {
+        "text": "NO  (If NO, complete (a))",
+        "distance": 2.6,
+        "direction": "below",
+        "score": 0.222
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_3[0].RadioButtonList[0]",
+    "semanticKey": "drugActivity.0.RadioButtonList_69",
+    "section": "drugActivity",
+    "page": 107,
+    "pdfFieldType": "",
+    "currentLabel": "Provide an estimate of the number of times you used and/or were involved with this",
+    "nearestText": "Have you  EVER  illegally used or otherwise been involved with a drug or controlled substance while",
+    "suggestedLabel": "YES",
+    "similarity": 0.2,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.6,
+        "direction": "left",
+        "score": 0.1416
+      },
+      {
+        "text": "NO  (If NO, proceed to 23.5)",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1188
+      },
+      {
+        "text": "employed as a law enforcement officer, prosecutor, or courtroom official; or while in a position dir",
+        "distance": 51.5,
+        "direction": "left",
+        "score": 0.0286
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_4[0].#area[1].RadioButtonList[1]",
+    "semanticKey": "drugActivity.0.RadioButtonList_92",
+    "section": "drugActivity",
+    "page": 108,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.7,
+        "direction": "left",
+        "score": 0.1406
+      },
+      {
+        "text": "NO",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.1212
+      },
+      {
+        "text": "NO",
+        "distance": 12.4,
+        "direction": "other",
+        "score": 0.0224
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[2]",
+    "semanticKey": "drugActivity.0.RadioButtonList_93",
+    "section": "drugActivity",
+    "page": 108,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.121
+      },
+      {
+        "text": "YES",
+        "distance": 13.4,
+        "direction": "other",
+        "score": 0.0208
+      },
+      {
+        "text": "NO",
+        "distance": 40.8,
+        "direction": "right",
+        "score": 0.012
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_4[0].#area[3].RadioButtonList[3]",
+    "semanticKey": "drugActivity.0.RadioButtonList_96",
+    "section": "drugActivity",
+    "page": 108,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.6,
+        "direction": "left",
+        "score": 0.1418
+      },
+      {
+        "text": "NO",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.1212
+      },
+      {
+        "text": "NO",
+        "distance": 12.4,
+        "direction": "other",
+        "score": 0.0224
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[4]",
+    "semanticKey": "drugActivity.0.RadioButtonList_97",
+    "section": "drugActivity",
+    "page": 108,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.121
+      },
+      {
+        "text": "YES",
+        "distance": 13.4,
+        "direction": "other",
+        "score": 0.0208
+      },
+      {
+        "text": "NO",
+        "distance": 40.8,
+        "direction": "right",
+        "score": 0.012
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_5[0].#area[1].RadioButtonList[2]",
+    "semanticKey": "drugActivity.0.RadioButtonList_106",
+    "section": "drugActivity",
+    "page": 109,
+    "pdfFieldType": "",
+    "currentLabel": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result of your illegal ...",
+    "nearestText": "I have not been ordered, advised, or asked to seek",
+    "suggestedLabel": "YES  (If YES, complete (b))",
+    "similarity": 0.318,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "YES  (If YES, complete (b))",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.119
+      },
+      {
+        "text": "counseling or treatment by any of the above.",
+        "distance": 35.9,
+        "direction": "above",
+        "score": 0.0542
+      },
+      {
+        "text": "I have not been ordered, advised, or asked to seek",
+        "distance": 45.5,
+        "direction": "above",
+        "score": 0.043
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_5[0].#area[3].RadioButtonList[3]",
+    "semanticKey": "drugActivity.0.RadioButtonList_120",
+    "section": "drugActivity",
+    "page": 109,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+    "nearestText": "Did you successfully complete the treatment?",
+    "suggestedLabel": "Day",
+    "similarity": 0.105,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "Day",
+        "distance": 9.2,
+        "direction": "above",
+        "score": 0.1966
+      },
+      {
+        "text": "YES",
+        "distance": 11.3,
+        "direction": "left",
+        "score": 0.1222
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1196
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_5[0].RadioButtonList[4]",
+    "semanticKey": "drugActivity.0.RadioButtonList_123",
+    "section": "drugActivity",
+    "page": 109,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the type of drug or controlled substance for which you were treated.",
+    "nearestText": "(Provide explanation)",
+    "suggestedLabel": "Other",
+    "similarity": 0.071,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "Other",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.1209
+      },
+      {
+        "text": "Steroids (Such as the clear, juice, etc.)",
+        "distance": 8.4,
+        "direction": "right",
+        "score": 0.053
+      },
+      {
+        "text": "Hallucinogenic (Such as LSD, PCP, mushrooms, etc.)",
+        "distance": 49.9,
+        "direction": "left",
+        "score": 0.0295
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6_1[0].#area[0].RadioButtonList[1]",
+    "semanticKey": "drugActivity.0.RadioButtonList_131",
+    "section": "drugActivity",
+    "page": 110,
+    "pdfFieldType": "",
+    "currentLabel": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result of your illegal ...",
+    "nearestText": "I have not been ordered, advised, or asked to seek",
+    "suggestedLabel": "YES  (If YES, complete (b))",
+    "similarity": 0.318,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "YES  (If YES, complete (b))",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.119
+      },
+      {
+        "text": "counseling or treatment by any of the above.",
+        "distance": 35.9,
+        "direction": "above",
+        "score": 0.0542
+      },
+      {
+        "text": "I have not been ordered, advised, or asked to seek",
+        "distance": 45.5,
+        "direction": "above",
+        "score": 0.043
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6_1[0].#area[2].RadioButtonList[2]",
+    "semanticKey": "drugActivity.0.RadioButtonList_145",
+    "section": "drugActivity",
+    "page": 110,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+    "nearestText": "Did you successfully complete the treatment?",
+    "suggestedLabel": "Day",
+    "similarity": 0.105,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "Day",
+        "distance": 9.2,
+        "direction": "above",
+        "score": 0.1967
+      },
+      {
+        "text": "YES",
+        "distance": 11.3,
+        "direction": "left",
+        "score": 0.1222
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1196
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[1]",
+    "semanticKey": "drugActivity.0.RadioButtonList_151",
+    "section": "drugActivity",
+    "page": 111,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the type of drug or controlled substance for which you were treated.",
+    "nearestText": "Other (Provide explanation)",
+    "suggestedLabel": "Other (Provide explanation)",
+    "similarity": 0.067,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "Other (Provide explanation)",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1203
+      },
+      {
+        "text": "Stimulants (Such as amphetamines, speed, crystal meth, ecstasy, etc.)",
+        "distance": 11.5,
+        "direction": "left",
+        "score": 0.12
+      },
+      {
+        "text": "Inhalants (Such as toluene, amyl nitrate, etc.)",
+        "distance": 8.1,
+        "direction": "right",
+        "score": 0.0551
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[2]",
+    "semanticKey": "drugActivity.0.RadioButtonList_170",
+    "section": "drugActivity",
+    "page": 111,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+    "nearestText": "Did you successfully complete the treatment?",
+    "suggestedLabel": "YES",
+    "similarity": 0.105,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 11.3,
+        "direction": "left",
+        "score": 0.1224
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.119
+      },
+      {
+        "text": "Did you successfully complete the treatment?",
+        "distance": 50.6,
+        "direction": "left",
+        "score": 0.0291
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[4]",
+    "semanticKey": "drugActivity.0.RadioButtonList_190",
+    "section": "drugActivity",
+    "page": 111,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+    "nearestText": "Provide the type of drug or controlled substance for which you were treated.",
+    "suggestedLabel": "YES",
+    "similarity": 0.12,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 11.3,
+        "direction": "left",
+        "score": 0.1222
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1196
+      },
+      {
+        "text": "Did you successfully complete the treatment?",
+        "distance": 50.5,
+        "direction": "left",
+        "score": 0.0291
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6_1[0].RadioButtonList[3]",
+    "semanticKey": "drugActivity.0.RadioButtonList_148",
+    "section": "drugActivity",
+    "page": 110,
+    "pdfFieldType": "",
+    "currentLabel": "Type of drug or controlled substance",
+    "nearestText": "Other",
+    "suggestedLabel": "Other",
+    "similarity": 0.0,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "Other",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1187
+      },
+      {
+        "text": "Steroids (Such as the clear, juice, etc.)",
+        "distance": 8.5,
+        "direction": "right",
+        "score": 0.0527
+      },
+      {
+        "text": "Hallucinogenic (Such as LSD, PCP, mushrooms, etc.)",
+        "distance": 49.8,
+        "direction": "left",
+        "score": 0.0295
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[0]",
+    "semanticKey": "drugActivity.0.RadioButtonList_149",
+    "section": "drugActivity",
+    "page": 111,
+    "pdfFieldType": "",
+    "currentLabel": "Type of drug or controlled substance involved in counseling/treatment",
+    "nearestText": "Other (Provide explanation)",
+    "suggestedLabel": "Stimulants (Such as amphetamines, speed, crystal meth, ecstasy, etc.)",
+    "similarity": 0.0,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "Stimulants (Such as amphetamines, speed, crystal meth, ecstasy, etc.)",
+        "distance": 11.3,
+        "direction": "left",
+        "score": 0.1221
+      },
+      {
+        "text": "Other (Provide explanation)",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.1209
+      },
+      {
+        "text": "Inhalants (Such as toluene, amyl nitrate, etc.)",
+        "distance": 8.0,
+        "direction": "right",
+        "score": 0.0553
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[0]",
+    "semanticKey": "drugActivity.0.RadioButtonList_1",
+    "section": "drugActivity",
+    "page": 105,
+    "pdfFieldType": "",
+    "currentLabel": "Was your use while you were employed as a law enforcement officer, prosecutor, or courtroom official, or while in",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 6.5,
+        "direction": "left",
+        "score": 0.1991
+      },
+      {
+        "text": "NO",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.1211
+      },
+      {
+        "text": "NO",
+        "distance": 12.4,
+        "direction": "other",
+        "score": 0.0224
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[1]",
+    "semanticKey": "drugActivity.0.RadioButtonList_2",
+    "section": "drugActivity",
+    "page": 105,
+    "pdfFieldType": "",
+    "currentLabel": "Was your use while you were employed as a law enforcement officer, prosecutor, or courtroom official, or while in",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 6.5,
+        "direction": "left",
+        "score": 0.1997
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1205
+      },
+      {
+        "text": "NO",
+        "distance": 12.4,
+        "direction": "other",
+        "score": 0.0224
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].#area[2].RadioButtonList[2]",
+    "semanticKey": "drugActivity.0.RadioButtonList_9",
+    "section": "drugActivity",
+    "page": 105,
+    "pdfFieldType": "",
+    "currentLabel": "Provide nature of use, frequency, and number of times used.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 7.2,
+        "direction": "left",
+        "score": 0.1836
+      },
+      {
+        "text": "YES",
+        "distance": 10.4,
+        "direction": "left",
+        "score": 0.1319
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.119
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].#area[3].RadioButtonList[3]",
+    "semanticKey": "drugActivity.0.RadioButtonList_10",
+    "section": "drugActivity",
+    "page": 105,
+    "pdfFieldType": "",
+    "currentLabel": "Provide nature of use, frequency, and number of times used.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 7.3,
+        "direction": "left",
+        "score": 0.1814
+      },
+      {
+        "text": "YES",
+        "distance": 11.2,
+        "direction": "left",
+        "score": 0.1225
+      },
+      {
+        "text": "NO",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.1205
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[4]",
+    "semanticKey": "drugActivity.0.RadioButtonList_12",
+    "section": "drugActivity",
+    "page": 105,
+    "pdfFieldType": "",
+    "currentLabel": "We note, with reference to this section, that neither your truthful responses nor information derived from your respo...",
+    "nearestText": "government. The following questions pertain to the illegal use of drugs or controlled substances or drug or controlled substance activity in accordance with",
+    "suggestedLabel": "YES",
+    "similarity": 0.059,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.6,
+        "direction": "left",
+        "score": 0.1416
+      },
+      {
+        "text": "NO   (If NO, proceed to 23.2)",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1189
+      },
+      {
+        "text": "In the last seven (7) years,  have you illegally used any drugs or controlled substances? Use of a d",
+        "distance": 57.3,
+        "direction": "left",
+        "score": 0.0257
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].#area[6].RadioButtonList[5]",
+    "semanticKey": "drugActivity.0.RadioButtonList_18",
+    "section": "drugActivity",
+    "page": 105,
+    "pdfFieldType": "",
+    "currentLabel": "Provide nature of use, frequency, and number of times used.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 7.2,
+        "direction": "left",
+        "score": 0.1832
+      },
+      {
+        "text": "YES",
+        "distance": 10.4,
+        "direction": "left",
+        "score": 0.1317
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1196
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].#area[7].RadioButtonList[6]",
+    "semanticKey": "drugActivity.0.RadioButtonList_19",
+    "section": "drugActivity",
+    "page": 105,
+    "pdfFieldType": "",
+    "currentLabel": "Provide nature of use, frequency, and number of times used.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 7.3,
+        "direction": "left",
+        "score": 0.1809
+      },
+      {
+        "text": "YES",
+        "distance": 11.3,
+        "direction": "left",
+        "score": 0.1223
+      },
+      {
+        "text": "NO",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.1212
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[8]",
+    "semanticKey": "drugActivity.0.RadioButtonList_23",
+    "section": "drugActivity",
+    "page": 105,
+    "pdfFieldType": "",
+    "currentLabel": "Provide explanation of why you intend or do not intend to use this drug or controlled substance in the future.",
+    "nearestText": "Provide an estimate of the month and",
+    "suggestedLabel": "Provide an estimate of the month and",
+    "similarity": 0.136,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide an estimate of the month and",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3336
+      },
+      {
+        "text": "Other",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1187
+      },
+      {
+        "text": "Steroids (Such as the clear, juice, etc.)",
+        "distance": 8.4,
+        "direction": "right",
+        "score": 0.053
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].#area[1].RadioButtonList[0]",
+    "semanticKey": "drugActivity.0.RadioButtonList_33",
+    "section": "drugActivity",
+    "page": 106,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the nature and frequency of activity.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.6,
+        "direction": "left",
+        "score": 0.1412
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1198
+      },
+      {
+        "text": "NO",
+        "distance": 12.4,
+        "direction": "other",
+        "score": 0.0224
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[1]",
+    "semanticKey": "drugActivity.0.RadioButtonList_34",
+    "section": "drugActivity",
+    "page": 106,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the nature and frequency of activity.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1196
+      },
+      {
+        "text": "YES",
+        "distance": 13.5,
+        "direction": "other",
+        "score": 0.0208
+      },
+      {
+        "text": "NO",
+        "distance": 41.0,
+        "direction": "right",
+        "score": 0.0119
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].#area[3].RadioButtonList[4]",
+    "semanticKey": "drugActivity.0.RadioButtonList_38",
+    "section": "drugActivity",
+    "page": 106,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the nature and frequency of activity.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.6,
+        "direction": "left",
+        "score": 0.1416
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1189
+      },
+      {
+        "text": "NO",
+        "distance": 12.4,
+        "direction": "other",
+        "score": 0.0224
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[5]",
+    "semanticKey": "drugActivity.0.RadioButtonList_39",
+    "section": "drugActivity",
+    "page": 106,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the nature and frequency of activity.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.6,
+        "direction": "left",
+        "score": 0.1418
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1189
+      },
+      {
+        "text": "NO",
+        "distance": 13.5,
+        "direction": "other",
+        "score": 0.0207
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[7]",
+    "semanticKey": "drugActivity.0.RadioButtonList_47",
+    "section": "drugActivity",
+    "page": 106,
+    "pdfFieldType": "",
+    "currentLabel": "Type of drug or controlled substance",
+    "nearestText": "of most recent involvement.  (Month/Year)",
+    "suggestedLabel": "Provide an estimate of the month and year",
+    "similarity": 0.091,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide an estimate of the month and year",
+        "distance": 5.0,
+        "direction": "left",
+        "score": 0.2499
+      },
+      {
+        "text": "Other",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1203
+      },
+      {
+        "text": "Steroids (Such as the clear, juice, etc.)",
+        "distance": 8.4,
+        "direction": "right",
+        "score": 0.0529
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[8]",
+    "semanticKey": "drugActivity.0.RadioButtonList_48",
+    "section": "drugActivity",
+    "page": 106,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the type of drug or controlled substance.",
+    "nearestText": "Provide an estimate of the month and year",
+    "suggestedLabel": "Provide an estimate of the month and year",
+    "similarity": 0.231,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide an estimate of the month and year",
+        "distance": 5.3,
+        "direction": "left",
+        "score": 0.2378
+      },
+      {
+        "text": "Other",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1183
+      },
+      {
+        "text": "Steroids (Such as the clear, juice, etc.)",
+        "distance": 8.4,
+        "direction": "right",
+        "score": 0.0531
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].#area[0].RadioButtonList[0]",
+    "semanticKey": "alcoholUse.0.RadioButtonList_38",
+    "section": "alcoholUse",
+    "page": 113,
+    "pdfFieldType": "",
+    "currentLabel": "A mental health professional",
+    "nearestText": "(a)      You responded  'No '  to having taken action to seek counseling or treatment. Explain the reasons for not taking action to seek counseling or treatment.",
+    "suggestedLabel": "Other",
+    "similarity": 0.045,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Other",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1188
+      },
+      {
+        "text": "counseling or treatment by any of the above.",
+        "distance": 5.8,
+        "direction": "right",
+        "score": 0.0735
+      },
+      {
+        "text": "(a)      You responded  'No '  to having taken action to seek counseling or treatment. Explain the r",
+        "distance": 24.8,
+        "direction": "below",
+        "score": 0.031
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].RadioButtonList[2]",
+    "semanticKey": "alcoholUse.0.RadioButtonList_46",
+    "section": "alcoholUse",
+    "page": 113,
+    "pdfFieldType": "",
+    "currentLabel": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result of your use of a...",
+    "nearestText": "I have not been ordered, advised, or asked to seek",
+    "suggestedLabel": "(a)      You responded  'No '  to having taken action to seek counseling or treatment. Explain the reasons for not taking action to seek counseling or treatment.",
+    "similarity": 0.318,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "(a)      You responded  'No '  to having taken action to seek counseling or treatment. Explain the r",
+        "distance": 4.8,
+        "direction": "left",
+        "score": 0.2578
+      },
+      {
+        "text": "(Provide explanation)",
+        "distance": 10.5,
+        "direction": "above",
+        "score": 0.1734
+      },
+      {
+        "text": "YES  (If YES, complete (b))",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.1205
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].#area[1].RadioButtonList[3]",
+    "semanticKey": "alcoholUse.0.RadioButtonList_54",
+    "section": "alcoholUse",
+    "page": 113,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the full address for the counseling/treatment provider.    ( Provide City and Country if outside the United S...",
+    "nearestText": "Did you successfully complete the treatment program?",
+    "suggestedLabel": "YES",
+    "similarity": 0.1,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 10.1,
+        "direction": "left",
+        "score": 0.1345
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1189
+      },
+      {
+        "text": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result",
+        "distance": 20.8,
+        "direction": "below",
+        "score": 0.0366
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].#area[2].RadioButtonList[4]",
+    "semanticKey": "alcoholUse.0.RadioButtonList_61",
+    "section": "alcoholUse",
+    "page": 113,
+    "pdfFieldType": "",
+    "currentLabel": "A mental health professional",
+    "nearestText": "(a)      You responded  'No '  to having taken action to seek counseling or treatment. Explain the reasons for not taking action to seek counseling or treatment.",
+    "suggestedLabel": "Other",
+    "similarity": 0.045,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Other",
+        "distance": 3.1,
+        "direction": "right",
+        "score": 0.121
+      },
+      {
+        "text": "counseling or treatment by any of the above.",
+        "distance": 5.8,
+        "direction": "right",
+        "score": 0.0736
+      },
+      {
+        "text": "(a)      You responded  'No '  to having taken action to seek counseling or treatment. Explain the r",
+        "distance": 24.8,
+        "direction": "below",
+        "score": 0.031
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].RadioButtonList[5]",
+    "semanticKey": "alcoholUse.0.RadioButtonList_68",
+    "section": "alcoholUse",
+    "page": 113,
+    "pdfFieldType": "",
+    "currentLabel": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result of your use of a...",
+    "nearestText": "I have not been ordered, advised, or asked to seek",
+    "suggestedLabel": "(a)      You responded  'No '  to having taken action to seek counseling or treatment. Explain the reasons for not taking action to seek counseling or treatment.",
+    "similarity": 0.318,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "(a)      You responded  'No '  to having taken action to seek counseling or treatment. Explain the r",
+        "distance": 4.8,
+        "direction": "left",
+        "score": 0.26
+      },
+      {
+        "text": "(Provide explanation)",
+        "distance": 10.6,
+        "direction": "above",
+        "score": 0.1725
+      },
+      {
+        "text": "YES  (If YES, complete (b))",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1198
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].#area[3].RadioButtonList[6]",
+    "semanticKey": "alcoholUse.0.RadioButtonList_76",
+    "section": "alcoholUse",
+    "page": 113,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the full address for the counseling/treatment provider.    ( Provide City and Country if outside the United S...",
+    "nearestText": "Did you successfully complete the treatment program?",
+    "suggestedLabel": "YES",
+    "similarity": 0.1,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 10.1,
+        "direction": "left",
+        "score": 0.1345
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1189
+      },
+      {
+        "text": "Did you successfully complete the treatment program?",
+        "distance": 45.1,
+        "direction": "left",
+        "score": 0.0325
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_3[0].RadioButtonList[1]",
+    "semanticKey": "alcoholUse.0.RadioButtonList_101",
+    "section": "alcoholUse",
+    "page": 114,
+    "pdfFieldType": "",
+    "currentLabel": "Have you EVER voluntarily sought counseling or treatment as a result of your use of alcohol?",
+    "nearestText": "Provide the name of the individual counselor or treatment provider.",
+    "suggestedLabel": "YES",
+    "similarity": 0.143,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 8.6,
+        "direction": "left",
+        "score": 0.1564
+      },
+      {
+        "text": "NO  (If NO, proceed to 24.4)",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1191
+      },
+      {
+        "text": "Provide the name of the individual counselor or treatment provider.",
+        "distance": 37.5,
+        "direction": "other",
+        "score": 0.0078
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section21a[0].RadioButtonList[0]",
+    "semanticKey": "mentalHealth.RadioButtonList_1",
+    "section": "mentalHealth",
+    "page": 88,
+    "pdfFieldType": "",
+    "currentLabel": "Mental health treatment and counseling, in and of itself,  is not a reason  to revoke or deny eligibility for access ...",
+    "nearestText": "facilities or information systems. Seeking or receiving mental health care for personal wellness and recovery may contribute favorably to decisions about",
+    "suggestedLabel": "Complete the following if you responded  'Yes'  to having a court or administrative agency  EVER  issuing an order declaring you mentally incompetent.",
+    "similarity": 0.182,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Complete the following if you responded  'Yes'  to having a court or administrative agency  EVER  is",
+        "distance": 7.8,
+        "direction": "left",
+        "score": 0.1712
+      },
+      {
+        "text": "YES",
+        "distance": 10.6,
+        "direction": "left",
+        "score": 0.1294
+      },
+      {
+        "text": "NO  (If NO, proceed to Section 21B)",
+        "distance": 3.3,
+        "direction": "right",
+        "score": 0.1158
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section21b[0].RadioButtonList[0]",
+    "semanticKey": "mentalHealth.RadioButtonList_71",
+    "section": "mentalHealth",
+    "page": 90,
+    "pdfFieldType": "",
+    "currentLabel": "Have you EVER consulted a mental health professional about a mental health condition?",
+    "nearestText": "Complete the following if you responded  'Yes'  to having a court or administrative agency  EVER  ordered you to consult with a mental health professional.",
+    "suggestedLabel": "NO  (If NO, proceed to Section 21C)",
+    "similarity": 0.24,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to Section 21C)",
+        "distance": 3.3,
+        "direction": "right",
+        "score": 0.1158
+      },
+      {
+        "text": "YES",
+        "distance": 13.5,
+        "direction": "left",
+        "score": 0.1032
+      },
+      {
+        "text": "professional (for example, a psychiatrist, psychologist, licensed clinical social worker, etc.)?",
+        "distance": 70.1,
+        "direction": "left",
+        "score": 0.0211
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[0]",
+    "semanticKey": "mentalHealth.RadioButtonList_181",
+    "section": "mentalHealth",
+    "page": 93,
+    "pdfFieldType": "",
+    "currentLabel": "The following question asks whether you have been diagnosed with a specified mental health condition that may, partic...",
+    "nearestText": "Have you  EVER  been diagnosed by a physician or other health professional (for example, a",
+    "suggestedLabel": "NO  (If NO, proceed to Section 21E)",
+    "similarity": 0.231,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to Section 21E)",
+        "distance": 3.3,
+        "direction": "right",
+        "score": 0.1158
+      },
+      {
+        "text": "YES",
+        "distance": 13.5,
+        "direction": "left",
+        "score": 0.1032
+      },
+      {
+        "text": "psychiatrist, psychologist, licensed clinical social worker, or nurse practitioner) with psychotic",
+        "distance": 65.2,
+        "direction": "left",
+        "score": 0.0226
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section21d3[0].RadioButtonList[0]",
+    "semanticKey": "mentalHealth.RadioButtonList_314",
+    "section": "mentalHealth",
+    "page": 95,
+    "pdfFieldType": "",
+    "currentLabel": "altering or discontinuing, or failing to start a prescribed course of treatment for any of the listed diagnoses?",
+    "nearestText": "In the last seven years, have there been any occasions when you did not consult with a medical professional before",
+    "suggestedLabel": "NO  (If NO, proceed to Section 21E)",
+    "similarity": 0.091,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to Section 21E)",
+        "distance": 3.3,
+        "direction": "right",
+        "score": 0.1158
+      },
+      {
+        "text": "YES",
+        "distance": 13.5,
+        "direction": "left",
+        "score": 0.1032
+      },
+      {
+        "text": "Day",
+        "distance": 58.5,
+        "direction": "below",
+        "score": 0.0135
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section21d3[0].#field[34]",
+    "semanticKey": "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_8",
+    "section": "mentalHealth",
+    "page": 95,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the telephone number of the health care professional. International or D S N phone number",
+    "nearestText": "International or DSN phone number",
+    "suggestedLabel": "Provide the address of the health care professional.   (Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code)",
+    "similarity": 0.267,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide the address of the health care professional.   (Provide City and Country if outside the Unit",
+        "distance": 4.6,
+        "direction": "left",
+        "score": 0.2687
+      },
+      {
+        "text": "International or DSN phone number",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.1514
+      },
+      {
+        "text": "Extension",
+        "distance": 12.6,
+        "direction": "left",
+        "score": 0.1105
+      }
+    ]
+  }
+]

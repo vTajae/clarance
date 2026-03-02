@@ -31,14 +31,14 @@ export function validateCrossSections(
 }
 
 /**
- * Name used in personalInfo should match signature.
+ * Name used in Section 1 should match Section 30 (signature).
  */
 function checkNameConsistency(
   data: Record<string, FieldValues>
 ): CrossSectionIssue[] {
   const issues: CrossSectionIssue[] = [];
-  const personal = data["personalInfo"];
-  const sig = data["signature"];
+  const personal = data["section1"];
+  const sig = data["section30"];
 
   if (!personal || !sig) return issues;
 
@@ -50,8 +50,8 @@ function checkNameConsistency(
   if (personalName && sigName && personalName !== sigName) {
     issues.push({
       severity: "warning",
-      message: `Name in Personal Information ("${personalName}") differs from Signature ("${sigName}")`,
-      sections: ["personalInfo", "signature"],
+      message: `Name in Section 1 ("${personalName}") differs from Signature ("${sigName}")`,
+      sections: ["section1", "section30"],
       fields: [
         "personalInfo.firstName",
         "personalInfo.lastName",
@@ -65,13 +65,13 @@ function checkNameConsistency(
 }
 
 /**
- * Birth date in personalInfo shouldn't make applicant too young for the form.
+ * Birth date in Section 3 shouldn't make applicant too young for the form.
  */
 function checkDateConsistency(
   data: Record<string, FieldValues>
 ): CrossSectionIssue[] {
   const issues: CrossSectionIssue[] = [];
-  const birth = data["birthInfo"];
+  const birth = data["section3"];
 
   if (!birth) return issues;
 
@@ -88,7 +88,7 @@ function checkDateConsistency(
     issues.push({
       severity: "error",
       message: `Applicant appears to be ${age} years old. Must be at least 18.`,
-      sections: ["birthInfo"],
+      sections: ["section3"],
       fields: ["birthInfo.dateOfBirth"],
     });
   }
@@ -97,7 +97,7 @@ function checkDateConsistency(
     issues.push({
       severity: "warning",
       message: `Applicant appears to be ${age} years old. Please verify date of birth.`,
-      sections: ["birthInfo"],
+      sections: ["section3"],
       fields: ["birthInfo.dateOfBirth"],
     });
   }
@@ -112,8 +112,8 @@ function checkCitizenshipConsistency(
   data: Record<string, FieldValues>
 ): CrossSectionIssue[] {
   const issues: CrossSectionIssue[] = [];
-  const citizenship = data["citizenshipInfo"];
-  const dual = data["dualCitizenshipInfo"];
+  const citizenship = data["section9"];
+  const dual = data["section10"];
 
   if (!citizenship || !dual) return issues;
 
@@ -125,7 +125,7 @@ function checkCitizenshipConsistency(
       severity: "warning",
       message:
         "Dual citizenship is marked but US citizenship is not confirmed. Please verify.",
-      sections: ["citizenshipInfo", "dualCitizenshipInfo"],
+      sections: ["section9", "section10"],
       fields: [
         "citizenshipInfo.isUsCitizen",
         "dualCitizenshipInfo.hasDualCitizenship",

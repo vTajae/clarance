@@ -34,6 +34,8 @@ export interface AppState {
   lastSaved: Date | null;
   /** Navigation history stack for the back button. */
   wizardHistory: SF86Section[];
+  /** Registered save function from the active section's useAutoSave hook. */
+  _saveNowFn: (() => Promise<void>) | null;
 }
 
 export interface AppActions {
@@ -49,6 +51,10 @@ export interface AppActions {
   markSaved: () => void;
   /** Set or clear the server submission ID. */
   setSubmissionId: (id: string | null) => void;
+  /** Register the active section's save function (called by useAutoSave). */
+  registerSaveNow: (fn: (() => Promise<void>) | null) => void;
+  /** Trigger an immediate save of the current section. */
+  saveNow: () => Promise<void>;
 }
 
 // ---------------------------------------------------------------------------
@@ -57,12 +63,13 @@ export interface AppActions {
 
 export const useAppStore = create<AppState & AppActions>()((set, get) => ({
   // -- Initial state --------------------------------------------------------
-  currentSection: 'personalInfo',
+  currentSection: 'section1',
   currentSectionGroup: 'identification',
   submissionId: null,
   saveStatus: 'idle',
   lastSaved: null,
   wizardHistory: [],
+  _saveNowFn: null,
 
   // -- Actions --------------------------------------------------------------
 
@@ -86,8 +93,8 @@ export const useAppStore = create<AppState & AppActions>()((set, get) => ({
 
     // Pick the section with the lowest `order`
     const first = sections.reduce<SF86Section>((best, s) => {
-      const bestOrder = SECTION_META[best].order;
-      const sOrder = SECTION_META[s].order;
+      const bestOrder = SECTION_META[best]!.order;
+      const sOrder = SECTION_META[s]!.order;
       return sOrder < bestOrder ? s : best;
     }, sections[0]);
 
@@ -119,5 +126,16 @@ export const useAppStore = create<AppState & AppActions>()((set, get) => ({
 
   setSubmissionId(id) {
     set({ submissionId: id });
+  },
+
+  registerSaveNow(fn) {
+    set({ _saveNowFn: fn });
+  },
+
+  async saveNow() {
+    const fn = get()._saveNowFn;
+    if (fn) {
+      await fn();
+    }
   },
 }));

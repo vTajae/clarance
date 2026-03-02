@@ -1,0 +1,114 @@
+{
+  "batch": "batch6_legal",
+  "total": 27,
+  "keep": 12,
+  "change": 15,
+  "flag": 0,
+  "corrections": [
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].#area[3].RadioButtonList[3]",
+      "action": "CHANGE",
+      "currentLabel": "Provide a description of the sentence.",
+      "newLabel": "Were you sentenced as a result of this offense?",
+      "reason": "currentLabel is a text field prompt for describing the sentence. This radio button (YES/NO) in #area[3] precedes RadioButtonList[4] ('Were you sentenced to imprisonment for a term exceeding 1 year?'), so it is the initial sentencing yes/no question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].#area[3].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Provide a description of the sentence.",
+      "newLabel": "Were you sentenced as a result of this offense?",
+      "reason": "Same misassignment as Section22_5 #area[3].RadioButtonList[3]. This is a YES/NO radio about sentencing, not the text prompt for describing the sentence. Continuation page repeats the same structure."
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[3]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the address of the trustee for this bankruptcy.  ( Provide City and Country if outside the United States; oth...",
+      "newLabel": "Bankruptcy chapter type (Chapter 7, 11, 12, 13)",
+      "reason": "Candidates show 'Chapter 12' (14.6 left) and 'Chapter 13' (6.4 right). In SF-86 Section 26.1, RadioButtonList[3] selects the bankruptcy chapter type. The currentLabel about trustee address is a text field prompt from a different sub-field."
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide an estimate of the amount (in U.S. dollars) of gambling losses incurred.",
+      "newLabel": "In the last seven (7) years have you failed to file or pay Federal, state, or other taxes when required?",
+      "reason": "Candidates clearly show 'NO (If NO, proceed to 26.4)' at 2.3 right and the full question text at 48.9 left. This is Section 26.3 (tax filing). The currentLabel about gambling losses belongs to Section 26.2, a different sub-question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_3[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide a description of any action(s) you have taken to rectify this situation. If you have not taken any",
+      "newLabel": "Are you currently utilizing, or seeking assistance from, a credit counseling service or other similar resource to resolve your financial difficulties?",
+      "reason": "Candidates show 'NO (If NO, proceed to 26.6)' at 2.3 right and context about credit counseling at 8.6 left. This is Section 26.5 (credit counseling). The currentLabel is a text prompt from a sub-field within a different financial question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_6[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+      "newLabel": "In the last seven (7) years have you had a judgment entered against you or had financial obligations for which you were the sole debtor?",
+      "reason": "Candidates show 'NO (If NO, Proceed to 26.7)' at 2.8 right and 'judgment entered against you' text at 25.5. This is the Section 26.6 gateway question. The currentLabel is a sub-field text prompt."
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_7[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+      "newLabel": "In the last seven (7) years have you been delinquent on alimony, child support, or other court-ordered financial obligations?",
+      "reason": "Section 26_7 corresponds to Section 26.7 of SF-86. The candidates show the same template ('NO (If NO, Proceed to 26.7)' appears reused). The currentLabel is a sub-field text prompt, not the gateway yes/no question for this section."
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_8[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+      "newLabel": "In the last seven (7) years have you had any possessions or property voluntarily or involuntarily repossessed or foreclosed?",
+      "reason": "Candidates clearly show 'In the last seven (7) years, you had any possessions or property voluntarily or involuntarily repos...' at 9.7 left and 'NO (If NO, proceed to Section 27)' at 2.6 right, confirming this is the last Section 26 question about repossession."
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_9[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+      "newLabel": "In the last seven (7) years have you had any possessions or property voluntarily or involuntarily repossessed or foreclosed? (continuation)",
+      "reason": "Section 26_9 continuation page with same candidate structure as Section26_8. Same 'proceed to Section 27' in NO option. The currentLabel is a sub-field text prompt, not the yes/no question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section29[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "The following pertain to your associations. You are required to answer the questions fully and truthfully, and your f...",
+      "newLabel": "Have you EVER been a member of an organization dedicated to terrorism?",
+      "reason": "Candidates show 'NO (If NO, proceed to 29.2)' at 2.3 right and the nearestText references 'member of an organization dedicated to terrorism.' The currentLabel is the section preamble, not the specific 29.1 question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section29_5[0].TextField11[1]",
+      "action": "CHANGE",
+      "currentLabel": "Full name of the organization",
+      "newLabel": "Provide explanation (association with terrorism-related activities)",
+      "reason": "Nearest candidate 'Provide explanation.' is at distance 0.1 with score 1.659, essentially overlapping the field. This is Section 29_5 (association with terrorism activities) and the text field is for providing an explanation, not an organization name."
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].TextField11[2]",
+      "action": "CHANGE",
+      "currentLabel": "Complete the following if you have responded 'Yes' to having used other names. Provide your other name(s) used and the period of time you used it/them [for example: your maiden name(s), name(s) by a f",
+      "newLabel": "Other names used - Last name",
+      "reason": "Nearest candidate 'Last name' is at distance 0.0 with score 1.8 (highest possible). semanticKey is namesInfo.0.lastName. The currentLabel is the section instruction header, not the field label."
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide your U.S. Social Security Number.",
+      "newLabel": "Have you used any other names? (If NO, proceed to Section 6)",
+      "reason": "Candidates show 'NO (If NO, proceed to Section 6)' at 2.4 right and 'YES' at 12.6 left. This is the Section 5 gateway question about other names used. The currentLabel about SSN belongs to Section 4, a completely different section."
+    },
+    {
+      "pdfFieldName": "form1[0].Section9\\.1-9\\.4[0].TextField11[14]",
+      "action": "CHANGE",
+      "currentLabel": "(Provide explanation)",
+      "newLabel": "Date citizenship document was issued",
+      "reason": "Nearest candidate 'Provide the date document was issued' is at distance 0.5 with score 0.978. Located in Section 9.1-9.4 citizenship documentation area near DS-2019 references. The currentLabel '(Provide explanation)' is a generic prompt from a different field."
+    },
+    {
+      "pdfFieldName": "form1[0].Section27_2[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Have you EVER illegally accessed or attempted to access any information technology system?",
+      "newLabel": "Have you EVER illegally or without authorization modified, destroyed, manipulated, or denied others access to information on any IT system, or introduced a virus or malicious code?",
+      "reason": "Field is in Section27_2, not Section27. The currentLabel describes Section 27.1 (unauthorized access). Section 27_2 with 'NO (If NO, proceed to Section 28)' indicates this is a later question in Section 27 about modification/destruction/malware. The label should reflect the actual 27.2/27.3 question."
+    }
+  ]
+}

@@ -1,67 +1,98 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { useState, useCallback } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { useRouter } from 'next/navigation';
+import { useState, useCallback } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { saveSectionData } from '@/lib/persistence/indexeddb-client';
+import { useRegistry } from '@/lib/field-registry/use-registry';
 
 export default function ImportPage() {
   const router = useRouter();
+  const registry = useRegistry();
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<
-    "idle" | "uploading" | "success" | "error"
-  >("idle");
+    'idle' | 'uploading' | 'success' | 'error'
+  >('idle');
   const [error, setError] = useState<string | null>(null);
+  const [stats, setStats] = useState<{
+    mapped: number;
+    total: number;
+  } | null>(null);
 
   const handleFileChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const selected = e.target.files?.[0];
-      if (selected && selected.type === "application/pdf") {
+      if (selected && selected.type === 'application/pdf') {
         setFile(selected);
         setError(null);
       } else {
-        setError("Please select a PDF file.");
+        setError('Please select a PDF file.');
       }
     },
-    []
+    [],
   );
 
   const handleImport = useCallback(async () => {
     if (!file) return;
 
-    setStatus("uploading");
+    setStatus('uploading');
     setError(null);
 
     try {
       const formData = new FormData();
-      formData.append("file", file);
+      formData.append('file', file);
 
-      const response = await fetch("/api/pdf/import", {
-        method: "POST",
+      const response = await fetch('/api/pdf/import', {
+        method: 'POST',
         body: formData,
       });
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.error || "Import failed");
+        throw new Error(data.error || 'Import failed');
       }
 
       const data = await response.json();
-      setStatus("success");
+      setStats({
+        mapped: data.mappedCount,
+        total: data.totalExtracted,
+      });
 
-      // Create submission and redirect
+      // Create a new submission
       const submissionId = uuidv4();
 
-      // TODO: Save extracted fields to IndexedDB under this submissionId
-      // For now, store in sessionStorage as a bridge
-      sessionStorage.setItem(
-        `import:${submissionId}`,
-        JSON.stringify(data.fields)
-      );
+      // Group extracted values by section and save to IndexedDB
+      const valuesBySection = new Map<string, Record<string, unknown>>();
 
-      router.push(`/${submissionId}/identification/personalInfo`);
+      for (const [semanticKey, value] of Object.entries(
+        data.values as Record<string, unknown>,
+      )) {
+        const fieldDef = registry.getBySemanticKey(semanticKey);
+        if (!fieldDef) continue;
+
+        const section = fieldDef.section;
+        let sectionData = valuesBySection.get(section);
+        if (!sectionData) {
+          sectionData = {};
+          valuesBySection.set(section, sectionData);
+        }
+        sectionData[semanticKey] = value;
+      }
+
+      // Save each section to IndexedDB
+      for (const [sectionKey, sectionData] of valuesBySection) {
+        await saveSectionData(submissionId, sectionKey, sectionData);
+      }
+
+      setStatus('success');
+
+      // Redirect to the first section after a brief delay
+      setTimeout(() => {
+        router.push(`/${submissionId}/identification/section1`);
+      }, 1000);
     } catch (err) {
-      setStatus("error");
-      setError(err instanceof Error ? err.message : "Import failed");
+      setStatus('error');
+      setError(err instanceof Error ? err.message : 'Import failed');
     }
   }, [file, router]);
 
@@ -94,16 +125,22 @@ export default function ImportPage() {
 
           <button
             onClick={handleImport}
-            disabled={!file || status === "uploading"}
+            disabled={!file || status === 'uploading'}
             className="w-full rounded-md bg-blue-600 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
-            {status === "uploading" ? "Importing..." : "Import PDF"}
+            {status === 'uploading' ? 'Importing...' : 'Import PDF'}
           </button>
 
-          {status === "success" && (
-            <p className="text-sm text-green-600">
-              PDF imported successfully. Redirecting...
-            </p>
+          {status === 'success' && stats && (
+            <div className="rounded-md bg-green-50 border border-green-200 p-3">
+              <p className="text-sm text-green-700 font-medium">
+                PDF imported successfully!
+              </p>
+              <p className="text-xs text-green-600 mt-1">
+                Mapped {stats.mapped} of {stats.total} extracted fields.
+                Redirecting to form...
+              </p>
+            </div>
           )}
         </div>
       </div>

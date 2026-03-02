@@ -5,15 +5,12 @@ Uses PyMuPDF (fitz) to extract, fill, and merge AcroForm PDF documents.
 The SF-86 PDF contains 6,197 AcroForm fields across 127 pages. Operations
 here are optimized for that scale and complete in sub-second time.
 
-PyMuPDF widget field_type mapping:
-    0 = None / Unknown
-    1 = Pushbutton
-    2 = Checkbox
-    3 = RadioButton
-    4 = Text
-    5 = Listbox
-    6 = Combobox
-    7 = Signature
+PyMuPDF widget field_type constants (fitz.PDF_WIDGET_TYPE_*):
+    2 = CHECKBOX
+    3 = COMBOBOX
+    4 = LISTBOX
+    5 = RADIOBUTTON
+    7 = TEXT
 """
 
 from __future__ import annotations
@@ -35,11 +32,10 @@ FIELD_TYPE_LABELS: dict[int, str] = {
     0: "unknown",
     1: "pushbutton",
     2: "checkbox",
-    3: "radio",
-    4: "text",
-    5: "listbox",
-    6: "combobox",
-    7: "signature",
+    3: "combobox",
+    4: "listbox",
+    5: "radio",
+    7: "text",
 }
 
 # Checkbox "on" values that PyMuPDF may report
@@ -135,13 +131,24 @@ def extract_all_fields(pdf_bytes: bytes) -> dict[str, Any]:
                 # Checkbox
                 if ft == fitz.PDF_WIDGET_TYPE_CHECKBOX:
                     value = widget.field_value
-                    result[name] = "Yes" if value in _CHECKBOX_ON else "No"
+                    # Accept any non-Off value as checked (on_state may
+                    # be "1", "2", "Yes", or other PDF-specific strings)
+                    result[name] = "Yes" if (value and value != "Off") else "No"
 
-                # Radio button
+                # Radio button — multiple widgets share the same name
+                # (one per button).  on_state() is 0-based ('0','1',...).
+                # We only record the *selected* widget (value == on_state)
+                # and convert to 1-based to match the registry's valueMap.
                 elif ft == fitz.PDF_WIDGET_TYPE_RADIOBUTTON:
                     value = widget.field_value
-                    if value and value != "Off":
-                        result[name] = value
+                    on_state = widget.on_state()
+                    if (
+                        value
+                        and value != "Off"
+                        and on_state is not None
+                        and value == on_state
+                    ):
+                        result[name] = str(int(on_state) + 1)
 
                 # Text
                 elif ft == fitz.PDF_WIDGET_TYPE_TEXT:
@@ -318,16 +325,31 @@ def fill_pdf(template_path: str, values: dict[str, str]) -> bytes:
 
                     elif ft == fitz.PDF_WIDGET_TYPE_CHECKBOX:
                         if new_value.strip().lower() in ("yes", "true", "1", "on"):
-                            widget.field_value = "Yes"
+                            # Use the widget's actual on-state for
+                            # robustness — some XFA checkboxes use "2"
+                            # or other non-standard on values.
+                            on = widget.on_state()
+                            widget.field_value = on if on else "Yes"
                         else:
                             widget.field_value = "Off"
                         widget.update()
                         fields_set += 1
 
                     elif ft == fitz.PDF_WIDGET_TYPE_RADIOBUTTON:
-                        widget.field_value = new_value
-                        widget.update()
-                        fields_set += 1
+                        # Radio widgets share one field_name; each has a
+                        # unique 0-based on_state ('0','1','2',...).  The
+                        # incoming value is a 1-based index from the
+                        # registry's valueMap.  Only activate the widget
+                        # whose on_state matches (converted to 0-based).
+                        on_state = widget.on_state()
+                        if new_value.isdigit():
+                            target_on = str(int(new_value) - 1)
+                        else:
+                            target_on = new_value
+                        if on_state == target_on:
+                            widget.field_value = on_state
+                            widget.update()
+                            fields_set += 1
 
                     elif ft in (
                         fitz.PDF_WIDGET_TYPE_COMBOBOX,
@@ -351,7 +373,7 @@ def fill_pdf(template_path: str, values: dict[str, str]) -> bytes:
                     )
                     fields_skipped += 1
 
-        result = doc.tobytes(deflate=True, garbage=3)
+        result = doc.tobytes(deflate=True)
     finally:
         doc.close()
 
@@ -359,6 +381,107 @@ def fill_pdf(template_path: str, values: dict[str, str]) -> bytes:
         "Filled PDF: %d fields set, %d skipped", fields_set, fields_skipped
     )
     return result
+
+
+# ---------------------------------------------------------------------------
+# Fill + render a single page (for live preview)
+# ---------------------------------------------------------------------------
+
+def fill_and_render_page(
+    template_path: str,
+    values: dict[str, str],
+    page_num: int,
+    dpi: int = 72,
+) -> bytes:
+    """Fill fields and render a single page as PNG — fast live-preview path.
+
+    Unlike fill_pdf(), this never calls tobytes() (the 107s bottleneck).
+    It fills widgets in-memory and renders just the requested page.
+
+    Args:
+        template_path: Path to the PDF template.
+        values: AcroForm field name → value mapping (only populated fields).
+        page_num: 0-based page index to render.
+        dpi: Resolution for the rendered PNG (72 = 1pt:1px).
+
+    Returns:
+        PNG bytes of the rendered page with filled values.
+    """
+    path = Path(template_path)
+    if not path.is_file():
+        raise FileNotFoundError(f"Template PDF not found: {template_path}")
+
+    doc = fitz.open(str(path))
+    try:
+        if page_num < 0 or page_num >= doc.page_count:
+            raise ValueError(
+                f"Page {page_num} out of range (0-{doc.page_count - 1})"
+            )
+
+        # Fill only the widgets on the requested page (+ any radio groups
+        # that span pages, but we only need the target page's appearance).
+        page = doc[page_num]
+        filled = 0
+        for widget in page.widgets():
+            name = widget.field_name
+            if not name or name not in values:
+                continue
+
+            new_value = values[name]
+            ft = widget.field_type
+
+            try:
+                if ft == fitz.PDF_WIDGET_TYPE_TEXT:
+                    widget.field_value = new_value
+                    widget.update()
+                    filled += 1
+
+                elif ft == fitz.PDF_WIDGET_TYPE_CHECKBOX:
+                    if new_value.strip().lower() in ("yes", "true", "1", "on"):
+                        on = widget.on_state()
+                        widget.field_value = on if on else "Yes"
+                    else:
+                        widget.field_value = "Off"
+                    widget.update()
+                    filled += 1
+
+                elif ft == fitz.PDF_WIDGET_TYPE_RADIOBUTTON:
+                    on_state = widget.on_state()
+                    if new_value.isdigit():
+                        target_on = str(int(new_value) - 1)
+                    else:
+                        target_on = new_value
+                    if on_state == target_on:
+                        widget.field_value = on_state
+                        widget.update()
+                        filled += 1
+
+                elif ft in (
+                    fitz.PDF_WIDGET_TYPE_COMBOBOX,
+                    fitz.PDF_WIDGET_TYPE_LISTBOX,
+                ):
+                    widget.field_value = new_value
+                    widget.update()
+                    filled += 1
+
+            except Exception:
+                logger.exception(
+                    "Preview: error setting '%s' to '%s'", name, new_value
+                )
+
+        # Render the page
+        zoom = dpi / 72.0
+        mat = fitz.Matrix(zoom, zoom)
+        pix = page.get_pixmap(matrix=mat)
+        png_bytes = pix.tobytes("png")
+    finally:
+        doc.close()
+
+    logger.info(
+        "fill_and_render_page: page %d, %d fields filled, %d bytes PNG",
+        page_num, filled, len(png_bytes),
+    )
+    return png_bytes
 
 
 # ---------------------------------------------------------------------------

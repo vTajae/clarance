@@ -1,0 +1,2306 @@
+{
+  "timestamp": "2026-02-27T00:13:49.250Z",
+  "templatePath": "sf861.pdf",
+  "serviceUrl": "http://localhost:8001",
+  "summary": {
+    "total": 6197,
+    "matched": 5990,
+    "mismatched": 207,
+    "missing": 0,
+    "extra": 0,
+    "matchRate": "96.66%"
+  },
+  "mismatches": [
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[1]",
+      "semanticKey": "namesInfo.RadioButtonList_12",
+      "section": "namesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.98
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[3]",
+      "semanticKey": "namesInfo.RadioButtonList_30",
+      "section": "namesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.98
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[0]",
+      "semanticKey": "passportInfo.RadioButtonList_1",
+      "section": "passportInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.98
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[1]",
+      "semanticKey": "citizenshipInfo.RadioButtonList_1",
+      "section": "citizenshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "5",
+      "actual": "4",
+      "confidence": 0.98
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[3]",
+      "semanticKey": "citizenshipInfo.RadioButtonList_21",
+      "section": "citizenshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "3",
+      "confidence": 0.98
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[4]",
+      "semanticKey": "dualCitizenshipInfo.RadioButtonList_22",
+      "section": "dualCitizenshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[5]",
+      "semanticKey": "dualCitizenshipInfo.RadioButtonList_24",
+      "section": "dualCitizenshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section10-2[0].RadioButtonList[0]",
+      "semanticKey": "dualCitizenshipInfo.0.RadioButtonList_86",
+      "section": "dualCitizenshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section11[0].RadioButtonList[2]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_63",
+      "section": "residencyInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[2]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_126",
+      "section": "residencyInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[2]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_189",
+      "section": "residencyInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[0]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_246",
+      "section": "residencyInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[2]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_252",
+      "section": "residencyInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "4",
+      "actual": "3",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section_12[0].pg10r1[0]",
+      "semanticKey": "schoolInfo.pg10r1",
+      "section": "schoolInfo",
+      "label": "pg10r1",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.75
+    },
+    {
+      "pdfFieldName": "form1[0].section_12[0].sec12_1_1[1]",
+      "semanticKey": "schoolInfo.isEstimate_2",
+      "section": "schoolInfo",
+      "label": "Estimate",
+      "pdfFieldType": "PDFCheckBox",
+      "expected": "Yes",
+      "actual": "No",
+      "confidence": 0.75
+    },
+    {
+      "pdfFieldName": "form1[0].section_12[0].pg10r4[0]",
+      "semanticKey": "schoolInfo.pg10r4",
+      "section": "schoolInfo",
+      "label": "pg10r4",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "4",
+      "actual": "3",
+      "confidence": 0.75
+    },
+    {
+      "pdfFieldName": "form1[0].section_12_2[0].pg10r4[0]",
+      "semanticKey": "schoolInfo.0.pg10r4",
+      "section": "schoolInfo",
+      "label": "pg10r4",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "3",
+      "confidence": 0.75
+    },
+    {
+      "pdfFieldName": "form1[0].section_12_2[0].pg2r5[1]",
+      "semanticKey": "schoolInfo.0.pg2r5_2",
+      "section": "schoolInfo",
+      "label": "pg2r5",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.75
+    },
+    {
+      "pdfFieldName": "form1[0].section_12_3[0].pg10r4[0]",
+      "semanticKey": "schoolInfo.0.pg10r4_2",
+      "section": "schoolInfo",
+      "label": "pg10r4",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "3",
+      "confidence": 0.75
+    },
+    {
+      "pdfFieldName": "form1[0].section_12_3[0].pg2r5[0]",
+      "semanticKey": "schoolInfo.0.pg2r5_3",
+      "section": "schoolInfo",
+      "label": "pg2r5",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.75
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_40",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "6",
+      "actual": "9",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_50",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2-2[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_129",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2-2[0].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_139",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_249",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_259",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[33]",
+      "semanticKey": "employmentInfo.0.parttime_4",
+      "section": "employmentInfo",
+      "label": "Part-time",
+      "pdfFieldType": "PDFCheckBox",
+      "expected": "Yes",
+      "actual": "No",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_337",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_406",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_450",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[0].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_460",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_479",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_558",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "9",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_568",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[1].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_647",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[1].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_657",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_767",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_777",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[33]",
+      "semanticKey": "employmentInfo.2.parttime",
+      "section": "employmentInfo",
+      "label": "Part-time",
+      "pdfFieldType": "PDFCheckBox",
+      "expected": "Yes",
+      "actual": "No",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_817",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "5",
+      "actual": "9",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[2].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_855",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[2].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_924",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[2].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_968",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[2].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_978",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.3.RadioButtonList_997",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section13_5[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_1050",
+      "section": "employmentInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[0].RadioButtonList[0]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_1",
+      "section": "serviceInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[4].RadioButtonList[1]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_5",
+      "section": "serviceInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[5].#area[6].RadioButtonList[2]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_6",
+      "section": "serviceInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "6",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[9].RadioButtonList[4]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_15",
+      "section": "serviceInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[10].RadioButtonList[5]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_16",
+      "section": "serviceInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "5",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[11].RadioButtonList[6]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_21",
+      "section": "serviceInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[12].RadioButtonList[7]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_22",
+      "section": "serviceInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[13].#area[14].RadioButtonList[8]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_23",
+      "section": "serviceInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "5",
+      "actual": "6",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[15].RadioButtonList[9]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_25",
+      "section": "serviceInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[18].RadioButtonList[11]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_33",
+      "section": "serviceInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "6",
+      "actual": "5",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section15_3[0].RadioButtonList[1]",
+      "semanticKey": "militaryHistoryInfo.0.RadioButtonList_15",
+      "section": "militaryHistoryInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "4",
+      "actual": "6",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section15_3[0].RadioButtonList[2]",
+      "semanticKey": "militaryHistoryInfo.0.RadioButtonList_41",
+      "section": "militaryHistoryInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section16_1[0].RadioButtonList[0]",
+      "semanticKey": "peopleThatKnow.0.RadioButtonList_1",
+      "section": "peopleThatKnow",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "6",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[0]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_12",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[1]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_22",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[2]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_60",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[3]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_70",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1_2[0].RadioButtonList[0]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_83",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1_2[0].RadioButtonList[1]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_117",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2[0].RadioButtonList[0]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_118",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2[0].RadioButtonList[1]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_135",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2_2[0].RadioButtonList[1]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_168",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[0]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_184",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[1]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_194",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[2]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_204",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3_2[0].RadioButtonList[2]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_301",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3_2[0].RadioButtonList[3]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_311",
+      "section": "relationshipInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.0.RadioButtonList_175",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[1]",
+      "semanticKey": "relativesInfo.0.RadioButtonList_199",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[2]",
+      "semanticKey": "relativesInfo.0.RadioButtonList_209",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[3]",
+      "semanticKey": "relativesInfo.0.RadioButtonList_219",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[4]",
+      "semanticKey": "relativesInfo.0.RadioButtonList_229",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[1].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.1.RadioButtonList_243",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[1].RadioButtonList[1]",
+      "semanticKey": "relativesInfo.1.RadioButtonList_244",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[1].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.1.RadioButtonList_287",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[1].RadioButtonList[1]",
+      "semanticKey": "relativesInfo.1.RadioButtonList_322",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[2].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.2.RadioButtonList_401",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[2].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.2.RadioButtonList_445",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.2.RadioButtonList_491",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[1]",
+      "semanticKey": "relativesInfo.2.RadioButtonList_515",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[2]",
+      "semanticKey": "relativesInfo.2.RadioButtonList_525",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[3]",
+      "semanticKey": "relativesInfo.2.RadioButtonList_535",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[4]",
+      "semanticKey": "relativesInfo.2.RadioButtonList_545",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[3].RadioButtonList[1]",
+      "semanticKey": "relativesInfo.3.RadioButtonList_560",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[3].RadioButtonList[1]",
+      "semanticKey": "relativesInfo.3.RadioButtonList_638",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[4].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.4.RadioButtonList_717",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[4].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.4.RadioButtonList_761",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[4].RadioButtonList[1]",
+      "semanticKey": "relativesInfo.4.RadioButtonList_796",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.4.RadioButtonList_807",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[1]",
+      "semanticKey": "relativesInfo.4.RadioButtonList_831",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[2]",
+      "semanticKey": "relativesInfo.4.RadioButtonList_841",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[3]",
+      "semanticKey": "relativesInfo.4.RadioButtonList_851",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[4]",
+      "semanticKey": "relativesInfo.4.RadioButtonList_861",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[5].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.5.RadioButtonList_875",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[5].RadioButtonList[1]",
+      "semanticKey": "relativesInfo.5.RadioButtonList_876",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[5].RadioButtonList[0]",
+      "semanticKey": "relativesInfo.5.RadioButtonList_919",
+      "section": "relativesInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].RadioButtonList[1]",
+      "semanticKey": "foreignContacts.0.RadioButtonList_21",
+      "section": "foreignContacts",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "5",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].RadioButtonList[2]",
+      "semanticKey": "foreignContacts.0.RadioButtonList_62",
+      "section": "foreignContacts",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].#area[3].RadioButtonList[3]",
+      "semanticKey": "foreignContacts.0.RadioButtonList_65",
+      "section": "foreignContacts",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_2[0].RadioButtonList[1]",
+      "semanticKey": "foreignContacts.0.RadioButtonList_131",
+      "section": "foreignContacts",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_2[0].#area[3].RadioButtonList[2]",
+      "semanticKey": "foreignContacts.0.RadioButtonList_133",
+      "section": "foreignContacts",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_3[0].RadioButtonList[0]",
+      "semanticKey": "foreignContacts.0.RadioButtonList_159",
+      "section": "foreignContacts",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "5",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_3[0].#area[3].RadioButtonList[2]",
+      "semanticKey": "foreignContacts.0.RadioButtonList_202",
+      "section": "foreignContacts",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_4[0].RadioButtonList[0]",
+      "semanticKey": "foreignContacts.0.RadioButtonList_228",
+      "section": "foreignContacts",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "5",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_4[0].RadioButtonList[1]",
+      "semanticKey": "foreignContacts.0.RadioButtonList_269",
+      "section": "foreignContacts",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section20a[0].RadioButtonList[0]",
+      "semanticKey": "foreignActivities.RadioButtonList_1",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[68].RadioButtonList[1]",
+      "semanticKey": "foreignActivities.RadioButtonList_101",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[70].RadioButtonList[4]",
+      "semanticKey": "foreignActivities.RadioButtonList_183",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[7]",
+      "semanticKey": "foreignActivities.RadioButtonList_255",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[8]",
+      "semanticKey": "foreignActivities.RadioButtonList_259",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "3",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].#area[10].RadioButtonList[9]",
+      "semanticKey": "foreignActivities.RadioButtonList_269",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[10]",
+      "semanticKey": "foreignActivities.RadioButtonList_275",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "5",
+      "actual": "4",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].#area[11].RadioButtonList[11]",
+      "semanticKey": "foreignActivities.RadioButtonList_279",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[12]",
+      "semanticKey": "foreignActivities.RadioButtonList_285",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "5",
+      "actual": "4",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].RadioButtonList[15]",
+      "semanticKey": "foreignActivities.RadioButtonList_297",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "3",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].RadioButtonList[20]",
+      "semanticKey": "foreignActivities.RadioButtonList_327",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "4",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[78].RadioButtonList[26]",
+      "semanticKey": "foreignActivities.RadioButtonList_429",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[80].#area[27].RadioButtonList[29]",
+      "semanticKey": "foreignActivities.RadioButtonList_495",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[83].#subform[84].#area[33].RadioButtonList[32]",
+      "semanticKey": "foreignActivities.RadioButtonList_550",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[91].RadioButtonList7[0]",
+      "semanticKey": "foreignActivities.radiobuttonlist7",
+      "section": "foreignActivities",
+      "label": "RadioButtonList7",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[91].RadioButtonList6[0]",
+      "semanticKey": "foreignActivities.radiobuttonlist6",
+      "section": "foreignActivities",
+      "label": "RadioButtonList6",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].RadioButtonList[34]",
+      "semanticKey": "foreignActivities.RadioButtonList_678",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[41].#area[42].RadioButtonList[35]",
+      "semanticKey": "foreignActivities.RadioButtonList_686",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[43].#area[44].RadioButtonList[36]",
+      "semanticKey": "foreignActivities.RadioButtonList_688",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[45].#area[46].RadioButtonList[37]",
+      "semanticKey": "foreignActivities.RadioButtonList_690",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[47].#area[48].RadioButtonList[38]",
+      "semanticKey": "foreignActivities.RadioButtonList_692",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[49].#area[50].RadioButtonList[39]",
+      "semanticKey": "foreignActivities.RadioButtonList_694",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[51].RadioButtonList[40]",
+      "semanticKey": "foreignActivities.RadioButtonList_696",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].RadioButtonList[41]",
+      "semanticKey": "foreignActivities.RadioButtonList_698",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "4",
+      "actual": "5",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].RadioButtonList[42]",
+      "semanticKey": "foreignActivities.RadioButtonList_706",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].RadioButtonList[49]",
+      "semanticKey": "foreignActivities.RadioButtonList_726",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "5",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[67].#area[68].RadioButtonList[51]",
+      "semanticKey": "foreignActivities.RadioButtonList_742",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[69].#area[70].RadioButtonList[52]",
+      "semanticKey": "foreignActivities.RadioButtonList_744",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[71].#area[72].RadioButtonList[53]",
+      "semanticKey": "foreignActivities.RadioButtonList_746",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[73].#area[74].RadioButtonList[54]",
+      "semanticKey": "foreignActivities.RadioButtonList_748",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[75].#area[76].RadioButtonList[55]",
+      "semanticKey": "foreignActivities.RadioButtonList_750",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[77].RadioButtonList[56]",
+      "semanticKey": "foreignActivities.RadioButtonList_752",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].RadioButtonList[57]",
+      "semanticKey": "foreignActivities.RadioButtonList_754",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "5",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].RadioButtonList[58]",
+      "semanticKey": "foreignActivities.RadioButtonList_762",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].RadioButtonList[65]",
+      "semanticKey": "foreignActivities.RadioButtonList_782",
+      "section": "foreignActivities",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "5",
+      "confidence": 0.4
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a[0].RadioButtonList[1]",
+      "semanticKey": "mentalHealth.RadioButtonList_2",
+      "section": "mentalHealth",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a2[0].RadioButtonList[0]",
+      "semanticKey": "mentalHealth.RadioButtonList_25",
+      "section": "mentalHealth",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section21b[0].RadioButtonList[1]",
+      "semanticKey": "mentalHealth.RadioButtonList_72",
+      "section": "mentalHealth",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section21c[0].RadioButtonList[0]",
+      "semanticKey": "mentalHealth.RadioButtonList_120",
+      "section": "mentalHealth",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[0]",
+      "semanticKey": "mentalHealth.RadioButtonList_181",
+      "section": "mentalHealth",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[2]",
+      "semanticKey": "mentalHealth.RadioButtonList_215",
+      "section": "mentalHealth",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].section21d2[0].RadioButtonList[0]",
+      "semanticKey": "mentalHealth.RadioButtonList_260",
+      "section": "mentalHealth",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section21d3[0].RadioButtonList[1]",
+      "semanticKey": "mentalHealth.RadioButtonList_359",
+      "section": "mentalHealth",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section21e[0].RadioButtonList[0]",
+      "semanticKey": "mentalHealth.RadioButtonList_360",
+      "section": "mentalHealth",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section21e1[0].RadioButtonList[0]",
+      "semanticKey": "mentalHealth.RadioButtonList_485",
+      "section": "mentalHealth",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_1[0].RadioButtonList[1]",
+      "semanticKey": "policeRecord.0.RadioButtonList_2",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[0]",
+      "semanticKey": "policeRecord.0.RadioButtonList_49",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[1]",
+      "semanticKey": "policeRecord.0.RadioButtonList_55",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[3]",
+      "semanticKey": "policeRecord.0.RadioButtonList_65",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_3[0].#area[2].RadioButtonList[1]",
+      "semanticKey": "policeRecord.0.RadioButtonList_76",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_3[0].#area[5].RadioButtonList[2]",
+      "semanticKey": "policeRecord.0.RadioButtonList_82",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_4[0].RadioButtonList[2]",
+      "semanticKey": "policeRecord.0.RadioButtonList_117",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].#area[1].RadioButtonList[1]",
+      "semanticKey": "policeRecord.0.RadioButtonList_136",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].RadioButtonList[4]",
+      "semanticKey": "policeRecord.0.RadioButtonList_164",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].#area[1].RadioButtonList[0]",
+      "semanticKey": "policeRecord.0.RadioButtonList_187",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].RadioButtonList[3]",
+      "semanticKey": "policeRecord.0.RadioButtonList_215",
+      "section": "policeRecord",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[1]",
+      "semanticKey": "drugActivity.0.RadioButtonList_2",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[3].RadioButtonList[3]",
+      "semanticKey": "drugActivity.0.RadioButtonList_10",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[4]",
+      "semanticKey": "drugActivity.0.RadioButtonList_12",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[6].RadioButtonList[5]",
+      "semanticKey": "drugActivity.0.RadioButtonList_18",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[7]",
+      "semanticKey": "drugActivity.0.RadioButtonList_21",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "9",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[8]",
+      "semanticKey": "drugActivity.0.RadioButtonList_23",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "9",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].#area[1].RadioButtonList[0]",
+      "semanticKey": "drugActivity.0.RadioButtonList_33",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[2]",
+      "semanticKey": "drugActivity.0.RadioButtonList_35",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[3]",
+      "semanticKey": "drugActivity.0.RadioButtonList_37",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[5]",
+      "semanticKey": "drugActivity.0.RadioButtonList_39",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[7]",
+      "semanticKey": "drugActivity.0.RadioButtonList_47",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "8",
+      "actual": "9",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_3[0].RadioButtonList[1]",
+      "semanticKey": "drugActivity.0.RadioButtonList_72",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[0]",
+      "semanticKey": "drugActivity.0.RadioButtonList_89",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[2]",
+      "semanticKey": "drugActivity.0.RadioButtonList_93",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[4]",
+      "semanticKey": "drugActivity.0.RadioButtonList_97",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].RadioButtonList[1]",
+      "semanticKey": "drugActivity.0.RadioButtonList_104",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "4",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].#area[1].RadioButtonList[2]",
+      "semanticKey": "drugActivity.0.RadioButtonList_106",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].#area[3].RadioButtonList[3]",
+      "semanticKey": "drugActivity.0.RadioButtonList_120",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].RadioButtonList[4]",
+      "semanticKey": "drugActivity.0.RadioButtonList_123",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "7",
+      "actual": "9",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].#area[0].RadioButtonList[1]",
+      "semanticKey": "drugActivity.0.RadioButtonList_131",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].#area[2].RadioButtonList[2]",
+      "semanticKey": "drugActivity.0.RadioButtonList_145",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].RadioButtonList[3]",
+      "semanticKey": "drugActivity.0.RadioButtonList_148",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "9",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[0]",
+      "semanticKey": "drugActivity.0.RadioButtonList_149",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "4",
+      "actual": "9",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[1]",
+      "semanticKey": "drugActivity.0.RadioButtonList_151",
+      "section": "drugActivity",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "6",
+      "actual": "9",
+      "confidence": 0.55
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[0].RadioButtonList[0]",
+      "semanticKey": "alcoholUse.0.RadioButtonList_38",
+      "section": "alcoholUse",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "5",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[2].RadioButtonList[4]",
+      "semanticKey": "alcoholUse.0.RadioButtonList_61",
+      "section": "alcoholUse",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "5",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_3[0].#area[3].RadioButtonList[2]",
+      "semanticKey": "alcoholUse.0.RadioButtonList_118",
+      "section": "alcoholUse",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section25_2[0].RadioButtonList[0]",
+      "semanticKey": "investigationsInfo.0.RadioButtonList_73",
+      "section": "investigationsInfo",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[1]",
+      "semanticKey": "finances.RadioButtonList_5",
+      "section": "finances",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "3",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[3]",
+      "semanticKey": "finances.RadioButtonList_32",
+      "section": "finances",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "1",
+      "actual": "3",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[4]",
+      "semanticKey": "finances.RadioButtonList_55",
+      "section": "finances",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[0]",
+      "semanticKey": "finances.0.RadioButtonList_56",
+      "section": "finances",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[1]",
+      "semanticKey": "finances.0.RadioButtonList_74",
+      "section": "finances",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[2]",
+      "semanticKey": "finances.0.RadioButtonList_75",
+      "section": "finances",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "3",
+      "actual": "2",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_3[0].RadioButtonList[1]",
+      "semanticKey": "finances.0.RadioButtonList_123",
+      "section": "finances",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_6[0].#area[0].RadioButtonList[0]",
+      "semanticKey": "finances.0.RadioButtonList_144",
+      "section": "finances",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_6[0].RadioButtonList[1]",
+      "semanticKey": "finances.0.RadioButtonList_168",
+      "section": "finances",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_8[0].RadioButtonList[1]",
+      "semanticKey": "finances.0.RadioButtonList_198",
+      "section": "finances",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section27[0].RadioButtonList[1]",
+      "semanticKey": "technology.RadioButtonList_29",
+      "section": "technology",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section29_3[0].RadioButtonList[0]",
+      "semanticKey": "association.0.RadioButtonList_60",
+      "section": "association",
+      "label": "RadioButtonList",
+      "pdfFieldType": "PDFRadioGroup",
+      "expected": "2",
+      "actual": "1",
+      "confidence": 0.95
+    }
+  ],
+  "missing": [],
+  "extra": [],
+  "bySection": {
+    "namesInfo": {
+      "total": 45,
+      "matched": 43,
+      "mismatched": 2,
+      "missing": 0
+    },
+    "personalInfo": {
+      "total": 142,
+      "matched": 142,
+      "mismatched": 0,
+      "missing": 0
+    },
+    "birthInfo": {
+      "total": 6,
+      "matched": 6,
+      "mismatched": 0,
+      "missing": 0
+    },
+    "physicalAttributes": {
+      "total": 6,
+      "matched": 6,
+      "mismatched": 0,
+      "missing": 0
+    },
+    "passportInfo": {
+      "total": 10,
+      "matched": 9,
+      "mismatched": 1,
+      "missing": 0
+    },
+    "citizenshipInfo": {
+      "total": 78,
+      "matched": 76,
+      "mismatched": 2,
+      "missing": 0
+    },
+    "contactInfo": {
+      "total": 17,
+      "matched": 17,
+      "mismatched": 0,
+      "missing": 0
+    },
+    "dualCitizenshipInfo": {
+      "total": 122,
+      "matched": 119,
+      "mismatched": 3,
+      "missing": 0
+    },
+    "residencyInfo": {
+      "total": 252,
+      "matched": 247,
+      "mismatched": 5,
+      "missing": 0
+    },
+    "schoolInfo": {
+      "total": 150,
+      "matched": 143,
+      "mismatched": 7,
+      "missing": 0
+    },
+    "employmentInfo": {
+      "total": 1086,
+      "matched": 1060,
+      "mismatched": 26,
+      "missing": 0
+    },
+    "serviceInfo": {
+      "total": 40,
+      "matched": 30,
+      "mismatched": 10,
+      "missing": 0
+    },
+    "militaryHistoryInfo": {
+      "total": 60,
+      "matched": 58,
+      "mismatched": 2,
+      "missing": 0
+    },
+    "peopleThatKnow": {
+      "total": 154,
+      "matched": 153,
+      "mismatched": 1,
+      "missing": 0
+    },
+    "relationshipInfo": {
+      "total": 332,
+      "matched": 318,
+      "mismatched": 14,
+      "missing": 0
+    },
+    "relativesInfo": {
+      "total": 964,
+      "matched": 935,
+      "mismatched": 29,
+      "missing": 0
+    },
+    "foreignContacts": {
+      "total": 277,
+      "matched": 268,
+      "mismatched": 9,
+      "missing": 0
+    },
+    "foreignActivities": {
+      "total": 790,
+      "matched": 755,
+      "mismatched": 35,
+      "missing": 0
+    },
+    "mentalHealth": {
+      "total": 486,
+      "matched": 476,
+      "mismatched": 10,
+      "missing": 0
+    },
+    "policeRecord": {
+      "total": 267,
+      "matched": 256,
+      "mismatched": 11,
+      "missing": 0
+    },
+    "drugActivity": {
+      "total": 191,
+      "matched": 167,
+      "mismatched": 24,
+      "missing": 0
+    },
+    "alcoholUse": {
+      "total": 160,
+      "matched": 157,
+      "mismatched": 3,
+      "missing": 0
+    },
+    "investigationsInfo": {
+      "total": 79,
+      "matched": 78,
+      "mismatched": 1,
+      "missing": 0
+    },
+    "finances": {
+      "total": 237,
+      "matched": 227,
+      "mismatched": 10,
+      "missing": 0
+    },
+    "technology": {
+      "total": 57,
+      "matched": 56,
+      "mismatched": 1,
+      "missing": 0
+    },
+    "civil": {
+      "total": 23,
+      "matched": 23,
+      "mismatched": 0,
+      "missing": 0
+    },
+    "association": {
+      "total": 141,
+      "matched": 140,
+      "mismatched": 1,
+      "missing": 0
+    },
+    "signature": {
+      "total": 25,
+      "matched": 25,
+      "mismatched": 0,
+      "missing": 0
+    }
+  },
+  "byConfidence": {
+    "high": {
+      "total": 4972,
+      "matched": 4826,
+      "mismatched": 146,
+      "missing": 0,
+      "matchRate": "97.06%"
+    },
+    "medium": {
+      "total": 175,
+      "matched": 168,
+      "mismatched": 7,
+      "missing": 0,
+      "matchRate": "96.00%"
+    },
+    "low": {
+      "total": 1050,
+      "matched": 996,
+      "mismatched": 54,
+      "missing": 0,
+      "matchRate": "94.86%"
+    }
+  },
+  "byFieldType": {
+    "PDFTextField": {
+      "total": 3149,
+      "matched": 3149,
+      "mismatched": 0,
+      "missing": 0
+    },
+    "PDFRadioGroup": {
+      "total": 398,
+      "matched": 194,
+      "mismatched": 204,
+      "missing": 0
+    },
+    "PDFDropdown": {
+      "total": 857,
+      "matched": 857,
+      "mismatched": 0,
+      "missing": 0
+    },
+    "PDFCheckBox": {
+      "total": 1793,
+      "matched": 1790,
+      "mismatched": 3,
+      "missing": 0
+    }
+  }
+}

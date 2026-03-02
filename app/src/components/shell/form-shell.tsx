@@ -1,9 +1,15 @@
 'use client';
 
-import { type ReactNode, useCallback, useState } from 'react';
+import { type ReactNode, useCallback, useEffect, useState } from 'react';
+import { useAtomValue } from 'jotai';
 import { SectionSidebar } from './section-sidebar';
 import { TopBar } from './top-bar';
 import { WizardControls } from './wizard-controls';
+import { PdfPreview, type FieldRect } from './pdf-preview';
+import { useSyncEngine } from '@/lib/state/hooks/use-sync-engine';
+import { useSsnAutoFill } from '@/lib/state/hooks/use-ssn-autofill';
+import { dirtyFieldsAtom } from '@/lib/state/atoms/field-atoms';
+import { useAppStore } from '@/lib/state/stores/app-store';
 
 interface FormShellProps {
   submissionId: string;
@@ -13,6 +19,28 @@ interface FormShellProps {
 export function FormShell({ submissionId, children }: FormShellProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [previewOpen, setPreviewOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [activeRect] = useState<FieldRect | null>(null);
+  const { syncStatus, pendingCount } = useSyncEngine();
+
+  // -- SSN auto-fill: section 4 → 137 page header fields ------------------
+  useSsnAutoFill(submissionId);
+
+  // -- Warn before tab close if there are unsaved changes ------------------
+  const dirtyFields = useAtomValue(dirtyFieldsAtom);
+  const saveNow = useAppStore((s) => s.saveNow);
+
+  useEffect(() => {
+    const handler = (e: BeforeUnloadEvent) => {
+      if (dirtyFields.size > 0) {
+        // Trigger a flush so data is persisted even if the user leaves
+        void saveNow();
+        e.preventDefault();
+      }
+    };
+    window.addEventListener('beforeunload', handler);
+    return () => window.removeEventListener('beforeunload', handler);
+  }, [dirtyFields, saveNow]);
 
   const toggleSidebar = useCallback(() => setSidebarOpen((o) => !o), []);
   const togglePreview = useCallback(() => setPreviewOpen((o) => !o), []);
@@ -25,6 +53,8 @@ export function FormShell({ submissionId, children }: FormShellProps) {
         onToggleSidebar={toggleSidebar}
         onTogglePreview={togglePreview}
         previewOpen={previewOpen}
+        syncStatus={syncStatus}
+        pendingCount={pendingCount}
       />
 
       {/* Main content area */}
@@ -56,20 +86,39 @@ export function FormShell({ submissionId, children }: FormShellProps) {
 
         {/* Mobile sidebar overlay */}
         {sidebarOpen && (
-          <div className="md:hidden fixed inset-0 z-40">
+          <div
+            className="md:hidden fixed inset-0 z-40"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Section navigation"
+          >
             <div
               className="absolute inset-0 bg-black/30"
               onClick={toggleSidebar}
+              onKeyDown={(e) => { if (e.key === 'Escape') toggleSidebar(); }}
               aria-hidden="true"
             />
             <aside className="relative w-72 h-full bg-white overflow-y-auto shadow-xl">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+                <span className="text-sm font-semibold text-gray-700">Sections</span>
+                <button
+                  type="button"
+                  onClick={toggleSidebar}
+                  className="rounded-md p-1 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  aria-label="Close navigation"
+                >
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
               <SectionSidebar submissionId={submissionId} />
             </aside>
           </div>
         )}
 
         {/* Center content */}
-        <main className="flex-1 overflow-y-auto">
+        <main id="main-content" className="flex-1 overflow-y-auto" role="main">
           <div className="mx-auto max-w-3xl px-4 py-6 sm:px-6 lg:px-8 pb-24">
             {children}
           </div>
@@ -106,10 +155,11 @@ export function FormShell({ submissionId, children }: FormShellProps) {
                 </button>
               </div>
 
-              {/* Placeholder for pdf.js canvas */}
-              <div className="rounded-md border border-gray-200 bg-gray-100 aspect-[8.5/11] flex items-center justify-center">
-                <p className="text-sm text-gray-400">PDF preview will render here</p>
-              </div>
+              <PdfPreview
+                pageNumber={currentPage}
+                activeFieldRect={activeRect}
+                onPageChange={setCurrentPage}
+              />
             </div>
           </aside>
         )}

@@ -4,7 +4,7 @@ services:
     container_name: sf86-db
     restart: unless-stopped
     ports:
-      - "5432:5432"
+      - "5434:5432"
     environment:
       POSTGRES_DB: sf86
       POSTGRES_USER: sf86user
@@ -32,7 +32,7 @@ services:
     volumes:
       - ./pdf-service/templates:/app/templates:ro
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"]
       interval: 15s
       timeout: 5s
       retries: 3

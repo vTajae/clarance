@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-02-28T05:50:55.618Z",
+  "seed": 42,
+  "totalSent": 6197,
+  "totalMatched": 6197,
+  "totalMismatched": 0,
+  "matchRate": 100,
+  "byType": {
+    "text": {
+      "sent": 2239,
+      "matched": 2239,
+      "mismatched": []
+    },
+    "date": {
+      "sent": 602,
+      "matched": 602,
+      "mismatched": []
+    },
+    "radio": {
+      "sent": 398,
+      "matched": 398,
+      "mismatched": []
+    },
+    "select": {
+      "sent": 159,
+      "matched": 159,
+      "mismatched": []
+    },
+    "checkbox": {
+      "sent": 1793,
+      "matched": 1793,
+      "mismatched": []
+    },
+    "ssn": {
+      "sent": 140,
+      "matched": 140,
+      "mismatched": []
+    },
+    "country": {
+      "sent": 375,
+      "matched": 375,
+      "mismatched": []
+    },
+    "state": {
+      "sent": 323,
+      "matched": 323,
+      "mismatched": []
+    },
+    "telephone": {
+      "sent": 146,
+      "matched": 146,
+      "mismatched": []
+    },
+    "email": {
+      "sent": 22,
+      "matched": 22,
+      "mismatched": []
+    }
+  }
+}

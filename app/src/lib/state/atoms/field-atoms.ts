@@ -18,8 +18,9 @@ import { atom } from 'jotai';
 import { atomFamily } from 'jotai/utils';
 
 import type { FieldRegistry } from '@/lib/field-registry/registry-loader';
-import type { SF86Section, SF86SectionGroup } from '@/lib/field-registry/types';
+import type { FieldDefinition, SF86Section, SF86SectionGroup } from '@/lib/field-registry/types';
 import { SECTION_GROUPS, SECTION_META } from '@/lib/field-registry/types';
+import { evaluateShowWhen } from '@/lib/conditional/expression-evaluator';
 
 // ---------------------------------------------------------------------------
 // Primitive value type
@@ -122,13 +123,20 @@ export function sectionCompletionAtom(section: SF86Section) {
     const required = registry.getRequiredFields(section);
     if (required.length === 0) return 1; // nothing required -> complete
 
+    const getVal = (key: string) => get(fieldValueAtomFamily(key));
+
+    // Only count visible required fields
+    let totalVisible = 0;
     let filled = 0;
     for (const field of required) {
+      if (!isFieldVisible(field, getVal)) continue;
+      totalVisible++;
       const value = get(fieldValueAtomFamily(field.semanticKey));
       if (isFieldFilled(value)) filled++;
     }
 
-    return filled / required.length;
+    if (totalVisible === 0) return 1;
+    return filled / totalVisible;
   });
 }
 
@@ -143,20 +151,23 @@ export function sectionGroupCompletionAtom(group: SF86SectionGroup) {
     const sections = SECTION_GROUPS[group];
     if (!sections || sections.length === 0) return 1;
 
-    let totalRequired = 0;
+    const getVal = (key: string) => get(fieldValueAtomFamily(key));
+
+    let totalVisible = 0;
     let totalFilled = 0;
 
     for (const section of sections) {
       const required = registry.getRequiredFields(section);
-      totalRequired += required.length;
       for (const field of required) {
+        if (!isFieldVisible(field, getVal)) continue;
+        totalVisible++;
         const value = get(fieldValueAtomFamily(field.semanticKey));
         if (isFieldFilled(value)) totalFilled++;
       }
     }
 
-    if (totalRequired === 0) return 1;
-    return totalFilled / totalRequired;
+    if (totalVisible === 0) return 1;
+    return totalFilled / totalVisible;
   });
 }
 
@@ -170,21 +181,23 @@ export const formCompletionAtom = atom<number>((get) => {
   if (!registry) return 0;
 
   const allSections = Object.keys(SECTION_META) as SF86Section[];
+  const getVal = (key: string) => get(fieldValueAtomFamily(key));
 
-  let totalRequired = 0;
+  let totalVisible = 0;
   let totalFilled = 0;
 
   for (const section of allSections) {
     const required = registry.getRequiredFields(section);
-    totalRequired += required.length;
     for (const field of required) {
+      if (!isFieldVisible(field, getVal)) continue;
+      totalVisible++;
       const value = get(fieldValueAtomFamily(field.semanticKey));
       if (isFieldFilled(value)) totalFilled++;
     }
   }
 
-  if (totalRequired === 0) return 1;
-  return totalFilled / totalRequired;
+  if (totalVisible === 0) return 1;
+  return totalFilled / totalVisible;
 });
 
 // ---------------------------------------------------------------------------
@@ -218,4 +231,20 @@ function isFieldFilled(value: FieldValue): boolean {
   if (typeof value === 'boolean') return true; // even `false` is a deliberate answer
   if (typeof value === 'number') return true;
   return false;
+}
+
+/**
+ * Determines whether a field is currently visible based on its dependsOn/showWhen.
+ * Used by completion atoms and export to exclude hidden fields.
+ *
+ * @param field - The field definition (must have dependsOn + showWhen to be conditional)
+ * @param getParentValue - Function to retrieve the parent field's value
+ */
+function isFieldVisible(
+  field: FieldDefinition,
+  getParentValue: (key: string) => FieldValue,
+): boolean {
+  if (!field.dependsOn) return true;
+  const parentValue = getParentValue(field.dependsOn);
+  return evaluateShowWhen(field.showWhen, parentValue);
 }

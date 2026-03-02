@@ -82,6 +82,7 @@ export function useAutoSave(
   // -- Zustand integration --------------------------------------------------
   const setSaveStatus = useAppStore((s) => s.setSaveStatus);
   const markSaved = useAppStore((s) => s.markSaved);
+  const registerSaveNow = useAppStore((s) => s.registerSaveNow);
 
   // -- Dirty tracking -------------------------------------------------------
   const clearDirty = useSetAtom(clearDirtyFieldsAtom);
@@ -201,6 +202,12 @@ export function useAutoSave(
 
     await persist(latestSnapshotRef.current);
   }, [persist]);
+
+  // -- Register saveNow in Zustand so WizardControls can call it -----------
+  useEffect(() => {
+    registerSaveNow(saveNow);
+    return () => registerSaveNow(null);
+  }, [saveNow, registerSaveNow]);
 
   // -- Cleanup on unmount ---------------------------------------------------
   //

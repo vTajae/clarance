@@ -1,0 +1,716 @@
+[
+  {
+    "pdfFieldName": "form1[0].Sections1-6[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "PERSONS COMPLETING THIS FORM SHOULD BEGIN WITH THE QUESTIONS BELOW AFTER CAREFULLY READING",
+    "newLabel": "I have read the instructions and understand that withholding, misrepresenting, or falsifying information is subject to penalties",
+    "reason": "Current label is section instructions boilerplate, not the actual field prompt. This is a YES/NO certification radio button on page 5 where the applicant acknowledges understanding of consequences for false statements. The nearest text confirms the certification language."
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "newLabel": "Does your unemployment verifier have an APO/FPO address?",
+    "reason": "Field is in section13_4 (unemployment verification). RadioButtonList[2] has YES/NO options. Nearest text 'Does your unemployment verifier have an APO/FPO address?' exactly matches. Current label is a generic physical-location instruction that was incorrectly assigned."
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "newLabel": "Does your unemployment verifier have an APO/FPO address?",
+    "reason": "Repeat instance [1] of the same unemployment verifier APO/FPO question. Same YES/NO pattern with same nearest text."
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "newLabel": "Does your unemployment verifier have an APO/FPO address?",
+    "reason": "Repeat instance [2] of the same unemployment verifier APO/FPO question. Same YES/NO pattern with same nearest text."
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "newLabel": "Does your unemployment verifier have an APO/FPO address?",
+    "reason": "Repeat instance [3] of the same unemployment verifier APO/FPO question. Same YES/NO pattern with same nearest text."
+  },
+  {
+    "pdfFieldName": "form1[0].Section11[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide dates of residence.",
+    "newLabel": "Type of residence",
+    "reason": "Options are 1/2/3/4 mapping to housing types (Owned, Rented, Military housing, Other). Nearby text includes 'Military housing' and 'Other'. This is the housing type selector, not a date field. 'Provide dates of residence' is a nearby section instruction that was incorrectly assigned."
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide dates of residence.",
+    "newLabel": "Type of residence",
+    "reason": "Same housing type selector as Section11[0].RadioButtonList[0] but for second residence entry. Options 1/2/3/4 for housing types."
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide dates of residence.",
+    "newLabel": "Type of residence",
+    "reason": "Same housing type selector for third residence entry. Options 1/2/3/4 for housing types."
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Provide dates of residence.",
+    "newLabel": "Type of residence",
+    "reason": "Same housing type selector for fourth residence entry. Options 1/2/3/4, nearby text 'Military housing' and 'Other' confirm this is housing type, not dates."
+  },
+  {
+    "pdfFieldName": "form1[0].Section11[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "newLabel": "Do you have an APO/FPO address at this residence?",
+    "reason": "YES/NO radio group. Candidates include 'NO' and 'YES'. Current label is a generic physical-location instruction inherited from another field. In Section 11 (residency), RadioButtonList[1] follows the address fields and asks about APO/FPO."
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "newLabel": "Do you have an APO/FPO address at this residence?",
+    "reason": "Same APO/FPO question for second residence entry. YES/NO options confirm this is not a location-data instruction."
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "newLabel": "Do you have an APO/FPO address at this residence?",
+    "reason": "Same APO/FPO question for third residence entry."
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "newLabel": "Do you have an APO/FPO address at this residence?",
+    "reason": "Same APO/FPO question for fourth residence entry. Note: RadioButtonList index differs (0 vs 1) on this page variant but the YES/NO options and nearby text confirm the same question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[7].RadioButtonList[3]",
+    "action": "CHANGE",
+    "currentLabel": "Guard",
+    "newLabel": "Officer or enlisted",
+    "reason": "Options are 3 values. Nearest text is 'Officer', 'Officer or enlisted', 'Not Applicable'. This asks whether the service member was an officer or enlisted. 'Guard' is a nearby text fragment from the branch-of-service section that was incorrectly assigned."
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[10].RadioButtonList[5]",
+    "action": "CHANGE",
+    "currentLabel": "Were you discharged from this instance of U.S. military service, to include Reserves, or National Guard?",
+    "newLabel": "Provide the type of discharge you received",
+    "reason": "Options are 6 values mapping to discharge types. Nearest text shows 'General', 'Honorable Conditions', 'Dishonorable', and 'Provide the type of discharge you received:' is a candidate. Current label is the YES/NO discharge question (RadioButtonList[4]), not the discharge type selector. The YES/NO question is already correctly labeled on RadioButtonList[4]."
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[13].#area[14].RadioButtonList[8]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the reason(s) for the discharge, if discharge is other than Honorable",
+    "newLabel": "Branch of service (additional service instance)",
+    "reason": "Options are 7 values. Nearest text shows 'Coast Guard', 'Air Force', 'Guard' \u2014 these are military branches, not discharge reasons. This is the branch-of-service selector for the second military service instance. The nested #area[13].#area[14] path confirms it is in a repeating service block."
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[15].RadioButtonList[9]",
+    "action": "CHANGE",
+    "currentLabel": "Guard",
+    "newLabel": "Officer or enlisted (additional service instance)",
+    "reason": "Same pattern as RadioButtonList[3] but for second service instance. Options are 3 values, nearest text shows 'Officer', 'Officer or enlisted', 'Not Applicable'. 'Guard' was incorrectly picked up from nearby branch-of-service text."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_5[0].TextField11[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide explanation",
+    "newLabel": "Explanation for not seeking drug counseling or treatment",
+    "reason": "Generic 'Provide explanation' does not convey context. This TextField is in Section 23.5 under the 'NO' branch of 'Did you take action to receive counseling or treatment?' and captures why the applicant did not seek treatment."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6_1[0].TextField11[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide explanation",
+    "newLabel": "Explanation for not seeking drug counseling or treatment",
+    "reason": "Same pattern as Section_23_5 TextField11[0] but in the repeat instance (Section 23.6.1). Generic label lacks context about what is being explained."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_3[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide an estimate of the number of times you used and/or were involved with this",
+    "newLabel": "Have you EVER illegally used a drug while employed as a law enforcement officer or in a sensitive position? (Yes/No)",
+    "reason": "Current label is an instruction for a text field, not the question for this radio button. Section 23.3 asks about drug use while in law enforcement/sensitive positions. The nearestText confirms the actual question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_4[0].#area[1].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+    "newLabel": "Have you EVER illegally used a drug while possessing a security clearance? (Yes/No)",
+    "reason": "Current label is from a different field (prescription drug misuse instruction). Section 23.4 RadioButtonList[1] is the Yes/No radio for drug use while holding a security clearance."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+    "newLabel": "Have you EVER illegally used a drug while possessing a security clearance? (Yes/No)",
+    "reason": "Paired radio button with RadioButtonList[1] in Section 23.4. Same wrong current label about prescription drug misuse."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_4[0].#area[3].RadioButtonList[3]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+    "newLabel": "Do you intend to use drugs while possessing a security clearance in the future? (Yes/No)",
+    "reason": "Different sub-question within Section 23.4 (#area[3] indicates a separate question block). Current label is from the prescription drug misuse instruction, not this intent question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[4]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+    "newLabel": "Do you intend to use drugs while possessing a security clearance in the future? (Yes/No)",
+    "reason": "Paired radio button with RadioButtonList[3] in Section 23.4 #area[3]. Same wrong prescription drug instruction label."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_5[0].#area[3].RadioButtonList[3]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+    "newLabel": "Did you successfully complete the drug treatment? (Yes/No)",
+    "reason": "Current label is for an address text field. The nearestText 'Did you successfully complete the treatment?' and YES/NO candidates confirm this radio is the treatment completion question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_5[0].RadioButtonList[4]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the type of drug or controlled substance for which you were treated.",
+    "newLabel": "Drug type treated: Other",
+    "reason": "Current label is the instruction header for the drug type radio group. This specific RadioButtonList[4] is positioned nearest to 'Other' (distance 3.1 right) in the drug category selector."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6_1[0].#area[2].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+    "newLabel": "Did you successfully complete the drug treatment? (Yes/No)",
+    "reason": "Same pattern as Section_23_5 RadioButtonList[3]. Current label is for an address field. The nearestText and YES/NO candidates confirm this is the treatment completion radio."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the type of drug or controlled substance for which you were treated.",
+    "newLabel": "Drug type treated: Other",
+    "reason": "Same drug type selector pattern. RadioButtonList[1] is nearest to 'Other (Provide explanation)' at distance 3.2. Current label is the instruction header, not the specific option."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+    "newLabel": "Did you successfully complete the drug treatment? (Yes/No)",
+    "reason": "Address label assigned to a radio button. The nearestText 'Did you successfully complete the treatment?' and YES/NO candidates confirm this is the completion question radio."
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[4]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+    "newLabel": "Drug treatment counseling follow-up question (Yes/No)",
+    "reason": "Address label assigned to a radio button. RadioButtonList[4] is further down in Section 23.6 with 'Did you successfully complete the treatment?' in candidates (distance 50.5), indicating a sub-question about counseling follow-up."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Was your use while you were employed as a law enforcement officer, prosecutor, or courtroom official, or while in",
+    "newLabel": "In the last 7 years, have you illegally used any drugs or controlled substances? (Yes/No)",
+    "reason": "Current label references Section 23.3 question (law enforcement context) but this field is in Section 23.1 (general drug use in last 7 years). The branching instruction 'NO (If NO, proceed to 23.2)' in candidates confirms this is the 23.1 top-level question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Was your use while you were employed as a law enforcement officer, prosecutor, or courtroom official, or while in",
+    "newLabel": "In the last 7 years, have you illegally used any drugs or controlled substances? (Yes/No)",
+    "reason": "Paired radio button with RadioButtonList[0] in Section 23.1. Same incorrect label referencing Section 23.3."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].#area[2].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Provide nature of use, frequency, and number of times used.",
+    "newLabel": "Do you intend to use this drug or controlled substance in the future? (Yes/No)",
+    "reason": "Current label is an instruction for a text field. #area[2] RadioButtonList[2] in Section 23.1 detail block corresponds to the intent-to-use sub-question, confirmed by YES/NO candidate pattern."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].#area[3].RadioButtonList[3]",
+    "action": "CHANGE",
+    "currentLabel": "Provide nature of use, frequency, and number of times used.",
+    "newLabel": "Do you intend to use this drug or controlled substance in the future? (Yes/No)",
+    "reason": "Paired radio with RadioButtonList[2] in #area[3]. Same wrong instruction label. This is the other radio in the intent-to-use Yes/No pair."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[4]",
+    "action": "CHANGE",
+    "currentLabel": "We note, with reference to this section, that neither your truthful responses nor information derived from your respo...",
+    "newLabel": "In the last 7 years, have you illegally used any drugs or controlled substances? (Yes/No)",
+    "reason": "Current label is the section preamble/disclaimer text, not a question. Candidate 'NO (If NO, proceed to 23.2)' confirms this is the main Section 23.1 gateway question. Multiple RadioButtonList entries for the same question exist due to XFA-to-AcroForm conversion artifacts."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].#area[6].RadioButtonList[5]",
+    "action": "CHANGE",
+    "currentLabel": "Provide nature of use, frequency, and number of times used.",
+    "newLabel": "Do you intend to use this drug or controlled substance in the future? (Yes/No)",
+    "reason": "#area[6] is a repeat instance of the drug detail block. Same wrong instruction label. This is the intent-to-use radio for a second drug entry."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].#area[7].RadioButtonList[6]",
+    "action": "CHANGE",
+    "currentLabel": "Provide nature of use, frequency, and number of times used.",
+    "newLabel": "Do you intend to use this drug or controlled substance in the future? (Yes/No)",
+    "reason": "Paired radio with RadioButtonList[5] in #area[7]. Same wrong instruction label for the second drug entry intent question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[8]",
+    "action": "CHANGE",
+    "currentLabel": "Provide explanation of why you intend or do not intend to use this drug or controlled substance in the future.",
+    "newLabel": "Type of drug or controlled substance used",
+    "reason": "Current label references the intent explanation text field. RadioButtonList[8] is positioned near drug category options (Other at distance 3.2, Steroids at 8.4), confirming this is a drug type selector radio."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].#area[1].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the nature and frequency of activity.",
+    "newLabel": "In the last 7 years, have you been involved in the illegal purchase, manufacture, cultivation, trafficking, production, transfer, shipping, receiving, handling, or sale of a drug? (Yes/No)",
+    "reason": "Current label is an instruction for a text field. Section 23.2 #area[1] RadioButtonList[0] is the Yes/No radio for the Section 23.2 gateway question about drug involvement activities."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the nature and frequency of activity.",
+    "newLabel": "In the last 7 years, have you been involved in the illegal purchase, manufacture, cultivation, trafficking, production, transfer, shipping, receiving, handling, or sale of a drug? (Yes/No)",
+    "reason": "Paired radio with RadioButtonList[0] in Section 23.2. Same wrong instruction label."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].#area[3].RadioButtonList[4]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the nature and frequency of activity.",
+    "newLabel": "Do you intend to engage in this drug involvement activity in the future? (Yes/No)",
+    "reason": "#area[3] RadioButtonList[4] in Section 23.2 is a sub-question within the drug involvement detail block, corresponding to the future-intent question. Current label is a text field instruction."
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[5]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the nature and frequency of activity.",
+    "newLabel": "Do you intend to engage in this drug involvement activity in the future? (Yes/No)",
+    "reason": "Paired radio with RadioButtonList[4] for the intent sub-question in Section 23.2. Same wrong instruction label."
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].#area[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "A mental health professional",
+    "newLabel": "Ordered to seek alcohol counseling by: Other",
+    "reason": "Current label 'A mental health professional' is from a different radio option in the who-ordered-counseling checklist. Nearest candidate 'Other' at distance 3.2 and 'counseling or treatment by any of the above' at 5.8 confirm this radio is for the 'Other' option."
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].#area[1].RadioButtonList[3]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the full address for the counseling/treatment provider.    ( Provide City and Country if outside the United S...",
+    "newLabel": "Did you successfully complete the alcohol treatment program? (Yes/No)",
+    "reason": "Address label assigned to a radio button. The nearestText 'Did you successfully complete the treatment program?' and YES/NO candidates confirm this is the alcohol treatment completion question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].#area[2].RadioButtonList[4]",
+    "action": "CHANGE",
+    "currentLabel": "A mental health professional",
+    "newLabel": "Ordered to seek alcohol counseling by: Other",
+    "reason": "Same pattern as #area[0] RadioButtonList[0] but for a second counseling entry. Current label references a different option in the checklist. Nearest 'Other' at distance 3.1 confirms."
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].#area[3].RadioButtonList[6]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the full address for the counseling/treatment provider.    ( Provide City and Country if outside the United S...",
+    "newLabel": "Did you successfully complete the alcohol treatment program? (Yes/No)",
+    "reason": "Same pattern as #area[1] RadioButtonList[3]. Address label on a radio button. NearestText and candidates confirm this is the treatment completion Yes/No for a second counseling entry."
+  },
+  {
+    "pdfFieldName": "form1[0].Section21a[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Mental health treatment and counseling, in and of itself,  is not a reason  to revoke or deny eligibility for access ...",
+    "newLabel": "Has a court or administrative agency EVER declared you mentally incompetent? (Yes/No)",
+    "reason": "Current label is the Section 21 introductory disclaimer/preamble, not the question. Section 21A asks about mental incompetence declarations. Candidate 'NO (If NO, proceed to Section 21B)' confirms the branching structure."
+  },
+  {
+    "pdfFieldName": "form1[0].Section21b[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Have you EVER consulted a mental health professional about a mental health condition?",
+    "newLabel": "Has a court or administrative agency EVER ordered you to consult with a mental health professional? (Yes/No)",
+    "reason": "Current label is Section 21C's question (voluntary consultation). Section 21B asks about being ORDERED to consult. NearestText 'Complete the following if you responded Yes to having a court...EVER ordered you to consult' confirms the correct question. Candidate 'NO (If NO, proceed to Section 21C)' confirms branching."
+  },
+  {
+    "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "The following question asks whether you have been diagnosed with a specified mental health condition that may, partic...",
+    "newLabel": "Have you EVER been diagnosed with psychotic disorder, schizophrenia, schizoaffective disorder, delusional disorder, bipolar mood disorder, borderline personality disorder, or antisocial personality disorder? (Yes/No)",
+    "reason": "Current label is the preamble text, not the actual question. NearestText 'Have you EVER been diagnosed by a physician or other health professional' confirms the question. Candidate 'NO (If NO, proceed to Section 21E)' confirms branching."
+  },
+  {
+    "pdfFieldName": "form1[0].Section21d3[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "altering or discontinuing, or failing to start a prescribed course of treatment for any of the listed diagnoses?",
+    "newLabel": "In the last 7 years, have you failed to consult a medical professional before altering, discontinuing, or failing to start prescribed treatment for a listed mental health diagnosis? (Yes/No)",
+    "reason": "Current label is a truncated fragment missing the beginning of the question. NearestText provides the full question opening. Candidate 'NO (If NO, proceed to Section 21E)' confirms branching structure."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "newLabel": "Is this relative a U.S. citizen?",
+    "reason": "RadioButtonList with NO and I don't know options indicates a citizenship question, not an address prompt. SF-86 18.2 asks 'Is this relative a U.S. citizen?' with YES/NO/I don't know."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[1].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "newLabel": "Is this relative a U.S. citizen?",
+    "reason": "Same repeating pattern as [0] instance. Radio options NO/I don't know confirm citizenship question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[2].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "newLabel": "Is this relative a U.S. citizen?",
+    "reason": "Same repeating pattern as [0] instance. Radio options NO/I don't know confirm citizenship question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[3].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "newLabel": "Is this relative a U.S. citizen?",
+    "reason": "Same repeating pattern as [0] instance. Radio options NO/I don't know confirm citizenship question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[4].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "newLabel": "Is this relative a U.S. citizen?",
+    "reason": "Same repeating pattern as [0] instance. Radio options NO/I don't know confirm citizenship question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[5].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "newLabel": "Is this relative a U.S. citizen?",
+    "reason": "Same repeating pattern as [0] instance. Radio options NO/I don't know confirm citizenship question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[0].TextField11[6]",
+    "action": "CHANGE",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "newLabel": "Relative's Current Address - Street",
+    "reason": "TextField directly below 'Street' label (distance 0.0, score 1.8) and below 'Provide your relative's current address' instruction. Current label is the section header, not the field label."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[1].TextField11[6]",
+    "action": "CHANGE",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "newLabel": "Relative's Current Address - Street",
+    "reason": "Same repeating pattern as [0] instance. Street label at distance 0.0 confirms this is the street address field."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[2].TextField11[6]",
+    "action": "CHANGE",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "newLabel": "Relative's Current Address - Street",
+    "reason": "Same repeating pattern as [0] instance. Street label at distance 0.0 confirms this is the street address field."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[3].TextField11[6]",
+    "action": "CHANGE",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "newLabel": "Relative's Current Address - Street",
+    "reason": "Same repeating pattern as [0] instance. Street label at distance 0.0 confirms this is the street address field."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[4].TextField11[6]",
+    "action": "CHANGE",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "newLabel": "Relative's Current Address - Street",
+    "reason": "Same repeating pattern as [0] instance. Street label at distance 0.0 confirms this is the street address field."
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[5].TextField11[6]",
+    "action": "CHANGE",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "newLabel": "Relative's Current Address - Street",
+    "reason": "Same repeating pattern as [0] instance. Street label at distance 0.0 confirms this is the street address field."
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_1[0].TextField11[7]",
+    "action": "CHANGE",
+    "currentLabel": "17.1  Complete the following if you selected \u201ccurrently in a civil marriage,\u201d \u201clegally recognized civil union,\" or \"legally recognized domestic partnership\u201d or \u201cSeparated.\u201d Complete the following abou",
+    "newLabel": "Spouse/Partner Last Name",
+    "reason": "'Last name' label at distance 0.0 above_left (score 1.8), 'First name' at 5.3 above. Current label is the section header. This is clearly the last name input for the current spouse/partner."
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_1_2[0].TextField11[0]",
+    "action": "CHANGE",
+    "currentLabel": "If you have indicated an APO/FPO address, complete (a). If you have indicated an address outside of the United States, complete (b). Provide your spouse's APO/FPO address.  (Provide City and Country i",
+    "newLabel": "Spouse/Partner APO/FPO Street Address",
+    "reason": "'Street Address/Unit/Duty Location' at distance 0.0 above (score 2.0). Current label is instruction text, not the field label. This is the street address input for the spouse's APO/FPO address."
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_2[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide where the record of divorce/dissolution or annulment is located.  ( Provide City and Country if outside the U...",
+    "newLabel": "Is this former spouse a U.S. citizen?",
+    "reason": "Radio options include 'I don't know' (distance 4.2) which is characteristic of citizenship questions in SF-86. 'NO (If NO, complete (a))' pattern matches citizenship sub-questions. Current label refers to divorce record location which is a different field."
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_2_2[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide where the record of divorce/dissolution or annulment is located.  ( Provide City and Country if outside the U...",
+    "newLabel": "Is this former spouse a U.S. citizen?",
+    "reason": "Same pattern as Section17_2[0]. Radio options include 'I don't know' confirming citizenship question. Second instance for a second former spouse."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[71].From_Datefield_Name_2[9]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the date of purchase to be acquired. (Month/Day/Year)",
+    "newLabel": "Provide the date sold, if applicable (Month/Day/Year)",
+    "reason": "Nearest text at 0.6 distance is the tail of 'Provide the date sold, if applicable. (Month/Day/Year)'. Candidate 'Provide the date sold, if' confirmed at 10.2 above. This is a date-sold field in Section 20A foreign real estate, not a date-of-purchase field."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[72].RadioButtonList[12]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the date the benefit is expected to end.  (Month/Day/Year)",
+    "newLabel": "Type of foreign benefit received",
+    "reason": "Field is a RadioButtonList, not a date field. Candidates 'Other (Provide explanation)' at 3.7 right and 'Educational' in sibling field indicate this is a benefit-type radio group in Section 20A/20B. A date label on a radio button is structurally wrong."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[74].RadioButtonList[19]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the date the benefit is expected to end.  (Month/Day/Year)",
+    "newLabel": "Type of foreign benefit received",
+    "reason": "Continuation page duplicate of RadioButtonList[12]. Same structural mismatch: date label on a radio button with 'Other (Provide explanation)' and 'Monthly' options nearby."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[77].RadioButtonList[23]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the country of origin for the organization or business.",
+    "newLabel": "Have you or any member of your immediate family in the last seven (7) years been asked to provide advice or serve as a consultant?",
+    "reason": "YES/NO radio with 'NO (If NO, proceed to 20B.3)' at 2.3 right and 'YES' at 13.7 left. Nearest text references being asked to provide advice/consulting. This is Section 20B.2, not a country-of-origin text field."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[92].RadioButtonList[41]",
+    "action": "CHANGE",
+    "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+    "newLabel": "Number of foreign trips in the last seven (7) years",
+    "reason": "RadioButtonList with options 'Many short trips' at 3.0, 'More than 30' at 5.1, and '21-30' at 24.5. These are trip-count range options for Section 20C. Current label is the instruction paragraph, not the field question."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[93].RadioButtonList[49]",
+    "action": "CHANGE",
+    "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+    "newLabel": "Number of foreign trips in the last seven (7) years",
+    "reason": "Continuation page (page 85) duplicate of RadioButtonList[41]. Same trip-count range radio with 'Many short trips', 'More than 30', '21-30' options."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[94].RadioButtonList[57]",
+    "action": "CHANGE",
+    "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+    "newLabel": "Number of foreign trips in the last seven (7) years",
+    "reason": "Continuation page (page 86) duplicate of RadioButtonList[41]. Same trip-count range radio with identical candidates."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[95].RadioButtonList[65]",
+    "action": "CHANGE",
+    "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+    "newLabel": "Number of foreign trips in the last seven (7) years",
+    "reason": "Continuation page (page 87) duplicate of RadioButtonList[41]. Same trip-count range radio with identical candidates."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[72].RadioButtonList[13]",
+    "action": "CHANGE",
+    "currentLabel": "Frequency of foreign benefit (one-time or continuing)",
+    "newLabel": "Type of foreign benefit (e.g., Educational, Medical, Other)",
+    "reason": "RadioButtonList near 'Other such benefit' at 3.6 right and 'Educational' at 6.7 right. These are benefit-type options, not frequency options. The current 'Frequency' label belongs to a different field."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[74].RadioButtonList[20]",
+    "action": "CHANGE",
+    "currentLabel": "Frequency of foreign benefit (one-time or continuing)",
+    "newLabel": "Type of foreign benefit (e.g., Educational, Medical, Other)",
+    "reason": "Continuation page (page 74) duplicate of RadioButtonList[13]. Same benefit-type options 'Other such benefit' and 'Educational' nearby."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[83].#subform[84].RadioButtonList2[0]",
+    "action": "CHANGE",
+    "currentLabel": "Have you, your spouse, or legally recognized civil partner, cohabitant, or dependent children EVER had any foreign financial interests?",
+    "newLabel": "Have you or any member of your immediate family in the last seven (7) years had any contact with a foreign government, its establishment, or its representatives?",
+    "reason": "YES/NO radio with 'NO (If NO, Proceed to 20B.7)' at 3.7 right. Redirect to 20B.7 places this at Section 20B.6 (foreign government contacts). Nearest text confirms 'contact with a foreign'. Current label is from Section 20A (foreign financial interests), not 20B.6."
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[87].RadioButtonList5[0]",
+    "action": "CHANGE",
+    "currentLabel": "Have you EVER provided financial support for any foreign national?",
+    "newLabel": "Have you in the last seven (7) years sponsored any foreign national to come to the U.S.?",
+    "reason": "YES/NO radio with 'NO (If NO, proceed to 20B.8)' at 2.4 right. Redirect to 20B.8 places this at Section 20B.7 (sponsoring foreign nationals). Nearest text confirms 'sponsored any foreign national to come to the U.S. as a student'. Current label is from a different section."
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_1[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+    "newLabel": "Frequency of contact with foreign national",
+    "reason": "RadioButtonList with 'Other (Provide explanation)' at 3.7 right and 'Annually' at 5.7 right. These are frequency options (Annually, Quarterly, etc.), not a date field. Current label is a date instruction that belongs to a different text field."
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_1[0].#area[3].RadioButtonList[3]",
+    "action": "CHANGE",
+    "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+    "newLabel": "Do you know the foreign national's current employer?",
+    "reason": "RadioButtonList with 'I don't know' at 3.8 right and 'YES' at 15.3 left, adjacent to 'Provide the name of the foreign national's current employer' text at 3.0 right. This is the employer-knowledge radio (Yes/No/I don't know), not an APO/FPO address question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_2[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+    "newLabel": "Frequency of contact with foreign national",
+    "reason": "Section19_2 continuation of RadioButtonList[1] pattern. Same frequency options 'Other (Provide explanation)' and 'Annually' nearby. Date label on radio button is structurally wrong."
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_2[0].#area[3].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+    "newLabel": "Do you know the foreign national's current employer?",
+    "reason": "Section19_2 continuation of employer-knowledge pattern. Same candidates: 'I don't know' at 3.9 right, 'YES' at 15.2 left, employer text at 2.9 right."
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_3[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+    "newLabel": "Frequency of contact with foreign national",
+    "reason": "Section19_3 continuation of frequency-of-contact pattern. Same candidates: 'Other (Provide explanation)' at 3.7 right, 'Annually' at 5.7 right."
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_3[0].#area[3].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+    "newLabel": "Do you know the foreign national's current employer?",
+    "reason": "Section19_3 continuation of employer-knowledge pattern. Same candidates: 'I don't know' at 3.8 right, 'YES' at 15.3 left, employer text at 2.9 right."
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_4[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+    "newLabel": "Frequency of contact with foreign national",
+    "reason": "Section19_4 continuation of frequency-of-contact pattern. Same candidates: 'Other (Provide explanation)' at 3.6 right, 'Annually' at 5.7 right."
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_4[0].#area[3].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+    "newLabel": "Do you know the foreign national's current employer?",
+    "reason": "Section19_4 continuation of employer-knowledge pattern. Same candidates: 'I don't know' at 3.9 right, 'YES' at 15.2 left, employer text at 2.9 right."
+  },
+  {
+    "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[5]",
+    "action": "CHANGE",
+    "currentLabel": "During what period of time did you hold citizenship with this country?",
+    "newLabel": "Have you EVER been issued a passport (or identity card for travel) by a country other than the U.S.?",
+    "reason": "RadioButtonList[5] on page 8 with 'YES' at 3.3 right and nearest text referencing Section 10.2 passport question. 'Complete the following if you answered Yes to having been issued a passport' at 8.1 left confirms this is the 10.2 YES/NO radio. Current label is from Section 10.1 sub-question about citizenship period."
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_5[0].#area[3].RadioButtonList[3]",
+    "action": "CHANGE",
+    "currentLabel": "Provide a description of the sentence.",
+    "newLabel": "Were you sentenced as a result of this offense?",
+    "reason": "currentLabel is a text field prompt for describing the sentence. This radio button (YES/NO) in #area[3] precedes RadioButtonList[4] ('Were you sentenced to imprisonment for a term exceeding 1 year?'), so it is the initial sentencing yes/no question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_6[0].#area[3].RadioButtonList[2]",
+    "action": "CHANGE",
+    "currentLabel": "Provide a description of the sentence.",
+    "newLabel": "Were you sentenced as a result of this offense?",
+    "reason": "Same misassignment as Section22_5 #area[3].RadioButtonList[3]. This is a YES/NO radio about sentencing, not the text prompt for describing the sentence. Continuation page repeats the same structure."
+  },
+  {
+    "pdfFieldName": "form1[0].Section26[0].RadioButtonList[3]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the address of the trustee for this bankruptcy.  ( Provide City and Country if outside the United States; oth...",
+    "newLabel": "Bankruptcy chapter type (Chapter 7, 11, 12, 13)",
+    "reason": "Candidates show 'Chapter 12' (14.6 left) and 'Chapter 13' (6.4 right). In SF-86 Section 26.1, RadioButtonList[3] selects the bankruptcy chapter type. The currentLabel about trustee address is a text field prompt from a different sub-field."
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide an estimate of the amount (in U.S. dollars) of gambling losses incurred.",
+    "newLabel": "In the last seven (7) years have you failed to file or pay Federal, state, or other taxes when required?",
+    "reason": "Candidates clearly show 'NO (If NO, proceed to 26.4)' at 2.3 right and the full question text at 48.9 left. This is Section 26.3 (tax filing). The currentLabel about gambling losses belongs to Section 26.2, a different sub-question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_3[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide a description of any action(s) you have taken to rectify this situation. If you have not taken any",
+    "newLabel": "Are you currently utilizing, or seeking assistance from, a credit counseling service or other similar resource to resolve your financial difficulties?",
+    "reason": "Candidates show 'NO (If NO, proceed to 26.6)' at 2.3 right and context about credit counseling at 8.6 left. This is Section 26.5 (credit counseling). The currentLabel is a text prompt from a sub-field within a different financial question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_6[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+    "newLabel": "In the last seven (7) years have you had a judgment entered against you or had financial obligations for which you were the sole debtor?",
+    "reason": "Candidates show 'NO (If NO, Proceed to 26.7)' at 2.8 right and 'judgment entered against you' text at 25.5. This is the Section 26.6 gateway question. The currentLabel is a sub-field text prompt."
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_7[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+    "newLabel": "In the last seven (7) years have you been delinquent on alimony, child support, or other court-ordered financial obligations?",
+    "reason": "Section 26_7 corresponds to Section 26.7 of SF-86. The candidates show the same template ('NO (If NO, Proceed to 26.7)' appears reused). The currentLabel is a sub-field text prompt, not the gateway yes/no question for this section."
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_8[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+    "newLabel": "In the last seven (7) years have you had any possessions or property voluntarily or involuntarily repossessed or foreclosed?",
+    "reason": "Candidates clearly show 'In the last seven (7) years, you had any possessions or property voluntarily or involuntarily repos...' at 9.7 left and 'NO (If NO, proceed to Section 27)' at 2.6 right, confirming this is the last Section 26 question about repossession."
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_9[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+    "newLabel": "In the last seven (7) years have you had any possessions or property voluntarily or involuntarily repossessed or foreclosed? (continuation)",
+    "reason": "Section 26_9 continuation page with same candidate structure as Section26_8. Same 'proceed to Section 27' in NO option. The currentLabel is a sub-field text prompt, not the yes/no question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section29[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "The following pertain to your associations. You are required to answer the questions fully and truthfully, and your f...",
+    "newLabel": "Have you EVER been a member of an organization dedicated to terrorism?",
+    "reason": "Candidates show 'NO (If NO, proceed to 29.2)' at 2.3 right and the nearestText references 'member of an organization dedicated to terrorism.' The currentLabel is the section preamble, not the specific 29.1 question."
+  },
+  {
+    "pdfFieldName": "form1[0].Section29_5[0].TextField11[1]",
+    "action": "CHANGE",
+    "currentLabel": "Full name of the organization",
+    "newLabel": "Provide explanation (association with terrorism-related activities)",
+    "reason": "Nearest candidate 'Provide explanation.' is at distance 0.1 with score 1.659, essentially overlapping the field. This is Section 29_5 (association with terrorism activities) and the text field is for providing an explanation, not an organization name."
+  },
+  {
+    "pdfFieldName": "form1[0].Sections1-6[0].section5[0].TextField11[2]",
+    "action": "CHANGE",
+    "currentLabel": "Complete the following if you have responded 'Yes' to having used other names. Provide your other name(s) used and the period of time you used it/them [for example: your maiden name(s), name(s) by a f",
+    "newLabel": "Other names used - Last name",
+    "reason": "Nearest candidate 'Last name' is at distance 0.0 with score 1.8 (highest possible). semanticKey is namesInfo.0.lastName. The currentLabel is the section instruction header, not the field label."
+  },
+  {
+    "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[1]",
+    "action": "CHANGE",
+    "currentLabel": "Provide your U.S. Social Security Number.",
+    "newLabel": "Have you used any other names? (If NO, proceed to Section 6)",
+    "reason": "Candidates show 'NO (If NO, proceed to Section 6)' at 2.4 right and 'YES' at 12.6 left. This is the Section 5 gateway question about other names used. The currentLabel about SSN belongs to Section 4, a completely different section."
+  },
+  {
+    "pdfFieldName": "form1[0].Section9\\.1-9\\.4[0].TextField11[14]",
+    "action": "CHANGE",
+    "currentLabel": "(Provide explanation)",
+    "newLabel": "Date citizenship document was issued",
+    "reason": "Nearest candidate 'Provide the date document was issued' is at distance 0.5 with score 0.978. Located in Section 9.1-9.4 citizenship documentation area near DS-2019 references. The currentLabel '(Provide explanation)' is a generic prompt from a different field."
+  },
+  {
+    "pdfFieldName": "form1[0].Section27_2[0].RadioButtonList[0]",
+    "action": "CHANGE",
+    "currentLabel": "Have you EVER illegally accessed or attempted to access any information technology system?",
+    "newLabel": "Have you EVER illegally or without authorization modified, destroyed, manipulated, or denied others access to information on any IT system, or introduced a virus or malicious code?",
+    "reason": "Field is in Section27_2, not Section27. The currentLabel describes Section 27.1 (unauthorized access). Section 27_2 with 'NO (If NO, proceed to Section 28)' indicates this is a later question in Section 27 about modification/destruction/malware. The label should reflect the actual 27.2/27.3 question."
+  }
+]

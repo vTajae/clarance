@@ -1,7 +1,21 @@
-import { notFound } from "next/navigation";
-import { SECTION_GROUPS, SECTION_META } from "@/lib/field-registry/types";
-import type { SF86Section, SF86SectionGroup } from "@/lib/field-registry/types";
-import { SectionFormLoader } from "@/components/sections/section-form-loader";
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+import { notFound } from 'next/navigation';
+import { SECTION_GROUPS, SECTION_META } from '@/lib/field-registry/types';
+import type { SF86Section, SF86SectionGroup } from '@/lib/field-registry/types';
+import { SectionErrorBoundary } from '@/components/sections/section-error-boundary';
+
+const SectionFormLoader = dynamic(
+  () => import('@/components/sections/section-form-loader').then((m) => m.SectionFormLoader),
+  {
+    loading: () => (
+      <div className="flex items-center gap-2 py-12 text-sm text-gray-500">
+        <div className="h-5 w-5 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600" />
+        Loading section...
+      </div>
+    ),
+  },
+);
 
 interface PageProps {
   params: Promise<{
@@ -40,10 +54,21 @@ export default async function SectionPage({ params }: PageProps) {
         <p className="mt-2 text-sm text-gray-500">{meta.description}</p>
       </div>
 
-      <SectionFormLoader
-        submissionId={submissionId}
-        sectionKey={sectionKey}
-      />
+      <SectionErrorBoundary sectionName={meta.title}>
+        <Suspense
+          fallback={
+            <div className="flex items-center gap-2 py-12 text-sm text-gray-500">
+              <div className="h-5 w-5 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600" />
+              Loading form...
+            </div>
+          }
+        >
+          <SectionFormLoader
+            submissionId={submissionId}
+            sectionKey={sectionKey}
+          />
+        </Suspense>
+      </SectionErrorBoundary>
     </div>
   );
 }

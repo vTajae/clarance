@@ -17,6 +17,7 @@ Endpoints:
 
 from __future__ import annotations
 
+import asyncio
 import logging
 import time
 from pathlib import Path
@@ -167,18 +168,17 @@ def _resolve_template(template_path: str) -> str:
 
     resolved = candidate.resolve()
 
-    # Security: prevent path traversal outside templates dir for relative paths
-    if not Path(template_path).is_absolute():
-        if not str(resolved).startswith(str(TEMPLATES_DIR.resolve())):
-            raise HTTPException(
-                status_code=400,
-                detail="Template path must not escape the templates directory.",
-            )
+    # Security: ALL paths must resolve within the templates directory
+    if not str(resolved).startswith(str(TEMPLATES_DIR.resolve())):
+        raise HTTPException(
+            status_code=400,
+            detail="Template path must resolve within the templates directory.",
+        )
 
     if not resolved.is_file():
         raise HTTPException(
             status_code=404,
-            detail=f"Template PDF not found: {resolved}",
+            detail=f"Template PDF not found: {resolved.name}",
         )
 
     return str(resolved)
@@ -215,7 +215,7 @@ async def extract_fields(file: UploadFile = File(...)):
 
     start = time.perf_counter()
     try:
-        fields = pdf_ops.extract_all_fields(pdf_bytes)
+        fields = await asyncio.to_thread(pdf_ops.extract_all_fields, pdf_bytes)
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc))
     except Exception as exc:
@@ -261,7 +261,9 @@ async def fill_pdf_endpoint(request: FillPdfRequest):
 
     start = time.perf_counter()
     try:
-        pdf_bytes = pdf_ops.fill_pdf(resolved, request.field_values)
+        pdf_bytes = await asyncio.to_thread(
+            pdf_ops.fill_pdf, resolved, request.field_values
+        )
     except FileNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc))
     except ValueError as exc:
@@ -314,7 +316,9 @@ async def fill_pdf_with_continuation(request: FillPdfWithContinuationRequest):
 
     # Step 1: Fill the main PDF
     try:
-        main_pdf = pdf_ops.fill_pdf(resolved, request.field_values)
+        main_pdf = await asyncio.to_thread(
+            pdf_ops.fill_pdf, resolved, request.field_values
+        )
     except FileNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc))
     except ValueError as exc:
@@ -328,10 +332,12 @@ async def fill_pdf_with_continuation(request: FillPdfWithContinuationRequest):
     # Step 2: Generate and merge continuation pages if overflow data exists
     if request.overflow_data:
         try:
-            continuation = pdf_ops.generate_continuation_page(
-                request.overflow_data
+            continuation = await asyncio.to_thread(
+                pdf_ops.generate_continuation_page, request.overflow_data
             )
-            merged = pdf_ops.merge_pdfs(main_pdf, continuation)
+            merged = await asyncio.to_thread(
+                pdf_ops.merge_pdfs, main_pdf, continuation
+            )
         except ValueError as exc:
             raise HTTPException(status_code=422, detail=str(exc))
         except Exception as exc:
@@ -404,7 +410,9 @@ async def field_coordinates(version: str):
 
     start = time.perf_counter()
     try:
-        fields = pdf_ops.extract_field_metadata(str(template_path))
+        fields = await asyncio.to_thread(
+            pdf_ops.extract_field_metadata, str(template_path)
+        )
     except (FileNotFoundError, ValueError) as exc:
         raise HTTPException(status_code=404, detail=str(exc))
     except Exception as exc:
@@ -427,6 +435,195 @@ async def field_coordinates(version: str):
         template=template_filename,
         field_count=len(fields),
         fields=fields,
+    )
+
+
+@app.get(
+    "/render-page/{version}/{page_num}",
+    summary="Render a PDF page as a PNG image",
+    description=(
+        "Render a specific page from an SF-86 template as a PNG image. "
+        "Used for visual field verification. Supports optional DPI parameter."
+    ),
+    responses={
+        200: {
+            "content": {"image/png": {}},
+            "description": "PNG image of the rendered page.",
+        }
+    },
+)
+async def render_page(version: str, page_num: int, dpi: int = 150):
+    """Render a single PDF page as a PNG image."""
+    dpi = max(50, min(dpi, 600))  # Clamp DPI to safe range
+    version_lower = version.lower()
+    if version_lower not in VERSION_MAP:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unknown version '{version}'. Supported: {', '.join(VERSION_MAP.keys())}",
+        )
+
+    template_path = TEMPLATES_DIR / VERSION_MAP[version_lower]
+    if not template_path.is_file():
+        raise HTTPException(status_code=404, detail=f"Template not found: {template_path}")
+
+    import fitz
+    doc = fitz.open(str(template_path))
+    try:
+        if page_num < 0 or page_num >= doc.page_count:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Page {page_num} out of range (0-{doc.page_count - 1})",
+            )
+        page = doc[page_num]
+        zoom = dpi / 72.0
+        mat = fitz.Matrix(zoom, zoom)
+        pix = page.get_pixmap(matrix=mat)
+        png_bytes = pix.tobytes("png")
+    finally:
+        doc.close()
+
+    return Response(
+        content=png_bytes,
+        media_type="image/png",
+        headers={"Cache-Control": "public, max-age=86400"},
+    )
+
+
+class RenderFilledPageRequest(BaseModel):
+    """Request body for render-filled-page."""
+
+    field_values: dict[str, str] = Field(
+        default_factory=dict,
+        description="AcroForm field name → value mapping for the fields to fill.",
+    )
+
+
+@app.post(
+    "/render-filled-page/{version}/{page_num}",
+    summary="Fill fields and render a single page as PNG (live preview)",
+    description=(
+        "Fills the provided field values into the PDF in memory and renders "
+        "the specified page as a PNG image. Fast path for live preview — "
+        "never writes the full PDF to bytes."
+    ),
+    responses={
+        200: {
+            "content": {"image/png": {}},
+            "description": "PNG image of the rendered page with filled values.",
+        }
+    },
+)
+async def render_filled_page(
+    version: str, page_num: int, body: RenderFilledPageRequest, dpi: int = 72,
+):
+    """Fill fields in memory and render a single page as PNG."""
+    dpi = max(50, min(dpi, 600))  # Clamp DPI to safe range
+    version_lower = version.lower()
+    if version_lower not in VERSION_MAP:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unknown version '{version}'. Supported: {', '.join(VERSION_MAP.keys())}",
+        )
+
+    template_path = TEMPLATES_DIR / VERSION_MAP[version_lower]
+    if not template_path.is_file():
+        raise HTTPException(status_code=404, detail=f"Template not found: {template_path}")
+
+    start = time.perf_counter()
+    try:
+        png_bytes = await asyncio.to_thread(
+            pdf_ops.fill_and_render_page,
+            str(template_path),
+            body.field_values,
+            page_num,
+            dpi,
+        )
+    except (FileNotFoundError, ValueError) as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    except Exception as exc:
+        logger.exception("Error in render-filled-page")
+        raise HTTPException(status_code=500, detail=str(exc))
+
+    elapsed = time.perf_counter() - start
+    logger.info(
+        "render-filled-page/%s/%d: %d values, %.3fs",
+        version_lower, page_num, len(body.field_values), elapsed,
+    )
+
+    return Response(
+        content=png_bytes,
+        media_type="image/png",
+        headers={"Cache-Control": "no-cache"},
+    )
+
+
+@app.get(
+    "/render-crop/{version}/{page_num}",
+    summary="Render a cropped region of a PDF page as PNG",
+    description=(
+        "Render a specific rectangular region of a PDF page as a PNG image. "
+        "Coordinates are in PDF units (points). Adds configurable padding around the crop."
+    ),
+    responses={
+        200: {
+            "content": {"image/png": {}},
+            "description": "Cropped PNG image of the specified region.",
+        }
+    },
+)
+async def render_crop(
+    version: str,
+    page_num: int,
+    x: float = 0,
+    y: float = 0,
+    w: float = 100,
+    h: float = 20,
+    padding: float = 40,
+    dpi: int = 200,
+):
+    """Render a cropped region of a PDF page, with padding for context."""
+    dpi = max(50, min(dpi, 600))  # Clamp DPI to safe range
+    version_lower = version.lower()
+    if version_lower not in VERSION_MAP:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unknown version '{version}'.",
+        )
+
+    template_path = TEMPLATES_DIR / VERSION_MAP[version_lower]
+    if not template_path.is_file():
+        raise HTTPException(status_code=404, detail="Template not found.")
+
+    import fitz
+    doc = fitz.open(str(template_path))
+    try:
+        if page_num < 0 or page_num >= doc.page_count:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Page {page_num} out of range.",
+            )
+        page = doc[page_num]
+        page_rect = page.rect
+
+        # Build crop rect with padding, clamped to page bounds
+        crop = fitz.Rect(
+            max(x - padding, page_rect.x0),
+            max(y - padding, page_rect.y0),
+            min(x + w + padding, page_rect.x1),
+            min(y + h + padding, page_rect.y1),
+        )
+
+        zoom = dpi / 72.0
+        mat = fitz.Matrix(zoom, zoom)
+        pix = page.get_pixmap(matrix=mat, clip=crop)
+        png_bytes = pix.tobytes("png")
+    finally:
+        doc.close()
+
+    return Response(
+        content=png_bytes,
+        media_type="image/png",
+        headers={"Cache-Control": "public, max-age=86400"},
     )
 
 

@@ -1,0 +1,2308 @@
+[
+  {
+    "pdfFieldName": "form1[0].Sections1-6[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO",
+    "section": "personalInfo",
+    "page": 5,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Sections1-6[0].RadioButtonList[0]",
+    "semanticKey": "personalInfo.RadioButtonList_2",
+    "section": "personalInfo",
+    "page": 5,
+    "pdfFieldType": "",
+    "currentLabel": "PERSONS COMPLETING THIS FORM SHOULD BEGIN WITH THE QUESTIONS BELOW AFTER CAREFULLY READING",
+    "nearestText": "I have read the instructions and I understand that if I withhold, misrepresent, or falsify information on this form, I am subject",
+    "suggestedLabel": "NO",
+    "similarity": 0.103,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1483
+      },
+      {
+        "text": "YES",
+        "distance": 16.6,
+        "direction": "left",
+        "score": 0.0851
+      },
+      {
+        "text": "OMB No. 3206 0005",
+        "distance": 56.2,
+        "direction": "above",
+        "score": 0.035
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Sections7-9[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_2",
+    "section": "personalInfo",
+    "page": 6,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section9\\.1-9\\.4[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_3",
+    "section": "personalInfo",
+    "page": 7,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "Suffix",
+    "suggestedLabel": "Suffix",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Suffix",
+        "distance": 35.8,
+        "direction": "above",
+        "score": 0.0543
+      },
+      {
+        "text": "Middle name",
+        "distance": 49.8,
+        "direction": "above_left",
+        "score": 0.0354
+      },
+      {
+        "text": "Est.",
+        "distance": 60.0,
+        "direction": "above",
+        "score": 0.0328
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_4",
+    "section": "personalInfo",
+    "page": 8,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 27.3,
+        "direction": "above",
+        "score": 0.0707
+      },
+      {
+        "text": "Present",
+        "distance": 27.3,
+        "direction": "above",
+        "score": 0.0707
+      },
+      {
+        "text": "Est.",
+        "distance": 43.1,
+        "direction": "above",
+        "score": 0.0453
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10-2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO",
+    "section": "personalInfo",
+    "page": 9,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section11[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_2",
+    "section": "personalInfo",
+    "page": 10,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_3",
+    "section": "personalInfo",
+    "page": 11,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_4",
+    "section": "personalInfo",
+    "page": 12,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-4[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_5",
+    "section": "personalInfo",
+    "page": 13,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section_12[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_5",
+    "section": "personalInfo",
+    "page": 14,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section_12_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_6",
+    "section": "personalInfo",
+    "page": 15,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section_12_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_7",
+    "section": "personalInfo",
+    "page": 16,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1-2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_8",
+    "section": "personalInfo",
+    "page": 17,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2-2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_9",
+    "section": "personalInfo",
+    "page": 18,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "Zip Code",
+    "suggestedLabel": "Zip Code",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Zip Code",
+        "distance": 33.1,
+        "direction": "above",
+        "score": 0.0586
+      },
+      {
+        "text": "APO/FPO State Code",
+        "distance": 33.1,
+        "direction": "above_left",
+        "score": 0.0527
+      },
+      {
+        "text": "Country",
+        "distance": 70.3,
+        "direction": "above_left",
+        "score": 0.0252
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_3-2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_10",
+    "section": "personalInfo",
+    "page": 19,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_11",
+    "section": "personalInfo",
+    "page": 20,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 9.8,
+        "direction": "above",
+        "score": 0.185
+      },
+      {
+        "text": "Date:  (Month/Year)",
+        "distance": 20.1,
+        "direction": "above",
+        "score": 0.0948
+      },
+      {
+        "text": "Est.",
+        "distance": 39.5,
+        "direction": "above",
+        "score": 0.0494
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_12",
+    "section": "personalInfo",
+    "page": 21,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_13",
+    "section": "personalInfo",
+    "page": 22,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "Zip Code",
+    "suggestedLabel": "Zip Code",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Zip Code",
+        "distance": 33.1,
+        "direction": "above",
+        "score": 0.0586
+      },
+      {
+        "text": "APO/FPO State Code",
+        "distance": 33.1,
+        "direction": "above_left",
+        "score": 0.0527
+      },
+      {
+        "text": "Country",
+        "distance": 70.3,
+        "direction": "above_left",
+        "score": 0.0252
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_14",
+    "section": "personalInfo",
+    "page": 23,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[1].SSN[0]",
+    "semanticKey": "personalInfo.1.yourSocialSecurityNumberWillAutofillBasedO",
+    "section": "personalInfo",
+    "page": 24,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 9.8,
+        "direction": "above",
+        "score": 0.185
+      },
+      {
+        "text": "Date:  (Month/Year)",
+        "distance": 20.1,
+        "direction": "above",
+        "score": 0.0948
+      },
+      {
+        "text": "Est.",
+        "distance": 39.5,
+        "direction": "above",
+        "score": 0.0494
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1[1].SSN[0]",
+    "semanticKey": "personalInfo.1.yourSocialSecurityNumberWillAutofillBasedO_2",
+    "section": "personalInfo",
+    "page": 25,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[1].SSN[0]",
+    "semanticKey": "personalInfo.1.yourSocialSecurityNumberWillAutofillBasedO_3",
+    "section": "personalInfo",
+    "page": 26,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "Zip Code",
+    "suggestedLabel": "Zip Code",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Zip Code",
+        "distance": 33.1,
+        "direction": "above",
+        "score": 0.0586
+      },
+      {
+        "text": "APO/FPO State Code",
+        "distance": 33.1,
+        "direction": "above_left",
+        "score": 0.0527
+      },
+      {
+        "text": "Country",
+        "distance": 70.3,
+        "direction": "above_left",
+        "score": 0.0252
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_3[1].SSN[0]",
+    "semanticKey": "personalInfo.1.yourSocialSecurityNumberWillAutofillBasedO_4",
+    "section": "personalInfo",
+    "page": 27,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[2].SSN[0]",
+    "semanticKey": "personalInfo.2.yourSocialSecurityNumberWillAutofillBasedO",
+    "section": "personalInfo",
+    "page": 28,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 9.8,
+        "direction": "above",
+        "score": 0.185
+      },
+      {
+        "text": "Date:  (Month/Year)",
+        "distance": 20.1,
+        "direction": "above",
+        "score": 0.0948
+      },
+      {
+        "text": "Est.",
+        "distance": 39.5,
+        "direction": "above",
+        "score": 0.0494
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1[2].SSN[0]",
+    "semanticKey": "personalInfo.2.yourSocialSecurityNumberWillAutofillBasedO_2",
+    "section": "personalInfo",
+    "page": 29,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[2].SSN[0]",
+    "semanticKey": "personalInfo.2.yourSocialSecurityNumberWillAutofillBasedO_3",
+    "section": "personalInfo",
+    "page": 30,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "Zip Code",
+    "suggestedLabel": "Zip Code",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Zip Code",
+        "distance": 33.1,
+        "direction": "above",
+        "score": 0.0586
+      },
+      {
+        "text": "APO/FPO State Code",
+        "distance": 33.1,
+        "direction": "above_left",
+        "score": 0.0527
+      },
+      {
+        "text": "Country",
+        "distance": 70.3,
+        "direction": "above_left",
+        "score": 0.0252
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_3[2].SSN[0]",
+    "semanticKey": "personalInfo.2.yourSocialSecurityNumberWillAutofillBasedO_4",
+    "section": "personalInfo",
+    "page": 31,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[3].SSN[0]",
+    "semanticKey": "personalInfo.3.yourSocialSecurityNumberWillAutofillBasedO",
+    "section": "personalInfo",
+    "page": 32,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 9.8,
+        "direction": "above",
+        "score": 0.185
+      },
+      {
+        "text": "Date:  (Month/Year)",
+        "distance": 20.1,
+        "direction": "above",
+        "score": 0.0948
+      },
+      {
+        "text": "Est.",
+        "distance": 39.5,
+        "direction": "above",
+        "score": 0.0494
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_5[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_15",
+    "section": "personalInfo",
+    "page": 33,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_16",
+    "section": "personalInfo",
+    "page": 34,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4.",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section15_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.enterSocialSecurityNumberThisBoxWillPrefil",
+    "section": "personalInfo",
+    "page": 35,
+    "pdfFieldType": "",
+    "currentLabel": "Enter Social Security Number; this box will prefill on all other pages of the form ",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section15_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_17",
+    "section": "personalInfo",
+    "page": 36,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section16_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_18",
+    "section": "personalInfo",
+    "page": 37,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section16_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_19",
+    "section": "personalInfo",
+    "page": 38,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "phone number",
+    "suggestedLabel": "Country",
+    "similarity": 0.067,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 29.2,
+        "direction": "above_left",
+        "score": 0.0596
+      },
+      {
+        "text": "Night",
+        "distance": 55.2,
+        "direction": "above",
+        "score": 0.0356
+      },
+      {
+        "text": "Day",
+        "distance": 55.2,
+        "direction": "above",
+        "score": 0.0356
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_20",
+    "section": "personalInfo",
+    "page": 39,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Provide date when you entered into your civil",
+    "suggestedLabel": "Est.",
+    "similarity": 0.048,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 31.1,
+        "direction": "above",
+        "score": 0.0624
+      },
+      {
+        "text": "(Month/Day/Year)",
+        "distance": 45.8,
+        "direction": "above",
+        "score": 0.0428
+      },
+      {
+        "text": "marriage, civil union, or domestic partnership.",
+        "distance": 45.7,
+        "direction": "above_left",
+        "score": 0.0385
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_1_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_21",
+    "section": "personalInfo",
+    "page": 40,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_22",
+    "section": "personalInfo",
+    "page": 41,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_2_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_23",
+    "section": "personalInfo",
+    "page": 42,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_24",
+    "section": "personalInfo",
+    "page": 43,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "person began.  (Month/Day/Year)",
+    "suggestedLabel": "person began.  (Month/Day/Year)",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "person began.  (Month/Day/Year)",
+        "distance": 69.5,
+        "direction": "above_left",
+        "score": 0.0256
+      },
+      {
+        "text": "Provide date cohabitation residing with",
+        "distance": 79.1,
+        "direction": "above",
+        "score": 0.025
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_3_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_25",
+    "section": "personalInfo",
+    "page": 44,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_26",
+    "section": "personalInfo",
+    "page": 45,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_27",
+    "section": "personalInfo",
+    "page": 46,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_28",
+    "section": "personalInfo",
+    "page": 47,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Describe the relative's relationship with the foreign government, military, security, defense industry, foreign movement, or intelligence",
+    "suggestedLabel": "Country",
+    "similarity": 0.037,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 74.3,
+        "direction": "above_left",
+        "score": 0.0239
+      },
+      {
+        "text": "Describe the relative's relationship with the foreign government, military, security, defense indust",
+        "distance": 37.5,
+        "direction": "other",
+        "score": 0.0078
+      },
+      {
+        "text": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign",
+        "distance": 47.0,
+        "direction": "other",
+        "score": 0.0063
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_1_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_29",
+    "section": "personalInfo",
+    "page": 48,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[1].SSN[0]",
+    "semanticKey": "personalInfo.1.yourSocialSecurityNumberWillAutofillBasedO_5",
+    "section": "personalInfo",
+    "page": 49,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[1].SSN[0]",
+    "semanticKey": "personalInfo.1.yourSocialSecurityNumberWillAutofillBasedO_6",
+    "section": "personalInfo",
+    "page": 50,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Describe the relative's relationship with the foreign government, military, security, defense industry, foreign movement, or intelligence",
+    "suggestedLabel": "Country",
+    "similarity": 0.037,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 74.3,
+        "direction": "above_left",
+        "score": 0.0239
+      },
+      {
+        "text": "Describe the relative's relationship with the foreign government, military, security, defense indust",
+        "distance": 37.5,
+        "direction": "other",
+        "score": 0.0078
+      },
+      {
+        "text": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign",
+        "distance": 47.0,
+        "direction": "other",
+        "score": 0.0063
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_1_1[1].SSN[0]",
+    "semanticKey": "personalInfo.1.yourSocialSecurityNumberWillAutofillBasedO_7",
+    "section": "personalInfo",
+    "page": 51,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[2].SSN[0]",
+    "semanticKey": "personalInfo.2.yourSocialSecurityNumberWillAutofillBasedO_5",
+    "section": "personalInfo",
+    "page": 52,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[2].SSN[0]",
+    "semanticKey": "personalInfo.2.yourSocialSecurityNumberWillAutofillBasedO_6",
+    "section": "personalInfo",
+    "page": 53,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Describe the relative's relationship with the foreign government, military, security, defense industry, foreign movement, or intelligence",
+    "suggestedLabel": "Country",
+    "similarity": 0.037,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 74.3,
+        "direction": "above_left",
+        "score": 0.0239
+      },
+      {
+        "text": "Describe the relative's relationship with the foreign government, military, security, defense indust",
+        "distance": 37.5,
+        "direction": "other",
+        "score": 0.0078
+      },
+      {
+        "text": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign",
+        "distance": 47.0,
+        "direction": "other",
+        "score": 0.0063
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_1_1[2].SSN[0]",
+    "semanticKey": "personalInfo.2.yourSocialSecurityNumberWillAutofillBasedO_7",
+    "section": "personalInfo",
+    "page": 54,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[3].SSN[0]",
+    "semanticKey": "personalInfo.3.yourSocialSecurityNumberWillAutofillBasedO_2",
+    "section": "personalInfo",
+    "page": 55,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[3].SSN[0]",
+    "semanticKey": "personalInfo.3.yourSocialSecurityNumberWillAutofillBasedO_3",
+    "section": "personalInfo",
+    "page": 56,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Describe the relative's relationship with the foreign government, military, security, defense industry, foreign movement, or intelligence",
+    "suggestedLabel": "Country",
+    "similarity": 0.037,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 74.3,
+        "direction": "above_left",
+        "score": 0.0239
+      },
+      {
+        "text": "Describe the relative's relationship with the foreign government, military, security, defense indust",
+        "distance": 37.5,
+        "direction": "other",
+        "score": 0.0078
+      },
+      {
+        "text": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign",
+        "distance": 47.0,
+        "direction": "other",
+        "score": 0.0063
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_1_1[3].SSN[0]",
+    "semanticKey": "personalInfo.3.yourSocialSecurityNumberWillAutofillBasedO_4",
+    "section": "personalInfo",
+    "page": 57,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[4].SSN[0]",
+    "semanticKey": "personalInfo.4.yourSocialSecurityNumberWillAutofillBasedO",
+    "section": "personalInfo",
+    "page": 58,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[4].SSN[0]",
+    "semanticKey": "personalInfo.4.yourSocialSecurityNumberWillAutofillBasedO_2",
+    "section": "personalInfo",
+    "page": 59,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Describe the relative's relationship with the foreign government, military, security, defense industry, foreign movement, or intelligence",
+    "suggestedLabel": "Country",
+    "similarity": 0.037,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 74.3,
+        "direction": "above_left",
+        "score": 0.0239
+      },
+      {
+        "text": "Describe the relative's relationship with the foreign government, military, security, defense indust",
+        "distance": 37.5,
+        "direction": "other",
+        "score": 0.0078
+      },
+      {
+        "text": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign",
+        "distance": 47.0,
+        "direction": "other",
+        "score": 0.0063
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_1_1[4].SSN[0]",
+    "semanticKey": "personalInfo.4.yourSocialSecurityNumberWillAutofillBasedO_3",
+    "section": "personalInfo",
+    "page": 60,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[5].SSN[0]",
+    "semanticKey": "personalInfo.5.yourSocialSecurityNumberWillAutofillBasedO",
+    "section": "personalInfo",
+    "page": 61,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[5].SSN[0]",
+    "semanticKey": "personalInfo.5.yourSocialSecurityNumberWillAutofillBasedO_2",
+    "section": "personalInfo",
+    "page": 62,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Describe the relative's relationship with the foreign government, military, security, defense industry, foreign movement, or intelligence",
+    "suggestedLabel": "Country",
+    "similarity": 0.037,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 74.3,
+        "direction": "above_left",
+        "score": 0.0239
+      },
+      {
+        "text": "Describe the relative's relationship with the foreign government, military, security, defense indust",
+        "distance": 37.5,
+        "direction": "other",
+        "score": 0.0078
+      },
+      {
+        "text": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign",
+        "distance": 47.0,
+        "direction": "other",
+        "score": 0.0063
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_30",
+    "section": "personalInfo",
+    "page": 63,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Describe the contact's relationship with the foreign government, military, security, defense industry, or intelligence service.",
+    "suggestedLabel": "Country",
+    "similarity": 0.037,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 66.1,
+        "direction": "above_left",
+        "score": 0.0268
+      },
+      {
+        "text": "Describe the contact's relationship with the foreign government, military, security, defense industr",
+        "distance": 25.4,
+        "direction": "other",
+        "score": 0.0114
+      },
+      {
+        "text": "Is this foreign national affiliated with a foreign government, military, security, defense industry,",
+        "distance": 45.2,
+        "direction": "other",
+        "score": 0.0065
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_31",
+    "section": "personalInfo",
+    "page": 64,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Describe the contact's relationship with the foreign government, military, security, defense industry, or intelligence service.",
+    "suggestedLabel": "Describe the contact's relationship with the foreign government, military, security, defense industry, or intelligence service.",
+    "similarity": 0.037,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Describe the contact's relationship with the foreign government, military, security, defense industr",
+        "distance": 67.8,
+        "direction": "other",
+        "score": 0.0044
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_32",
+    "section": "personalInfo",
+    "page": 65,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Describe the contact's relationship with the foreign government, military, security, defense industry, or intelligence service.",
+    "suggestedLabel": "Describe the contact's relationship with the foreign government, military, security, defense industry, or intelligence service.",
+    "similarity": 0.037,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Describe the contact's relationship with the foreign government, military, security, defense industr",
+        "distance": 66.7,
+        "direction": "other",
+        "score": 0.0044
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_4[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_33",
+    "section": "personalInfo",
+    "page": 66,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Describe the contact's relationship with the foreign government, military, security, defense industry, or intelligence service.",
+    "suggestedLabel": "Describe the contact's relationship with the foreign government, military, security, defense industry, or intelligence service.",
+    "similarity": 0.037,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Describe the contact's relationship with the foreign government, military, security, defense industr",
+        "distance": 67.8,
+        "direction": "other",
+        "score": 0.0044
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section20a[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_6",
+    "section": "personalInfo",
+    "page": 67,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section20a2[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_7",
+    "section": "personalInfo",
+    "page": 68,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[68].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_8",
+    "section": "personalInfo",
+    "page": 69,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[69].SSN[1]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_9",
+    "section": "personalInfo",
+    "page": 70,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[70].SSN[2]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_10",
+    "section": "personalInfo",
+    "page": 71,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[71].SSN[3]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_11",
+    "section": "personalInfo",
+    "page": 72,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[72].SSN[4]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_12",
+    "section": "personalInfo",
+    "page": 73,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[74].SSN[5]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_13",
+    "section": "personalInfo",
+    "page": 74,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[76].SSN[6]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_14",
+    "section": "personalInfo",
+    "page": 75,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[77].SSN[7]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_15",
+    "section": "personalInfo",
+    "page": 76,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Provide the country with which the government official or agency is affiliated.",
+    "suggestedLabel": "Provide the country with which the government official or agency is affiliated.",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Provide the country with which the government official or agency is affiliated.",
+        "distance": 66.9,
+        "direction": "above_left",
+        "score": 0.0265
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[78].SSN[8]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_16",
+    "section": "personalInfo",
+    "page": 77,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[79].SSN[9]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_17",
+    "section": "personalInfo",
+    "page": 78,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[80].SSN[10]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_18",
+    "section": "personalInfo",
+    "page": 79,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[83].#subform[84].SSN[11]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_19",
+    "section": "personalInfo",
+    "page": 80,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Provide plans for future contact",
+    "suggestedLabel": "Provide plans for future contact",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Provide plans for future contact",
+        "distance": 77.0,
+        "direction": "above_left",
+        "score": 0.0231
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[87].SSN[12]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_20",
+    "section": "personalInfo",
+    "page": 81,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[89].SSN[13]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_21",
+    "section": "personalInfo",
+    "page": 82,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[91].SSN[14]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_22",
+    "section": "personalInfo",
+    "page": 83,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[92].SSN[15]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_23",
+    "section": "personalInfo",
+    "page": 84,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[93].SSN[16]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_24",
+    "section": "personalInfo",
+    "page": 85,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[94].SSN[17]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_25",
+    "section": "personalInfo",
+    "page": 86,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[95].SSN[18]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_26",
+    "section": "personalInfo",
+    "page": 87,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section21a[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_27",
+    "section": "personalInfo",
+    "page": 88,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section21a2[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_28",
+    "section": "personalInfo",
+    "page": 89,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section21b[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_29",
+    "section": "personalInfo",
+    "page": 90,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section21b2[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_30",
+    "section": "personalInfo",
+    "page": 91,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section21c[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_31",
+    "section": "personalInfo",
+    "page": 92,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Country",
+    "suggestedLabel": "Country",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 59.8,
+        "direction": "above_left",
+        "score": 0.0296
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section21d1[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_32",
+    "section": "personalInfo",
+    "page": 93,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Provide the address of agency/organization/facility where counseling/treatment was provided.  (Provide City and Country if outside the",
+    "suggestedLabel": "Country",
+    "similarity": 0.033,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 55.6,
+        "direction": "above_left",
+        "score": 0.0318
+      },
+      {
+        "text": "above",
+        "distance": 66.8,
+        "direction": "above",
+        "score": 0.0295
+      },
+      {
+        "text": "Same as",
+        "distance": 76.4,
+        "direction": "above",
+        "score": 0.0259
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section21d2[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_33",
+    "section": "personalInfo",
+    "page": 94,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section21d3[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_34",
+    "section": "personalInfo",
+    "page": 95,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section21e[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_35",
+    "section": "personalInfo",
+    "page": 96,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Country",
+    "suggestedLabel": "Country",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Country",
+        "distance": 75.2,
+        "direction": "above_left",
+        "score": 0.0236
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section21e1[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_36",
+    "section": "personalInfo",
+    "page": 97,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_34",
+    "section": "personalInfo",
+    "page": 98,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 19.8,
+        "direction": "above",
+        "score": 0.0962
+      },
+      {
+        "text": "Est.",
+        "distance": 35.4,
+        "direction": "above",
+        "score": 0.055
+      },
+      {
+        "text": "Est.",
+        "distance": 51.0,
+        "direction": "above",
+        "score": 0.0385
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_35",
+    "section": "personalInfo",
+    "page": 99,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_36",
+    "section": "personalInfo",
+    "page": 100,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 72.3,
+        "direction": "above",
+        "score": 0.0273
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_4[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_37",
+    "section": "personalInfo",
+    "page": 101,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_5[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_38",
+    "section": "personalInfo",
+    "page": 102,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 63.2,
+        "direction": "above",
+        "score": 0.0312
+      },
+      {
+        "text": "Est.",
+        "distance": 64.1,
+        "direction": "above_left",
+        "score": 0.0277
+      },
+      {
+        "text": "Present",
+        "distance": 77.3,
+        "direction": "above",
+        "score": 0.0255
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_6[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_39",
+    "section": "personalInfo",
+    "page": 103,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_3_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_40",
+    "section": "personalInfo",
+    "page": 104,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_41",
+    "section": "personalInfo",
+    "page": 105,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section23_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_42",
+    "section": "personalInfo",
+    "page": 106,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_43",
+    "section": "personalInfo",
+    "page": 107,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_4[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_44",
+    "section": "personalInfo",
+    "page": 108,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_5[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_45",
+    "section": "personalInfo",
+    "page": 109,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6_1[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_46",
+    "section": "personalInfo",
+    "page": 110,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section_23_6[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_47",
+    "section": "personalInfo",
+    "page": 111,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section24[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_37",
+    "section": "personalInfo",
+    "page": 112,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_48",
+    "section": "personalInfo",
+    "page": 113,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_49",
+    "section": "personalInfo",
+    "page": 114,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section24_4[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_50",
+    "section": "personalInfo",
+    "page": 115,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section25[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_38",
+    "section": "personalInfo",
+    "page": 116,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section25_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_51",
+    "section": "personalInfo",
+    "page": 117,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section26[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_39",
+    "section": "personalInfo",
+    "page": 118,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "NO  (Provide explanation)",
+    "suggestedLabel": "NO  (Provide explanation)",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "NO  (Provide explanation)",
+        "distance": 36.8,
+        "direction": "above",
+        "score": 0.0529
+      },
+      {
+        "text": "YES  (Provide explanation)",
+        "distance": 36.8,
+        "direction": "above_left",
+        "score": 0.0476
+      },
+      {
+        "text": "Country",
+        "distance": 69.2,
+        "direction": "above_left",
+        "score": 0.0257
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_52",
+    "section": "personalInfo",
+    "page": 119,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_53",
+    "section": "personalInfo",
+    "page": 120,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "As  a result of this counsel ing, provide a description of any action(s) you have taken to resolve your financial difficulties. If you have not taken any action(s),",
+    "suggestedLabel": "State",
+    "similarity": 0.029,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "State",
+        "distance": 76.3,
+        "direction": "above",
+        "score": 0.0259
+      },
+      {
+        "text": "As  a result of this counsel ing, provide a description of any action(s) you have taken to resolve y",
+        "distance": 48.3,
+        "direction": "other",
+        "score": 0.0061
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_6[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_54",
+    "section": "personalInfo",
+    "page": 121,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_7[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_55",
+    "section": "personalInfo",
+    "page": 122,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_8[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_56",
+    "section": "personalInfo",
+    "page": 123,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_9[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_57",
+    "section": "personalInfo",
+    "page": 124,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section27[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_40",
+    "section": "personalInfo",
+    "page": 125,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section27_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_58",
+    "section": "personalInfo",
+    "page": 126,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section28[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_41",
+    "section": "personalInfo",
+    "page": 127,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section29[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_42",
+    "section": "personalInfo",
+    "page": 128,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section29_2[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_59",
+    "section": "personalInfo",
+    "page": 129,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section29_3[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_60",
+    "section": "personalInfo",
+    "page": 130,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section29_4[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_61",
+    "section": "personalInfo",
+    "page": 131,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].Section29_5[0].SSN[0]",
+    "semanticKey": "personalInfo.0.yourSocialSecurityNumberWillAutofillBasedO_62",
+    "section": "personalInfo",
+    "page": 132,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  },
+  {
+    "pdfFieldName": "form1[0].continuation1[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_43",
+    "section": "personalInfo",
+    "page": 133,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "understand that intentionally withholding, misrepresenting, falsifying, or including classified information may have a negative effect on my security clearance,",
+    "suggestedLabel": "Date signed  (mm/dd/yyyy)",
+    "similarity": 0.065,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Date signed  (mm/dd/yyyy)",
+        "distance": 24.0,
+        "direction": "above",
+        "score": 0.0801
+      },
+      {
+        "text": "employment prospects, or job status, up to and including denial or revocation of my security clearan",
+        "distance": 41.1,
+        "direction": "other",
+        "score": 0.0071
+      },
+      {
+        "text": "understand that intentionally withholding, misrepresenting, falsifying, or including classified info",
+        "distance": 50.7,
+        "direction": "other",
+        "score": 0.0058
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].continuation2[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_44",
+    "section": "personalInfo",
+    "page": 134,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Telephone number",
+    "suggestedLabel": "Telephone number",
+    "similarity": 0.067,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Telephone number",
+        "distance": 68.2,
+        "direction": "above",
+        "score": 0.0289
+      },
+      {
+        "text": "ZIP Code",
+        "distance": 77.2,
+        "direction": "above_left",
+        "score": 0.023
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].continuation3[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_45",
+    "section": "personalInfo",
+    "page": 135,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "Date signed  (mm/dd/yyyy)",
+    "suggestedLabel": "Date signed  (mm/dd/yyyy)",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Date signed  (mm/dd/yyyy)",
+        "distance": 22.0,
+        "direction": "above",
+        "score": 0.0869
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].continuation4[0].SSN[0]",
+    "semanticKey": "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_46",
+    "section": "personalInfo",
+    "page": 136,
+    "pdfFieldType": "",
+    "currentLabel": "Your Social Security Number will auto-fill based on answer provided in section 4",
+    "nearestText": "",
+    "suggestedLabel": "",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": []
+  }
+]

@@ -1,0 +1,2768 @@
+{
+  "timestamp": "2026-02-27T00:41:19Z",
+  "total_generic_radios": 383,
+  "fixes_found": 345,
+  "unfixed": 38,
+  "fixes": [
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[0]",
+      "section": "namesInfo",
+      "page": 5,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[1]",
+      "section": "namesInfo",
+      "page": 5,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide your U.S. Social Security Number.",
+      "confidence": 0.676
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[2]",
+      "section": "namesInfo",
+      "page": 5,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[3]",
+      "section": "namesInfo",
+      "page": 5,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.951
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[4]",
+      "section": "namesInfo",
+      "page": 5,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].RadioButtonList[0]",
+      "section": "personalInfo",
+      "page": 5,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "PERSONS COMPLETING THIS FORM SHOULD BEGIN WITH THE QUESTIONS BELOW AFTER CAREFULLY READING",
+      "confidence": 0.448
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[0]",
+      "section": "passportInfo",
+      "page": 6,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you possess a U.S. passport (current or expired)?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[1]",
+      "section": "citizenshipInfo",
+      "page": 6,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Select the box that reflects your current citizenship status.",
+      "confidence": 0.736
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[2]",
+      "section": "citizenshipInfo",
+      "page": 6,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you born on a U.S. military installation?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[3]",
+      "section": "citizenshipInfo",
+      "page": 6,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide type of documentation of U.S. citizen born abroad.",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section9\\.1-9\\.4[0].RadioButtonList[0]",
+      "section": "citizenshipInfo",
+      "page": 7,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide type of document issued. (I-94, U.S. Visa - red foil number, I-20, DS-2019, etc.)",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section9\\.1-9\\.4[0].RadioButtonList[1]",
+      "section": "citizenshipInfo",
+      "page": 7,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do/did you have a U.S. alien registration number?",
+      "confidence": 0.903
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[0]",
+      "section": "dualCitizenshipInfo",
+      "page": 8,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Section 10 - Dual/Multiple Citizenship & Foreign Passport Information",
+      "confidence": 0.324
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[1]",
+      "section": "dualCitizenshipInfo",
+      "page": 8,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have you taken any action to renounce your foreign citizenship?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[2]",
+      "section": "dualCitizenshipInfo",
+      "page": 8,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you currently hold citizenship with this country?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[3]",
+      "section": "dualCitizenshipInfo",
+      "page": 8,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have you taken any action to renounce your foreign citizenship?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[4]",
+      "section": "dualCitizenshipInfo",
+      "page": 8,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you currently hold citizenship with this country?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[5]",
+      "section": "dualCitizenshipInfo",
+      "page": 8,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "During what period of time did you hold citizenship with this country?",
+      "confidence": 0.909
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[6]",
+      "section": "dualCitizenshipInfo",
+      "page": 8,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have you  EVER  used this passport (or identity card) for foreign travel?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section10-2[0].RadioButtonList[0]",
+      "section": "dualCitizenshipInfo",
+      "page": 9,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have you  EVER  used this passport (or identity card) for foreign travel?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section11[0].RadioButtonList[0]",
+      "section": "residencyInfo",
+      "page": 10,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide dates of residence.",
+      "confidence": 0.607
+    },
+    {
+      "pdfFieldName": "form1[0].Section11[0].RadioButtonList[1]",
+      "section": "residencyInfo",
+      "page": 10,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section11[0].RadioButtonList[2]",
+      "section": "residencyInfo",
+      "page": 10,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[0]",
+      "section": "residencyInfo",
+      "page": 11,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide dates of residence.",
+      "confidence": 0.607
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[1]",
+      "section": "residencyInfo",
+      "page": 11,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[2]",
+      "section": "residencyInfo",
+      "page": 11,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[0]",
+      "section": "residencyInfo",
+      "page": 12,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide dates of residence.",
+      "confidence": 0.607
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[1]",
+      "section": "residencyInfo",
+      "page": 12,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[2]",
+      "section": "residencyInfo",
+      "page": 12,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[0]",
+      "section": "residencyInfo",
+      "page": 13,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[1]",
+      "section": "residencyInfo",
+      "page": 13,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[2]",
+      "section": "residencyInfo",
+      "page": 13,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide dates of residence.",
+      "confidence": 0.607
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 17,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Select your employment activity:",
+      "confidence": 0.693
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 17,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.964
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2-2[0].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 18,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is/was your physical work address different than your employer's address?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2-2[0].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 18,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2-2[0].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 18,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did/does your supervisor have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3-2[0].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 19,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is your physical work address different than your employment address?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3-2[0].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 19,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3-2[0].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 19,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 20,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "For this employment have any of the following happened to you  in the last seven (7) years ?",
+      "confidence": 0.939
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 20,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "in the workplace, such as a violation of security policy?",
+      "confidence": 0.967
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 20,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 21,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Select your employment activity:",
+      "confidence": 0.693
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 21,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[0].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 22,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is/was your physical work address different than your employer's address?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[0].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 22,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[0].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 22,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did/does your supervisor have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[0].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 23,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is your physical work address different than your employment address?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[0].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 23,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[0].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 23,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 24,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "For this employment have any of the following happened to you  in the last seven (7) years ?",
+      "confidence": 0.939
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 24,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "in the workplace, such as a violation of security policy?",
+      "confidence": 0.967
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 24,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 25,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Select your employment activity:",
+      "confidence": 0.693
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 25,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[1].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 26,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is/was your physical work address different than your employer's address?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[1].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 26,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[1].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 26,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did/does your supervisor have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[1].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 27,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is your physical work address different than your employment address?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[1].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 27,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[1].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 27,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 28,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "For this employment have any of the following happened to you  in the last seven (7) years ?",
+      "confidence": 0.939
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 28,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "in the workplace, such as a violation of security policy?",
+      "confidence": 0.967
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 28,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 29,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Select your employment activity:",
+      "confidence": 0.693
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 29,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[2].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 30,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is/was your physical work address different than your employer's address?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[2].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 30,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[2].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 30,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did/does your supervisor have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[2].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 31,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is your physical work address different than your employment address?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[2].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 31,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you or did you have an APO/FPO address while at this location?",
+      "confidence": 0.963
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[2].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 31,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 32,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "For this employment have any of the following happened to you  in the last seven (7) years ?",
+      "confidence": 0.939
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 32,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "in the workplace, such as a violation of security policy?",
+      "confidence": 0.967
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[2]",
+      "section": "employmentInfo",
+      "page": 32,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].section13_5[0].RadioButtonList[0]",
+      "section": "employmentInfo",
+      "page": 33,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you have former federal civilian employment, excluding military service, NOT indicated previously, to report?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section13_5[0].RadioButtonList[1]",
+      "section": "employmentInfo",
+      "page": 33,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have any of the following happened to you  in the last seven (7) years  at employment activities that you have not pr...",
+      "confidence": 0.914
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[0].RadioButtonList[0]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have you registered with the Selective Service System (SSS)?",
+      "confidence": 0.874
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[4].RadioButtonList[1]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have you  EVER  served in the U.S. Military?",
+      "confidence": 0.984
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[5].#area[6].RadioButtonList[2]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the branch of service you served in.",
+      "confidence": 0.869
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[7].RadioButtonList[3]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Guard",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[9].RadioButtonList[4]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you discharged from this instance of U.S. military service, to include Reserves, or National Guard?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[10].RadioButtonList[5]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you discharged from this instance of U.S. military service, to include Reserves, or National Guard?",
+      "confidence": 0.918
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[11].RadioButtonList[6]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you born a male after December 31, 1959?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[12].RadioButtonList[7]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide your status",
+      "confidence": 0.78
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[13].#area[14].RadioButtonList[8]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the reason(s) for the discharge, if discharge is other than Honorable",
+      "confidence": 0.912
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[15].RadioButtonList[9]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Guard",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[17].RadioButtonList[10]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you discharged from this instance of U.S. military service, to include Reserves, or National Guard?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[18].RadioButtonList[11]",
+      "section": "serviceInfo",
+      "page": 34,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you discharged from this instance of U.S. military service, to include Reserves, or National Guard?",
+      "confidence": 0.918
+    },
+    {
+      "pdfFieldName": "form1[0].Section15_3[0].RadioButtonList[1]",
+      "section": "militaryHistoryInfo",
+      "page": 36,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "During your foreign service, which organization were you serving under?",
+      "confidence": 0.919
+    },
+    {
+      "pdfFieldName": "form1[0].Section15_3[0].RadioButtonList[2]",
+      "section": "militaryHistoryInfo",
+      "page": 36,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you maintain contact with current or former associates, colleagues, or acquaintances from your service in this org...",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section16_1[0].RadioButtonList[0]",
+      "section": "peopleThatKnow",
+      "page": 37,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "During your foreign service, which organization were you serving under?",
+      "confidence": 0.919
+    },
+    {
+      "pdfFieldName": "form1[0].Section16_1[0].RadioButtonList[1]",
+      "section": "peopleThatKnow",
+      "page": 37,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you maintain contact with current or former associates, colleagues, or acquaintances from your service in this org...",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[0]",
+      "section": "relationshipInfo",
+      "page": 39,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[1]",
+      "section": "relationshipInfo",
+      "page": 39,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[2]",
+      "section": "relationshipInfo",
+      "page": 39,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.954
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[3]",
+      "section": "relationshipInfo",
+      "page": 39,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1_2[0].RadioButtonList[0]",
+      "section": "relationshipInfo",
+      "page": 40,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Does the person have an APO/FPO address within the United States?",
+      "confidence": 0.91
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1_2[0].RadioButtonList[1]",
+      "section": "relationshipInfo",
+      "page": 40,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Does the person have an APO/FPO address within the United States?",
+      "confidence": 0.97
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2[0].RadioButtonList[0]",
+      "section": "relationshipInfo",
+      "page": 41,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide where the record of divorce/dissolution or annulment is located.  ( Provide City and Country if outside the U...",
+      "confidence": 0.922
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2[0].RadioButtonList[1]",
+      "section": "relationshipInfo",
+      "page": 41,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the status.",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2_2[0].RadioButtonList[0]",
+      "section": "relationshipInfo",
+      "page": 42,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide where the record of divorce/dissolution or annulment is located.  ( Provide City and Country if outside the U...",
+      "confidence": 0.922
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2_2[0].RadioButtonList[1]",
+      "section": "relationshipInfo",
+      "page": 42,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the status.",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[1]",
+      "section": "relationshipInfo",
+      "page": 43,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.951
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[2]",
+      "section": "relationshipInfo",
+      "page": 43,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.953
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[3]",
+      "section": "relationshipInfo",
+      "page": 43,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.953
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[4]",
+      "section": "relationshipInfo",
+      "page": 43,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.951
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3_2[0].RadioButtonList[0]",
+      "section": "relationshipInfo",
+      "page": 44,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3_2[0].RadioButtonList[1]",
+      "section": "relationshipInfo",
+      "page": 44,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3_2[0].RadioButtonList[2]",
+      "section": "relationshipInfo",
+      "page": 44,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.953
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3_2[0].RadioButtonList[3]",
+      "section": "relationshipInfo",
+      "page": 44,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.951
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1[0].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 45,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Has this relative used any other names?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1[0].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 45,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.953
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1[0].RadioButtonList[2]",
+      "section": "relativesInfo",
+      "page": 45,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1[0].RadioButtonList[3]",
+      "section": "relativesInfo",
+      "page": 45,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.953
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1[0].RadioButtonList[4]",
+      "section": "relativesInfo",
+      "page": 45,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[0].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 46,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "confidence": 0.915
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[0].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 47,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.936
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[0].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 47,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.974
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 48,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Has this relative used any other names?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 48,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[2]",
+      "section": "relativesInfo",
+      "page": 48,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[3]",
+      "section": "relativesInfo",
+      "page": 48,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[4]",
+      "section": "relativesInfo",
+      "page": 48,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[1].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 49,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "confidence": 0.915
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[1].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 50,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.936
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[1].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 50,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.974
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[1].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 51,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Has this relative used any other names?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[1].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 51,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[1].RadioButtonList[2]",
+      "section": "relativesInfo",
+      "page": 51,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[1].RadioButtonList[3]",
+      "section": "relativesInfo",
+      "page": 51,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[1].RadioButtonList[4]",
+      "section": "relativesInfo",
+      "page": 51,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[2].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 52,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "confidence": 0.915
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[2].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 53,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.936
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[2].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 53,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.974
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 54,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Has this relative used any other names?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 54,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[2]",
+      "section": "relativesInfo",
+      "page": 54,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[3]",
+      "section": "relativesInfo",
+      "page": 54,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[4]",
+      "section": "relativesInfo",
+      "page": 54,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[3].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 55,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "confidence": 0.915
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[3].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 56,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.936
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[3].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 56,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.974
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[3].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 57,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Has this relative used any other names?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[3].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 57,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[3].RadioButtonList[2]",
+      "section": "relativesInfo",
+      "page": 57,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[3].RadioButtonList[3]",
+      "section": "relativesInfo",
+      "page": 57,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[3].RadioButtonList[4]",
+      "section": "relativesInfo",
+      "page": 57,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[4].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 58,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "confidence": 0.915
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[4].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 59,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.936
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[4].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 59,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.974
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 60,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Has this relative used any other names?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 60,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[2]",
+      "section": "relativesInfo",
+      "page": 60,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[3]",
+      "section": "relativesInfo",
+      "page": 60,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.952
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[4]",
+      "section": "relativesInfo",
+      "page": 60,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Maiden name?",
+      "confidence": 0.95
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[5].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 61,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+      "confidence": 0.915
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[5].RadioButtonList[0]",
+      "section": "relativesInfo",
+      "page": 62,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.936
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[5].RadioButtonList[1]",
+      "section": "relativesInfo",
+      "page": 62,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+      "confidence": 0.974
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].RadioButtonList[0]",
+      "section": "foreignContacts",
+      "page": 63,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you have, or have you had, close and/or continuing contact with a foreign national within  the last seven (7) year...",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].RadioButtonList[1]",
+      "section": "foreignContacts",
+      "page": 63,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide approximate date of last contact.   (Month/Year)",
+      "confidence": 0.861
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].RadioButtonList[2]",
+      "section": "foreignContacts",
+      "page": 63,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this foreign national affiliated with a foreign government, military, security, defense industry, or intelligence ...",
+      "confidence": 0.947
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].#area[3].RadioButtonList[3]",
+      "section": "foreignContacts",
+      "page": 63,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+      "confidence": 0.954
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_2[0].RadioButtonList[0]",
+      "section": "foreignContacts",
+      "page": 64,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide approximate date of last contact.   (Month/Year)",
+      "confidence": 0.861
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_2[0].RadioButtonList[1]",
+      "section": "foreignContacts",
+      "page": 64,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this foreign national affiliated with a foreign government, military, security, defense industry, or intelligence ...",
+      "confidence": 0.947
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_2[0].#area[3].RadioButtonList[2]",
+      "section": "foreignContacts",
+      "page": 64,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+      "confidence": 0.954
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_3[0].RadioButtonList[0]",
+      "section": "foreignContacts",
+      "page": 65,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide approximate date of last contact.   (Month/Year)",
+      "confidence": 0.861
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_3[0].RadioButtonList[1]",
+      "section": "foreignContacts",
+      "page": 65,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this foreign national affiliated with a foreign government, military, security, defense industry, or intelligence ...",
+      "confidence": 0.947
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_3[0].#area[3].RadioButtonList[2]",
+      "section": "foreignContacts",
+      "page": 65,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+      "confidence": 0.954
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_4[0].RadioButtonList[0]",
+      "section": "foreignContacts",
+      "page": 66,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide approximate date of last contact.   (Month/Year)",
+      "confidence": 0.861
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_4[0].RadioButtonList[1]",
+      "section": "foreignContacts",
+      "page": 66,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Is this foreign national affiliated with a foreign government, military, security, defense industry, or intelligence ...",
+      "confidence": 0.947
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_4[0].#area[3].RadioButtonList[2]",
+      "section": "foreignContacts",
+      "page": 66,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+      "confidence": 0.954
+    },
+    {
+      "pdfFieldName": "form1[0].Section20a[0].RadioButtonList[1]",
+      "section": "foreignActivities",
+      "page": 67,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Are there any co-owners of this foreign financial interest?",
+      "confidence": 0.997
+    },
+    {
+      "pdfFieldName": "form1[0].Section20a2[0].RadioButtonList[0]",
+      "section": "foreignActivities",
+      "page": 68,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Are there any co-owners of this foreign financial interest?",
+      "confidence": 0.997
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[68].RadioButtonList[0]",
+      "section": "foreignActivities",
+      "page": 69,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Are there any co-owners of this foreign financial interest controlled on your behalf?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[68].RadioButtonList[1]",
+      "section": "foreignActivities",
+      "page": 69,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have you, your spouse or legally recognized civil union/domestic partner, cohabitant, or dependent",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[69].RadioButtonList[2]",
+      "section": "foreignActivities",
+      "page": 70,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Are there any co-owners of this foreign financial interest controlled on your behalf?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[70].#area[5].RadioButtonList[3]",
+      "section": "foreignActivities",
+      "page": 71,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Are/were/will there any co-owners of this foreign real estate?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[71].#area[8].RadioButtonList[5]",
+      "section": "foreignActivities",
+      "page": 72,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Are/were/will there any co-owners of this foreign real estate?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[6]",
+      "section": "foreignActivities",
+      "page": 73,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "way to this foreign country?",
+      "confidence": 0.878
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[8]",
+      "section": "foreignActivities",
+      "page": 73,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "benefit.",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].#area[10].RadioButtonList[9]",
+      "section": "foreignActivities",
+      "page": 73,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "way to this foreign country?",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[10]",
+      "section": "foreignActivities",
+      "page": 73,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the frequency the benefit will be received.",
+      "confidence": 0.909
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].#area[11].RadioButtonList[11]",
+      "section": "foreignActivities",
+      "page": 73,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "way to this foreign country?",
+      "confidence": 0.873
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[12]",
+      "section": "foreignActivities",
+      "page": 73,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the date the benefit is expected to end.  (Month/Day/Year)",
+      "confidence": 0.93
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[13]",
+      "section": "foreignActivities",
+      "page": 73,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you responded ' Yes ' that as a U.S. citizen, have you, your spouse or legally recognized c...",
+      "confidence": 0.914
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].RadioButtonList[14]",
+      "section": "foreignActivities",
+      "page": 74,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "way to this foreign country?",
+      "confidence": 0.878
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].RadioButtonList[15]",
+      "section": "foreignActivities",
+      "page": 74,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "benefit.",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].#area[12].RadioButtonList[16]",
+      "section": "foreignActivities",
+      "page": 74,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "way to this foreign country?",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].RadioButtonList[17]",
+      "section": "foreignActivities",
+      "page": 74,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the frequency the benefit will be received.",
+      "confidence": 0.908
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].#area[13].RadioButtonList[18]",
+      "section": "foreignActivities",
+      "page": 74,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "way to this foreign country?",
+      "confidence": 0.873
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].RadioButtonList[19]",
+      "section": "foreignActivities",
+      "page": 74,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the date the benefit is expected to end.  (Month/Day/Year)",
+      "confidence": 0.93
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].RadioButtonList[20]",
+      "section": "foreignActivities",
+      "page": 74,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you responded ' Yes ' that as a U.S. citizen, have you, your spouse or legally recognized c...",
+      "confidence": 0.914
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[77].RadioButtonList[23]",
+      "section": "foreignActivities",
+      "page": 76,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the country of origin for the organization or business.",
+      "confidence": 0.909
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[78].RadioButtonList[24]",
+      "section": "foreignActivities",
+      "page": 77,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Section 20B - Foreign Business, Professional Activities, and Foreign Government Contacts -  (Continued)",
+      "confidence": 0.32
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[78].RadioButtonList[25]",
+      "section": "foreignActivities",
+      "page": 77,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide location of where this occurred.   ( Provide City and Country if outside the United States; otherwise, provid...",
+      "confidence": 0.909
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[78].RadioButtonList[26]",
+      "section": "foreignActivities",
+      "page": 77,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you responded  'Yes'  to any foreign national having  in the last seven (7) years  offered ...",
+      "confidence": 0.911
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[79].RadioButtonList[27]",
+      "section": "foreignActivities",
+      "page": 78,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Section 20B - Foreign Business, Professional Activities, and Foreign Government Contacts -  (Continued)",
+      "confidence": 0.32
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[80].#area[27].RadioButtonList[29]",
+      "section": "foreignActivities",
+      "page": 79,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was there any subsequent contact with any foreign nationals as a result of the event?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[80].#area[28].RadioButtonList[30]",
+      "section": "foreignActivities",
+      "page": 79,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was there any subsequent contact with any foreign nationals as a result of the event?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[83].#subform[84].#area[30].RadioButtonList[31]",
+      "section": "foreignActivities",
+      "page": 80,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was there any subsequent contact initiated by you, your immediate family member, or a representative of the foreign o...",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[83].#subform[84].#area[33].RadioButtonList[32]",
+      "section": "foreignActivities",
+      "page": 80,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was there any subsequent contact initiated by you, your immediate family member, or a representative of the foreign o...",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].RadioButtonList[34]",
+      "section": "foreignActivities",
+      "page": 84,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have you traveled outside the U.S.  in the last seven (7) years ?",
+      "confidence": 0.762
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[41].#area[42].RadioButtonList[35]",
+      "section": "foreignActivities",
+      "page": 84,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to or in this country, were you involved in any encounter with the police?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[43].#area[44].RadioButtonList[36]",
+      "section": "foreignActivities",
+      "page": 84,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "intelligence, terrorist, security, or military organizations?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[45].#area[46].RadioButtonList[37]",
+      "section": "foreignActivities",
+      "page": 84,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to, or in this country, were you involved in any counterintelligence or security issues not reported?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[47].#area[48].RadioButtonList[38]",
+      "section": "foreignActivities",
+      "page": 84,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to or in this country, were you contacted by, or in contact with anyone exhibiting excessive knowledg...",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[49].#area[50].RadioButtonList[39]",
+      "section": "foreignActivities",
+      "page": 84,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "information?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[51].RadioButtonList[40]",
+      "section": "foreignActivities",
+      "page": 84,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "intelligence or security service?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].RadioButtonList[41]",
+      "section": "foreignActivities",
+      "page": 84,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+      "confidence": 0.918
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].RadioButtonList[42]",
+      "section": "foreignActivities",
+      "page": 84,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "customs or security service officials when entering or leaving this country?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[54].#area[55].RadioButtonList[43]",
+      "section": "foreignActivities",
+      "page": 85,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to or in this country, were you involved in any encounter with the police?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[56].#area[57].RadioButtonList[44]",
+      "section": "foreignActivities",
+      "page": 85,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "intelligence, terrorist, security, or military organizations?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[58].#area[59].RadioButtonList[45]",
+      "section": "foreignActivities",
+      "page": 85,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to, or in this country, were you involved in any counterintelligence or security issues not reported?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[60].#area[61].RadioButtonList[46]",
+      "section": "foreignActivities",
+      "page": 85,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to or in this country, were you contacted by, or in contact with anyone exhibiting excessive knowledg...",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[62].#area[63].RadioButtonList[47]",
+      "section": "foreignActivities",
+      "page": 85,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "information?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[64].RadioButtonList[48]",
+      "section": "foreignActivities",
+      "page": 85,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "intelligence or security service?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].RadioButtonList[49]",
+      "section": "foreignActivities",
+      "page": 85,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+      "confidence": 0.918
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].RadioButtonList[50]",
+      "section": "foreignActivities",
+      "page": 85,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "customs or security service officials when entering or leaving this country?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[67].#area[68].RadioButtonList[51]",
+      "section": "foreignActivities",
+      "page": 86,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to or in this country, were you involved in any encounter with the police?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[69].#area[70].RadioButtonList[52]",
+      "section": "foreignActivities",
+      "page": 86,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "intelligence, terrorist, security, or military organizations?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[71].#area[72].RadioButtonList[53]",
+      "section": "foreignActivities",
+      "page": 86,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to, or in this country, were you involved in any counterintelligence or security issues not reported?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[73].#area[74].RadioButtonList[54]",
+      "section": "foreignActivities",
+      "page": 86,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to or in this country, were you contacted by, or in contact with anyone exhibiting excessive knowledg...",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[75].#area[76].RadioButtonList[55]",
+      "section": "foreignActivities",
+      "page": 86,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "information?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[77].RadioButtonList[56]",
+      "section": "foreignActivities",
+      "page": 86,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "intelligence or security service?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].RadioButtonList[57]",
+      "section": "foreignActivities",
+      "page": 86,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+      "confidence": 0.918
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].RadioButtonList[58]",
+      "section": "foreignActivities",
+      "page": 86,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "customs or security service officials when entering or leaving this country?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[80].#area[81].RadioButtonList[59]",
+      "section": "foreignActivities",
+      "page": 87,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to or in this country, were you involved in any encounter with the police?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[82].#area[83].RadioButtonList[60]",
+      "section": "foreignActivities",
+      "page": 87,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "intelligence, terrorist, security, or military organizations?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[84].#area[85].RadioButtonList[61]",
+      "section": "foreignActivities",
+      "page": 87,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to, or in this country, were you involved in any counterintelligence or security issues not reported?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[86].#area[87].RadioButtonList[62]",
+      "section": "foreignActivities",
+      "page": 87,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "While traveling to or in this country, were you contacted by, or in contact with anyone exhibiting excessive knowledg...",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[88].#area[89].RadioButtonList[63]",
+      "section": "foreignActivities",
+      "page": 87,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "information?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[90].RadioButtonList[64]",
+      "section": "foreignActivities",
+      "page": 87,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "intelligence or security service?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].RadioButtonList[65]",
+      "section": "foreignActivities",
+      "page": 87,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+      "confidence": 0.918
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].RadioButtonList[66]",
+      "section": "foreignActivities",
+      "page": 87,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "customs or security service officials when entering or leaving this country?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a[0].RadioButtonList[0]",
+      "section": "mentalHealth",
+      "page": 88,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Mental health treatment and counseling, in and of itself,  is not a reason  to revoke or deny eligibility for access ...",
+      "confidence": 0.424
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a[0].RadioButtonList[1]",
+      "section": "mentalHealth",
+      "page": 88,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was this matter appealed to a higher court or administrative agency?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a2[0].RadioButtonList[0]",
+      "section": "mentalHealth",
+      "page": 89,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was this matter appealed to a higher court or administrative agency?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a2[0].RadioButtonList[1]",
+      "section": "mentalHealth",
+      "page": 89,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was this matter appealed to a higher court or administrative agency?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section21b[0].RadioButtonList[0]",
+      "section": "mentalHealth",
+      "page": 90,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Section 21B - Psychological and Emotional Health -  (Continued)",
+      "confidence": 0.308
+    },
+    {
+      "pdfFieldName": "form1[0].Section21b[0].RadioButtonList[1]",
+      "section": "mentalHealth",
+      "page": 90,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was this matter appealed to a higher court or administrative agency?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section21b2[0].RadioButtonList[0]",
+      "section": "mentalHealth",
+      "page": 91,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was this matter appealed to a higher court or administrative agency?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section21c[0].RadioButtonList[0]",
+      "section": "mentalHealth",
+      "page": 92,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Section 21C - Psychological and Emotional Health -  (Continued)",
+      "confidence": 0.308
+    },
+    {
+      "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[0]",
+      "section": "mentalHealth",
+      "page": 93,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "The following question asks whether you have been diagnosed with a specified mental health condition that may, partic...",
+      "confidence": 0.42
+    },
+    {
+      "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[1]",
+      "section": "mentalHealth",
+      "page": 93,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was the counseling/treatment effective in managing your symptoms?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[2]",
+      "section": "mentalHealth",
+      "page": 93,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was the counseling/treatment effective in managing your symptoms?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section21d2[0].RadioButtonList[0]",
+      "section": "mentalHealth",
+      "page": 94,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was the counseling/treatment effective in managing your symptoms?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].section21d2[0].RadioButtonList[1]",
+      "section": "mentalHealth",
+      "page": 94,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was the counseling/treatment effective in managing your symptoms?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section21d3[0].RadioButtonList[0]",
+      "section": "mentalHealth",
+      "page": 95,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "altering or discontinuing, or failing to start a prescribed course of treatment for any of the listed diagnoses?",
+      "confidence": 0.723
+    },
+    {
+      "pdfFieldName": "form1[0].Section21d3[0].RadioButtonList[1]",
+      "section": "mentalHealth",
+      "page": 95,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "In the last seven years, have there been any occasions when you did not consult with a medical professional before",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section21e[0].RadioButtonList[0]",
+      "section": "mentalHealth",
+      "page": 96,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you responded \u2018 No \u2019 to 21A, 21B, 21C, and 21D (All). If \u2018 Yes \u2019 was selected for either 21...",
+      "confidence": 0.998
+    },
+    {
+      "pdfFieldName": "form1[0].Section21e[0].RadioButtonList[1]",
+      "section": "mentalHealth",
+      "page": 96,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did you ever receive or are you currently receiving counseling or treatment for that condition? (You may choose not t...",
+      "confidence": 0.968
+    },
+    {
+      "pdfFieldName": "form1[0].Section21e[0].RadioButtonList[2]",
+      "section": "mentalHealth",
+      "page": 96,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have you ever chosen not to follow a prescribed course of treatment for any of these conditions?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section21e1[0].RadioButtonList[0]",
+      "section": "mentalHealth",
+      "page": 97,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have you ever chosen not to follow a prescribed course of treatment for any of these conditions?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_1[0].RadioButtonList[0]",
+      "section": "policeRecord",
+      "page": 98,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have any of the following happened? (If 'Yes' you will be asked to provide details for each offense that",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_1[0].RadioButtonList[1]",
+      "section": "policeRecord",
+      "page": 98,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "type of law enforcement official?",
+      "confidence": 0.968
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_1[0].#area[2].RadioButtonList[2]",
+      "section": "policeRecord",
+      "page": 98,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did this offense involve any of the following?",
+      "confidence": 0.977
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_1[0].#area[5].RadioButtonList[3]",
+      "section": "policeRecord",
+      "page": 98,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "As a result of this offense were you charged, convicted, currently awaiting trial, and/or ordered to appear in court ...",
+      "confidence": 0.936
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[0]",
+      "section": "policeRecord",
+      "page": 99,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you sentenced as a result of this offense?",
+      "confidence": 0.976
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[1]",
+      "section": "policeRecord",
+      "page": 99,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "-  In the last seven (7) years  have you been charged with, convicted of, or sentenced for a crime in any court? (Inc...",
+      "confidence": 0.859
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[2]",
+      "section": "policeRecord",
+      "page": 99,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "-  In the last seven (7) years  have you been charged with, convicted of, or sentenced for a crime in any court? (Inc...",
+      "confidence": 0.857
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[3]",
+      "section": "policeRecord",
+      "page": 99,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you incarcerated as a result of that sentence for not less than 1 year?",
+      "confidence": 0.711
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_3[0].RadioButtonList[0]",
+      "section": "policeRecord",
+      "page": 100,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "type of law enforcement official?",
+      "confidence": 0.968
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_3[0].#area[2].RadioButtonList[1]",
+      "section": "policeRecord",
+      "page": 100,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did this offense involve any of the following?",
+      "confidence": 0.977
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_3[0].#area[5].RadioButtonList[2]",
+      "section": "policeRecord",
+      "page": 100,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "As a result of this offense were you charged, convicted, currently awaiting trial, and/or ordered to appear in court ...",
+      "confidence": 0.936
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_4[0].RadioButtonList[0]",
+      "section": "policeRecord",
+      "page": 101,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you sentenced as a result of this offense?",
+      "confidence": 0.976
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_4[0].#area[2].RadioButtonList[1]",
+      "section": "policeRecord",
+      "page": 101,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "-  In the last seven (7) years  have you been charged with, convicted of, or sentenced for a crime in any court? (Inc...",
+      "confidence": 0.859
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_4[0].RadioButtonList[2]",
+      "section": "policeRecord",
+      "page": 101,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "-  In the last seven (7) years  have you been charged with, convicted of, or sentenced for a crime in any court? (Inc...",
+      "confidence": 0.857
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_4[0].#area[4].RadioButtonList[3]",
+      "section": "policeRecord",
+      "page": 101,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you incarcerated as a result of that sentence for not less than 1 year?",
+      "confidence": 0.711
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].#area[1].RadioButtonList[1]",
+      "section": "policeRecord",
+      "page": 102,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did this offense involve any of the following?",
+      "confidence": 0.969
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].#area[2].RadioButtonList[2]",
+      "section": "policeRecord",
+      "page": 102,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you sentenced as a result of these charges?",
+      "confidence": 0.982
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].#area[3].RadioButtonList[3]",
+      "section": "policeRecord",
+      "page": 102,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide a description of the sentence.",
+      "confidence": 0.698
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].RadioButtonList[4]",
+      "section": "policeRecord",
+      "page": 102,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you sentenced to imprisonment for a term exceeding 1 year?",
+      "confidence": 0.771
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].#area[5].RadioButtonList[5]",
+      "section": "policeRecord",
+      "page": 102,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Are you currently on trial, awaiting a trial, or awaiting sentencing on criminal charges for this offense?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].#area[1].RadioButtonList[0]",
+      "section": "policeRecord",
+      "page": 103,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did this offense involve any of the following?",
+      "confidence": 0.97
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].#area[2].RadioButtonList[1]",
+      "section": "policeRecord",
+      "page": 103,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you sentenced as a result of these charges?",
+      "confidence": 0.981
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].#area[3].RadioButtonList[2]",
+      "section": "policeRecord",
+      "page": 103,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide a description of the sentence.",
+      "confidence": 0.698
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].RadioButtonList[3]",
+      "section": "policeRecord",
+      "page": 103,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Were you sentenced to imprisonment for a term exceeding 1 year?",
+      "confidence": 0.771
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].#area[5].RadioButtonList[4]",
+      "section": "policeRecord",
+      "page": 103,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Are you currently on trial, awaiting a trial, or awaiting sentencing on criminal charges for this offense?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[0]",
+      "section": "drugActivity",
+      "page": 105,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was your use while you were employed as a law enforcement officer, prosecutor, or courtroom official, or while in",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[1]",
+      "section": "drugActivity",
+      "page": 105,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Was your use while you were employed as a law enforcement officer, prosecutor, or courtroom official, or while in",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[2].RadioButtonList[2]",
+      "section": "drugActivity",
+      "page": 105,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide nature of use, frequency, and number of times used.",
+      "confidence": 0.867
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[3].RadioButtonList[3]",
+      "section": "drugActivity",
+      "page": 105,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide nature of use, frequency, and number of times used.",
+      "confidence": 0.863
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[4]",
+      "section": "drugActivity",
+      "page": 105,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "We note, with reference to this section, that neither your truthful responses nor information derived from your respo...",
+      "confidence": 0.425
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[6].RadioButtonList[5]",
+      "section": "drugActivity",
+      "page": 105,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide nature of use, frequency, and number of times used.",
+      "confidence": 0.867
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[7].RadioButtonList[6]",
+      "section": "drugActivity",
+      "page": 105,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide nature of use, frequency, and number of times used.",
+      "confidence": 0.863
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[7]",
+      "section": "drugActivity",
+      "page": 105,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you answered  'Yes'  to  in the last seven (7) years  having illegally used a drug or contr...",
+      "confidence": 0.91
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[8]",
+      "section": "drugActivity",
+      "page": 105,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide explanation of why you intend or do not intend to use this drug or controlled substance in the future.",
+      "confidence": 0.908
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].#area[1].RadioButtonList[0]",
+      "section": "drugActivity",
+      "page": 106,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the nature and frequency of activity.",
+      "confidence": 0.866
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[1]",
+      "section": "drugActivity",
+      "page": 106,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the nature and frequency of activity.",
+      "confidence": 0.862
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[2]",
+      "section": "drugActivity",
+      "page": 106,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you intend to engage in this activity in the future?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[3]",
+      "section": "drugActivity",
+      "page": 106,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Section 23 - Illegal Use of Drugs and Drug Activity  - (Continued)",
+      "confidence": 0.323
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].#area[3].RadioButtonList[4]",
+      "section": "drugActivity",
+      "page": 106,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the nature and frequency of activity.",
+      "confidence": 0.866
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[5]",
+      "section": "drugActivity",
+      "page": 106,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the nature and frequency of activity.",
+      "confidence": 0.862
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[6]",
+      "section": "drugActivity",
+      "page": 106,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Do you intend to engage in this activity in the future?",
+      "confidence": 0.904
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[7]",
+      "section": "drugActivity",
+      "page": 106,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you answered  'Yes'  to  in the last seven (7) years  having been involved in the illegal p...",
+      "confidence": 0.909
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[8]",
+      "section": "drugActivity",
+      "page": 106,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the type of drug or controlled substance.",
+      "confidence": 0.664
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_3[0].RadioButtonList[0]",
+      "section": "drugActivity",
+      "page": 107,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide an estimate of the number of times you used and/or were involved with this",
+      "confidence": 0.925
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].#area[1].RadioButtonList[1]",
+      "section": "drugActivity",
+      "page": 108,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+      "confidence": 0.929
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[2]",
+      "section": "drugActivity",
+      "page": 108,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+      "confidence": 0.917
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].#area[3].RadioButtonList[3]",
+      "section": "drugActivity",
+      "page": 108,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+      "confidence": 0.929
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[4]",
+      "section": "drugActivity",
+      "page": 108,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+      "confidence": 0.917
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].RadioButtonList[1]",
+      "section": "drugActivity",
+      "page": 109,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result of your illegal ...",
+      "confidence": 0.932
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].#area[1].RadioButtonList[2]",
+      "section": "drugActivity",
+      "page": 109,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result of your illegal ...",
+      "confidence": 0.912
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].#area[3].RadioButtonList[3]",
+      "section": "drugActivity",
+      "page": 109,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+      "confidence": 0.914
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].RadioButtonList[4]",
+      "section": "drugActivity",
+      "page": 109,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the type of drug or controlled substance for which you were treated.",
+      "confidence": 0.914
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].RadioButtonList[0]",
+      "section": "drugActivity",
+      "page": 110,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result of your illegal ...",
+      "confidence": 0.932
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].#area[0].RadioButtonList[1]",
+      "section": "drugActivity",
+      "page": 110,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result of your illegal ...",
+      "confidence": 0.912
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].#area[2].RadioButtonList[2]",
+      "section": "drugActivity",
+      "page": 110,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+      "confidence": 0.914
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].RadioButtonList[3]",
+      "section": "drugActivity",
+      "page": 110,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the type of d rug or controlled substance for which you were treated.",
+      "confidence": 0.914
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[0]",
+      "section": "drugActivity",
+      "page": 111,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you   responded 'Yes' to having  EVER  voluntarily sought counseling or treatment as a resu...",
+      "confidence": 0.909
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[1]",
+      "section": "drugActivity",
+      "page": 111,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the type of drug or controlled substance for which you were treated.",
+      "confidence": 0.714
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[2]",
+      "section": "drugActivity",
+      "page": 111,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+      "confidence": 0.913
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[4]",
+      "section": "drugActivity",
+      "page": 111,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+      "confidence": 0.913
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[0].RadioButtonList[0]",
+      "section": "alcoholUse",
+      "page": 113,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "A mental health professional",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].RadioButtonList[2]",
+      "section": "alcoholUse",
+      "page": 113,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result of your use of a...",
+      "confidence": 0.915
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[1].RadioButtonList[3]",
+      "section": "alcoholUse",
+      "page": 113,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the full address for the counseling/treatment provider.    ( Provide City and Country if outside the United S...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[2].RadioButtonList[4]",
+      "section": "alcoholUse",
+      "page": 113,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "A mental health professional",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].RadioButtonList[5]",
+      "section": "alcoholUse",
+      "page": 113,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Have any of the following ordered, advised, or asked you to seek counseling or treatment as a result of your use of a...",
+      "confidence": 0.915
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[3].RadioButtonList[6]",
+      "section": "alcoholUse",
+      "page": 113,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the full address for the counseling/treatment provider.    ( Provide City and Country if outside the United S...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_3[0].#area[1].RadioButtonList[0]",
+      "section": "alcoholUse",
+      "page": 114,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the full address of the counseling/treatment provider.  ( Provide City and Country if outside the United Stat...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_3[0].#area[3].RadioButtonList[2]",
+      "section": "alcoholUse",
+      "page": 114,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the full address of the counseling/treatment provider.  ( Provide City and Country if outside the United Stat...",
+      "confidence": 0.916
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_4[0].#area[0].RadioButtonList[0]",
+      "section": "alcoholUse",
+      "page": 115,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the address of agency/organization where counseling/treatment was provided.  ( Provide City and Country if ou...",
+      "confidence": 0.913
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_4[0].#area[1].RadioButtonList[1]",
+      "section": "alcoholUse",
+      "page": 115,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the address of agency/organization where counseling/treatment was provided.  ( Provide City and Country if ou...",
+      "confidence": 0.912
+    },
+    {
+      "pdfFieldName": "form1[0].Section25_2[0].RadioButtonList[1]",
+      "section": "investigationsInfo",
+      "page": 117,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you responded 'Yes' to having  EVER  had a security clearance eligibility/access authorizat...",
+      "confidence": 0.907
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[1]",
+      "section": "finances",
+      "page": 118,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you responded  'Yes'  to  in the last seven (7) years  having filed a petition under any ch...",
+      "confidence": 0.933
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[2]",
+      "section": "finances",
+      "page": 118,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the address of the trustee for this bankruptcy.  ( Provide City and Country if outside the United States; oth...",
+      "confidence": 0.929
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[3]",
+      "section": "finances",
+      "page": 118,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the address of the trustee for this bankruptcy.  ( Provide City and Country if outside the United States; oth...",
+      "confidence": 0.91
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[4]",
+      "section": "finances",
+      "page": 118,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the address of the trustee for this bankruptcy.  ( Provide City and Country if outside the United States; oth...",
+      "confidence": 0.929
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[1]",
+      "section": "finances",
+      "page": 119,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide an estimate of the amount (in U.S. dollars) of gambling losses incurred.",
+      "confidence": 0.911
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[2]",
+      "section": "finances",
+      "page": 119,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did you fail to file, pay as required, or both?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[3]",
+      "section": "finances",
+      "page": 119,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Did you fail to file, pay as required, or both?",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_3[0].RadioButtonList[1]",
+      "section": "finances",
+      "page": 120,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide a description of any action(s) you have taken to rectify this situation. If you have not taken any",
+      "confidence": 0.926
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_6[0].#area[0].RadioButtonList[0]",
+      "section": "finances",
+      "page": 121,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Other than previously listed, have any of the following happened to you? (You will be asked to provide",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_6[0].RadioButtonList[1]",
+      "section": "finances",
+      "page": 121,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+      "confidence": 0.743
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_7[0].RadioButtonList[0]",
+      "section": "finances",
+      "page": 122,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+      "confidence": 0.743
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_8[0].RadioButtonList[1]",
+      "section": "finances",
+      "page": 123,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+      "confidence": 0.743
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_9[0].RadioButtonList[0]",
+      "section": "finances",
+      "page": 124,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+      "confidence": 0.743
+    },
+    {
+      "pdfFieldName": "form1[0].Section27[0].RadioButtonList[0]",
+      "section": "technology",
+      "page": 125,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "In the last seven (7) years  have you illegally or without authorization, modified, destroyed, manipulated, or",
+      "confidence": 1.0
+    },
+    {
+      "pdfFieldName": "form1[0].Section27[0].RadioButtonList[1]",
+      "section": "technology",
+      "page": 125,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "hardware, software, firmware, and data used for the communication, transmission, processing, manipulation, storage or...",
+      "confidence": 0.426
+    },
+    {
+      "pdfFieldName": "form1[0].Section29[0].RadioButtonList[0]",
+      "section": "association",
+      "page": 128,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "The following pertain to your associations. You are required to answer the questions fully and truthfully, and your f...",
+      "confidence": 0.425
+    },
+    {
+      "pdfFieldName": "form1[0].Section29_2[0].RadioButtonList[1]",
+      "section": "association",
+      "page": 129,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you responded  'Yes'  to  EVER  having knowingly engaged in any acts of terrorism.",
+      "confidence": 0.709
+    },
+    {
+      "pdfFieldName": "form1[0].Section29_5[0].RadioButtonList[1]",
+      "section": "association",
+      "page": 132,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Complete the following if you responded  'Yes'  to having  EVER  knowingly engaged in activities designed to overthro...",
+      "confidence": 0.908
+    },
+    {
+      "pdfFieldName": "form1[0].continuation3[0].RadioButtonList[0]",
+      "section": "signature",
+      "page": 135,
+      "currentLabel": "RadioButtonList",
+      "newLabel": "Does the person under investigation have a condition that could impair his or her judgment, reliability, or trustwort...",
+      "confidence": 0.946
+    }
+  ]
+}

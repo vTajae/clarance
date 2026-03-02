@@ -1,0 +1,1186 @@
+[
+  {
+    "pdfFieldName": "form1[0].#subform[71].From_Datefield_Name_2[9]",
+    "semanticKey": "foreignActivities.provideTheDateOfPurchaseToBeAcquired_3",
+    "section": "foreignActivities",
+    "page": 72,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the date of purchase to be acquired. (Month/Day/Year)",
+    "nearestText": "applicable.  (Month/Day/Year)",
+    "suggestedLabel": "applicable.  (Month/Day/Year)",
+    "similarity": 0.25,
+    "confidence": 0.4,
+    "candidates": [
+      {
+        "text": "applicable.  (Month/Day/Year)",
+        "distance": 0.6,
+        "direction": "above",
+        "score": 1.23
+      },
+      {
+        "text": "Are/were/will there any co-owners of this foreign real estate?",
+        "distance": 4.2,
+        "direction": "left",
+        "score": 0.2891
+      },
+      {
+        "text": "Provide the date sold, if",
+        "distance": 10.2,
+        "direction": "above",
+        "score": 0.1782
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[72].RadioButtonList[12]",
+    "semanticKey": "foreignActivities.RadioButtonList_285",
+    "section": "foreignActivities",
+    "page": 73,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the date the benefit is expected to end.  (Month/Day/Year)",
+    "nearestText": "Provide the frequency that this benefit is received.",
+    "suggestedLabel": "Other (Provide explanation)",
+    "similarity": 0.267,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "Other (Provide explanation)",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1071
+      },
+      {
+        "text": "Provide the frequency that this benefit is received.",
+        "distance": 39.9,
+        "direction": "left",
+        "score": 0.0366
+      },
+      {
+        "text": "Monthly",
+        "distance": 42.6,
+        "direction": "left",
+        "score": 0.0344
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[74].RadioButtonList[19]",
+    "semanticKey": "foreignActivities.RadioButtonList_323",
+    "section": "foreignActivities",
+    "page": 74,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the date the benefit is expected to end.  (Month/Day/Year)",
+    "nearestText": "Provide the frequency that this benefit is received.",
+    "suggestedLabel": "Other (Provide explanation)",
+    "similarity": 0.267,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "Other (Provide explanation)",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1062
+      },
+      {
+        "text": "Provide the frequency that this benefit is received.",
+        "distance": 39.9,
+        "direction": "left",
+        "score": 0.0367
+      },
+      {
+        "text": "Monthly",
+        "distance": 42.6,
+        "direction": "left",
+        "score": 0.0344
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[77].RadioButtonList[23]",
+    "semanticKey": "foreignActivities.RadioButtonList_389",
+    "section": "foreignActivities",
+    "page": 76,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the country of origin for the organization or business.",
+    "nearestText": "your immediate family  in the last seven (7) years  been asked to provide advice or serve as a consultant,",
+    "suggestedLabel": "NO  (If NO, proceed to 20B.3)",
+    "similarity": 0.12,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to 20B.3)",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.1503
+      },
+      {
+        "text": "YES",
+        "distance": 13.7,
+        "direction": "left",
+        "score": 0.1018
+      },
+      {
+        "text": "your immediate family  in the last seven (7) years  been asked to provide advice or serve as a consu",
+        "distance": 48.5,
+        "direction": "left",
+        "score": 0.0303
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[92].RadioButtonList[34]",
+    "semanticKey": "foreignActivities.RadioButtonList_678",
+    "section": "foreignActivities",
+    "page": 84,
+    "pdfFieldType": "",
+    "currentLabel": "Have you traveled outside the U.S.  in the last seven (7) years ?",
+    "nearestText": "YES  (If YES, proceed to Section 21)",
+    "suggestedLabel": "YES  (If YES, proceed to Section 21)",
+    "similarity": 0.0,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "YES  (If YES, proceed to Section 21)",
+        "distance": 4.8,
+        "direction": "left",
+        "score": 0.2576
+      },
+      {
+        "text": "NO",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.1501
+      },
+      {
+        "text": "OMB No. 3206 0005",
+        "distance": 63.2,
+        "direction": "above_left",
+        "score": 0.028
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[92].RadioButtonList[41]",
+    "semanticKey": "foreignActivities.RadioButtonList_698",
+    "section": "foreignActivities",
+    "page": 84,
+    "pdfFieldType": "",
+    "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+    "nearestText": "Many short trips",
+    "suggestedLabel": "Many short trips",
+    "similarity": 0.059,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "Many short trips",
+        "distance": 3.0,
+        "direction": "right",
+        "score": 0.1249
+      },
+      {
+        "text": "More than 30",
+        "distance": 5.1,
+        "direction": "right",
+        "score": 0.0819
+      },
+      {
+        "text": "21-30",
+        "distance": 24.5,
+        "direction": "left",
+        "score": 0.0587
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[93].RadioButtonList[49]",
+    "semanticKey": "foreignActivities.RadioButtonList_726",
+    "section": "foreignActivities",
+    "page": 85,
+    "pdfFieldType": "",
+    "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+    "nearestText": "Many short trips",
+    "suggestedLabel": "Many short trips",
+    "similarity": 0.059,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "Many short trips",
+        "distance": 3.0,
+        "direction": "right",
+        "score": 0.1249
+      },
+      {
+        "text": "More than 30",
+        "distance": 5.1,
+        "direction": "right",
+        "score": 0.082
+      },
+      {
+        "text": "21-30",
+        "distance": 24.5,
+        "direction": "left",
+        "score": 0.0587
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[94].RadioButtonList[57]",
+    "semanticKey": "foreignActivities.RadioButtonList_754",
+    "section": "foreignActivities",
+    "page": 86,
+    "pdfFieldType": "",
+    "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+    "nearestText": "Many short trips",
+    "suggestedLabel": "Many short trips",
+    "similarity": 0.059,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "Many short trips",
+        "distance": 3.0,
+        "direction": "right",
+        "score": 0.1249
+      },
+      {
+        "text": "More than 30",
+        "distance": 5.1,
+        "direction": "right",
+        "score": 0.082
+      },
+      {
+        "text": "21-30",
+        "distance": 24.5,
+        "direction": "left",
+        "score": 0.0587
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[95].RadioButtonList[65]",
+    "semanticKey": "foreignActivities.RadioButtonList_782",
+    "section": "foreignActivities",
+    "page": 87,
+    "pdfFieldType": "",
+    "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+    "nearestText": "Many short trips",
+    "suggestedLabel": "Many short trips",
+    "similarity": 0.059,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "Many short trips",
+        "distance": 3.0,
+        "direction": "right",
+        "score": 0.1249
+      },
+      {
+        "text": "More than 30",
+        "distance": 5.1,
+        "direction": "right",
+        "score": 0.082
+      },
+      {
+        "text": "21-30",
+        "distance": 24.5,
+        "direction": "left",
+        "score": 0.0587
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[72].RadioButtonList[13]",
+    "semanticKey": "foreignActivities.RadioButtonList_289",
+    "section": "foreignActivities",
+    "page": 73,
+    "pdfFieldType": "",
+    "currentLabel": "Frequency of foreign benefit (one-time or continuing)",
+    "nearestText": "Provide the frequency of the",
+    "suggestedLabel": "Other such benefit",
+    "similarity": 0.2,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "Other such benefit",
+        "distance": 3.6,
+        "direction": "right",
+        "score": 0.1082
+      },
+      {
+        "text": "Provide the frequency of the",
+        "distance": 20.6,
+        "direction": "left",
+        "score": 0.0694
+      },
+      {
+        "text": "Educational",
+        "distance": 6.7,
+        "direction": "right",
+        "score": 0.0651
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[74].RadioButtonList[20]",
+    "semanticKey": "foreignActivities.RadioButtonList_327",
+    "section": "foreignActivities",
+    "page": 74,
+    "pdfFieldType": "",
+    "currentLabel": "Frequency of foreign benefit (one-time or continuing)",
+    "nearestText": "Provide the frequency of the",
+    "suggestedLabel": "Other such benefit",
+    "similarity": 0.2,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "Other such benefit",
+        "distance": 3.6,
+        "direction": "right",
+        "score": 0.1096
+      },
+      {
+        "text": "Provide the frequency of the",
+        "distance": 20.7,
+        "direction": "left",
+        "score": 0.0693
+      },
+      {
+        "text": "Educational",
+        "distance": 6.6,
+        "direction": "right",
+        "score": 0.0655
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[76].RadioButtonList[21]",
+    "semanticKey": "foreignActivities.RadioButtonList_344",
+    "section": "foreignActivities",
+    "page": 75,
+    "pdfFieldType": "",
+    "currentLabel": "Have you EVER provided financial support for any foreign national?",
+    "nearestText": "NO  (If NO, proceed to 20B)",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 6.7,
+        "direction": "left",
+        "score": 0.1938
+      },
+      {
+        "text": "NO  (If NO, proceed to 20B)",
+        "distance": 4.1,
+        "direction": "right",
+        "score": 0.0974
+      },
+      {
+        "text": "Suffix",
+        "distance": 53.3,
+        "direction": "other",
+        "score": 0.0055
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[83].#subform[84].RadioButtonList2[0]",
+    "semanticKey": "foreignActivities.radiobuttonlist2",
+    "section": "foreignActivities",
+    "page": 80,
+    "pdfFieldType": "",
+    "currentLabel": "Have you, your spouse, or legally recognized civil partner, cohabitant, or dependent children EVER had any foreign financial interests?",
+    "nearestText": "Have you or any member of your immediate family  in the last seven (7) years  had any contact with a foreign",
+    "suggestedLabel": "YES",
+    "similarity": 0.226,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 8.2,
+        "direction": "left",
+        "score": 0.1623
+      },
+      {
+        "text": "NO   (If NO, Proceed to",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1056
+      },
+      {
+        "text": "20B.7)",
+        "distance": 3.8,
+        "direction": "right",
+        "score": 0.1044
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[87].RadioButtonList5[0]",
+    "semanticKey": "foreignActivities.radiobuttonlist5",
+    "section": "foreignActivities",
+    "page": 81,
+    "pdfFieldType": "",
+    "currentLabel": "Have you EVER provided financial support for any foreign national?",
+    "nearestText": "Have you  in the last seven (7) years  sponsored any foreign national to come to the U.S. as a student,",
+    "suggestedLabel": "NO  (If NO, proceed to 20B.8)",
+    "similarity": 0.208,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to 20B.8)",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1479
+      },
+      {
+        "text": "Complete the following if you responded  'Yes'  to  in the last seven (7) years  having sponsored an",
+        "distance": 9.6,
+        "direction": "left",
+        "score": 0.141
+      },
+      {
+        "text": "YES",
+        "distance": 11.2,
+        "direction": "left",
+        "score": 0.1225
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].#subform[91].RadioButtonList6[0]",
+    "semanticKey": "foreignActivities.radiobuttonlist6",
+    "section": "foreignActivities",
+    "page": 83,
+    "pdfFieldType": "",
+    "currentLabel": "Have you EVER voted in a foreign election?",
+    "nearestText": "Section 20B - Foreign Business, Professional Activities, and Foreign Government Contacts -  (Continued)",
+    "suggestedLabel": "NO   (If NO, proceed to 20B.9)",
+    "similarity": 0.059,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "NO   (If NO, proceed to 20B.9)",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1482
+      },
+      {
+        "text": "YES",
+        "distance": 11.2,
+        "direction": "left",
+        "score": 0.1225
+      },
+      {
+        "text": "Section 20B - Foreign Business, Professional Activities, and Foreign Government Contacts -  (Continu",
+        "distance": 59.6,
+        "direction": "left",
+        "score": 0.0248
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_1[0].RadioButtonList[1]",
+    "semanticKey": "foreignContacts.0.RadioButtonList_21",
+    "section": "foreignContacts",
+    "page": 63,
+    "pdfFieldType": "",
+    "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+    "nearestText": "Provide the nature of relationship (Check all that apply).",
+    "suggestedLabel": "Other (Provide explanation)",
+    "similarity": 0.133,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Other (Provide explanation)",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1065
+      },
+      {
+        "text": "Annually",
+        "distance": 5.7,
+        "direction": "right",
+        "score": 0.0751
+      },
+      {
+        "text": "Provide the nature of relationship (Check all that apply).",
+        "distance": 72.3,
+        "direction": "left",
+        "score": 0.0205
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_1[0].#area[3].RadioButtonList[3]",
+    "semanticKey": "foreignContacts.0.RadioButtonList_65",
+    "section": "foreignContacts",
+    "page": 63,
+    "pdfFieldType": "",
+    "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+    "nearestText": "Provide the name of the foreign national's current employer, or provide the name of their most recent employer if not currently employed.",
+    "suggestedLabel": "Provide the name of the foreign national's current employer, or provide the name of their most recent employer if not currently employed.",
+    "similarity": 0.167,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide the name of the foreign national's current employer, or provide the name of their most recen",
+        "distance": 3.0,
+        "direction": "right",
+        "score": 0.1265
+      },
+      {
+        "text": "I don 't know",
+        "distance": 3.8,
+        "direction": "right",
+        "score": 0.1036
+      },
+      {
+        "text": "YES",
+        "distance": 15.3,
+        "direction": "left",
+        "score": 0.0922
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_2[0].RadioButtonList[0]",
+    "semanticKey": "foreignContacts.0.RadioButtonList_90",
+    "section": "foreignContacts",
+    "page": 64,
+    "pdfFieldType": "",
+    "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+    "nearestText": "Provide the nature of relationship (Check all that apply).",
+    "suggestedLabel": "Other (Provide explanation)",
+    "similarity": 0.133,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Other (Provide explanation)",
+        "distance": 3.6,
+        "direction": "right",
+        "score": 0.1076
+      },
+      {
+        "text": "Annually",
+        "distance": 5.7,
+        "direction": "right",
+        "score": 0.0746
+      },
+      {
+        "text": "Provide the nature of relationship (Check all that apply).",
+        "distance": 72.3,
+        "direction": "left",
+        "score": 0.0205
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_2[0].#area[3].RadioButtonList[2]",
+    "semanticKey": "foreignContacts.0.RadioButtonList_133",
+    "section": "foreignContacts",
+    "page": 64,
+    "pdfFieldType": "",
+    "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+    "nearestText": "Provide the name of the foreign national's current employer, or provide the name of their most recent employer if not currently employed.",
+    "suggestedLabel": "Provide the name of the foreign national's current employer, or provide the name of their most recent employer if not currently employed.",
+    "similarity": 0.167,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide the name of the foreign national's current employer, or provide the name of their most recen",
+        "distance": 2.9,
+        "direction": "right",
+        "score": 0.1298
+      },
+      {
+        "text": "I don't know",
+        "distance": 3.9,
+        "direction": "right",
+        "score": 0.1025
+      },
+      {
+        "text": "YES",
+        "distance": 15.2,
+        "direction": "left",
+        "score": 0.0923
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_3[0].RadioButtonList[0]",
+    "semanticKey": "foreignContacts.0.RadioButtonList_159",
+    "section": "foreignContacts",
+    "page": 65,
+    "pdfFieldType": "",
+    "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+    "nearestText": "Provide the nature of relationship (Check all that apply).",
+    "suggestedLabel": "Other (Provide explanation)",
+    "similarity": 0.133,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Other (Provide explanation)",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1065
+      },
+      {
+        "text": "Annually",
+        "distance": 5.7,
+        "direction": "right",
+        "score": 0.0744
+      },
+      {
+        "text": "Provide the nature of relationship (Check all that apply).",
+        "distance": 72.3,
+        "direction": "left",
+        "score": 0.0205
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_3[0].#area[3].RadioButtonList[2]",
+    "semanticKey": "foreignContacts.0.RadioButtonList_202",
+    "section": "foreignContacts",
+    "page": 65,
+    "pdfFieldType": "",
+    "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+    "nearestText": "Provide the name of the foreign national's current employer, or provide the name of their most recent employer if not currently employed.",
+    "suggestedLabel": "Provide the name of the foreign national's current employer, or provide the name of their most recent employer if not currently employed.",
+    "similarity": 0.167,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide the name of the foreign national's current employer, or provide the name of their most recen",
+        "distance": 2.9,
+        "direction": "right",
+        "score": 0.129
+      },
+      {
+        "text": "I don 't know",
+        "distance": 3.8,
+        "direction": "right",
+        "score": 0.1036
+      },
+      {
+        "text": "YES",
+        "distance": 15.3,
+        "direction": "left",
+        "score": 0.0921
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_4[0].RadioButtonList[0]",
+    "semanticKey": "foreignContacts.0.RadioButtonList_228",
+    "section": "foreignContacts",
+    "page": 66,
+    "pdfFieldType": "",
+    "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+    "nearestText": "Provide the nature of relationship (Check all that apply).",
+    "suggestedLabel": "Other (Provide explanation)",
+    "similarity": 0.133,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Other (Provide explanation)",
+        "distance": 3.6,
+        "direction": "right",
+        "score": 0.1076
+      },
+      {
+        "text": "Annually",
+        "distance": 5.7,
+        "direction": "right",
+        "score": 0.0746
+      },
+      {
+        "text": "Provide the nature of relationship (Check all that apply).",
+        "distance": 72.3,
+        "direction": "left",
+        "score": 0.0205
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section19_4[0].#area[3].RadioButtonList[2]",
+    "semanticKey": "foreignContacts.0.RadioButtonList_271",
+    "section": "foreignContacts",
+    "page": 66,
+    "pdfFieldType": "",
+    "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+    "nearestText": "Provide the name of the foreign national's current employer, or provide the name of their most recent employer if not currently employed.",
+    "suggestedLabel": "Provide the name of the foreign national's current employer, or provide the name of their most recent employer if not currently employed.",
+    "similarity": 0.167,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide the name of the foreign national's current employer, or provide the name of their most recen",
+        "distance": 2.9,
+        "direction": "right",
+        "score": 0.1298
+      },
+      {
+        "text": "I don't know",
+        "distance": 3.9,
+        "direction": "right",
+        "score": 0.1025
+      },
+      {
+        "text": "YES",
+        "distance": 15.2,
+        "direction": "left",
+        "score": 0.0923
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[0]",
+    "semanticKey": "dualCitizenshipInfo.RadioButtonList_1",
+    "section": "dualCitizenshipInfo",
+    "page": 8,
+    "pdfFieldType": "",
+    "currentLabel": "Are you now or have you EVER been a citizen of a country other than the U.S.?",
+    "nearestText": "During what period of time did you hold citizenship with this country?",
+    "suggestedLabel": "NO   (If NO, proceed to 10.2)",
+    "similarity": 0.12,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO   (If NO, proceed to 10.2)",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.1521
+      },
+      {
+        "text": "YES",
+        "distance": 10.7,
+        "direction": "left",
+        "score": 0.128
+      },
+      {
+        "text": "(Provide the date range that you held this citizenship, beginning with the date it",
+        "distance": 48.5,
+        "direction": "below",
+        "score": 0.0162
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[5]",
+    "semanticKey": "dualCitizenshipInfo.RadioButtonList_24",
+    "section": "dualCitizenshipInfo",
+    "page": 8,
+    "pdfFieldType": "",
+    "currentLabel": "During what period of time did you hold citizenship with this country?",
+    "nearestText": "10.2   Have you  EVER  been issued a passport (or identity card for travel) by a country other than the U.S.?",
+    "suggestedLabel": "Complete the following if you answered ' Yes'  to having been issued a passport (or identity card for travel) by a country other than the U.S.",
+    "similarity": 0.065,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Complete the following if you answered ' Yes'  to having been issued a passport (or identity card fo",
+        "distance": 8.1,
+        "direction": "left",
+        "score": 0.1654
+      },
+      {
+        "text": "YES",
+        "distance": 3.3,
+        "direction": "right",
+        "score": 0.117
+      },
+      {
+        "text": "10.2   Have you  EVER  been issued a passport (or identity card for travel) by a country other than ",
+        "distance": 18.6,
+        "direction": "left",
+        "score": 0.0767
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].Table1[0].Row3[0].Cell4[0]",
+    "semanticKey": "dualCitizenshipInfo.toDateMonthyearRow3",
+    "section": "dualCitizenshipInfo",
+    "page": 8,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 3",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.0,
+        "direction": "above_left",
+        "score": 0.1125
+      },
+      {
+        "text": "Est.",
+        "distance": 14.3,
+        "direction": "left",
+        "score": 0.0979
+      },
+      {
+        "text": "Est.",
+        "distance": 19.9,
+        "direction": "above",
+        "score": 0.0957
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].Table1[0].Row4[0].Cell4[0]",
+    "semanticKey": "dualCitizenshipInfo.toDateMonthyearRow4",
+    "section": "dualCitizenshipInfo",
+    "page": 8,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.0,
+        "direction": "above_left",
+        "score": 0.1126
+      },
+      {
+        "text": "Est.",
+        "distance": 14.3,
+        "direction": "left",
+        "score": 0.0979
+      },
+      {
+        "text": "Est.",
+        "distance": 19.9,
+        "direction": "above",
+        "score": 0.0957
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].Table1[0].Row5[0].Cell2[0]",
+    "semanticKey": "dualCitizenshipInfo.fromDateMonthyearRow5",
+    "section": "dualCitizenshipInfo",
+    "page": 8,
+    "pdfFieldType": "",
+    "currentLabel": "From date (Month/Year). Row 5",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.4,
+        "direction": "above",
+        "score": 0.1223
+      },
+      {
+        "text": "Est.",
+        "distance": 25.1,
+        "direction": "above",
+        "score": 0.0767
+      },
+      {
+        "text": "Est.",
+        "distance": 39.0,
+        "direction": "above",
+        "score": 0.05
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].Table1[0].Row5[0].Cell4[0]",
+    "semanticKey": "dualCitizenshipInfo.toDateMonthyearRow5",
+    "section": "dualCitizenshipInfo",
+    "page": 8,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 5",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.0,
+        "direction": "above_left",
+        "score": 0.1125
+      },
+      {
+        "text": "Est.",
+        "distance": 14.3,
+        "direction": "left",
+        "score": 0.0979
+      },
+      {
+        "text": "Est.",
+        "distance": 19.9,
+        "direction": "above",
+        "score": 0.0957
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].Table1[0].Row5[1].#field[1]",
+    "semanticKey": "dualCitizenshipInfo.fromDateMonthyearRow6",
+    "section": "dualCitizenshipInfo",
+    "page": 8,
+    "pdfFieldType": "",
+    "currentLabel": "From date (Month/Year). Row 6",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.3,
+        "direction": "above",
+        "score": 0.1224
+      },
+      {
+        "text": "Est.",
+        "distance": 25.0,
+        "direction": "above",
+        "score": 0.0768
+      },
+      {
+        "text": "Est.",
+        "distance": 39.0,
+        "direction": "above",
+        "score": 0.05
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].Table1[0].Row5[1].#field[3]",
+    "semanticKey": "dualCitizenshipInfo.toDateMonthyearRow6",
+    "section": "dualCitizenshipInfo",
+    "page": 8,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 6",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.0,
+        "direction": "above_left",
+        "score": 0.1125
+      },
+      {
+        "text": "Est.",
+        "distance": 14.3,
+        "direction": "left",
+        "score": 0.0979
+      },
+      {
+        "text": "Est.",
+        "distance": 19.9,
+        "direction": "above",
+        "score": 0.0957
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10-2[0].Table1[0].Row3[0].Cell4[0]",
+    "semanticKey": "dualCitizenshipInfo.0.toDateMonthyearRow3",
+    "section": "dualCitizenshipInfo",
+    "page": 9,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 3",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.0,
+        "direction": "above_left",
+        "score": 0.1125
+      },
+      {
+        "text": "Est.",
+        "distance": 14.3,
+        "direction": "left",
+        "score": 0.0979
+      },
+      {
+        "text": "Est.",
+        "distance": 19.9,
+        "direction": "above",
+        "score": 0.0957
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10-2[0].Table1[0].Row4[0].Cell4[0]",
+    "semanticKey": "dualCitizenshipInfo.0.toDateMonthyearRow4",
+    "section": "dualCitizenshipInfo",
+    "page": 9,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.0,
+        "direction": "above_left",
+        "score": 0.1126
+      },
+      {
+        "text": "Est.",
+        "distance": 14.3,
+        "direction": "left",
+        "score": 0.0979
+      },
+      {
+        "text": "Est.",
+        "distance": 19.9,
+        "direction": "above",
+        "score": 0.0958
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10-2[0].Table1[0].Row5[0].Cell2[0]",
+    "semanticKey": "dualCitizenshipInfo.0.fromDateMonthyearRow5",
+    "section": "dualCitizenshipInfo",
+    "page": 9,
+    "pdfFieldType": "",
+    "currentLabel": "From date (Month/Year). Row 5",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.3,
+        "direction": "above",
+        "score": 0.1224
+      },
+      {
+        "text": "Est.",
+        "distance": 25.0,
+        "direction": "above",
+        "score": 0.0768
+      },
+      {
+        "text": "Est.",
+        "distance": 39.0,
+        "direction": "above",
+        "score": 0.05
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10-2[0].Table1[0].Row5[0].Cell4[0]",
+    "semanticKey": "dualCitizenshipInfo.0.toDateMonthyearRow5",
+    "section": "dualCitizenshipInfo",
+    "page": 9,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 5",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.0,
+        "direction": "above_left",
+        "score": 0.1125
+      },
+      {
+        "text": "Est.",
+        "distance": 14.3,
+        "direction": "left",
+        "score": 0.0979
+      },
+      {
+        "text": "Est.",
+        "distance": 19.9,
+        "direction": "above",
+        "score": 0.0957
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10-2[0].Table1[0].Row5[1].#field[1]",
+    "semanticKey": "dualCitizenshipInfo.0.fromDateMonthyearRow6",
+    "section": "dualCitizenshipInfo",
+    "page": 9,
+    "pdfFieldType": "",
+    "currentLabel": "From date (Month/Year). Row 6",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.3,
+        "direction": "above",
+        "score": 0.1224
+      },
+      {
+        "text": "Est.",
+        "distance": 25.0,
+        "direction": "above",
+        "score": 0.0769
+      },
+      {
+        "text": "Est.",
+        "distance": 39.0,
+        "direction": "above",
+        "score": 0.0501
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section10-2[0].Table1[0].Row5[1].#field[3]",
+    "semanticKey": "dualCitizenshipInfo.0.toDateMonthyearRow6",
+    "section": "dualCitizenshipInfo",
+    "page": 9,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 6",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 15.0,
+        "direction": "above_left",
+        "score": 0.1126
+      },
+      {
+        "text": "Est.",
+        "distance": 14.3,
+        "direction": "left",
+        "score": 0.0979
+      },
+      {
+        "text": "Est.",
+        "distance": 19.9,
+        "direction": "above",
+        "score": 0.0958
+      }
+    ]
+  }
+]

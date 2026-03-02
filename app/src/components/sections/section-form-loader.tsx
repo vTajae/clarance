@@ -1,18 +1,29 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import type { SF86Section } from "@/lib/field-registry/types";
-import { useAppStore } from "@/lib/state/stores/app-store";
+import { useEffect, useState } from 'react';
+import type { SF86Section } from '@/lib/field-registry/types';
+import { SECTION_META } from '@/lib/field-registry/types';
+import { useAppStore } from '@/lib/state/stores/app-store';
+import { useAutoSave } from '@/lib/state/hooks/use-auto-save';
+import { useHydrateSection } from '@/lib/state/hooks/use-hydrate-section';
+import { useSectionValidation } from '@/lib/state/hooks/use-section-validation';
+import { useTimelineValidation } from '@/lib/state/hooks/use-timeline-validation';
+import { SectionFormRenderer, type LayoutMode } from './section-form-renderer';
+import { ValidationSummary } from '@/components/validation/validation-summary';
+import { TimelineGapAlert } from '@/components/validation/timeline-gap-alert';
 
 interface SectionFormLoaderProps {
   submissionId: string;
   sectionKey: SF86Section;
 }
 
+const TIMELINE_SECTIONS = new Set<SF86Section>(['section11', 'section13A']);
+
 export function SectionFormLoader({
   submissionId,
   sectionKey,
 }: SectionFormLoaderProps) {
+  const [layoutMode, setLayoutMode] = useState<LayoutMode>('flow');
   const setSubmissionId = useAppStore((s) => s.setSubmissionId);
   const navigateToSection = useAppStore((s) => s.navigateToSection);
 
@@ -21,16 +32,102 @@ export function SectionFormLoader({
     navigateToSection(sectionKey);
   }, [submissionId, sectionKey, setSubmissionId, navigateToSection]);
 
-  // Placeholder - will be replaced with actual section form components
+  // Load saved data from IndexedDB into Jotai atoms
+  const { isLoading, error: loadError } = useHydrateSection(
+    submissionId,
+    sectionKey,
+  );
+
+  // Auto-save: debounced write to IndexedDB when fields change
+  const { isSaving } = useAutoSave(submissionId, sectionKey);
+
+  // Section-level Zod validation
+  const { errors: validationErrors } = useSectionValidation(sectionKey);
+
+  // Timeline gap detection (only for residency and employment)
+  const isTimelineSection = TIMELINE_SECTIONS.has(sectionKey);
+  const timelineSection = isTimelineSection
+    ? (sectionKey as 'section11' | 'section13A')
+    : 'section11'; // dummy, won't render
+  const timelineResult = useTimelineValidation(timelineSection);
+
+  const meta = SECTION_META[sectionKey]!;
+
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6">
-      <p className="text-sm text-gray-500">
-        Section form for <strong>{sectionKey}</strong> will render here.
-      </p>
-      <p className="mt-2 text-xs text-gray-400">
-        This component will dynamically load the appropriate section form based
-        on the section key and populate it with fields from the registry.
-      </p>
+    <div className="space-y-6">
+      {/* Section header */}
+      <div className="flex items-start justify-between">
+        <div>
+          <h2 className="text-xl font-bold text-gray-900" id="section-heading">
+            {meta.title}
+          </h2>
+          <p className="mt-1 text-sm text-gray-600">{meta.description}</p>
+        </div>
+        <div className="flex items-center gap-3">
+          {isSaving && (
+            <span className="text-xs text-yellow-600 animate-pulse">
+              Saving...
+            </span>
+          )}
+          <button
+            type="button"
+            onClick={() => setLayoutMode((m) => (m === 'flow' ? 'pdf' : 'flow'))}
+            className="inline-flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition-colors"
+          >
+            {layoutMode === 'flow' ? (
+              <>
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                PDF Layout
+              </>
+            ) : (
+              <>
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                </svg>
+                Form Layout
+              </>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Loading state */}
+      {isLoading && (
+        <div className="flex items-center gap-2 text-sm text-gray-500" role="status">
+          <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600" />
+          Loading saved data...
+        </div>
+      )}
+
+      {/* Load error */}
+      {loadError && (
+        <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700" role="alert">
+          {loadError}
+        </div>
+      )}
+
+      {/* Timeline gap warning (residency / employment only) */}
+      {!isLoading && isTimelineSection && timelineResult.gaps.length > 0 && (
+        <TimelineGapAlert
+          gaps={timelineResult.gaps}
+          coveragePercent={timelineResult.coveragePercent}
+          sectionLabel={meta.title}
+        />
+      )}
+
+      {/* Validation errors */}
+      {!isLoading && validationErrors.length > 0 && (
+        <ValidationSummary errors={validationErrors} />
+      )}
+
+      {/* Registry-driven form fields */}
+      {!isLoading && (
+        <div className={layoutMode === 'pdf' ? 'overflow-x-auto' : 'rounded-lg border border-gray-200 bg-white p-6'}>
+          <SectionFormRenderer section={sectionKey} layoutMode={layoutMode} />
+        </div>
+      )}
     </div>
   );
 }

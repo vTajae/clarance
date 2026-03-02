@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-02-28T05:51:27.328Z",
+  "sections": [
+    "section1",
+    "section4",
+    "section21",
+    "section21A",
+    "section21B",
+    "section21C",
+    "section21D",
+    "section21E"
+  ],
+  "total": 492,
+  "correct": 492,
+  "mismatched": 0,
+  "crossMapped": 0,
+  "missing": 0,
+  "matchRate": 100,
+  "typeStats": {
+    "text": {
+      "total": 210,
+      "correct": 210,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "checkbox": {
+      "total": 134,
+      "correct": 134,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "ssn": {
+      "total": 1,
+      "correct": 1,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "select": {
+      "total": 1,
+      "correct": 1,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "radio": {
+      "total": 19,
+      "correct": 19,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "date": {
+      "total": 29,
+      "correct": 29,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "state": {
+      "total": 39,
+      "correct": 39,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "country": {
+      "total": 39,
+      "correct": 39,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "telephone": {
+      "total": 20,
+      "correct": 20,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    }
+  },
+  "crossMappedDetails": [],
+  "mismatchedDetails": [],
+  "missingDetails": []
+}

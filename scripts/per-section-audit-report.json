@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-03-01T03:39:47.693Z",
+  "summary": {
+    "sectionsAudited": 3,
+    "passed": 3,
+    "failed": 0,
+    "passRate": "100.0%"
+  },
+  "pdfResults": null,
+  "sections": {
+    "section5": {
+      "status": "PASS",
+      "fields": 45,
+      "radioFields": 5,
+      "radioWidgets": 10,
+      "conditionalFields": 33,
+      "domFieldsBefore": 51,
+      "domFieldsAfterShowAll": 51,
+      "domRadioCircles": 10,
+      "domCheckboxes": 12,
+      "auditIndicators": 0,
+      "showAllToggled": true,
+      "jotaiMatch": 45,
+      "jotaiFail": 0
+    },
+    "section15": {
+      "status": "PASS",
+      "fields": 141,
+      "radioFields": 16,
+      "radioWidgets": 63,
+      "conditionalFields": 110,
+      "domFieldsBefore": 192,
+      "domFieldsAfterShowAll": 192,
+      "domRadioCircles": 63,
+      "domCheckboxes": 31,
+      "auditIndicators": 0,
+      "showAllToggled": true,
+      "jotaiMatch": 141,
+      "jotaiFail": 0
+    },
+    "section21": {
+      "status": "PASS",
+      "fields": 24,
+      "radioFields": 2,
+      "radioWidgets": 4,
+      "conditionalFields": 23,
+      "domFieldsBefore": 27,
+      "domFieldsAfterShowAll": 27,
+      "domRadioCircles": 4,
+      "domCheckboxes": 1,
+      "auditIndicators": 0,
+      "showAllToggled": true,
+      "jotaiMatch": 24,
+      "jotaiFail": 0
+    }
+  }
+}

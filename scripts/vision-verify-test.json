@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-02-27T00:15:22Z",
+  "model": "llama3.2-vision",
+  "summary": {
+    "total": 5,
+    "matches": 1,
+    "mismatches": 4,
+    "errors": 0,
+    "unknowns": 0,
+    "mismatchRate": 0.8
+  },
+  "mismatchesBySection": {
+    "employmentInfo": [
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[0]",
+        "semanticKey": "employmentInfo.0.provideTheNameOfYourSupervisor",
+        "registryLabel": "Provide the name of your supervisor.",
+        "visionLabel": "**LABEL:** Provide the name of your supervisor.\n**MATCH:** YES\n\nThe page is showing Section 13A, Employment Activities. The visible labels/questions are:\n\n*   Select your employment activity\n*   Provide dates of employment\n*   Provide address of duty station\n*   Provide physical location of supervisor\n\nThe label \"Provide the name of your supervisor\" is a reasonable label for a PDFTextField field on this page. The field is located in the section \"Provide the name of your supervisor",
+        "similarity": 0.162,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[1]",
+        "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor",
+        "registryLabel": "Provide the rank/position title of your supervisor.",
+        "visionLabel": "**LABEL:** Provide the rank/position title of your supervisor.\n**MATCH:** NO\n\nThe label \"Provide the rank/position title of your supervisor\" does not match the actual label on this page. The actual label is \"Provide the rank/position title of your supervisor.\" with a period at the end. The period is not included in the label we provided. The actual label is also slightly different in wording. The actual label is more specific and includes a period at the end. The label",
+        "similarity": 0.229,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[0]",
+        "semanticKey": "employmentInfo.0.provideSupervisorsTelephoneNumber",
+        "registryLabel": "Provide supervisor's telephone number.",
+        "visionLabel": "**LABEL:** Provide supervisor's telephone number.\n**MATCH:** YES\n\nThe page is showing Section 13A, Employment Activities. The visible labels/questions are:\n\n*   Select your employment activity:\n    *   Active military duty station\n    *   National Guard/Reserve\n    *   USPHS Commissioned Corps\n    *   Other Federal employment\n*   Provide dates of employment:\n    *   From Date\n    *   To Date\n*   Provide address of duty station:",
+        "similarity": 0.122,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[2]",
+        "semanticKey": "employmentInfo.0.extension",
+        "registryLabel": "Extension",
+        "visionLabel": "**LABEL:** Extension\n**MATCH:** YES\n\nThe field is located in Section 13A, which is titled \"Employment Activities.\" The page displays a series of questions related to employment history, including the type of employment, the dates of employment, and the reason for leaving each job. The field in question is a text field that appears to be asking for the extension of employment.\n\nThe label \"Extension\" is a reasonable label for this field, as it is a common term used in employment",
+        "similarity": 0.022,
+        "confidence": 0.4,
+        "page": 17
+      }
+    ]
+  },
+  "mismatchesByConfidence": {
+    "high": 0,
+    "medium": 0,
+    "low": 4
+  },
+  "totalByConfidence": {
+    "high": 0,
+    "medium": 0,
+    "low": 5
+  },
+  "allMismatches": [
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[2]",
+      "semanticKey": "employmentInfo.0.extension",
+      "section": "employmentInfo",
+      "registryLabel": "Extension",
+      "visionLabel": "**LABEL:** Extension\n**MATCH:** YES\n\nThe field is located in Section 13A, which is titled \"Employment Activities.\" The page displays a series of questions related to employment history, including the type of employment, the dates of employment, and the reason for leaving each job. The field in question is a text field that appears to be asking for the extension of employment.\n\nThe label \"Extension\" is a reasonable label for this field, as it is a common term used in employment",
+      "similarity": 0.022,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[0]",
+      "semanticKey": "employmentInfo.0.provideSupervisorsTelephoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "Provide supervisor's telephone number.",
+      "visionLabel": "**LABEL:** Provide supervisor's telephone number.\n**MATCH:** YES\n\nThe page is showing Section 13A, Employment Activities. The visible labels/questions are:\n\n*   Select your employment activity:\n    *   Active military duty station\n    *   National Guard/Reserve\n    *   USPHS Commissioned Corps\n    *   Other Federal employment\n*   Provide dates of employment:\n    *   From Date\n    *   To Date\n*   Provide address of duty station:",
+      "similarity": 0.122,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[0]",
+      "semanticKey": "employmentInfo.0.provideTheNameOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the name of your supervisor.",
+      "visionLabel": "**LABEL:** Provide the name of your supervisor.\n**MATCH:** YES\n\nThe page is showing Section 13A, Employment Activities. The visible labels/questions are:\n\n*   Select your employment activity\n*   Provide dates of employment\n*   Provide address of duty station\n*   Provide physical location of supervisor\n\nThe label \"Provide the name of your supervisor\" is a reasonable label for a PDFTextField field on this page. The field is located in the section \"Provide the name of your supervisor",
+      "similarity": 0.162,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[1]",
+      "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the rank/position title of your supervisor.",
+      "visionLabel": "**LABEL:** Provide the rank/position title of your supervisor.\n**MATCH:** NO\n\nThe label \"Provide the rank/position title of your supervisor\" does not match the actual label on this page. The actual label is \"Provide the rank/position title of your supervisor.\" with a period at the end. The period is not included in the label we provided. The actual label is also slightly different in wording. The actual label is more specific and includes a period at the end. The label",
+      "similarity": 0.229,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    }
+  ]
+}

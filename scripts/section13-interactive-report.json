@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-02-28T18:18:18.455Z",
+  "test": "interactive-section13",
+  "pipeline": "Real UI navigation → Jotai injection → ConditionalWrapper rendering → Export PDF → Extract → Compare",
+  "section13": {
+    "total": 1086,
+    "13A": 1036,
+    "13B": 49,
+    "13C": 1,
+    "gates": 13,
+    "conditional": 664
+  },
+  "results": {
+    "total": 1086,
+    "correct": 1082,
+    "mismatched": 0,
+    "crossMapped": 0,
+    "missing": 0,
+    "missingRadio": 4,
+    "matchRate": 100
+  },
+  "mismatchDetails": [],
+  "crossMapDetails": [],
+  "missingDetails": [],
+  "consoleErrors": []
+}

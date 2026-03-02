@@ -1,0 +1,44 @@
+[
+  {
+    "profile": "P1_ALL_YES",
+    "success": true,
+    "matches": 6071,
+    "mismatches": 0,
+    "missingFromPdf": 0,
+    "defaultValueSkips": 54,
+    "unexpectedInPdf": 0,
+    "visibleConditionals": 2996,
+    "hiddenConditionals": 126,
+    "totalIncluded": 6071,
+    "totalSkipped": 126,
+    "mismatchDetails": []
+  },
+  {
+    "profile": "P2_ALL_NO",
+    "success": true,
+    "matches": 3075,
+    "mismatches": 0,
+    "missingFromPdf": 0,
+    "defaultValueSkips": 844,
+    "unexpectedInPdf": 0,
+    "visibleConditionals": 0,
+    "hiddenConditionals": 3122,
+    "totalIncluded": 3075,
+    "totalSkipped": 3122,
+    "mismatchDetails": []
+  },
+  {
+    "profile": "P3_MIXED",
+    "success": true,
+    "matches": 4811,
+    "mismatches": 0,
+    "missingFromPdf": 0,
+    "defaultValueSkips": 401,
+    "unexpectedInPdf": 0,
+    "visibleConditionals": 1736,
+    "hiddenConditionals": 1386,
+    "totalIncluded": 4811,
+    "totalSkipped": 1386,
+    "mismatchDetails": []
+  }
+]

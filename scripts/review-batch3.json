@@ -1,0 +1,240 @@
+{
+  "batch": "batch3_substance",
+  "total": 43,
+  "keep": 10,
+  "change": 33,
+  "flag": 0,
+  "corrections": [
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].TextField11[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide explanation",
+      "newLabel": "Explanation for not seeking drug counseling or treatment",
+      "reason": "Generic 'Provide explanation' does not convey context. This TextField is in Section 23.5 under the 'NO' branch of 'Did you take action to receive counseling or treatment?' and captures why the applicant did not seek treatment."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].TextField11[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide explanation",
+      "newLabel": "Explanation for not seeking drug counseling or treatment",
+      "reason": "Same pattern as Section_23_5 TextField11[0] but in the repeat instance (Section 23.6.1). Generic label lacks context about what is being explained."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_3[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide an estimate of the number of times you used and/or were involved with this",
+      "newLabel": "Have you EVER illegally used a drug while employed as a law enforcement officer or in a sensitive position? (Yes/No)",
+      "reason": "Current label is an instruction for a text field, not the question for this radio button. Section 23.3 asks about drug use while in law enforcement/sensitive positions. The nearestText confirms the actual question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].#area[1].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+      "newLabel": "Have you EVER illegally used a drug while possessing a security clearance? (Yes/No)",
+      "reason": "Current label is from a different field (prescription drug misuse instruction). Section 23.4 RadioButtonList[1] is the Yes/No radio for drug use while holding a security clearance."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+      "newLabel": "Have you EVER illegally used a drug while possessing a security clearance? (Yes/No)",
+      "reason": "Paired radio button with RadioButtonList[1] in Section 23.4. Same wrong current label about prescription drug misuse."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].#area[3].RadioButtonList[3]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+      "newLabel": "Do you intend to use drugs while possessing a security clearance in the future? (Yes/No)",
+      "reason": "Different sub-question within Section 23.4 (#area[3] indicates a separate question block). Current label is from the prescription drug misuse instruction, not this intent question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[4]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the reason(s) for and circumstances of the misuse of the prescription drug.",
+      "newLabel": "Do you intend to use drugs while possessing a security clearance in the future? (Yes/No)",
+      "reason": "Paired radio button with RadioButtonList[3] in Section 23.4 #area[3]. Same wrong prescription drug instruction label."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].#area[3].RadioButtonList[3]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+      "newLabel": "Did you successfully complete the drug treatment? (Yes/No)",
+      "reason": "Current label is for an address text field. The nearestText 'Did you successfully complete the treatment?' and YES/NO candidates confirm this radio is the treatment completion question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].RadioButtonList[4]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the type of drug or controlled substance for which you were treated.",
+      "newLabel": "Drug type treated: Other",
+      "reason": "Current label is the instruction header for the drug type radio group. This specific RadioButtonList[4] is positioned nearest to 'Other' (distance 3.1 right) in the drug category selector."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].#area[2].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+      "newLabel": "Did you successfully complete the drug treatment? (Yes/No)",
+      "reason": "Same pattern as Section_23_5 RadioButtonList[3]. Current label is for an address field. The nearestText and YES/NO candidates confirm this is the treatment completion radio."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the type of drug or controlled substance for which you were treated.",
+      "newLabel": "Drug type treated: Other",
+      "reason": "Same drug type selector pattern. RadioButtonList[1] is nearest to 'Other (Provide explanation)' at distance 3.2. Current label is the instruction header, not the specific option."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+      "newLabel": "Did you successfully complete the drug treatment? (Yes/No)",
+      "reason": "Address label assigned to a radio button. The nearestText 'Did you successfully complete the treatment?' and YES/NO candidates confirm this is the completion question radio."
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[4]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the address for this treatment provider.  ( Provide City and Country if outside the United States; otherwise,...",
+      "newLabel": "Drug treatment counseling follow-up question (Yes/No)",
+      "reason": "Address label assigned to a radio button. RadioButtonList[4] is further down in Section 23.6 with 'Did you successfully complete the treatment?' in candidates (distance 50.5), indicating a sub-question about counseling follow-up."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Was your use while you were employed as a law enforcement officer, prosecutor, or courtroom official, or while in",
+      "newLabel": "In the last 7 years, have you illegally used any drugs or controlled substances? (Yes/No)",
+      "reason": "Current label references Section 23.3 question (law enforcement context) but this field is in Section 23.1 (general drug use in last 7 years). The branching instruction 'NO (If NO, proceed to 23.2)' in candidates confirms this is the 23.1 top-level question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Was your use while you were employed as a law enforcement officer, prosecutor, or courtroom official, or while in",
+      "newLabel": "In the last 7 years, have you illegally used any drugs or controlled substances? (Yes/No)",
+      "reason": "Paired radio button with RadioButtonList[0] in Section 23.1. Same incorrect label referencing Section 23.3."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[2].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Provide nature of use, frequency, and number of times used.",
+      "newLabel": "Do you intend to use this drug or controlled substance in the future? (Yes/No)",
+      "reason": "Current label is an instruction for a text field. #area[2] RadioButtonList[2] in Section 23.1 detail block corresponds to the intent-to-use sub-question, confirmed by YES/NO candidate pattern."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[3].RadioButtonList[3]",
+      "action": "CHANGE",
+      "currentLabel": "Provide nature of use, frequency, and number of times used.",
+      "newLabel": "Do you intend to use this drug or controlled substance in the future? (Yes/No)",
+      "reason": "Paired radio with RadioButtonList[2] in #area[3]. Same wrong instruction label. This is the other radio in the intent-to-use Yes/No pair."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[4]",
+      "action": "CHANGE",
+      "currentLabel": "We note, with reference to this section, that neither your truthful responses nor information derived from your respo...",
+      "newLabel": "In the last 7 years, have you illegally used any drugs or controlled substances? (Yes/No)",
+      "reason": "Current label is the section preamble/disclaimer text, not a question. Candidate 'NO (If NO, proceed to 23.2)' confirms this is the main Section 23.1 gateway question. Multiple RadioButtonList entries for the same question exist due to XFA-to-AcroForm conversion artifacts."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[6].RadioButtonList[5]",
+      "action": "CHANGE",
+      "currentLabel": "Provide nature of use, frequency, and number of times used.",
+      "newLabel": "Do you intend to use this drug or controlled substance in the future? (Yes/No)",
+      "reason": "#area[6] is a repeat instance of the drug detail block. Same wrong instruction label. This is the intent-to-use radio for a second drug entry."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[7].RadioButtonList[6]",
+      "action": "CHANGE",
+      "currentLabel": "Provide nature of use, frequency, and number of times used.",
+      "newLabel": "Do you intend to use this drug or controlled substance in the future? (Yes/No)",
+      "reason": "Paired radio with RadioButtonList[5] in #area[7]. Same wrong instruction label for the second drug entry intent question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[8]",
+      "action": "CHANGE",
+      "currentLabel": "Provide explanation of why you intend or do not intend to use this drug or controlled substance in the future.",
+      "newLabel": "Type of drug or controlled substance used",
+      "reason": "Current label references the intent explanation text field. RadioButtonList[8] is positioned near drug category options (Other at distance 3.2, Steroids at 8.4), confirming this is a drug type selector radio."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].#area[1].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the nature and frequency of activity.",
+      "newLabel": "In the last 7 years, have you been involved in the illegal purchase, manufacture, cultivation, trafficking, production, transfer, shipping, receiving, handling, or sale of a drug? (Yes/No)",
+      "reason": "Current label is an instruction for a text field. Section 23.2 #area[1] RadioButtonList[0] is the Yes/No radio for the Section 23.2 gateway question about drug involvement activities."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the nature and frequency of activity.",
+      "newLabel": "In the last 7 years, have you been involved in the illegal purchase, manufacture, cultivation, trafficking, production, transfer, shipping, receiving, handling, or sale of a drug? (Yes/No)",
+      "reason": "Paired radio with RadioButtonList[0] in Section 23.2. Same wrong instruction label."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].#area[3].RadioButtonList[4]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the nature and frequency of activity.",
+      "newLabel": "Do you intend to engage in this drug involvement activity in the future? (Yes/No)",
+      "reason": "#area[3] RadioButtonList[4] in Section 23.2 is a sub-question within the drug involvement detail block, corresponding to the future-intent question. Current label is a text field instruction."
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[5]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the nature and frequency of activity.",
+      "newLabel": "Do you intend to engage in this drug involvement activity in the future? (Yes/No)",
+      "reason": "Paired radio with RadioButtonList[4] for the intent sub-question in Section 23.2. Same wrong instruction label."
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "A mental health professional",
+      "newLabel": "Ordered to seek alcohol counseling by: Other",
+      "reason": "Current label 'A mental health professional' is from a different radio option in the who-ordered-counseling checklist. Nearest candidate 'Other' at distance 3.2 and 'counseling or treatment by any of the above' at 5.8 confirm this radio is for the 'Other' option."
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[1].RadioButtonList[3]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the full address for the counseling/treatment provider.    ( Provide City and Country if outside the United S...",
+      "newLabel": "Did you successfully complete the alcohol treatment program? (Yes/No)",
+      "reason": "Address label assigned to a radio button. The nearestText 'Did you successfully complete the treatment program?' and YES/NO candidates confirm this is the alcohol treatment completion question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[2].RadioButtonList[4]",
+      "action": "CHANGE",
+      "currentLabel": "A mental health professional",
+      "newLabel": "Ordered to seek alcohol counseling by: Other",
+      "reason": "Same pattern as #area[0] RadioButtonList[0] but for a second counseling entry. Current label references a different option in the checklist. Nearest 'Other' at distance 3.1 confirms."
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[3].RadioButtonList[6]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the full address for the counseling/treatment provider.    ( Provide City and Country if outside the United S...",
+      "newLabel": "Did you successfully complete the alcohol treatment program? (Yes/No)",
+      "reason": "Same pattern as #area[1] RadioButtonList[3]. Address label on a radio button. NearestText and candidates confirm this is the treatment completion Yes/No for a second counseling entry."
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Mental health treatment and counseling, in and of itself,  is not a reason  to revoke or deny eligibility for access ...",
+      "newLabel": "Has a court or administrative agency EVER declared you mentally incompetent? (Yes/No)",
+      "reason": "Current label is the Section 21 introductory disclaimer/preamble, not the question. Section 21A asks about mental incompetence declarations. Candidate 'NO (If NO, proceed to Section 21B)' confirms the branching structure."
+    },
+    {
+      "pdfFieldName": "form1[0].Section21b[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Have you EVER consulted a mental health professional about a mental health condition?",
+      "newLabel": "Has a court or administrative agency EVER ordered you to consult with a mental health professional? (Yes/No)",
+      "reason": "Current label is Section 21C's question (voluntary consultation). Section 21B asks about being ORDERED to consult. NearestText 'Complete the following if you responded Yes to having a court...EVER ordered you to consult' confirms the correct question. Candidate 'NO (If NO, proceed to Section 21C)' confirms branching."
+    },
+    {
+      "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "The following question asks whether you have been diagnosed with a specified mental health condition that may, partic...",
+      "newLabel": "Have you EVER been diagnosed with psychotic disorder, schizophrenia, schizoaffective disorder, delusional disorder, bipolar mood disorder, borderline personality disorder, or antisocial personality disorder? (Yes/No)",
+      "reason": "Current label is the preamble text, not the actual question. NearestText 'Have you EVER been diagnosed by a physician or other health professional' confirms the question. Candidate 'NO (If NO, proceed to Section 21E)' confirms branching."
+    },
+    {
+      "pdfFieldName": "form1[0].Section21d3[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "altering or discontinuing, or failing to start a prescribed course of treatment for any of the listed diagnoses?",
+      "newLabel": "In the last 7 years, have you failed to consult a medical professional before altering, discontinuing, or failing to start prescribed treatment for a listed mental health diagnosis? (Yes/No)",
+      "reason": "Current label is a truncated fragment missing the beginning of the question. NearestText provides the full question opening. Candidate 'NO (If NO, proceed to Section 21E)' confirms branching structure."
+    }
+  ]
+}

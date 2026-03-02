@@ -123,7 +123,7 @@ export function SectionSidebar({
               {isExpanded && (
                 <ul className="ml-6 border-l border-gray-200">
                   {sections.map((sectionKey: SF86Section) => {
-                    const meta = SECTION_META[sectionKey];
+                    const meta = SECTION_META[sectionKey]!;
                     const isActive = sectionKey === currentSection;
 
                     return (

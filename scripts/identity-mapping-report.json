@@ -1,0 +1,1339 @@
+{
+  "timestamp": "2026-02-27T22:59:39.302Z",
+  "total": 6197,
+  "correct": 5836,
+  "mismatched": 0,
+  "crossMapped": 0,
+  "missing": 361,
+  "matchRate": 94.17,
+  "sectionStats": {
+    "section5": {
+      "total": 45,
+      "correct": 40,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 5
+    },
+    "section1": {
+      "total": 8,
+      "correct": 7,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 1
+    },
+    "section3": {
+      "total": 6,
+      "correct": 6,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section6": {
+      "total": 6,
+      "correct": 5,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 1
+    },
+    "section8": {
+      "total": 10,
+      "correct": 9,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 1
+    },
+    "section9": {
+      "total": 78,
+      "correct": 74,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 4
+    },
+    "ssnPageHeader": {
+      "total": 136,
+      "correct": 136,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section7": {
+      "total": 17,
+      "correct": 17,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section10": {
+      "total": 122,
+      "correct": 114,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 8
+    },
+    "section11": {
+      "total": 252,
+      "correct": 244,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 8
+    },
+    "section12": {
+      "total": 150,
+      "correct": 140,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 10
+    },
+    "section13A": {
+      "total": 1036,
+      "correct": 992,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 44
+    },
+    "section13B": {
+      "total": 50,
+      "correct": 48,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 2
+    },
+    "section14": {
+      "total": 40,
+      "correct": 35,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 5
+    },
+    "section15": {
+      "total": 106,
+      "correct": 102,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 4
+    },
+    "section16": {
+      "total": 108,
+      "correct": 108,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section17": {
+      "total": 329,
+      "correct": 312,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 17
+    },
+    "section18": {
+      "total": 964,
+      "correct": 912,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 52
+    },
+    "section19": {
+      "total": 277,
+      "correct": 270,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 7
+    },
+    "section20A": {
+      "total": 361,
+      "correct": 344,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 17
+    },
+    "section20B": {
+      "total": 315,
+      "correct": 300,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 15
+    },
+    "section20C": {
+      "total": 114,
+      "correct": 84,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 30
+    },
+    "section21": {
+      "total": 486,
+      "correct": 467,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 19
+    },
+    "section22": {
+      "total": 267,
+      "correct": 240,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 27
+    },
+    "section23": {
+      "total": 191,
+      "correct": 152,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 39
+    },
+    "section24": {
+      "total": 160,
+      "correct": 146,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 14
+    },
+    "section25": {
+      "total": 79,
+      "correct": 76,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 3
+    },
+    "section26": {
+      "total": 237,
+      "correct": 220,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 17
+    },
+    "section27": {
+      "total": 57,
+      "correct": 54,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 3
+    },
+    "section28": {
+      "total": 23,
+      "correct": 22,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 1
+    },
+    "section29": {
+      "total": 141,
+      "correct": 134,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 7
+    },
+    "section30": {
+      "total": 26,
+      "correct": 26,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    }
+  },
+  "crossMappedDetails": [],
+  "mismatchedDetails": [],
+  "missingDetails": [
+    {
+      "pdfName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[0]",
+      "semanticKey": "namesInfo.RadioButtonList_7",
+      "section": "section5",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 6,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[1]",
+      "semanticKey": "namesInfo.RadioButtonList_12",
+      "section": "section5",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (If NO, proceed to Section 6)",
+      "expectedPdfValue": "NO (If NO, proceed to Section 6)",
+      "index": 11,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[2]",
+      "semanticKey": "namesInfo.RadioButtonList_19",
+      "section": "section5",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 18,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[3]",
+      "semanticKey": "namesInfo.RadioButtonList_30",
+      "section": "section5",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 29,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[4]",
+      "semanticKey": "namesInfo.RadioButtonList_41",
+      "section": "section5",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 40,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Sections1-6[0].RadioButtonList[0]",
+      "semanticKey": "personalInfo.RadioButtonList_2",
+      "section": "section1",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 46,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Sections1-6[0].p3-rb3b[0]",
+      "semanticKey": "physicalAttributes.p3rb3b",
+      "section": "section6",
+      "label": "p3-rb3b",
+      "uiFieldType": "radio",
+      "sentUiValue": "Male",
+      "expectedPdfValue": "Male",
+      "index": 56,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Sections7-9[0].RadioButtonList[0]",
+      "semanticKey": "passportInfo.RadioButtonList_1",
+      "section": "section8",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (If NO, proceed to Section 9)",
+      "expectedPdfValue": "NO (If NO, proceed to Section 9)",
+      "index": 65,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Sections7-9[0].RadioButtonList[1]",
+      "semanticKey": "citizenshipInfo.RadioButtonList_1",
+      "section": "section9",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "I am not a U.S. citizen. (Complete 9.4) ",
+      "expectedPdfValue": "I am not a U.S. citizen. (Complete 9.4) ",
+      "index": 74,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Sections7-9[0].RadioButtonList[2]",
+      "semanticKey": "citizenshipInfo.RadioButtonList_15",
+      "section": "section9",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 88,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Sections7-9[0].RadioButtonList[3]",
+      "semanticKey": "citizenshipInfo.RadioButtonList_21",
+      "section": "section9",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "FS 240 ",
+      "expectedPdfValue": "FS 240 ",
+      "index": 96,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section9\\.1-9\\.4[0].RadioButtonList[1]",
+      "semanticKey": "citizenshipInfo.RadioButtonList_59",
+      "section": "section9",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 152,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[0]",
+      "semanticKey": "dualCitizenshipInfo.RadioButtonList_1",
+      "section": "section10",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 172,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[1]",
+      "semanticKey": "dualCitizenshipInfo.RadioButtonList_9",
+      "section": "section10",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 180,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[2]",
+      "semanticKey": "dualCitizenshipInfo.RadioButtonList_11",
+      "section": "section10",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 182,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[3]",
+      "semanticKey": "dualCitizenshipInfo.RadioButtonList_19",
+      "section": "section10",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 190,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[4]",
+      "semanticKey": "dualCitizenshipInfo.RadioButtonList_22",
+      "section": "section10",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 193,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[5]",
+      "semanticKey": "dualCitizenshipInfo.RadioButtonList_24",
+      "section": "section10",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 195,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[6]",
+      "semanticKey": "dualCitizenshipInfo.RadioButtonList_37",
+      "section": "section10",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 208,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section10-2[0].RadioButtonList[0]",
+      "semanticKey": "dualCitizenshipInfo.0.RadioButtonList_86",
+      "section": "section10",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 259,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section11[0].RadioButtonList[1]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_58",
+      "section": "section11",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 354,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section11[0].RadioButtonList[2]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_63",
+      "section": "section11",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 359,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section11-2[0].RadioButtonList[1]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_121",
+      "section": "section11",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 418,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section11-2[0].RadioButtonList[2]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_126",
+      "section": "section11",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 423,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section11-3[0].RadioButtonList[1]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_184",
+      "section": "section11",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 482,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section11-3[0].RadioButtonList[2]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_189",
+      "section": "section11",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 487,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section11-4[0].RadioButtonList[0]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_246",
+      "section": "section11",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 545,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section11-4[0].RadioButtonList[1]",
+      "semanticKey": "residencyInfo.0.RadioButtonList_251",
+      "section": "section11",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 550,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_12[0].pg10r1[0]",
+      "semanticKey": "schoolInfo.pg10r1",
+      "section": "section12",
+      "label": "pg10r1",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 553,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_12[0].pg10r2[0]",
+      "semanticKey": "schoolInfo.pg10r2",
+      "section": "section12",
+      "label": "pg10r2",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 554,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_12[0].pg10r4[0]",
+      "semanticKey": "schoolInfo.pg10r4",
+      "section": "section12",
+      "label": "pg10r4",
+      "uiFieldType": "radio",
+      "sentUiValue": "Correspondence/Distance/Extension/Online School",
+      "expectedPdfValue": "Correspondence/Distance/Extension/Online School",
+      "index": 559,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_12[0].pg2r5[0]",
+      "semanticKey": "schoolInfo.pg2r5",
+      "section": "section12",
+      "label": "pg2r5",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 560,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_12[0].pg10r4[1]",
+      "semanticKey": "schoolInfo.pg10r4_2",
+      "section": "section12",
+      "label": "pg10r4",
+      "uiFieldType": "radio",
+      "sentUiValue": "College/University/Military College",
+      "expectedPdfValue": "College/University/Military College",
+      "index": 594,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_12_2[0].pg2r5[0]",
+      "semanticKey": "schoolInfo.0.pg2r5",
+      "section": "section12",
+      "label": "pg2r5",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 608,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_12_2[0].pg10r4[0]",
+      "semanticKey": "schoolInfo.0.pg10r4",
+      "section": "section12",
+      "label": "pg10r4",
+      "uiFieldType": "radio",
+      "sentUiValue": "High School",
+      "expectedPdfValue": "High School",
+      "index": 628,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_12_2[0].pg2r5[1]",
+      "semanticKey": "schoolInfo.0.pg2r5_2",
+      "section": "section12",
+      "label": "pg2r5",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 629,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_12_3[0].pg10r4[0]",
+      "semanticKey": "schoolInfo.0.pg10r4_2",
+      "section": "section12",
+      "label": "pg10r4",
+      "uiFieldType": "radio",
+      "sentUiValue": "High School",
+      "expectedPdfValue": "High School",
+      "index": 672,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_12_3[0].pg2r5[0]",
+      "semanticKey": "schoolInfo.0.pg2r5_3",
+      "section": "section12",
+      "label": "pg2r5",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 673,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_13_1-2[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_40",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "Self-employment (Complete 13A.3, 13A.5 and 13A.6)",
+      "expectedPdfValue": "Self-employment (Complete 13A.3, 13A.5 and 13A.6)",
+      "index": 745,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_13_1-2[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_50",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 755,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2-2[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_78",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 784,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2-2[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_129",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 835,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2-2[0].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_139",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 845,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3-2[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_147",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 854,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3-2[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_191",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 898,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3-2[0].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_201",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 908,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_220",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 928,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_249",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO ",
+      "expectedPdfValue": "NO ",
+      "index": 957,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[0].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_259",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 967,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_13_1[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_299",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "Non-government employment (excluding self-employment) (Complete 13A.2, 13A.5 and 13A.6)",
+      "expectedPdfValue": "Non-government employment (excluding self-employment) (Complete 13A.2, 13A.5 and 13A.6)",
+      "index": 1008,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_13_1[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_309",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1018,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_337",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (If NO, proceed to (b))",
+      "expectedPdfValue": "NO (If NO, proceed to (b))",
+      "index": 1047,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_388",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1098,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2[0].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_398",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1108,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_406",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (If NO, proceed to (b))",
+      "expectedPdfValue": "NO (If NO, proceed to (b))",
+      "index": 1117,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_450",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 1161,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3[0].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_460",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 1171,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[1].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_479",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (If NO, proceed to 13A.6)",
+      "expectedPdfValue": "NO (If NO, proceed to 13A.6)",
+      "index": 1191,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[1].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_508",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 1220,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[1].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_518",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1230,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_13_1[1].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_558",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "National Guard/Reserve (Complete 13A.1, 13A.5 and 13A.6)",
+      "expectedPdfValue": "National Guard/Reserve (Complete 13A.1, 13A.5 and 13A.6)",
+      "index": 1271,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_13_1[1].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_568",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 1281,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2[1].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_596",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1310,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2[1].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_647",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 1361,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2[1].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_657",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 1371,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3[1].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_665",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 1380,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3[1].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_709",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1424,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3[1].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_719",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1434,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[2].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_738",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 1454,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[2].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_767",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO ",
+      "expectedPdfValue": "NO ",
+      "index": 1483,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[2].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_777",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 1493,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_13_1[2].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_817",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "State Government (Non-Federal employment) (Complete 13A.2, 13A.5 and 13A.6)",
+      "expectedPdfValue": "State Government (Non-Federal employment) (Complete 13A.2, 13A.5 and 13A.6)",
+      "index": 1534,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section_13_1[2].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_827",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1544,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2[2].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_855",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (If NO, proceed to (b))",
+      "expectedPdfValue": "NO (If NO, proceed to (b))",
+      "index": 1573,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2[2].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_906",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1624,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_2[2].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_916",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1634,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3[2].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_924",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (If NO, proceed to (b))",
+      "expectedPdfValue": "NO (If NO, proceed to (b))",
+      "index": 1643,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3[2].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_968",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 1687,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_3[2].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_978",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 1697,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[3].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.3.RadioButtonList_997",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (If NO, proceed to 13A.6)",
+      "expectedPdfValue": "NO (If NO, proceed to 13A.6)",
+      "index": 1717,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[3].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.3.RadioButtonList_1026",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 1746,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_4[3].RadioButtonList[2]",
+      "semanticKey": "employmentInfo.3.RadioButtonList_1036",
+      "section": "section13A",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 1756,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_5[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_1037",
+      "section": "section13B",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 1758,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].section13_5[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_1050",
+      "section": "section13B",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES (If YES, you will be required to add an additional employment in Section 13A)",
+      "expectedPdfValue": "YES (If YES, you will be required to add an additional employment in Section 13A)",
+      "index": 1771,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section14_1[0].#area[0].RadioButtonList[0]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_1",
+      "section": "section14",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "Yes",
+      "expectedPdfValue": "Yes",
+      "index": 1809,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section14_1[0].#area[4].RadioButtonList[1]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_5",
+      "section": "section14",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (If NO, proceed to Section 15.2) ",
+      "expectedPdfValue": "NO (If NO, proceed to Section 15.2) ",
+      "index": 1813,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section14_1[0].#area[9].RadioButtonList[4]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_15",
+      "section": "section14",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO ",
+      "expectedPdfValue": "NO ",
+      "index": 1823,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section14_1[0].#area[11].RadioButtonList[6]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_21",
+      "section": "section14",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (Proceed to Section 15)",
+      "expectedPdfValue": "NO (Proceed to Section 15)",
+      "index": 1829,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section14_1[0].#area[17].RadioButtonList[10]",
+      "semanticKey": "serviceInfo.0.RadioButtonList_32",
+      "section": "section14",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 1840,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section15_2[0].#area[0].RadioButtonList[0]",
+      "semanticKey": "militaryHistoryInfo.0.RadioButtonList_1",
+      "section": "section15",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 1850,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section15_3[0].RadioButtonList[0]",
+      "semanticKey": "militaryHistoryInfo.0.RadioButtonList_14",
+      "section": "section15",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 1864,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section15_3[0].RadioButtonList[2]",
+      "semanticKey": "militaryHistoryInfo.0.RadioButtonList_41",
+      "section": "section15",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO (If NO, proceed to Section 16)",
+      "expectedPdfValue": "NO (If NO, proceed to Section 16)",
+      "index": 1891,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section16_1[0].RadioButtonList[1]",
+      "semanticKey": "peopleThatKnow.0.RadioButtonList_27",
+      "section": "section15",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 1938,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section17_1[0].RadioButtonList[0]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_12",
+      "section": "section17",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 2079,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section17_1[0].RadioButtonList[1]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_22",
+      "section": "section17",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 2089,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section17_1[0].RadioButtonList[2]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_60",
+      "section": "section17",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 2127,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section17_1[0].RadioButtonList[3]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_70",
+      "section": "section17",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 2137,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section17_1_2[0].RadioButtonList[0]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_83",
+      "section": "section17",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES ",
+      "expectedPdfValue": "YES ",
+      "index": 2151,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section17_1_2[0].RadioButtonList[1]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_117",
+      "section": "section17",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "NO",
+      "expectedPdfValue": "NO",
+      "index": 2185,
+      "got": ""
+    },
+    {
+      "pdfName": "form1[0].Section17_2[0].RadioButtonList[0]",
+      "semanticKey": "relationshipInfo.0.RadioButtonList_118",
+      "section": "section17",
+      "label": "RadioButtonList",
+      "uiFieldType": "radio",
+      "sentUiValue": "YES",
+      "expectedPdfValue": "YES",
+      "index": 2187,
+      "got": ""
+    }
+  ]
+}

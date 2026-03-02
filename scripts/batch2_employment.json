@@ -1,0 +1,1666 @@
+[
+  {
+    "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[0]",
+    "semanticKey": "employmentInfo.0.RadioButtonList_40",
+    "section": "employmentInfo",
+    "page": 17,
+    "pdfFieldType": "",
+    "currentLabel": "Select your employment activity:",
+    "nearestText": "Non-government employment (excluding self-",
+    "suggestedLabel": "13A.5 and 13A.6)",
+    "similarity": 0.125,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "13A.5 and 13A.6)",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1482
+      },
+      {
+        "text": "Other  (Provide explanation and complete 13A.2,",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1481
+      },
+      {
+        "text": "employment)  (Complete 13A.2, 13A.5 and 13A.6)",
+        "distance": 2.8,
+        "direction": "right",
+        "score": 0.1309
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1[0].RadioButtonList[0]",
+    "semanticKey": "employmentInfo.0.RadioButtonList_299",
+    "section": "employmentInfo",
+    "page": 21,
+    "pdfFieldType": "",
+    "currentLabel": "Select your employment activity:",
+    "nearestText": "Non-government employment (excluding self-",
+    "suggestedLabel": "13A.5 and 13A.6)",
+    "similarity": 0.125,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "13A.5 and 13A.6)",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1482
+      },
+      {
+        "text": "Other  (Provide explanation and complete 13A.2,",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1481
+      },
+      {
+        "text": "employment)  (Complete 13A.2, 13A.5 and 13A.6)",
+        "distance": 2.8,
+        "direction": "right",
+        "score": 0.1319
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[0]",
+    "semanticKey": "employmentInfo.1.RadioButtonList_558",
+    "section": "employmentInfo",
+    "page": 25,
+    "pdfFieldType": "",
+    "currentLabel": "Select your employment activity:",
+    "nearestText": "Non-government employment (excluding self-",
+    "suggestedLabel": "13A.5 and 13A.6)",
+    "similarity": 0.125,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "13A.5 and 13A.6)",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1482
+      },
+      {
+        "text": "Other  (Provide explanation and complete 13A.2,",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1481
+      },
+      {
+        "text": "employment)  (Complete 13A.2, 13A.5 and 13A.6)",
+        "distance": 2.8,
+        "direction": "right",
+        "score": 0.1319
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1[2].RadioButtonList[0]",
+    "semanticKey": "employmentInfo.2.RadioButtonList_817",
+    "section": "employmentInfo",
+    "page": 29,
+    "pdfFieldType": "",
+    "currentLabel": "Select your employment activity:",
+    "nearestText": "Non-government employment (excluding self-",
+    "suggestedLabel": "13A.5 and 13A.6)",
+    "similarity": 0.125,
+    "confidence": 0.6,
+    "candidates": [
+      {
+        "text": "13A.5 and 13A.6)",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1482
+      },
+      {
+        "text": "Other  (Provide explanation and complete 13A.2,",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1481
+      },
+      {
+        "text": "employment)  (Complete 13A.2, 13A.5 and 13A.6)",
+        "distance": 2.8,
+        "direction": "right",
+        "score": 0.1319
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[13]",
+    "semanticKey": "employmentInfo.0.ifOtherSelectedProvideExplanation",
+    "section": "employmentInfo",
+    "page": 17,
+    "pdfFieldType": "",
+    "currentLabel": "Other employment type (Provide explanation)",
+    "nearestText": "Other  (Provide explanation and complete 13A.2,",
+    "suggestedLabel": "13A.5 and 13A.6)",
+    "similarity": 0.333,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "13A.5 and 13A.6)",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Other  (Provide explanation and complete 13A.2,",
+        "distance": 8.0,
+        "direction": "above",
+        "score": 0.2211
+      },
+      {
+        "text": "employment)  (Complete 13A.2, 13A.5 and 13A.6)",
+        "distance": 19.3,
+        "direction": "above",
+        "score": 0.0984
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1[0].TextField11[13]",
+    "semanticKey": "employmentInfo.0.ifOtherSelectedProvideExplanation_2",
+    "section": "employmentInfo",
+    "page": 21,
+    "pdfFieldType": "",
+    "currentLabel": "Other employment type (Provide explanation)",
+    "nearestText": "Other  (Provide explanation and complete 13A.2,",
+    "suggestedLabel": "13A.5 and 13A.6)",
+    "similarity": 0.333,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "13A.5 and 13A.6)",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Other  (Provide explanation and complete 13A.2,",
+        "distance": 8.0,
+        "direction": "above",
+        "score": 0.2225
+      },
+      {
+        "text": "employment)  (Complete 13A.2, 13A.5 and 13A.6)",
+        "distance": 19.3,
+        "direction": "above",
+        "score": 0.0987
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1[1].TextField11[13]",
+    "semanticKey": "employmentInfo.1.ifOtherSelectedProvideExplanation",
+    "section": "employmentInfo",
+    "page": 25,
+    "pdfFieldType": "",
+    "currentLabel": "Other employment type (Provide explanation)",
+    "nearestText": "Other  (Provide explanation and complete 13A.2,",
+    "suggestedLabel": "13A.5 and 13A.6)",
+    "similarity": 0.333,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "13A.5 and 13A.6)",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Other  (Provide explanation and complete 13A.2,",
+        "distance": 8.0,
+        "direction": "above",
+        "score": 0.2225
+      },
+      {
+        "text": "employment)  (Complete 13A.2, 13A.5 and 13A.6)",
+        "distance": 19.3,
+        "direction": "above",
+        "score": 0.0987
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section_13_1[2].TextField11[13]",
+    "semanticKey": "employmentInfo.2.ifOtherSelectedProvideExplanation",
+    "section": "employmentInfo",
+    "page": 29,
+    "pdfFieldType": "",
+    "currentLabel": "Other employment type (Provide explanation)",
+    "nearestText": "Other  (Provide explanation and complete 13A.2,",
+    "suggestedLabel": "13A.5 and 13A.6)",
+    "similarity": 0.333,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "13A.5 and 13A.6)",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Other  (Provide explanation and complete 13A.2,",
+        "distance": 8.0,
+        "direction": "above",
+        "score": 0.2225
+      },
+      {
+        "text": "employment)  (Complete 13A.2, 13A.5 and 13A.6)",
+        "distance": 19.3,
+        "direction": "above",
+        "score": 0.0987
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2-2[0].Table1[0].Row3[0].Cell4[0]",
+    "semanticKey": "employmentInfo.0.toDateMonthyearRow3",
+    "section": "employmentInfo",
+    "page": 18,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 3",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3309
+      },
+      {
+        "text": "Est.",
+        "distance": 4.9,
+        "direction": "above_left",
+        "score": 0.3053
+      },
+      {
+        "text": "Est.",
+        "distance": 4.7,
+        "direction": "left",
+        "score": 0.2611
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2-2[0].Table1[0].Row4[0].Cell2[0]",
+    "semanticKey": "employmentInfo.0.fromDateMonthyearRow4",
+    "section": "employmentInfo",
+    "page": 18,
+    "pdfFieldType": "",
+    "currentLabel": "From date (Month/Year). Row 4",
+    "nearestText": "Is/was your physical work address different than your employer's address?",
+    "suggestedLabel": "Is/was your physical work address different than your employer's address?",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Is/was your physical work address different than your employer's address?",
+        "distance": 5.4,
+        "direction": "below",
+        "score": 0.1243
+      },
+      {
+        "text": "Est.",
+        "distance": 21.9,
+        "direction": "above",
+        "score": 0.0873
+      },
+      {
+        "text": "Est.",
+        "distance": 28.6,
+        "direction": "above",
+        "score": 0.0676
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2-2[0].Table1[0].Row4[0].Cell4[0]",
+    "semanticKey": "employmentInfo.0.toDateMonthyearRow4",
+    "section": "employmentInfo",
+    "page": 18,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3309
+      },
+      {
+        "text": "Est.",
+        "distance": 5.5,
+        "direction": "above_left",
+        "score": 0.2754
+      },
+      {
+        "text": "Is/was your physical work address different than your employer's address?",
+        "distance": 5.4,
+        "direction": "left",
+        "score": 0.2331
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2-2[0].Table1[0].Row4[0].#field[4]",
+    "semanticKey": "employmentInfo.0.positionTitleRow4",
+    "section": "employmentInfo",
+    "page": 18,
+    "pdfFieldType": "",
+    "currentLabel": "Position Title. Row 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 5.2,
+        "direction": "left",
+        "score": 0.2416
+      },
+      {
+        "text": "Est.",
+        "distance": 6.7,
+        "direction": "above_left",
+        "score": 0.2329
+      },
+      {
+        "text": "Est.",
+        "distance": 19.6,
+        "direction": "above_left",
+        "score": 0.0874
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_3-2[0].RadioButtonList[1]",
+    "semanticKey": "employmentInfo.0.RadioButtonList_191",
+    "section": "employmentInfo",
+    "page": 19,
+    "pdfFieldType": "",
+    "currentLabel": "Do you or did you have an APO/FPO address while at this location?",
+    "nearestText": "Provide the name of someone that can verify your self-employment.",
+    "suggestedLabel": "NO",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "Provide the name of someone that can verify your self-employment.",
+        "distance": 3.9,
+        "direction": "right",
+        "score": 0.1022
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0844
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[0]",
+    "semanticKey": "employmentInfo.0.RadioButtonList_220",
+    "section": "employmentInfo",
+    "page": 20,
+    "pdfFieldType": "",
+    "currentLabel": "For this employment have any of the following happened to you  in the last seven (7) years ?",
+    "nearestText": "Fired, quit after being told you would be fired, left by mutual agreement following charges or allegations of misconduct, left by mutual agreement following",
+    "suggestedLabel": "NO  (If NO, proceed to 13A.6)",
+    "similarity": 0.097,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to 13A.6)",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.1512
+      },
+      {
+        "text": "YES",
+        "distance": 9.4,
+        "direction": "left",
+        "score": 0.1437
+      },
+      {
+        "text": "Select your type of incident:",
+        "distance": 5.7,
+        "direction": "below",
+        "score": 0.1195
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[2]",
+    "semanticKey": "employmentInfo.0.RadioButtonList_259",
+    "section": "employmentInfo",
+    "page": 20,
+    "pdfFieldType": "",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "nearestText": "Does your unemployment verifier have an APO/FPO address?",
+    "suggestedLabel": "13A.5",
+    "similarity": 0.04,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "13A.5",
+        "distance": 6.8,
+        "direction": "left",
+        "score": 0.1916
+      },
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0844
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[0].Table1[0].Row3[0].Cell4[0]",
+    "semanticKey": "employmentInfo.0.toDateMonthyearRow3_2",
+    "section": "employmentInfo",
+    "page": 22,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 3",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3309
+      },
+      {
+        "text": "Est.",
+        "distance": 4.9,
+        "direction": "above_left",
+        "score": 0.3053
+      },
+      {
+        "text": "Est.",
+        "distance": 4.7,
+        "direction": "left",
+        "score": 0.2611
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[0].Table1[0].Row4[0].Cell2[0]",
+    "semanticKey": "employmentInfo.0.fromDateMonthyearRow4_2",
+    "section": "employmentInfo",
+    "page": 22,
+    "pdfFieldType": "",
+    "currentLabel": "From date (Month/Year). Row 4",
+    "nearestText": "Is/was your physical work address different than your employer's address?",
+    "suggestedLabel": "Is/was your physical work address different than your employer's address?",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Is/was your physical work address different than your employer's address?",
+        "distance": 5.4,
+        "direction": "below",
+        "score": 0.1243
+      },
+      {
+        "text": "Est.",
+        "distance": 21.9,
+        "direction": "above",
+        "score": 0.0873
+      },
+      {
+        "text": "Est.",
+        "distance": 28.6,
+        "direction": "above",
+        "score": 0.0676
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[0].Table1[0].Row4[0].Cell4[0]",
+    "semanticKey": "employmentInfo.0.toDateMonthyearRow4_2",
+    "section": "employmentInfo",
+    "page": 22,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3309
+      },
+      {
+        "text": "Est.",
+        "distance": 5.5,
+        "direction": "above_left",
+        "score": 0.2754
+      },
+      {
+        "text": "Is/was your physical work address different than your employer's address?",
+        "distance": 5.4,
+        "direction": "left",
+        "score": 0.2331
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[0].Table1[0].Row4[0].#field[4]",
+    "semanticKey": "employmentInfo.0.positionTitleRow4_2",
+    "section": "employmentInfo",
+    "page": 22,
+    "pdfFieldType": "",
+    "currentLabel": "Position Title. Row 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 5.2,
+        "direction": "left",
+        "score": 0.2416
+      },
+      {
+        "text": "Est.",
+        "distance": 6.7,
+        "direction": "above_left",
+        "score": 0.2329
+      },
+      {
+        "text": "Est.",
+        "distance": 19.6,
+        "direction": "above_left",
+        "score": 0.0874
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_3[0].RadioButtonList[1]",
+    "semanticKey": "employmentInfo.0.RadioButtonList_450",
+    "section": "employmentInfo",
+    "page": 23,
+    "pdfFieldType": "",
+    "currentLabel": "Do you or did you have an APO/FPO address while at this location?",
+    "nearestText": "Provide the name of someone that can verify your self-employment.",
+    "suggestedLabel": "NO",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "Provide the name of someone that can verify your self-employment.",
+        "distance": 3.9,
+        "direction": "right",
+        "score": 0.1022
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0844
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[0]",
+    "semanticKey": "employmentInfo.1.RadioButtonList_479",
+    "section": "employmentInfo",
+    "page": 24,
+    "pdfFieldType": "",
+    "currentLabel": "For this employment have any of the following happened to you  in the last seven (7) years ?",
+    "nearestText": "Fired, quit after being told you would be fired, left by mutual agreement following charges or allegations of misconduct, left by mutual agreement following",
+    "suggestedLabel": "NO  (If NO, proceed to 13A.6)",
+    "similarity": 0.097,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to 13A.6)",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.1512
+      },
+      {
+        "text": "YES",
+        "distance": 9.4,
+        "direction": "left",
+        "score": 0.1437
+      },
+      {
+        "text": "Select your type of incident:",
+        "distance": 5.7,
+        "direction": "below",
+        "score": 0.1195
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[2]",
+    "semanticKey": "employmentInfo.1.RadioButtonList_518",
+    "section": "employmentInfo",
+    "page": 24,
+    "pdfFieldType": "",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "nearestText": "Does your unemployment verifier have an APO/FPO address?",
+    "suggestedLabel": "13A.5",
+    "similarity": 0.04,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "13A.5",
+        "distance": 6.8,
+        "direction": "left",
+        "score": 0.1916
+      },
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0844
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[1].Table1[0].Row3[0].Cell4[0]",
+    "semanticKey": "employmentInfo.1.toDateMonthyearRow3",
+    "section": "employmentInfo",
+    "page": 26,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 3",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3309
+      },
+      {
+        "text": "Est.",
+        "distance": 4.9,
+        "direction": "above_left",
+        "score": 0.3053
+      },
+      {
+        "text": "Est.",
+        "distance": 4.7,
+        "direction": "left",
+        "score": 0.2611
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[1].Table1[0].Row4[0].Cell2[0]",
+    "semanticKey": "employmentInfo.1.fromDateMonthyearRow4",
+    "section": "employmentInfo",
+    "page": 26,
+    "pdfFieldType": "",
+    "currentLabel": "From date (Month/Year). Row 4",
+    "nearestText": "Is/was your physical work address different than your employer's address?",
+    "suggestedLabel": "Is/was your physical work address different than your employer's address?",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Is/was your physical work address different than your employer's address?",
+        "distance": 5.4,
+        "direction": "below",
+        "score": 0.1243
+      },
+      {
+        "text": "Est.",
+        "distance": 21.9,
+        "direction": "above",
+        "score": 0.0873
+      },
+      {
+        "text": "Est.",
+        "distance": 28.6,
+        "direction": "above",
+        "score": 0.0676
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[1].Table1[0].Row4[0].Cell4[0]",
+    "semanticKey": "employmentInfo.1.toDateMonthyearRow4",
+    "section": "employmentInfo",
+    "page": 26,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3309
+      },
+      {
+        "text": "Est.",
+        "distance": 5.5,
+        "direction": "above_left",
+        "score": 0.2754
+      },
+      {
+        "text": "Is/was your physical work address different than your employer's address?",
+        "distance": 5.4,
+        "direction": "left",
+        "score": 0.2331
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[1].Table1[0].Row4[0].#field[4]",
+    "semanticKey": "employmentInfo.1.positionTitleRow4",
+    "section": "employmentInfo",
+    "page": 26,
+    "pdfFieldType": "",
+    "currentLabel": "Position Title. Row 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 5.2,
+        "direction": "left",
+        "score": 0.2416
+      },
+      {
+        "text": "Est.",
+        "distance": 6.7,
+        "direction": "above_left",
+        "score": 0.2329
+      },
+      {
+        "text": "Est.",
+        "distance": 19.6,
+        "direction": "above_left",
+        "score": 0.0874
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_3[1].RadioButtonList[1]",
+    "semanticKey": "employmentInfo.1.RadioButtonList_709",
+    "section": "employmentInfo",
+    "page": 27,
+    "pdfFieldType": "",
+    "currentLabel": "Do you or did you have an APO/FPO address while at this location?",
+    "nearestText": "Provide the name of someone that can verify your self-employment.",
+    "suggestedLabel": "NO",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "Provide the name of someone that can verify your self-employment.",
+        "distance": 3.9,
+        "direction": "right",
+        "score": 0.1022
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0844
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[0]",
+    "semanticKey": "employmentInfo.2.RadioButtonList_738",
+    "section": "employmentInfo",
+    "page": 28,
+    "pdfFieldType": "",
+    "currentLabel": "For this employment have any of the following happened to you  in the last seven (7) years ?",
+    "nearestText": "Fired, quit after being told you would be fired, left by mutual agreement following charges or allegations of misconduct, left by mutual agreement following",
+    "suggestedLabel": "NO  (If NO, proceed to 13A.6)",
+    "similarity": 0.097,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to 13A.6)",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.1512
+      },
+      {
+        "text": "YES",
+        "distance": 9.4,
+        "direction": "left",
+        "score": 0.1437
+      },
+      {
+        "text": "Select your type of incident:",
+        "distance": 5.7,
+        "direction": "below",
+        "score": 0.1195
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[2]",
+    "semanticKey": "employmentInfo.2.RadioButtonList_777",
+    "section": "employmentInfo",
+    "page": 28,
+    "pdfFieldType": "",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "nearestText": "Does your unemployment verifier have an APO/FPO address?",
+    "suggestedLabel": "13A.5",
+    "similarity": 0.04,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "13A.5",
+        "distance": 6.8,
+        "direction": "left",
+        "score": 0.1916
+      },
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0844
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[2].Table1[0].Row3[0].Cell4[0]",
+    "semanticKey": "employmentInfo.2.toDateMonthyearRow3",
+    "section": "employmentInfo",
+    "page": 30,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 3",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3309
+      },
+      {
+        "text": "Est.",
+        "distance": 4.9,
+        "direction": "above_left",
+        "score": 0.3053
+      },
+      {
+        "text": "Est.",
+        "distance": 4.7,
+        "direction": "left",
+        "score": 0.2611
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[2].Table1[0].Row4[0].Cell2[0]",
+    "semanticKey": "employmentInfo.2.fromDateMonthyearRow4",
+    "section": "employmentInfo",
+    "page": 30,
+    "pdfFieldType": "",
+    "currentLabel": "From date (Month/Year). Row 4",
+    "nearestText": "Is/was your physical work address different than your employer's address?",
+    "suggestedLabel": "Is/was your physical work address different than your employer's address?",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Is/was your physical work address different than your employer's address?",
+        "distance": 5.4,
+        "direction": "below",
+        "score": 0.1243
+      },
+      {
+        "text": "Est.",
+        "distance": 21.9,
+        "direction": "above",
+        "score": 0.0873
+      },
+      {
+        "text": "Est.",
+        "distance": 28.6,
+        "direction": "above",
+        "score": 0.0676
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[2].Table1[0].Row4[0].Cell4[0]",
+    "semanticKey": "employmentInfo.2.toDateMonthyearRow4",
+    "section": "employmentInfo",
+    "page": 30,
+    "pdfFieldType": "",
+    "currentLabel": "To date (Month/Year). Row 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3309
+      },
+      {
+        "text": "Est.",
+        "distance": 5.5,
+        "direction": "above_left",
+        "score": 0.2754
+      },
+      {
+        "text": "Is/was your physical work address different than your employer's address?",
+        "distance": 5.4,
+        "direction": "left",
+        "score": 0.2331
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_2[2].Table1[0].Row4[0].#field[4]",
+    "semanticKey": "employmentInfo.2.positionTitleRow4",
+    "section": "employmentInfo",
+    "page": 30,
+    "pdfFieldType": "",
+    "currentLabel": "Position Title. Row 4",
+    "nearestText": "Est.",
+    "suggestedLabel": "Est.",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Est.",
+        "distance": 5.2,
+        "direction": "left",
+        "score": 0.2416
+      },
+      {
+        "text": "Est.",
+        "distance": 6.7,
+        "direction": "above_left",
+        "score": 0.2329
+      },
+      {
+        "text": "Est.",
+        "distance": 19.6,
+        "direction": "above_left",
+        "score": 0.0874
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_3[2].RadioButtonList[1]",
+    "semanticKey": "employmentInfo.2.RadioButtonList_968",
+    "section": "employmentInfo",
+    "page": 31,
+    "pdfFieldType": "",
+    "currentLabel": "Do you or did you have an APO/FPO address while at this location?",
+    "nearestText": "Provide the name of someone that can verify your self-employment.",
+    "suggestedLabel": "NO",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "Provide the name of someone that can verify your self-employment.",
+        "distance": 3.9,
+        "direction": "right",
+        "score": 0.1022
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0844
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[0]",
+    "semanticKey": "employmentInfo.3.RadioButtonList_997",
+    "section": "employmentInfo",
+    "page": 32,
+    "pdfFieldType": "",
+    "currentLabel": "For this employment have any of the following happened to you  in the last seven (7) years ?",
+    "nearestText": "Fired, quit after being told you would be fired, left by mutual agreement following charges or allegations of misconduct, left by mutual agreement following",
+    "suggestedLabel": "NO  (If NO, proceed to 13A.6)",
+    "similarity": 0.097,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to 13A.6)",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.1512
+      },
+      {
+        "text": "YES",
+        "distance": 9.4,
+        "direction": "left",
+        "score": 0.1437
+      },
+      {
+        "text": "Select your type of incident:",
+        "distance": 5.7,
+        "direction": "below",
+        "score": 0.1195
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[2]",
+    "semanticKey": "employmentInfo.3.RadioButtonList_1036",
+    "section": "employmentInfo",
+    "page": 32,
+    "pdfFieldType": "",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "nearestText": "Does your unemployment verifier have an APO/FPO address?",
+    "suggestedLabel": "13A.5",
+    "similarity": 0.04,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "13A.5",
+        "distance": 6.8,
+        "direction": "left",
+        "score": 0.1916
+      },
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0844
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].section13_5[0].RadioButtonList[1]",
+    "semanticKey": "employmentInfo.0.RadioButtonList_1050",
+    "section": "employmentInfo",
+    "page": 33,
+    "pdfFieldType": "",
+    "currentLabel": "Have any of the following happened to you  in the last seven (7) years  at employment activities that you have not pr...",
+    "nearestText": "YES   (If YES, you will be required to add an additional employment in Section 13A)",
+    "suggestedLabel": "YES   (If YES, you will be required to add an additional employment in Section 13A)",
+    "similarity": 0.138,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES   (If YES, you will be required to add an additional employment in Section 13A)",
+        "distance": 4.3,
+        "direction": "right",
+        "score": 0.0952
+      },
+      {
+        "text": "the workplace, such as violation of a security policy?",
+        "distance": 8.6,
+        "direction": "right",
+        "score": 0.0522
+      },
+      {
+        "text": "NO  (If NO, proceed to Section 14)",
+        "distance": 8.8,
+        "direction": "right",
+        "score": 0.0509
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section11[0].RadioButtonList[0]",
+    "semanticKey": "residencyInfo.0.RadioButtonList_18",
+    "section": "residencyInfo",
+    "page": 10,
+    "pdfFieldType": "",
+    "currentLabel": "Provide dates of residence.",
+    "nearestText": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code.)",
+    "suggestedLabel": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code.)",
+    "similarity": 0.056,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, pr",
+        "distance": 2.2,
+        "direction": "left",
+        "score": 0.4625
+      },
+      {
+        "text": "Military housing",
+        "distance": 8.9,
+        "direction": "left",
+        "score": 0.151
+      },
+      {
+        "text": "Other",
+        "distance": 3.0,
+        "direction": "right",
+        "score": 0.125
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section11[0].RadioButtonList[1]",
+    "semanticKey": "residencyInfo.0.RadioButtonList_58",
+    "section": "residencyInfo",
+    "page": 10,
+    "pdfFieldType": "",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "nearestText": "Provide the name of a neighbor, landlord (if rental), or other person who knows you at this address.",
+    "suggestedLabel": "NO",
+    "similarity": 0.094,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "Provide the name of a neighbor, landlord (if rental), or other person who knows you at this address.",
+        "distance": 4.1,
+        "direction": "right",
+        "score": 0.0989
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0842
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[0]",
+    "semanticKey": "residencyInfo.0.RadioButtonList_81",
+    "section": "residencyInfo",
+    "page": 11,
+    "pdfFieldType": "",
+    "currentLabel": "Provide dates of residence.",
+    "nearestText": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code.)",
+    "suggestedLabel": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code.)",
+    "similarity": 0.056,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, pr",
+        "distance": 2.2,
+        "direction": "left",
+        "score": 0.4623
+      },
+      {
+        "text": "Military housing",
+        "distance": 8.9,
+        "direction": "left",
+        "score": 0.151
+      },
+      {
+        "text": "Other",
+        "distance": 3.0,
+        "direction": "right",
+        "score": 0.125
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[1]",
+    "semanticKey": "residencyInfo.0.RadioButtonList_121",
+    "section": "residencyInfo",
+    "page": 11,
+    "pdfFieldType": "",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "nearestText": "Provide the name of a neighbor, landlord (if rental) or other person who knows you at this address.",
+    "suggestedLabel": "NO",
+    "similarity": 0.094,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "Provide the name of a neighbor, landlord (if rental) or other person who knows you at this address.",
+        "distance": 4.1,
+        "direction": "right",
+        "score": 0.0989
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0842
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[0]",
+    "semanticKey": "residencyInfo.0.RadioButtonList_144",
+    "section": "residencyInfo",
+    "page": 12,
+    "pdfFieldType": "",
+    "currentLabel": "Provide dates of residence.",
+    "nearestText": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code.)",
+    "suggestedLabel": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code.)",
+    "similarity": 0.056,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, pr",
+        "distance": 2.2,
+        "direction": "left",
+        "score": 0.4623
+      },
+      {
+        "text": "Military housing",
+        "distance": 8.9,
+        "direction": "left",
+        "score": 0.151
+      },
+      {
+        "text": "Other",
+        "distance": 3.0,
+        "direction": "right",
+        "score": 0.125
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[1]",
+    "semanticKey": "residencyInfo.0.RadioButtonList_184",
+    "section": "residencyInfo",
+    "page": 12,
+    "pdfFieldType": "",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "nearestText": "Provide the name of a neighbor, landlord (if rental) or other person who knows you at this address.",
+    "suggestedLabel": "NO",
+    "similarity": 0.094,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "Provide the name of a neighbor, landlord (if rental) or other person who knows you at this address.",
+        "distance": 4.1,
+        "direction": "right",
+        "score": 0.0989
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0842
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[0]",
+    "semanticKey": "residencyInfo.0.RadioButtonList_246",
+    "section": "residencyInfo",
+    "page": 13,
+    "pdfFieldType": "",
+    "currentLabel": "Provide physical location data with street address, base, post, embassy, unit, and country location or home port/flee...",
+    "nearestText": "Provide the name of a neighbor, landlord (if rental) or other person who knows you at this address.",
+    "suggestedLabel": "NO",
+    "similarity": 0.094,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 3.7,
+        "direction": "right",
+        "score": 0.1063
+      },
+      {
+        "text": "Provide the name of a neighbor, landlord (if rental) or other person who knows you at this address.",
+        "distance": 4.1,
+        "direction": "right",
+        "score": 0.0984
+      },
+      {
+        "text": "YES",
+        "distance": 4.9,
+        "direction": "right",
+        "score": 0.0843
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[2]",
+    "semanticKey": "residencyInfo.0.RadioButtonList_252",
+    "section": "residencyInfo",
+    "page": 13,
+    "pdfFieldType": "",
+    "currentLabel": "Provide dates of residence.",
+    "nearestText": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code.)",
+    "suggestedLabel": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code.)",
+    "similarity": 0.056,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide the street address.   ( Provide City and Country if outside the United States; otherwise, pr",
+        "distance": 2.3,
+        "direction": "left",
+        "score": 0.4591
+      },
+      {
+        "text": "Military housing",
+        "distance": 8.9,
+        "direction": "left",
+        "score": 0.151
+      },
+      {
+        "text": "Other",
+        "distance": 3.0,
+        "direction": "right",
+        "score": 0.125
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[0].RadioButtonList[0]",
+    "semanticKey": "serviceInfo.0.RadioButtonList_1",
+    "section": "serviceInfo",
+    "page": 34,
+    "pdfFieldType": "",
+    "currentLabel": "Have you registered with the Selective Service System (SSS)?",
+    "nearestText": "I don't know",
+    "suggestedLabel": "I don't know",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "I don't know",
+        "distance": 4.1,
+        "direction": "right",
+        "score": 0.0985
+      },
+      {
+        "text": "Section 15 - Military History",
+        "distance": 7.9,
+        "direction": "right",
+        "score": 0.0562
+      },
+      {
+        "text": "No",
+        "distance": 8.9,
+        "direction": "right",
+        "score": 0.0505
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[5].#area[6].RadioButtonList[2]",
+    "semanticKey": "serviceInfo.0.RadioButtonList_6",
+    "section": "serviceInfo",
+    "page": 34,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the branch of service you served in.",
+    "nearestText": "Coast Guard",
+    "suggestedLabel": "Coast Guard",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Coast Guard",
+        "distance": 4.1,
+        "direction": "right",
+        "score": 0.0987
+      },
+      {
+        "text": "Air Force",
+        "distance": 45.7,
+        "direction": "left",
+        "score": 0.0321
+      },
+      {
+        "text": "Guard",
+        "distance": 55.5,
+        "direction": "left",
+        "score": 0.0266
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[7].RadioButtonList[3]",
+    "semanticKey": "serviceInfo.0.RadioButtonList_8",
+    "section": "serviceInfo",
+    "page": 34,
+    "pdfFieldType": "",
+    "currentLabel": "Guard",
+    "nearestText": "Officer",
+    "suggestedLabel": "Officer",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Officer",
+        "distance": 4.0,
+        "direction": "right",
+        "score": 0.0992
+      },
+      {
+        "text": "Officer or enlisted",
+        "distance": 23.7,
+        "direction": "above",
+        "score": 0.0809
+      },
+      {
+        "text": "Not Applicable",
+        "distance": 7.4,
+        "direction": "right",
+        "score": 0.0598
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[10].RadioButtonList[5]",
+    "semanticKey": "serviceInfo.0.RadioButtonList_16",
+    "section": "serviceInfo",
+    "page": 34,
+    "pdfFieldType": "",
+    "currentLabel": "Were you discharged from this instance of U.S. military service, to include Reserves, or National Guard?",
+    "nearestText": "Provide the type of discharge you received:",
+    "suggestedLabel": "General",
+    "similarity": 0.091,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "General",
+        "distance": 4.1,
+        "direction": "right",
+        "score": 0.0985
+      },
+      {
+        "text": "Honorable Conditions",
+        "distance": 4.3,
+        "direction": "right",
+        "score": 0.0938
+      },
+      {
+        "text": "Dishonorable",
+        "distance": 17.8,
+        "direction": "left",
+        "score": 0.0798
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[12].RadioButtonList[7]",
+    "semanticKey": "serviceInfo.0.RadioButtonList_22",
+    "section": "serviceInfo",
+    "page": 34,
+    "pdfFieldType": "",
+    "currentLabel": "Provide your status",
+    "nearestText": "Inactive Reserve",
+    "suggestedLabel": "Were you discharged from this instance of U.S. military service, to include Reserves, or National Guard?",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Were you discharged from this instance of U.S. military service, to include Reserves, or National Gu",
+        "distance": 6.5,
+        "direction": "below",
+        "score": 0.1072
+      },
+      {
+        "text": "Inactive Reserve",
+        "distance": 4.1,
+        "direction": "right",
+        "score": 0.0984
+      },
+      {
+        "text": "Active Reserve",
+        "distance": 6.8,
+        "direction": "right",
+        "score": 0.0645
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[13].#area[14].RadioButtonList[8]",
+    "semanticKey": "serviceInfo.0.RadioButtonList_23",
+    "section": "serviceInfo",
+    "page": 34,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the reason(s) for the discharge, if discharge is other than Honorable",
+    "nearestText": "Coast Guard",
+    "suggestedLabel": "Coast Guard",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Coast Guard",
+        "distance": 4.0,
+        "direction": "right",
+        "score": 0.0991
+      },
+      {
+        "text": "Air Force",
+        "distance": 45.8,
+        "direction": "left",
+        "score": 0.0321
+      },
+      {
+        "text": "Guard",
+        "distance": 55.5,
+        "direction": "left",
+        "score": 0.0265
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section14_1[0].#area[15].RadioButtonList[9]",
+    "semanticKey": "serviceInfo.0.RadioButtonList_25",
+    "section": "serviceInfo",
+    "page": 34,
+    "pdfFieldType": "",
+    "currentLabel": "Guard",
+    "nearestText": "Officer",
+    "suggestedLabel": "Officer",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Officer",
+        "distance": 4.1,
+        "direction": "right",
+        "score": 0.0976
+      },
+      {
+        "text": "Officer or enlisted",
+        "distance": 23.7,
+        "direction": "above",
+        "score": 0.0811
+      },
+      {
+        "text": "Not Applicable",
+        "distance": 7.3,
+        "direction": "right",
+        "score": 0.0602
+      }
+    ]
+  }
+]

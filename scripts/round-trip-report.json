@@ -1,0 +1,2595 @@
+{
+  "timestamp": "2026-02-27T16:58:26-0600",
+  "elapsed_fill_seconds": 62.6,
+  "elapsed_extract_seconds": 3.23,
+  "summary": {
+    "TextField": {
+      "sent": 3149,
+      "extracted": 3149,
+      "matched": 3149,
+      "rate": 100.0
+    },
+    "CheckBox": {
+      "sent": 897,
+      "extracted": 897,
+      "matched": 897,
+      "rate": 100.0
+    },
+    "Dropdown": {
+      "sent": 857,
+      "extracted": 857,
+      "matched": 857,
+      "rate": 100.0
+    },
+    "RadioGroup": {
+      "sent": 398,
+      "extracted": 33,
+      "matched": 33,
+      "rate": 100.0
+    },
+    "TOTAL": {
+      "sent": 5301,
+      "extracted": 4936,
+      "matched": 4936,
+      "rate": 100.0
+    }
+  },
+  "mismatch_count": 365,
+  "mismatches": [
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Sections1-6[0].p3-rb3b[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Male",
+      "extracted": null,
+      "label": "p3-rb3b"
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "I am a U.S. citizen or national by birth in the U.S. or U.S. territory/commonwealth. (Proceed to Section 10)   ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "FS 240 ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section9\\.1-9\\.4[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[5]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO (If NO, proceed to Section 11)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[6]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section10-2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section11[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section11[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-2[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-3[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section11-4[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section_12[0].pg10r1[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "pg10r1"
+    },
+    {
+      "pdfFieldName": "form1[0].section_12[0].pg10r2[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "pg10r2"
+    },
+    {
+      "pdfFieldName": "form1[0].section_12[0].pg10r4[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "High School",
+      "extracted": null,
+      "label": "pg10r4"
+    },
+    {
+      "pdfFieldName": "form1[0].section_12[0].pg2r5[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "pg2r5"
+    },
+    {
+      "pdfFieldName": "form1[0].section_12[0].pg10r4[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "High School",
+      "extracted": null,
+      "label": "pg10r4"
+    },
+    {
+      "pdfFieldName": "form1[0].section_12_2[0].pg2r5[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "pg2r5"
+    },
+    {
+      "pdfFieldName": "form1[0].section_12_2[0].pg10r4[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "High School",
+      "extracted": null,
+      "label": "pg10r4"
+    },
+    {
+      "pdfFieldName": "form1[0].section_12_2[0].pg2r5[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "pg2r5"
+    },
+    {
+      "pdfFieldName": "form1[0].section_12_3[0].pg10r4[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "High School",
+      "extracted": null,
+      "label": "pg10r4"
+    },
+    {
+      "pdfFieldName": "form1[0].section_12_3[0].pg2r5[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "pg2r5"
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Active military duty station (Complete 13A.1, 13A.5 and 13A.6)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2-2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2-2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2-2[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3-2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3-2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3-2[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Active military duty station (Complete 13A.1, 13A.5 and 13A.6)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[1].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Active military duty station (Complete 13A.1, 13A.5 and 13A.6)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[1].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[1].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[1].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[1].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[1].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[1].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[2].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Active military duty station (Complete 13A.1, 13A.5 and 13A.6)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[2].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[2].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_2[2].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[2].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[2].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_3[2].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_4[3].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_5[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section13_5[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO (If NO, proceed to Section 14)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Yes",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[4].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[9].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[11].RadioButtonList[6]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section14_1[0].#area[17].RadioButtonList[10]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section15_2[0].#area[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section15_3[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section15_3[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section16_1[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_1_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_2_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3_2[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section17_3_2[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES (Proceed to 18.3)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "I don't know",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[1].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[1].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES (Proceed to 18.3)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[1].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[1].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "I don't know",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[1].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[1].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[1].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[1].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[1].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[2].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[2].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES (Proceed to 18.3)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[2].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[2].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "I don't know",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[2].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[3].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[3].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES (Proceed to 18.3)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[3].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[3].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "I don't know",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[3].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[3].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[3].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[3].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[3].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[4].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[4].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES (Proceed to 18.3)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[4].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[4].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "I don't know",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_1_1[4].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[5].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_2[5].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES (Proceed to 18.3)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[5].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section18_3[5].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "I don't know",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO (If NO, proceed to Section 20A)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].#area[3].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_2[0].#area[3].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_3[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_3[0].#area[3].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_4[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_4[0].#area[3].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section20a[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section20a[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section20a2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[68].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[68].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO (If NO, Proceed to 20A.3)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[69].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[70].#area[5].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[70].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[71].#area[8].RadioButtonList[5]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[6]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[7]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].#area[10].RadioButtonList[9]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].#area[11].RadioButtonList[11]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].RadioButtonList[14]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].#area[12].RadioButtonList[16]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].#area[13].RadioButtonList[18]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[76].RadioButtonList[21]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[77].RadioButtonList[22]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[77].RadioButtonList[23]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[78].RadioButtonList[24]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[78].RadioButtonList[25]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[78].RadioButtonList[26]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[79].RadioButtonList[27]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[80].RadioButtonList[28]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[80].#area[27].RadioButtonList[29]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[80].#area[28].RadioButtonList[30]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[83].#subform[84].RadioButtonList2[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList2"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[83].#subform[84].#area[30].RadioButtonList[31]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[83].#subform[84].#area[33].RadioButtonList[32]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[87].RadioButtonList5[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList5"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[91].RadioButtonList7[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList7"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[91].RadioButtonList6[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList6"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].RadioButtonList[33]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].RadioButtonList[34]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[41].#area[42].RadioButtonList[35]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[43].#area[44].RadioButtonList[36]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[45].#area[46].RadioButtonList[37]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[47].#area[48].RadioButtonList[38]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[49].#area[50].RadioButtonList[39]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].#area[51].RadioButtonList[40]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].RadioButtonList[42]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[54].#area[55].RadioButtonList[43]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[56].#area[57].RadioButtonList[44]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[58].#area[59].RadioButtonList[45]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[60].#area[61].RadioButtonList[46]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[62].#area[63].RadioButtonList[47]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].#area[64].RadioButtonList[48]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].RadioButtonList[50]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[67].#area[68].RadioButtonList[51]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[69].#area[70].RadioButtonList[52]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[71].#area[72].RadioButtonList[53]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[73].#area[74].RadioButtonList[54]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[75].#area[76].RadioButtonList[55]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].#area[77].RadioButtonList[56]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].RadioButtonList[58]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[80].#area[81].RadioButtonList[59]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[82].#area[83].RadioButtonList[60]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[84].#area[85].RadioButtonList[61]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[86].#area[87].RadioButtonList[62]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[88].#area[89].RadioButtonList[63]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].#area[90].RadioButtonList[64]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].RadioButtonList[66]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21a2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21b[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21b[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21b2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21c[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section21d1[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section21d2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].section21d2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21d3[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21d3[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21e[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21e[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO ",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21e[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section21e1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_1[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_1[0].#area[2].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_1[0].#area[5].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES (If YES, complete (d.1))",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_3[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_3[0].#area[2].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_3[0].#area[5].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_4[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES (If YES, complete (d.1))",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_4[0].#area[2].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_4[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_4[0].#area[4].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].#area[1].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].#area[2].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES  (If YES, complete (b.1))",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].#area[3].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_5[0].#area[5].RadioButtonList[5]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].#area[1].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].#area[2].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES  (If YES, complete (b.1))",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].#area[3].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_6[0].#area[5].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section22_3_1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[2].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[3].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[6].RadioButtonList[5]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].#area[7].RadioButtonList[6]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[7]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Cocaine or crack cocaine (Such as rock, freebase, etc.)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_1[0].RadioButtonList[8]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Cocaine or crack cocaine (Such as rock, freebase, etc.)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].#area[1].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].#area[3].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[5]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[6]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[7]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Cocaine or crack cocaine (Such as rock, freebase, etc.)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section23_2[0].RadioButtonList[8]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Cocaine or crack cocaine (Such as rock, freebase, etc.)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_3[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_3[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].#area[1].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].#area[3].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_4[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].#area[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "An employer, military commander, or employee assistance program",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].#area[1].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO (If NO, complete (a))",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].#area[3].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_5[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Cocaine or crack cocaine (Such as rock, freebase, etc.)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "An employer, military commander, or employee assistance program",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].#area[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO (If NO, complete (a))",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].#area[2].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6_1[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Cocaine or crack cocaine (Such as rock, freebase, etc.)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Cocaine or crack cocaine (Such as rock, freebase, etc.)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Cocaine or crack cocaine (Such as rock, freebase, etc.)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section_23_6[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "An employer, military commander, or employee assistance program",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO (If NO, complete (a))",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[1].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[2].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "An employer, military commander, or employee assistance program",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].RadioButtonList[5]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO (If NO, complete (a))",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_2[0].#area[3].RadioButtonList[6]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_3[0].#area[1].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_3[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_3[0].#area[3].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_4[0].#area[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES (Provide explanation)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_4[0].#area[1].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES (Provide explanation)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section24_4[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section25[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section25_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section25_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Chapter 7",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO (Provide explanation)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "Chapter 7",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26[0].RadioButtonList[4]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "NO (Provide explanation)",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[2]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "File",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[3]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "File",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_3[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_3[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_6[0].#area[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_6[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_7[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_8[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_8[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section26_9[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section27[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section27[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section27_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section28[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section29[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section29_2[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section29_2[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section29_3[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section29_4[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section29_5[0].RadioButtonList[0]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    },
+    {
+      "pdfFieldName": "form1[0].Section29_5[0].RadioButtonList[1]",
+      "pdfFieldType": "PDFRadioGroup",
+      "sent": "YES",
+      "extracted": null,
+      "label": "RadioButtonList"
+    }
+  ]
+}

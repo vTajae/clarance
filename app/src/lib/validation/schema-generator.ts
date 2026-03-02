@@ -16,6 +16,7 @@ function fieldToZodSchema(field: FieldDefinition): z.ZodType {
     case "textarea":
     case "email":
     case "phone":
+    case "telephone":
     case "name":
     case "location":
     case "country":
@@ -53,7 +54,7 @@ function fieldToZodSchema(field: FieldDefinition): z.ZodType {
     }
 
     case "checkbox": {
-      schema = z.boolean();
+      schema = field.required ? z.boolean() : z.boolean().optional();
       break;
     }
 
@@ -70,7 +71,8 @@ function fieldToZodSchema(field: FieldDefinition): z.ZodType {
     }
 
     case "branch": {
-      schema = z.enum(["yes", "no"]);
+      const b = z.enum(["yes", "no"]);
+      schema = field.required ? b : b.optional();
       break;
     }
 

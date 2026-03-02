@@ -1,0 +1,362 @@
+{
+  "timestamp": "2026-03-01T02:39:43.826Z",
+  "method": "browser-e2e",
+  "pipeline": "Jotai atoms → Export hook → /api/pdf/export → uiToPdf → PDF service → extract → compare",
+  "total": 6197,
+  "correct": 6197,
+  "mismatched": 0,
+  "crossMapped": 0,
+  "missing": 0,
+  "matchRate": 100,
+  "sectionStats": {
+    "section5": {
+      "total": 45,
+      "correct": 45,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "ssnPageHeader": {
+      "total": 137,
+      "correct": 137,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section30": {
+      "total": 27,
+      "correct": 27,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section1": {
+      "total": 4,
+      "correct": 4,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section3": {
+      "total": 6,
+      "correct": 6,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section4": {
+      "total": 2,
+      "correct": 2,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section6": {
+      "total": 6,
+      "correct": 6,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section8": {
+      "total": 10,
+      "correct": 10,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section9": {
+      "total": 78,
+      "correct": 78,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section7": {
+      "total": 17,
+      "correct": 17,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section10": {
+      "total": 122,
+      "correct": 122,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section11": {
+      "total": 252,
+      "correct": 252,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section12": {
+      "total": 150,
+      "correct": 150,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section13A": {
+      "total": 1036,
+      "correct": 1036,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section13B": {
+      "total": 49,
+      "correct": 49,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section13C": {
+      "total": 1,
+      "correct": 1,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section14": {
+      "total": 5,
+      "correct": 5,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section15": {
+      "total": 141,
+      "correct": 141,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section16": {
+      "total": 108,
+      "correct": 108,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section17": {
+      "total": 329,
+      "correct": 329,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section18": {
+      "total": 964,
+      "correct": 964,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section19": {
+      "total": 277,
+      "correct": 277,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section20A": {
+      "total": 361,
+      "correct": 361,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section20B": {
+      "total": 315,
+      "correct": 315,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section20C": {
+      "total": 114,
+      "correct": 114,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section21": {
+      "total": 24,
+      "correct": 24,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section21A": {
+      "total": 46,
+      "correct": 46,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section21B": {
+      "total": 49,
+      "correct": 49,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section21C": {
+      "total": 61,
+      "correct": 61,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section21D": {
+      "total": 179,
+      "correct": 179,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section21E": {
+      "total": 127,
+      "correct": 127,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section22": {
+      "total": 267,
+      "correct": 267,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section23": {
+      "total": 191,
+      "correct": 191,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section24": {
+      "total": 160,
+      "correct": 160,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section25": {
+      "total": 79,
+      "correct": 79,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section26": {
+      "total": 237,
+      "correct": 237,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section27": {
+      "total": 57,
+      "correct": 57,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section28": {
+      "total": 23,
+      "correct": 23,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "section29": {
+      "total": 141,
+      "correct": 141,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    }
+  },
+  "typeStats": {
+    "text": {
+      "total": 2239,
+      "correct": 2239,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "date": {
+      "total": 602,
+      "correct": 602,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "radio": {
+      "total": 398,
+      "correct": 398,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "select": {
+      "total": 159,
+      "correct": 159,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "checkbox": {
+      "total": 1793,
+      "correct": 1793,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "ssn": {
+      "total": 140,
+      "correct": 140,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "country": {
+      "total": 375,
+      "correct": 375,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "state": {
+      "total": 323,
+      "correct": 323,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "telephone": {
+      "total": 146,
+      "correct": 146,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    },
+    "email": {
+      "total": 22,
+      "correct": 22,
+      "mismatched": 0,
+      "cross": 0,
+      "missing": 0
+    }
+  },
+  "crossMappedDetails": [],
+  "mismatchedDetails": [],
+  "missingDetails": [],
+  "consoleErrors": []
+}

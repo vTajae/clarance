@@ -18,15 +18,13 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
   const currentSection = useAppStore((s) => s.currentSection);
   const goBack = useAppStore((s) => s.goBack);
   const wizardHistory = useAppStore((s) => s.wizardHistory);
-  const setSaveStatus = useAppStore((s) => s.setSaveStatus);
-  const markSaved = useAppStore((s) => s.markSaved);
 
   const currentIndex = ALL_SECTIONS.indexOf(currentSection);
   const hasPrevious = wizardHistory.length > 0 || currentIndex > 0;
   const hasNext = currentIndex < ALL_SECTIONS.length - 1;
   const isFinal = currentIndex === ALL_SECTIONS.length - 1;
 
-  const currentMeta = SECTION_META[currentSection];
+  const currentMeta = SECTION_META[currentSection]!;
   const nextSection = hasNext ? ALL_SECTIONS[currentIndex + 1] : null;
 
   const handlePrevious = useCallback(() => {
@@ -55,16 +53,15 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     }
   }, [nextSection, submissionId, router]);
 
+  const storeSaveNow = useAppStore((s) => s.saveNow);
+
   const handleSave = useCallback(() => {
-    setSaveStatus('saving');
-    // Actual save logic will be wired up to the persistence layer.
-    // For now, simulate success after a brief delay.
-    setTimeout(() => markSaved(), 300);
-  }, [setSaveStatus, markSaved]);
+    void storeSaveNow();
+  }, [storeSaveNow]);
 
   return (
-    <div className="sticky bottom-0 border-t border-gray-200 bg-white px-6 py-3">
-      <div className="mx-auto flex max-w-3xl items-center justify-between">
+    <div className="sticky bottom-0 border-t border-gray-200 bg-white px-4 py-3 sm:px-6" role="navigation" aria-label="Form navigation">
+      <div className="mx-auto flex max-w-3xl items-center justify-between gap-2">
         {/* Previous */}
         <button
           type="button"

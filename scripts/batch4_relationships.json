@@ -1,0 +1,962 @@
+[
+  {
+    "pdfFieldName": "form1[0].Section18_2[0].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.0.RadioButtonList_85",
+    "section": "relativesInfo",
+    "page": 46,
+    "pdfFieldType": "",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "nearestText": "Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Child (including adopted/foster), Stepchild, Brother,",
+    "suggestedLabel": "NO",
+    "similarity": 0.103,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 4.4,
+        "direction": "right",
+        "score": 0.0933
+      },
+      {
+        "text": "I don't know",
+        "distance": 4.8,
+        "direction": "right",
+        "score": 0.0857
+      },
+      {
+        "text": "18.3",
+        "distance": 12.1,
+        "direction": "below",
+        "score": 0.0609
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[0].RadioButtonList[1]",
+    "semanticKey": "relativesInfo.0.RadioButtonList_86",
+    "section": "relativesInfo",
+    "page": 46,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative deceased?",
+    "nearestText": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "suggestedLabel": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "similarity": 0.095,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather",
+        "distance": 8.0,
+        "direction": "left",
+        "score": 0.1659
+      },
+      {
+        "text": "YES  (If YES, proceed to 18.3)",
+        "distance": 8.8,
+        "direction": "left",
+        "score": 0.1538
+      },
+      {
+        "text": "NO",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1485
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[0].TextField11[6]",
+    "semanticKey": "relativesInfo.0.182CompleteTheFollowingIfTheRelativeListe",
+    "section": "relativesInfo",
+    "page": 46,
+    "pdfFieldType": "",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "nearestText": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code)",
+    "suggestedLabel": "Street",
+    "similarity": 0.079,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Street",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Does this relative have an APO/FPO address?",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3316
+      },
+      {
+        "text": "Provide your relative's current address.  ( Provide City and Country if outside the United States; o",
+        "distance": 9.0,
+        "direction": "above",
+        "score": 0.2004
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[0].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.0.RadioButtonList_129",
+    "section": "relativesInfo",
+    "page": 47,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+    "nearestText": "Enter your Social Security Number before going to the next page",
+    "suggestedLabel": "I don't know",
+    "similarity": 0.04,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "I don't know",
+        "distance": 4.2,
+        "direction": "right",
+        "score": 0.0953
+      },
+      {
+        "text": "NO",
+        "distance": 5.0,
+        "direction": "right",
+        "score": 0.0831
+      },
+      {
+        "text": "Street",
+        "distance": 54.0,
+        "direction": "above",
+        "score": 0.0364
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[1].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.1.RadioButtonList_243",
+    "section": "relativesInfo",
+    "page": 49,
+    "pdfFieldType": "",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "nearestText": "Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Child (including adopted/foster), Stepchild, Brother,",
+    "suggestedLabel": "NO",
+    "similarity": 0.103,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 4.4,
+        "direction": "right",
+        "score": 0.0933
+      },
+      {
+        "text": "I don't know",
+        "distance": 4.8,
+        "direction": "right",
+        "score": 0.0857
+      },
+      {
+        "text": "18.3",
+        "distance": 12.1,
+        "direction": "below",
+        "score": 0.0609
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[1].RadioButtonList[1]",
+    "semanticKey": "relativesInfo.1.RadioButtonList_244",
+    "section": "relativesInfo",
+    "page": 49,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative deceased?",
+    "nearestText": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "suggestedLabel": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "similarity": 0.095,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather",
+        "distance": 8.0,
+        "direction": "left",
+        "score": 0.1659
+      },
+      {
+        "text": "YES  (If YES, proceed to 18.3)",
+        "distance": 8.8,
+        "direction": "left",
+        "score": 0.1538
+      },
+      {
+        "text": "NO",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1485
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[1].TextField11[6]",
+    "semanticKey": "relativesInfo.1.182CompleteTheFollowingIfTheRelativeListe",
+    "section": "relativesInfo",
+    "page": 49,
+    "pdfFieldType": "",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "nearestText": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code)",
+    "suggestedLabel": "Street",
+    "similarity": 0.079,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Street",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Does this relative have an APO/FPO address?",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3316
+      },
+      {
+        "text": "Provide your relative's current address.  ( Provide City and Country if outside the United States; o",
+        "distance": 9.0,
+        "direction": "above",
+        "score": 0.2004
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[1].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.1.RadioButtonList_287",
+    "section": "relativesInfo",
+    "page": 50,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+    "nearestText": "Enter your Social Security Number before going to the next page",
+    "suggestedLabel": "I don't know",
+    "similarity": 0.04,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "I don't know",
+        "distance": 4.2,
+        "direction": "right",
+        "score": 0.0953
+      },
+      {
+        "text": "NO",
+        "distance": 5.0,
+        "direction": "right",
+        "score": 0.0831
+      },
+      {
+        "text": "Street",
+        "distance": 54.0,
+        "direction": "above",
+        "score": 0.0364
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[2].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.2.RadioButtonList_401",
+    "section": "relativesInfo",
+    "page": 52,
+    "pdfFieldType": "",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "nearestText": "Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Child (including adopted/foster), Stepchild, Brother,",
+    "suggestedLabel": "NO",
+    "similarity": 0.103,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 4.4,
+        "direction": "right",
+        "score": 0.0933
+      },
+      {
+        "text": "I don't know",
+        "distance": 4.8,
+        "direction": "right",
+        "score": 0.0857
+      },
+      {
+        "text": "18.3",
+        "distance": 12.1,
+        "direction": "below",
+        "score": 0.0609
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[2].RadioButtonList[1]",
+    "semanticKey": "relativesInfo.2.RadioButtonList_402",
+    "section": "relativesInfo",
+    "page": 52,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative deceased?",
+    "nearestText": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "suggestedLabel": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "similarity": 0.095,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather",
+        "distance": 8.0,
+        "direction": "left",
+        "score": 0.1659
+      },
+      {
+        "text": "YES  (If YES, proceed to 18.3)",
+        "distance": 8.8,
+        "direction": "left",
+        "score": 0.1538
+      },
+      {
+        "text": "NO",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1485
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[2].TextField11[6]",
+    "semanticKey": "relativesInfo.2.182CompleteTheFollowingIfTheRelativeListe",
+    "section": "relativesInfo",
+    "page": 52,
+    "pdfFieldType": "",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "nearestText": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code)",
+    "suggestedLabel": "Street",
+    "similarity": 0.079,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Street",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Does this relative have an APO/FPO address?",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3316
+      },
+      {
+        "text": "Provide your relative's current address.  ( Provide City and Country if outside the United States; o",
+        "distance": 9.0,
+        "direction": "above",
+        "score": 0.2004
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[2].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.2.RadioButtonList_445",
+    "section": "relativesInfo",
+    "page": 53,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+    "nearestText": "Enter your Social Security Number before going to the next page",
+    "suggestedLabel": "I don't know",
+    "similarity": 0.04,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "I don't know",
+        "distance": 4.2,
+        "direction": "right",
+        "score": 0.0953
+      },
+      {
+        "text": "NO",
+        "distance": 5.0,
+        "direction": "right",
+        "score": 0.0831
+      },
+      {
+        "text": "Street",
+        "distance": 54.0,
+        "direction": "above",
+        "score": 0.0364
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[3].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.3.RadioButtonList_559",
+    "section": "relativesInfo",
+    "page": 55,
+    "pdfFieldType": "",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "nearestText": "Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Child (including adopted/foster), Stepchild, Brother,",
+    "suggestedLabel": "NO",
+    "similarity": 0.103,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 4.4,
+        "direction": "right",
+        "score": 0.0933
+      },
+      {
+        "text": "I don't know",
+        "distance": 4.8,
+        "direction": "right",
+        "score": 0.0857
+      },
+      {
+        "text": "18.3",
+        "distance": 12.1,
+        "direction": "below",
+        "score": 0.0609
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[3].RadioButtonList[1]",
+    "semanticKey": "relativesInfo.3.RadioButtonList_560",
+    "section": "relativesInfo",
+    "page": 55,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative deceased?",
+    "nearestText": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "suggestedLabel": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "similarity": 0.095,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather",
+        "distance": 8.0,
+        "direction": "left",
+        "score": 0.1659
+      },
+      {
+        "text": "YES  (If YES, proceed to 18.3)",
+        "distance": 8.8,
+        "direction": "left",
+        "score": 0.1538
+      },
+      {
+        "text": "NO",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1485
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[3].TextField11[6]",
+    "semanticKey": "relativesInfo.3.182CompleteTheFollowingIfTheRelativeListe",
+    "section": "relativesInfo",
+    "page": 55,
+    "pdfFieldType": "",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "nearestText": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code)",
+    "suggestedLabel": "Street",
+    "similarity": 0.079,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Street",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Does this relative have an APO/FPO address?",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3316
+      },
+      {
+        "text": "Provide your relative's current address.  ( Provide City and Country if outside the United States; o",
+        "distance": 9.0,
+        "direction": "above",
+        "score": 0.2004
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[3].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.3.RadioButtonList_603",
+    "section": "relativesInfo",
+    "page": 56,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+    "nearestText": "Enter your Social Security Number before going to the next page",
+    "suggestedLabel": "I don't know",
+    "similarity": 0.04,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "I don't know",
+        "distance": 4.2,
+        "direction": "right",
+        "score": 0.0953
+      },
+      {
+        "text": "NO",
+        "distance": 5.0,
+        "direction": "right",
+        "score": 0.0831
+      },
+      {
+        "text": "Street",
+        "distance": 54.0,
+        "direction": "above",
+        "score": 0.0364
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[4].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.4.RadioButtonList_717",
+    "section": "relativesInfo",
+    "page": 58,
+    "pdfFieldType": "",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "nearestText": "Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Child (including adopted/foster), Stepchild, Brother,",
+    "suggestedLabel": "NO",
+    "similarity": 0.103,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 4.4,
+        "direction": "right",
+        "score": 0.0933
+      },
+      {
+        "text": "I don't know",
+        "distance": 4.8,
+        "direction": "right",
+        "score": 0.0857
+      },
+      {
+        "text": "18.3",
+        "distance": 12.1,
+        "direction": "below",
+        "score": 0.0609
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[4].RadioButtonList[1]",
+    "semanticKey": "relativesInfo.4.RadioButtonList_718",
+    "section": "relativesInfo",
+    "page": 58,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative deceased?",
+    "nearestText": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "suggestedLabel": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "similarity": 0.095,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather",
+        "distance": 8.0,
+        "direction": "left",
+        "score": 0.1659
+      },
+      {
+        "text": "YES  (If YES, proceed to 18.3)",
+        "distance": 8.8,
+        "direction": "left",
+        "score": 0.1538
+      },
+      {
+        "text": "NO",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1485
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[4].TextField11[6]",
+    "semanticKey": "relativesInfo.4.182CompleteTheFollowingIfTheRelativeListe",
+    "section": "relativesInfo",
+    "page": 58,
+    "pdfFieldType": "",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "nearestText": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code)",
+    "suggestedLabel": "Street",
+    "similarity": 0.079,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Street",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Does this relative have an APO/FPO address?",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3316
+      },
+      {
+        "text": "Provide your relative's current address.  ( Provide City and Country if outside the United States; o",
+        "distance": 9.0,
+        "direction": "above",
+        "score": 0.2004
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[4].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.4.RadioButtonList_761",
+    "section": "relativesInfo",
+    "page": 59,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+    "nearestText": "Enter your Social Security Number before going to the next page",
+    "suggestedLabel": "I don't know",
+    "similarity": 0.04,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "I don't know",
+        "distance": 4.2,
+        "direction": "right",
+        "score": 0.0953
+      },
+      {
+        "text": "NO",
+        "distance": 5.0,
+        "direction": "right",
+        "score": 0.0831
+      },
+      {
+        "text": "Street",
+        "distance": 54.0,
+        "direction": "above",
+        "score": 0.0364
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[5].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.5.RadioButtonList_875",
+    "section": "relativesInfo",
+    "page": 61,
+    "pdfFieldType": "",
+    "currentLabel": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide...",
+    "nearestText": "Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Child (including adopted/foster), Stepchild, Brother,",
+    "suggestedLabel": "NO",
+    "similarity": 0.103,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 4.4,
+        "direction": "right",
+        "score": 0.0933
+      },
+      {
+        "text": "I don't know",
+        "distance": 4.8,
+        "direction": "right",
+        "score": 0.0857
+      },
+      {
+        "text": "18.3",
+        "distance": 12.1,
+        "direction": "below",
+        "score": 0.0609
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[5].RadioButtonList[1]",
+    "semanticKey": "relativesInfo.5.RadioButtonList_876",
+    "section": "relativesInfo",
+    "page": 61,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative deceased?",
+    "nearestText": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "suggestedLabel": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster),",
+    "similarity": 0.095,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "18.2   Complete the following if the relative listed is your  Mother, Father, Stepmother, Stepfather",
+        "distance": 8.0,
+        "direction": "left",
+        "score": 0.1659
+      },
+      {
+        "text": "YES  (If YES, proceed to 18.3)",
+        "distance": 8.8,
+        "direction": "left",
+        "score": 0.1538
+      },
+      {
+        "text": "NO",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1485
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_2[5].TextField11[6]",
+    "semanticKey": "relativesInfo.5.182CompleteTheFollowingIfTheRelativeListe",
+    "section": "relativesInfo",
+    "page": 61,
+    "pdfFieldType": "",
+    "currentLabel": "18.2  Complete the following if the relative listed is your Mother, Father, Stepmother, Stepfather, Foster parent, Child (including adopted/foster), Stepchild, Brother, Sister, Stepbrother, Stepsister",
+    "nearestText": "Provide your relative's current address.  ( Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code)",
+    "suggestedLabel": "Street",
+    "similarity": 0.079,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Street",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Does this relative have an APO/FPO address?",
+        "distance": 3.5,
+        "direction": "left",
+        "score": 0.3316
+      },
+      {
+        "text": "Provide your relative's current address.  ( Provide City and Country if outside the United States; o",
+        "distance": 9.0,
+        "direction": "above",
+        "score": 0.2004
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section18_3[5].RadioButtonList[0]",
+    "semanticKey": "relativesInfo.5.RadioButtonList_919",
+    "section": "relativesInfo",
+    "page": 62,
+    "pdfFieldType": "",
+    "currentLabel": "Is this relative affiliated with a foreign government, military, security, defense industry, foreign movement, or int...",
+    "nearestText": "Enter your Social Security Number before going to the next page",
+    "suggestedLabel": "I don't know",
+    "similarity": 0.04,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "I don't know",
+        "distance": 4.2,
+        "direction": "right",
+        "score": 0.0953
+      },
+      {
+        "text": "NO",
+        "distance": 5.0,
+        "direction": "right",
+        "score": 0.0831
+      },
+      {
+        "text": "Street",
+        "distance": 54.0,
+        "direction": "above",
+        "score": 0.0364
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_1[0].TextField11[7]",
+    "semanticKey": "relationshipInfo.0.171CompleteTheFollowingIfYouSelectedCurr",
+    "section": "relationshipInfo",
+    "page": 39,
+    "pdfFieldType": "",
+    "currentLabel": "17.1  Complete the following if you selected \u201ccurrently in a civil marriage,\u201d \u201clegally recognized civil union,\" or \"legally recognized domestic partnership\u201d or \u201cSeparated.\u201d Complete the following abou",
+    "nearestText": "recognized domestic partnership, or the person from whom you are currently separated.",
+    "suggestedLabel": "Last name",
+    "similarity": 0.32,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Last name",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "Provide place of birth.",
+        "distance": 1.2,
+        "direction": "left",
+        "score": 0.6977
+      },
+      {
+        "text": "First name",
+        "distance": 5.3,
+        "direction": "above",
+        "score": 0.3185
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_1_2[0].RadioButtonList[0]",
+    "semanticKey": "relationshipInfo.0.RadioButtonList_83",
+    "section": "relationshipInfo",
+    "page": 40,
+    "pdfFieldType": "",
+    "currentLabel": "Does the person have an APO/FPO address within the United States?",
+    "nearestText": "NO",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 4.7,
+        "direction": "right",
+        "score": 0.0884
+      },
+      {
+        "text": "NO",
+        "distance": 4.8,
+        "direction": "right",
+        "score": 0.0859
+      },
+      {
+        "text": "Are you separated?",
+        "distance": 7.9,
+        "direction": "right",
+        "score": 0.0562
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_1_2[0].TextField11[0]",
+    "semanticKey": "relationshipInfo.0.ifYouHaveIndicatedAnApofpoAddressCompleteA",
+    "section": "relationshipInfo",
+    "page": 40,
+    "pdfFieldType": "",
+    "currentLabel": "If you have indicated an APO/FPO address, complete (a). If you have indicated an address outside of the United States, complete (b). Provide your spouse's APO/FPO address.  (Provide City and Country i",
+    "nearestText": "fleet headquarter.  (Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code for ports in the United States.)",
+    "suggestedLabel": "Street Address/Unit/Duty Location",
+    "similarity": 0.281,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Street Address/Unit/Duty Location",
+        "distance": 0.0,
+        "direction": "above",
+        "score": 2.0
+      },
+      {
+        "text": "Are you separated?",
+        "distance": 3.3,
+        "direction": "left",
+        "score": 0.3496
+      },
+      {
+        "text": "City or Post Name",
+        "distance": 5.8,
+        "direction": "above",
+        "score": 0.2948
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_2[0].RadioButtonList[0]",
+    "semanticKey": "relationshipInfo.0.RadioButtonList_118",
+    "section": "relationshipInfo",
+    "page": 41,
+    "pdfFieldType": "",
+    "currentLabel": "Provide where the record of divorce/dissolution or annulment is located.  ( Provide City and Country if outside the U...",
+    "nearestText": "Provide last known address of the person from whom you are divorced/dissolved or annulled. ( Provide City and Country if outside the",
+    "suggestedLabel": "NO  (If NO, complete  (a) )",
+    "similarity": 0.321,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, complete  (a) )",
+        "distance": 14.1,
+        "direction": "left",
+        "score": 0.0993
+      },
+      {
+        "text": "I don't know",
+        "distance": 4.2,
+        "direction": "right",
+        "score": 0.0953
+      },
+      {
+        "text": "Provide last known address of the person from whom you are divorced/dissolved or annulled. ( Provide",
+        "distance": 6.9,
+        "direction": "right",
+        "score": 0.063
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section17_2_2[0].RadioButtonList[0]",
+    "semanticKey": "relationshipInfo.0.RadioButtonList_151",
+    "section": "relationshipInfo",
+    "page": 42,
+    "pdfFieldType": "",
+    "currentLabel": "Provide where the record of divorce/dissolution or annulment is located.  ( Provide City and Country if outside the U...",
+    "nearestText": "Provide last known address of the person from whom you are divorced/dissolved or annulled. ( Provide City and Country if outside the",
+    "suggestedLabel": "NO  (If NO, complete  (a) )",
+    "similarity": 0.321,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, complete  (a) )",
+        "distance": 14.1,
+        "direction": "left",
+        "score": 0.0993
+      },
+      {
+        "text": "I don't know",
+        "distance": 4.2,
+        "direction": "right",
+        "score": 0.0953
+      },
+      {
+        "text": "Provide last known address of the person from whom you are divorced/dissolved or annulled. ( Provide",
+        "distance": 7.1,
+        "direction": "right",
+        "score": 0.0614
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section16_1[0].RadioButtonList[0]",
+    "semanticKey": "peopleThatKnow.0.RadioButtonList_1",
+    "section": "peopleThatKnow",
+    "page": 37,
+    "pdfFieldType": "",
+    "currentLabel": "During your foreign service, which organization were you serving under?",
+    "nearestText": "Diplomatic Service",
+    "suggestedLabel": "Other Government Agency,",
+    "similarity": 0.091,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Other Government Agency,",
+        "distance": 3.6,
+        "direction": "right",
+        "score": 0.1092
+      },
+      {
+        "text": "Provide the name of the country.",
+        "distance": 6.4,
+        "direction": "right",
+        "score": 0.0678
+      },
+      {
+        "text": "Diplomatic Service",
+        "distance": 7.3,
+        "direction": "right",
+        "score": 0.0604
+      }
+    ]
+  }
+]

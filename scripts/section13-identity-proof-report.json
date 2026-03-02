@@ -1,0 +1,333 @@
+{
+  "timestamp": "2026-02-28T03:35:14.234Z",
+  "total": 1086,
+  "correct": 1086,
+  "mismatched": 0,
+  "crossMapped": 0,
+  "missing": 0,
+  "matchRate": 100,
+  "groupStats": {
+    "section_13_1_2[0]": {
+      "total": 50,
+      "correct": 50,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_2_2[0]": {
+      "total": 89,
+      "correct": 89,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_3_2[0]": {
+      "total": 62,
+      "correct": 62,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_4[0]": {
+      "total": 58,
+      "correct": 58,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section_13_1[0]": {
+      "total": 50,
+      "correct": 50,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_2[0]": {
+      "total": 89,
+      "correct": 89,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_3[0]": {
+      "total": 62,
+      "correct": 62,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_4[1]": {
+      "total": 58,
+      "correct": 58,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section_13_1[1]": {
+      "total": 50,
+      "correct": 50,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_2[1]": {
+      "total": 89,
+      "correct": 89,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_3[1]": {
+      "total": 62,
+      "correct": 62,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_4[2]": {
+      "total": 58,
+      "correct": 58,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section_13_1[2]": {
+      "total": 50,
+      "correct": 50,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_2[2]": {
+      "total": 89,
+      "correct": 89,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_3[2]": {
+      "total": 62,
+      "correct": 62,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_4[3]": {
+      "total": 58,
+      "correct": 58,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "section13_5[0]": {
+      "total": 50,
+      "correct": 50,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    }
+  },
+  "typeStats": {
+    "text": {
+      "total": 448,
+      "correct": 448,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "telephone": {
+      "total": 36,
+      "correct": 36,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "state": {
+      "total": 92,
+      "correct": 92,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "country": {
+      "total": 68,
+      "correct": 68,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "checkbox": {
+      "total": 284,
+      "correct": 284,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "email": {
+      "total": 8,
+      "correct": 8,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "date": {
+      "total": 104,
+      "correct": 104,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    },
+    "radio": {
+      "total": 46,
+      "correct": 46,
+      "mismatched": 0,
+      "crossMapped": 0,
+      "missing": 0
+    }
+  },
+  "crossMappedDetails": [],
+  "mismatchedDetails": [],
+  "missingDetails": [],
+  "identitySamples": [
+    {
+      "semanticKey": "employmentInfo.0.provideTheNameOfYourSupervisor",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[0]",
+      "sentValue": "employmentInfo.0.provideTheNameOfYourSupervisor|p17|section_13_1-2[0].TextField1",
+      "extractedValue": "employmentInfo.0.provideTheNameOfYourSupervisor|p17|section_13_1-2[0].TextField1",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[1]",
+      "sentValue": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor|p17|section_13_1-2[",
+      "extractedValue": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor|p17|section_13_1-2[",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.extension",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[2]",
+      "sentValue": "employmentInfo.0.extension|p17|section_13_1-2[0].TextField11[2]",
+      "extractedValue": "employmentInfo.0.extension|p17|section_13_1-2[0].TextField11[2]",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[3]",
+      "sentValue": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor|p17|section_13_1-2[",
+      "extractedValue": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor|p17|section_13_1-2[",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.city",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[4]",
+      "sentValue": "employmentInfo.0.city|p17|section_13_1-2[0].TextField11[4]",
+      "extractedValue": "employmentInfo.0.city|p17|section_13_1-2[0].TextField11[4]",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.zipCode",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[5]",
+      "sentValue": "employmentInfo.0.zipCode|p17|section_13_1-2[0].TextField11[5]",
+      "extractedValue": "employmentInfo.0.zipCode|p17|section_13_1-2[0].TextField11[5]",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[6]",
+      "sentValue": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr|p17|section_13_1-2[0].TextF",
+      "extractedValue": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr|p17|section_13_1-2[0].TextF",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.cityOrPostName",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[7]",
+      "sentValue": "employmentInfo.0.cityOrPostName|p17|section_13_1-2[0].TextField11[7]",
+      "extractedValue": "employmentInfo.0.cityOrPostName|p17|section_13_1-2[0].TextField11[7]",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.zipCode_2",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[8]",
+      "sentValue": "employmentInfo.0.zipCode_2|p17|section_13_1-2[0].TextField11[8]",
+      "extractedValue": "employmentInfo.0.zipCode_2|p17|section_13_1-2[0].TextField11[8]",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.provideAddressOfDutyStation",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[9]",
+      "sentValue": "employmentInfo.0.provideAddressOfDutyStation|p17|section_13_1-2[0].TextField11[9",
+      "extractedValue": "employmentInfo.0.provideAddressOfDutyStation|p17|section_13_1-2[0].TextField11[9",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.city_2",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[10]",
+      "sentValue": "employmentInfo.0.city_2|p17|section_13_1-2[0].TextField11[10]",
+      "extractedValue": "employmentInfo.0.city_2|p17|section_13_1-2[0].TextField11[10]",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.zipCode_3",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[11]",
+      "sentValue": "employmentInfo.0.zipCode_3|p17|section_13_1-2[0].TextField11[11]",
+      "extractedValue": "employmentInfo.0.zipCode_3|p17|section_13_1-2[0].TextField11[11]",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.extension_2",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[12]",
+      "sentValue": "employmentInfo.0.extension_2|p17|section_13_1-2[0].TextField11[12]",
+      "extractedValue": "employmentInfo.0.extension_2|p17|section_13_1-2[0].TextField11[12]",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.ifOtherSelectedProvideExplanation",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[13]",
+      "sentValue": "employmentInfo.0.ifOtherSelectedProvideExplanation|p17|section_13_1-2[0].TextFie",
+      "extractedValue": "employmentInfo.0.ifOtherSelectedProvideExplanation|p17|section_13_1-2[0].TextFie",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.provideYourMostRecentRankpositionTitle",
+      "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[3]",
+      "sentValue": "employmentInfo.0.provideYourMostRecentRankpositionTitle|p17|section_13_1-2[0].p3",
+      "extractedValue": "employmentInfo.0.provideYourMostRecentRankpositionTitle|p17|section_13_1-2[0].p3",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.provideYourAssignedDutyStationDuringThisPeriod",
+      "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[4]",
+      "sentValue": "employmentInfo.0.provideYourAssignedDutyStationDuringThisPeriod|p17|section_13_1",
+      "extractedValue": "employmentInfo.0.provideYourAssignedDutyStationDuringThisPeriod|p17|section_13_1",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.aProvidePhysicalLocationDataWithStreetAddress",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[14]",
+      "sentValue": "employmentInfo.0.aProvidePhysicalLocationDataWithStreetAddress|p17|section_13_1-",
+      "extractedValue": "employmentInfo.0.aProvidePhysicalLocationDataWithStreetAddress|p17|section_13_1-",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.cityOrPostName_2",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[15]",
+      "sentValue": "employmentInfo.0.cityOrPostName_2|p17|section_13_1-2[0].TextField11[15]",
+      "extractedValue": "employmentInfo.0.cityOrPostName_2|p17|section_13_1-2[0].TextField11[15]",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.address",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[16]",
+      "sentValue": "employmentInfo.0.address|p17|section_13_1-2[0].TextField11[16]",
+      "extractedValue": "employmentInfo.0.address|p17|section_13_1-2[0].TextField11[16]",
+      "page": 17
+    },
+    {
+      "semanticKey": "employmentInfo.0.aPOOrFPO",
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[17]",
+      "sentValue": "employmentInfo.0.aPOOrFPO|p17|section_13_1-2[0].TextField11[17]",
+      "extractedValue": "employmentInfo.0.aPOOrFPO|p17|section_13_1-2[0].TextField11[17]",
+      "page": 17
+    }
+  ]
+}

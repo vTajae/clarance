@@ -1,0 +1,866 @@
+[
+  {
+    "pdfFieldName": "form1[0].Section22_1[0].#area[5].RadioButtonList[3]",
+    "semanticKey": "policeRecord.0.RadioButtonList_17",
+    "section": "policeRecord",
+    "page": 98,
+    "pdfFieldType": "",
+    "currentLabel": "As a result of this offense were you charged, convicted, currently awaiting trial, and/or ordered to appear in court ...",
+    "nearestText": "Provide the location of the court.  (Provide City and Country if outside the United States; otherwise, provide City, County, State and Zip Code)",
+    "suggestedLabel": "NO",
+    "similarity": 0.088,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 4.3,
+        "direction": "right",
+        "score": 0.0937
+      },
+      {
+        "text": "(c.1)",
+        "distance": 9.3,
+        "direction": "below",
+        "score": 0.0779
+      },
+      {
+        "text": "YES",
+        "distance": 9.6,
+        "direction": "right",
+        "score": 0.047
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_2[0].RadioButtonList[1]",
+    "semanticKey": "policeRecord.0.RadioButtonList_55",
+    "section": "policeRecord",
+    "page": 99,
+    "pdfFieldType": "",
+    "currentLabel": "-  In the last seven (7) years  have you been charged with, convicted of, or sentenced for a crime in any court? (Inc...",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 8.7,
+        "direction": "left",
+        "score": 0.1551
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1189
+      },
+      {
+        "text": "YES",
+        "distance": 13.5,
+        "direction": "left",
+        "score": 0.1038
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_3[0].#area[5].RadioButtonList[2]",
+    "semanticKey": "policeRecord.0.RadioButtonList_82",
+    "section": "policeRecord",
+    "page": 100,
+    "pdfFieldType": "",
+    "currentLabel": "As a result of this offense were you charged, convicted, currently awaiting trial, and/or ordered to appear in court ...",
+    "nearestText": "Provide the location of the court.  (Provide City and Country if outside the United States; otherwise, provide City, County, State and Zip Code)",
+    "suggestedLabel": "NO",
+    "similarity": 0.088,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 4.3,
+        "direction": "right",
+        "score": 0.0937
+      },
+      {
+        "text": "(c.1)",
+        "distance": 9.4,
+        "direction": "below",
+        "score": 0.0772
+      },
+      {
+        "text": "YES",
+        "distance": 9.5,
+        "direction": "right",
+        "score": 0.0474
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_4[0].#area[2].RadioButtonList[1]",
+    "semanticKey": "policeRecord.0.RadioButtonList_116",
+    "section": "policeRecord",
+    "page": 101,
+    "pdfFieldType": "",
+    "currentLabel": "-  In the last seven (7) years  have you been charged with, convicted of, or sentenced for a crime in any court? (Inc...",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 8.7,
+        "direction": "left",
+        "score": 0.1551
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1189
+      },
+      {
+        "text": "YES",
+        "distance": 13.5,
+        "direction": "left",
+        "score": 0.1038
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_5[0].#area[3].RadioButtonList[3]",
+    "semanticKey": "policeRecord.0.RadioButtonList_163",
+    "section": "policeRecord",
+    "page": 102,
+    "pdfFieldType": "",
+    "currentLabel": "Provide a description of the sentence.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.6,
+        "direction": "left",
+        "score": 0.1416
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1189
+      },
+      {
+        "text": "YES",
+        "distance": 14.1,
+        "direction": "left",
+        "score": 0.0994
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_5[0].RadioButtonList[4]",
+    "semanticKey": "policeRecord.0.RadioButtonList_164",
+    "section": "policeRecord",
+    "page": 102,
+    "pdfFieldType": "",
+    "currentLabel": "Were you sentenced to imprisonment for a term exceeding 1 year?",
+    "nearestText": "(Month/Year)",
+    "suggestedLabel": "NO",
+    "similarity": 0.083,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 10.8,
+        "direction": "above",
+        "score": 0.169
+      },
+      {
+        "text": "(Month/Year)",
+        "distance": 8.0,
+        "direction": "left",
+        "score": 0.1665
+      },
+      {
+        "text": "YES",
+        "distance": 11.3,
+        "direction": "left",
+        "score": 0.1217
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_6[0].#area[3].RadioButtonList[2]",
+    "semanticKey": "policeRecord.0.RadioButtonList_214",
+    "section": "policeRecord",
+    "page": 103,
+    "pdfFieldType": "",
+    "currentLabel": "Provide a description of the sentence.",
+    "nearestText": "YES",
+    "suggestedLabel": "YES",
+    "similarity": 0.0,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.6,
+        "direction": "left",
+        "score": 0.1416
+      },
+      {
+        "text": "NO",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1189
+      },
+      {
+        "text": "YES",
+        "distance": 14.1,
+        "direction": "left",
+        "score": 0.0992
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section22_6[0].RadioButtonList[3]",
+    "semanticKey": "policeRecord.0.RadioButtonList_215",
+    "section": "policeRecord",
+    "page": 103,
+    "pdfFieldType": "",
+    "currentLabel": "Were you sentenced to imprisonment for a term exceeding 1 year?",
+    "nearestText": "(Month/Year)",
+    "suggestedLabel": "NO",
+    "similarity": 0.083,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO",
+        "distance": 10.8,
+        "direction": "above",
+        "score": 0.1696
+      },
+      {
+        "text": "(Month/Year)",
+        "distance": 8.0,
+        "direction": "left",
+        "score": 0.1658
+      },
+      {
+        "text": "YES",
+        "distance": 11.3,
+        "direction": "left",
+        "score": 0.1217
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section26[0].RadioButtonList[3]",
+    "semanticKey": "finances.RadioButtonList_32",
+    "section": "finances",
+    "page": 118,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the address of the trustee for this bankruptcy.  ( Provide City and Country if outside the United States; oth...",
+    "nearestText": "Provide the date of bankruptcy",
+    "suggestedLabel": "Chapter 12",
+    "similarity": 0.235,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Chapter 12",
+        "distance": 14.6,
+        "direction": "left",
+        "score": 0.0964
+      },
+      {
+        "text": "Chapter 13",
+        "distance": 6.4,
+        "direction": "right",
+        "score": 0.0679
+      },
+      {
+        "text": "Provide the date of bankruptcy",
+        "distance": 7.5,
+        "direction": "right",
+        "score": 0.0585
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_2[0].RadioButtonList[1]",
+    "semanticKey": "finances.0.RadioButtonList_74",
+    "section": "finances",
+    "page": 119,
+    "pdfFieldType": "",
+    "currentLabel": "Provide an estimate of the amount (in U.S. dollars) of gambling losses incurred.",
+    "nearestText": "Provide the year you failed to file or pay your Federal, state, or other taxes.",
+    "suggestedLabel": "NO  (If NO, proceed to 26.4)",
+    "similarity": 0.08,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to 26.4)",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.151
+      },
+      {
+        "text": "YES",
+        "distance": 9.0,
+        "direction": "left",
+        "score": 0.1494
+      },
+      {
+        "text": "In the last seven (7) years  have you failed to file or pay Federal, state, or other taxes when requ",
+        "distance": 48.9,
+        "direction": "left",
+        "score": 0.0301
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_3[0].RadioButtonList[1]",
+    "semanticKey": "finances.0.RadioButtonList_123",
+    "section": "finances",
+    "page": 120,
+    "pdfFieldType": "",
+    "currentLabel": "Provide a description of any action(s) you have taken to rectify this situation. If you have not taken any",
+    "nearestText": "Complete the following if you responded  'Yes'  to being currently utilizing, or seeking assistance from, a credit counseling service or other similar resource to",
+    "suggestedLabel": "Complete the following if you responded  'Yes'  to being currently utilizing, or seeking assistance from, a credit counseling service or other similar resource to",
+    "similarity": 0.118,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Complete the following if you responded  'Yes'  to being currently utilizing, or seeking assistance ",
+        "distance": 8.6,
+        "direction": "left",
+        "score": 0.1567
+      },
+      {
+        "text": "NO  (If NO, proceed to 26.6)",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.1511
+      },
+      {
+        "text": "YES",
+        "distance": 9.0,
+        "direction": "left",
+        "score": 0.1494
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_6[0].RadioButtonList[1]",
+    "semanticKey": "finances.0.RadioButtonList_168",
+    "section": "finances",
+    "page": 121,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+    "nearestText": "Complete the following if you answered  'Yes'  to having experienced one or more of the previously stated financial issues.",
+    "suggestedLabel": "YES",
+    "similarity": 0.107,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.4,
+        "direction": "left",
+        "score": 0.1444
+      },
+      {
+        "text": "NO  (If NO, Proceed to 26.7)",
+        "distance": 2.8,
+        "direction": "right",
+        "score": 0.1323
+      },
+      {
+        "text": "In the last seven (7) years , you had a judgment entered against you. (Include financial obligations",
+        "distance": 25.5,
+        "direction": "other",
+        "score": 0.0113
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_7[0].RadioButtonList[0]",
+    "semanticKey": "finances.0.RadioButtonList_192",
+    "section": "finances",
+    "page": 122,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+    "nearestText": "Complete the following if you answered  'Yes'  to having experienced one or more of the previously stated financial issues.",
+    "suggestedLabel": "YES",
+    "similarity": 0.107,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.4,
+        "direction": "left",
+        "score": 0.1444
+      },
+      {
+        "text": "NO  (If NO, Proceed to 26.7)",
+        "distance": 2.8,
+        "direction": "right",
+        "score": 0.1323
+      },
+      {
+        "text": "In the last seven (7) years , you had a judgment entered against you. (Include financial obligations",
+        "distance": 25.4,
+        "direction": "other",
+        "score": 0.0114
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_8[0].RadioButtonList[1]",
+    "semanticKey": "finances.0.RadioButtonList_198",
+    "section": "finances",
+    "page": 123,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+    "nearestText": "Complete the following if you answered  'Yes'  to having experienced one or more of the previously stated financial issues.",
+    "suggestedLabel": "YES",
+    "similarity": 0.107,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.0,
+        "direction": "left",
+        "score": 0.1494
+      },
+      {
+        "text": "In the last seven (7) years,  you had any possessions or property voluntarily or involuntarily repos",
+        "distance": 9.7,
+        "direction": "left",
+        "score": 0.1406
+      },
+      {
+        "text": "NO  (If NO, proceed to Section 27)",
+        "distance": 2.6,
+        "direction": "right",
+        "score": 0.1387
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section26_9[0].RadioButtonList[0]",
+    "semanticKey": "finances.0.RadioButtonList_220",
+    "section": "finances",
+    "page": 124,
+    "pdfFieldType": "",
+    "currentLabel": "Provide the name of agency/organization/individual to which debt is/was owed.",
+    "nearestText": "Complete the following if you answered  'Yes'  to having experienced one or more of the previously stated financial issues.",
+    "suggestedLabel": "YES",
+    "similarity": 0.107,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.0,
+        "direction": "left",
+        "score": 0.1494
+      },
+      {
+        "text": "In the last seven (7) years,  you had any possessions or property voluntarily or involuntarily repos",
+        "distance": 9.7,
+        "direction": "left",
+        "score": 0.1399
+      },
+      {
+        "text": "NO  (If NO, proceed to Section 27)",
+        "distance": 2.6,
+        "direction": "right",
+        "score": 0.1387
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section25[0].#field[38]",
+    "semanticKey": "investigationsInfo.completeTheFollowingIfYouRespondedYesToTheUs",
+    "section": "investigationsInfo",
+    "page": 116,
+    "pdfFieldType": "",
+    "currentLabel": "Agency that investigated/granted clearance",
+    "nearestText": "Provide the investigating agency:",
+    "suggestedLabel": "U.S. Department of Defense",
+    "similarity": 0.125,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "U.S. Department of Defense",
+        "distance": 3.0,
+        "direction": "right",
+        "score": 0.1257
+      },
+      {
+        "text": "Entry #1",
+        "distance": 16.9,
+        "direction": "above",
+        "score": 0.1116
+      },
+      {
+        "text": "U.S. Department of State",
+        "distance": 5.1,
+        "direction": "right",
+        "score": 0.0821
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section25_2[0].RadioButtonList[0]",
+    "semanticKey": "investigationsInfo.0.RadioButtonList_73",
+    "section": "investigationsInfo",
+    "page": 117,
+    "pdfFieldType": "",
+    "currentLabel": "Has your eligibility for access to classified information ever been denied, suspended, or revoked?",
+    "nearestText": "Complete the following if you responded 'Yes' to having  EVER  had a security clearance eligibility/access authorization denied, suspended, or revoked.",
+    "suggestedLabel": "YES",
+    "similarity": 0.296,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 9.2,
+        "direction": "left",
+        "score": 0.1472
+      },
+      {
+        "text": "NO  (If NO, proceed to 25.3)",
+        "distance": 3.2,
+        "direction": "right",
+        "score": 0.1183
+      },
+      {
+        "text": "revoked? (Note: An administrative downgrade or administrative termination of a security clearance is",
+        "distance": 74.2,
+        "direction": "left",
+        "score": 0.0199
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section29[0].RadioButtonList[0]",
+    "semanticKey": "association.RadioButtonList_1",
+    "section": "association",
+    "page": 128,
+    "pdfFieldType": "",
+    "currentLabel": "The following pertain to your associations. You are required to answer the questions fully and truthfully, and your f...",
+    "nearestText": "Complete the following if you responded ' YES ' to being or ever having been a member of an organization dedicated to terrorism, either with an awareness of",
+    "suggestedLabel": "NO  (If NO, proceed to 29.2)",
+    "similarity": 0.114,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to 29.2)",
+        "distance": 2.3,
+        "direction": "right",
+        "score": 0.151
+      },
+      {
+        "text": "YES",
+        "distance": 9.4,
+        "direction": "left",
+        "score": 0.1437
+      },
+      {
+        "text": "awareness of the organization's dedication to that end, or with the specific intent to further such ",
+        "distance": 59.3,
+        "direction": "left",
+        "score": 0.0249
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section29_5[0].TextField11[1]",
+    "semanticKey": "association.0.completeTheFollowingIfYouRespondedYesToH_4",
+    "section": "association",
+    "page": 132,
+    "pdfFieldType": "",
+    "currentLabel": "Full name of the organization",
+    "nearestText": "Complete the following if you responded  'Yes'  to having  EVER  associated with anyone involved in activities to further terrorism.",
+    "suggestedLabel": "Provide explanation.",
+    "similarity": 0.045,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Provide explanation.",
+        "distance": 0.1,
+        "direction": "above_left",
+        "score": 1.659
+      },
+      {
+        "text": "Entry #2",
+        "distance": 2.4,
+        "direction": "below",
+        "score": 0.2373
+      },
+      {
+        "text": "Entry #1",
+        "distance": 13.0,
+        "direction": "above_left",
+        "score": 0.1284
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Sections1-6[0].section5[0].TextField11[2]",
+    "semanticKey": "namesInfo.0.lastName",
+    "section": "namesInfo",
+    "page": 5,
+    "pdfFieldType": "",
+    "currentLabel": "Complete the following if you have responded 'Yes' to having used other names. Provide your other name(s) used and the period of time you used it/them [for example: your maiden name(s), name(s) by a f",
+    "nearestText": "Last name",
+    "suggestedLabel": "Last name",
+    "similarity": 0.033,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Last name",
+        "distance": 0.0,
+        "direction": "above_left",
+        "score": 1.8
+      },
+      {
+        "text": "From  (Month/Year)",
+        "distance": 2.0,
+        "direction": "left",
+        "score": 0.4942
+      },
+      {
+        "text": "#1",
+        "distance": 4.6,
+        "direction": "above_left",
+        "score": 0.3213
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Sections1-6[0].section5[0].RadioButtonList[1]",
+    "semanticKey": "namesInfo.RadioButtonList_12",
+    "section": "namesInfo",
+    "page": 5,
+    "pdfFieldType": "",
+    "currentLabel": "Provide your U.S. Social Security Number.",
+    "nearestText": "Provide your other name(s) used and the period of time you used it/them [for example: your maiden name, name(s) by a former marriage, former name(s),",
+    "suggestedLabel": "NO  (If NO, proceed to Section 6)",
+    "similarity": 0.12,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "NO  (If NO, proceed to Section 6)",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1492
+      },
+      {
+        "text": "YES",
+        "distance": 12.6,
+        "direction": "left",
+        "score": 0.1102
+      },
+      {
+        "text": "Provide your other name(s) used and the period of time you used it/them [for example: your maiden na",
+        "distance": 22.9,
+        "direction": "other",
+        "score": 0.0125
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Sections7-9[0].RadioButtonList[1]",
+    "semanticKey": "citizenshipInfo.RadioButtonList_1",
+    "section": "citizenshipInfo",
+    "page": 6,
+    "pdfFieldType": "",
+    "currentLabel": "Select the box that reflects your current citizenship status.",
+    "nearestText": "9.1   Complete the following if you answered that you are a  U.S. citizen or national by birth, born to U.S. parent(s) in a foreign country .",
+    "suggestedLabel": "I am not a U.S. citizen.  (Complete 9.4)",
+    "similarity": 0.065,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "I am not a U.S. citizen.  (Complete 9.4)",
+        "distance": 6.4,
+        "direction": "right",
+        "score": 0.0679
+      },
+      {
+        "text": "I am a U.S. citizen or national by birth, born to U.S. parent(s), in a foreign country.",
+        "distance": 28.4,
+        "direction": "left",
+        "score": 0.051
+      },
+      {
+        "text": "I am a derived U.S. citizen.  (Complete 9.3)",
+        "distance": 12.6,
+        "direction": "other",
+        "score": 0.0221
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section9\\.1-9\\.4[0].TextField11[14]",
+    "semanticKey": "citizenshipInfo.provideExplanation_2",
+    "section": "citizenshipInfo",
+    "page": 7,
+    "pdfFieldType": "",
+    "currentLabel": "(Provide explanation)",
+    "nearestText": "Provide document expiration date.",
+    "suggestedLabel": "Provide the date document was issued",
+    "similarity": 0.2,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "Provide the date document was issued",
+        "distance": 0.5,
+        "direction": "left",
+        "score": 0.9785
+      },
+      {
+        "text": "Provide document expiration date.",
+        "distance": 0.5,
+        "direction": "below",
+        "score": 0.5219
+      },
+      {
+        "text": "DS-2019",
+        "distance": 3.6,
+        "direction": "above",
+        "score": 0.4329
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].continuation3[0].RadioButtonList[0]",
+    "semanticKey": "signature.RadioButtonList_12",
+    "section": "signature",
+    "page": 135,
+    "pdfFieldType": "",
+    "currentLabel": "Does the person under investigation have a condition that could impair his or her judgment, reliability, or trustwort...",
+    "nearestText": "If so, describe the nature of the condition and the extent and duration of the impairment or treatment.",
+    "suggestedLabel": "YES",
+    "similarity": 0.111,
+    "confidence": 0.8,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 12.7,
+        "direction": "left",
+        "score": 0.1095
+      },
+      {
+        "text": "NO",
+        "distance": 3.8,
+        "direction": "right",
+        "score": 0.1044
+      },
+      {
+        "text": "If so, describe the nature of the condition and the extent and duration of the impairment or treatme",
+        "distance": 5.2,
+        "direction": "right",
+        "score": 0.0805
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section15_3[0].RadioButtonList[1]",
+    "semanticKey": "militaryHistoryInfo.0.RadioButtonList_15",
+    "section": "militaryHistoryInfo",
+    "page": 36,
+    "pdfFieldType": "",
+    "currentLabel": "During your foreign service, which organization were you serving under?",
+    "nearestText": "Diplomatic Service",
+    "suggestedLabel": "Other Government Agency,",
+    "similarity": 0.091,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "Other Government Agency,",
+        "distance": 3.6,
+        "direction": "right",
+        "score": 0.1092
+      },
+      {
+        "text": "Provide the name of the country.",
+        "distance": 6.4,
+        "direction": "right",
+        "score": 0.0677
+      },
+      {
+        "text": "Diplomatic Service",
+        "distance": 6.9,
+        "direction": "right",
+        "score": 0.063
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Section27_2[0].RadioButtonList[0]",
+    "semanticKey": "technology.0.RadioButtonList_57",
+    "section": "technology",
+    "page": 126,
+    "pdfFieldType": "",
+    "currentLabel": "Have you EVER illegally accessed or attempted to access any information technology system?",
+    "nearestText": "connection with any information technology system without authorization, when specifically prohibited",
+    "suggestedLabel": "YES",
+    "similarity": 0.2,
+    "confidence": 0.95,
+    "candidates": [
+      {
+        "text": "YES",
+        "distance": 8.0,
+        "direction": "left",
+        "score": 0.1659
+      },
+      {
+        "text": "NO  (If NO, proceed to Section 28)",
+        "distance": 2.4,
+        "direction": "right",
+        "score": 0.1474
+      },
+      {
+        "text": "connection with any information technology system without authorization, when specifically prohibite",
+        "distance": 53.4,
+        "direction": "left",
+        "score": 0.0275
+      }
+    ]
+  },
+  {
+    "pdfFieldName": "form1[0].Sections1-6[0].DropDownList7[0]",
+    "semanticKey": "physicalAttributes.heightInches",
+    "section": "physicalAttributes",
+    "page": 5,
+    "pdfFieldType": "",
+    "currentLabel": "Height (inches)",
+    "nearestText": "( i nc h es)",
+    "suggestedLabel": "( i nc h es)",
+    "similarity": 0.0,
+    "confidence": 0.98,
+    "candidates": [
+      {
+        "text": "( i nc h es)",
+        "distance": 0.0,
+        "direction": "right",
+        "score": 0.4878
+      },
+      {
+        "text": "Provide your identifying information.",
+        "distance": 8.7,
+        "direction": "above_left",
+        "score": 0.185
+      },
+      {
+        "text": "( f e et )",
+        "distance": 9.7,
+        "direction": "left",
+        "score": 0.1406
+      }
+    ]
+  }
+]

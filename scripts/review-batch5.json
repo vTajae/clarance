@@ -1,0 +1,156 @@
+{
+  "batch": "batch5_foreign",
+  "total": 37,
+  "keep": 16,
+  "change": 21,
+  "flag": 0,
+  "corrections": [
+    {
+      "pdfFieldName": "form1[0].#subform[71].From_Datefield_Name_2[9]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the date of purchase to be acquired. (Month/Day/Year)",
+      "newLabel": "Provide the date sold, if applicable (Month/Day/Year)",
+      "reason": "Nearest text at 0.6 distance is the tail of 'Provide the date sold, if applicable. (Month/Day/Year)'. Candidate 'Provide the date sold, if' confirmed at 10.2 above. This is a date-sold field in Section 20A foreign real estate, not a date-of-purchase field."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[12]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the date the benefit is expected to end.  (Month/Day/Year)",
+      "newLabel": "Type of foreign benefit received",
+      "reason": "Field is a RadioButtonList, not a date field. Candidates 'Other (Provide explanation)' at 3.7 right and 'Educational' in sibling field indicate this is a benefit-type radio group in Section 20A/20B. A date label on a radio button is structurally wrong."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].RadioButtonList[19]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the date the benefit is expected to end.  (Month/Day/Year)",
+      "newLabel": "Type of foreign benefit received",
+      "reason": "Continuation page duplicate of RadioButtonList[12]. Same structural mismatch: date label on a radio button with 'Other (Provide explanation)' and 'Monthly' options nearby."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[77].RadioButtonList[23]",
+      "action": "CHANGE",
+      "currentLabel": "Provide the country of origin for the organization or business.",
+      "newLabel": "Have you or any member of your immediate family in the last seven (7) years been asked to provide advice or serve as a consultant?",
+      "reason": "YES/NO radio with 'NO (If NO, proceed to 20B.3)' at 2.3 right and 'YES' at 13.7 left. Nearest text references being asked to provide advice/consulting. This is Section 20B.2, not a country-of-origin text field."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[92].RadioButtonList[41]",
+      "action": "CHANGE",
+      "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+      "newLabel": "Number of foreign trips in the last seven (7) years",
+      "reason": "RadioButtonList with options 'Many short trips' at 3.0, 'More than 30' at 5.1, and '21-30' at 24.5. These are trip-count range options for Section 20C. Current label is the instruction paragraph, not the field question."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[93].RadioButtonList[49]",
+      "action": "CHANGE",
+      "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+      "newLabel": "Number of foreign trips in the last seven (7) years",
+      "reason": "Continuation page (page 85) duplicate of RadioButtonList[41]. Same trip-count range radio with 'Many short trips', 'More than 30', '21-30' options."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[94].RadioButtonList[57]",
+      "action": "CHANGE",
+      "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+      "newLabel": "Number of foreign trips in the last seven (7) years",
+      "reason": "Continuation page (page 86) duplicate of RadioButtonList[41]. Same trip-count range radio with identical candidates."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[95].RadioButtonList[65]",
+      "action": "CHANGE",
+      "currentLabel": "Provide information about all such trips made outside the United States including personal trips made in conjunction ...",
+      "newLabel": "Number of foreign trips in the last seven (7) years",
+      "reason": "Continuation page (page 87) duplicate of RadioButtonList[41]. Same trip-count range radio with identical candidates."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[72].RadioButtonList[13]",
+      "action": "CHANGE",
+      "currentLabel": "Frequency of foreign benefit (one-time or continuing)",
+      "newLabel": "Type of foreign benefit (e.g., Educational, Medical, Other)",
+      "reason": "RadioButtonList near 'Other such benefit' at 3.6 right and 'Educational' at 6.7 right. These are benefit-type options, not frequency options. The current 'Frequency' label belongs to a different field."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[74].RadioButtonList[20]",
+      "action": "CHANGE",
+      "currentLabel": "Frequency of foreign benefit (one-time or continuing)",
+      "newLabel": "Type of foreign benefit (e.g., Educational, Medical, Other)",
+      "reason": "Continuation page (page 74) duplicate of RadioButtonList[13]. Same benefit-type options 'Other such benefit' and 'Educational' nearby."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[83].#subform[84].RadioButtonList2[0]",
+      "action": "CHANGE",
+      "currentLabel": "Have you, your spouse, or legally recognized civil partner, cohabitant, or dependent children EVER had any foreign financial interests?",
+      "newLabel": "Have you or any member of your immediate family in the last seven (7) years had any contact with a foreign government, its establishment, or its representatives?",
+      "reason": "YES/NO radio with 'NO (If NO, Proceed to 20B.7)' at 3.7 right. Redirect to 20B.7 places this at Section 20B.6 (foreign government contacts). Nearest text confirms 'contact with a foreign'. Current label is from Section 20A (foreign financial interests), not 20B.6."
+    },
+    {
+      "pdfFieldName": "form1[0].#subform[87].RadioButtonList5[0]",
+      "action": "CHANGE",
+      "currentLabel": "Have you EVER provided financial support for any foreign national?",
+      "newLabel": "Have you in the last seven (7) years sponsored any foreign national to come to the U.S.?",
+      "reason": "YES/NO radio with 'NO (If NO, proceed to 20B.8)' at 2.4 right. Redirect to 20B.8 places this at Section 20B.7 (sponsoring foreign nationals). Nearest text confirms 'sponsored any foreign national to come to the U.S. as a student'. Current label is from a different section."
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].RadioButtonList[1]",
+      "action": "CHANGE",
+      "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+      "newLabel": "Frequency of contact with foreign national",
+      "reason": "RadioButtonList with 'Other (Provide explanation)' at 3.7 right and 'Annually' at 5.7 right. These are frequency options (Annually, Quarterly, etc.), not a date field. Current label is a date instruction that belongs to a different text field."
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_1[0].#area[3].RadioButtonList[3]",
+      "action": "CHANGE",
+      "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+      "newLabel": "Do you know the foreign national's current employer?",
+      "reason": "RadioButtonList with 'I don't know' at 3.8 right and 'YES' at 15.3 left, adjacent to 'Provide the name of the foreign national's current employer' text at 3.0 right. This is the employer-knowledge radio (Yes/No/I don't know), not an APO/FPO address question."
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_2[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+      "newLabel": "Frequency of contact with foreign national",
+      "reason": "Section19_2 continuation of RadioButtonList[1] pattern. Same frequency options 'Other (Provide explanation)' and 'Annually' nearby. Date label on radio button is structurally wrong."
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_2[0].#area[3].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+      "newLabel": "Do you know the foreign national's current employer?",
+      "reason": "Section19_2 continuation of employer-knowledge pattern. Same candidates: 'I don't know' at 3.9 right, 'YES' at 15.2 left, employer text at 2.9 right."
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_3[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+      "newLabel": "Frequency of contact with foreign national",
+      "reason": "Section19_3 continuation of frequency-of-contact pattern. Same candidates: 'Other (Provide explanation)' at 3.7 right, 'Annually' at 5.7 right."
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_3[0].#area[3].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+      "newLabel": "Do you know the foreign national's current employer?",
+      "reason": "Section19_3 continuation of employer-knowledge pattern. Same candidates: 'I don't know' at 3.8 right, 'YES' at 15.3 left, employer text at 2.9 right."
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_4[0].RadioButtonList[0]",
+      "action": "CHANGE",
+      "currentLabel": "Provide approximate date of last contact.   (Month/Year)",
+      "newLabel": "Frequency of contact with foreign national",
+      "reason": "Section19_4 continuation of frequency-of-contact pattern. Same candidates: 'Other (Provide explanation)' at 3.6 right, 'Annually' at 5.7 right."
+    },
+    {
+      "pdfFieldName": "form1[0].Section19_4[0].#area[3].RadioButtonList[2]",
+      "action": "CHANGE",
+      "currentLabel": "Does this person have an APO/FPO address? Provide the foreign national's APO/FPO address.",
+      "newLabel": "Do you know the foreign national's current employer?",
+      "reason": "Section19_4 continuation of employer-knowledge pattern. Same candidates: 'I don't know' at 3.9 right, 'YES' at 15.2 left, employer text at 2.9 right."
+    },
+    {
+      "pdfFieldName": "form1[0].Section10\\.1-10\\.2[0].RadioButtonList[5]",
+      "action": "CHANGE",
+      "currentLabel": "During what period of time did you hold citizenship with this country?",
+      "newLabel": "Have you EVER been issued a passport (or identity card for travel) by a country other than the U.S.?",
+      "reason": "RadioButtonList[5] on page 8 with 'YES' at 3.3 right and nearest text referencing Section 10.2 passport question. 'Complete the following if you answered Yes to having been issued a passport' at 8.1 left confirms this is the 10.2 YES/NO radio. Current label is from Section 10.1 sub-question about citizenship period."
+    }
+  ]
+}

@@ -9,7 +9,7 @@ export default function NewFormPage() {
 
   const handleCreateForm = useCallback(() => {
     const submissionId = uuidv4();
-    router.push(`/${submissionId}/identification/personalInfo`);
+    router.push(`/${submissionId}/identification/section1`);
   }, [router]);
 
   return (

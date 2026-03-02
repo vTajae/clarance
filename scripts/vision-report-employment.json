@@ -1,0 +1,3208 @@
+{
+  "timestamp": "2026-02-27T00:26:08Z",
+  "model": "llama3.2-vision",
+  "summary": {
+    "total": 200,
+    "matches": 41,
+    "mismatches": 159,
+    "errors": 0,
+    "unknowns": 0,
+    "mismatchRate": 0.795
+  },
+  "mismatchesBySection": {
+    "employmentInfo": [
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[1]",
+        "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor",
+        "registryLabel": "Provide the rank/position title of your supervisor.",
+        "visionLabel": "**State Code**",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[0]",
+        "semanticKey": "employmentInfo.0.provideSupervisorsTelephoneNumber",
+        "registryLabel": "Provide supervisor's telephone number.",
+        "visionLabel": "Provide physical location data with either street address,\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...",
+        "similarity": 0.083,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[2]",
+        "semanticKey": "employmentInfo.0.extension",
+        "registryLabel": "Extension",
+        "visionLabel": "**Zip Code**",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[3]",
+        "semanticKey": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor",
+        "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+        "visionLabel": "Provide physical work location of your supervisor. Street.",
+        "similarity": 0.381,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[4]",
+        "semanticKey": "employmentInfo.0.city",
+        "registryLabel": "City",
+        "visionLabel": "Provide City and Country if outside the United States.",
+        "similarity": 0.111,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList18[0]",
+        "semanticKey": "employmentInfo.0.country",
+        "registryLabel": "Country",
+        "visionLabel": "**Code**",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[5]",
+        "semanticKey": "employmentInfo.0.zipCode",
+        "registryLabel": "Zip Code",
+        "visionLabel": "\"Country\" or \"Country of origin\" or \"Country of birth\" or \"Country of\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[6]",
+        "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr",
+        "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+        "visionLabel": "**City or City and State**",
+        "similarity": 0.065,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList17[0]",
+        "semanticKey": "employmentInfo.0.country_2",
+        "registryLabel": "Country",
+        "visionLabel": "**Code/Code**.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[8]",
+        "semanticKey": "employmentInfo.0.zipCode_2",
+        "registryLabel": "Zip Code",
+        "visionLabel": "\"State\" or \"State/State\" or \"State/State/State\" or \"State/State/State/State\" or \"State/State/State/State/State\" or \"State/State/State/State/State/State\" or \"State/State/State/State/State/State/State\" or \"State/State/State/State/State/State/State/State\" or \"State/State/State/State/State/State",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[15]",
+        "semanticKey": "employmentInfo.0.night",
+        "registryLabel": "Night",
+        "visionLabel": "International or DSN phone.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[16]",
+        "semanticKey": "employmentInfo.0.day",
+        "registryLabel": "Day",
+        "visionLabel": "International or\nDay\nNight\nCode\nCountry\nbase, post, embassy, unit, and\notherwise, provide City, State and\nZip Code\nbase, post, embassy, unit, and\notherwise, provide City, State and\nZ\nCode\nCountry\nbase, post, embassy, unit, and\notherwise, provide City, State and\nZ\nCode\nCountry\nbase, post,\u00a0\u2026 (rest of text is cut off)\nCode\nCountry\nbase,",
+        "similarity": 0.043,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[17]",
+        "semanticKey": "employmentInfo.0.internationalOrDSNPhoneNumber",
+        "registryLabel": "International or D S N phone number",
+        "visionLabel": "APO/FPO State Code.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[10]",
+        "semanticKey": "employmentInfo.0.city_2",
+        "registryLabel": "City",
+        "visionLabel": "Provide City and Country if outside the United States; otherwise, provide City.",
+        "similarity": 0.1,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].School6_State[2]",
+        "semanticKey": "employmentInfo.0.state_3",
+        "registryLabel": "State",
+        "visionLabel": "United States; otherwise, provide City, State and Zip Code.",
+        "similarity": 0.111,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[11]",
+        "semanticKey": "employmentInfo.0.zipCode_3",
+        "registryLabel": "Zip Code",
+        "visionLabel": "State, City,\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[1]",
+        "semanticKey": "employmentInfo.0.telephoneNumber",
+        "registryLabel": "Telephone number",
+        "visionLabel": "Provide physical location data with street address if outside the United States; otherwise, provide City/State/Zip/\u2026\n\u2026or City/State/\u2026 or City/\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[26]",
+        "semanticKey": "employmentInfo.0.internationalOrDsnPhoneNumber",
+        "registryLabel": "International or DSN phone number",
+        "visionLabel": "International or\nDay\nNight\n\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[",
+        "similarity": 0.286,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[27]",
+        "semanticKey": "employmentInfo.0.day_2",
+        "registryLabel": "Day",
+        "visionLabel": "City and Country if outside the United States or City and/or State if inside the United States.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[28]",
+        "semanticKey": "employmentInfo.0.night_2",
+        "registryLabel": "Night",
+        "visionLabel": "International or DSN phone number.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[2]",
+        "semanticKey": "employmentInfo.0.provideTheEmailAddressOfYourSupervisor",
+        "registryLabel": "Provide the email address of your supervisor.",
+        "visionLabel": "Provide physical work location of your supervisor. Street.",
+        "similarity": 0.364,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[30]",
+        "semanticKey": "employmentInfo.0.provideTheEmailAddressOfYourSupervisorIDontKnow",
+        "registryLabel": "Provide the email address of your supervisor. I don't know.",
+        "visionLabel": "I don't know.",
+        "similarity": 0.364,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[13]",
+        "semanticKey": "employmentInfo.0.ifOtherSelectedProvideExplanation",
+        "registryLabel": "If other selected, provide explanation.",
+        "visionLabel": "SPHS Commissioned Corps.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[32]",
+        "semanticKey": "employmentInfo.0.isEstimate",
+        "registryLabel": "Estimate",
+        "visionLabel": "To Date (Month/Year)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[33]",
+        "semanticKey": "employmentInfo.0.parttime",
+        "registryLabel": "Part-time",
+        "visionLabel": "Select the employment status that best describes your current or most recent job: Present, Full-time, Part-time, or Other (if you are or have been in the active or\n \u00a0...\n (rest of text not shown)\n \u00a0...\n (rest of text not shown)\n \u00a0...\n (rest of text not\n \u00a0...\n (rest of text not\n \u00a0...\n (rest of text not\n \u00a0...\n (rest of text not\n \u00a0...\n (rest of text not",
+        "similarity": 0.067,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].p13a-1-1cb[0]",
+        "semanticKey": "employmentInfo.0.13a1CompleteTheFollowingIfEmploymentTypeI",
+        "registryLabel": "13A.1  Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps. Select the employment status for this position: Full-time",
+        "visionLabel": "Active Duty, National Guard/Reserve, or\n \u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.",
+        "similarity": 0.24,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].From_Datefield_Name_2[0]",
+        "semanticKey": "employmentInfo.0.13a1CompleteTheFollowingIfEmploymentTypeIs",
+        "registryLabel": "13A.1 Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps. Entry #1. Provide the dates of employment.  From Date (Month/Year)",
+        "visionLabel": "Provide address of duty station. (P.O. Box or Street)",
+        "similarity": 0.125,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[36]",
+        "semanticKey": "employmentInfo.0.isEstimate_2",
+        "registryLabel": "Estimate",
+        "visionLabel": "Est. (Provide address of duty station.)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[37]",
+        "semanticKey": "employmentInfo.0.isPresent",
+        "registryLabel": "Present",
+        "visionLabel": "To Date (Month/Year)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[3]",
+        "semanticKey": "employmentInfo.0.provideYourMostRecentRankpositionTitle",
+        "registryLabel": "Provide your most recent rank/position title.",
+        "visionLabel": "State, City, State and Zip Code.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[4]",
+        "semanticKey": "employmentInfo.0.provideYourAssignedDutyStationDuringThisPeriod",
+        "registryLabel": "Provide your assigned duty station during this period.",
+        "visionLabel": "State\n Zip Code\n Country\n Title\n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[0]",
+        "semanticKey": "employmentInfo.0.RadioButtonList_40",
+        "registryLabel": "RadioButtonList",
+        "visionLabel": "Other (Provide ex: 13A.5 and 13A.6)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[14]",
+        "semanticKey": "employmentInfo.0.aProvidePhysicalLocationDataWithStreetAddress",
+        "registryLabel": "(a) Provide physical location data with street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide City and Country if outside the United States; otherwis",
+        "visionLabel": "Do you or did you have an APO/FPO address?",
+        "similarity": 0.061,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[15]",
+        "semanticKey": "employmentInfo.0.cityOrPostName_2",
+        "registryLabel": "City or Post Name",
+        "visionLabel": "APO or FPO address while at this location?",
+        "similarity": 0.091,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList4[0]",
+        "semanticKey": "employmentInfo.0.country_4",
+        "registryLabel": "Country",
+        "visionLabel": "**State Code**",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[16]",
+        "semanticKey": "employmentInfo.0.address",
+        "registryLabel": "Address",
+        "visionLabel": "City or Post\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[17]",
+        "semanticKey": "employmentInfo.0.aPOOrFPO",
+        "registryLabel": "A P O or F P O",
+        "visionLabel": "Provide the rank/position title of your supervisor.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].School6_State[4]",
+        "semanticKey": "employmentInfo.0.aPOFPOStateCode",
+        "registryLabel": "A P O / F P O State Code",
+        "visionLabel": "Position title of your supervisor.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[19]",
+        "semanticKey": "employmentInfo.0.zipCode_5",
+        "registryLabel": "Zip Code",
+        "visionLabel": "State or FPO/APO/ZIP Code of Address Outside of the United States, Complete (B) and Country of Address Outside of the United States, Complete (B) and Country of Address Outside of the United States, Complete (B) and Country of Address Outside of the United States, Complete (B) and Country of Address Outside of the United\nState or FPO/APO/ZIP Code of Address Outside of the United States, Complete (B) and Country of Address Outside of the",
+        "similarity": 0.125,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[1]",
+        "semanticKey": "employmentInfo.0.RadioButtonList_50",
+        "registryLabel": "RadioButtonList",
+        "visionLabel": "Do you or did you have a mailing address outside of the United States?",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[1]",
+        "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor_2",
+        "registryLabel": "Provide the rank/position title of your supervisor.",
+        "visionLabel": "State and/or",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].p3-t68[0]",
+        "semanticKey": "employmentInfo.0.provideSupervisorsTelephoneNumber_3",
+        "registryLabel": "Provide supervisor's telephone number.",
+        "visionLabel": "Provide physical location data with either street address,\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.",
+        "similarity": 0.083,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[3]",
+        "semanticKey": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor_3",
+        "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+        "visionLabel": "Provide physical work location of your supervisor. Street.",
+        "similarity": 0.381,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[4]",
+        "semanticKey": "employmentInfo.0.city_10",
+        "registryLabel": "City",
+        "visionLabel": "Provide City and Country if outside the United States.",
+        "similarity": 0.111,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].School6_State[0]",
+        "semanticKey": "employmentInfo.0.state_17",
+        "registryLabel": "State",
+        "visionLabel": "State or Country if outside the United States; otherwise, provide City, State or City, State and Country if outside the United\u00a0\u00a0. . .\u00a0. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "similarity": 0.083,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[5]",
+        "semanticKey": "employmentInfo.0.zipCode_23",
+        "registryLabel": "Zip Code",
+        "visionLabel": "International\nDay\nNight\n\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[6]",
+        "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr_2",
+        "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+        "visionLabel": "City or Post\n\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+        "similarity": 0.067,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[8]",
+        "semanticKey": "employmentInfo.0.zipCode_24",
+        "registryLabel": "Zip Code",
+        "visionLabel": "\"State\" or \"State/State\" or \"State/State/State\" or \"State/State/State/State\" or \"State/State/State/State/State\" or \"State/State/State/State/State/State\" or \"State/State/State/State/State/State/State\" or \"State/State/State/State/State/State/State/State\" or \"State/State/State/State/State/State",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[15]",
+        "semanticKey": "employmentInfo.0.night_10",
+        "registryLabel": "Night",
+        "visionLabel": "International or DSN phone.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[16]",
+        "semanticKey": "employmentInfo.0.day_10",
+        "registryLabel": "Day",
+        "visionLabel": "International or\nDay\nNight\nCode\nCountry\nbase, post, embassy, unit, and\notherwise, provide City, State and\nZip Code\nbase, post, embassy, unit, and\notherwise, provide City, State and\nZip Code\nbase, post,\u00a0\u2026 (rest of text is cut off) \n\u2026 otherwise, provide City, State and\n\u00a0\u2026 (rest of text is cut off) \n\u2026 otherwise, provide City, State and\n\u00a0\u2026 (",
+        "similarity": 0.045,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[17]",
+        "semanticKey": "employmentInfo.0.internationalOrDSNPhoneNumber_8",
+        "registryLabel": "International or D S N phone number",
+        "visionLabel": "Extension.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[10]",
+        "semanticKey": "employmentInfo.0.city_11",
+        "registryLabel": "City",
+        "visionLabel": "Extension.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].School6_State[2]",
+        "semanticKey": "employmentInfo.0.state_19",
+        "registryLabel": "State",
+        "visionLabel": "United States; otherwise, provide City, State and Zip Code.",
+        "similarity": 0.111,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].DropDownList20[0]",
+        "semanticKey": "employmentInfo.0.country_19",
+        "registryLabel": "Country",
+        "visionLabel": "Code Country of\nthe United States, complete (b). \n[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ]",
+        "similarity": 0.125,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[11]",
+        "semanticKey": "employmentInfo.0.zipCode_25",
+        "registryLabel": "Zip Code",
+        "visionLabel": "State, City,\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].p3-t68[1]",
+        "semanticKey": "employmentInfo.0.telephoneNumber_2",
+        "registryLabel": "Telephone number",
+        "visionLabel": "Provide physical location data with street address if outside the United States; otherwise, provide City/State/...\n (Note: This answer is based on the provided image and may not be entirely accurate without context.)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[26]",
+        "semanticKey": "employmentInfo.0.internationalOrDSNPhoneNumber_9",
+        "registryLabel": "International or D S N phone number",
+        "visionLabel": "International or\nDay\nNight\n\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[",
+        "similarity": 0.222,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[27]",
+        "semanticKey": "employmentInfo.0.day_11",
+        "registryLabel": "Day",
+        "visionLabel": "City and Country if outside the United States: City.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[28]",
+        "semanticKey": "employmentInfo.0.night_11",
+        "registryLabel": "Night",
+        "visionLabel": "International or DSN phone number.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].p3-t68[2]",
+        "semanticKey": "employmentInfo.0.provideTheEmailAddressOfYourSupervisor_3",
+        "registryLabel": "Provide the email address of your supervisor.",
+        "visionLabel": "Provide physical work location of your supervisor. Street.",
+        "similarity": 0.364,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[30]",
+        "semanticKey": "employmentInfo.0.provideTheEmailAddressOfYourSupervisorIDontKnow_3",
+        "registryLabel": "Provide the email address of your supervisor. I don't know.",
+        "visionLabel": "I don't know.",
+        "similarity": 0.364,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[13]",
+        "semanticKey": "employmentInfo.0.ifOtherSelectedProvideExplanation_2",
+        "registryLabel": "If other selected, provide explanation.",
+        "visionLabel": "SPHS Commissioned Corps.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[32]",
+        "semanticKey": "employmentInfo.0.isEstimate_9",
+        "registryLabel": "Estimate",
+        "visionLabel": "To Date (Month/Year)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[33]",
+        "semanticKey": "employmentInfo.0.parttime_4",
+        "registryLabel": "Part-time",
+        "visionLabel": "Select the employment status that best describes your current or most recent job: \n Present\n Full-time\n Part-time\n Est. (Unknown)",
+        "similarity": 0.105,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].p13a-1-1cb[0]",
+        "semanticKey": "employmentInfo.0.selectTheEmploymentStatusForThisPositionFulltime_3",
+        "registryLabel": "Select the employment status for this position: Full-time",
+        "visionLabel": "Active Duty, National Guard/Reserve, or\n \u00a0[\u00a0 ]\n \u00a0[\u00a0 ]\n \u00a0[\u00a0 ] Select the employment status that best describes your\n \u00a0[\u00a0 ]\n \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ]",
+        "similarity": 0.211,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].From_Datefield_Name_2[0]",
+        "semanticKey": "employmentInfo.0.13a1CompleteTheFollowingIfEmploymentTypeIs_2",
+        "registryLabel": "13A.1 Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps. Entry #2. Provide the dates of employment.  From Date (Month/Year)",
+        "visionLabel": "Provide address of duty station. (P. O. Box or Street)",
+        "similarity": 0.121,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[36]",
+        "semanticKey": "employmentInfo.0.isEstimate_10",
+        "registryLabel": "Estimate",
+        "visionLabel": "Est. (Provide address of duty station.)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].#field[37]",
+        "semanticKey": "employmentInfo.0.isPresent_5",
+        "registryLabel": "Present",
+        "visionLabel": "To Date (Month/Year)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].p3-t68[3]",
+        "semanticKey": "employmentInfo.0.provideYourMostRecentRankpositionTitle_2",
+        "registryLabel": "Provide your most recent rank/position title.",
+        "visionLabel": "State\n Zip Code\n Country\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].p3-t68[4]",
+        "semanticKey": "employmentInfo.0.provideYourAssignedDutyStationDuringThisPeriod_2",
+        "registryLabel": "Provide your assigned duty station during this period.",
+        "visionLabel": "State, City, State and Zip Code.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].RadioButtonList[0]",
+        "semanticKey": "employmentInfo.0.RadioButtonList_299",
+        "registryLabel": "RadioButtonList",
+        "visionLabel": "Other (Provide ex: 13A.5 and 13A.6)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[14]",
+        "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddress_2",
+        "registryLabel": "If you have indicated an A P O / F P O address, complete (a). If you have indicated an address outside of the United States, complete (b). (a) Provide physical location data with street address, base,",
+        "visionLabel": "Do you or did you have an APO/FPO address?",
+        "similarity": 0.138,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[15]",
+        "semanticKey": "employmentInfo.0.cityOrPostName_9",
+        "registryLabel": "City or Post Name",
+        "visionLabel": "APO or FPO address while at this location?",
+        "similarity": 0.091,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].DropDownList4[0]",
+        "semanticKey": "employmentInfo.0.country_20",
+        "registryLabel": "Country",
+        "visionLabel": "State Code.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[16]",
+        "semanticKey": "employmentInfo.0.address_7",
+        "registryLabel": "Address",
+        "visionLabel": "City or\u00a0\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[17]",
+        "semanticKey": "employmentInfo.0.aPOOrFPO_7",
+        "registryLabel": "A P O or F P O",
+        "visionLabel": "Provide the rank/position title of your supervisor.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].School6_State[4]",
+        "semanticKey": "employmentInfo.0.aPOFPOStateCode_7",
+        "registryLabel": "A P O / F P O State Code",
+        "visionLabel": "APO/FPO State Code.",
+        "similarity": 0.25,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].TextField11[19]",
+        "semanticKey": "employmentInfo.0.zipCode_27",
+        "registryLabel": "Zip Code",
+        "visionLabel": "State or FPO/ APO/\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[0].RadioButtonList[1]",
+        "semanticKey": "employmentInfo.0.RadioButtonList_309",
+        "registryLabel": "RadioButtonList",
+        "visionLabel": "Do you or did you have an address in the United States?",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 21
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[1]",
+        "semanticKey": "employmentInfo.1.provideTheRankpositionTitleOfYourSupervisor",
+        "registryLabel": "Provide the rank/position title of your supervisor.",
+        "visionLabel": "State and/or",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].p3-t68[0]",
+        "semanticKey": "employmentInfo.1.provideSupervisorsTelephoneNumber",
+        "registryLabel": "Provide supervisor's telephone number.",
+        "visionLabel": "Provide physical location data with either street address,\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.",
+        "similarity": 0.083,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[3]",
+        "semanticKey": "employmentInfo.1.providePhysicalWorkLocationOfYourSupervisor",
+        "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+        "visionLabel": "Provide physical work location of your supervisor.",
+        "similarity": 0.333,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[4]",
+        "semanticKey": "employmentInfo.1.city_2",
+        "registryLabel": "City",
+        "visionLabel": "Provide City and Country if outside the United States.",
+        "similarity": 0.111,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].DropDownList18[0]",
+        "semanticKey": "employmentInfo.1.country_3",
+        "registryLabel": "Country",
+        "visionLabel": "Code:\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[5]",
+        "semanticKey": "employmentInfo.1.zipCode_4",
+        "registryLabel": "Zip Code",
+        "visionLabel": "International\nDay\nNight\n\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[6]",
+        "semanticKey": "employmentInfo.1.ifYouHaveIndicatedAnAPOFPOAddressPr",
+        "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+        "visionLabel": "Street Address/\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+        "similarity": 0.069,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[8]",
+        "semanticKey": "employmentInfo.1.zipCode_5",
+        "registryLabel": "Zip Code",
+        "visionLabel": "State or\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[15]",
+        "semanticKey": "employmentInfo.1.night_2",
+        "registryLabel": "Night",
+        "visionLabel": "International or DSN phone.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[16]",
+        "semanticKey": "employmentInfo.1.day_2",
+        "registryLabel": "Day",
+        "visionLabel": "International or\n\u00a0\u00a0Day\n\u00a0\u00a0Night\nCode\nCountry\n\u00a0\u00a0Base, post, embassy, unit, and\n\u00a0\u00a0\u2026 (rest of text is cut off)",
+        "similarity": 0.059,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[17]",
+        "semanticKey": "employmentInfo.1.internationalOrDSNPhoneNumber_2",
+        "registryLabel": "International or D S N phone number",
+        "visionLabel": "International or\nDay\nNight\nCode\nCountry\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode",
+        "similarity": 0.182,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[9]",
+        "semanticKey": "employmentInfo.1.provideAddressOfDutyStation",
+        "registryLabel": "Provide address of duty station. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+        "visionLabel": "Provide physical location data with street address if you have an address. If you have an address, provide it. If you do not have an address, provide\u00a0. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "similarity": 0.143,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[10]",
+        "semanticKey": "employmentInfo.1.city_3",
+        "registryLabel": "City",
+        "visionLabel": "Extension: International or DSN phone number.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].School6_State[2]",
+        "semanticKey": "employmentInfo.1.state_5",
+        "registryLabel": "State",
+        "visionLabel": "United States; otherwise, provide City, State and Zip Code or State and Zip Code or City, State or State and Zip Code.",
+        "similarity": 0.1,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].DropDownList20[0]",
+        "semanticKey": "employmentInfo.1.country_5",
+        "registryLabel": "Country",
+        "visionLabel": "Code: Country of\n \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[",
+        "similarity": 0.333,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[11]",
+        "semanticKey": "employmentInfo.1.zipCode_6",
+        "registryLabel": "Zip Code",
+        "visionLabel": "Provide your most recent\n address,\u00a0. . .\u00a0. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].p3-t68[1]",
+        "semanticKey": "employmentInfo.1.telephoneNumber",
+        "registryLabel": "Telephone number",
+        "visionLabel": "Provide physical location data with street address if outside the United States; otherwise, provide City/State/\u2026\n\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[26]",
+        "semanticKey": "employmentInfo.1.internationalOrDSNPhoneNumber_3",
+        "registryLabel": "International or D S N phone number",
+        "visionLabel": "International or\nDay\nNight\n\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[",
+        "similarity": 0.222,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[27]",
+        "semanticKey": "employmentInfo.1.day_3",
+        "registryLabel": "Day",
+        "visionLabel": "City and Country if outside the United States or\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[28]",
+        "semanticKey": "employmentInfo.1.night_3",
+        "registryLabel": "Night",
+        "visionLabel": "International or DSN phone?",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].p3-t68[2]",
+        "semanticKey": "employmentInfo.1.provideTheEmailAddressOfYourSupervisor",
+        "registryLabel": "Provide the email address of your supervisor.",
+        "visionLabel": "Provide physical work location of your supervisor. Street.",
+        "similarity": 0.364,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[30]",
+        "semanticKey": "employmentInfo.1.provideTheEmailAddressOfYourSupervisorIDontKnow",
+        "registryLabel": "Provide the email address of your supervisor. I don't know",
+        "visionLabel": "I don't know.",
+        "similarity": 0.364,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[13]",
+        "semanticKey": "employmentInfo.1.ifOtherSelectedProvideExplanation",
+        "registryLabel": "If other selected, provide explanation.",
+        "visionLabel": "SPHS Commissioned Corps.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[32]",
+        "semanticKey": "employmentInfo.1.isEstimate_3",
+        "registryLabel": "Estimate",
+        "visionLabel": "To Date (Month/Year)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[33]",
+        "semanticKey": "employmentInfo.1.parttime",
+        "registryLabel": "Part-time",
+        "visionLabel": "Select the employment status that best describes your current or most recent job:",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].p13a-1-1cb[0]",
+        "semanticKey": "employmentInfo.1.selectTheEmploymentStatusForThisPositionFulltime",
+        "registryLabel": "Select the employment status for this position: Full-time",
+        "visionLabel": "Select the employment status that best describes your current or most recent job: Present, Full-time, Part-time, or Est. (or another option) (or another option).",
+        "similarity": 0.261,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].From_Datefield_Name_2[0]",
+        "semanticKey": "employmentInfo.1.13a1CompleteTheFollowingIfEmploymentTypeIs",
+        "registryLabel": "13A.1 Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps. Entry #3. Provide dates of employment.  From Date (Month/Year)",
+        "visionLabel": "Provide address of duty station. (P. O. Box or Street)",
+        "similarity": 0.121,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[36]",
+        "semanticKey": "employmentInfo.1.isEstimate_4",
+        "registryLabel": "Estimate",
+        "visionLabel": "Est. (Provide address of duty station.)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].#field[37]",
+        "semanticKey": "employmentInfo.1.isPresent_2",
+        "registryLabel": "Present",
+        "visionLabel": "To Date (Month/Year)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].p3-t68[3]",
+        "semanticKey": "employmentInfo.1.provideYourMostRecentRankpositionTitle",
+        "registryLabel": "Provide your most recent rank/position title.",
+        "visionLabel": "State, City, State and Zip Code.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].p3-t68[4]",
+        "semanticKey": "employmentInfo.1.provideYourAssignedDutyStationDuringThisPeriod",
+        "registryLabel": "Provide your assigned duty station during this period.",
+        "visionLabel": "State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[0]",
+        "semanticKey": "employmentInfo.1.RadioButtonList_558",
+        "registryLabel": "RadioButtonList",
+        "visionLabel": "Other (Provide ex: 13A.5 and 13A.6)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[14]",
+        "semanticKey": "employmentInfo.1.ifYouHaveIndicatedAnAPOFPOAddress",
+        "registryLabel": "If you have indicated an A P O / F P O address, complete (a). If you have indicated an address outside of the United States, complete (b). (a) Provide physical location data with street address, base,",
+        "visionLabel": "Do you or did you have an APO/FPO address?",
+        "similarity": 0.138,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[15]",
+        "semanticKey": "employmentInfo.1.cityOrPostName_3",
+        "registryLabel": "City or Post Name",
+        "visionLabel": "APO or FPO address while at this location?",
+        "similarity": 0.091,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].DropDownList4[0]",
+        "semanticKey": "employmentInfo.1.country_6",
+        "registryLabel": "Country",
+        "visionLabel": "State Code (State/\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0)\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[16]",
+        "semanticKey": "employmentInfo.1.address_2",
+        "registryLabel": "Address",
+        "visionLabel": "Code for ports in the United States.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[17]",
+        "semanticKey": "employmentInfo.1.aPOOrFPO_2",
+        "registryLabel": "A P O or F P O",
+        "visionLabel": "Provide the rank/position title of your supervisor.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].School6_State[4]",
+        "semanticKey": "employmentInfo.1.aPOFPOStateCode_2",
+        "registryLabel": "A P O / F P O State Code",
+        "visionLabel": "APO/FPO State Code",
+        "similarity": 0.25,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].TextField11[19]",
+        "semanticKey": "employmentInfo.1.zipCode_8",
+        "registryLabel": "Zip Code",
+        "visionLabel": "State or FPO/ APO/\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[1]",
+        "semanticKey": "employmentInfo.1.RadioButtonList_568",
+        "registryLabel": "RadioButtonList",
+        "visionLabel": "Provide the email address of\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 25
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[1]",
+        "semanticKey": "employmentInfo.2.provideTheRankpositionTitleOfYourSupervisor",
+        "registryLabel": "Provide the rank/position title of your supervisor.",
+        "visionLabel": "State and/or",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].p3-t68[0]",
+        "semanticKey": "employmentInfo.2.provideSupervisorsTelephoneNumber",
+        "registryLabel": "Provide supervisor's telephone number.",
+        "visionLabel": "Provide physical location data with either street address,\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.",
+        "similarity": 0.083,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[3]",
+        "semanticKey": "employmentInfo.2.providePhysicalWorkLocationOfYourSupervisor",
+        "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+        "visionLabel": "Provide physical work\u00a0\u2026 Street\n\u00a0\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street",
+        "similarity": 0.19,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[4]",
+        "semanticKey": "employmentInfo.2.city_2",
+        "registryLabel": "City",
+        "visionLabel": "Provide City and Country if outside the United States.",
+        "similarity": 0.111,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].DropDownList18[0]",
+        "semanticKey": "employmentInfo.2.country_3",
+        "registryLabel": "Country",
+        "visionLabel": "Code:\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[5]",
+        "semanticKey": "employmentInfo.2.zipCode_4",
+        "registryLabel": "Zip Code",
+        "visionLabel": "\"Country\"",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[6]",
+        "semanticKey": "employmentInfo.2.ifYouHaveIndicatedAnAPOFPOAddressPr",
+        "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+        "visionLabel": "City or\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0.",
+        "similarity": 0.033,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[8]",
+        "semanticKey": "employmentInfo.2.zipCode_5",
+        "registryLabel": "Zip Code",
+        "visionLabel": "State or\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[15]",
+        "semanticKey": "employmentInfo.2.night_2",
+        "registryLabel": "Night",
+        "visionLabel": "International or DSN phone?",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[16]",
+        "semanticKey": "employmentInfo.2.day_2",
+        "registryLabel": "Day",
+        "visionLabel": "International or\n\u00a0\u00a0Day\n\u00a0\u00a0Night\nCode\nCountry\n\u00a0\u00a0Base, post, embassy,\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...",
+        "similarity": 0.111,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[17]",
+        "semanticKey": "employmentInfo.2.internationalOrDSNPhoneNumber_2",
+        "registryLabel": "International or D S N phone number",
+        "visionLabel": "Extension.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[9]",
+        "semanticKey": "employmentInfo.2.provideAddressOfDutyStation",
+        "registryLabel": "Provide address of duty station. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+        "visionLabel": "Provide physical location data with street address if you have\n\u00a0\u00a0[ ] \u00a0Present\n\u00a0\u00a0[ ] \u00a0Est.",
+        "similarity": 0.154,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[10]",
+        "semanticKey": "employmentInfo.2.city_3",
+        "registryLabel": "City",
+        "visionLabel": "Extension: International or DSN phone number.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].School6_State[2]",
+        "semanticKey": "employmentInfo.2.state_5",
+        "registryLabel": "State",
+        "visionLabel": "United States; otherwise, provide City, State and Zip Code of\nState\nZip Code\n```",
+        "similarity": 0.1,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].DropDownList20[0]",
+        "semanticKey": "employmentInfo.2.country_5",
+        "registryLabel": "Country",
+        "visionLabel": "Code: Country of\n \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[",
+        "similarity": 0.333,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[11]",
+        "semanticKey": "employmentInfo.2.zipCode_6",
+        "registryLabel": "Zip Code",
+        "visionLabel": "Provide your most recent\n address\n (if\n \u00a0...\n)\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].p3-t68[1]",
+        "semanticKey": "employmentInfo.2.telephoneNumber",
+        "registryLabel": "Telephone number",
+        "visionLabel": "Provide physical location data with street address if outside the United States; otherwise, provide City/State/...\n (a) Provide physical location data with street address if outside the United States; otherwise, provide City/State/...\n (b) Provide physical location data with street address if outside the United States; otherwise, provide City/State/...\n (c) Provide physical location data with street address if outside the United States; otherwise, provide City/State/...\n (d) Provide physical location data",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[26]",
+        "semanticKey": "employmentInfo.2.internationalOrDSNPhoneNumber_3",
+        "registryLabel": "International or D S N phone number",
+        "visionLabel": "International or\n\u00a0\u00a0Day\n\u00a0\u00a0Night",
+        "similarity": 0.222,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[27]",
+        "semanticKey": "employmentInfo.2.day_3",
+        "registryLabel": "Day",
+        "visionLabel": "City and Country if outside the United States or\nCity\nExtension\nInternational or\nDay\nNight\ness, complete (a). If you have\n street address, base, post, embassy, \n rovide City, State and Zip Code for ports in\n City or Post\n Name\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City",
+        "similarity": 0.032,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[28]",
+        "semanticKey": "employmentInfo.2.night_3",
+        "registryLabel": "Night",
+        "visionLabel": "International or DSN phone\n (or) \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ]",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].p3-t68[2]",
+        "semanticKey": "employmentInfo.2.provideTheEmailAddressOfYourSupervisor",
+        "registryLabel": "Provide the email address of your supervisor.",
+        "visionLabel": "Provide physical work location of your supervisor. Street.",
+        "similarity": 0.364,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[30]",
+        "semanticKey": "employmentInfo.2.provideTheEmailAddressOfYourSupervisorIDontKnow",
+        "registryLabel": "Provide the email address of your supervisor. I don't know",
+        "visionLabel": "I don't know.",
+        "similarity": 0.364,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[13]",
+        "semanticKey": "employmentInfo.2.ifOtherSelectedProvideExplanation",
+        "registryLabel": "If other selected, provide explanation.",
+        "visionLabel": "SPHS Commissioned Corps.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[32]",
+        "semanticKey": "employmentInfo.2.isEstimate_3",
+        "registryLabel": "Estimate",
+        "visionLabel": "To Date (Month/Year)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[33]",
+        "semanticKey": "employmentInfo.2.parttime",
+        "registryLabel": "Part-time",
+        "visionLabel": "Select the type of employment status for which you are applying:",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].p13a-1-1cb[0]",
+        "semanticKey": "employmentInfo.2.selectTheEmploymentStatusForThisPositionFulltime",
+        "registryLabel": "Select the employment status for this position: Full-time",
+        "visionLabel": "Select the employment status for which you are applying:",
+        "similarity": 0.385,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].From_Datefield_Name_2[0]",
+        "semanticKey": "employmentInfo.2.13a1CompleteTheFollowingIfEmploymentTypeIs",
+        "registryLabel": "13A.1 Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps. Entry #4. Provide the dates of employment.  From Date (Month/Year)",
+        "visionLabel": "Provide address of duty station. (P. O. [\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]",
+        "similarity": 0.097,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[36]",
+        "semanticKey": "employmentInfo.2.isEstimate_4",
+        "registryLabel": "Estimate",
+        "visionLabel": "Est. (Provide address of duty station. (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].#field[37]",
+        "semanticKey": "employmentInfo.2.isPresent_2",
+        "registryLabel": "Present",
+        "visionLabel": "To Date (Month/Year)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].p3-t68[3]",
+        "semanticKey": "employmentInfo.2.provideYourMostRecentRankpositionTitle",
+        "registryLabel": "Provide your most recent rank/position title.",
+        "visionLabel": "State\nZip Code\nCountry\nPhone\n(One",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].p3-t68[4]",
+        "semanticKey": "employmentInfo.2.provideYourAssignedDutyStationDuringThisPeriod",
+        "registryLabel": "Provide your assigned duty station during this period.",
+        "visionLabel": "State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].RadioButtonList[0]",
+        "semanticKey": "employmentInfo.2.RadioButtonList_817",
+        "registryLabel": "RadioButtonList",
+        "visionLabel": "Other (Provide ex. 13A.5 and 13A.6)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[14]",
+        "semanticKey": "employmentInfo.2.ifYouHaveIndicatedAnAPOFPOAddress",
+        "registryLabel": "If you have indicated an A P O / F P O address, complete (a). If you have indicated an address outside of the United States, complete (b). (a) Provide physical location data with street address, base,",
+        "visionLabel": "Do you or did you have an APO/FPO address?",
+        "similarity": 0.138,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[15]",
+        "semanticKey": "employmentInfo.2.cityOrPostName_3",
+        "registryLabel": "City or Post Name",
+        "visionLabel": "APO or FPO address while at this location?",
+        "similarity": 0.091,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].DropDownList4[0]",
+        "semanticKey": "employmentInfo.2.country_6",
+        "registryLabel": "Country",
+        "visionLabel": "State Code (State or\n \u00a0. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[16]",
+        "semanticKey": "employmentInfo.2.address_2",
+        "registryLabel": "Address",
+        "visionLabel": "City or\u00a0\u2026\u00a0? (rest of text is cut off)",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[17]",
+        "semanticKey": "employmentInfo.2.aPOOrFPO_2",
+        "registryLabel": "A P O or F P O",
+        "visionLabel": "Provide the rank/position title of your supervisor.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].School6_State[4]",
+        "semanticKey": "employmentInfo.2.aPOFPOStateCode_2",
+        "registryLabel": "A P O / F P O State Code",
+        "visionLabel": "APO/FPO State Code",
+        "similarity": 0.25,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].TextField11[19]",
+        "semanticKey": "employmentInfo.2.zipCode_8",
+        "registryLabel": "Zip Code",
+        "visionLabel": "State or FPO/ APO/\u00a0\u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . .",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1[2].RadioButtonList[1]",
+        "semanticKey": "employmentInfo.2.RadioButtonList_827",
+        "registryLabel": "RadioButtonList",
+        "visionLabel": "Do you or did you have\n\u00a0\u00a0[ ] \u00a0YES\n\u00a0\u00a0[ ] \u00a0NO",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 29
+      }
+    ]
+  },
+  "mismatchesByConfidence": {
+    "high": 0,
+    "medium": 0,
+    "low": 159
+  },
+  "totalByConfidence": {
+    "high": 0,
+    "medium": 0,
+    "low": 200
+  },
+  "allMismatches": [
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[1]",
+      "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the rank/position title of your supervisor.",
+      "visionLabel": "**State Code**",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[2]",
+      "semanticKey": "employmentInfo.0.extension",
+      "section": "employmentInfo",
+      "registryLabel": "Extension",
+      "visionLabel": "**Zip Code**",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList18[0]",
+      "semanticKey": "employmentInfo.0.country",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "**Code**",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[5]",
+      "semanticKey": "employmentInfo.0.zipCode",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "\"Country\" or \"Country of origin\" or \"Country of birth\" or \"Country of\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]\u00a0[\u2026]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList17[0]",
+      "semanticKey": "employmentInfo.0.country_2",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "**Code/Code**.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[8]",
+      "semanticKey": "employmentInfo.0.zipCode_2",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "\"State\" or \"State/State\" or \"State/State/State\" or \"State/State/State/State\" or \"State/State/State/State/State\" or \"State/State/State/State/State/State\" or \"State/State/State/State/State/State/State\" or \"State/State/State/State/State/State/State/State\" or \"State/State/State/State/State/State",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[15]",
+      "semanticKey": "employmentInfo.0.night",
+      "section": "employmentInfo",
+      "registryLabel": "Night",
+      "visionLabel": "International or DSN phone.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[17]",
+      "semanticKey": "employmentInfo.0.internationalOrDSNPhoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "International or D S N phone number",
+      "visionLabel": "APO/FPO State Code.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[11]",
+      "semanticKey": "employmentInfo.0.zipCode_3",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "State, City,\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[1]",
+      "semanticKey": "employmentInfo.0.telephoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "Telephone number",
+      "visionLabel": "Provide physical location data with street address if outside the United States; otherwise, provide City/State/Zip/\u2026\n\u2026or City/State/\u2026 or City/\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026 or City\u2026",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[27]",
+      "semanticKey": "employmentInfo.0.day_2",
+      "section": "employmentInfo",
+      "registryLabel": "Day",
+      "visionLabel": "City and Country if outside the United States or City and/or State if inside the United States.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[28]",
+      "semanticKey": "employmentInfo.0.night_2",
+      "section": "employmentInfo",
+      "registryLabel": "Night",
+      "visionLabel": "International or DSN phone number.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[13]",
+      "semanticKey": "employmentInfo.0.ifOtherSelectedProvideExplanation",
+      "section": "employmentInfo",
+      "registryLabel": "If other selected, provide explanation.",
+      "visionLabel": "SPHS Commissioned Corps.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[32]",
+      "semanticKey": "employmentInfo.0.isEstimate",
+      "section": "employmentInfo",
+      "registryLabel": "Estimate",
+      "visionLabel": "To Date (Month/Year)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[36]",
+      "semanticKey": "employmentInfo.0.isEstimate_2",
+      "section": "employmentInfo",
+      "registryLabel": "Estimate",
+      "visionLabel": "Est. (Provide address of duty station.)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[37]",
+      "semanticKey": "employmentInfo.0.isPresent",
+      "section": "employmentInfo",
+      "registryLabel": "Present",
+      "visionLabel": "To Date (Month/Year)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[3]",
+      "semanticKey": "employmentInfo.0.provideYourMostRecentRankpositionTitle",
+      "section": "employmentInfo",
+      "registryLabel": "Provide your most recent rank/position title.",
+      "visionLabel": "State, City, State and Zip Code.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[4]",
+      "semanticKey": "employmentInfo.0.provideYourAssignedDutyStationDuringThisPeriod",
+      "section": "employmentInfo",
+      "registryLabel": "Provide your assigned duty station during this period.",
+      "visionLabel": "State\n Zip Code\n Country\n Title\n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank) \n (Blank)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_40",
+      "section": "employmentInfo",
+      "registryLabel": "RadioButtonList",
+      "visionLabel": "Other (Provide ex: 13A.5 and 13A.6)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList4[0]",
+      "semanticKey": "employmentInfo.0.country_4",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "**State Code**",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[16]",
+      "semanticKey": "employmentInfo.0.address",
+      "section": "employmentInfo",
+      "registryLabel": "Address",
+      "visionLabel": "City or Post\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013\u00a0\u00a0\u2013",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[17]",
+      "semanticKey": "employmentInfo.0.aPOOrFPO",
+      "section": "employmentInfo",
+      "registryLabel": "A P O or F P O",
+      "visionLabel": "Provide the rank/position title of your supervisor.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].School6_State[4]",
+      "semanticKey": "employmentInfo.0.aPOFPOStateCode",
+      "section": "employmentInfo",
+      "registryLabel": "A P O / F P O State Code",
+      "visionLabel": "Position title of your supervisor.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_50",
+      "section": "employmentInfo",
+      "registryLabel": "RadioButtonList",
+      "visionLabel": "Do you or did you have a mailing address outside of the United States?",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[1]",
+      "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor_2",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the rank/position title of your supervisor.",
+      "visionLabel": "State and/or",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[5]",
+      "semanticKey": "employmentInfo.0.zipCode_23",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "International\nDay\nNight\n\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[8]",
+      "semanticKey": "employmentInfo.0.zipCode_24",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "\"State\" or \"State/State\" or \"State/State/State\" or \"State/State/State/State\" or \"State/State/State/State/State\" or \"State/State/State/State/State/State\" or \"State/State/State/State/State/State/State\" or \"State/State/State/State/State/State/State/State\" or \"State/State/State/State/State/State",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[15]",
+      "semanticKey": "employmentInfo.0.night_10",
+      "section": "employmentInfo",
+      "registryLabel": "Night",
+      "visionLabel": "International or DSN phone.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[17]",
+      "semanticKey": "employmentInfo.0.internationalOrDSNPhoneNumber_8",
+      "section": "employmentInfo",
+      "registryLabel": "International or D S N phone number",
+      "visionLabel": "Extension.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[10]",
+      "semanticKey": "employmentInfo.0.city_11",
+      "section": "employmentInfo",
+      "registryLabel": "City",
+      "visionLabel": "Extension.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[11]",
+      "semanticKey": "employmentInfo.0.zipCode_25",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "State, City,\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026\u00a0\u2026\n\u2026",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].p3-t68[1]",
+      "semanticKey": "employmentInfo.0.telephoneNumber_2",
+      "section": "employmentInfo",
+      "registryLabel": "Telephone number",
+      "visionLabel": "Provide physical location data with street address if outside the United States; otherwise, provide City/State/...\n (Note: This answer is based on the provided image and may not be entirely accurate without context.)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[27]",
+      "semanticKey": "employmentInfo.0.day_11",
+      "section": "employmentInfo",
+      "registryLabel": "Day",
+      "visionLabel": "City and Country if outside the United States: City.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[28]",
+      "semanticKey": "employmentInfo.0.night_11",
+      "section": "employmentInfo",
+      "registryLabel": "Night",
+      "visionLabel": "International or DSN phone number.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[13]",
+      "semanticKey": "employmentInfo.0.ifOtherSelectedProvideExplanation_2",
+      "section": "employmentInfo",
+      "registryLabel": "If other selected, provide explanation.",
+      "visionLabel": "SPHS Commissioned Corps.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[32]",
+      "semanticKey": "employmentInfo.0.isEstimate_9",
+      "section": "employmentInfo",
+      "registryLabel": "Estimate",
+      "visionLabel": "To Date (Month/Year)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[36]",
+      "semanticKey": "employmentInfo.0.isEstimate_10",
+      "section": "employmentInfo",
+      "registryLabel": "Estimate",
+      "visionLabel": "Est. (Provide address of duty station.)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[37]",
+      "semanticKey": "employmentInfo.0.isPresent_5",
+      "section": "employmentInfo",
+      "registryLabel": "Present",
+      "visionLabel": "To Date (Month/Year)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].p3-t68[3]",
+      "semanticKey": "employmentInfo.0.provideYourMostRecentRankpositionTitle_2",
+      "section": "employmentInfo",
+      "registryLabel": "Provide your most recent rank/position title.",
+      "visionLabel": "State\n Zip Code\n Country\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone\n Phone",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].p3-t68[4]",
+      "semanticKey": "employmentInfo.0.provideYourAssignedDutyStationDuringThisPeriod_2",
+      "section": "employmentInfo",
+      "registryLabel": "Provide your assigned duty station during this period.",
+      "visionLabel": "State, City, State and Zip Code.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_299",
+      "section": "employmentInfo",
+      "registryLabel": "RadioButtonList",
+      "visionLabel": "Other (Provide ex: 13A.5 and 13A.6)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].DropDownList4[0]",
+      "semanticKey": "employmentInfo.0.country_20",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "State Code.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[16]",
+      "semanticKey": "employmentInfo.0.address_7",
+      "section": "employmentInfo",
+      "registryLabel": "Address",
+      "visionLabel": "City or\u00a0\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[17]",
+      "semanticKey": "employmentInfo.0.aPOOrFPO_7",
+      "section": "employmentInfo",
+      "registryLabel": "A P O or F P O",
+      "visionLabel": "Provide the rank/position title of your supervisor.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[19]",
+      "semanticKey": "employmentInfo.0.zipCode_27",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "State or FPO/ APO/\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.0.RadioButtonList_309",
+      "section": "employmentInfo",
+      "registryLabel": "RadioButtonList",
+      "visionLabel": "Do you or did you have an address in the United States?",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[1]",
+      "semanticKey": "employmentInfo.1.provideTheRankpositionTitleOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the rank/position title of your supervisor.",
+      "visionLabel": "State and/or",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].DropDownList18[0]",
+      "semanticKey": "employmentInfo.1.country_3",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "Code:\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[5]",
+      "semanticKey": "employmentInfo.1.zipCode_4",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "International\nDay\nNight\n\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]\u00a0\u00a0[ ]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[8]",
+      "semanticKey": "employmentInfo.1.zipCode_5",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "State or\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[15]",
+      "semanticKey": "employmentInfo.1.night_2",
+      "section": "employmentInfo",
+      "registryLabel": "Night",
+      "visionLabel": "International or DSN phone.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[10]",
+      "semanticKey": "employmentInfo.1.city_3",
+      "section": "employmentInfo",
+      "registryLabel": "City",
+      "visionLabel": "Extension: International or DSN phone number.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[11]",
+      "semanticKey": "employmentInfo.1.zipCode_6",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "Provide your most recent\n address,\u00a0. . .\u00a0. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].p3-t68[1]",
+      "semanticKey": "employmentInfo.1.telephoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "Telephone number",
+      "visionLabel": "Provide physical location data with street address if outside the United States; otherwise, provide City/State/\u2026\n\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[27]",
+      "semanticKey": "employmentInfo.1.day_3",
+      "section": "employmentInfo",
+      "registryLabel": "Day",
+      "visionLabel": "City and Country if outside the United States or\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026\u00a0\u2026",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[28]",
+      "semanticKey": "employmentInfo.1.night_3",
+      "section": "employmentInfo",
+      "registryLabel": "Night",
+      "visionLabel": "International or DSN phone?",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[13]",
+      "semanticKey": "employmentInfo.1.ifOtherSelectedProvideExplanation",
+      "section": "employmentInfo",
+      "registryLabel": "If other selected, provide explanation.",
+      "visionLabel": "SPHS Commissioned Corps.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[32]",
+      "semanticKey": "employmentInfo.1.isEstimate_3",
+      "section": "employmentInfo",
+      "registryLabel": "Estimate",
+      "visionLabel": "To Date (Month/Year)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[33]",
+      "semanticKey": "employmentInfo.1.parttime",
+      "section": "employmentInfo",
+      "registryLabel": "Part-time",
+      "visionLabel": "Select the employment status that best describes your current or most recent job:",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[36]",
+      "semanticKey": "employmentInfo.1.isEstimate_4",
+      "section": "employmentInfo",
+      "registryLabel": "Estimate",
+      "visionLabel": "Est. (Provide address of duty station.)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[37]",
+      "semanticKey": "employmentInfo.1.isPresent_2",
+      "section": "employmentInfo",
+      "registryLabel": "Present",
+      "visionLabel": "To Date (Month/Year)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].p3-t68[3]",
+      "semanticKey": "employmentInfo.1.provideYourMostRecentRankpositionTitle",
+      "section": "employmentInfo",
+      "registryLabel": "Provide your most recent rank/position title.",
+      "visionLabel": "State, City, State and Zip Code.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].p3-t68[4]",
+      "semanticKey": "employmentInfo.1.provideYourAssignedDutyStationDuringThisPeriod",
+      "section": "employmentInfo",
+      "registryLabel": "Provide your assigned duty station during this period.",
+      "visionLabel": "State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_558",
+      "section": "employmentInfo",
+      "registryLabel": "RadioButtonList",
+      "visionLabel": "Other (Provide ex: 13A.5 and 13A.6)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].DropDownList4[0]",
+      "semanticKey": "employmentInfo.1.country_6",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "State Code (State/\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0)\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[16]",
+      "semanticKey": "employmentInfo.1.address_2",
+      "section": "employmentInfo",
+      "registryLabel": "Address",
+      "visionLabel": "Code for ports in the United States.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[17]",
+      "semanticKey": "employmentInfo.1.aPOOrFPO_2",
+      "section": "employmentInfo",
+      "registryLabel": "A P O or F P O",
+      "visionLabel": "Provide the rank/position title of your supervisor.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[19]",
+      "semanticKey": "employmentInfo.1.zipCode_8",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "State or FPO/ APO/\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.1.RadioButtonList_568",
+      "section": "employmentInfo",
+      "registryLabel": "RadioButtonList",
+      "visionLabel": "Provide the email address of\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[1]",
+      "semanticKey": "employmentInfo.2.provideTheRankpositionTitleOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the rank/position title of your supervisor.",
+      "visionLabel": "State and/or",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].DropDownList18[0]",
+      "semanticKey": "employmentInfo.2.country_3",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "Code:\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[5]",
+      "semanticKey": "employmentInfo.2.zipCode_4",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "\"Country\"",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[8]",
+      "semanticKey": "employmentInfo.2.zipCode_5",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "State or\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[15]",
+      "semanticKey": "employmentInfo.2.night_2",
+      "section": "employmentInfo",
+      "registryLabel": "Night",
+      "visionLabel": "International or DSN phone?",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[17]",
+      "semanticKey": "employmentInfo.2.internationalOrDSNPhoneNumber_2",
+      "section": "employmentInfo",
+      "registryLabel": "International or D S N phone number",
+      "visionLabel": "Extension.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[10]",
+      "semanticKey": "employmentInfo.2.city_3",
+      "section": "employmentInfo",
+      "registryLabel": "City",
+      "visionLabel": "Extension: International or DSN phone number.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[11]",
+      "semanticKey": "employmentInfo.2.zipCode_6",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "Provide your most recent\n address\n (if\n \u00a0...\n)\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].p3-t68[1]",
+      "semanticKey": "employmentInfo.2.telephoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "Telephone number",
+      "visionLabel": "Provide physical location data with street address if outside the United States; otherwise, provide City/State/...\n (a) Provide physical location data with street address if outside the United States; otherwise, provide City/State/...\n (b) Provide physical location data with street address if outside the United States; otherwise, provide City/State/...\n (c) Provide physical location data with street address if outside the United States; otherwise, provide City/State/...\n (d) Provide physical location data",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[28]",
+      "semanticKey": "employmentInfo.2.night_3",
+      "section": "employmentInfo",
+      "registryLabel": "Night",
+      "visionLabel": "International or DSN phone\n (or) \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ]",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[13]",
+      "semanticKey": "employmentInfo.2.ifOtherSelectedProvideExplanation",
+      "section": "employmentInfo",
+      "registryLabel": "If other selected, provide explanation.",
+      "visionLabel": "SPHS Commissioned Corps.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[32]",
+      "semanticKey": "employmentInfo.2.isEstimate_3",
+      "section": "employmentInfo",
+      "registryLabel": "Estimate",
+      "visionLabel": "To Date (Month/Year)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[33]",
+      "semanticKey": "employmentInfo.2.parttime",
+      "section": "employmentInfo",
+      "registryLabel": "Part-time",
+      "visionLabel": "Select the type of employment status for which you are applying:",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[36]",
+      "semanticKey": "employmentInfo.2.isEstimate_4",
+      "section": "employmentInfo",
+      "registryLabel": "Estimate",
+      "visionLabel": "Est. (Provide address of duty station. (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (Provide\n (",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[37]",
+      "semanticKey": "employmentInfo.2.isPresent_2",
+      "section": "employmentInfo",
+      "registryLabel": "Present",
+      "visionLabel": "To Date (Month/Year)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].p3-t68[3]",
+      "semanticKey": "employmentInfo.2.provideYourMostRecentRankpositionTitle",
+      "section": "employmentInfo",
+      "registryLabel": "Provide your most recent rank/position title.",
+      "visionLabel": "State\nZip Code\nCountry\nPhone\n(One",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].p3-t68[4]",
+      "semanticKey": "employmentInfo.2.provideYourAssignedDutyStationDuringThisPeriod",
+      "section": "employmentInfo",
+      "registryLabel": "Provide your assigned duty station during this period.",
+      "visionLabel": "State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (or\n  [State\n  (",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].RadioButtonList[0]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_817",
+      "section": "employmentInfo",
+      "registryLabel": "RadioButtonList",
+      "visionLabel": "Other (Provide ex. 13A.5 and 13A.6)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].DropDownList4[0]",
+      "semanticKey": "employmentInfo.2.country_6",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "State Code (State or\n \u00a0. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[16]",
+      "semanticKey": "employmentInfo.2.address_2",
+      "section": "employmentInfo",
+      "registryLabel": "Address",
+      "visionLabel": "City or\u00a0\u2026\u00a0? (rest of text is cut off)",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[17]",
+      "semanticKey": "employmentInfo.2.aPOOrFPO_2",
+      "section": "employmentInfo",
+      "registryLabel": "A P O or F P O",
+      "visionLabel": "Provide the rank/position title of your supervisor.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[19]",
+      "semanticKey": "employmentInfo.2.zipCode_8",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "State or FPO/ APO/\u00a0\u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . . \u00a0. . .",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].RadioButtonList[1]",
+      "semanticKey": "employmentInfo.2.RadioButtonList_827",
+      "section": "employmentInfo",
+      "registryLabel": "RadioButtonList",
+      "visionLabel": "Do you or did you have\n\u00a0\u00a0[ ] \u00a0YES\n\u00a0\u00a0[ ] \u00a0NO",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[27]",
+      "semanticKey": "employmentInfo.2.day_3",
+      "section": "employmentInfo",
+      "registryLabel": "Day",
+      "visionLabel": "City and Country if outside the United States or\nCity\nExtension\nInternational or\nDay\nNight\ness, complete (a). If you have\n street address, base, post, embassy, \n rovide City, State and Zip Code for ports in\n City or Post\n Name\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City\n City",
+      "similarity": 0.032,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[6]",
+      "semanticKey": "employmentInfo.2.ifYouHaveIndicatedAnAPOFPOAddressPr",
+      "section": "employmentInfo",
+      "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+      "visionLabel": "City or\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0. . .\u00a0\u00a0.",
+      "similarity": 0.033,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[16]",
+      "semanticKey": "employmentInfo.0.day",
+      "section": "employmentInfo",
+      "registryLabel": "Day",
+      "visionLabel": "International or\nDay\nNight\nCode\nCountry\nbase, post, embassy, unit, and\notherwise, provide City, State and\nZip Code\nbase, post, embassy, unit, and\notherwise, provide City, State and\nZ\nCode\nCountry\nbase, post, embassy, unit, and\notherwise, provide City, State and\nZ\nCode\nCountry\nbase, post,\u00a0\u2026 (rest of text is cut off)\nCode\nCountry\nbase,",
+      "similarity": 0.043,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[16]",
+      "semanticKey": "employmentInfo.0.day_10",
+      "section": "employmentInfo",
+      "registryLabel": "Day",
+      "visionLabel": "International or\nDay\nNight\nCode\nCountry\nbase, post, embassy, unit, and\notherwise, provide City, State and\nZip Code\nbase, post, embassy, unit, and\notherwise, provide City, State and\nZip Code\nbase, post,\u00a0\u2026 (rest of text is cut off) \n\u2026 otherwise, provide City, State and\n\u00a0\u2026 (rest of text is cut off) \n\u2026 otherwise, provide City, State and\n\u00a0\u2026 (",
+      "similarity": 0.045,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[16]",
+      "semanticKey": "employmentInfo.1.day_2",
+      "section": "employmentInfo",
+      "registryLabel": "Day",
+      "visionLabel": "International or\n\u00a0\u00a0Day\n\u00a0\u00a0Night\nCode\nCountry\n\u00a0\u00a0Base, post, embassy, unit, and\n\u00a0\u00a0\u2026 (rest of text is cut off)",
+      "similarity": 0.059,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[14]",
+      "semanticKey": "employmentInfo.0.aProvidePhysicalLocationDataWithStreetAddress",
+      "section": "employmentInfo",
+      "registryLabel": "(a) Provide physical location data with street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide City and Country if outside the United States; otherwis",
+      "visionLabel": "Do you or did you have an APO/FPO address?",
+      "similarity": 0.061,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[6]",
+      "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr",
+      "section": "employmentInfo",
+      "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+      "visionLabel": "**City or City and State**",
+      "similarity": 0.065,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[33]",
+      "semanticKey": "employmentInfo.0.parttime",
+      "section": "employmentInfo",
+      "registryLabel": "Part-time",
+      "visionLabel": "Select the employment status that best describes your current or most recent job: Present, Full-time, Part-time, or Other (if you are or have been in the active or\n \u00a0...\n (rest of text not shown)\n \u00a0...\n (rest of text not shown)\n \u00a0...\n (rest of text not\n \u00a0...\n (rest of text not\n \u00a0...\n (rest of text not\n \u00a0...\n (rest of text not\n \u00a0...\n (rest of text not",
+      "similarity": 0.067,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[6]",
+      "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr_2",
+      "section": "employmentInfo",
+      "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+      "visionLabel": "City or Post\n\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+      "similarity": 0.067,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[6]",
+      "semanticKey": "employmentInfo.1.ifYouHaveIndicatedAnAPOFPOAddressPr",
+      "section": "employmentInfo",
+      "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+      "visionLabel": "Street Address/\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]",
+      "similarity": 0.069,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[0]",
+      "semanticKey": "employmentInfo.0.provideSupervisorsTelephoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "Provide supervisor's telephone number.",
+      "visionLabel": "Provide physical location data with either street address,\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...\u00a0\u00a0...\n...",
+      "similarity": 0.083,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].p3-t68[0]",
+      "semanticKey": "employmentInfo.0.provideSupervisorsTelephoneNumber_3",
+      "section": "employmentInfo",
+      "registryLabel": "Provide supervisor's telephone number.",
+      "visionLabel": "Provide physical location data with either street address,\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.",
+      "similarity": 0.083,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].School6_State[0]",
+      "semanticKey": "employmentInfo.0.state_17",
+      "section": "employmentInfo",
+      "registryLabel": "State",
+      "visionLabel": "State or Country if outside the United States; otherwise, provide City, State or City, State and Country if outside the United\u00a0\u00a0. . .\u00a0. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "similarity": 0.083,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].p3-t68[0]",
+      "semanticKey": "employmentInfo.1.provideSupervisorsTelephoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "Provide supervisor's telephone number.",
+      "visionLabel": "Provide physical location data with either street address,\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.",
+      "similarity": 0.083,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].p3-t68[0]",
+      "semanticKey": "employmentInfo.2.provideSupervisorsTelephoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "Provide supervisor's telephone number.",
+      "visionLabel": "Provide physical location data with either street address,\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.",
+      "similarity": 0.083,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[15]",
+      "semanticKey": "employmentInfo.0.cityOrPostName_2",
+      "section": "employmentInfo",
+      "registryLabel": "City or Post Name",
+      "visionLabel": "APO or FPO address while at this location?",
+      "similarity": 0.091,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[15]",
+      "semanticKey": "employmentInfo.0.cityOrPostName_9",
+      "section": "employmentInfo",
+      "registryLabel": "City or Post Name",
+      "visionLabel": "APO or FPO address while at this location?",
+      "similarity": 0.091,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[15]",
+      "semanticKey": "employmentInfo.1.cityOrPostName_3",
+      "section": "employmentInfo",
+      "registryLabel": "City or Post Name",
+      "visionLabel": "APO or FPO address while at this location?",
+      "similarity": 0.091,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[15]",
+      "semanticKey": "employmentInfo.2.cityOrPostName_3",
+      "section": "employmentInfo",
+      "registryLabel": "City or Post Name",
+      "visionLabel": "APO or FPO address while at this location?",
+      "similarity": 0.091,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].From_Datefield_Name_2[0]",
+      "semanticKey": "employmentInfo.2.13a1CompleteTheFollowingIfEmploymentTypeIs",
+      "section": "employmentInfo",
+      "registryLabel": "13A.1 Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps. Entry #4. Provide the dates of employment.  From Date (Month/Year)",
+      "visionLabel": "Provide address of duty station. (P. O. [\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]\u00a0\u00a0]",
+      "similarity": 0.097,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[10]",
+      "semanticKey": "employmentInfo.0.city_2",
+      "section": "employmentInfo",
+      "registryLabel": "City",
+      "visionLabel": "Provide City and Country if outside the United States; otherwise, provide City.",
+      "similarity": 0.1,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].School6_State[2]",
+      "semanticKey": "employmentInfo.1.state_5",
+      "section": "employmentInfo",
+      "registryLabel": "State",
+      "visionLabel": "United States; otherwise, provide City, State and Zip Code or State and Zip Code or City, State or State and Zip Code.",
+      "similarity": 0.1,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].School6_State[2]",
+      "semanticKey": "employmentInfo.2.state_5",
+      "section": "employmentInfo",
+      "registryLabel": "State",
+      "visionLabel": "United States; otherwise, provide City, State and Zip Code of\nState\nZip Code\n```",
+      "similarity": 0.1,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[33]",
+      "semanticKey": "employmentInfo.0.parttime_4",
+      "section": "employmentInfo",
+      "registryLabel": "Part-time",
+      "visionLabel": "Select the employment status that best describes your current or most recent job: \n Present\n Full-time\n Part-time\n Est. (Unknown)",
+      "similarity": 0.105,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[4]",
+      "semanticKey": "employmentInfo.0.city",
+      "section": "employmentInfo",
+      "registryLabel": "City",
+      "visionLabel": "Provide City and Country if outside the United States.",
+      "similarity": 0.111,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].School6_State[2]",
+      "semanticKey": "employmentInfo.0.state_3",
+      "section": "employmentInfo",
+      "registryLabel": "State",
+      "visionLabel": "United States; otherwise, provide City, State and Zip Code.",
+      "similarity": 0.111,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[4]",
+      "semanticKey": "employmentInfo.0.city_10",
+      "section": "employmentInfo",
+      "registryLabel": "City",
+      "visionLabel": "Provide City and Country if outside the United States.",
+      "similarity": 0.111,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].School6_State[2]",
+      "semanticKey": "employmentInfo.0.state_19",
+      "section": "employmentInfo",
+      "registryLabel": "State",
+      "visionLabel": "United States; otherwise, provide City, State and Zip Code.",
+      "similarity": 0.111,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[4]",
+      "semanticKey": "employmentInfo.1.city_2",
+      "section": "employmentInfo",
+      "registryLabel": "City",
+      "visionLabel": "Provide City and Country if outside the United States.",
+      "similarity": 0.111,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[4]",
+      "semanticKey": "employmentInfo.2.city_2",
+      "section": "employmentInfo",
+      "registryLabel": "City",
+      "visionLabel": "Provide City and Country if outside the United States.",
+      "similarity": 0.111,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[16]",
+      "semanticKey": "employmentInfo.2.day_2",
+      "section": "employmentInfo",
+      "registryLabel": "Day",
+      "visionLabel": "International or\n\u00a0\u00a0Day\n\u00a0\u00a0Night\nCode\nCountry\n\u00a0\u00a0Base, post, embassy,\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...\n\u00a0\u00a0...",
+      "similarity": 0.111,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].From_Datefield_Name_2[0]",
+      "semanticKey": "employmentInfo.0.13a1CompleteTheFollowingIfEmploymentTypeIs_2",
+      "section": "employmentInfo",
+      "registryLabel": "13A.1 Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps. Entry #2. Provide the dates of employment.  From Date (Month/Year)",
+      "visionLabel": "Provide address of duty station. (P. O. Box or Street)",
+      "similarity": 0.121,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].From_Datefield_Name_2[0]",
+      "semanticKey": "employmentInfo.1.13a1CompleteTheFollowingIfEmploymentTypeIs",
+      "section": "employmentInfo",
+      "registryLabel": "13A.1 Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps. Entry #3. Provide dates of employment.  From Date (Month/Year)",
+      "visionLabel": "Provide address of duty station. (P. O. Box or Street)",
+      "similarity": 0.121,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].From_Datefield_Name_2[0]",
+      "semanticKey": "employmentInfo.0.13a1CompleteTheFollowingIfEmploymentTypeIs",
+      "section": "employmentInfo",
+      "registryLabel": "13A.1 Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps. Entry #1. Provide the dates of employment.  From Date (Month/Year)",
+      "visionLabel": "Provide address of duty station. (P.O. Box or Street)",
+      "similarity": 0.125,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[19]",
+      "semanticKey": "employmentInfo.0.zipCode_5",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "State or FPO/APO/ZIP Code of Address Outside of the United States, Complete (B) and Country of Address Outside of the United States, Complete (B) and Country of Address Outside of the United States, Complete (B) and Country of Address Outside of the United States, Complete (B) and Country of Address Outside of the United\nState or FPO/APO/ZIP Code of Address Outside of the United States, Complete (B) and Country of Address Outside of the",
+      "similarity": 0.125,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].DropDownList20[0]",
+      "semanticKey": "employmentInfo.0.country_19",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "Code Country of\nthe United States, complete (b). \n[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ] \u00a0[ ]",
+      "similarity": 0.125,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[14]",
+      "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddress_2",
+      "section": "employmentInfo",
+      "registryLabel": "If you have indicated an A P O / F P O address, complete (a). If you have indicated an address outside of the United States, complete (b). (a) Provide physical location data with street address, base,",
+      "visionLabel": "Do you or did you have an APO/FPO address?",
+      "similarity": 0.138,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[14]",
+      "semanticKey": "employmentInfo.1.ifYouHaveIndicatedAnAPOFPOAddress",
+      "section": "employmentInfo",
+      "registryLabel": "If you have indicated an A P O / F P O address, complete (a). If you have indicated an address outside of the United States, complete (b). (a) Provide physical location data with street address, base,",
+      "visionLabel": "Do you or did you have an APO/FPO address?",
+      "similarity": 0.138,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[14]",
+      "semanticKey": "employmentInfo.2.ifYouHaveIndicatedAnAPOFPOAddress",
+      "section": "employmentInfo",
+      "registryLabel": "If you have indicated an A P O / F P O address, complete (a). If you have indicated an address outside of the United States, complete (b). (a) Provide physical location data with street address, base,",
+      "visionLabel": "Do you or did you have an APO/FPO address?",
+      "similarity": 0.138,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[9]",
+      "semanticKey": "employmentInfo.1.provideAddressOfDutyStation",
+      "section": "employmentInfo",
+      "registryLabel": "Provide address of duty station. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+      "visionLabel": "Provide physical location data with street address if you have an address. If you have an address, provide it. If you do not have an address, provide\u00a0. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "similarity": 0.143,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[9]",
+      "semanticKey": "employmentInfo.2.provideAddressOfDutyStation",
+      "section": "employmentInfo",
+      "registryLabel": "Provide address of duty station. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+      "visionLabel": "Provide physical location data with street address if you have\n\u00a0\u00a0[ ] \u00a0Present\n\u00a0\u00a0[ ] \u00a0Est.",
+      "similarity": 0.154,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[17]",
+      "semanticKey": "employmentInfo.1.internationalOrDSNPhoneNumber_2",
+      "section": "employmentInfo",
+      "registryLabel": "International or D S N phone number",
+      "visionLabel": "International or\nDay\nNight\nCode\nCountry\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode\nCode",
+      "similarity": 0.182,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].TextField11[3]",
+      "semanticKey": "employmentInfo.2.providePhysicalWorkLocationOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+      "visionLabel": "Provide physical work\u00a0\u2026 Street\n\u00a0\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street\n\u2026 Street",
+      "similarity": 0.19,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].p13a-1-1cb[0]",
+      "semanticKey": "employmentInfo.0.selectTheEmploymentStatusForThisPositionFulltime_3",
+      "section": "employmentInfo",
+      "registryLabel": "Select the employment status for this position: Full-time",
+      "visionLabel": "Active Duty, National Guard/Reserve, or\n \u00a0[\u00a0 ]\n \u00a0[\u00a0 ]\n \u00a0[\u00a0 ] Select the employment status that best describes your\n \u00a0[\u00a0 ]\n \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ] \u00a0[\u00a0 ]",
+      "similarity": 0.211,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[26]",
+      "semanticKey": "employmentInfo.0.internationalOrDSNPhoneNumber_9",
+      "section": "employmentInfo",
+      "registryLabel": "International or D S N phone number",
+      "visionLabel": "International or\nDay\nNight\n\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[",
+      "similarity": 0.222,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[26]",
+      "semanticKey": "employmentInfo.1.internationalOrDSNPhoneNumber_3",
+      "section": "employmentInfo",
+      "registryLabel": "International or D S N phone number",
+      "visionLabel": "International or\nDay\nNight\n\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[",
+      "similarity": 0.222,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[26]",
+      "semanticKey": "employmentInfo.2.internationalOrDSNPhoneNumber_3",
+      "section": "employmentInfo",
+      "registryLabel": "International or D S N phone number",
+      "visionLabel": "International or\n\u00a0\u00a0Day\n\u00a0\u00a0Night",
+      "similarity": 0.222,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].p13a-1-1cb[0]",
+      "semanticKey": "employmentInfo.0.13a1CompleteTheFollowingIfEmploymentTypeI",
+      "section": "employmentInfo",
+      "registryLabel": "13A.1  Complete the following if employment type is Active Duty, National Guard/Reserve, or USPHS Commissioned Corps. Select the employment status for this position: Full-time",
+      "visionLabel": "Active Duty, National Guard/Reserve, or\n \u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.\u00a0.",
+      "similarity": 0.24,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].School6_State[4]",
+      "semanticKey": "employmentInfo.0.aPOFPOStateCode_7",
+      "section": "employmentInfo",
+      "registryLabel": "A P O / F P O State Code",
+      "visionLabel": "APO/FPO State Code.",
+      "similarity": 0.25,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].School6_State[4]",
+      "semanticKey": "employmentInfo.1.aPOFPOStateCode_2",
+      "section": "employmentInfo",
+      "registryLabel": "A P O / F P O State Code",
+      "visionLabel": "APO/FPO State Code",
+      "similarity": 0.25,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].School6_State[4]",
+      "semanticKey": "employmentInfo.2.aPOFPOStateCode_2",
+      "section": "employmentInfo",
+      "registryLabel": "A P O / F P O State Code",
+      "visionLabel": "APO/FPO State Code",
+      "similarity": 0.25,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].p13a-1-1cb[0]",
+      "semanticKey": "employmentInfo.1.selectTheEmploymentStatusForThisPositionFulltime",
+      "section": "employmentInfo",
+      "registryLabel": "Select the employment status for this position: Full-time",
+      "visionLabel": "Select the employment status that best describes your current or most recent job: Present, Full-time, Part-time, or Est. (or another option) (or another option).",
+      "similarity": 0.261,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[26]",
+      "semanticKey": "employmentInfo.0.internationalOrDsnPhoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "International or DSN phone number",
+      "visionLabel": "International or\nDay\nNight\n\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[\u00a0\u00a0]\u00a0\u00a0[",
+      "similarity": 0.286,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].TextField11[3]",
+      "semanticKey": "employmentInfo.1.providePhysicalWorkLocationOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+      "visionLabel": "Provide physical work location of your supervisor.",
+      "similarity": 0.333,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].DropDownList20[0]",
+      "semanticKey": "employmentInfo.1.country_5",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "Code: Country of\n \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[",
+      "similarity": 0.333,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].DropDownList20[0]",
+      "semanticKey": "employmentInfo.2.country_5",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "Code: Country of\n \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[\u00a0\u00a0] \u00a0[",
+      "similarity": 0.333,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[2]",
+      "semanticKey": "employmentInfo.0.provideTheEmailAddressOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the email address of your supervisor.",
+      "visionLabel": "Provide physical work location of your supervisor. Street.",
+      "similarity": 0.364,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[30]",
+      "semanticKey": "employmentInfo.0.provideTheEmailAddressOfYourSupervisorIDontKnow",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the email address of your supervisor. I don't know.",
+      "visionLabel": "I don't know.",
+      "similarity": 0.364,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].p3-t68[2]",
+      "semanticKey": "employmentInfo.0.provideTheEmailAddressOfYourSupervisor_3",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the email address of your supervisor.",
+      "visionLabel": "Provide physical work location of your supervisor. Street.",
+      "similarity": 0.364,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].#field[30]",
+      "semanticKey": "employmentInfo.0.provideTheEmailAddressOfYourSupervisorIDontKnow_3",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the email address of your supervisor. I don't know.",
+      "visionLabel": "I don't know.",
+      "similarity": 0.364,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].p3-t68[2]",
+      "semanticKey": "employmentInfo.1.provideTheEmailAddressOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the email address of your supervisor.",
+      "visionLabel": "Provide physical work location of your supervisor. Street.",
+      "similarity": 0.364,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[1].#field[30]",
+      "semanticKey": "employmentInfo.1.provideTheEmailAddressOfYourSupervisorIDontKnow",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the email address of your supervisor. I don't know",
+      "visionLabel": "I don't know.",
+      "similarity": 0.364,
+      "confidence": 0.4,
+      "page": 25,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].p3-t68[2]",
+      "semanticKey": "employmentInfo.2.provideTheEmailAddressOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the email address of your supervisor.",
+      "visionLabel": "Provide physical work location of your supervisor. Street.",
+      "similarity": 0.364,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].#field[30]",
+      "semanticKey": "employmentInfo.2.provideTheEmailAddressOfYourSupervisorIDontKnow",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the email address of your supervisor. I don't know",
+      "visionLabel": "I don't know.",
+      "similarity": 0.364,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[3]",
+      "semanticKey": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+      "visionLabel": "Provide physical work location of your supervisor. Street.",
+      "similarity": 0.381,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[0].TextField11[3]",
+      "semanticKey": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor_3",
+      "section": "employmentInfo",
+      "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+      "visionLabel": "Provide physical work location of your supervisor. Street.",
+      "similarity": 0.381,
+      "confidence": 0.4,
+      "page": 21,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1[2].p13a-1-1cb[0]",
+      "semanticKey": "employmentInfo.2.selectTheEmploymentStatusForThisPositionFulltime",
+      "section": "employmentInfo",
+      "registryLabel": "Select the employment status for this position: Full-time",
+      "visionLabel": "Select the employment status for which you are applying:",
+      "similarity": 0.385,
+      "confidence": 0.4,
+      "page": 29,
+      "notes": ""
+    }
+  ]
+}

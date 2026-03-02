@@ -1,0 +1,3614 @@
+{
+  "timestamp": "2026-03-01T07:49:26.025Z",
+  "summary": {
+    "total": 200,
+    "pass": 195,
+    "fail": 0,
+    "error": 0,
+    "unclear": 5
+  },
+  "failures": [],
+  "errors": [],
+  "allResults": [
+    {
+      "field": "personalInfo.firstName",
+      "section": "section1",
+      "type": "text",
+      "testValue": "section1_FIRSTNAME",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section1/personalInfo.firstName_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section1/personalInfo.firstName_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "** The value is properly aligned within the field boundary, indicating a successful injection."
+      },
+      "visionRaw": "**Answer:**\n\n* EMPTY: YES\n* VALUE: YES\n* ALIGNED: YES\n* VERDICT: PASS\n\n**Notes:** The value is properly aligned within the field boundary, indicating a successful injection."
+    },
+    {
+      "field": "personalInfo.middleName",
+      "section": "section1",
+      "type": "text",
+      "testValue": "section1_MIDDLENAME",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section1/personalInfo.middleName_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section1/personalInfo.middleName_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "personalInfo.section1",
+      "section": "section1",
+      "type": "text",
+      "testValue": "section1_SECTION1",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section1/personalInfo.section1_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section1/personalInfo.section1_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "personalInfo.suffix",
+      "section": "section1",
+      "type": "select",
+      "testValue": "section1_SUFFIX",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section1/personalInfo.suffix_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section1/personalInfo.suffix_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.RadioButtonList_86",
+      "section": "section10",
+      "type": "radio",
+      "testValue": "section10_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.RadioButtonList_86_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.RadioButtonList_86_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.completeTheFollowingIfYouAnsweredYesToHa",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COMPLETETHEF",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.completeTheFollowingIfYouAnsweredYesToHa_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.completeTheFollowingIfYouAnsweredYesToHa_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.countryRow2",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRYROW2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.countryRow2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.countryRow2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.countryRow3",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRYROW3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.countryRow3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.countryRow3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.countryRow4",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRYROW4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.countryRow4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.countryRow4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "**"
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n\n**Notes:**\n\n*   The left (BEFORE) side is empty/blank.\n*   The right (AFTER) side shows a value.\n*   The value is properly inside the field boundary, not overflowing.\n*   The value appeared correctly."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.countryRow5",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRYROW5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.countryRow5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.countryRow5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.countryRow6",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRYROW6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.countryRow6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.countryRow6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.country",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.country_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.country_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow1_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW1",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow1_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow1_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow1",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW1",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow1_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow1_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow2_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow2_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow2_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow3_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow3_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow3_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow3",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow4_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow4_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow4_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow4",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow5_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow5_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow5_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow5",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow6_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow6_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow6_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.estimateRow6",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.estimateRow6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.firstName",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_FIRSTNAME",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.firstName_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.firstName_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "** The value is properly aligned within the field boundary, and there is no overflow. The field is empty before the value is injected, and it is filled with the expected value after. The value is correctly placed within the field, making it a pass."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n\n**Notes:** The value is properly aligned within the field boundary, and there is no overflow. The field is empty before the value is injected, and it is filled with the expected value after. The value is correctly placed within the field, making it a pass."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.fromDateMonthyearRow1",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow1_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow1_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.fromDateMonthyearRow2",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.fromDateMonthyearRow3",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.fromDateMonthyearRow4",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow4_AFTER.png",
+      "cropped": true,
+      "vision": "unclear",
+      "visionDetail": {
+        "empty": "UNKNOWN",
+        "value": "UNKNOWN",
+        "aligned": "UNKNOWN",
+        "verdict": "UNKNOWN",
+        "notes": "** The value is properly aligned within the field boundaries."
+      },
+      "visionRaw": "**Answer:**\n\n*   **EMPTY:** YES\n*   **VALUE:** YES\n*   **ALIGNED:** YES\n*   **VERDICT:** PASS\n*   **NOTES:** The value is properly aligned within the field boundaries."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.fromDateMonthyearRow5",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.fromDateMonthyearRow6",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.fromDateMonthyearRow6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.isEstimate_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ISESTIMATE_2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.isEstimate_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.isEstimate_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.isEstimate",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ISESTIMATE",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.isEstimate_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.isEstimate_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.middleName",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_MIDDLENAME",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.middleName_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.middleName_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.presentRow1",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW1",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow1_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow1_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.presentRow2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.presentRow3",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.presentRow4",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.presentRow5",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.presentRow6",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.presentRow6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.provideTheCountriesToWhichYouTraveledOnThi",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_PROVIDETHECO",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideTheCountriesToWhichYouTraveledOnThi_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideTheCountriesToWhichYouTraveledOnThi_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.provideTheDateThePassportOrIdentityCardW",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_PROVIDETHEDA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideTheDateThePassportOrIdentityCardW_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideTheDateThePassportOrIdentityCardW_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.provideTheNameInWhichPassportOrIdentityCa",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_PROVIDETHENA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideTheNameInWhichPassportOrIdentityCa_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideTheNameInWhichPassportOrIdentityCa_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.provideThePassportOrIdentityCardExpirationDate",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_PROVIDETHEPA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideThePassportOrIdentityCardExpirationDate_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideThePassportOrIdentityCardExpirationDate_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.provideThePassportOrIdentityCardNumber",
+      "section": "section10",
+      "type": "telephone",
+      "testValue": "section10_PROVIDETHEPA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideThePassportOrIdentityCardNumber_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideThePassportOrIdentityCardNumber_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.provideThePlaceThePassportOrIdentityCard",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_PROVIDETHEPL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideThePlaceThePassportOrIdentityCard_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.provideThePlaceThePassportOrIdentityCard_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.suffix",
+      "section": "section10",
+      "type": "select",
+      "testValue": "section10_SUFFIX",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.suffix_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.suffix_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.toDateMonthyearRow1",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow1_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow1_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.toDateMonthyearRow2",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.toDateMonthyearRow3",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.toDateMonthyearRow4",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.toDateMonthyearRow5",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.0.toDateMonthyearRow6",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.0.toDateMonthyearRow6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.RadioButtonList_11",
+      "section": "section10",
+      "type": "radio",
+      "testValue": "section10_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_11_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_11_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.RadioButtonList_19",
+      "section": "section10",
+      "type": "radio",
+      "testValue": "section10_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_19_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_19_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.RadioButtonList_1",
+      "section": "section10",
+      "type": "radio",
+      "testValue": "section10_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_1_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_1_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.RadioButtonList_22",
+      "section": "section10",
+      "type": "radio",
+      "testValue": "section10_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_22_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_22_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.RadioButtonList_24",
+      "section": "section10",
+      "type": "radio",
+      "testValue": "section10_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_24_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_24_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.RadioButtonList_37",
+      "section": "section10",
+      "type": "radio",
+      "testValue": "section10_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_37_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_37_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.RadioButtonList_9",
+      "section": "section10",
+      "type": "radio",
+      "testValue": "section10_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_9_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.RadioButtonList_9_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.completeTheFollowingIfYouAnsweredYesToHa_2",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COMPLETETHEF",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.completeTheFollowingIfYouAnsweredYesToHa_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.completeTheFollowingIfYouAnsweredYesToHa_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.completeTheFollowingIfYouAnsweredYesToHa",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COMPLETETHEF",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.completeTheFollowingIfYouAnsweredYesToHa_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.completeTheFollowingIfYouAnsweredYesToHa_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.countryRow2",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRYROW2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.countryRow2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.countryRow2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.countryRow3",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRYROW3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.countryRow3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.countryRow3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.countryRow4",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRYROW4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.countryRow4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.countryRow4_AFTER.png",
+      "cropped": true,
+      "vision": "unclear",
+      "visionDetail": {
+        "empty": "UNKNOWN",
+        "value": "UNKNOWN",
+        "aligned": "UNKNOWN",
+        "verdict": "UNKNOWN",
+        "notes": "** The value is properly aligned within the field boundary, and there is no overflow. The field is empty before the value is injected, and it shows the expected value after. The value is properly aligned within the field boundary, and there is no overflow. The field is empty before the value is injected, and it shows the expected value after. The value is properly aligned within the field boundary, and there is no … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … …"
+      },
+      "visionRaw": "**Answer:**\n\n*   **EMPTY:** YES\n*   **VALUE:** YES\n*   **ALIGNED:** YES\n*   **VERDICT:** PASS\n*   **NOTES:** The value is properly aligned within the field boundary, and there is no overflow. The field is empty before the value is injected, and it shows the expected value after. The value is properly aligned within the field boundary, and there is no overflow. The field is empty before the value is injected, and it shows the expected value after. The value is properly aligned within the field boundary, and there is no … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … … …"
+    },
+    {
+      "field": "dualCitizenshipInfo.countryRow5",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRYROW5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.countryRow5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.countryRow5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.countryRow6",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRYROW6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.countryRow6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.countryRow6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary, and there is no overflow. The field is empty before the value is injected, and it is filled with the expected value after. The value is properly aligned within the field, so it is a pass."
+      },
+      "visionRaw": "**Answer:**\n\n* EMPTY: YES\n* VALUE: YES\n* ALIGNED: YES\n* VERDICT: PASS\n* NOTES: The value is properly aligned within the field boundary, and there is no overflow. The field is empty before the value is injected, and it is filled with the expected value after. The value is properly aligned within the field, so it is a pass."
+    },
+    {
+      "field": "dualCitizenshipInfo.country",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_COUNTRY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.country_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.country_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.duringWhatPeriodOfTimeDidYouHoldCitizenshi_2",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_DURINGWHATPE",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.duringWhatPeriodOfTimeDidYouHoldCitizenshi_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.duringWhatPeriodOfTimeDidYouHoldCitizenshi_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.duringWhatPeriodOfTimeDidYouHoldCitizenshi",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_DURINGWHATPE",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.duringWhatPeriodOfTimeDidYouHoldCitizenshi_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.duringWhatPeriodOfTimeDidYouHoldCitizenshi_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.entry2ProvideCountryOfCitizenship",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_ENTRY2PROVID",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.entry2ProvideCountryOfCitizenship_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.entry2ProvideCountryOfCitizenship_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow1_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW1",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow1_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow1_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow1",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW1",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow1_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow1_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow2_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow2_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow2_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow3_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow3_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow3_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow3",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow4_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow4_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow4_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow4",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow5_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow5_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow5_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow5",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow5_AFTER.png",
+      "cropped": true,
+      "vision": "unclear",
+      "visionDetail": {
+        "empty": "UNKNOWN",
+        "value": "UNKNOWN",
+        "aligned": "UNKNOWN",
+        "verdict": "UNKNOWN",
+        "notes": "** The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   **EMPTY:** YES\n*   **VALUE:** YES\n*   **ALIGNED:** YES\n*   **VERDICT:** PASS\n*   **NOTES:** The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow6_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow6_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow6_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.estimateRow6",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ESTIMATEROW6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.estimateRow6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.firstName",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_FIRSTNAME",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.firstName_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.firstName_AFTER.png",
+      "cropped": true,
+      "vision": "unclear",
+      "visionDetail": {
+        "empty": "UNKNOWN",
+        "value": "UNKNOWN",
+        "aligned": "UNKNOWN",
+        "verdict": "UNKNOWN",
+        "notes": "** The value is properly inside the field boundary, not overflowing. The field is empty before and has a value after. The value is properly aligned within the field. The verdict is PASS."
+      },
+      "visionRaw": "**Answer:**\n\n*   **EMPTY:** YES\n*   **VALUE:** YES\n*   **ALIGNED:** YES\n*   **VERDICT:** PASS\n*   **NOTES:** The value is properly inside the field boundary, not overflowing. The field is empty before and has a value after. The value is properly aligned within the field. The verdict is PASS."
+    },
+    {
+      "field": "dualCitizenshipInfo.fromDateMonthyearRow1",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow1_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow1_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.fromDateMonthyearRow2",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.fromDateMonthyearRow3",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.fromDateMonthyearRow4",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.fromDateMonthyearRow5",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.fromDateMonthyearRow6",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_FROMDATEMONT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.fromDateMonthyearRow6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.howDidYouAcquireThisNonus_2",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_HOWDIDYOUACQ",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.howDidYouAcquireThisNonus_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.howDidYouAcquireThisNonus_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.howDidYouAcquireThisNonus",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_HOWDIDYOUACQ",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.howDidYouAcquireThisNonus_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.howDidYouAcquireThisNonus_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.isEstimate_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ISESTIMATE_2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.isEstimate_3",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ISESTIMATE_3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.isEstimate_4",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ISESTIMATE_4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.isEstimate_5",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ISESTIMATE_5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.isEstimate_6",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ISESTIMATE_6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.isEstimate",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ISESTIMATE",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isEstimate_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.isPresent_2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ISPRESENT_2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isPresent_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isPresent_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.isPresent",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_ISPRESENT",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isPresent_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.isPresent_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.middleName",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_MIDDLENAME",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.middleName_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.middleName_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.presentRow1",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW1",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow1_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow1_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.presentRow2",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.presentRow3",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.presentRow4",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.presentRow5",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.presentRow6",
+      "section": "section10",
+      "type": "checkbox",
+      "testValue": "section10_PRESENTROW6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.presentRow6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.provideExplanation_2",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_PROVIDEEXPLA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideExplanation_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideExplanation_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.provideExplanation_3",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_PROVIDEEXPLA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideExplanation_3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideExplanation_3_AFTER.png",
+      "cropped": true,
+      "vision": "unclear",
+      "visionDetail": {
+        "empty": "UNKNOWN",
+        "value": "UNKNOWN",
+        "aligned": "UNKNOWN",
+        "verdict": "UNKNOWN",
+        "notes": "** The value is properly aligned within the field boundary, and there is no overflow. The field is empty before and has a value after. The value is properly aligned, so it is a pass."
+      },
+      "visionRaw": "**Answer:**\n\n* **EMPTY:** YES\n* **VALUE:** YES\n* **ALIGNED:** YES\n* **VERDICT:** PASS\n* **NOTES:** The value is properly aligned within the field boundary, and there is no overflow. The field is empty before and has a value after. The value is properly aligned, so it is a pass."
+    },
+    {
+      "field": "dualCitizenshipInfo.provideExplanation_4",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_PROVIDEEXPLA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideExplanation_4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideExplanation_4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.provideExplanation",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_PROVIDEEXPLA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideExplanation_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideExplanation_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.provideTheCountriesToWhichYouTraveledOnThi",
+      "section": "section10",
+      "type": "country",
+      "testValue": "section10_PROVIDETHECO",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideTheCountriesToWhichYouTraveledOnThi_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideTheCountriesToWhichYouTraveledOnThi_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.provideTheDateThePassportOrIdentityCardW",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_PROVIDETHEDA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideTheDateThePassportOrIdentityCardW_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideTheDateThePassportOrIdentityCardW_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.provideTheNameInWhichPassportOrIdentityCa",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_PROVIDETHENA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideTheNameInWhichPassportOrIdentityCa_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideTheNameInWhichPassportOrIdentityCa_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.provideThePassportOrIdentityCardExpirationDate",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_PROVIDETHEPA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideThePassportOrIdentityCardExpirationDate_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideThePassportOrIdentityCardExpirationDate_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.provideThePassportOrIdentityCardNumber",
+      "section": "section10",
+      "type": "telephone",
+      "testValue": "section10_PROVIDETHEPA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideThePassportOrIdentityCardNumber_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideThePassportOrIdentityCardNumber_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.provideThePlaceThePassportOrIdentityCard",
+      "section": "section10",
+      "type": "text",
+      "testValue": "section10_PROVIDETHEPL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideThePlaceThePassportOrIdentityCard_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.provideThePlaceThePassportOrIdentityCard_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing. The field is empty before and has a value after. The value is properly aligned within the field. The verdict is PASS."
+      },
+      "visionRaw": "**Answer:**\n\n*   EMPTY: YES\n*   VALUE: YES\n*   ALIGNED: YES\n*   VERDICT: PASS\n*   NOTES: The value is properly inside the field boundary, not overflowing. The field is empty before and has a value after. The value is properly aligned within the field. The verdict is PASS."
+    },
+    {
+      "field": "dualCitizenshipInfo.suffix",
+      "section": "section10",
+      "type": "select",
+      "testValue": "section10_SUFFIX",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.suffix_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.suffix_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.toDateMonthyearRow1",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow1_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow1_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.toDateMonthyearRow2",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.toDateMonthyearRow3",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.toDateMonthyearRow4",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.toDateMonthyearRow5",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.toDateMonthyearRow6",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyearRow6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "dualCitizenshipInfo.toDateMonthyear_2",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyear_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyear_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "dualCitizenshipInfo.toDateMonthyear",
+      "section": "section10",
+      "type": "date",
+      "testValue": "section10_TODATEMONTHY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyear_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section10/dualCitizenshipInfo.toDateMonthyear_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_121",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_121_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_121_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_126",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_126_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_126_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_144",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_144_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_144_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_184",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_184_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_184_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_189",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_189_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_189_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_18",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_18_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_18_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_246",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_246_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_246_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_251",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_251_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_251_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_252",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_252_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_252_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_58",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_58_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_58_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_63",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_63_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_63_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.RadioButtonList_81",
+      "section": "section11",
+      "type": "radio",
+      "testValue": "section11_RADIOBUTTONL",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_81_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.RadioButtonList_81_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOFPOStateCode_2",
+      "section": "section11",
+      "type": "state",
+      "testValue": "section11_APOFPOSTATEC",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOFPOStateCode_3",
+      "section": "section11",
+      "type": "state",
+      "testValue": "section11_APOFPOSTATEC",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOFPOStateCode_4",
+      "section": "section11",
+      "type": "state",
+      "testValue": "section11_APOFPOSTATEC",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOFPOStateCode_5",
+      "section": "section11",
+      "type": "state",
+      "testValue": "section11_APOFPOSTATEC",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOFPOStateCode_6",
+      "section": "section11",
+      "type": "state",
+      "testValue": "section11_APOFPOSTATEC",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOFPOStateCode_7",
+      "section": "section11",
+      "type": "state",
+      "testValue": "section11_APOFPOSTATEC",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_7_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_7_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOFPOStateCode_8",
+      "section": "section11",
+      "type": "state",
+      "testValue": "section11_APOFPOSTATEC",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_8_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_8_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOFPOStateCode",
+      "section": "section11",
+      "type": "state",
+      "testValue": "section11_APOFPOSTATEC",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOFPOStateCode_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOOrFPO_2",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_APOORFPO_2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOOrFPO_3",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_APOORFPO_3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOOrFPO_4",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_APOORFPO_4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.aPOOrFPO_5",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_APOORFPO_5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.aPOOrFPO_6",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_APOORFPO_6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOOrFPO_7",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_APOORFPO_7",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_7_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_7_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.aPOOrFPO_8",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_APOORFPO_8",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_8_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_8_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.aPOOrFPO",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_APOORFPO",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.aPOOrFPO_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.address_2",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_ADDRESS_2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.address_3",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_ADDRESS_3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.address_4",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_ADDRESS_4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.address_5",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_ADDRESS_5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.address_6",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_ADDRESS_6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.address_7",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_ADDRESS_7",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_7_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_7_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.address_8",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_ADDRESS_8",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_8_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_8_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.address",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_ADDRESS",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.address_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.businessAssociate_2",
+      "section": "section11",
+      "type": "checkbox",
+      "testValue": "section11_BUSINESSASSO",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.businessAssociate_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.businessAssociate_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.businessAssociate_3",
+      "section": "section11",
+      "type": "checkbox",
+      "testValue": "section11_BUSINESSASSO",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.businessAssociate_3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.businessAssociate_3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.businessAssociate_4",
+      "section": "section11",
+      "type": "checkbox",
+      "testValue": "section11_BUSINESSASSO",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.businessAssociate_4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.businessAssociate_4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.businessAssociate",
+      "section": "section11",
+      "type": "checkbox",
+      "testValue": "section11_BUSINESSASSO",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.businessAssociate_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.businessAssociate_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cellmobileTelephoneNumber_2",
+      "section": "section11",
+      "type": "telephone",
+      "testValue": "section11_CELLMOBILETE",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cellmobileTelephoneNumber_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cellmobileTelephoneNumber_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cellmobileTelephoneNumber_3",
+      "section": "section11",
+      "type": "telephone",
+      "testValue": "section11_CELLMOBILETE",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cellmobileTelephoneNumber_3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cellmobileTelephoneNumber_3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cellmobileTelephoneNumber_4",
+      "section": "section11",
+      "type": "telephone",
+      "testValue": "section11_CELLMOBILETE",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cellmobileTelephoneNumber_4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cellmobileTelephoneNumber_4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cellmobileTelephoneNumber",
+      "section": "section11",
+      "type": "telephone",
+      "testValue": "section11_CELLMOBILETE",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cellmobileTelephoneNumber_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cellmobileTelephoneNumber_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cityOrPostName_2",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITYORPOSTNA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.cityOrPostName_3",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITYORPOSTNA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cityOrPostName_4",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITYORPOSTNA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cityOrPostName_5",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITYORPOSTNA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cityOrPostName_6",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITYORPOSTNA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cityOrPostName_7",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITYORPOSTNA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_7_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_7_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cityOrPostName_8",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITYORPOSTNA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_8_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_8_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.cityOrPostName",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITYORPOSTNA",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.cityOrPostName_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.city_2",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITY_2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.city_3",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITY_3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.city_4",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITY_4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.city_5",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITY_5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.city_6",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITY_6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.city_7",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITY_7",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_7_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_7_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.city_8",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITY_8",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_8_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_8_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.city",
+      "section": "section11",
+      "type": "text",
+      "testValue": "section11_CITY",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.city_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.country_10",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_10",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_10_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_10_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.country_11",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_11",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_11_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_11_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.country_12",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_12",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_12_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_12_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.country_13",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_13",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_13_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_13_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.country_14",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_14",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_14_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_14_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.country_15",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_15",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_15_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_15_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.country_16",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_16",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_16_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_16_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.country_2",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_2",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_2_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_2_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.country_3",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_3",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_3_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_3_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.country_4",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_4",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_4_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_4_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.country_5",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_5",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_5_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_5_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.country_6",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_6",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_6_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_6_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    },
+    {
+      "field": "residencyInfo.0.country_7",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_7",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_7_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_7_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly inside the field boundary, not overflowing."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly inside the field boundary, not overflowing."
+    },
+    {
+      "field": "residencyInfo.0.country_8",
+      "section": "section11",
+      "type": "country",
+      "testValue": "section11_COUNTRY_8",
+      "before": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_8_BEFORE.png",
+      "after": "/home/watery/Desktop/clear-rents/scripts/field-by-field-cropped-proof/section11/residencyInfo.0.country_8_AFTER.png",
+      "cropped": true,
+      "vision": "pass",
+      "visionDetail": {
+        "empty": "YES",
+        "value": "YES",
+        "aligned": "YES",
+        "verdict": "PASS",
+        "notes": "The value is properly aligned within the field boundary."
+      },
+      "visionRaw": "EMPTY: YES\nVALUE: YES\nALIGNED: YES\nVERDICT: PASS\nNOTES: The value is properly aligned within the field boundary."
+    }
+  ]
+}

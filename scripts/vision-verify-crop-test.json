@@ -1,0 +1,268 @@
+{
+  "timestamp": "2026-02-27T00:17:55Z",
+  "model": "llama3.2-vision",
+  "summary": {
+    "total": 15,
+    "matches": 3,
+    "mismatches": 12,
+    "errors": 0,
+    "unknowns": 0,
+    "mismatchRate": 0.8
+  },
+  "mismatchesBySection": {
+    "employmentInfo": [
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[1]",
+        "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor",
+        "registryLabel": "Provide the rank/position title of your supervisor.",
+        "visionLabel": "**State Code**",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[0]",
+        "semanticKey": "employmentInfo.0.provideSupervisorsTelephoneNumber",
+        "registryLabel": "Provide supervisor's telephone number.",
+        "visionLabel": "**Provide physical location data with either street address,\u00a0...** (rest of text is cut off) **...or code.**",
+        "similarity": 0.05,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[2]",
+        "semanticKey": "employmentInfo.0.extension",
+        "registryLabel": "Extension",
+        "visionLabel": "**Zip Code**.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[3]",
+        "semanticKey": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor",
+        "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+        "visionLabel": "**Provide physical work location of your supervisor.**",
+        "similarity": 0.333,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[4]",
+        "semanticKey": "employmentInfo.0.city",
+        "registryLabel": "City",
+        "visionLabel": "Provide City and Country if outside the United States.",
+        "similarity": 0.111,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList18[0]",
+        "semanticKey": "employmentInfo.0.country",
+        "registryLabel": "Country",
+        "visionLabel": "**Code of Conduct:**\n \n**I will not...** \n\n**...use my position for personal gain.**",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[5]",
+        "semanticKey": "employmentInfo.0.zipCode",
+        "registryLabel": "Zip Code",
+        "visionLabel": "**International or Foreign Address**.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[6]",
+        "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr",
+        "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+        "visionLabel": "**City or City and State**.",
+        "similarity": 0.065,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].School6_State[1]",
+        "semanticKey": "employmentInfo.0.state_2",
+        "registryLabel": "State",
+        "visionLabel": "**State or State/Province Code**.",
+        "similarity": 0.25,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList17[0]",
+        "semanticKey": "employmentInfo.0.country_2",
+        "registryLabel": "Country",
+        "visionLabel": "**Code/Code**.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[8]",
+        "semanticKey": "employmentInfo.0.zipCode_2",
+        "registryLabel": "Zip Code",
+        "visionLabel": "**State or Country of Residence**.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      },
+      {
+        "pdfFieldName": "form1[0].section_13_1-2[0].#field[15]",
+        "semanticKey": "employmentInfo.0.night",
+        "registryLabel": "Night",
+        "visionLabel": "International or DSN phone.",
+        "similarity": 0.0,
+        "confidence": 0.4,
+        "page": 17
+      }
+    ]
+  },
+  "mismatchesByConfidence": {
+    "high": 0,
+    "medium": 0,
+    "low": 12
+  },
+  "totalByConfidence": {
+    "high": 0,
+    "medium": 0,
+    "low": 15
+  },
+  "allMismatches": [
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[1]",
+      "semanticKey": "employmentInfo.0.provideTheRankpositionTitleOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide the rank/position title of your supervisor.",
+      "visionLabel": "**State Code**",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[2]",
+      "semanticKey": "employmentInfo.0.extension",
+      "section": "employmentInfo",
+      "registryLabel": "Extension",
+      "visionLabel": "**Zip Code**.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList18[0]",
+      "semanticKey": "employmentInfo.0.country",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "**Code of Conduct:**\n \n**I will not...** \n\n**...use my position for personal gain.**",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[5]",
+      "semanticKey": "employmentInfo.0.zipCode",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "**International or Foreign Address**.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].DropDownList17[0]",
+      "semanticKey": "employmentInfo.0.country_2",
+      "section": "employmentInfo",
+      "registryLabel": "Country",
+      "visionLabel": "**Code/Code**.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[8]",
+      "semanticKey": "employmentInfo.0.zipCode_2",
+      "section": "employmentInfo",
+      "registryLabel": "Zip Code",
+      "visionLabel": "**State or Country of Residence**.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].#field[15]",
+      "semanticKey": "employmentInfo.0.night",
+      "section": "employmentInfo",
+      "registryLabel": "Night",
+      "visionLabel": "International or DSN phone.",
+      "similarity": 0.0,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].p3-t68[0]",
+      "semanticKey": "employmentInfo.0.provideSupervisorsTelephoneNumber",
+      "section": "employmentInfo",
+      "registryLabel": "Provide supervisor's telephone number.",
+      "visionLabel": "**Provide physical location data with either street address,\u00a0...** (rest of text is cut off) **...or code.**",
+      "similarity": 0.05,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[6]",
+      "semanticKey": "employmentInfo.0.ifYouHaveIndicatedAnAPOFPOAddressPr",
+      "section": "employmentInfo",
+      "registryLabel": "If you have indicated an A P O / F P O address; provide physical location data with either street address, base, post, embassy, unit, and country location or home port/fleet headquarter. (Provide phys",
+      "visionLabel": "**City or City and State**.",
+      "similarity": 0.065,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[4]",
+      "semanticKey": "employmentInfo.0.city",
+      "section": "employmentInfo",
+      "registryLabel": "City",
+      "visionLabel": "Provide City and Country if outside the United States.",
+      "similarity": 0.111,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].School6_State[1]",
+      "semanticKey": "employmentInfo.0.state_2",
+      "section": "employmentInfo",
+      "registryLabel": "State",
+      "visionLabel": "**State or State/Province Code**.",
+      "similarity": 0.25,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    },
+    {
+      "pdfFieldName": "form1[0].section_13_1-2[0].TextField11[3]",
+      "semanticKey": "employmentInfo.0.providePhysicalWorkLocationOfYourSupervisor",
+      "section": "employmentInfo",
+      "registryLabel": "Provide physical work location of your supervisor. (Provide City and Country if outside the United States; otherwise provide City, State and Zip Code) Street address",
+      "visionLabel": "**Provide physical work location of your supervisor.**",
+      "similarity": 0.333,
+      "confidence": 0.4,
+      "page": 17,
+      "notes": ""
+    }
+  ]
+}
