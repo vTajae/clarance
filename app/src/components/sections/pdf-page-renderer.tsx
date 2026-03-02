@@ -32,6 +32,7 @@ export function PdfPageRenderer({ section, scale = 1.0 }: PdfPageRendererProps) 
   // Include SSN page header fields so they appear on every section's pages
   const ssnHeaderFields = useSectionFields('ssnPageHeader' as SF86Section);
   const [showFields, setShowFields] = useState(true);
+  const [showAll, setShowAll] = useState(false);
   const [fieldOpacity, setFieldOpacity] = useState(80);
   const [livePreview, setLivePreview] = useState(false);
 
@@ -112,15 +113,27 @@ export function PdfPageRenderer({ section, scale = 1.0 }: PdfPageRendererProps) 
           />
           Live Preview
         </label>
-        <label className="flex items-center gap-1.5 text-xs text-gray-600">
-          <input
-            type="checkbox"
-            checked={showFields}
-            onChange={(e) => setShowFields(e.target.checked)}
-            className="accent-blue-600"
-          />
-          Show fields
-        </label>
+        <button
+          onClick={() => setShowFields(!showFields)}
+          className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
+            showFields
+              ? 'bg-blue-600 text-white shadow-sm'
+              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+          }`}
+        >
+          Show Fields
+        </button>
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
+            showAll
+              ? 'bg-amber-500 text-white shadow-sm'
+              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+          }`}
+          title="Bypass conditional logic to reveal all hidden fields (shown at 40% opacity with red dashed outline)"
+        >
+          Show All
+        </button>
         <label className="flex items-center gap-1.5 text-xs text-gray-600">
           Opacity
           <input
@@ -144,7 +157,7 @@ export function PdfPageRenderer({ section, scale = 1.0 }: PdfPageRendererProps) 
       </div>
 
       {/* Pages */}
-      <AuditModeContext.Provider value={false}>
+      <AuditModeContext.Provider value={showAll}>
         <div className="flex flex-col items-center gap-8">
           {sortedPages.map((pageNum) => {
             const pageFields = pageMap.get(pageNum)!;
