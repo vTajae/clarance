@@ -43,9 +43,13 @@ export function useSyncEngine(): {
 
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
-        throw new Error(
-          body.error || `Server sync failed (${res.status})`,
-        );
+        const msg = body.error || `Server sync failed (${res.status})`;
+        const err = new Error(msg);
+        // Mark 4xx errors as non-retryable (submission not found, auth failed, etc.)
+        if (res.status >= 400 && res.status < 500) {
+          (err as Error & { nonRetryable: boolean }).nonRetryable = true;
+        }
+        throw err;
       }
     });
 

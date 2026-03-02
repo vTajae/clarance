@@ -163,12 +163,18 @@ export class SyncEngine extends EventTarget {
           const message =
             err instanceof Error ? err.message : 'Unknown sync error';
           this._lastError = message;
-          console.error(
-            `[SyncEngine] Failed to sync ${entry.submissionId}:${entry.sectionKey} ` +
-              `(attempt ${entry.retryCount + 1}/${MAX_RETRIES}): ${message}`,
-          );
 
-          if (entry.retryCount + 1 >= MAX_RETRIES) {
+          // Non-retryable errors (4xx: not found, auth failed, bad request)
+          // should be removed from the queue immediately — retrying won't help.
+          const nonRetryable =
+            err instanceof Error && (err as Error & { nonRetryable?: boolean }).nonRetryable === true;
+
+          if (nonRetryable) {
+            console.warn(
+              `[SyncEngine] Permanent error for ${entry.submissionId}:${entry.sectionKey}: ${message}. Removing from queue.`,
+            );
+            await removePendingSync(entry.id);
+          } else if (entry.retryCount + 1 >= MAX_RETRIES) {
             // Leave the entry in the queue but stop retrying automatically.
             // The UI can surface this and offer a manual retry.
             console.warn(
@@ -176,6 +182,10 @@ export class SyncEngine extends EventTarget {
                 `Entry will remain in queue for manual retry.`,
             );
           } else {
+            console.error(
+              `[SyncEngine] Failed to sync ${entry.submissionId}:${entry.sectionKey} ` +
+                `(attempt ${entry.retryCount + 1}/${MAX_RETRIES}): ${message}`,
+            );
             await incrementSyncRetry(entry.id);
             // Apply exponential backoff by sleeping before the next entry.
             const backoff = BASE_BACKOFF_MS * Math.pow(2, entry.retryCount);

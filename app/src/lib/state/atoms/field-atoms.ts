@@ -8,14 +8,10 @@
 //   - Derived atoms compute per-section and overall completion percentages.
 //   - `dirtyFieldsAtom` tracks unsaved modifications.
 //
-// NOTE: `atomFamily` from jotai/utils is deprecated in jotai >=2.x in favour
-// of the `jotai-family` package.  We use the built-in version here because it
-// is still functional in jotai 2.18 and avoids an extra dependency.  When
-// migrating to jotai v3, replace the import with `jotai-family`.
 // ---------------------------------------------------------------------------
 
 import { atom } from 'jotai';
-import { atomFamily } from 'jotai/utils';
+import { atomFamily } from 'jotai-family';
 
 import type { FieldRegistry } from '@/lib/field-registry/registry-loader';
 import type { FieldDefinition, SF86Section, SF86SectionGroup } from '@/lib/field-registry/types';
