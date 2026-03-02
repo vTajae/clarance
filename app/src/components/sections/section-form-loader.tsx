@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import type { SF86Section } from '@/lib/field-registry/types';
 import { SECTION_META } from '@/lib/field-registry/types';
 import { useAppStore } from '@/lib/state/stores/app-store';
@@ -8,9 +8,11 @@ import { useAutoSave } from '@/lib/state/hooks/use-auto-save';
 import { useHydrateSection } from '@/lib/state/hooks/use-hydrate-section';
 import { useSectionValidation } from '@/lib/state/hooks/use-section-validation';
 import { useTimelineValidation } from '@/lib/state/hooks/use-timeline-validation';
-import { SectionFormRenderer, type LayoutMode } from './section-form-renderer';
+import { SectionFormRenderer } from './section-form-renderer';
 import { ValidationSummary } from '@/components/validation/validation-summary';
 import { TimelineGapAlert } from '@/components/validation/timeline-gap-alert';
+import { WizardLayout } from '@/components/wizard/wizard-layout';
+import { LayoutModeToggle } from '@/components/wizard/layout-mode-toggle';
 
 interface SectionFormLoaderProps {
   submissionId: string;
@@ -23,7 +25,7 @@ export function SectionFormLoader({
   submissionId,
   sectionKey,
 }: SectionFormLoaderProps) {
-  const [layoutMode, setLayoutMode] = useState<LayoutMode>('flow');
+  const layoutMode = useAppStore((s) => s.layoutMode);
   const setSubmissionId = useAppStore((s) => s.setSubmissionId);
   const navigateToSection = useAppStore((s) => s.navigateToSection);
 
@@ -69,27 +71,7 @@ export function SectionFormLoader({
               Saving...
             </span>
           )}
-          <button
-            type="button"
-            onClick={() => setLayoutMode((m) => (m === 'flow' ? 'pdf' : 'flow'))}
-            className="inline-flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition-colors"
-          >
-            {layoutMode === 'flow' ? (
-              <>
-                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                PDF Layout
-              </>
-            ) : (
-              <>
-                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                </svg>
-                Form Layout
-              </>
-            )}
-          </button>
+          <LayoutModeToggle />
         </div>
       </div>
 
@@ -123,9 +105,12 @@ export function SectionFormLoader({
       )}
 
       {/* Registry-driven form fields */}
-      {!isLoading && (
-        <div className={layoutMode === 'pdf' ? 'overflow-x-auto' : 'rounded-lg border border-gray-200 bg-white p-6'}>
-          <SectionFormRenderer section={sectionKey} layoutMode={layoutMode} />
+      {!isLoading && layoutMode === 'wizard' && (
+        <WizardLayout sectionKey={sectionKey} />
+      )}
+      {!isLoading && layoutMode === 'pdf' && (
+        <div className="overflow-x-auto">
+          <SectionFormRenderer section={sectionKey} layoutMode="pdf" />
         </div>
       )}
     </div>

@@ -5,6 +5,7 @@ import { useAppStore } from '@/lib/state/stores/app-store';
 import type { SaveStatus } from '@/lib/state/stores/app-store';
 import type { SyncStatus } from '@/lib/persistence/sync-engine';
 import { useExportPdf } from '@/lib/state/hooks/use-export-pdf';
+import { LayoutModeToggle } from '@/components/wizard/layout-mode-toggle';
 
 interface TopBarProps {
   submissionId: string;
@@ -127,33 +128,12 @@ export function TopBar({
           </div>
         </div>
 
-        {/* Right: action buttons */}
+        {/* Right: layout toggle + export */}
         <div className="flex items-center gap-2">
-          {/* PDF Preview toggle */}
-          <button
-            type="button"
-            onClick={onTogglePreview}
-            className={`
-              hidden lg:inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm font-medium
-              focus:outline-none focus:ring-2 focus:ring-blue-500
-              ${
-                previewOpen
-                  ? 'border-blue-600 bg-blue-600 text-white'
-                  : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
-              }
-            `}
-            aria-pressed={previewOpen}
-          >
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            PDF
-          </button>
+          {/* Layout mode toggle */}
+          <div className="hidden sm:block">
+            <LayoutModeToggle />
+          </div>
 
           {/* Export PDF */}
           <button

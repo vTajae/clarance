@@ -21,6 +21,8 @@ import { SECTION_GROUPS, SECTION_META, sectionToGroup } from '@/lib/field-regist
 
 export type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
 
+export type LayoutMode = 'wizard' | 'pdf';
+
 export interface AppState {
   /** Currently displayed section in the wizard. */
   currentSection: SF86Section;
@@ -36,6 +38,14 @@ export interface AppState {
   wizardHistory: SF86Section[];
   /** Registered save function from the active section's useAutoSave hook. */
   _saveNowFn: (() => Promise<void>) | null;
+
+  // -- Wizard step navigation ------------------------------------------------
+  /** 0-based step index within the current section's wizard steps. */
+  currentStepIndex: number;
+  /** Active layout mode: wizard (guided) or pdf (coordinate overlay). */
+  layoutMode: LayoutMode;
+  /** Whether the wizard is showing the end-of-section review panel. */
+  inReviewMode: boolean;
 }
 
 export interface AppActions {
@@ -55,6 +65,20 @@ export interface AppActions {
   registerSaveNow: (fn: (() => Promise<void>) | null) => void;
   /** Trigger an immediate save of the current section. */
   saveNow: () => Promise<void>;
+
+  // -- Wizard step actions ---------------------------------------------------
+  /** Advance to the next visible wizard step. */
+  nextStep: () => void;
+  /** Go back to the previous wizard step. */
+  prevStep: () => void;
+  /** Jump to a specific step index. */
+  goToStep: (index: number) => void;
+  /** Switch between wizard, flow, and pdf layout modes. */
+  setLayoutMode: (mode: LayoutMode) => void;
+  /** Enter the end-of-section review panel. */
+  enterReview: () => void;
+  /** Exit review mode and return to the last step. */
+  exitReview: () => void;
 }
 
 // ---------------------------------------------------------------------------
@@ -70,6 +94,9 @@ export const useAppStore = create<AppState & AppActions>()((set, get) => ({
   lastSaved: null,
   wizardHistory: [],
   _saveNowFn: null,
+  currentStepIndex: 0,
+  layoutMode: 'wizard',
+  inReviewMode: false,
 
   // -- Actions --------------------------------------------------------------
 
@@ -83,6 +110,9 @@ export const useAppStore = create<AppState & AppActions>()((set, get) => ({
       currentSection: section,
       currentSectionGroup: group,
       wizardHistory: [...state.wizardHistory, currentSection],
+      // Reset step state on section change
+      currentStepIndex: 0,
+      inReviewMode: false,
     }));
   },
 
@@ -137,5 +167,42 @@ export const useAppStore = create<AppState & AppActions>()((set, get) => ({
     if (fn) {
       await fn();
     }
+  },
+
+  // -- Wizard step actions --------------------------------------------------
+
+  nextStep() {
+    set((state) => ({
+      currentStepIndex: state.currentStepIndex + 1,
+      inReviewMode: false,
+    }));
+  },
+
+  prevStep() {
+    const { inReviewMode, currentStepIndex } = get();
+    if (inReviewMode) {
+      // Exit review → go to whatever the current step index is
+      set({ inReviewMode: false });
+      return;
+    }
+    if (currentStepIndex > 0) {
+      set({ currentStepIndex: currentStepIndex - 1 });
+    }
+  },
+
+  goToStep(index) {
+    set({ currentStepIndex: index, inReviewMode: false });
+  },
+
+  setLayoutMode(mode) {
+    set({ layoutMode: mode });
+  },
+
+  enterReview() {
+    set({ inReviewMode: true });
+  },
+
+  exitReview() {
+    set({ inReviewMode: false });
   },
 }));

@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { useAppStore } from '@/lib/state/stores/app-store';
+import { useWizardNavigation } from '@/lib/wizard/use-wizard-navigation';
 import {
   ALL_SECTIONS,
   SECTION_META,
@@ -16,48 +17,108 @@ interface WizardControlsProps {
 export function WizardControls({ submissionId }: WizardControlsProps) {
   const router = useRouter();
   const currentSection = useAppStore((s) => s.currentSection);
+  const layoutMode = useAppStore((s) => s.layoutMode);
   const goBack = useAppStore((s) => s.goBack);
   const wizardHistory = useAppStore((s) => s.wizardHistory);
+  const storeSaveNow = useAppStore((s) => s.saveNow);
 
-  const currentIndex = ALL_SECTIONS.indexOf(currentSection);
-  const hasPrevious = wizardHistory.length > 0 || currentIndex > 0;
-  const hasNext = currentIndex < ALL_SECTIONS.length - 1;
-  const isFinal = currentIndex === ALL_SECTIONS.length - 1;
+  const {
+    currentStepIndex,
+    totalVisibleSteps,
+    isReviewMode,
+    canGoNext,
+    canGoPrev,
+    isLastStep,
+    nextStep: wizNextStep,
+    prevStep: wizPrevStep,
+    currentStep,
+  } = useWizardNavigation();
+
+  const sectionIndex = ALL_SECTIONS.indexOf(currentSection);
+  const hasPreviousSection = wizardHistory.length > 0 || sectionIndex > 0;
+  const hasNextSection = sectionIndex < ALL_SECTIONS.length - 1;
+  const isFinalSection = sectionIndex === ALL_SECTIONS.length - 1;
 
   const currentMeta = SECTION_META[currentSection]!;
-  const nextSection = hasNext ? ALL_SECTIONS[currentIndex + 1] : null;
+  const nextSectionKey = hasNextSection ? ALL_SECTIONS[sectionIndex + 1] : null;
+
+  const navigateToSection = useCallback((section: typeof ALL_SECTIONS[number]) => {
+    const group = sectionToGroup(section);
+    if (group) {
+      router.push(`/${submissionId}/${group}/${section}`);
+    }
+  }, [submissionId, router]);
+
+  // -- Wizard mode: step-level navigation --
+  const isWizardMode = layoutMode === 'wizard';
 
   const handlePrevious = useCallback(() => {
+    if (isWizardMode) {
+      // In wizard mode: go to previous step first
+      if (canGoPrev) {
+        wizPrevStep();
+        return;
+      }
+      // If at step 0, go to previous section
+    }
+
+    // Section-level back
     if (wizardHistory.length > 0) {
       goBack();
       const prev = wizardHistory[wizardHistory.length - 1]!;
-      const group = sectionToGroup(prev);
-      if (group) {
-        router.push(`/${submissionId}/${group}/${prev}`);
-      }
-    } else if (currentIndex > 0) {
-      const prev = ALL_SECTIONS[currentIndex - 1]!;
-      const group = sectionToGroup(prev);
-      if (group) {
-        router.push(`/${submissionId}/${group}/${prev}`);
-      }
+      navigateToSection(prev);
+    } else if (sectionIndex > 0) {
+      const prev = ALL_SECTIONS[sectionIndex - 1]!;
+      navigateToSection(prev);
     }
-  }, [wizardHistory, goBack, currentIndex, submissionId, router]);
+  }, [isWizardMode, canGoPrev, wizPrevStep, wizardHistory, goBack, sectionIndex, navigateToSection]);
 
   const handleNext = useCallback(() => {
-    if (nextSection) {
-      const group = sectionToGroup(nextSection);
-      if (group) {
-        router.push(`/${submissionId}/${group}/${nextSection}`);
+    if (isWizardMode) {
+      // In wizard mode: advance step or enter review
+      if (!isReviewMode && (canGoNext || !isLastStep)) {
+        wizNextStep();
+        return;
       }
+      // If in review mode or past last step, advance to next section
     }
-  }, [nextSection, submissionId, router]);
 
-  const storeSaveNow = useAppStore((s) => s.saveNow);
+    // Section-level advance
+    if (nextSectionKey) {
+      navigateToSection(nextSectionKey);
+    }
+  }, [isWizardMode, isReviewMode, canGoNext, isLastStep, wizNextStep, nextSectionKey, navigateToSection]);
 
   const handleSave = useCallback(() => {
     void storeSaveNow();
   }, [storeSaveNow]);
+
+  // -- Display text --
+  const showStepInfo = isWizardMode && totalVisibleSteps > 0;
+  const centerText = showStepInfo
+    ? isReviewMode
+      ? `Review · ${currentMeta.title}`
+      : `Step ${currentStepIndex + 1} of ${totalVisibleSteps} · ${currentMeta.title}`
+    : `${currentMeta.title} (${sectionIndex + 1} of ${ALL_SECTIONS.length})`;
+
+  // -- Button states --
+  const prevDisabled = isWizardMode
+    ? !canGoPrev && !hasPreviousSection
+    : !hasPreviousSection;
+
+  const nextDisabled = isWizardMode
+    ? isReviewMode ? !hasNextSection && !isFinalSection : false
+    : !hasNextSection && !isFinalSection;
+
+  const isSubmit = isWizardMode
+    ? isReviewMode && isFinalSection
+    : isFinalSection;
+
+  const nextLabel = isWizardMode
+    ? isReviewMode
+      ? isFinalSection ? 'Submit' : 'Next Section'
+      : isLastStep ? 'Review' : 'Next'
+    : isFinalSection ? 'Submit' : 'Next';
 
   return (
     <div className="sticky bottom-0 border-t border-gray-200 bg-white px-4 py-3 sm:px-6" role="navigation" aria-label="Form navigation">
@@ -66,14 +127,13 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
         <button
           type="button"
           onClick={handlePrevious}
-          disabled={!hasPrevious}
+          disabled={prevDisabled}
           className={`
             inline-flex items-center gap-1.5 rounded-md border px-4 py-2 text-sm font-medium
             transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1
-            ${
-              !hasPrevious
-                ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'
-                : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
+            ${prevDisabled
+              ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'
+              : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
             }
           `}
         >
@@ -83,22 +143,22 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
           Previous
         </button>
 
-        {/* Center: section indicator + save */}
+        {/* Center: step/section indicator + save */}
         <div className="flex items-center gap-4">
-          <span className="hidden sm:inline text-xs text-gray-500">
-            {currentMeta.title} ({currentIndex + 1} of {ALL_SECTIONS.length})
+          <span className="hidden sm:inline text-xs text-gray-500 text-center max-w-[200px] truncate">
+            {centerText}
           </span>
           <button
             type="button"
             onClick={handleSave}
             className="
               inline-flex items-center gap-1.5 rounded-md border border-gray-300
-              bg-white px-4 py-2 text-sm font-medium text-gray-700
+              bg-white px-3 py-1.5 text-xs font-medium text-gray-700
               hover:bg-gray-50 transition-colors
               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1
             "
           >
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -110,31 +170,30 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
           </button>
         </div>
 
-        {/* Next / Submit */}
+        {/* Next / Review / Submit */}
         <button
           type="button"
           onClick={handleNext}
-          disabled={!hasNext && !isFinal}
+          disabled={nextDisabled}
           className={`
             inline-flex items-center gap-1.5 rounded-md border px-4 py-2 text-sm font-medium
             transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1
-            ${
-              !hasNext && !isFinal
-                ? 'border-gray-200 bg-gray-300 text-gray-500 cursor-not-allowed'
-                : isFinal
-                  ? 'border-green-600 bg-green-600 text-white hover:bg-green-700'
-                  : 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700'
+            ${nextDisabled
+              ? 'border-gray-200 bg-gray-300 text-gray-500 cursor-not-allowed'
+              : isSubmit
+                ? 'border-green-600 bg-green-600 text-white hover:bg-green-700'
+                : 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700'
             }
           `}
         >
-          {isFinal ? 'Submit' : 'Next'}
-          {!isFinal ? (
+          {nextLabel}
+          {isSubmit ? (
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           ) : (
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           )}
         </button>

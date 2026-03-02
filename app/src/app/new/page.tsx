@@ -1,16 +1,36 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { v4 as uuidv4 } from "uuid";
-import { useCallback } from "react";
+import { useState } from "react";
 
 export default function NewFormPage() {
   const router = useRouter();
+  const [creating, setCreating] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleCreateForm = useCallback(() => {
-    const submissionId = uuidv4();
-    router.push(`/${submissionId}/identification/section1`);
-  }, [router]);
+  async function handleCreateForm() {
+    setCreating(true);
+    setError(null);
+
+    try {
+      const resp = await fetch("/api/form/new", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pdfVersion: "sf861" }),
+      });
+
+      if (!resp.ok) {
+        const data = await resp.json().catch(() => ({}));
+        throw new Error(data.error || "Failed to create form");
+      }
+
+      const { submissionId } = await resp.json();
+      router.push(`/${submissionId}/identification/section1`);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
+      setCreating(false);
+    }
+  }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4">
@@ -21,29 +41,16 @@ export default function NewFormPage() {
           your browser.
         </p>
 
-        <div className="mt-6 space-y-4">
-          <div>
-            <label
-              htmlFor="pdfVersion"
-              className="block text-sm font-medium text-gray-700"
-            >
-              PDF Version
-            </label>
-            <select
-              id="pdfVersion"
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              defaultValue="sf861"
-            >
-              <option value="sf861">SF-86 (Standard)</option>
-              <option value="sf862">SF-86 (Revised)</option>
-            </select>
-          </div>
-
+        <div className="mt-6">
+          {error && (
+            <p className="mb-3 text-sm text-red-600">{error}</p>
+          )}
           <button
             onClick={handleCreateForm}
-            className="w-full rounded-md bg-blue-600 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+            disabled={creating}
+            className="w-full rounded-md bg-blue-600 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
-            Create Form
+            {creating ? "Creating..." : "Create Form"}
           </button>
         </div>
       </div>

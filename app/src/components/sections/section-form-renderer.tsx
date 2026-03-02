@@ -8,7 +8,7 @@ import { RegistryField } from './registry-field';
 import { ConditionalWrapper } from './conditional-wrapper';
 import { PdfPageRenderer } from './pdf-page-renderer';
 
-export type LayoutMode = 'flow' | 'pdf';
+export type LayoutMode = 'wizard' | 'pdf';
 
 interface SectionFormRendererProps {
   section: SF86Section;
@@ -49,7 +49,7 @@ function groupFields(fields: FieldDefinition[]) {
  * Reads field definitions from the registry and renders the appropriate
  * form primitives. Handles both flat sections and repeating groups.
  */
-export function SectionFormRenderer({ section, layoutMode = 'flow' }: SectionFormRendererProps) {
+export function SectionFormRenderer({ section, layoutMode = 'wizard' }: SectionFormRendererProps) {
   const fields = useSectionFields(section);
 
   const { mainFields, repeatGroups } = useMemo(() => groupFields(fields), [fields]);
