@@ -32,7 +32,6 @@ export function PdfPageRenderer({ section, scale = 1.0 }: PdfPageRendererProps) 
   // Include SSN page header fields so they appear on every section's pages
   const ssnHeaderFields = useSectionFields('ssnPageHeader' as SF86Section);
   const [showFields, setShowFields] = useState(true);
-  const [showAll, setShowAll] = useState(false);
   const [fieldOpacity, setFieldOpacity] = useState(80);
   const [livePreview, setLivePreview] = useState(false);
 
@@ -123,15 +122,6 @@ export function PdfPageRenderer({ section, scale = 1.0 }: PdfPageRendererProps) 
           Show fields
         </label>
         <label className="flex items-center gap-1.5 text-xs text-gray-600">
-          <input
-            type="checkbox"
-            checked={showAll}
-            onChange={(e) => setShowAll(e.target.checked)}
-            className="accent-amber-500"
-          />
-          Show All
-        </label>
-        <label className="flex items-center gap-1.5 text-xs text-gray-600">
           Opacity
           <input
             type="range"
@@ -154,7 +144,7 @@ export function PdfPageRenderer({ section, scale = 1.0 }: PdfPageRendererProps) 
       </div>
 
       {/* Pages */}
-      <AuditModeContext.Provider value={showAll}>
+      <AuditModeContext.Provider value={false}>
         <div className="flex flex-col items-center gap-8">
           {sortedPages.map((pageNum) => {
             const pageFields = pageMap.get(pageNum)!;
