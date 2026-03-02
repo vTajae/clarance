@@ -3,7 +3,7 @@
 import { memo, useMemo, useState } from 'react';
 import type { SF86Section } from '@/lib/field-registry/types';
 import type { FieldDefinition } from '@/lib/field-registry/types';
-import { useSectionFields } from '@/lib/field-registry/use-registry';
+import { useSectionFields, useRegistry } from '@/lib/field-registry/use-registry';
 import { AuditModeContext, ConditionalWrapper } from './conditional-wrapper';
 import { CoordinateField } from './coordinate-field';
 import { RadioCircle } from './radio-circle';
@@ -29,43 +29,43 @@ interface PdfPageRendererProps {
  */
 export function PdfPageRenderer({ section, scale = 1.0 }: PdfPageRendererProps) {
   const fields = useSectionFields(section);
-  // Include SSN page header fields so they appear on every section's pages
-  const ssnHeaderFields = useSectionFields('ssnPageHeader' as SF86Section);
+  const registry = useRegistry();
   const [showFields, setShowFields] = useState(true);
   const [showAll, setShowAll] = useState(false);
   const [fieldOpacity, setFieldOpacity] = useState(80);
   const [livePreview, setLivePreview] = useState(false);
 
-  // Group fields by page number, including SSN headers on matching pages
+  // Group fields by page number, including ALL fields on the same pages
+  // so the user can edit surrounding fields from other sections too.
   const pageMap = useMemo(() => {
     const map = new Map<number, FieldDefinition[]>();
 
-    // First, add the section's own fields
+    // First, determine which pages this section occupies
     const sectionPages = new Set<number>();
     for (const field of fields) {
       if (!field.pdfRect) continue;
-      const page = field.pdfPage;
-      sectionPages.add(page);
-      let arr = map.get(page);
-      if (!arr) {
-        arr = [];
-        map.set(page, arr);
-      }
-      arr.push(field);
+      sectionPages.add(field.pdfPage);
     }
 
-    // Then, add SSN header fields that fall on these same pages
-    if (section !== 'ssnPageHeader') {
-      for (const field of ssnHeaderFields) {
+    // Then, add ALL fields on those pages (from any section) using the page index
+    const seen = new Set<string>();
+    for (const page of sectionPages) {
+      const pageFields = registry.getByPage(page);
+      for (const field of pageFields) {
         if (!field.pdfRect) continue;
-        if (sectionPages.has(field.pdfPage)) {
-          map.get(field.pdfPage)!.push(field);
+        if (seen.has(field.semanticKey)) continue;
+        seen.add(field.semanticKey);
+        let arr = map.get(page);
+        if (!arr) {
+          arr = [];
+          map.set(page, arr);
         }
+        arr.push(field);
       }
     }
 
     return map;
-  }, [fields, ssnHeaderFields, section]);
+  }, [fields, registry]);
 
   const sortedPages = useMemo(
     () => Array.from(pageMap.keys()).sort((a, b) => a - b),
@@ -102,6 +102,12 @@ export function PdfPageRenderer({ section, scale = 1.0 }: PdfPageRendererProps) 
       <div className="sticky top-0 z-20 flex items-center gap-4 rounded-lg border border-gray-200 bg-white/95 backdrop-blur px-4 py-2 shadow-sm">
         <div className="text-xs font-medium text-gray-700">
           {section}: {fields.length} fields across {sortedPages.length} pages
+          {(() => {
+            const total = Array.from(pageMap.values()).reduce((s, f) => s + f.length, 0);
+            return total > fields.length ? (
+              <span className="text-gray-400 ml-1">({total} total on pages)</span>
+            ) : null;
+          })()}
         </div>
         <div className="flex-1" />
         <label className="flex items-center gap-1.5 text-xs text-gray-600">

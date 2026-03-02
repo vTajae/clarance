@@ -7,6 +7,7 @@
         "title": "Full Name",
         "guidance": "Enter all name fields as they appear on official documents.",
         "fieldKeys": [
+          "personalInfo.acknowledgement",
           "personalInfo.section1",
           "personalInfo.firstName",
           "personalInfo.middleName",
@@ -16415,7 +16416,6 @@
         "title": "Name Information",
         "guidance": "Enter all name fields as they appear on official documents.",
         "fieldKeys": [
-          "personalInfo.RadioButtonList_2",
           "signature.useTheSpaceBelowToContinueAnswersOrABlank",
           "signature.dateSignedMMdDyYYY",
           "signature.fullNameTypeOrPrintLegibly",

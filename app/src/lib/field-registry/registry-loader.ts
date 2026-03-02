@@ -22,6 +22,7 @@ export class FieldRegistry {
   private readonly byPdfFieldName: Map<string, FieldDefinition>;
   private readonly bySection: Map<SF86Section, FieldDefinition[]>;
   private readonly byRepeatGroup: Map<string, FieldDefinition[]>;
+  private readonly byPage: Map<number, FieldDefinition[]>;
 
   constructor(definitions: FieldDefinition[]) {
     this.fields = Object.freeze([...definitions]);
@@ -30,6 +31,7 @@ export class FieldRegistry {
     this.byPdfFieldName = new Map();
     this.bySection = new Map();
     this.byRepeatGroup = new Map();
+    this.byPage = new Map();
 
     for (const field of this.fields) {
       // Semantic key index -- must be unique
@@ -67,6 +69,16 @@ export class FieldRegistry {
           repeatBucket.push(field);
         } else {
           this.byRepeatGroup.set(field.repeatGroup, [field]);
+        }
+      }
+
+      // Page bucket (only fields with coordinates)
+      if (field.pdfPage) {
+        const pageBucket = this.byPage.get(field.pdfPage);
+        if (pageBucket) {
+          pageBucket.push(field);
+        } else {
+          this.byPage.set(field.pdfPage, [field]);
         }
       }
     }
@@ -115,6 +127,11 @@ export class FieldRegistry {
   /** All fields belonging to a named repeating group. */
   getByRepeatGroup(group: string): FieldDefinition[] {
     return this.byRepeatGroup.get(group) ?? [];
+  }
+
+  /** All fields on a given PDF page number (1-based). */
+  getByPage(page: number): FieldDefinition[] {
+    return this.byPage.get(page) ?? [];
   }
 
   /** Required fields for a given section. */
