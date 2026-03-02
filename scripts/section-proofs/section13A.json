@@ -1,0 +1,142 @@
+{
+  "section": "section13A",
+  "timestamp": "2026-03-01T01:29:03.143Z",
+  "fieldCount": 1036,
+  "typeCounts": {
+    "text": 428,
+    "telephone": 36,
+    "state": 88,
+    "country": 64,
+    "checkbox": 272,
+    "email": 8,
+    "date": 96,
+    "radio": 44
+  },
+  "gates": [
+    {
+      "key": "employmentInfo.0.RadioButtonList_78",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to (b))"
+      ]
+    },
+    {
+      "key": "employmentInfo.0.RadioButtonList_147",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to (b))"
+      ]
+    },
+    {
+      "key": "employmentInfo.0.RadioButtonList_220",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 13A.6)"
+      ]
+    },
+    {
+      "key": "employmentInfo.0.RadioButtonList_337",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to (b))"
+      ]
+    },
+    {
+      "key": "employmentInfo.0.RadioButtonList_406",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to (b))"
+      ]
+    },
+    {
+      "key": "employmentInfo.1.RadioButtonList_479",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 13A.6)"
+      ]
+    },
+    {
+      "key": "employmentInfo.1.RadioButtonList_596",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to (b))"
+      ]
+    },
+    {
+      "key": "employmentInfo.1.RadioButtonList_665",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to (b))"
+      ]
+    },
+    {
+      "key": "employmentInfo.2.RadioButtonList_738",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 13A.6)"
+      ]
+    },
+    {
+      "key": "employmentInfo.2.RadioButtonList_855",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to (b))"
+      ]
+    },
+    {
+      "key": "employmentInfo.2.RadioButtonList_924",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to (b))"
+      ]
+    },
+    {
+      "key": "employmentInfo.3.RadioButtonList_997",
+      "section": "section13A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 13A.6)"
+      ]
+    }
+  ],
+  "unconditionalFields": 420,
+  "roundTrip": {
+    "total": 1036,
+    "matches": 992,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 44,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 616,
+    "totalTests": 1232,
+    "passed": 1232,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

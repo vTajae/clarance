@@ -1,0 +1,41 @@
+{
+  "section": "section8",
+  "timestamp": "2026-03-01T01:30:16.723Z",
+  "fieldCount": 10,
+  "typeCounts": {
+    "radio": 1,
+    "telephone": 1,
+    "date": 2,
+    "checkbox": 2,
+    "text": 3,
+    "select": 1
+  },
+  "gates": [
+    {
+      "key": "passportInfo.RadioButtonList_1",
+      "section": "section8",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 9)"
+      ]
+    }
+  ],
+  "unconditionalFields": 1,
+  "roundTrip": {
+    "total": 10,
+    "matches": 9,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 1,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 9,
+    "totalTests": 18,
+    "passed": 18,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

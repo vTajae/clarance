@@ -1,0 +1,32 @@
+{
+  "section": "section11",
+  "timestamp": "2026-03-01T01:30:28.120Z",
+  "fieldCount": 252,
+  "typeCounts": {
+    "telephone": 16,
+    "text": 100,
+    "checkbox": 64,
+    "date": 12,
+    "radio": 12,
+    "state": 24,
+    "country": 16,
+    "select": 4,
+    "email": 4
+  },
+  "gates": [],
+  "unconditionalFields": 252,
+  "roundTrip": {
+    "total": 252,
+    "matches": 240,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 12,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 0,
+    "note": "No conditional fields in this section",
+    "success": true
+  },
+  "overallSuccess": true
+}

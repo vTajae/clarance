@@ -1,0 +1,29 @@
+{
+  "section": "section30",
+  "timestamp": "2026-03-01T01:34:01.817Z",
+  "fieldCount": 27,
+  "typeCounts": {
+    "radio": 2,
+    "ssn": 2,
+    "date": 6,
+    "text": 13,
+    "state": 2,
+    "telephone": 2
+  },
+  "gates": [],
+  "unconditionalFields": 27,
+  "roundTrip": {
+    "total": 27,
+    "matches": 25,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 2,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 0,
+    "note": "No conditional fields in this section",
+    "success": true
+  },
+  "overallSuccess": true
+}

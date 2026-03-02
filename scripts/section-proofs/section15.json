@@ -1,0 +1,79 @@
+{
+  "section": "section15",
+  "timestamp": "2026-03-01T01:30:21.358Z",
+  "fieldCount": 141,
+  "typeCounts": {
+    "radio": 16,
+    "state": 6,
+    "date": 20,
+    "checkbox": 31,
+    "telephone": 2,
+    "text": 56,
+    "country": 6,
+    "select": 4
+  },
+  "gates": [
+    {
+      "key": "serviceInfo.0.RadioButtonList_5",
+      "section": "section15",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 15.2)"
+      ]
+    },
+    {
+      "key": "militaryHistoryInfo.0.RadioButtonList_1",
+      "section": "section15",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 15.3)"
+      ]
+    },
+    {
+      "key": "militaryHistoryInfo.0.RadioButtonList_14",
+      "section": "section15",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 16)"
+      ]
+    },
+    {
+      "key": "militaryHistoryInfo.0.RadioButtonList_41",
+      "section": "section15",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 16)"
+      ]
+    },
+    {
+      "key": "peopleThatKnow.0.RadioButtonList_27",
+      "section": "section15",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, Proceed to Section 16)"
+      ]
+    }
+  ],
+  "unconditionalFields": 31,
+  "roundTrip": {
+    "total": 141,
+    "matches": 125,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 16,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 110,
+    "totalTests": 220,
+    "passed": 220,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

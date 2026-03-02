@@ -1,0 +1,28 @@
+{
+  "section": "section20C",
+  "timestamp": "2026-03-01T01:33:49.340Z",
+  "fieldCount": 114,
+  "typeCounts": {
+    "radio": 34,
+    "date": 8,
+    "checkbox": 40,
+    "text": 28,
+    "state": 4
+  },
+  "gates": [],
+  "unconditionalFields": 114,
+  "roundTrip": {
+    "total": 114,
+    "matches": 80,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 34,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 0,
+    "note": "No conditional fields in this section",
+    "success": true
+  },
+  "overallSuccess": true
+}

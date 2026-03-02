@@ -1,0 +1,24 @@
+{
+  "section": "ssnPageHeader",
+  "timestamp": "2026-03-01T01:34:20.216Z",
+  "fieldCount": 137,
+  "typeCounts": {
+    "ssn": 137
+  },
+  "gates": [],
+  "unconditionalFields": 137,
+  "roundTrip": {
+    "total": 137,
+    "matches": 137,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 0,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 0,
+    "note": "No conditional fields in this section",
+    "success": true
+  },
+  "overallSuccess": true
+}

@@ -1,0 +1,41 @@
+{
+  "section": "section27",
+  "timestamp": "2026-03-01T01:31:29.657Z",
+  "fieldCount": 57,
+  "typeCounts": {
+    "text": 30,
+    "state": 6,
+    "country": 6,
+    "checkbox": 6,
+    "date": 6,
+    "radio": 3
+  },
+  "gates": [
+    {
+      "key": "technology.RadioButtonList_29",
+      "section": "section27",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (Proceed to 27.2)"
+      ]
+    }
+  ],
+  "unconditionalFields": 48,
+  "roundTrip": {
+    "total": 57,
+    "matches": 54,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 3,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 9,
+    "totalTests": 18,
+    "passed": 18,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

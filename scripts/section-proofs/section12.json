@@ -1,0 +1,44 @@
+{
+  "section": "section12",
+  "timestamp": "2026-03-01T01:32:37.268Z",
+  "fieldCount": 150,
+  "typeCounts": {
+    "radio": 10,
+    "date": 16,
+    "checkbox": 44,
+    "text": 44,
+    "state": 8,
+    "country": 8,
+    "telephone": 8,
+    "email": 4,
+    "select": 8
+  },
+  "gates": [
+    {
+      "key": "schoolInfo.pg10r2",
+      "section": "section12",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO to 12(a) and 12(b), proceed to Section 13A)"
+      ]
+    }
+  ],
+  "unconditionalFields": 98,
+  "roundTrip": {
+    "total": 150,
+    "matches": 140,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 10,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 52,
+    "totalTests": 104,
+    "passed": 104,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

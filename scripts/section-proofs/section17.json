@@ -1,0 +1,64 @@
+{
+  "section": "section17",
+  "timestamp": "2026-03-01T01:28:53.744Z",
+  "fieldCount": 329,
+  "typeCounts": {
+    "country": 25,
+    "date": 43,
+    "text": 85,
+    "select": 17,
+    "checkbox": 117,
+    "radio": 19,
+    "telephone": 6,
+    "state": 16,
+    "email": 1
+  },
+  "gates": [
+    {
+      "key": "relationshipInfo.0.RadioButtonList_118",
+      "section": "section17",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, complete (a))",
+        "I don't know"
+      ]
+    },
+    {
+      "key": "relationshipInfo.0.RadioButtonList_151",
+      "section": "section17",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, complete (a))",
+        "I don't know"
+      ]
+    },
+    {
+      "key": "relationshipInfo.0.RadioButtonList_184",
+      "section": "section17",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 18)"
+      ]
+    }
+  ],
+  "unconditionalFields": 192,
+  "roundTrip": {
+    "total": 329,
+    "matches": 310,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 19,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 137,
+    "totalTests": 274,
+    "passed": 274,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

@@ -1,0 +1,115 @@
+{
+  "section": "section26",
+  "timestamp": "2026-03-01T01:30:09.727Z",
+  "fieldCount": 237,
+  "typeCounts": {
+    "telephone": 8,
+    "date": 20,
+    "checkbox": 72,
+    "radio": 17,
+    "text": 100,
+    "state": 10,
+    "country": 8,
+    "select": 2
+  },
+  "gates": [
+    {
+      "key": "finances.RadioButtonList_4",
+      "section": "section26",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 26.2)"
+      ]
+    },
+    {
+      "key": "finances.0.RadioButtonList_56",
+      "section": "section26",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 26.3)"
+      ]
+    },
+    {
+      "key": "finances.0.RadioButtonList_74",
+      "section": "section26",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 26.4)"
+      ]
+    },
+    {
+      "key": "finances.0.RadioButtonList_98",
+      "section": "section26",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 26.5)"
+      ]
+    },
+    {
+      "key": "finances.0.RadioButtonList_123",
+      "section": "section26",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 26.6)"
+      ]
+    },
+    {
+      "key": "finances.0.RadioButtonList_144",
+      "section": "section26",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, Proceed to 26.7)"
+      ]
+    },
+    {
+      "key": "finances.0.RadioButtonList_193",
+      "section": "section26",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (Proceed to Section 27)"
+      ]
+    },
+    {
+      "key": "finances.0.RadioButtonList_198",
+      "section": "section26",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (Proceed to Section 27)"
+      ]
+    },
+    {
+      "key": "finances.0.RadioButtonList_220",
+      "section": "section26",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (Proceed to Section 27)"
+      ]
+    }
+  ],
+  "unconditionalFields": 41,
+  "roundTrip": {
+    "total": 237,
+    "matches": 220,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 17,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 196,
+    "totalTests": 392,
+    "passed": 392,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

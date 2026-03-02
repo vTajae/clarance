@@ -1,0 +1,69 @@
+{
+  "section": "section24",
+  "timestamp": "2026-03-01T01:32:57.178Z",
+  "fieldCount": 160,
+  "typeCounts": {
+    "radio": 14,
+    "date": 24,
+    "checkbox": 48,
+    "text": 54,
+    "telephone": 4,
+    "state": 8,
+    "country": 8
+  },
+  "gates": [
+    {
+      "key": "alcoholUse.RadioButtonList_1",
+      "section": "section24",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 24.2)"
+      ]
+    },
+    {
+      "key": "alcoholUse.0.RadioButtonList_42",
+      "section": "section24",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 24.3)"
+      ]
+    },
+    {
+      "key": "alcoholUse.0.RadioButtonList_101",
+      "section": "section24",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 24.4)"
+      ]
+    },
+    {
+      "key": "alcoholUse.0.RadioButtonList_142",
+      "section": "section24",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 25)"
+      ]
+    }
+  ],
+  "unconditionalFields": 48,
+  "roundTrip": {
+    "total": 160,
+    "matches": 146,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 14,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 112,
+    "totalTests": 224,
+    "passed": 224,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

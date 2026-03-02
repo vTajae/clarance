@@ -1,0 +1,57 @@
+{
+  "section": "section25",
+  "timestamp": "2026-03-01T01:33:44.217Z",
+  "fieldCount": 79,
+  "typeCounts": {
+    "text": 18,
+    "date": 8,
+    "checkbox": 50,
+    "radio": 3
+  },
+  "gates": [
+    {
+      "key": "investigationsInfo.RadioButtonList_37",
+      "section": "section25",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 25.2)"
+      ]
+    },
+    {
+      "key": "investigationsInfo.0.RadioButtonList_73",
+      "section": "section25",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 25.3)"
+      ]
+    },
+    {
+      "key": "investigationsInfo.0.RadioButtonList_78",
+      "section": "section25",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 26)"
+      ]
+    }
+  ],
+  "unconditionalFields": 50,
+  "roundTrip": {
+    "total": 79,
+    "matches": 76,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 3,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 29,
+    "totalTests": 58,
+    "passed": 58,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

@@ -1,0 +1,43 @@
+{
+  "section": "section9",
+  "timestamp": "2026-03-01T01:31:53.891Z",
+  "fieldCount": 78,
+  "typeCounts": {
+    "radio": 5,
+    "text": 28,
+    "telephone": 9,
+    "country": 5,
+    "state": 4,
+    "select": 5,
+    "date": 9,
+    "checkbox": 13
+  },
+  "gates": [
+    {
+      "key": "citizenshipInfo.RadioButtonList_15",
+      "section": "section9",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 10)"
+      ]
+    }
+  ],
+  "unconditionalFields": 15,
+  "roundTrip": {
+    "total": 78,
+    "matches": 73,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 5,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 63,
+    "totalTests": 126,
+    "passed": 126,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

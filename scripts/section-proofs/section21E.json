@@ -1,0 +1,43 @@
+{
+  "section": "section21E",
+  "timestamp": "2026-03-01T01:34:19.615Z",
+  "fieldCount": 127,
+  "typeCounts": {
+    "radio": 4,
+    "text": 43,
+    "state": 8,
+    "country": 8,
+    "checkbox": 48,
+    "date": 8,
+    "telephone": 8
+  },
+  "gates": [
+    {
+      "key": "mentalHealth.RadioButtonList_383",
+      "section": "section21E",
+      "type": "radio",
+      "options": [
+        "NO",
+        "YES",
+        "I decline to answer (If I decline to answer, proceed to Section 22)"
+      ]
+    }
+  ],
+  "unconditionalFields": 24,
+  "roundTrip": {
+    "total": 127,
+    "matches": 123,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 4,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 103,
+    "totalTests": 206,
+    "passed": 206,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

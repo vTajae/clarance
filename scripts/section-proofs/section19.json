@@ -1,0 +1,42 @@
+{
+  "section": "section19",
+  "timestamp": "2026-03-01T01:29:56.206Z",
+  "fieldCount": 277,
+  "typeCounts": {
+    "radio": 13,
+    "checkbox": 72,
+    "country": 20,
+    "select": 20,
+    "text": 128,
+    "date": 12,
+    "state": 12
+  },
+  "gates": [
+    {
+      "key": "foreignContacts.0.RadioButtonList_1",
+      "section": "section19",
+      "type": "radio",
+      "options": [
+        "NO (If NO, proceed to Section 20A)",
+        "YES"
+      ]
+    }
+  ],
+  "unconditionalFields": 208,
+  "roundTrip": {
+    "total": 277,
+    "matches": 264,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 13,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 69,
+    "totalTests": 138,
+    "passed": 138,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

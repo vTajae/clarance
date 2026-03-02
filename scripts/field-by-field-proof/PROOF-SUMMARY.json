@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-03-01T14:14:57.443577",
+  "title": "SF-86 Field-by-Field Visual Validation Proof",
+  "registry": {
+    "total_fields": 6197,
+    "testable_fields": 6060,
+    "sections": 38,
+    "field_types": {
+      "text": 2239,
+      "date": 602,
+      "radio": 398,
+      "select": 159,
+      "checkbox": 1793,
+      "country": 375,
+      "state": 323,
+      "ssn": 3,
+      "telephone": 146,
+      "email": 22
+    }
+  },
+  "full_page_proof": {
+    "total_fields_captured": 6060,
+    "total_screenshots": 12120,
+    "sections_complete": 38,
+    "sections_total": 38,
+    "coverage_pct": 100.0,
+    "failures": 0,
+    "per_section": {
+      "section1": 4,
+      "section10": 122,
+      "section11": 252,
+      "section12": 150,
+      "section13A": 1036,
+      "section13B": 49,
+      "section13C": 1,
+      "section14": 5,
+      "section15": 141,
+      "section16": 108,
+      "section17": 329,
+      "section18": 964,
+      "section19": 277,
+      "section20A": 361,
+      "section20B": 315,
+      "section20C": 114,
+      "section21": 24,
+      "section21A": 46,
+      "section21B": 49,
+      "section21C": 61,
+      "section21D": 179,
+      "section21E": 127,
+      "section22": 267,
+      "section23": 191,
+      "section24": 160,
+      "section25": 79,
+      "section26": 237,
+      "section27": 57,
+      "section28": 23,
+      "section29": 141,
+      "section3": 6,
+      "section30": 27,
+      "section4": 2,
+      "section5": 45,
+      "section6": 6,
+      "section7": 17,
+      "section8": 10,
+      "section9": 78
+    }
+  },
+  "cropped_proof": {
+    "total_fields_captured": 964,
+    "total_screenshots": 1928,
+    "sections_complete": 6,
+    "per_section": {
+      "section1": 4,
+      "section10": 122,
+      "section11": 252,
+      "section12": 150,
+      "section13A": 426,
+      "section8": 10
+    }
+  },
+  "vision_validation": {
+    "total": 200,
+    "pass": 195,
+    "fail": 0,
+    "error": 0,
+    "unclear": 5
+  },
+  "verdict": "PASS"
+}

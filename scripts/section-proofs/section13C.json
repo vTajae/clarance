@@ -1,0 +1,24 @@
+{
+  "section": "section13C",
+  "timestamp": "2026-03-01T01:32:42.780Z",
+  "fieldCount": 1,
+  "typeCounts": {
+    "radio": 1
+  },
+  "gates": [],
+  "unconditionalFields": 1,
+  "roundTrip": {
+    "total": 1,
+    "matches": 0,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 1,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 0,
+    "note": "No conditional fields in this section",
+    "success": true
+  },
+  "overallSuccess": true
+}

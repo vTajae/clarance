@@ -1,0 +1,86 @@
+{
+  "section": "section29",
+  "timestamp": "2026-03-01T01:33:38.606Z",
+  "fieldCount": 141,
+  "typeCounts": {
+    "radio": 7,
+    "text": 50,
+    "checkbox": 48,
+    "state": 6,
+    "country": 6,
+    "date": 24
+  },
+  "gates": [
+    {
+      "key": "association.RadioButtonList_1",
+      "section": "section29",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 29.2)"
+      ]
+    },
+    {
+      "key": "association.0.RadioButtonList_36",
+      "section": "section29",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 29.3)"
+      ]
+    },
+    {
+      "key": "association.0.RadioButtonList_42",
+      "section": "section29",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (Proceed to 29.4)"
+      ]
+    },
+    {
+      "key": "association.0.RadioButtonList_60",
+      "section": "section29",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 29.5)"
+      ]
+    },
+    {
+      "key": "association.0.RadioButtonList_104",
+      "section": "section29",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 29.6)"
+      ]
+    },
+    {
+      "key": "association.0.RadioButtonList_129",
+      "section": "section29",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 29.7)"
+      ]
+    }
+  ],
+  "unconditionalFields": 22,
+  "roundTrip": {
+    "total": 141,
+    "matches": 134,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 7,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 119,
+    "totalTests": 238,
+    "passed": 238,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

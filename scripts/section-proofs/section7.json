@@ -1,0 +1,27 @@
+{
+  "section": "section7",
+  "timestamp": "2026-03-01T01:28:46.195Z",
+  "fieldCount": 17,
+  "typeCounts": {
+    "email": 2,
+    "telephone": 3,
+    "text": 3,
+    "checkbox": 9
+  },
+  "gates": [],
+  "unconditionalFields": 17,
+  "roundTrip": {
+    "total": 17,
+    "matches": 17,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 0,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 0,
+    "note": "No conditional fields in this section",
+    "success": true
+  },
+  "overallSuccess": true
+}

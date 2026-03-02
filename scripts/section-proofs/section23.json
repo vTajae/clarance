@@ -1,0 +1,87 @@
+{
+  "section": "section23",
+  "timestamp": "2026-03-01T01:31:40.110Z",
+  "fieldCount": 191,
+  "typeCounts": {
+    "radio": 39,
+    "text": 56,
+    "date": 28,
+    "checkbox": 50,
+    "telephone": 10,
+    "state": 4,
+    "country": 4
+  },
+  "gates": [
+    {
+      "key": "drugActivity.0.RadioButtonList_37",
+      "section": "section23",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 23.3)"
+      ]
+    },
+    {
+      "key": "drugActivity.0.RadioButtonList_69",
+      "section": "section23",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 23.5)"
+      ]
+    },
+    {
+      "key": "drugActivity.0.RadioButtonList_72",
+      "section": "section23",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 23.4)"
+      ]
+    },
+    {
+      "key": "drugActivity.0.RadioButtonList_89",
+      "section": "section23",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 23.6)"
+      ]
+    },
+    {
+      "key": "drugActivity.0.RadioButtonList_103",
+      "section": "section23",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 23.7)"
+      ]
+    },
+    {
+      "key": "drugActivity.0.RadioButtonList_172",
+      "section": "section23",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 24)"
+      ]
+    }
+  ],
+  "unconditionalFields": 125,
+  "roundTrip": {
+    "total": 191,
+    "matches": 152,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 39,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 66,
+    "totalTests": 132,
+    "passed": 132,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

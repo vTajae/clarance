@@ -1,0 +1,60 @@
+{
+  "section": "section20A",
+  "timestamp": "2026-03-01T01:31:40.404Z",
+  "fieldCount": 361,
+  "typeCounts": {
+    "radio": 25,
+    "text": 164,
+    "country": 50,
+    "state": 14,
+    "select": 14,
+    "checkbox": 74,
+    "date": 20
+  },
+  "gates": [
+    {
+      "key": "foreignActivities.RadioButtonList_1",
+      "section": "section20A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (Proceed to 20A.2)"
+      ]
+    },
+    {
+      "key": "foreignActivities.RadioButtonList_101",
+      "section": "section20A",
+      "type": "radio",
+      "options": [
+        "NO (If NO, Proceed to 20A.3)",
+        "YES"
+      ]
+    },
+    {
+      "key": "foreignActivities.RadioButtonList_344",
+      "section": "section20A",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 20B)"
+      ]
+    }
+  ],
+  "unconditionalFields": 3,
+  "roundTrip": {
+    "total": 361,
+    "matches": 336,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 25,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 358,
+    "totalTests": 716,
+    "passed": 716,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

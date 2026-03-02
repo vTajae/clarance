@@ -1,0 +1,40 @@
+{
+  "section": "section5",
+  "timestamp": "2026-03-01T01:33:17.364Z",
+  "fieldCount": 45,
+  "typeCounts": {
+    "text": 16,
+    "date": 8,
+    "radio": 5,
+    "select": 4,
+    "checkbox": 12
+  },
+  "gates": [
+    {
+      "key": "namesInfo.RadioButtonList_12",
+      "section": "section5",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 6)"
+      ]
+    }
+  ],
+  "unconditionalFields": 12,
+  "roundTrip": {
+    "total": 45,
+    "matches": 40,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 5,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 33,
+    "totalTests": 66,
+    "passed": 66,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

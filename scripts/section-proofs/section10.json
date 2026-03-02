@@ -1,0 +1,51 @@
+{
+  "section": "section10",
+  "timestamp": "2026-03-01T01:28:49.989Z",
+  "fieldCount": 122,
+  "typeCounts": {
+    "radio": 8,
+    "country": 18,
+    "text": 14,
+    "date": 32,
+    "checkbox": 46,
+    "select": 2,
+    "telephone": 2
+  },
+  "gates": [
+    {
+      "key": "dualCitizenshipInfo.RadioButtonList_1",
+      "section": "section10",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 10.2)"
+      ]
+    },
+    {
+      "key": "dualCitizenshipInfo.RadioButtonList_24",
+      "section": "section10",
+      "type": "radio",
+      "options": [
+        "NO (If NO, proceed to Section 11)",
+        "YES"
+      ]
+    }
+  ],
+  "unconditionalFields": 51,
+  "roundTrip": {
+    "total": 122,
+    "matches": 114,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 8,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 71,
+    "totalTests": 142,
+    "passed": 142,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

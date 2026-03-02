@@ -1,0 +1,634 @@
+{
+  "timestamp": "2026-02-28T21:16:02.301Z",
+  "summary": {
+    "totalFields": 6197,
+    "fieldsWithValues": 5934,
+    "jotaiVerified": 5934,
+    "jotaiFailures": 0,
+    "pdfMatched": 5536,
+    "pdfMismatched": 0,
+    "pdfMissing": 0,
+    "radioSkipped": 398,
+    "screenshotsTaken": 38,
+    "productionReady": true
+  },
+  "perSection": {
+    "jotaiVerification": {
+      "section1": {
+        "fields": 4,
+        "withValues": 4,
+        "verified": 4,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section3": {
+        "fields": 6,
+        "withValues": 6,
+        "verified": 6,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section4": {
+        "fields": 2,
+        "withValues": 2,
+        "verified": 2,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section5": {
+        "fields": 45,
+        "withValues": 45,
+        "verified": 45,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section6": {
+        "fields": 6,
+        "withValues": 6,
+        "verified": 6,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section7": {
+        "fields": 17,
+        "withValues": 17,
+        "verified": 17,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section8": {
+        "fields": 10,
+        "withValues": 10,
+        "verified": 10,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section9": {
+        "fields": 78,
+        "withValues": 78,
+        "verified": 78,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section10": {
+        "fields": 122,
+        "withValues": 122,
+        "verified": 122,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section11": {
+        "fields": 252,
+        "withValues": 252,
+        "verified": 252,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section12": {
+        "fields": 150,
+        "withValues": 150,
+        "verified": 150,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section13A": {
+        "fields": 1036,
+        "withValues": 1036,
+        "verified": 1036,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section13B": {
+        "fields": 49,
+        "withValues": 49,
+        "verified": 49,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section13C": {
+        "fields": 1,
+        "withValues": 1,
+        "verified": 1,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section14": {
+        "fields": 5,
+        "withValues": 5,
+        "verified": 5,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section15": {
+        "fields": 141,
+        "withValues": 141,
+        "verified": 141,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section16": {
+        "fields": 108,
+        "withValues": 108,
+        "verified": 108,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section17": {
+        "fields": 329,
+        "withValues": 329,
+        "verified": 329,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section18": {
+        "fields": 964,
+        "withValues": 838,
+        "verified": 838,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section19": {
+        "fields": 277,
+        "withValues": 277,
+        "verified": 277,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section20A": {
+        "fields": 361,
+        "withValues": 361,
+        "verified": 361,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section20B": {
+        "fields": 315,
+        "withValues": 315,
+        "verified": 315,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section20C": {
+        "fields": 114,
+        "withValues": 114,
+        "verified": 114,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section26": {
+        "fields": 237,
+        "withValues": 237,
+        "verified": 237,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section23": {
+        "fields": 191,
+        "withValues": 191,
+        "verified": 191,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section24": {
+        "fields": 160,
+        "withValues": 160,
+        "verified": 160,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section22": {
+        "fields": 267,
+        "withValues": 267,
+        "verified": 267,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section25": {
+        "fields": 79,
+        "withValues": 79,
+        "verified": 79,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section28": {
+        "fields": 23,
+        "withValues": 23,
+        "verified": 23,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section21": {
+        "fields": 24,
+        "withValues": 24,
+        "verified": 24,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section21A": {
+        "fields": 46,
+        "withValues": 46,
+        "verified": 46,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section21B": {
+        "fields": 49,
+        "withValues": 49,
+        "verified": 49,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section21C": {
+        "fields": 61,
+        "withValues": 61,
+        "verified": 61,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section21D": {
+        "fields": 179,
+        "withValues": 179,
+        "verified": 179,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section21E": {
+        "fields": 127,
+        "withValues": 127,
+        "verified": 127,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section27": {
+        "fields": 57,
+        "withValues": 57,
+        "verified": 57,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section29": {
+        "fields": 141,
+        "withValues": 141,
+        "verified": 141,
+        "failed": 0,
+        "status": "PASS"
+      },
+      "section30": {
+        "fields": 27,
+        "withValues": 27,
+        "verified": 27,
+        "failed": 0,
+        "status": "PASS"
+      }
+    },
+    "pdfComparison": {
+      "section1": {
+        "totalFields": 4,
+        "compared": 4,
+        "matched": 4,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 0,
+        "status": "PASS"
+      },
+      "section3": {
+        "totalFields": 6,
+        "compared": 6,
+        "matched": 6,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 0,
+        "status": "PASS"
+      },
+      "section4": {
+        "totalFields": 2,
+        "compared": 2,
+        "matched": 2,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 0,
+        "status": "PASS"
+      },
+      "section5": {
+        "totalFields": 45,
+        "compared": 40,
+        "matched": 40,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 5,
+        "status": "PASS"
+      },
+      "section6": {
+        "totalFields": 6,
+        "compared": 5,
+        "matched": 5,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 1,
+        "status": "PASS"
+      },
+      "section7": {
+        "totalFields": 17,
+        "compared": 17,
+        "matched": 17,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 0,
+        "status": "PASS"
+      },
+      "section8": {
+        "totalFields": 10,
+        "compared": 9,
+        "matched": 9,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 1,
+        "status": "PASS"
+      },
+      "section9": {
+        "totalFields": 78,
+        "compared": 73,
+        "matched": 73,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 5,
+        "status": "PASS"
+      },
+      "section10": {
+        "totalFields": 122,
+        "compared": 114,
+        "matched": 114,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 8,
+        "status": "PASS"
+      },
+      "section11": {
+        "totalFields": 252,
+        "compared": 240,
+        "matched": 240,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 12,
+        "status": "PASS"
+      },
+      "section12": {
+        "totalFields": 150,
+        "compared": 140,
+        "matched": 140,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 10,
+        "status": "PASS"
+      },
+      "section13A": {
+        "totalFields": 1036,
+        "compared": 992,
+        "matched": 992,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 44,
+        "status": "PASS"
+      },
+      "section13B": {
+        "totalFields": 49,
+        "compared": 48,
+        "matched": 48,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 1,
+        "status": "PASS"
+      },
+      "section13C": {
+        "totalFields": 1,
+        "compared": 0,
+        "matched": 0,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 1,
+        "status": "PASS"
+      },
+      "section14": {
+        "totalFields": 5,
+        "compared": 3,
+        "matched": 3,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 2,
+        "status": "PASS"
+      },
+      "section15": {
+        "totalFields": 141,
+        "compared": 125,
+        "matched": 125,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 16,
+        "status": "PASS"
+      },
+      "section16": {
+        "totalFields": 108,
+        "compared": 108,
+        "matched": 108,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 0,
+        "status": "PASS"
+      },
+      "section17": {
+        "totalFields": 329,
+        "compared": 310,
+        "matched": 310,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 19,
+        "status": "PASS"
+      },
+      "section18": {
+        "totalFields": 964,
+        "compared": 784,
+        "matched": 784,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 54,
+        "status": "PASS"
+      },
+      "section19": {
+        "totalFields": 277,
+        "compared": 264,
+        "matched": 264,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 13,
+        "status": "PASS"
+      },
+      "section20A": {
+        "totalFields": 361,
+        "compared": 336,
+        "matched": 336,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 25,
+        "status": "PASS"
+      },
+      "section20B": {
+        "totalFields": 315,
+        "compared": 300,
+        "matched": 300,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 15,
+        "status": "PASS"
+      },
+      "section20C": {
+        "totalFields": 114,
+        "compared": 80,
+        "matched": 80,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 34,
+        "status": "PASS"
+      },
+      "section26": {
+        "totalFields": 237,
+        "compared": 220,
+        "matched": 220,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 17,
+        "status": "PASS"
+      },
+      "section23": {
+        "totalFields": 191,
+        "compared": 152,
+        "matched": 152,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 39,
+        "status": "PASS"
+      },
+      "section24": {
+        "totalFields": 160,
+        "compared": 146,
+        "matched": 146,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 14,
+        "status": "PASS"
+      },
+      "section22": {
+        "totalFields": 267,
+        "compared": 240,
+        "matched": 240,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 27,
+        "status": "PASS"
+      },
+      "section25": {
+        "totalFields": 79,
+        "compared": 76,
+        "matched": 76,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 3,
+        "status": "PASS"
+      },
+      "section28": {
+        "totalFields": 23,
+        "compared": 22,
+        "matched": 22,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 1,
+        "status": "PASS"
+      },
+      "section21": {
+        "totalFields": 24,
+        "compared": 22,
+        "matched": 22,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 2,
+        "status": "PASS"
+      },
+      "section21A": {
+        "totalFields": 46,
+        "compared": 44,
+        "matched": 44,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 2,
+        "status": "PASS"
+      },
+      "section21B": {
+        "totalFields": 49,
+        "compared": 46,
+        "matched": 46,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 3,
+        "status": "PASS"
+      },
+      "section21C": {
+        "totalFields": 61,
+        "compared": 60,
+        "matched": 60,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 1,
+        "status": "PASS"
+      },
+      "section21D": {
+        "totalFields": 179,
+        "compared": 172,
+        "matched": 172,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 7,
+        "status": "PASS"
+      },
+      "section21E": {
+        "totalFields": 127,
+        "compared": 123,
+        "matched": 123,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 4,
+        "status": "PASS"
+      },
+      "section27": {
+        "totalFields": 57,
+        "compared": 54,
+        "matched": 54,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 3,
+        "status": "PASS"
+      },
+      "section29": {
+        "totalFields": 141,
+        "compared": 134,
+        "matched": 134,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 7,
+        "status": "PASS"
+      },
+      "section30": {
+        "totalFields": 27,
+        "compared": 25,
+        "matched": 25,
+        "mismatched": 0,
+        "missing": 0,
+        "radioSkipped": 2,
+        "status": "PASS"
+      }
+    }
+  },
+  "mismatches": [],
+  "files": {
+    "filledPdf": "/home/watery/Desktop/clear-rents/scripts/production-proof/production-filled.pdf",
+    "proofDir": "/home/watery/Desktop/clear-rents/scripts/production-proof"
+  }
+}

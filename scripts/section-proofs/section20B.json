@@ -1,0 +1,114 @@
+{
+  "section": "section20B",
+  "timestamp": "2026-03-01T01:33:03.307Z",
+  "fieldCount": 315,
+  "typeCounts": {
+    "text": 156,
+    "select": 12,
+    "country": 34,
+    "date": 38,
+    "checkbox": 46,
+    "radio": 15,
+    "state": 14
+  },
+  "gates": [
+    {
+      "key": "foreignActivities.RadioButtonList_375",
+      "section": "section20B",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 20B.2)"
+      ]
+    },
+    {
+      "key": "foreignActivities.RadioButtonList_389",
+      "section": "section20B",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (Proceed to 20B.3)"
+      ]
+    },
+    {
+      "key": "foreignActivities.RadioButtonList_408",
+      "section": "section20B",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 20B.4)"
+      ]
+    },
+    {
+      "key": "foreignActivities.RadioButtonList_477",
+      "section": "section20B",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 20B.5)"
+      ]
+    },
+    {
+      "key": "foreignActivities.RadioButtonList_484",
+      "section": "section20B",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (Proceed to 20B.6)"
+      ]
+    },
+    {
+      "key": "foreignActivities.radiobuttonlist2",
+      "section": "section20B",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, Proceed to 20B.7)"
+      ]
+    },
+    {
+      "key": "foreignActivities.radiobuttonlist5",
+      "section": "section20B",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 20B.8)"
+      ]
+    },
+    {
+      "key": "foreignActivities.radiobuttonlist7",
+      "section": "section20B",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, Proceed to 20C)"
+      ]
+    },
+    {
+      "key": "foreignActivities.radiobuttonlist6",
+      "section": "section20B",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to 20B.9)"
+      ]
+    }
+  ],
+  "unconditionalFields": 22,
+  "roundTrip": {
+    "total": 315,
+    "matches": 300,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 15,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 293,
+    "totalTests": 586,
+    "passed": 586,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

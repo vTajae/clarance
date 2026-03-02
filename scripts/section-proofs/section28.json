@@ -1,0 +1,41 @@
+{
+  "section": "section28",
+  "timestamp": "2026-03-01T01:32:48.182Z",
+  "fieldCount": 23,
+  "typeCounts": {
+    "radio": 1,
+    "text": 14,
+    "date": 2,
+    "state": 2,
+    "country": 2,
+    "checkbox": 2
+  },
+  "gates": [
+    {
+      "key": "civil.RadioButtonList_1",
+      "section": "section28",
+      "type": "radio",
+      "options": [
+        "YES",
+        "NO (If NO, proceed to Section 29)"
+      ]
+    }
+  ],
+  "unconditionalFields": 1,
+  "roundTrip": {
+    "total": 23,
+    "matches": 22,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 1,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 22,
+    "totalTests": 44,
+    "passed": 44,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}

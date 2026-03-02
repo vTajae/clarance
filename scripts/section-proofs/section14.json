@@ -1,0 +1,39 @@
+{
+  "section": "section14",
+  "timestamp": "2026-03-01T01:28:48.344Z",
+  "fieldCount": 5,
+  "typeCounts": {
+    "radio": 2,
+    "telephone": 1,
+    "text": 2
+  },
+  "gates": [
+    {
+      "key": "serviceInfo.0.RadioButtonList_1",
+      "section": "section14",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No",
+        "1"
+      ]
+    }
+  ],
+  "unconditionalFields": 4,
+  "roundTrip": {
+    "total": 5,
+    "matches": 3,
+    "mismatches": 0,
+    "missing": 0,
+    "radioSkips": 2,
+    "success": true
+  },
+  "conditionalLogic": {
+    "conditionalFields": 1,
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0,
+    "success": true
+  },
+  "overallSuccess": true
+}
