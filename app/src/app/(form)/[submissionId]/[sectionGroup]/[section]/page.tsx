@@ -1,0 +1,49 @@
+import { notFound } from "next/navigation";
+import { SECTION_GROUPS, SECTION_META } from "@/lib/field-registry/types";
+import type { SF86Section, SF86SectionGroup } from "@/lib/field-registry/types";
+import { SectionFormLoader } from "@/components/sections/section-form-loader";
+
+interface PageProps {
+  params: Promise<{
+    submissionId: string;
+    sectionGroup: string;
+    section: string;
+  }>;
+}
+
+export default async function SectionPage({ params }: PageProps) {
+  const { submissionId, sectionGroup, section } = await params;
+
+  const group = sectionGroup as SF86SectionGroup;
+  const sectionKey = section as SF86Section;
+
+  // Validate section group exists
+  if (!SECTION_GROUPS[group]) {
+    notFound();
+  }
+
+  // Validate section belongs to group
+  if (!SECTION_GROUPS[group].includes(sectionKey)) {
+    notFound();
+  }
+
+  const meta = SECTION_META[sectionKey];
+  if (!meta) {
+    notFound();
+  }
+
+  return (
+    <div className="mx-auto max-w-3xl px-6 py-8">
+      <div className="mb-6">
+        <p className="text-sm font-medium capitalize text-blue-600">{meta.group}</p>
+        <h1 className="mt-1 text-2xl font-bold text-gray-900">{meta.title}</h1>
+        <p className="mt-2 text-sm text-gray-500">{meta.description}</p>
+      </div>
+
+      <SectionFormLoader
+        submissionId={submissionId}
+        sectionKey={sectionKey}
+      />
+    </div>
+  );
+}

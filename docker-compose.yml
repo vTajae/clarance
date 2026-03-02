@@ -1,0 +1,73 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: sf86-db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: sf86
+      POSTGRES_USER: sf86user
+      POSTGRES_PASSWORD: sf86dev_password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sf86user -d sf86"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - sf86-network
+
+  pdf-service:
+    build:
+      context: ./pdf-service
+      dockerfile: Dockerfile
+    container_name: sf86-pdf-service
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./pdf-service/templates:/app/templates:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - sf86-network
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: sf86-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://sf86user:sf86dev_password@db:5432/sf86
+      PDF_SERVICE_URL: http://pdf-service:8001
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY:-dev-only-encryption-key-32chars!}
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET:-dev-only-secret-change-in-prod}
+      NEXTAUTH_URL: http://localhost:3000
+    depends_on:
+      db:
+        condition: service_healthy
+      pdf-service:
+        condition: service_healthy
+    volumes:
+      - ./app/src:/app/src:delegated
+    networks:
+      - sf86-network
+
+networks:
+  sf86-network:
+    driver: bridge
+
+volumes:
+  pgdata:
+    driver: local

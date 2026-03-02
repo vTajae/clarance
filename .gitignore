@@ -1,9 +1,67 @@
-node_modules
-doNotPush
+# --------------------------------------------------
+# SF-86 Monorepo .gitignore
+# --------------------------------------------------
 
-/.cache
-/build
+# Environment and secrets
 .env
+.env.local
+.env.production
+.env.staging
+!.env.example
 
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+build/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+.venv/
+venv/
+.eggs/
+*.egg
+
+# Docker
+pgdata/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Security - never commit these
+*.pem
+*.key
+*.cert
+credentials.json
+
+# Legacy
+/.cache
 .wrangler
+doNotPush
 dontPush
