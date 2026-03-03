@@ -32,8 +32,8 @@ export function SectionFormLoader({
     navigateToSection(sectionKey);
   }, [submissionId, sectionKey, setSubmissionId, navigateToSection]);
 
-  // Load saved data from IndexedDB into Jotai atoms
-  const { isLoading, error: loadError } = useHydrateSection(
+  // Load saved data from IndexedDB into Jotai atoms (runs in background)
+  const { error: loadError } = useHydrateSection(
     submissionId,
     sectionKey,
   );
@@ -55,14 +55,6 @@ export function SectionFormLoader({
 
   return (
     <div className="space-y-6">
-      {/* Loading state */}
-      {isLoading && (
-        <div className="flex items-center gap-2 text-sm text-gray-500" role="status">
-          <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600" />
-          Loading saved data...
-        </div>
-      )}
-
       {/* Load error */}
       {loadError && (
         <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700" role="alert">
@@ -71,7 +63,7 @@ export function SectionFormLoader({
       )}
 
       {/* Timeline gap warning (residency / employment only) */}
-      {!isLoading && isTimelineSection && timelineResult.gaps.length > 0 && (
+      {isTimelineSection && timelineResult.gaps.length > 0 && (
         <TimelineGapAlert
           gaps={timelineResult.gaps}
           coveragePercent={timelineResult.coveragePercent}
@@ -80,22 +72,22 @@ export function SectionFormLoader({
       )}
 
       {/* Validation errors */}
-      {!isLoading && validationErrors.length > 0 && (
+      {validationErrors.length > 0 && (
         <ValidationSummary errors={validationErrors} />
       )}
 
-      {/* Registry-driven form fields — fade transition on layout mode switch */}
-      {!isLoading && layoutMode === 'wizard' && (
+      {/* Registry-driven form fields — render immediately, hydration fills atoms in background */}
+      {layoutMode === 'wizard' && (
         <div key="wizard" className="animate-fadeIn">
           <WizardLayout sectionKey={sectionKey} />
         </div>
       )}
-      {!isLoading && layoutMode === 'form' && (
+      {layoutMode === 'form' && (
         <div key="form" className="animate-fadeIn">
           <SectionFormRenderer section={sectionKey} layoutMode="flow" />
         </div>
       )}
-      {!isLoading && layoutMode === 'pdf' && (
+      {layoutMode === 'pdf' && (
         <div key="pdf" className="animate-fadeIn overflow-x-auto">
           <SectionFormRenderer section={sectionKey} layoutMode="pdf" />
         </div>

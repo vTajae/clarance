@@ -1,13 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useAppStore } from '@/lib/state/stores/app-store';
 import type { SaveStatus } from '@/lib/state/stores/app-store';
 import type { SyncStatus } from '@/lib/persistence/sync-engine';
 import { useExportPdf } from '@/lib/state/hooks/use-export-pdf';
 import { LayoutModeToggle } from '@/components/wizard/layout-mode-toggle';
-import { SECTION_META } from '@/lib/field-registry/types';
-import type { SF86SectionGroup } from '@/lib/field-registry/types';
+import { SECTION_META, SECTION_GROUPS } from '@/lib/field-registry/types';
+import type { SF86Section, SF86SectionGroup } from '@/lib/field-registry/types';
 import { useWizardNavigation } from '@/lib/wizard/use-wizard-navigation';
 
 const GROUP_LABELS: Record<SF86SectionGroup, string> = {
@@ -44,6 +45,14 @@ const STATUS_MAP: Record<SaveStatus, { label: string; colorClass: string }> = {
   error: { label: 'Save failed', colorClass: 'text-red-500' },
 };
 
+/** Derive the section group from a section key by checking SECTION_GROUPS. */
+function groupForSection(section: SF86Section): SF86SectionGroup {
+  for (const [group, sections] of Object.entries(SECTION_GROUPS) as [SF86SectionGroup, SF86Section[]][]) {
+    if (sections.includes(section)) return group;
+  }
+  return 'identification';
+}
+
 export function TopBar({
   submissionId,
   onToggleSidebar,
@@ -55,17 +64,23 @@ export function TopBar({
 }: TopBarProps) {
   const saveStatus = useAppStore((s) => s.saveStatus);
   const lastSaved = useAppStore((s) => s.lastSaved);
-  const currentSection = useAppStore((s) => s.currentSection);
-  const currentSectionGroup = useAppStore((s) => s.currentSectionGroup);
+  const storeSection = useAppStore((s) => s.currentSection);
+  const storeSectionGroup = useAppStore((s) => s.currentSectionGroup);
   const layoutMode = useAppStore((s) => s.layoutMode);
   const { exportPdf, status: exportStatus } = useExportPdf();
   const { currentStep, currentStepIndex, isReviewMode } = useWizardNavigation();
+
+  // Derive section from URL pathname (always current) to avoid stale store reads
+  const pathname = usePathname();
+  const urlSection = pathname?.split('/').pop() as SF86Section | undefined;
+  const currentSection = (urlSection && SECTION_META[urlSection]) ? urlSection : storeSection;
+  const currentSectionGroup = (urlSection && SECTION_META[urlSection]) ? groupForSection(urlSection) : storeSectionGroup;
 
   const pct = Math.round(completionPercent * 100);
   const status = STATUS_MAP[saveStatus];
 
   return (
-    <header className="shrink-0 border-b border-gray-200 bg-white" role="banner">
+    <header className="shrink-0 border-b border-gray-200 bg-white relative z-50" role="banner">
       <div className="flex items-center justify-between px-4 py-3">
         {/* Left: hamburger + title */}
         <div className="flex items-center gap-3">
