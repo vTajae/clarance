@@ -14,7 +14,7 @@
 // count to render a thin progress bar without subscribing to field atoms.
 // ---------------------------------------------------------------------------
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { atom, useAtomValue } from 'jotai';
 
 import type { SF86Section } from '@/lib/field-registry/types';
@@ -56,6 +56,11 @@ interface ActiveStepDotsProps {
  * reads and avoid per-field re-renders.
  */
 function ActiveStepDots({ section, currentStepIndex }: ActiveStepDotsProps) {
+  // Only render step completion data on the client to avoid hydration
+  // mismatches — Jotai atoms are not populated during SSR.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const registry = useRegistry();
   const steps = useMemo(() => getStepsForSection(section), [section]);
 
@@ -97,20 +102,41 @@ function ActiveStepDots({ section, currentStepIndex }: ActiveStepDotsProps) {
 
   if (steps.length === 0) return null;
 
+  // Before mount, render a static placeholder to avoid hydration mismatch.
+  if (!mounted) {
+    if (steps.length > DOT_THRESHOLD) {
+      return (
+        <div className="mt-1 px-1">
+          <div className="h-1 rounded-full bg-gray-200 overflow-hidden" />
+          <span className="text-[10px] text-gray-400 mt-0.5 block">
+            {steps.length} steps
+          </span>
+        </div>
+      );
+    }
+    return (
+      <div className="mt-1 flex items-center gap-[3px] px-1" role="group">
+        {steps.map((step) => (
+          <span key={step.id} className="inline-block rounded-full flex-shrink-0 h-1.5 w-1.5 bg-gray-300" />
+        ))}
+      </div>
+    );
+  }
+
   // For many steps, show a compact progress bar.
   if (steps.length > DOT_THRESHOLD) {
     const completedCount = stepCompletions.filter((c) => c >= 1).length;
     const pct = steps.length > 0 ? (completedCount / steps.length) * 100 : 0;
 
     return (
-      <div className="mt-1 px-1" aria-label={`${completedCount} of ${steps.length} steps complete`}>
+      <div className="mt-1 px-1" aria-label={`${completedCount} of ${steps.length} steps complete`} suppressHydrationWarning>
         <div className="h-1 rounded-full bg-gray-200 overflow-hidden">
           <div
             className="h-full rounded-full bg-blue-500 transition-all duration-300"
             style={{ width: `${Math.max(pct, pct > 0 ? 2 : 0)}%` }}
           />
         </div>
-        <span className="text-[10px] text-gray-400 mt-0.5 block">
+        <span className="text-[10px] text-gray-400 mt-0.5 block" suppressHydrationWarning>
           {completedCount}/{steps.length} steps
         </span>
       </div>
@@ -123,7 +149,7 @@ function ActiveStepDots({ section, currentStepIndex }: ActiveStepDotsProps) {
       className="mt-1 flex items-center gap-[3px] px-1"
       role="group"
       aria-label={`Step progress: ${stepCompletions.filter((c) => c >= 1).length} of ${steps.length} complete`}
-    >
+         >
       {steps.map((step, i) => {
         const completion = stepCompletions[i];
         const isCompleted = completion >= 1;

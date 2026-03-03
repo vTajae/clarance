@@ -83,3 +83,11 @@ export function useSectionFields(section: SF86Section): FieldDefinition[] {
 // Empty placeholder registry used during loading
 const _emptyRegistry = loadRegistry([]);
 
+/**
+ * Returns the registry singleton if loaded, or `null`.
+ * Safe to call from non-React code (e.g. Jotai derived atoms).
+ */
+export function getRegistrySingleton(): FieldRegistry | null {
+  return _registry;
+}
+

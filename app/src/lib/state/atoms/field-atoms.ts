@@ -93,6 +93,8 @@ export const clearDirtyFieldsAtom = atom(null, (_get, set) => {
  */
 export function sectionFieldsAtom(section: SF86Section) {
   return atom<Record<string, FieldValue>>((get) => {
+    // Read from module-level singleton (populated by use-registry.ts dynamic import)
+    // instead of fieldMetaAtom which was never wired up.
     const registry = get(fieldMetaAtom);
     if (!registry) return {};
 
