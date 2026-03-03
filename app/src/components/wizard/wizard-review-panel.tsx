@@ -81,8 +81,6 @@ function ReviewStepGroup({ step, stepIndex, registry, onEdit }: ReviewStepGroupP
     .map((key) => registry.getBySemanticKey(key))
     .filter((f): f is FieldDefinition => f !== undefined);
 
-  const missingRequired = fields.filter((f) => f.required).length; // will check values below
-
   return (
     <div className="px-6 py-4">
       <div className="flex items-center justify-between mb-2">

@@ -7,6 +7,12 @@ import type {
 
 /**
  * Generates a Zod schema for a single field based on its definition.
+ *
+ * Every schema is nullable to accommodate the initial atom state (`null`).
+ * "Required" validation (i.e. must be non-null/non-empty) is handled
+ * separately by the completion-tracking atoms; Zod focuses on *format*
+ * validation — ensuring that when a value IS provided it has the correct
+ * shape, pattern, and option membership.
  */
 function fieldToZodSchema(field: FieldDefinition): z.ZodType {
   let schema: z.ZodType;
@@ -33,28 +39,33 @@ function fieldToZodSchema(field: FieldDefinition): z.ZodType {
       if (field.uiFieldType === "email") {
         s = s.email();
       }
-      schema = field.required ? s.min(1) : s.optional();
+      schema = s.nullable().optional();
       break;
     }
 
     case "ssn": {
-      const s = z.string().regex(/^\d{9}$/, "SSN must be 9 digits");
-      schema = field.required ? s : s.optional();
+      // Allow null/empty; validate format only when a value is present.
+      const s = z.union([
+        z.string().regex(/^\d{9}$/, "SSN must be 9 digits"),
+        z.literal(""),
+      ]);
+      schema = s.nullable().optional();
       break;
     }
 
     case "date":
     case "dateRange": {
-      const s = z.string().regex(
-        /^\d{4}-\d{2}-\d{2}$/,
-        "Date must be YYYY-MM-DD format"
-      );
-      schema = field.required ? s : s.optional();
+      // Allow null/empty; validate format only when a value is present.
+      const s = z.union([
+        z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be YYYY-MM-DD format"),
+        z.literal(""),
+      ]);
+      schema = s.nullable().optional();
       break;
     }
 
     case "checkbox": {
-      schema = field.required ? z.boolean() : z.boolean().optional();
+      schema = z.boolean().nullable().optional();
       break;
     }
 
@@ -62,22 +73,24 @@ function fieldToZodSchema(field: FieldDefinition): z.ZodType {
     case "select": {
       if (field.options && field.options.length > 0) {
         const [first, ...rest] = field.options;
-        const s = z.enum([first, ...rest]);
-        schema = field.required ? s : s.optional();
+        // Allow null/empty for untouched state; validate option membership
+        // only when a non-empty value is provided.
+        const s = z.union([z.enum([first, ...rest]), z.literal("")]);
+        schema = s.nullable().optional();
       } else {
-        schema = field.required ? z.string().min(1) : z.string().optional();
+        schema = z.string().nullable().optional();
       }
       break;
     }
 
     case "branch": {
-      const b = z.enum(["yes", "no"]);
-      schema = field.required ? b : b.optional();
+      const b = z.union([z.enum(["yes", "no"]), z.literal("")]);
+      schema = b.nullable().optional();
       break;
     }
 
     case "collection": {
-      schema = z.array(z.record(z.string(), z.unknown()));
+      schema = z.array(z.record(z.string(), z.unknown())).nullable().optional();
       break;
     }
 
@@ -87,6 +100,7 @@ function fieldToZodSchema(field: FieldDefinition): z.ZodType {
           notApplicable: z.boolean(),
           value: z.unknown().optional(),
         })
+        .nullable()
         .optional();
       break;
     }

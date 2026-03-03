@@ -21,7 +21,7 @@ import { SECTION_GROUPS, SECTION_META, sectionToGroup } from '@/lib/field-regist
 
 export type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
 
-export type LayoutMode = 'wizard' | 'pdf';
+export type LayoutMode = 'wizard' | 'form' | 'pdf';
 
 export interface AppState {
   /** Currently displayed section in the wizard. */

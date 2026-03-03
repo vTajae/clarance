@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import { notFound } from 'next/navigation';
-import { SECTION_GROUPS, SECTION_META } from '@/lib/field-registry/types';
+import { notFound, redirect } from 'next/navigation';
+import { SECTION_GROUPS, SECTION_META, sectionToGroup } from '@/lib/field-registry/types';
 import type { SF86Section, SF86SectionGroup } from '@/lib/field-registry/types';
 import { SectionErrorBoundary } from '@/components/sections/section-error-boundary';
 
@@ -36,13 +36,17 @@ export default async function SectionPage({ params }: PageProps) {
     notFound();
   }
 
-  // Validate section belongs to group
-  if (!SECTION_GROUPS[group].includes(sectionKey)) {
+  const meta = SECTION_META[sectionKey];
+  if (!meta) {
     notFound();
   }
 
-  const meta = SECTION_META[sectionKey];
-  if (!meta) {
+  // If section exists but belongs to a different group, redirect to the correct URL
+  if (!SECTION_GROUPS[group].includes(sectionKey)) {
+    const correctGroup = sectionToGroup(sectionKey);
+    if (correctGroup) {
+      redirect(`/${submissionId}/${correctGroup}/${sectionKey}`);
+    }
     notFound();
   }
 

@@ -99,7 +99,7 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     ? isReviewMode
       ? `Review · ${currentMeta.title}`
       : `Step ${currentStepIndex + 1} of ${totalVisibleSteps} · ${currentMeta.title}`
-    : `${currentMeta.title} (${sectionIndex + 1} of ${ALL_SECTIONS.length})`;
+    : currentMeta.title;
 
   // -- Button states --
   const prevDisabled = isWizardMode

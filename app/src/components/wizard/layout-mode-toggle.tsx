@@ -5,11 +5,12 @@ import type { LayoutMode } from '@/lib/state/stores/app-store';
 
 const MODES: Array<{ key: LayoutMode; label: string }> = [
   { key: 'wizard', label: 'Wizard' },
+  { key: 'form', label: 'Form' },
   { key: 'pdf', label: 'PDF' },
 ];
 
 /**
- * 2-way toggle: Wizard ↔ PDF layout modes.
+ * 3-way toggle: Wizard | Form | PDF layout modes.
  * Pill group with the active mode highlighted.
  */
 export function LayoutModeToggle() {

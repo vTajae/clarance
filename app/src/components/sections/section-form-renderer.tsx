@@ -8,7 +8,7 @@ import { RegistryField } from './registry-field';
 import { ConditionalWrapper } from './conditional-wrapper';
 import { PdfPageRenderer } from './pdf-page-renderer';
 
-export type LayoutMode = 'wizard' | 'pdf';
+export type LayoutMode = 'wizard' | 'flow' | 'pdf';
 
 interface SectionFormRendererProps {
   section: SF86Section;

@@ -762,6 +762,33 @@ function inferSubGroupLabel(fields) {
 }
 
 // ---------------------------------------------------------------------------
+// Post-processing: disambiguate consecutive duplicate titles
+// ---------------------------------------------------------------------------
+
+/**
+ * When consecutive steps share the same title, append "(1/N)", "(2/N)" etc.
+ * so users can distinguish between them in the step indicator and review panel.
+ */
+function disambiguateTitles(steps) {
+  let i = 0;
+  while (i < steps.length) {
+    // Find a run of consecutive steps with the same title
+    let j = i + 1;
+    while (j < steps.length && steps[j].title === steps[i].title) {
+      j++;
+    }
+    const runLength = j - i;
+    if (runLength > 1) {
+      for (let k = 0; k < runLength; k++) {
+        steps[i + k].title = `${steps[i + k].title} (${k + 1}/${runLength})`;
+      }
+    }
+    i = j;
+  }
+  return steps;
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -786,6 +813,7 @@ function main() {
   for (const sectionKey of allSections) {
     const fields = fieldsBySection[sectionKey];
     const steps = processSection(sectionKey, fields);
+    disambiguateTitles(steps);
 
     output[sectionKey] = {
       sectionKey,

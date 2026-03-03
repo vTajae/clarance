@@ -88,6 +88,9 @@ export function SectionFormLoader({
       {!isLoading && layoutMode === 'wizard' && (
         <WizardLayout sectionKey={sectionKey} />
       )}
+      {!isLoading && layoutMode === 'form' && (
+        <SectionFormRenderer section={sectionKey} layoutMode="flow" />
+      )}
       {!isLoading && layoutMode === 'pdf' && (
         <div className="overflow-x-auto">
           <SectionFormRenderer section={sectionKey} layoutMode="pdf" />

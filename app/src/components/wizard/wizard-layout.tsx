@@ -2,14 +2,18 @@
 
 import { useMemo, useRef, useState, useCallback } from 'react';
 import { useRouter, useParams } from 'next/navigation';
+import { atom, useAtomValue } from 'jotai';
 import type { SF86Section } from '@/lib/field-registry/types';
 import { ALL_SECTIONS, SECTION_META, sectionToGroup } from '@/lib/field-registry/types';
+import { useRegistry } from '@/lib/field-registry/use-registry';
+import { fieldValueAtomFamily, type FieldValue } from '@/lib/state/atoms/field-atoms';
 import { useWizardNavigation } from '@/lib/wizard/use-wizard-navigation';
+import { computeStepCompletion } from '@/lib/wizard/step-utils';
 import type { WizardStep } from '@/lib/wizard/types';
 import { WizardStepCard } from './wizard-step-card';
 import { WizardStepIndicator } from './wizard-step-indicator';
 import { WizardReviewPanel } from './wizard-review-panel';
-import { RepeatGroupCards } from './repeat-group-cards';
+import { RepeatGroupCards, formatGroupName } from './repeat-group-cards';
 
 interface WizardLayoutProps {
   sectionKey: SF86Section;
@@ -32,18 +36,64 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
     goToStep,
   } = useWizardNavigation();
 
+  const registry = useRegistry();
+
   const prevStepRef = useRef(currentStepIndex);
   const direction = currentStepIndex > prevStepRef.current ? 1 : currentStepIndex < prevStepRef.current ? -1 : 0;
   prevStepRef.current = currentStepIndex;
 
-  // Track completed steps (any step the user has visited past)
+  // -----------------------------------------------------------------------
+  // Data-driven step completion: subscribe to required field values
+  // -----------------------------------------------------------------------
+
+  // Collect required field keys across all visible steps for reactive subscription.
+  const requiredKeys = useMemo(() => {
+    const keys: string[] = [];
+    const seen = new Set<string>();
+    for (const step of visibleSteps) {
+      for (const key of step.fieldKeys) {
+        if (seen.has(key)) continue;
+        const field = registry.getBySemanticKey(key);
+        if (field?.required) {
+          seen.add(key);
+          keys.push(key);
+        }
+      }
+    }
+    return keys;
+  }, [visibleSteps, registry]);
+
+  const requiredKeysKey = useMemo(() => requiredKeys.join(','), [requiredKeys]);
+
+  // Single derived atom that reads all required field values at once.
+  const requiredValuesAtom = useMemo(
+    () =>
+      atom((get) => {
+        const values: Record<string, FieldValue> = {};
+        for (const key of requiredKeys) {
+          values[key] = get(fieldValueAtomFamily(key));
+        }
+        return values;
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [requiredKeysKey],
+  );
+
+  const requiredValues = useAtomValue(requiredValuesAtom);
+
+  // Mark a step as completed when all its required fields are filled.
   const completedSteps = useMemo(() => {
     const set = new Set<number>();
-    for (let i = 0; i < currentStepIndex; i++) {
-      set.add(i);
+    for (let i = 0; i < visibleSteps.length; i++) {
+      const ratio = computeStepCompletion(
+        visibleSteps[i],
+        registry,
+        (key) => requiredValues[key] ?? null,
+      );
+      if (ratio >= 1) set.add(i);
     }
     return set;
-  }, [currentStepIndex]);
+  }, [visibleSteps, registry, requiredValues]);
 
   // Next section info for review panel
   const currentSectionIndex = ALL_SECTIONS.indexOf(sectionKey);
@@ -77,7 +127,20 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
     // the user answers gate questions before reaching repeat entries.
     if (repeatSteps.length < visibleSteps.length) return null;
 
-    return { groups, repeatSteps };
+    // Merge groups that derive the same display name to avoid duplicate headings.
+    // e.g. "residency", "section11_2", "section11_3" all display as "Residences".
+    const mergedGroups = new Map<string, { displayName: string; steps: WizardStep[] }>();
+    for (const [groupName, groupSteps] of groups) {
+      const displayName = formatGroupName(groupName, groupSteps);
+      const existing = mergedGroups.get(displayName);
+      if (existing) {
+        existing.steps.push(...groupSteps);
+      } else {
+        mergedGroups.set(displayName, { displayName, steps: [...groupSteps] });
+      }
+    }
+
+    return { mergedGroups, repeatSteps };
   }, [visibleSteps]);
 
   // When section changes, reset to overview
@@ -133,11 +196,11 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
   if (repeatInfo && showRepeatOverview && !isReviewMode) {
     return (
       <div className="py-2 space-y-6">
-        {Array.from(repeatInfo.groups.entries()).map(([groupName, steps]) => (
+        {Array.from(repeatInfo.mergedGroups.entries()).map(([displayName, { steps }]) => (
           <RepeatGroupCards
-            key={groupName}
+            key={displayName}
             steps={steps}
-            groupName={groupName}
+            groupName={displayName}
             onEditEntry={(localIdx) => {
               // localIdx is within the group's steps, convert to global visible step index
               const targetStep = steps[localIdx];
