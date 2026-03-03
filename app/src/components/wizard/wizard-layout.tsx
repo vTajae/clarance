@@ -182,13 +182,15 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
     goToStep(0);
   }, [goToStep]);
 
-  // Focus review panel when entering review mode
+  // Focus review panel and scroll to top when entering review mode
   useEffect(() => {
-    if (isReviewMode && reviewPanelRef.current) {
-      // Use requestAnimationFrame to ensure DOM is ready, then focus
-      requestAnimationFrame(() => {
-        reviewPanelRef.current?.focus({ preventScroll: false });
-      });
+    if (isReviewMode) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (reviewPanelRef.current) {
+        requestAnimationFrame(() => {
+          reviewPanelRef.current?.focus({ preventScroll: false });
+        });
+      }
     }
   }, [isReviewMode]);
 
@@ -254,7 +256,7 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
 
       {/* Review panel or step card */}
       {isReviewMode ? (
-        <div ref={reviewPanelRef} tabIndex={-1} className="focus:outline-none">
+        <div ref={reviewPanelRef} tabIndex={-1} className="animate-fadeIn focus:outline-none">
           <WizardReviewPanel
             steps={visibleSteps}
             sectionTitle={sectionTitle}

@@ -10,6 +10,7 @@ import {
   type SF86Section,
   type SF86SectionGroup,
 } from '@/lib/field-registry/types';
+import { SidebarStepDots } from './sidebar-step-dots';
 
 /** Human-readable titles for section groups. */
 const GROUP_LABELS: Record<SF86SectionGroup, string> = {
@@ -155,6 +156,10 @@ export function SectionSidebar({
 }: SectionSidebarProps) {
   const currentSection = useAppStore((s) => s.currentSection);
   const currentGroup = useAppStore((s) => s.currentSectionGroup);
+  const layoutMode = useAppStore((s) => s.layoutMode);
+  const currentStepIndex = useAppStore((s) => s.currentStepIndex);
+
+  const showStepDots = layoutMode === 'wizard';
 
   // Track which groups are expanded (default: current group).
   const [expanded, setExpanded] = useState<Set<SF86SectionGroup>>(
@@ -301,6 +306,15 @@ export function SectionSidebar({
                           >
                             {node.label}
                           </Link>
+                          {showStepDots && node.key && (
+                            <div className="pl-4 pr-4 pb-1">
+                              <SidebarStepDots
+                                section={node.key}
+                                isActive={isActive}
+                                currentStepIndex={currentStepIndex}
+                              />
+                            </div>
+                          )}
                         </li>
                       );
                     }
@@ -365,6 +379,17 @@ export function SectionSidebar({
                           </button>
                         </div>
 
+                        {/* Step dots for navigable parent section (e.g. section21) */}
+                        {showStepDots && node.key && (
+                          <div className="pl-4 pr-4 pb-1">
+                            <SidebarStepDots
+                              section={node.key}
+                              isActive={isActive}
+                              currentStepIndex={currentStepIndex}
+                            />
+                          </div>
+                        )}
+
                         {/* Subsections */}
                         {isParentExpanded && (
                           <ul className="ml-4 border-l border-gray-100">
@@ -386,6 +411,15 @@ export function SectionSidebar({
                                   >
                                     {child.label}
                                   </Link>
+                                  {showStepDots && (
+                                    <div className="pl-4 pr-4 pb-1">
+                                      <SidebarStepDots
+                                        section={child.key}
+                                        isActive={isChildActive}
+                                        currentStepIndex={currentStepIndex}
+                                      />
+                                    </div>
+                                  )}
                                 </li>
                               );
                             })}

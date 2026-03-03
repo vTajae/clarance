@@ -148,13 +148,25 @@ export function WizardStepIndicator({
           const isCurrent = i === currentIndex && !inReviewMode;
           const isClickable = isCompleted || isCurrent || i <= currentIndex;
 
+          // Build status text for aria-label and title
+          let statusText = '';
+          if (isCurrent) {
+            statusText = ' - current';
+          } else if (isCompleted) {
+            statusText = ' - completed';
+          }
+
+          const ariaLabel = `Step ${i + 1}: ${step.title}${statusText}`;
+          const titleText = `Step ${i + 1}: ${step.title}${statusText}`;
+
           return (
             <button
               key={step.id}
               type="button"
               role="tab"
               aria-selected={isCurrent}
-              aria-label={`Step ${i + 1}: ${step.title}${isCompleted ? ' (completed)' : ''}`}
+              aria-label={ariaLabel}
+              title={titleText}
               tabIndex={isCurrent ? 0 : -1}
               onClick={() => isClickable && onStepClick(i)}
               disabled={!isClickable}
@@ -167,7 +179,7 @@ export function WizardStepIndicator({
                     ? 'h-3 w-3 bg-blue-600 text-white'
                     : 'h-3 w-3 bg-gray-300'
                 }
-                ${isClickable && !isCurrent ? 'cursor-pointer hover:scale-110' : ''}
+                ${isClickable && !isCurrent ? 'cursor-pointer hover:scale-110 hover:brightness-110' : ''}
                 ${!isClickable ? 'cursor-default' : ''}
               `}
             >
@@ -181,33 +193,44 @@ export function WizardStepIndicator({
         })}
 
         {/* Review dot */}
-        <button
-          type="button"
-          role="tab"
-          aria-selected={inReviewMode}
-          aria-label="Review"
-          tabIndex={inReviewMode ? 0 : -1}
-          onClick={() => {
-            // Only clickable if all steps visited
-            if (currentIndex >= steps.length - 1 || completedSteps.size === steps.length) {
-              onStepClick(-1); // -1 signals review mode
-            }
-          }}
-          className={`
-            relative flex items-center justify-center rounded-full transition-all duration-200 ml-1
-            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
-            ${inReviewMode
-              ? 'h-4 w-4 border-2 border-green-600 bg-white'
-              : 'h-3 w-3 bg-gray-300'
-            }
-          `}
-        >
-          {inReviewMode && (
-            <svg className="h-2 w-2 text-green-600" fill="currentColor" viewBox="0 0 12 12">
-              <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-            </svg>
-          )}
-        </button>
+        {(() => {
+          const isReviewClickable = currentIndex >= steps.length - 1 || completedSteps.size === steps.length;
+          const reviewAriaLabel = inReviewMode ? 'Review section answers - current' : 'Review section answers';
+
+          return (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={inReviewMode}
+              aria-label={reviewAriaLabel}
+              title={reviewAriaLabel}
+              tabIndex={inReviewMode ? 0 : -1}
+              onClick={() => {
+                // Only clickable if all steps visited
+                if (isReviewClickable) {
+                  onStepClick(-1); // -1 signals review mode
+                }
+              }}
+              disabled={!isReviewClickable}
+              className={`
+                relative flex items-center justify-center rounded-full transition-all duration-200 ml-1
+                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+                ${inReviewMode
+                  ? 'h-4 w-4 border-2 border-green-600 bg-white'
+                  : 'h-3 w-3 bg-gray-300'
+                }
+                ${isReviewClickable && !inReviewMode ? 'cursor-pointer hover:scale-110 hover:brightness-110' : ''}
+                ${!isReviewClickable ? 'cursor-default' : ''}
+              `}
+            >
+              {inReviewMode && (
+                <svg className="h-2 w-2 text-green-600" fill="currentColor" viewBox="0 0 12 12">
+                  <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                </svg>
+              )}
+            </button>
+          );
+        })()}
       </div>
     </div>
   );

@@ -84,15 +84,19 @@ export function SectionFormLoader({
         <ValidationSummary errors={validationErrors} />
       )}
 
-      {/* Registry-driven form fields */}
+      {/* Registry-driven form fields — fade transition on layout mode switch */}
       {!isLoading && layoutMode === 'wizard' && (
-        <WizardLayout sectionKey={sectionKey} />
+        <div key="wizard" className="animate-fadeIn">
+          <WizardLayout sectionKey={sectionKey} />
+        </div>
       )}
       {!isLoading && layoutMode === 'form' && (
-        <SectionFormRenderer section={sectionKey} layoutMode="flow" />
+        <div key="form" className="animate-fadeIn">
+          <SectionFormRenderer section={sectionKey} layoutMode="flow" />
+        </div>
       )}
       {!isLoading && layoutMode === 'pdf' && (
-        <div className="overflow-x-auto">
+        <div key="pdf" className="animate-fadeIn overflow-x-auto">
           <SectionFormRenderer section={sectionKey} layoutMode="pdf" />
         </div>
       )}
