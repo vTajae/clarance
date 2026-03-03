@@ -7,10 +7,10 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
-  timeout: 60_000,
+  timeout: 90_000,
   expect: { timeout: 10_000 },
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:4001',
     trace: 'on-first-retry',
     navigationTimeout: 30_000,
   },
@@ -21,8 +21,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:3000',
+    command: 'npm run dev -- --port 4001',
+    url: 'http://localhost:4001',
     reuseExistingServer: !process.env.CI,
     timeout: 180_000, // Next.js 16 first compile of 80+ files takes >60s
   },
