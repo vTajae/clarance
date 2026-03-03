@@ -57,7 +57,7 @@ export function WizardReviewPanel({
           onClick={onContinue}
           className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
-          {nextSectionTitle ? `Continue to ${nextSectionTitle}` : 'Finish'}
+          {nextSectionTitle ? `Continue to ${nextSectionTitle}` : 'Submit Form'}
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>

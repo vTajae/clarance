@@ -6,6 +6,23 @@ import type { SaveStatus } from '@/lib/state/stores/app-store';
 import type { SyncStatus } from '@/lib/persistence/sync-engine';
 import { useExportPdf } from '@/lib/state/hooks/use-export-pdf';
 import { LayoutModeToggle } from '@/components/wizard/layout-mode-toggle';
+import { SECTION_META } from '@/lib/field-registry/types';
+import type { SF86SectionGroup } from '@/lib/field-registry/types';
+import { useWizardNavigation } from '@/lib/wizard/use-wizard-navigation';
+
+const GROUP_LABELS: Record<SF86SectionGroup, string> = {
+  identification: 'Identification',
+  citizenship: 'Citizenship',
+  history: 'History',
+  military: 'Military',
+  relationships: 'Relationships',
+  foreign: 'Foreign',
+  financial: 'Financial',
+  substance: 'Substance',
+  legal: 'Legal',
+  psychological: 'Psychological',
+  review: 'Review',
+};
 
 interface TopBarProps {
   submissionId: string;
@@ -38,7 +55,11 @@ export function TopBar({
 }: TopBarProps) {
   const saveStatus = useAppStore((s) => s.saveStatus);
   const lastSaved = useAppStore((s) => s.lastSaved);
+  const currentSection = useAppStore((s) => s.currentSection);
+  const currentSectionGroup = useAppStore((s) => s.currentSectionGroup);
+  const layoutMode = useAppStore((s) => s.layoutMode);
   const { exportPdf, status: exportStatus } = useExportPdf();
+  const { currentStep, currentStepIndex, isReviewMode } = useWizardNavigation();
 
   const pct = Math.round(completionPercent * 100);
   const status = STATUS_MAP[saveStatus];
@@ -159,6 +180,30 @@ export function TopBar({
           </button>
         </div>
       </div>
+
+      {/* Breadcrumb navigation */}
+      {currentSection !== 'ssnPageHeader' && (
+        <nav
+          className="flex items-center gap-1 px-4 py-1.5 text-xs text-gray-500 border-t border-gray-100 bg-gray-50/50"
+          aria-label="Breadcrumb"
+        >
+          <span>{GROUP_LABELS[currentSectionGroup]}</span>
+          <span className="text-gray-300" aria-hidden="true">{' \u203A '}</span>
+          <span>{SECTION_META[currentSection]?.title ?? currentSection}</span>
+          {layoutMode === 'wizard' && (
+            <>
+              <span className="text-gray-300" aria-hidden="true">{' \u203A '}</span>
+              <span className="text-gray-700 font-medium">
+                {isReviewMode
+                  ? 'Review'
+                  : currentStep
+                    ? `Step ${currentStepIndex + 1}: ${currentStep.title}`
+                    : 'Step 1'}
+              </span>
+            </>
+          )}
+        </nav>
+      )}
     </header>
   );
 }

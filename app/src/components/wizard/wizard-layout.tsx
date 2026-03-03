@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useRef, useState, useCallback } from 'react';
+import { useMemo, useRef, useState, useCallback, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { atom, useAtomValue } from 'jotai';
 import type { SF86Section } from '@/lib/field-registry/types';
@@ -41,6 +41,8 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
   const prevStepRef = useRef(currentStepIndex);
   const direction = currentStepIndex > prevStepRef.current ? 1 : currentStepIndex < prevStepRef.current ? -1 : 0;
   prevStepRef.current = currentStepIndex;
+
+  const reviewPanelRef = useRef<HTMLDivElement>(null);
 
   // -----------------------------------------------------------------------
   // Data-driven step completion: subscribe to required field values
@@ -180,6 +182,16 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
     goToStep(0);
   }, [goToStep]);
 
+  // Focus review panel when entering review mode
+  useEffect(() => {
+    if (isReviewMode && reviewPanelRef.current) {
+      // Use requestAnimationFrame to ensure DOM is ready, then focus
+      requestAnimationFrame(() => {
+        reviewPanelRef.current?.focus({ preventScroll: false });
+      });
+    }
+  }, [isReviewMode]);
+
   // -----------------------------------------------------------------------
   // Render
   // -----------------------------------------------------------------------
@@ -242,13 +254,15 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
 
       {/* Review panel or step card */}
       {isReviewMode ? (
-        <WizardReviewPanel
-          steps={visibleSteps}
-          sectionTitle={sectionTitle}
-          nextSectionTitle={nextSectionTitle}
-          onEditStep={goToStep}
-          onContinue={handleContinueToNextSection}
-        />
+        <div ref={reviewPanelRef} tabIndex={-1} className="focus:outline-none">
+          <WizardReviewPanel
+            steps={visibleSteps}
+            sectionTitle={sectionTitle}
+            nextSectionTitle={nextSectionTitle}
+            onEditStep={goToStep}
+            onContinue={handleContinueToNextSection}
+          />
+        </div>
       ) : currentStep ? (
         <WizardStepCard step={currentStep} direction={direction} />
       ) : null}

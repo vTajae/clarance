@@ -224,13 +224,22 @@ function useEntryFillRatio(
 // ---------------------------------------------------------------------------
 
 function EntryStatusIcon({ fillRatio }: { fillRatio: number }) {
-  // All required fields filled (or no required fields)
-  if (fillRatio >= 1 || fillRatio === -1) {
+  // All required fields filled
+  if (fillRatio >= 1) {
     return (
       <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">
         <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
         </svg>
+      </div>
+    );
+  }
+
+  // No required fields (neutral gray circle with dash)
+  if (fillRatio === -1) {
+    return (
+      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-400">
+        <div className="h-0.5 w-2 bg-current" />
       </div>
     );
   }

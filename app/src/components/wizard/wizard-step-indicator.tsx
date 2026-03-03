@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef, useCallback } from 'react';
 import type { WizardStep } from '@/lib/wizard/types';
 
 interface WizardStepIndicatorProps {
@@ -12,8 +13,15 @@ interface WizardStepIndicatorProps {
 
 /**
  * Step progress indicator.
- * - ≤10 steps: horizontal dots with checkmarks
+ * - ≤10 steps: horizontal dots with checkmarks with keyboard arrow navigation
  * - >10 steps: compact progress bar
+ *
+ * Keyboard navigation (≤10 steps only):
+ * - Left/Up arrow: move focus to previous step
+ * - Right/Down arrow: move focus to next step
+ * - Home: move focus to first step
+ * - End: move focus to last step (or review if at end)
+ * - Focuses dot and triggers onStepClick (WAI-ARIA tabs pattern)
  */
 export function WizardStepIndicator({
   steps,
@@ -22,6 +30,83 @@ export function WizardStepIndicator({
   onStepClick,
   inReviewMode = false,
 }: WizardStepIndicatorProps) {
+  const tablistRef = useRef<HTMLDivElement>(null);
+
+  // Keyboard navigation handler for arrow keys, Home, End
+  // Must be defined before early returns (React Hooks rules)
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      const key = event.key;
+
+      // Only handle arrow keys, Home, End
+      if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(key)) {
+        return;
+      }
+
+      event.preventDefault();
+
+      // Get all tab buttons from the tablist
+      const tablist = tablistRef.current;
+      if (!tablist) return;
+
+      const tabs = Array.from(
+        tablist.querySelectorAll('[role="tab"]')
+      ) as HTMLButtonElement[];
+      if (tabs.length === 0) return;
+
+      // Find currently focused tab
+      const activeElement = document.activeElement;
+      let currentTabIndex = tabs.findIndex((tab) => tab === activeElement);
+
+      // If nothing focused, default to current step or review
+      if (currentTabIndex === -1) {
+        currentTabIndex = inReviewMode ? tabs.length - 1 : currentIndex;
+      }
+
+      let nextTabIndex = currentTabIndex;
+
+      // Handle key presses
+      if (key === 'ArrowLeft' || key === 'ArrowUp') {
+        // Move to previous tab
+        nextTabIndex = Math.max(0, currentTabIndex - 1);
+      } else if (key === 'ArrowRight' || key === 'ArrowDown') {
+        // Move to next tab (including review dot)
+        nextTabIndex = Math.min(tabs.length - 1, currentTabIndex + 1);
+      } else if (key === 'Home') {
+        // Move to first tab
+        nextTabIndex = 0;
+      } else if (key === 'End') {
+        // Move to last tab (review dot)
+        nextTabIndex = tabs.length - 1;
+      }
+
+      // Focus the new tab
+      const nextTab = tabs[nextTabIndex];
+      if (nextTab) {
+        nextTab.focus();
+
+        // Determine what to pass to onStepClick
+        // The last tab is the review dot, so check if we're focusing that
+        const isReviewTab = nextTabIndex === tabs.length - 1;
+        const stepIndex = isReviewTab ? -1 : nextTabIndex;
+
+        // Only trigger click if the step is clickable
+        // Review mode: last tab is always clickable
+        // Regular step: only if completed or current or in the history
+        const isClickable =
+          isReviewTab ||
+          completedSteps.has(nextTabIndex) ||
+          nextTabIndex === currentIndex ||
+          nextTabIndex <= currentIndex;
+
+        if (isClickable) {
+          onStepClick(stepIndex);
+        }
+      }
+    },
+    [currentIndex, completedSteps, inReviewMode, onStepClick]
+  );
+
   if (steps.length === 0) return null;
 
   // Compact bar for many steps
@@ -51,7 +136,13 @@ export function WizardStepIndicator({
   // Dot indicators for ≤10 steps
   return (
     <div className="mx-auto w-full max-w-2xl mb-6">
-      <div className="flex items-center justify-center gap-2" role="tablist" aria-label="Wizard steps">
+      <div
+        ref={tablistRef}
+        className="flex items-center justify-center gap-2"
+        role="tablist"
+        aria-label="Wizard steps"
+        onKeyDown={handleKeyDown}
+      >
         {steps.map((step, i) => {
           const isCompleted = completedSteps.has(i);
           const isCurrent = i === currentIndex && !inReviewMode;
@@ -64,6 +155,7 @@ export function WizardStepIndicator({
               role="tab"
               aria-selected={isCurrent}
               aria-label={`Step ${i + 1}: ${step.title}${isCompleted ? ' (completed)' : ''}`}
+              tabIndex={isCurrent ? 0 : -1}
               onClick={() => isClickable && onStepClick(i)}
               disabled={!isClickable}
               className={`
@@ -94,6 +186,7 @@ export function WizardStepIndicator({
           role="tab"
           aria-selected={inReviewMode}
           aria-label="Review"
+          tabIndex={inReviewMode ? 0 : -1}
           onClick={() => {
             // Only clickable if all steps visited
             if (currentIndex >= steps.length - 1 || completedSteps.size === steps.length) {
