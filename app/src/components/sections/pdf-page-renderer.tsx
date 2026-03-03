@@ -99,67 +99,51 @@ export function PdfPageRenderer({ section, scale = 1.0 }: PdfPageRendererProps) 
   return (
     <div className="space-y-4">
       {/* Controls bar */}
-      <div className="sticky top-0 z-20 flex items-center gap-4 rounded-lg border border-gray-200 bg-white/95 backdrop-blur px-4 py-2 shadow-sm">
-        <div className="text-xs font-medium text-gray-700">
-          {section}: {fields.length} fields across {sortedPages.length} pages
-          {(() => {
-            const total = Array.from(pageMap.values()).reduce((s, f) => s + f.length, 0);
-            return total > fields.length ? (
-              <span className="text-gray-400 ml-1">({total} total on pages)</span>
-            ) : null;
-          })()}
-        </div>
+      <div className="sticky top-0 z-20 flex items-center gap-3 bg-white/95 backdrop-blur px-3 py-2 border-b border-gray-200">
+        <span className="text-xs text-gray-500">
+          Page{sortedPages.length > 1 ? 's' : ''} {sortedPages[0]}{sortedPages.length > 1 ? `–${sortedPages[sortedPages.length - 1]}` : ''}
+        </span>
         <div className="flex-1" />
-        <label className="flex items-center gap-1.5 text-xs text-gray-600">
+        <label className="flex items-center gap-1.5 text-xs text-gray-500 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={showFields}
+            onChange={(e) => setShowFields(e.target.checked)}
+            className="accent-blue-600 rounded"
+          />
+          Fields
+        </label>
+        <label className="flex items-center gap-1.5 text-xs text-gray-500 cursor-pointer select-none"
+          title="Show hidden conditional fields at reduced opacity"
+        >
+          <input
+            type="checkbox"
+            checked={showAll}
+            onChange={(e) => setShowAll(e.target.checked)}
+            className="accent-amber-500 rounded"
+          />
+          Show All
+        </label>
+        <label className="flex items-center gap-1.5 text-xs text-gray-500 cursor-pointer select-none">
           <input
             type="checkbox"
             checked={livePreview}
             onChange={(e) => setLivePreview(e.target.checked)}
-            className="accent-red-500"
+            className="accent-green-600 rounded"
           />
-          Live Preview
+          Live
         </label>
-        <button
-          onClick={() => setShowFields(!showFields)}
-          className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
-            showFields
-              ? 'bg-blue-600 text-white shadow-sm'
-              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-          }`}
-        >
-          Show Fields
-        </button>
-        <button
-          onClick={() => setShowAll(!showAll)}
-          className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
-            showAll
-              ? 'bg-amber-500 text-white shadow-sm'
-              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-          }`}
-          title="Bypass conditional logic to reveal all hidden fields (shown at 40% opacity with red dashed outline)"
-        >
-          Show All
-        </button>
-        <label className="flex items-center gap-1.5 text-xs text-gray-600">
-          Opacity
+        {showFields && (
           <input
             type="range"
             min={10}
             max={100}
             value={fieldOpacity}
             onChange={(e) => setFieldOpacity(Number(e.target.value))}
-            className="w-20 h-3 accent-blue-600"
+            className="w-16 h-3 accent-blue-600"
+            title={`Field opacity: ${fieldOpacity}%`}
           />
-          <span className="w-7 text-right font-mono">{fieldOpacity}%</span>
-        </label>
-        {/* Legend */}
-        <div className="flex items-center gap-2 border-l border-gray-200 pl-3">
-          <span className="inline-block w-3 h-3 border-2 border-blue-400 rounded-sm" /> <span className="text-[10px] text-gray-500">text</span>
-          <span className="inline-block w-3 h-3 border-2 border-green-400 rounded-sm" /> <span className="text-[10px] text-gray-500">check</span>
-          <span className="inline-block w-3 h-3 border-2 border-orange-400 rounded-sm" /> <span className="text-[10px] text-gray-500">radio</span>
-          <span className="inline-block w-3 h-3 border-2 border-purple-400 rounded-sm" /> <span className="text-[10px] text-gray-500">select</span>
-          <span className="inline-block w-3 h-3 border-2 border-teal-400 rounded-sm" /> <span className="text-[10px] text-gray-500">date</span>
-        </div>
+        )}
       </div>
 
       {/* Pages */}

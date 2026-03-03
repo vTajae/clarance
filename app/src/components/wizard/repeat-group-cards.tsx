@@ -37,7 +37,7 @@ export function RepeatGroupCards({
     return Array.from(map.entries()).sort(([a], [b]) => a - b);
   }, [steps]);
 
-  const displayName = formatGroupName(groupName);
+  const displayName = formatGroupName(groupName, steps);
 
   return (
     <div className="mx-auto w-full max-w-2xl">
@@ -71,6 +71,13 @@ interface EntryCardProps {
 
 function EntryCard({ repeatIndex, steps, onEdit }: EntryCardProps) {
   const registry = useRegistry();
+
+  // Derive an entry label from the step title: "Employment 1 - Contact" → "Employment 1"
+  const entryLabel = useMemo(() => {
+    const firstTitle = steps[0]?.title ?? '';
+    const match = firstTitle.match(/^(.+?\s+\d+)/);
+    return match ? match[1] : `Entry ${repeatIndex + 1}`;
+  }, [steps, repeatIndex]);
 
   // Collect summary fields from first step
   const summaryKeys = useMemo(() => {
@@ -113,7 +120,7 @@ function EntryCard({ repeatIndex, steps, onEdit }: EntryCardProps) {
           <EntryStatusIcon steps={steps} registry={registry} />
           <div className="min-w-0">
             <div className="text-sm font-medium text-gray-900">
-              Entry {repeatIndex + 1}
+              {entryLabel}
             </div>
             <SummaryValues keys={summaryKeys} />
           </div>
@@ -183,14 +190,28 @@ function EntryButtonLabel({ steps, registry }: { steps: WizardStep[]; registry: 
 
 // ---------------------------------------------------------------------------
 
-function formatGroupName(name: string): string {
-  // Convert internal names like "residency" or "section_12_2" to display names
+/** Derive a human-readable group heading from the step titles in the group. */
+function formatGroupName(name: string, steps: WizardStep[]): string {
+  // Try to extract the entity type from the first step's title.
+  // Titles follow patterns like "Employment 1 - Contact", "Residence 1 - Dates".
+  const firstTitle = steps[0]?.title ?? '';
+  const match = firstTitle.match(/^(.+?)\s+\d/);
+  if (match) {
+    const base = match[1].trim();
+    // Pluralize simple words
+    if (base.endsWith('e')) return base + 's';
+    if (base.endsWith('y') && !/[aeiou]y$/i.test(base)) return base.slice(0, -1) + 'ies';
+    return base + 's';
+  }
+
+  // Fallback: known semantic names
+  if (name === 'residency') return 'Residences';
+
+  // Last resort: clean up the internal name
   const cleaned = name
     .replace(/^section_?/i, '')
     .replace(/_/g, ' ')
     .replace(/(\d+)/g, ' $1 ')
     .trim();
-
-  // Capitalize first letter
   return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
 }

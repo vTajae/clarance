@@ -13,12 +13,11 @@ export default async function FormLayout({ children, params }: LayoutProps) {
 
   // Verify the submission exists and belongs to the authenticated user
   const session = await auth();
-  if (!session?.user?.id) {
-    redirect('/login');
-  }
+  // TODO: Remove dev bypass once auth is re-enabled
+  const userId = session?.user?.id ?? '00000000-0000-0000-0000-000000000000';
 
   const submission = await getSubmission(submissionId);
-  if (!submission || submission.user_id !== session.user.id) {
+  if (!submission || submission.user_id !== userId) {
     redirect('/new');
   }
 

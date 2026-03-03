@@ -145,7 +145,7 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
 
         {/* Center: step/section indicator + save */}
         <div className="flex items-center gap-4">
-          <span className="hidden sm:inline text-xs text-gray-500 text-center max-w-[200px] truncate">
+          <span className="hidden sm:inline text-xs text-gray-500 text-center max-w-md truncate">
             {centerText}
           </span>
           <button

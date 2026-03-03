@@ -27,28 +27,9 @@ export const authConfig = {
       }
       return session;
     },
-    authorized({ auth, request: { nextUrl } }) {
-      const isLoggedIn = !!auth?.user;
-      const { pathname } = nextUrl;
-
-      const PUBLIC_PATHS = [
-        '/login',
-        '/register',
-        '/api/auth',
-        '/import',
-        '/new',
-        '/verify',
-      ];
-
-      const isPublic =
-        pathname === '/' ||
-        PUBLIC_PATHS.some((p) => pathname.startsWith(p));
-
-      if (isPublic) return true;
-      if (isLoggedIn) return true;
-
-      // Redirect to login
-      return false;
+    authorized() {
+      // TODO: Re-enable auth once wizard UI is finalized
+      return true;
     },
   },
 

@@ -8,6 +8,9 @@ import { useFieldValue } from '@/lib/state/hooks/use-field-value';
  * Compact, input-only field for PDF coordinate layout mode.
  * Renders just the bare input (no label, no wrapper margin) sized to fill
  * its absolutely-positioned parent container.
+ *
+ * Uses outline (not border) so the element's box model matches the PDF
+ * widget rect exactly — border would shrink the usable text area.
  */
 function CoordinateFieldInner({ field }: { field: FieldDefinition }) {
   const { semanticKey, uiFieldType, options, maxLength, label, section, pdfFieldName, repeatGroup, repeatIndex, pdfPage } = field;
@@ -30,14 +33,16 @@ function CoordinateFieldInner({ field }: { field: FieldDefinition }) {
     [setValue],
   );
 
-  // Color-coded border classes by field type
-  const borderClass = getBorderClass(uiFieldType);
+  const outlineClass = getOutlineClass(uiFieldType);
 
   // Rich tooltip: semantic key, label, PDF field name, repeat info, page
   const repeatInfo = repeatGroup ? `\nGroup: ${repeatGroup}[${repeatIndex}]` : '';
   const tooltip = `${semanticKey}\n${label}\n\nPDF: ${pdfFieldName}\nPage: ${pdfPage} | Type: ${uiFieldType}${repeatInfo}\n[${section}]`;
 
-  const baseClass = `block w-full h-full ${borderClass} bg-white/90 focus:outline-none focus:ring-1 focus:ring-blue-400`;
+  // Outline-based styling: no border/padding so text aligns with PDF rendering.
+  // font-size 10px ≈ PyMuPDF's auto-sized text in standard SF-86 widgets.
+  const baseClass = `block w-full h-full border-0 p-0 ${outlineClass} bg-white/80 text-black focus:outline-none focus:ring-1 focus:ring-blue-400`;
+  const textClass = 'text-[10px] leading-[1]';
 
   switch (uiFieldType) {
     case 'checkbox':
@@ -55,8 +60,8 @@ function CoordinateFieldInner({ field }: { field: FieldDefinition }) {
             className="sr-only peer"
           />
           <div
-            className={`w-full h-full border border-green-400 bg-white/90
-              peer-checked:bg-green-500 peer-checked:border-green-600
+            className={`w-full h-full outline outline-1 outline-green-400 bg-white/80
+              peer-checked:bg-green-500 peer-checked:outline-green-600
               peer-focus:ring-1 peer-focus:ring-blue-400
               flex items-center justify-center`}
           >
@@ -75,7 +80,7 @@ function CoordinateFieldInner({ field }: { field: FieldDefinition }) {
           value={strValue}
           onChange={onChange}
           title={tooltip}
-          className={`${baseClass} text-[7px] px-0 py-0 leading-none`}
+          className={`${baseClass} ${textClass}`}
         >
           <option value="" />
           {(options ?? []).map((opt, i) => (
@@ -94,7 +99,7 @@ function CoordinateFieldInner({ field }: { field: FieldDefinition }) {
           value={strValue}
           onChange={onChange}
           title={tooltip}
-          className={`${baseClass} text-[7px] px-0 py-0 leading-none`}
+          className={`${baseClass} ${textClass}`}
         >
           <option value="" />
           {(options ?? []).map((opt, i) => (
@@ -115,7 +120,7 @@ function CoordinateFieldInner({ field }: { field: FieldDefinition }) {
           placeholder="MM/DD/YYYY"
           title={tooltip}
           maxLength={10}
-          className={`${baseClass} text-[7px] px-0.5 py-0 leading-none`}
+          className={`${baseClass} ${textClass}`}
         />
       );
 
@@ -126,7 +131,7 @@ function CoordinateFieldInner({ field }: { field: FieldDefinition }) {
           onChange={(e) => setValue(e.target.value)}
           title={tooltip}
           maxLength={maxLength}
-          className={`${baseClass} text-[7px] px-0.5 py-0 leading-none resize-none`}
+          className={`${baseClass} ${textClass} resize-none`}
         />
       );
 
@@ -139,31 +144,32 @@ function CoordinateFieldInner({ field }: { field: FieldDefinition }) {
           onChange={onChange}
           title={tooltip}
           maxLength={maxLength}
-          className={`${baseClass} text-[7px] px-0.5 py-0 leading-none`}
+          className={`${baseClass} ${textClass}`}
         />
       );
   }
 }
 
-function getBorderClass(uiFieldType: string): string {
+/** Outline color by field type (outlines don't affect box model). */
+function getOutlineClass(uiFieldType: string): string {
   switch (uiFieldType) {
     case 'checkbox':
     case 'branch':
     case 'notApplicable':
-      return 'border border-green-400';
+      return 'outline outline-1 outline-green-400';
     case 'radio':
-      return 'border border-orange-400';
+      return 'outline outline-1 outline-orange-400';
     case 'select':
     case 'country':
     case 'state':
-      return 'border border-purple-400';
+      return 'outline outline-1 outline-purple-400';
     case 'date':
     case 'dateRange':
-      return 'border border-teal-400';
+      return 'outline outline-1 outline-teal-400';
     case 'textarea':
-      return 'border border-amber-400';
+      return 'outline outline-1 outline-amber-400';
     default:
-      return 'border border-blue-400';
+      return 'outline outline-1 outline-blue-400';
   }
 }
 

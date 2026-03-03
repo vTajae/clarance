@@ -27,10 +27,11 @@ function RegistryFieldInner({ field }: { field: FieldDefinition }) {
   // Clean up label: truncate very long instructional labels
   const displayLabel = label.length > 100 ? label.slice(0, 97) + '...' : label;
 
-  // Convert string[] options to FieldOption[] format
+  // Convert string[] options to FieldOption[] format.
+  // Strip PDF instruction parentheticals from labels (e.g. "NO (If NO, proceed to Section 6)" → "NO")
   const fieldOptions: FieldOption[] | undefined = options?.map((opt) => ({
     value: opt,
-    label: opt,
+    label: opt.replace(/\s*\(If\s.*$/i, '').trim() || opt,
   }));
 
   switch (uiFieldType) {

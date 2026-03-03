@@ -12,8 +12,6 @@ import { SectionFormRenderer } from './section-form-renderer';
 import { ValidationSummary } from '@/components/validation/validation-summary';
 import { TimelineGapAlert } from '@/components/validation/timeline-gap-alert';
 import { WizardLayout } from '@/components/wizard/wizard-layout';
-import { LayoutModeToggle } from '@/components/wizard/layout-mode-toggle';
-
 interface SectionFormLoaderProps {
   submissionId: string;
   sectionKey: SF86Section;
@@ -41,7 +39,7 @@ export function SectionFormLoader({
   );
 
   // Auto-save: debounced write to IndexedDB when fields change
-  const { isSaving } = useAutoSave(submissionId, sectionKey);
+  useAutoSave(submissionId, sectionKey);
 
   // Section-level Zod validation
   const { errors: validationErrors } = useSectionValidation(sectionKey);
@@ -57,24 +55,6 @@ export function SectionFormLoader({
 
   return (
     <div className="space-y-6">
-      {/* Section header */}
-      <div className="flex items-start justify-between">
-        <div>
-          <h2 className="text-xl font-bold text-gray-900" id="section-heading">
-            {meta.title}
-          </h2>
-          <p className="mt-1 text-sm text-gray-600">{meta.description}</p>
-        </div>
-        <div className="flex items-center gap-3">
-          {isSaving && (
-            <span className="text-xs text-yellow-600 animate-pulse">
-              Saving...
-            </span>
-          )}
-          <LayoutModeToggle />
-        </div>
-      </div>
-
       {/* Loading state */}
       {isLoading && (
         <div className="flex items-center gap-2 text-sm text-gray-500" role="status">

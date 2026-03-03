@@ -10,10 +10,8 @@ interface RouteParams {
 // GET /api/form/[submissionId]/progress - Get completion per section
 export async function GET(_request: NextRequest, { params }: RouteParams) {
   const session = await auth();
-  const userId = session?.user?.id;
-  if (!userId) {
-    return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
-  }
+  // TODO: Remove dev bypass once auth is re-enabled
+  const userId = session?.user?.id ?? '00000000-0000-0000-0000-000000000000';
 
   const { submissionId } = await params;
 
