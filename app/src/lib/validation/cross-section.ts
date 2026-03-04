@@ -32,6 +32,9 @@ export function validateCrossSections(
 
 /**
  * Name used in Section 1 should match Section 30 (signature).
+ *
+ * Section 1 has separate first/middle name fields.
+ * Section 30 has a single combined field: signature.fullNameTypeOrPrintLegibly.
  */
 function checkNameConsistency(
   data: Record<string, FieldValues>
@@ -42,21 +45,23 @@ function checkNameConsistency(
 
   if (!personal || !sig) return issues;
 
-  const personalName =
-    `${personal["personalInfo.firstName"] || ""} ${personal["personalInfo.lastName"] || ""}`.trim();
-  const sigName =
-    `${sig["signature.firstName"] || ""} ${sig["signature.lastName"] || ""}`.trim();
+  const firstName = (personal["personalInfo.firstName"] as string) || "";
+  const middleName = (personal["personalInfo.middleName"] as string) || "";
+  const lastName = (personal["personalInfo.section1"] as string) || "";
+  const personalName = [lastName, firstName, middleName].filter(Boolean).join(" ").trim();
 
-  if (personalName && sigName && personalName !== sigName) {
+  const sigName = (sig["signature.fullNameTypeOrPrintLegibly"] as string) || "";
+
+  if (personalName && sigName && personalName.toLowerCase() !== sigName.toLowerCase()) {
     issues.push({
       severity: "warning",
       message: `Name in Section 1 ("${personalName}") differs from Signature ("${sigName}")`,
       sections: ["section1", "section30"],
       fields: [
+        "personalInfo.section1",
         "personalInfo.firstName",
-        "personalInfo.lastName",
-        "signature.firstName",
-        "signature.lastName",
+        "personalInfo.middleName",
+        "signature.fullNameTypeOrPrintLegibly",
       ],
     });
   }
@@ -65,17 +70,17 @@ function checkNameConsistency(
 }
 
 /**
- * Birth date in Section 3 shouldn't make applicant too young for the form.
+ * Birth date in Section 2 shouldn't make applicant too young for the form.
  */
 function checkDateConsistency(
   data: Record<string, FieldValues>
 ): CrossSectionIssue[] {
   const issues: CrossSectionIssue[] = [];
-  const birth = data["section3"];
+  const birth = data["section2"];
 
   if (!birth) return issues;
 
-  const dob = birth["birthInfo.dateOfBirth"] as string | undefined;
+  const dob = birth["birthInfo.section2"] as string | undefined;
   if (!dob) return issues;
 
   const birthDate = new Date(dob);
@@ -88,8 +93,8 @@ function checkDateConsistency(
     issues.push({
       severity: "error",
       message: `Applicant appears to be ${age} years old. Must be at least 18.`,
-      sections: ["section3"],
-      fields: ["birthInfo.dateOfBirth"],
+      sections: ["section2"],
+      fields: ["birthInfo.section2"],
     });
   }
 
@@ -97,8 +102,8 @@ function checkDateConsistency(
     issues.push({
       severity: "warning",
       message: `Applicant appears to be ${age} years old. Please verify date of birth.`,
-      sections: ["section3"],
-      fields: ["birthInfo.dateOfBirth"],
+      sections: ["section2"],
+      fields: ["birthInfo.section2"],
     });
   }
 

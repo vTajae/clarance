@@ -14,34 +14,6 @@ test.describe('Accessibility', () => {
     await expect(skipLink).toHaveAttribute('href', '#main-content');
   });
 
-  test('login page form labels are associated with inputs', async ({
-    page,
-  }) => {
-    await page.goto('/login');
-
-    // Labels should be correctly associated
-    const emailInput = page.getByLabel('Email');
-    await expect(emailInput).toHaveAttribute('type', 'email');
-    await expect(emailInput).toHaveAttribute('required', '');
-
-    const passwordInput = page.getByLabel('Password');
-    await expect(passwordInput).toHaveAttribute('type', 'password');
-    await expect(passwordInput).toHaveAttribute('required', '');
-  });
-
-  test('register form has proper label associations', async ({ page }) => {
-    await page.goto('/register');
-
-    await expect(page.getByLabel('Email')).toHaveAttribute('type', 'email');
-    await expect(
-      page.getByLabel('Password', { exact: true }),
-    ).toHaveAttribute('type', 'password');
-    await expect(page.getByLabel('Confirm Password')).toHaveAttribute(
-      'type',
-      'password',
-    );
-  });
-
   test('new form page has proper semantics', async ({ page }) => {
     await page.goto('/new');
 

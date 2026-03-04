@@ -1,0 +1,43 @@
+{
+  "employment": {
+    "entityLabel": "Employment Entry",
+    "sections": ["section13A", "section13B", "section13C"],
+    "groupsBySection": {
+      "section13A": [
+        "section_13_1",
+        "section_13_1_2",
+        "section13_2",
+        "section13_2_2",
+        "section13_3",
+        "section13_3_2",
+        "section13_4"
+      ],
+      "section13B": ["section13_5"],
+      "section13C": ["section13_5"]
+    }
+  },
+  "relative": {
+    "entityLabel": "Relative",
+    "sections": ["section18"],
+    "groupsBySection": {
+      "section18": [
+        "section18_1",
+        "section18_1_1",
+        "section18_2",
+        "section18_3"
+      ]
+    }
+  },
+  "residence": {
+    "entityLabel": "Residence",
+    "sections": ["section11"],
+    "groupsBySection": {
+      "section11": [
+        "residency",
+        "section11_2",
+        "section11_3",
+        "section11_4"
+      ]
+    }
+  }
+}

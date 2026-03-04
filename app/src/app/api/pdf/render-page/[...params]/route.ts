@@ -1,17 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+const PDF_SERVICE_URL = process.env.PDF_SERVICE_URL || 'http://localhost:8000';
+const CACHE_DIR = join(process.cwd(), '.cache', 'pdf-pages');
 
 /**
- * PDF page rendering — serves pre-rendered static PNGs.
+ * PDF page rendering — proxies to the Docker PDF service with filesystem caching.
  *
  * URL pattern: /api/pdf/render-page/{version}/{pageNumber}
  * Example:     /api/pdf/render-page/sf861/0
  *
- * Pages are pre-rendered from the PDF template and stored as static assets
- * in /public/pdf-pages/{version}/page-{pageNumber}.png.
- * If static PNGs aren't available yet, returns 404.
+ * First checks a local file cache, then falls back to the PDF service.
+ * Rendered PNGs are cached to disk so subsequent requests are instant.
  */
 export async function GET(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: Promise<{ params: string[] }> },
 ) {
   const segments = (await params).params;
@@ -33,13 +38,52 @@ export async function GET(
     );
   }
 
-  // Redirect to the static asset — Next.js serves files from /public
-  const staticPath = `/pdf-pages/${encodeURIComponent(version)}/page-${pageNum}.png`;
+  // Check filesystem cache first
+  const cacheFile = join(CACHE_DIR, version, `page-${pageNum}.png`);
+  if (existsSync(cacheFile)) {
+    const data = await readFile(cacheFile);
+    return new NextResponse(data, {
+      headers: {
+        'Content-Type': 'image/png',
+        'Cache-Control': 'public, max-age=86400, immutable',
+      },
+    });
+  }
 
-  return NextResponse.redirect(new URL(staticPath, request.url), {
-    status: 302,
-    headers: {
-      'Cache-Control': 'public, max-age=86400, immutable',
-    },
-  });
+  // Proxy to Docker PDF service
+  try {
+    const serviceUrl = `${PDF_SERVICE_URL}/render-page/${encodeURIComponent(version)}/${pageNum}`;
+    const resp = await fetch(serviceUrl);
+
+    if (!resp.ok) {
+      return NextResponse.json(
+        { error: `PDF service error: ${resp.status} ${resp.statusText}` },
+        { status: resp.status },
+      );
+    }
+
+    const pngBuffer = Buffer.from(await resp.arrayBuffer());
+
+    // Cache to filesystem (non-blocking — don't fail if cache write fails)
+    const cacheDir = join(CACHE_DIR, version);
+    if (!existsSync(cacheDir)) {
+      await mkdir(cacheDir, { recursive: true });
+    }
+    writeFile(cacheFile, pngBuffer).catch(() => {
+      // Silently ignore cache write failures
+    });
+
+    return new NextResponse(pngBuffer, {
+      headers: {
+        'Content-Type': 'image/png',
+        'Cache-Control': 'public, max-age=86400, immutable',
+      },
+    });
+  } catch (err) {
+    console.error('[render-page] PDF service unreachable:', err);
+    return NextResponse.json(
+      { error: 'PDF service unavailable. Ensure the Docker PDF service is running.' },
+      { status: 502 },
+    );
+  }
 }

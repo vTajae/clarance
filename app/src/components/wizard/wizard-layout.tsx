@@ -14,6 +14,8 @@ import { WizardStepCard } from './wizard-step-card';
 import { WizardStepIndicator } from './wizard-step-indicator';
 import { WizardReviewPanel } from './wizard-review-panel';
 import { RepeatGroupCards, formatGroupName } from './repeat-group-cards';
+import { TimelineCoveragePrompt } from './timeline-coverage-prompt';
+import { SignatureReview } from './signature-review';
 
 interface WizardLayoutProps {
   sectionKey: SF86Section;
@@ -218,20 +220,26 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
 
   // Repeat group card overview — no step indicator, just the cards
   if (repeatInfo && showRepeatOverview && !isReviewMode) {
+    const isTimelineSection = sectionKey === 'section11' || sectionKey === 'section13A';
+
     return (
       <div className="py-2 space-y-6">
-        {Array.from(repeatInfo.mergedGroups.entries()).map(([displayName, { steps }]) => (
+        {/* Timeline coverage prompt for residency/employment */}
+        {isTimelineSection && (
+          <TimelineCoveragePrompt
+            section={sectionKey as 'section11' | 'section13A'}
+          />
+        )}
+        {Array.from(repeatInfo.mergedGroups.entries()).map(([displayName, { steps: groupSteps }]) => (
           <RepeatGroupCards
             key={displayName}
-            steps={steps}
+            steps={groupSteps}
             groupName={displayName}
-            onEditEntry={(localIdx) => {
-              // localIdx is within the group's steps, convert to global visible step index
-              const targetStep = steps[localIdx];
-              if (targetStep) {
-                const globalIdx = visibleSteps.indexOf(targetStep);
-                handleRepeatEntryEdit(globalIdx >= 0 ? globalIdx : 0);
-              }
+            sectionKey={sectionKey}
+            allVisibleSteps={visibleSteps}
+            onEditEntry={(globalIdx) => {
+              // RepeatGroupCards passes a global index into allVisibleSteps
+              handleRepeatEntryEdit(globalIdx);
             }}
           />
         ))}
@@ -267,6 +275,8 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
       {/* Review panel or step card */}
       {isReviewMode ? (
         <div ref={reviewPanelRef} tabIndex={-1} className="animate-fadeIn focus:outline-none">
+          {/* Section 30: show certification review above the standard review */}
+          {sectionKey === 'section30' && <SignatureReview />}
           <WizardReviewPanel
             steps={visibleSteps}
             sectionTitle={sectionTitle}

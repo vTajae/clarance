@@ -29,8 +29,10 @@ import type { SF86Section } from '../src/lib/field-registry/types';
 
 let submissionId: string;
 
-test.beforeAll(async ({ request }) => {
-  submissionId = await createSubmission(request);
+test.beforeAll(async ({ browser }) => {
+  const page = await browser.newPage();
+  submissionId = await createSubmission(page);
+  await page.close();
 });
 
 // Identify sections with conditional fields

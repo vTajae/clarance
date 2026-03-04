@@ -1,18 +1,14 @@
-import { test, expect, type APIRequestContext } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 let submissionId: string;
 
-async function createSubmission(request: APIRequestContext): Promise<string> {
-  const resp = await request.post('/api/form/new', {
-    data: { pdfVersion: 'sf861' },
-  });
-  expect(resp.ok()).toBeTruthy();
-  const body = await resp.json();
-  return body.submissionId as string;
-}
-
-test.beforeAll(async ({ request }) => {
-  submissionId = await createSubmission(request);
+test.beforeAll(async ({ browser }) => {
+  const page = await browser.newPage();
+  await page.goto('/new');
+  await page.getByRole('button', { name: 'Create Form' }).click();
+  await page.waitForURL(/\/[a-f0-9-]+\/identification\/section1/);
+  submissionId = page.url().split('/')[3];
+  await page.close();
 });
 
 test.describe('Export PDF', () => {
@@ -30,7 +26,9 @@ test.describe('Export PDF', () => {
     // Wait for auto-save debounce (3 seconds)
     await page.waitForTimeout(3000);
 
-    // Click Export PDF and wait for the download
+    // Click Export PDF — the validation dialog may appear since form is incomplete
+    page.on('dialog', (dialog) => dialog.accept());
+
     const [download] = await Promise.all([
       page.waitForEvent('download'),
       page.getByRole('button', { name: 'Export PDF' }).click(),

@@ -88,11 +88,8 @@ test.describe('Round-trip import', () => {
     // Step 6: Verify the stats line shows mapped fields
     await expect(page.getByText(/Mapped \d+ of \d+ extracted fields\./)).toBeVisible();
 
-    // Step 7: After success the app redirects to a form page.
-    // That route requires auth, so without credentials we get sent to /login.
-    // Either outcome (form page or login redirect) is acceptable here —
-    // the import itself succeeded on the previous step.
-    await page.waitForURL(/(identification|login)/, {
+    // Step 7: After success the app redirects to the form page.
+    await page.waitForURL(/\/identification\//, {
       timeout: 30_000,
     });
   });

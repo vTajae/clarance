@@ -134,7 +134,7 @@ export function TopBar({
           {/* Export PDF */}
           <button
             type="button"
-            onClick={exportPdf}
+            onClick={() => exportPdf()}
             disabled={exportStatus === 'exporting'}
             className={`
               rounded-md px-3 py-1.5 text-sm font-medium text-white

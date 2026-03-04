@@ -14,13 +14,56 @@ type ExportStatus = 'idle' | 'exporting' | 'error';
 /**
  * Hook that collects all field values from the Jotai store and fills
  * the SF-86 PDF entirely client-side using pdf-lib.
+ *
+ * Returns completionPercent so callers can gate export on form completeness.
  */
 export function useExportPdf() {
   const store = useStore();
   const registry = useRegistry();
   const [status, setStatus] = useState<ExportStatus>('idle');
 
-  const exportPdf = useCallback(async () => {
+  /** Count filled vs total visible fields. Returns 0-1 ratio. */
+  const getCompletionRatio = useCallback((): number => {
+    if (!registry || registry.getAllSemanticKeys().length === 0) return 0;
+    const allKeys = registry.getAllSemanticKeys();
+    let total = 0;
+    let filled = 0;
+
+    for (const key of allKeys) {
+      const field = registry.getBySemanticKey(key);
+      if (!field) continue;
+      if (field.omitFromWizard) continue;
+      if (field.section === 'ssnPageHeader') continue;
+
+      // Skip hidden conditional fields
+      if (field.dependsOn) {
+        const parentValue = store.get(fieldValueAtomFamily(field.dependsOn));
+        const parentField = registry.getBySemanticKey(field.dependsOn);
+        if (!evaluateShowWhen(field.showWhen, parentValue, parentField?.valueMap)) continue;
+      }
+
+      total++;
+      const value = store.get(fieldValueAtomFamily(key));
+      if (value !== null && value !== undefined && value !== '') {
+        filled++;
+      }
+    }
+
+    return total > 0 ? filled / total : 0;
+  }, [store, registry]);
+
+  const exportPdf = useCallback(async (skipWarning = false): Promise<boolean> => {
+    if (!skipWarning) {
+      const ratio = getCompletionRatio();
+      if (ratio < 1) {
+        const pct = Math.round(ratio * 100);
+        const confirmed = window.confirm(
+          `Form is ${pct}% complete. Export anyway?`,
+        );
+        if (!confirmed) return false;
+      }
+    }
+
     setStatus('exporting');
 
     try {
@@ -40,7 +83,8 @@ export function useExportPdf() {
         // Skip hidden conditional fields
         if (field.dependsOn) {
           const parentValue = store.get(fieldValueAtomFamily(field.dependsOn));
-          if (!evaluateShowWhen(field.showWhen, parentValue)) continue;
+          const parentField = registry.getBySemanticKey(field.dependsOn);
+          if (!evaluateShowWhen(field.showWhen, parentValue, parentField?.valueMap)) continue;
         }
 
         const value = store.get(fieldValueAtomFamily(key));
@@ -69,12 +113,14 @@ export function useExportPdf() {
       URL.revokeObjectURL(url);
 
       setStatus('idle');
+      return true;
     } catch (err) {
       console.error('PDF export error:', err);
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
+      return false;
     }
-  }, [store, registry]);
+  }, [store, registry, getCompletionRatio]);
 
-  return { exportPdf, status };
+  return { exportPdf, status, getCompletionRatio };
 }

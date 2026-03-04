@@ -21,8 +21,10 @@ import type { FieldDefinition, SF86Section } from '../src/lib/field-registry/typ
 
 let submissionId: string;
 
-test.beforeAll(async ({ request }) => {
-  submissionId = await createSubmission(request);
+test.beforeAll(async ({ browser }) => {
+  const page = await browser.newPage();
+  submissionId = await createSubmission(page);
+  await page.close();
 });
 
 // Build repeat group data from registry

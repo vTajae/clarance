@@ -43,7 +43,8 @@ export function computeStepCompletion(
     // Skip conditional fields whose parent condition is not met.
     if (field.dependsOn) {
       const parentValue = getFieldValue(field.dependsOn);
-      if (!evaluateShowWhen(field.showWhen, parentValue)) continue;
+      const parentField = registry.getBySemanticKey(field.dependsOn);
+      if (!evaluateShowWhen(field.showWhen, parentValue, parentField?.valueMap)) continue;
     }
 
     totalRequired++;
@@ -213,17 +214,18 @@ export function filterVisibleSteps(
       return true;
     }
 
-    if (!evaluateShowWhen(showWhen, gateValue)) return false;
+    const gateField = registry.getBySemanticKey(step.gateFieldKey);
+    if (!evaluateShowWhen(showWhen, gateValue, gateField?.valueMap)) return false;
 
     // Transitive gate cascade: if the gate field itself is conditional
     // (has a parent gate), verify that the parent condition is also met.
     // Example: section 9 — RadioButtonList_15 depends on RadioButtonList_1.
     // When RadioButtonList_1 changes, steps gated by RadioButtonList_15
     // should also hide if RadioButtonList_15's parent condition is unmet.
-    const gateField = registry.getBySemanticKey(step.gateFieldKey);
     if (gateField?.dependsOn && gateField.showWhen) {
       const grandparentValue = gateValues[gateField.dependsOn] ?? null;
-      if (!evaluateShowWhen(gateField.showWhen, grandparentValue)) return false;
+      const grandparentField = registry.getBySemanticKey(gateField.dependsOn);
+      if (!evaluateShowWhen(gateField.showWhen, grandparentValue, grandparentField?.valueMap)) return false;
     }
 
     return true;

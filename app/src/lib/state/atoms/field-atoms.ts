@@ -122,12 +122,13 @@ export function sectionCompletionAtom(section: SF86Section) {
     if (required.length === 0) return 1; // nothing required -> complete
 
     const getVal = (key: string) => get(fieldValueAtomFamily(key));
+    const getField = (key: string) => registry.getBySemanticKey(key);
 
     // Only count visible required fields
     let totalVisible = 0;
     let filled = 0;
     for (const field of required) {
-      if (!isFieldVisible(field, getVal)) continue;
+      if (!isFieldVisible(field, getVal, getField)) continue;
       totalVisible++;
       const value = get(fieldValueAtomFamily(field.semanticKey));
       if (isFieldFilled(value)) filled++;
@@ -150,6 +151,7 @@ export function sectionGroupCompletionAtom(group: SF86SectionGroup) {
     if (!sections || sections.length === 0) return 1;
 
     const getVal = (key: string) => get(fieldValueAtomFamily(key));
+    const getField = (key: string) => registry.getBySemanticKey(key);
 
     let totalVisible = 0;
     let totalFilled = 0;
@@ -157,7 +159,7 @@ export function sectionGroupCompletionAtom(group: SF86SectionGroup) {
     for (const section of sections) {
       const required = registry.getRequiredFields(section);
       for (const field of required) {
-        if (!isFieldVisible(field, getVal)) continue;
+        if (!isFieldVisible(field, getVal, getField)) continue;
         totalVisible++;
         const value = get(fieldValueAtomFamily(field.semanticKey));
         if (isFieldFilled(value)) totalFilled++;
@@ -180,6 +182,7 @@ export const formCompletionAtom = atom<number>((get) => {
 
   const allSections = Object.keys(SECTION_META) as SF86Section[];
   const getVal = (key: string) => get(fieldValueAtomFamily(key));
+  const getField = (key: string) => registry.getBySemanticKey(key);
 
   let totalVisible = 0;
   let totalFilled = 0;
@@ -187,7 +190,7 @@ export const formCompletionAtom = atom<number>((get) => {
   for (const section of allSections) {
     const required = registry.getRequiredFields(section);
     for (const field of required) {
-      if (!isFieldVisible(field, getVal)) continue;
+      if (!isFieldVisible(field, getVal, getField)) continue;
       totalVisible++;
       const value = get(fieldValueAtomFamily(field.semanticKey));
       if (isFieldFilled(value)) totalFilled++;
@@ -237,12 +240,15 @@ function isFieldFilled(value: FieldValue): boolean {
  *
  * @param field - The field definition (must have dependsOn + showWhen to be conditional)
  * @param getParentValue - Function to retrieve the parent field's value
+ * @param getParentField - Optional function to retrieve the parent field's definition (for valueMap)
  */
 function isFieldVisible(
   field: FieldDefinition,
   getParentValue: (key: string) => FieldValue,
+  getParentField?: (key: string) => FieldDefinition | undefined,
 ): boolean {
   if (!field.dependsOn) return true;
   const parentValue = getParentValue(field.dependsOn);
-  return evaluateShowWhen(field.showWhen, parentValue);
+  const parentFieldDef = getParentField?.(field.dependsOn);
+  return evaluateShowWhen(field.showWhen, parentValue, parentFieldDef?.valueMap);
 }

@@ -2,9 +2,16 @@
 
 import { useMemo, useCallback, useState } from 'react';
 import { atom, useAtomValue } from 'jotai';
+import type { SF86Section } from '@/lib/field-registry/types';
 import type { WizardStep } from '@/lib/wizard/types';
 import { useRegistry } from '@/lib/field-registry/use-registry';
 import { fieldValueAtomFamily, type FieldValue } from '@/lib/state/atoms/field-atoms';
+import {
+  getLinkedGroupConfig,
+  getEntityEntries,
+  getEntityStepRange,
+  type LinkedGroupConfig,
+} from '@/lib/wizard/linked-group-utils';
 
 interface RepeatGroupCardsProps {
   /** All steps belonging to the same repeat group (across indices). */
@@ -13,20 +20,43 @@ interface RepeatGroupCardsProps {
   groupName: string;
   /** Called when user clicks Edit/Start on an entry. */
   onEditEntry: (stepIndex: number) => void;
+  /** Section key for linked group detection. */
+  sectionKey?: SF86Section;
+  /** All visible steps (needed for linked group index resolution). */
+  allVisibleSteps?: WizardStep[];
 }
 
 /**
  * Card-list overview for repeating entries (residences, employers, etc.).
  * Progressive disclosure: shows Entry 1 always, Entry N+1 when Entry N
  * has any field filled. Users can manually add entries via "Add Entry".
+ *
+ * When a section has linked groups (e.g. section 18 relatives), entries
+ * are merged across all sub-groups into unified entity cards.
  */
 export function RepeatGroupCards({
   steps,
   groupName,
   onEditEntry,
+  sectionKey,
+  allVisibleSteps,
 }: RepeatGroupCardsProps) {
-  // Group steps by repeatIndex
+  // Check for linked group config
+  const linkedConfig = useMemo(
+    () => (sectionKey ? getLinkedGroupConfig(sectionKey) : null),
+    [sectionKey],
+  );
+
+  // Group steps by repeatIndex — when linked, merge across all sub-groups
   const entries = useMemo(() => {
+    if (linkedConfig && sectionKey && allVisibleSteps) {
+      // Use linked group entity entries (merges all sub-groups)
+      const entityEntries = getEntityEntries(linkedConfig, sectionKey, allVisibleSteps);
+      return entityEntries.map(({ index, steps: entitySteps }) =>
+        [index, entitySteps] as [number, WizardStep[]],
+      );
+    }
+    // Default: group by repeatIndex within this single group
     const map = new Map<number, WizardStep[]>();
     for (const step of steps) {
       const idx = step.repeatIndex ?? 0;
@@ -35,7 +65,7 @@ export function RepeatGroupCards({
       else map.set(idx, [step]);
     }
     return Array.from(map.entries()).sort(([a], [b]) => a - b);
-  }, [steps]);
+  }, [steps, linkedConfig, sectionKey, allVisibleSteps]);
 
   // Track manually revealed entries
   const [manuallyRevealed, setManuallyRevealed] = useState(0);
@@ -44,7 +74,9 @@ export function RepeatGroupCards({
     setManuallyRevealed((n) => n + 1);
   }, []);
 
-  const displayName = formatGroupName(groupName, steps);
+  const displayName = linkedConfig
+    ? pluralizeEntity(linkedConfig.entityLabel)
+    : formatGroupName(groupName, steps);
 
   return (
     <div className="mx-auto w-full max-w-2xl">
@@ -52,10 +84,11 @@ export function RepeatGroupCards({
       <div className="space-y-3">
         <ProgressiveEntryList
           entries={entries}
-          steps={steps}
+          steps={allVisibleSteps ?? steps}
           manuallyRevealed={manuallyRevealed}
           onEditEntry={onEditEntry}
           onAddEntry={handleAddEntry}
+          entityLabel={linkedConfig?.entityLabel}
         />
       </div>
     </div>
@@ -72,6 +105,7 @@ interface ProgressiveEntryListProps {
   manuallyRevealed: number;
   onEditEntry: (stepIndex: number) => void;
   onAddEntry: () => void;
+  entityLabel?: string;
 }
 
 function ProgressiveEntryList({
@@ -80,6 +114,7 @@ function ProgressiveEntryList({
   manuallyRevealed,
   onEditEntry,
   onAddEntry,
+  entityLabel,
 }: ProgressiveEntryListProps) {
   // Collect ALL field keys across ALL entries for a single subscription
   const allFieldKeys = useMemo(() => {
@@ -163,6 +198,7 @@ function ProgressiveEntryList({
           key={idx}
           repeatIndex={idx}
           steps={entrySteps}
+          entityLabel={entityLabel}
           onEdit={() => {
             const firstStep = entrySteps[0];
             const globalIdx = steps.indexOf(firstStep);
@@ -197,17 +233,19 @@ interface EntryCardProps {
   repeatIndex: number;
   steps: WizardStep[];
   onEdit: () => void;
+  entityLabel?: string;
 }
 
-function EntryCard({ repeatIndex, steps, onEdit }: EntryCardProps) {
+function EntryCard({ repeatIndex, steps, onEdit, entityLabel }: EntryCardProps) {
   const registry = useRegistry();
 
-  // Derive an entry label from the step title: "Employment 1 - Contact" → "Employment 1"
+  // Derive an entry label: use linked entity label if provided, else extract from title
   const entryLabel = useMemo(() => {
+    if (entityLabel) return `${entityLabel} ${repeatIndex + 1}`;
     const firstTitle = steps[0]?.title ?? '';
     const match = firstTitle.match(/^(.+?\s+\d+)/);
     return match ? match[1] : `Entry ${repeatIndex + 1}`;
-  }, [steps, repeatIndex]);
+  }, [steps, repeatIndex, entityLabel]);
 
   // Collect summary fields from first step
   const summaryKeys = useMemo(() => {
@@ -395,6 +433,15 @@ function EntryButtonLabel({ fillRatio }: { fillRatio: number }) {
 }
 
 // ---------------------------------------------------------------------------
+
+/** Pluralize an entity label: "Relative" → "Relatives", "Employment Entry" → "Employment Entries". */
+function pluralizeEntity(label: string): string {
+  if (label.endsWith('y') && !/[aeiou]y$/i.test(label)) {
+    return label.slice(0, -1) + 'ies';
+  }
+  if (/(?:s|sh|ch|x|z)$/i.test(label)) return label + 'es';
+  return label + 's';
+}
 
 /** Derive a human-readable group heading from the step titles in the group. */
 export function formatGroupName(name: string, steps: WizardStep[]): string {

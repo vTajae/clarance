@@ -8,7 +8,7 @@ import { useMemo } from 'react';
 import { useAtomValue } from 'jotai';
 import type { SF86Section } from '@/lib/field-registry/types';
 import { sectionFieldsAtom } from '@/lib/state/atoms/field-atoms';
-import { useSectionFields } from '@/lib/field-registry/use-registry';
+import { useSectionFields, useRegistry } from '@/lib/field-registry/use-registry';
 import { generateSectionSchema } from '@/lib/validation/schema-generator';
 import { evaluateShowWhen } from '@/lib/conditional/expression-evaluator';
 
@@ -33,6 +33,7 @@ export function useSectionValidation(
   section: SF86Section,
 ): SectionValidationResult {
   const fields = useSectionFields(section);
+  const registry = useRegistry();
   const snapshotAtom = useMemo(() => sectionFieldsAtom(section), [section]);
   const snapshot = useAtomValue(snapshotAtom);
 
@@ -45,7 +46,8 @@ export function useSectionValidation(
     const visibleFields = fields.filter((field) => {
       if (!field.dependsOn) return true;
       const parentValue = snapshot[field.dependsOn] ?? null;
-      return evaluateShowWhen(field.showWhen, parentValue);
+      const parentField = registry.getBySemanticKey(field.dependsOn);
+      return evaluateShowWhen(field.showWhen, parentValue, parentField?.valueMap);
     });
 
     if (visibleFields.length === 0) {
@@ -72,5 +74,5 @@ export function useSectionValidation(
     }
 
     return { isValid: false, errors, errorsByField };
-  }, [fields, snapshot]);
+  }, [fields, snapshot, registry]);
 }

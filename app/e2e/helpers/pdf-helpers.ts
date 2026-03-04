@@ -1,11 +1,13 @@
 /**
  * PDF service integration helpers for E2E tests.
  *
- * Handles health checks, PDF export via Next.js API, and field extraction
- * via the Python PDF service.
+ * Handles health checks, PDF export via Python service, and field extraction.
  */
 
 import type { APIRequestContext } from '@playwright/test';
+import { loadRegistry } from './test-fixtures';
+import { uiToPdf } from '../../src/lib/field-registry/value-transformers';
+import type { FieldDefinition } from '../../src/lib/field-registry/types';
 
 const PDF_SERVICE = process.env.PDF_SERVICE_URL ?? 'http://localhost:8001';
 
@@ -20,22 +22,31 @@ export async function checkPdfServiceHealth(request: APIRequestContext): Promise
 }
 
 /**
- * Export a filled PDF via the Next.js API route.
- * Accepts semantic key → UI value map; the server handles uiToPdf conversion.
+ * Export a filled PDF by converting semantic key → UI value to
+ * PDF field name → PDF value, then calling the Python service directly.
  */
 export async function exportPdf(
   request: APIRequestContext,
   values: Record<string, unknown>,
 ): Promise<Buffer> {
-  const resp = await request.post('/api/pdf/export', {
-    data: { values },
-    timeout: 120_000,
-  });
-  if (!resp.ok()) {
-    const text = await resp.text();
-    throw new Error(`Export failed (${resp.status()}): ${text}`);
+  // Build semantic key → field definition map
+  const registry = loadRegistry();
+  const bySemanticKey = new Map<string, FieldDefinition>();
+  for (const f of registry) bySemanticKey.set(f.semanticKey, f);
+
+  // Convert semantic keys → PDF field names with PDF-formatted values
+  const pdfFieldValues: Record<string, string> = {};
+  for (const [key, uiValue] of Object.entries(values)) {
+    if (uiValue === '' || uiValue == null) continue;
+    const field = bySemanticKey.get(key);
+    if (!field) continue;
+    const pdfValue = uiToPdf(field, uiValue);
+    if (pdfValue !== '') {
+      pdfFieldValues[field.pdfFieldName] = pdfValue;
+    }
   }
-  return Buffer.from(await resp.body());
+
+  return fillPdfDirect(request, pdfFieldValues);
 }
 
 /**

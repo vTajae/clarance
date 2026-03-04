@@ -9,6 +9,9 @@ export interface WizardStep {
   isConditionalBlock?: boolean;  // all fields depend on a gate
   repeatGroup?: string;
   repeatIndex?: number;
+  pdfInstruction?: string;       // PDF instruction text (shown as callout)
+  conditionalInstruction?: string; // Routing text ("If yes, provide...")
+  sourcePages?: number[];        // PDF pages for "View in PDF" link
 }
 
 export interface SectionWizardConfig {

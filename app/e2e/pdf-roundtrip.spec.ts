@@ -43,8 +43,10 @@ const LARGE_SECTIONS = new Set<SF86Section>([
 let submissionId: string;
 let pdfServiceAvailable = false;
 
-test.beforeAll(async ({ request }) => {
-  submissionId = await createSubmission(request);
+test.beforeAll(async ({ browser, request }) => {
+  const page = await browser.newPage();
+  submissionId = await createSubmission(page);
+  await page.close();
   pdfServiceAvailable = await checkPdfServiceHealth(request);
 });
 

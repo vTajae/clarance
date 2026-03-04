@@ -1,7 +1,7 @@
 -- ===========================================================
 -- SF-86 Database Schema — Cloudflare D1 (SQLite)
 -- ===========================================================
--- Lightweight: only users + terms acceptance.
+-- Lightweight: only users.
 -- All form data lives client-side (IndexedDB + Jotai).
 --
 -- Apply with:
@@ -12,8 +12,6 @@ CREATE TABLE IF NOT EXISTS users (
   id TEXT PRIMARY KEY,
   email TEXT UNIQUE NOT NULL,
   password_hash TEXT NOT NULL,
-  terms_accepted INTEGER DEFAULT 0,
-  terms_accepted_at TEXT,
   created_at TEXT DEFAULT (datetime('now')),
   updated_at TEXT DEFAULT (datetime('now'))
 );

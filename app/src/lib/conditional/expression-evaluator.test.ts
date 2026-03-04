@@ -210,3 +210,66 @@ describe('evaluateShowWhen — edge cases', () => {
     expect(evaluateShowWhen("=== 'hello'", 42)).toBe(false);
   });
 });
+
+// ---------------------------------------------------------------------------
+// ValueMap resolution (radio numeric ↔ label matching)
+// ---------------------------------------------------------------------------
+
+describe('evaluateShowWhen — valueMap resolution', () => {
+  const valueMap = { YES: '2', NO: '1' };
+
+  it("numeric '2' matches literal 'YES' via forward valueMap", () => {
+    expect(evaluateShowWhen("=== 'YES'", '2', valueMap)).toBe(true);
+  });
+
+  it("numeric '1' matches literal 'NO' via forward valueMap", () => {
+    expect(evaluateShowWhen("=== 'NO'", '1', valueMap)).toBe(true);
+  });
+
+  it("numeric '2' does NOT match literal 'NO' via valueMap", () => {
+    expect(evaluateShowWhen("=== 'NO'", '2', valueMap)).toBe(false);
+  });
+
+  it("inequality: numeric '1' does NOT equal 'YES'", () => {
+    expect(evaluateShowWhen("!== 'YES'", '1', valueMap)).toBe(true);
+  });
+
+  it("inequality: numeric '2' equals 'YES' so !== is false", () => {
+    expect(evaluateShowWhen("!== 'YES'", '2', valueMap)).toBe(false);
+  });
+
+  it("in [...] with numeric value resolves via valueMap", () => {
+    expect(evaluateShowWhen("in ['YES']", '2', valueMap)).toBe(true);
+  });
+
+  it("in [...] numeric not in set", () => {
+    expect(evaluateShowWhen("in ['YES']", '1', valueMap)).toBe(false);
+  });
+
+  it("notIn [...] with numeric value resolves via valueMap", () => {
+    expect(evaluateShowWhen("notIn ['YES']", '1', valueMap)).toBe(true);
+  });
+
+  it("notIn [...] numeric IS in set", () => {
+    expect(evaluateShowWhen("notIn ['YES']", '2', valueMap)).toBe(false);
+  });
+
+  it("label text still matches directly even with valueMap present", () => {
+    expect(evaluateShowWhen("=== 'YES'", 'YES', valueMap)).toBe(true);
+  });
+
+  it("works without valueMap (backward compatible)", () => {
+    expect(evaluateShowWhen("=== 'YES'", '2')).toBe(false);
+    expect(evaluateShowWhen("=== 'YES'", '2', undefined)).toBe(false);
+  });
+
+  it("section 9 multi-value: in ['1'] matches numeric '1'", () => {
+    const s9Map = { 'I am a U.S. citizen or national by birth in the U.S.': '1' };
+    expect(evaluateShowWhen("in ['1']", '1', s9Map)).toBe(true);
+  });
+
+  it("section 9 multi-value: in ['1'] does not match '3'", () => {
+    const s9Map = { 'I am a U.S. citizen or national by birth in the U.S.': '1' };
+    expect(evaluateShowWhen("in ['1']", '3', s9Map)).toBe(false);
+  });
+});

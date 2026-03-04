@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import type { WizardStep } from '@/lib/wizard/types';
 import type { FieldDefinition } from '@/lib/field-registry/types';
 import { useRegistry } from '@/lib/field-registry/use-registry';
+import { useAppStore } from '@/lib/state/stores/app-store';
 import { RegistryField } from '@/components/sections/registry-field';
 import { ConditionalWrapper } from '@/components/sections/conditional-wrapper';
 
@@ -42,6 +43,7 @@ function fieldSpan(field: FieldDefinition): 'full' | 'half' {
  */
 export function WizardStepCard({ step, direction = 0 }: WizardStepCardProps) {
   const registry = useRegistry();
+  const setLayoutMode = useAppStore((s) => s.setLayoutMode);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Auto-focus first input on step entry
@@ -91,6 +93,41 @@ export function WizardStepCard({ step, direction = 0 }: WizardStepCardProps) {
     >
       {/* Step title */}
       <h3 className="text-lg font-semibold text-gray-900">{step.title}</h3>
+
+      {/* View in PDF link */}
+      {step.sourcePages && step.sourcePages.length > 0 && (
+        <button
+          type="button"
+          onClick={() => setLayoutMode('pdf')}
+          className="mt-1 inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-700 hover:underline"
+        >
+          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          View in PDF (p.{step.sourcePages.length === 1 ? step.sourcePages[0] : `${step.sourcePages[0]}\u2013${step.sourcePages[step.sourcePages.length - 1]}`})
+        </button>
+      )}
+
+      {/* PDF instruction callout */}
+      {step.pdfInstruction && (
+        <div className="mt-3 rounded-md border border-blue-200 bg-blue-50 px-4 py-3">
+          <p className="text-sm text-blue-800 leading-relaxed">
+            {step.pdfInstruction}
+          </p>
+        </div>
+      )}
+
+      {/* Conditional instruction banner */}
+      {step.conditionalInstruction && (
+        <div className="mt-3 flex items-start gap-2 rounded-md border border-amber-200 bg-amber-50 px-4 py-3">
+          <svg className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <p className="text-sm text-amber-800 leading-relaxed">
+            {step.conditionalInstruction}
+          </p>
+        </div>
+      )}
 
       {/* Guidance text */}
       {step.guidance && (

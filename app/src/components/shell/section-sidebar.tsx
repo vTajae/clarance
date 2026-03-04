@@ -16,7 +16,7 @@ import {
 interface SectionNode {
   /** The section key (e.g. 'section13A') or null for a parent-only header. */
   key: SF86Section | null;
-  /** Display label. */
+  /** Display label — always prefixed with "Section N". */
   label: string;
   /** Child subsections, if any. */
   children: { key: SF86Section; label: string }[];
@@ -32,12 +32,6 @@ function parseSectionKey(key: string): { root: string; suffix: string } {
   if (!m) return { root: key, suffix: '' };
   return { root: m[1], suffix: m[2] || '' };
 }
-
-/** Parent labels for sections that have subsections but no standalone parent section. */
-const PARENT_LABELS: Record<string, string> = {
-  '13': 'Section 13 - Employment',
-  '20': 'Section 20 - Foreign Activities',
-};
 
 /**
  * Groups sections, nesting lettered subsections under parents.
@@ -76,10 +70,9 @@ function buildSectionTree(sections: SF86Section[]): SectionNode[] {
         const children = subsections.map((sub) => {
           consumed.add(sub);
           const meta = SECTION_META[sub]!;
-          const { suffix: s } = parseSectionKey(sub);
           return {
             key: sub,
-            label: meta.title.replace(/^Section \d+[A-E] - /, `${s} - `),
+            label: meta.title,
           };
         });
 
@@ -92,17 +85,17 @@ function buildSectionTree(sections: SF86Section[]): SectionNode[] {
         consumed.add(sec);
       } else if (!consumed.has(sec)) {
         // Lettered section without a standalone parent (e.g. 13A, 13B, 13C)
-        const parentLabel = PARENT_LABELS[root] || `Section ${root}`;
         const children = subsections.map((sub) => {
           consumed.add(sub);
           const meta = SECTION_META[sub]!;
-          const { suffix: s } = parseSectionKey(sub);
           return {
             key: sub,
-            label: meta.title.replace(/^Section \d+[A-E] - /, `${s} - `),
+            label: meta.title,
           };
         });
 
+        // Virtual parent label
+        const parentLabel = `Section ${root}`;
         nodes.push({
           key: null, // virtual parent (no navigable section)
           label: parentLabel,
@@ -226,14 +219,16 @@ export function SectionSidebar({ submissionId }: SectionSidebarProps) {
                   </Link>
                 ) : (
                   // Virtual parent (e.g. "Section 13")
-                  <span
+                  <button
+                    type="button"
+                    onClick={() => toggleParent(parentRoot)}
                     className={`
-                      flex-1 px-4 py-2 text-left text-sm
-                      ${hasActiveChild ? 'text-blue-700 font-medium' : 'text-gray-600 font-medium'}
+                      flex-1 px-4 py-2 text-left text-sm cursor-pointer
+                      ${hasActiveChild ? 'text-blue-700 font-medium' : 'text-gray-600 font-medium hover:bg-gray-50'}
                     `}
                   >
                     {node.label}
-                  </span>
+                  </button>
                 )}
 
                 {/* Expand/collapse chevron for subsections */}

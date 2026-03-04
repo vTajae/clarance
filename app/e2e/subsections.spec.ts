@@ -25,8 +25,10 @@ import type { SF86Section } from '../src/lib/field-registry/types';
 
 let submissionId: string;
 
-test.beforeAll(async ({ request }) => {
-  submissionId = await createSubmission(request);
+test.beforeAll(async ({ browser }) => {
+  const page = await browser.newPage();
+  submissionId = await createSubmission(page);
+  await page.close();
 });
 
 interface SubsectionCluster {
@@ -65,7 +67,7 @@ for (const cluster of CLUSTERS) {
         // Verify navigation
         await expect(page).toHaveURL(new RegExp(section), { timeout: 15_000 });
         await expect(
-          page.getByRole('heading', { name: meta.title }),
+          page.getByRole('heading', { name: meta.title, exact: true }),
         ).toBeVisible({ timeout: 15_000 });
       }
     });

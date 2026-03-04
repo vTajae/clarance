@@ -7,8 +7,7 @@
 
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import type { Page, APIRequestContext } from '@playwright/test';
-import { expect } from '@playwright/test';
+import type { Page } from '@playwright/test';
 import type { FieldDefinition, SF86Section, SF86SectionGroup } from '../../src/lib/field-registry/types';
 
 // ---------------------------------------------------------------------------
@@ -141,14 +140,12 @@ export function sectionToGroup(section: SF86Section): SF86SectionGroup {
 // Submission + navigation helpers
 // ---------------------------------------------------------------------------
 
-/** Create a new form submission via the API. */
-export async function createSubmission(request: APIRequestContext): Promise<string> {
-  const resp = await request.post('/api/form/new', {
-    data: { pdfVersion: 'sf861' },
-  });
-  expect(resp.ok()).toBeTruthy();
-  const body = await resp.json();
-  return body.submissionId as string;
+/** Create a new form submission via browser navigation (client-side creation). */
+export async function createSubmission(page: Page): Promise<string> {
+  await page.goto('/new');
+  await page.getByRole('button', { name: 'Create Form' }).click();
+  await page.waitForURL(/\/[a-f0-9-]+\/identification\/section1/);
+  return page.url().split('/')[3];
 }
 
 /** Wait for the Jotai store to be exposed on window. */

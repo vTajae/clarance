@@ -1,19 +1,16 @@
-import { test, expect, type APIRequestContext } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
-// Create a real submission via the API and use its ID for all tests.
+// Create a real submission by navigating to /new and clicking Create Form.
 let submissionId: string;
 
-async function createSubmission(request: APIRequestContext): Promise<string> {
-  const resp = await request.post('/api/form/new', {
-    data: { pdfVersion: 'sf861' },
-  });
-  expect(resp.ok()).toBeTruthy();
-  const body = await resp.json();
-  return body.submissionId as string;
-}
-
-test.beforeAll(async ({ request }) => {
-  submissionId = await createSubmission(request);
+test.beforeAll(async ({ browser }) => {
+  const page = await browser.newPage();
+  await page.goto('/new');
+  await page.getByRole('button', { name: 'Create Form' }).click();
+  // Wait for navigation to /{submissionId}/identification/section1
+  await page.waitForURL(/\/[a-f0-9-]+\/identification\/section1/);
+  submissionId = page.url().split('/')[3]; // extract UUID from URL
+  await page.close();
 });
 
 test.describe('Form shell layout', () => {
@@ -33,7 +30,7 @@ test.describe('Form shell layout', () => {
     ).toBeVisible();
   });
 
-  test('renders wizard controls with Previous, Next, and Save buttons', async ({
+  test('renders wizard controls with Previous, Next/Review, and Save buttons', async ({
     page,
   }) => {
     const nav = page.getByRole('navigation', { name: 'Form navigation' });
@@ -42,7 +39,8 @@ test.describe('Form shell layout', () => {
     await expect(
       nav.getByRole('button', { name: /Previous/i }),
     ).toBeVisible();
-    await expect(nav.getByRole('button', { name: /Next/i })).toBeVisible();
+    // Section 1 has 1 step — button says "Review" (last step) instead of "Next"
+    await expect(nav.getByRole('button', { name: /Next|Review/i })).toBeVisible();
     await expect(nav.getByRole('button', { name: /Save/i })).toBeVisible();
   });
 
@@ -52,13 +50,14 @@ test.describe('Form shell layout', () => {
     await expect(prevButton).toBeDisabled();
   });
 
-  test('Next button is clickable and advances', async ({ page }) => {
+  test('Next/Review button is clickable and advances', async ({ page }) => {
     const nav = page.getByRole('navigation', { name: 'Form navigation' });
-    const nextButton = nav.getByRole('button', { name: /Next/i });
+    // Section 1 has 1 step — button says "Review" on last step
+    const nextButton = nav.getByRole('button', { name: /Next|Review/i });
     await expect(nextButton).toBeEnabled();
     await nextButton.click();
 
-    // In wizard mode, Next advances to the next step (or review).
+    // In wizard mode, clicking advances to the next step or review.
     // Just verify the button worked and we're still on the form.
     await expect(page.getByRole('banner')).toBeVisible();
   });
@@ -81,15 +80,14 @@ test.describe('Section sidebar navigation', () => {
     await page.goto(`/${submissionId}/identification/section1`);
   });
 
-  test('sidebar shows section groups', async ({ page }) => {
+  test('sidebar shows section entries', async ({ page }) => {
     const sidebar = page.locator('nav[aria-label="Form sections"]');
-    await expect(sidebar.getByText('Identification')).toBeVisible();
+    await expect(sidebar.getByText('Section 1 - Full Name')).toBeVisible();
   });
 
-  test('expanding a group shows its sections', async ({ page }) => {
+  test('sidebar shows nearby sections', async ({ page }) => {
     const sidebar = page.locator('nav[aria-label="Form sections"]');
 
-    // Identification group should be expanded by default (it's the current group)
     await expect(
       sidebar.getByText('Section 1 - Full Name'),
     ).toBeVisible();

@@ -8,6 +8,7 @@ import { TopBar } from './top-bar';
 import { WizardControls } from './wizard-controls';
 import { PdfPreview, type FieldRect } from './pdf-preview';
 import { useSsnAutoFill } from '@/lib/state/hooks/use-ssn-autofill';
+import { useNameAutoFill } from '@/lib/state/hooks/use-name-autofill';
 import { dirtyFieldsAtom } from '@/lib/state/atoms/field-atoms';
 import { useAppStore } from '@/lib/state/stores/app-store';
 
@@ -23,19 +24,27 @@ export function FormShell({ submissionId, children }: FormShellProps) {
   const [activeRect] = useState<FieldRect | null>(null);
   const pathname = usePathname();
 
-  // -- Close mobile sidebar overlay on route change -------------------------
+  // Track whether we're at mobile viewport to avoid rendering duplicate
+  // SectionSidebar instances (one desktop panel + one mobile overlay).
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    // On mobile (<md breakpoint), the sidebar renders as a full-screen
-    // overlay. Close it when the user navigates to a new section so they
-    // can see the content. On desktop (≥md), the sidebar is a persistent
-    // panel, so we keep it open.
-    if (typeof window !== 'undefined' && !window.matchMedia('(min-width: 768px)').matches) {
-      setSidebarOpen(false);
-    }
-  }, [pathname]);
+    const mq = window.matchMedia('(max-width: 767px)');
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  // Close mobile sidebar overlay on route change.
+  useEffect(() => {
+    if (isMobile) setSidebarOpen(false);
+  }, [pathname, isMobile]);
 
   // -- SSN auto-fill: section 4 → 137 page header fields ------------------
   useSsnAutoFill(submissionId);
+
+  // -- Name/DOB auto-fill: section 1/2 → section 30 signature fields ------
+  useNameAutoFill(submissionId);
 
   // -- Warn before tab close if there are unsaved changes ------------------
   const dirtyFields = useAtomValue(dirtyFieldsAtom);
@@ -94,9 +103,9 @@ export function FormShell({ submissionId, children }: FormShellProps) {
         </button>
 
         {/* Mobile sidebar overlay — z-[55] to sit above TopBar (z-50) */}
-        {sidebarOpen && (
+        {isMobile && sidebarOpen && (
           <div
-            className="md:hidden fixed inset-0 z-[55]"
+            className="fixed inset-0 z-[55]"
             role="dialog"
             aria-modal="true"
             aria-label="Section navigation"

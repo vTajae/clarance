@@ -17,8 +17,10 @@ import type { SF86Section } from '../src/lib/field-registry/types';
 
 let submissionId: string;
 
-test.beforeAll(async ({ request }) => {
-  submissionId = await createSubmission(request);
+test.beforeAll(async ({ browser }) => {
+  const page = await browser.newPage();
+  submissionId = await createSubmission(page);
+  await page.close();
 });
 
 test.describe('All 39 sections render', () => {
@@ -33,8 +35,8 @@ test.describe('All 39 sections render', () => {
       // Wait for the page to be interactive
       await waitForJotaiStore(page);
 
-      // Verify heading
-      const heading = page.getByRole('heading', { name: meta.title });
+      // Verify heading (exact: true to avoid matching sub-headings like gap alerts)
+      const heading = page.getByRole('heading', { name: meta.title, exact: true });
       await expect(heading).toBeVisible({ timeout: 15_000 });
 
       // Verify at least one form element exists

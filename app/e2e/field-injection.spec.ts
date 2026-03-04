@@ -24,8 +24,10 @@ import { makeSectionValues, resetFieldIndex } from './helpers/field-value-genera
 
 let submissionId: string;
 
-test.beforeAll(async ({ request }) => {
-  submissionId = await createSubmission(request);
+test.beforeAll(async ({ browser }) => {
+  const page = await browser.newPage();
+  submissionId = await createSubmission(page);
+  await page.close();
 });
 
 test.describe('Per-section Jotai inject + readback', () => {
