@@ -50,9 +50,15 @@ test.describe('Accessibility', () => {
       page.getByRole('heading', { name: 'New SF-86 Form' }),
     ).toBeVisible();
 
-    // Select has associated label
-    const select = page.getByLabel('PDF Version');
-    await expect(select).toBeVisible();
+    // Descriptive text is present
+    await expect(
+      page.getByText('Start a new SF-86 questionnaire'),
+    ).toBeVisible();
+
+    // Create Form button has proper role
+    await expect(
+      page.getByRole('button', { name: 'Create Form' }),
+    ).toBeVisible();
   });
 
   test('import page has proper file input label', async ({ page }) => {

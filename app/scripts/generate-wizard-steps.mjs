@@ -147,6 +147,7 @@ for (const f of registry) {
 const fieldsBySection = {};
 for (const f of registry) {
   if (f.section === 'ssnPageHeader') continue;
+  if (f.omitFromWizard) continue;
   if (!fieldsBySection[f.section]) fieldsBySection[f.section] = [];
   fieldsBySection[f.section].push(f);
 }
@@ -431,6 +432,114 @@ function uniqueSuffix() {
 // ---------------------------------------------------------------------------
 
 /**
+ * Emit a gate step and its dependent blocks into the steps array.
+ *
+ * Multi-value gates (e.g. section 9's 5-way citizenship radio) have
+ * dependents with DIFFERENT showWhen values. We sub-group by showWhen
+ * so each subsection gets its own conditional blocks. Otherwise
+ * filterVisibleSteps would use only the first field's showWhen.
+ */
+function emitGateAndDependents(steps, sectionKey, gate, gateDependents) {
+  const gateStep = {
+    id: makeStepId(sectionKey, ['gate', uniqueSuffix()]),
+    title: generateTitle([gate], sectionKey, { isGate: true }),
+    guidance: generateGuidance([gate], sectionKey, { isGate: true }),
+    fieldKeys: [gate.semanticKey],
+    gateFieldKey: gate.semanticKey,
+  };
+
+  // If the gate is in a repeat group, attach that info
+  if (gate.repeatGroup) {
+    gateStep.repeatGroup = gate.repeatGroup;
+    gateStep.repeatIndex = gate.repeatIndex;
+  }
+
+  steps.push(gateStep);
+
+  // Process dependents of this gate
+  const dependents = gateDependents[gate.semanticKey] || [];
+  if (dependents.length === 0) return;
+
+  // Sub-group dependents by showWhen value so multi-value gates
+  // produce correctly-separated conditional blocks.
+  const byShowWhen = {};
+  for (const f of dependents) {
+    const sw = f.showWhen || '(default)';
+    if (!byShowWhen[sw]) byShowWhen[sw] = [];
+    byShowWhen[sw].push(f);
+  }
+
+  for (const [_showWhen, swDeps] of Object.entries(byShowWhen)) {
+    // Separate dependents into repeat/non-repeat
+    const depNonRepeat = swDeps.filter(f => !f.repeatGroup);
+    const depRepeat = swDeps.filter(f => f.repeatGroup);
+
+    // Non-repeat conditional fields
+    if (depNonRepeat.length > 0) {
+      const chunks = splitBySemantics(depNonRepeat, sectionKey);
+      for (const chunk of chunks) {
+        const title = generateTitle(chunk, sectionKey);
+        steps.push({
+          id: makeStepId(sectionKey, ['cond', uniqueSuffix()]),
+          title,
+          guidance: generateGuidance(chunk, sectionKey, { isConditional: true }),
+          fieldKeys: chunk.map(f => f.semanticKey),
+          gateFieldKey: gate.semanticKey,
+          isConditionalBlock: true,
+        });
+      }
+    }
+
+    // Repeat conditional fields
+    const repeatInstances = groupByRepeatInstance(depRepeat);
+    for (const [rgKey, instanceFields] of repeatInstances) {
+      const [repeatGroup, repeatIndex] = parseRepeatKey(rgKey);
+      processRepeatGroupInstance(steps, sectionKey, instanceFields, repeatGroup, repeatIndex, {
+        gateFieldKey: gate.semanticKey,
+        isConditional: true,
+      });
+    }
+
+    // Handle nested gates: dependents in this showWhen group that are
+    // themselves gates (other fields depend on them). Emit their
+    // sub-dependents as further conditional blocks under the parent gate.
+    // The nested gate field itself is already included above.
+    for (const dep of swDeps) {
+      const nestedDeps = gateDependents[dep.semanticKey];
+      if (!nestedDeps || nestedDeps.length === 0) continue;
+
+      // Emit nested gate's dependents as conditional blocks gated by the nested gate
+      const nestedNonRepeat = nestedDeps.filter(f => !f.repeatGroup);
+      const nestedRepeat = nestedDeps.filter(f => f.repeatGroup);
+
+      if (nestedNonRepeat.length > 0) {
+        const chunks = splitBySemantics(nestedNonRepeat, sectionKey);
+        for (const chunk of chunks) {
+          const title = generateTitle(chunk, sectionKey);
+          steps.push({
+            id: makeStepId(sectionKey, ['nested', uniqueSuffix()]),
+            title,
+            guidance: generateGuidance(chunk, sectionKey, { isConditional: true }),
+            fieldKeys: chunk.map(f => f.semanticKey),
+            gateFieldKey: dep.semanticKey,
+            isConditionalBlock: true,
+          });
+        }
+      }
+
+      const nestedRepeatInstances = groupByRepeatInstance(nestedRepeat);
+      for (const [rgKey, instanceFields] of nestedRepeatInstances) {
+        const [repeatGroup, repeatIndex] = parseRepeatKey(rgKey);
+        processRepeatGroupInstance(steps, sectionKey, instanceFields, repeatGroup, repeatIndex, {
+          gateFieldKey: dep.semanticKey,
+          isConditional: true,
+        });
+      }
+    }
+  }
+}
+
+/**
  * Process a single section and return its WizardSteps.
  */
 function processSection(sectionKey, fields) {
@@ -472,7 +581,53 @@ function processSection(sectionKey, fields) {
   }
 
   // -----------------------------------------------------------------------
-  // Process independent (non-conditional, non-gate) fields
+  // Identify "primary gates" — section-level questions with many dependents
+  // These should appear BEFORE independent fields so users answer the
+  // qualifying question first. Sub-gates inside repeat groups (with few
+  // dependents) still appear in natural order.
+  // -----------------------------------------------------------------------
+  const PRIMARY_GATE_THRESHOLD = 10; // gates with >= 10 dependents are "primary"
+
+  // Gates that are themselves conditional (have dependsOn) are "nested gates".
+  // They'll appear inside their parent gate's conditional block, so don't
+  // emit them again as standalone gate steps (avoids duplicate field keys).
+  const nestedGateKeys = new Set(
+    gates.filter(g => g.dependsOn).map(g => g.semanticKey)
+  );
+
+  const primaryGates = [];
+  const subGates = [];
+  for (const gate of gates) {
+    if (nestedGateKeys.has(gate.semanticKey)) continue; // handled inside parent
+    const depCount = (gateDependents[gate.semanticKey] || []).length;
+    if (depCount >= PRIMARY_GATE_THRESHOLD) {
+      primaryGates.push(gate);
+    } else {
+      subGates.push(gate);
+    }
+  }
+
+  // -----------------------------------------------------------------------
+  // Promote sub-gates to primary when ALL section fields are in a single
+  // repeat group and no primary gate was found (e.g. section 14).
+  // -----------------------------------------------------------------------
+  if (primaryGates.length === 0 && subGates.length > 0) {
+    const allRepeat = fields.every(f => f.repeatGroup);
+    if (allRepeat) {
+      primaryGates.push(...subGates);
+      subGates.length = 0;
+    }
+  }
+
+  // -----------------------------------------------------------------------
+  // 1. Process PRIMARY gates first (section-level YES/NO questions)
+  // -----------------------------------------------------------------------
+  for (const gate of primaryGates) {
+    emitGateAndDependents(steps, sectionKey, gate, gateDependents);
+  }
+
+  // -----------------------------------------------------------------------
+  // 2. Process independent (non-conditional, non-gate) fields
   // -----------------------------------------------------------------------
 
   // Separate into repeat-group instances and non-repeat
@@ -501,59 +656,11 @@ function processSection(sectionKey, fields) {
   }
 
   // -----------------------------------------------------------------------
-  // Process gates and their conditional blocks
+  // 3. Process remaining sub-gates and their conditional blocks
   // -----------------------------------------------------------------------
 
-  for (const gate of gates) {
-    const gateStep = {
-      id: makeStepId(sectionKey, ['gate', uniqueSuffix()]),
-      title: generateTitle([gate], sectionKey, { isGate: true }),
-      guidance: generateGuidance([gate], sectionKey, { isGate: true }),
-      fieldKeys: [gate.semanticKey],
-      gateFieldKey: gate.semanticKey,
-    };
-
-    // If the gate is in a repeat group, attach that info
-    if (gate.repeatGroup) {
-      gateStep.repeatGroup = gate.repeatGroup;
-      gateStep.repeatIndex = gate.repeatIndex;
-    }
-
-    steps.push(gateStep);
-
-    // Process dependents of this gate
-    const dependents = gateDependents[gate.semanticKey] || [];
-    if (dependents.length > 0) {
-      // Separate dependents into repeat/non-repeat
-      const depNonRepeat = dependents.filter(f => !f.repeatGroup);
-      const depRepeat = dependents.filter(f => f.repeatGroup);
-
-      // Non-repeat conditional fields
-      if (depNonRepeat.length > 0) {
-        const chunks = splitBySemantics(depNonRepeat, sectionKey);
-        for (const chunk of chunks) {
-          const title = generateTitle(chunk, sectionKey);
-          steps.push({
-            id: makeStepId(sectionKey, ['cond', uniqueSuffix()]),
-            title,
-            guidance: generateGuidance(chunk, sectionKey, { isConditional: true }),
-            fieldKeys: chunk.map(f => f.semanticKey),
-            gateFieldKey: gate.semanticKey,
-            isConditionalBlock: true,
-          });
-        }
-      }
-
-      // Repeat conditional fields
-      const repeatInstances = groupByRepeatInstance(depRepeat);
-      for (const [rgKey, instanceFields] of repeatInstances) {
-        const [repeatGroup, repeatIndex] = parseRepeatKey(rgKey);
-        processRepeatGroupInstance(steps, sectionKey, instanceFields, repeatGroup, repeatIndex, {
-          gateFieldKey: gate.semanticKey,
-          isConditional: true,
-        });
-      }
-    }
+  for (const gate of subGates) {
+    emitGateAndDependents(steps, sectionKey, gate, gateDependents);
   }
 
   // -----------------------------------------------------------------------
@@ -844,16 +951,21 @@ function main() {
     }
   }
 
-  // Count fields in the registry (excluding ssnPageHeader)
-  const registryFieldCount = registry.filter(f => f.section !== 'ssnPageHeader').length;
-  const missing = registry
-    .filter(f => f.section !== 'ssnPageHeader' && !allStepFieldKeys.has(f.semanticKey))
+  // Count fields in the registry (excluding ssnPageHeader and omitFromWizard)
+  const wizardEligible = registry.filter(f => f.section !== 'ssnPageHeader' && !f.omitFromWizard);
+  const registryFieldCount = wizardEligible.length;
+  const missing = wizardEligible
+    .filter(f => !allStepFieldKeys.has(f.semanticKey))
     .map(f => f.semanticKey);
+  const omittedCount = registry.filter(f => f.omitFromWizard).length;
 
   console.log(`Generated wizard steps for ${allSections.length} sections`);
   console.log(`Total steps: ${totalSteps}`);
   console.log(`Total unique fields in steps: ${allStepFieldKeys.size}`);
-  console.log(`Registry field count (excl. ssnPageHeader): ${registryFieldCount}`);
+  console.log(`Registry field count (excl. ssnPageHeader, omitFromWizard): ${registryFieldCount}`);
+  if (omittedCount > 0) {
+    console.log(`Omitted fields (omitFromWizard): ${omittedCount}`);
+  }
   if (duplicates.length > 0) {
     console.warn(`WARNING: ${duplicates.length} duplicate field keys in steps`);
     console.warn('First 10:', duplicates.slice(0, 10));

@@ -1,99 +1,86 @@
 /**
- * PostgreSQL Connection Pool — Server-Side Only
+ * Cloudflare D1 Database Client
  *
- * Provides a singleton connection pool and a typed `query` helper.
- * All queries use parameterised placeholders ($1, $2, ...) to prevent
- * SQL injection. The pool is created lazily on first use and reused
- * across hot-reloads in development via a global reference.
+ * Thin wrapper around D1 accessed via @opennextjs/cloudflare's
+ * getCloudflareContext(). Exposes the same query<T>() and
+ * withTransaction() signatures so call-sites don't change.
  */
 
-import { Pool, type PoolClient, type QueryResult, type QueryResultRow } from "pg";
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 
-// ---------------------------------------------------------------------------
-// Singleton pool (survives Next.js hot-reload in dev)
-// ---------------------------------------------------------------------------
-
-const globalForPg = globalThis as typeof globalThis & {
-  __pgPool?: Pool;
-};
-
-function getPool(): Pool {
-  if (!globalForPg.__pgPool) {
-    const connectionString = process.env.DATABASE_URL;
-    if (!connectionString) {
-      throw new Error(
-        "DATABASE_URL environment variable is not set. " +
-          "Add it to .env.local for local development."
-      );
-    }
-
-    globalForPg.__pgPool = new Pool({
-      connectionString,
-      // Conservative defaults — tune per deployment.
-      max: 10,
-      idleTimeoutMillis: 30_000,
-      connectionTimeoutMillis: 5_000,
-    });
-
-    // Surface connection errors instead of silently swallowing them.
-    globalForPg.__pgPool.on("error", (err) => {
-      console.error("[pg] Unexpected error on idle client:", err);
-    });
+// Extend the global CloudflareEnv with our D1 binding
+declare global {
+  interface CloudflareEnv {
+    DB: D1Database;
   }
-
-  return globalForPg.__pgPool;
 }
 
-export const pool: Pool = getPool();
+/** Get the D1 database binding from the Cloudflare context. */
+async function getDB(): Promise<D1Database> {
+  const { env } = await getCloudflareContext({ async: true });
+  if (!env.DB) {
+    throw new Error('D1 database binding "DB" is not configured in wrangler.jsonc');
+  }
+  return env.DB;
+}
 
 // ---------------------------------------------------------------------------
 // Typed query helper
 // ---------------------------------------------------------------------------
 
+export interface QueryResult<T> {
+  rows: T[];
+}
+
 /**
- * Execute a parameterised SQL query against the pool.
- *
- * @example
- *   const { rows } = await query<User>(
- *     "SELECT * FROM users WHERE id = $1",
- *     [userId]
- *   );
+ * Execute a parameterised SQL query against D1.
+ * Uses `?` placeholders (SQLite style).
  */
-export async function query<T extends QueryResultRow = QueryResultRow>(
-  text: string,
-  params?: unknown[]
+export async function query<T = Record<string, unknown>>(
+  sql: string,
+  params?: unknown[],
 ): Promise<QueryResult<T>> {
-  return pool.query<T>(text, params);
+  const db = await getDB();
+  const stmt = db.prepare(sql);
+  const bound = params && params.length > 0 ? stmt.bind(...params) : stmt;
+  const result = await bound.all<T>();
+  return { rows: result.results ?? [] };
+}
+
+/**
+ * Execute a SQL statement that doesn't return rows (INSERT/UPDATE/DELETE).
+ * Returns D1 run metadata (last_row_id, changes, etc.).
+ */
+export async function run(
+  sql: string,
+  params?: unknown[],
+): Promise<D1Result> {
+  const db = await getDB();
+  const stmt = db.prepare(sql);
+  const bound = params && params.length > 0 ? stmt.bind(...params) : stmt;
+  return bound.run();
 }
 
 // ---------------------------------------------------------------------------
-// Transaction helper
+// Transaction helper — D1 batch()
 // ---------------------------------------------------------------------------
 
 /**
- * Run `fn` inside a database transaction. Commits on success, rolls back
- * on any thrown error, and always releases the client back to the pool.
- *
- * @example
- *   const user = await withTransaction(async (client) => {
- *     const { rows } = await client.query("INSERT INTO users ...");
- *     await client.query("INSERT INTO audit_log ...");
- *     return rows[0];
- *   });
+ * Execute multiple statements atomically using D1's batch() API.
+ * All statements succeed or all fail together.
  */
-export async function withTransaction<T>(
-  fn: (client: PoolClient) => Promise<T>
-): Promise<T> {
-  const client = await pool.connect();
-  try {
-    await client.query("BEGIN");
-    const result = await fn(client);
-    await client.query("COMMIT");
-    return result;
-  } catch (err) {
-    await client.query("ROLLBACK");
-    throw err;
-  } finally {
-    client.release();
-  }
+export async function batch(
+  statements: D1PreparedStatement[],
+): Promise<D1Result[]> {
+  const db = await getDB();
+  return db.batch(statements);
+}
+
+/** Get a raw D1 prepared statement for use with batch(). */
+export async function prepare(sql: string): Promise<{
+  db: D1Database;
+  stmt: D1PreparedStatement;
+}> {
+  const db = await getDB();
+  return { db, stmt: db.prepare(sql) };
 }

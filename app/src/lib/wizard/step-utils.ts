@@ -213,7 +213,20 @@ export function filterVisibleSteps(
       return true;
     }
 
-    return evaluateShowWhen(showWhen, gateValue);
+    if (!evaluateShowWhen(showWhen, gateValue)) return false;
+
+    // Transitive gate cascade: if the gate field itself is conditional
+    // (has a parent gate), verify that the parent condition is also met.
+    // Example: section 9 — RadioButtonList_15 depends on RadioButtonList_1.
+    // When RadioButtonList_1 changes, steps gated by RadioButtonList_15
+    // should also hide if RadioButtonList_15's parent condition is unmet.
+    const gateField = registry.getBySemanticKey(step.gateFieldKey);
+    if (gateField?.dependsOn && gateField.showWhen) {
+      const grandparentValue = gateValues[gateField.dependsOn] ?? null;
+      if (!evaluateShowWhen(gateField.showWhen, grandparentValue)) return false;
+    }
+
+    return true;
   });
 }
 
@@ -267,7 +280,10 @@ function isFieldFilled(value: FieldValue): boolean {
  * @param steps  The steps to scan for gate keys.
  * @returns      Deduplicated array of gate semantic keys (stable order).
  */
-export function extractGateKeys(steps: WizardStep[]): string[] {
+export function extractGateKeys(
+  steps: WizardStep[],
+  registry?: FieldRegistry,
+): string[] {
   const seen = new Set<string>();
   const result: string[] = [];
 
@@ -275,6 +291,15 @@ export function extractGateKeys(steps: WizardStep[]): string[] {
     if (step.gateFieldKey && step.isConditionalBlock && !seen.has(step.gateFieldKey)) {
       seen.add(step.gateFieldKey);
       result.push(step.gateFieldKey);
+
+      // Also subscribe to the gate's parent if it has one (transitive cascade).
+      if (registry) {
+        const gateField = registry.getBySemanticKey(step.gateFieldKey);
+        if (gateField?.dependsOn && !seen.has(gateField.dependsOn)) {
+          seen.add(gateField.dependsOn);
+          result.push(gateField.dependsOn);
+        }
+      }
     }
   }
 

@@ -72,9 +72,17 @@ function fieldToZodSchema(field: FieldDefinition): z.ZodType {
     case "radio":
     case "select": {
       if (field.options && field.options.length > 0) {
-        const [first, ...rest] = field.options;
-        // Allow null/empty for untouched state; validate option membership
-        // only when a non-empty value is provided.
+        // For radio fields with a valueMap, the stored value is the mapped
+        // numeric index (e.g. '1','2','3'), not the label text. Accept both
+        // the mapped values AND the raw option labels for compatibility.
+        const allowed = new Set<string>(field.options);
+        if (field.uiFieldType === "radio" && field.valueMap) {
+          for (const v of Object.values(field.valueMap)) {
+            allowed.add(v);
+          }
+        }
+        const arr = [...allowed];
+        const [first, ...rest] = arr;
         const s = z.union([z.enum([first, ...rest]), z.literal("")]);
         schema = s.nullable().optional();
       } else {

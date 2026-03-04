@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { useCallback } from 'react';
 import { useAppStore } from '@/lib/state/stores/app-store';
 import { useWizardNavigation } from '@/lib/wizard/use-wizard-navigation';
@@ -9,6 +9,7 @@ import {
   SECTION_META,
   sectionToGroup,
 } from '@/lib/field-registry/types';
+import type { SF86Section } from '@/lib/field-registry/types';
 
 interface WizardControlsProps {
   submissionId: string;
@@ -16,11 +17,16 @@ interface WizardControlsProps {
 
 export function WizardControls({ submissionId }: WizardControlsProps) {
   const router = useRouter();
-  const currentSection = useAppStore((s) => s.currentSection);
+  const pathname = usePathname();
+  const storeSection = useAppStore((s) => s.currentSection);
   const layoutMode = useAppStore((s) => s.layoutMode);
   const goBack = useAppStore((s) => s.goBack);
   const wizardHistory = useAppStore((s) => s.wizardHistory);
   const storeSaveNow = useAppStore((s) => s.saveNow);
+
+  // Derive section from URL to avoid stale store reads
+  const urlSection = pathname?.split('/').pop() as SF86Section | undefined;
+  const currentSection = (urlSection && SECTION_META[urlSection]) ? urlSection : storeSection;
 
   const {
     currentStepIndex,
@@ -32,7 +38,7 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     nextStep: wizNextStep,
     prevStep: wizPrevStep,
     currentStep,
-  } = useWizardNavigation();
+  } = useWizardNavigation(currentSection);
 
   const sectionIndex = ALL_SECTIONS.indexOf(currentSection);
   const hasPreviousSection = wizardHistory.length > 0 || sectionIndex > 0;
@@ -93,14 +99,6 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     void storeSaveNow();
   }, [storeSaveNow]);
 
-  // -- Display text --
-  const showStepInfo = isWizardMode && totalVisibleSteps > 0;
-  const centerText = showStepInfo
-    ? isReviewMode
-      ? `Review · ${currentMeta.title}`
-      : `Step ${currentStepIndex + 1} of ${totalVisibleSteps} · ${currentMeta.title}`
-    : currentMeta.title;
-
   // -- Button states --
   const prevDisabled = isWizardMode
     ? !canGoPrev && !hasPreviousSection
@@ -143,11 +141,8 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
           Previous
         </button>
 
-        {/* Center: step/section indicator + save */}
+        {/* Center: save button */}
         <div className="flex items-center gap-4">
-          <span className="hidden sm:inline text-xs text-gray-500 text-center max-w-md truncate">
-            {centerText}
-          </span>
           <button
             type="button"
             onClick={handleSave}

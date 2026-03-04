@@ -34,7 +34,7 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
     currentStepIndex,
     isReviewMode,
     goToStep,
-  } = useWizardNavigation();
+  } = useWizardNavigation(sectionKey);
 
   const registry = useRegistry();
 
@@ -112,7 +112,16 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
   // -----------------------------------------------------------------------
 
   const repeatInfo = useMemo(() => {
-    const repeatSteps = visibleSteps.filter((s) => s.repeatGroup);
+    // A "gate-only" step is one that contains only the gate field (e.g. a YES/NO
+    // question). These should render as linear steps, not as repeat entry cards,
+    // even when they share a repeatGroup with the entries they control.
+    const isGateOnly = (s: WizardStep) =>
+      s.gateFieldKey &&
+      !s.isConditionalBlock &&
+      s.fieldKeys.length === 1 &&
+      s.fieldKeys[0] === s.gateFieldKey;
+
+    const repeatSteps = visibleSteps.filter((s) => s.repeatGroup && !isGateOnly(s));
     if (repeatSteps.length === 0) return null;
 
     // Group by repeatGroup name
@@ -124,10 +133,11 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
       else groups.set(name, [step]);
     }
 
-    // Only show card overview when ALL visible steps are repeat groups.
+    // Only show card overview when ALL non-gate visible steps are repeat groups.
     // Mixed sections (gates + repeat entries) need linear navigation so
     // the user answers gate questions before reaching repeat entries.
-    if (repeatSteps.length < visibleSteps.length) return null;
+    const nonGateSteps = visibleSteps.filter((s) => !isGateOnly(s));
+    if (repeatSteps.length < nonGateSteps.length) return null;
 
     // Merge groups that derive the same display name to avoid duplicate headings.
     // e.g. "residency", "section11_2", "section11_3" all display as "Residences".

@@ -12,11 +12,9 @@ test.describe('New form page', () => {
     ).toBeVisible();
   });
 
-  test('shows error when creating form without auth', async ({ page }) => {
+  test('creates form and redirects to section 1', async ({ page }) => {
     await page.goto('/new');
     await page.getByRole('button', { name: 'Create Form' }).click();
-
-    // API returns 401 without auth — page shows error
-    await expect(page.locator('p.text-red-600')).toBeVisible({ timeout: 10000 });
+    await expect(page).toHaveURL(/\/identification\/section1/);
   });
 });

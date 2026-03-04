@@ -1,28 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { auth } from '@/lib/auth/auth';
-
-const PDF_SERVICE_URL = process.env.PDF_SERVICE_URL || 'http://localhost:8001';
 
 /**
- * Proxy endpoint for PDF page rendering.
- * Forwards requests to the Python PDF service which renders pages as PNG.
+ * PDF page rendering — serves pre-rendered static PNGs.
  *
- * URL pattern: /api/pdf/render-page/{version}/{pageNumber}?dpi=150
- * Example:     /api/pdf/render-page/sf861/0?dpi=150
+ * URL pattern: /api/pdf/render-page/{version}/{pageNumber}
+ * Example:     /api/pdf/render-page/sf861/0
+ *
+ * Pages are pre-rendered from the PDF template and stored as static assets
+ * in /public/pdf-pages/{version}/page-{pageNumber}.png.
+ * If static PNGs aren't available yet, returns 404.
  */
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ params: string[] }> },
 ) {
-  const session = await auth();
-  // TODO: Remove dev bypass once auth is re-enabled
-  if (false && !session?.user?.id) {
-    return NextResponse.json(
-      { error: 'Authentication required' },
-      { status: 401 },
-    );
-  }
-
   const segments = (await params).params;
 
   if (!segments || segments.length < 2) {
@@ -42,36 +33,13 @@ export async function GET(
     );
   }
 
-  const url = new URL(_request.url);
-  const dpi = url.searchParams.get('dpi') || '150';
+  // Redirect to the static asset — Next.js serves files from /public
+  const staticPath = `/pdf-pages/${encodeURIComponent(version)}/page-${pageNum}.png`;
 
-  try {
-    const upstream = await fetch(
-      `${PDF_SERVICE_URL}/render-page/${encodeURIComponent(version)}/${pageNum}?dpi=${encodeURIComponent(dpi)}`,
-    );
-
-    if (!upstream.ok) {
-      const text = await upstream.text();
-      return NextResponse.json(
-        { error: `PDF service error: ${text}` },
-        { status: upstream.status },
-      );
-    }
-
-    const pngBuffer = await upstream.arrayBuffer();
-
-    return new NextResponse(pngBuffer, {
-      status: 200,
-      headers: {
-        'Content-Type': 'image/png',
-        'Cache-Control': 'public, max-age=86400, immutable',
-      },
-    });
-  } catch (error) {
-    console.error('PDF render proxy error:', error);
-    return NextResponse.json(
-      { error: 'Failed to reach PDF service' },
-      { status: 502 },
-    );
-  }
+  return NextResponse.redirect(new URL(staticPath, request.url), {
+    status: 302,
+    headers: {
+      'Cache-Control': 'public, max-age=86400, immutable',
+    },
+  });
 }

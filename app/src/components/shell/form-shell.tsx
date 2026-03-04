@@ -1,12 +1,12 @@
 'use client';
 
 import { type ReactNode, useCallback, useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { useAtomValue } from 'jotai';
 import { SectionSidebar } from './section-sidebar';
 import { TopBar } from './top-bar';
 import { WizardControls } from './wizard-controls';
 import { PdfPreview, type FieldRect } from './pdf-preview';
-import { useSyncEngine } from '@/lib/state/hooks/use-sync-engine';
 import { useSsnAutoFill } from '@/lib/state/hooks/use-ssn-autofill';
 import { dirtyFieldsAtom } from '@/lib/state/atoms/field-atoms';
 import { useAppStore } from '@/lib/state/stores/app-store';
@@ -21,7 +21,18 @@ export function FormShell({ submissionId, children }: FormShellProps) {
   const [previewOpen, setPreviewOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [activeRect] = useState<FieldRect | null>(null);
-  const { syncStatus, pendingCount } = useSyncEngine();
+  const pathname = usePathname();
+
+  // -- Close mobile sidebar overlay on route change -------------------------
+  useEffect(() => {
+    // On mobile (<md breakpoint), the sidebar renders as a full-screen
+    // overlay. Close it when the user navigates to a new section so they
+    // can see the content. On desktop (≥md), the sidebar is a persistent
+    // panel, so we keep it open.
+    if (typeof window !== 'undefined' && !window.matchMedia('(min-width: 768px)').matches) {
+      setSidebarOpen(false);
+    }
+  }, [pathname]);
 
   // -- SSN auto-fill: section 4 → 137 page header fields ------------------
   useSsnAutoFill(submissionId);
@@ -53,8 +64,6 @@ export function FormShell({ submissionId, children }: FormShellProps) {
         onToggleSidebar={toggleSidebar}
         onTogglePreview={togglePreview}
         previewOpen={previewOpen}
-        syncStatus={syncStatus}
-        pendingCount={pendingCount}
       />
 
       {/* Main content area */}
@@ -84,10 +93,10 @@ export function FormShell({ submissionId, children }: FormShellProps) {
           {sidebarOpen ? '\u2039' : '\u203A'}
         </button>
 
-        {/* Mobile sidebar overlay */}
+        {/* Mobile sidebar overlay — z-[55] to sit above TopBar (z-50) */}
         {sidebarOpen && (
           <div
-            className="md:hidden fixed inset-0 z-40"
+            className="md:hidden fixed inset-0 z-[55]"
             role="dialog"
             aria-modal="true"
             aria-label="Section navigation"

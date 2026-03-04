@@ -22,6 +22,7 @@ import { atom, useAtomValue } from 'jotai';
 import { useAppStore } from '@/lib/state/stores/app-store';
 import { useRegistry } from '@/lib/field-registry/use-registry';
 import { fieldValueAtomFamily, type FieldValue } from '@/lib/state/atoms/field-atoms';
+import type { SF86Section } from '@/lib/field-registry/types';
 import type { WizardStep, SectionWizardConfig } from './types';
 import { filterVisibleSteps, extractGateKeys } from './step-utils';
 import wizardStepsData from './wizard-steps.json';
@@ -64,8 +65,9 @@ export interface WizardNavigationState {
 // Hook implementation
 // ---------------------------------------------------------------------------
 
-export function useWizardNavigation(): WizardNavigationState {
-  const currentSection = useAppStore((s) => s.currentSection);
+export function useWizardNavigation(sectionKey?: SF86Section): WizardNavigationState {
+  const storeSection = useAppStore((s) => s.currentSection);
+  const currentSection = sectionKey ?? storeSection;
   const rawStepIndex = useAppStore((s) => s.currentStepIndex);
   const inReviewMode = useAppStore((s) => s.inReviewMode);
   const storeNextStep = useAppStore((s) => s.nextStep);
@@ -114,7 +116,7 @@ export function useWizardNavigation(): WizardNavigationState {
    * Gate keys are extracted from the static step config. This only changes
    * when the section changes, keeping the derived atom reference stable.
    */
-  const gateKeys = useMemo(() => extractGateKeys(allSteps), [allSteps]);
+  const gateKeys = useMemo(() => extractGateKeys(allSteps, registry), [allSteps, registry]);
 
   /**
    * Stable string representation for memoization. Since gateKeys is

@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "clear-rents",
+  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2025-04-04",
+  "main": ".open-next/worker.js",
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "clarance",
+      "database_id": "342da5ab-7928-4fbd-8a4c-168a92e13c0d"
+    }
+  ]
+}

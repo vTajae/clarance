@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useCallback, useState } from 'react';
 import { atom, useAtomValue } from 'jotai';
 import type { WizardStep } from '@/lib/wizard/types';
 import { useRegistry } from '@/lib/field-registry/use-registry';
@@ -17,7 +17,8 @@ interface RepeatGroupCardsProps {
 
 /**
  * Card-list overview for repeating entries (residences, employers, etc.).
- * Shows a summary card per repeat index with key field values.
+ * Progressive disclosure: shows Entry 1 always, Entry N+1 when Entry N
+ * has any field filled. Users can manually add entries via "Add Entry".
  */
 export function RepeatGroupCards({
   steps,
@@ -36,27 +37,157 @@ export function RepeatGroupCards({
     return Array.from(map.entries()).sort(([a], [b]) => a - b);
   }, [steps]);
 
+  // Track manually revealed entries
+  const [manuallyRevealed, setManuallyRevealed] = useState(0);
+
+  const handleAddEntry = useCallback(() => {
+    setManuallyRevealed((n) => n + 1);
+  }, []);
+
   const displayName = formatGroupName(groupName, steps);
 
   return (
     <div className="mx-auto w-full max-w-2xl">
       <h3 className="text-lg font-semibold text-gray-900 mb-4">{displayName}</h3>
       <div className="space-y-3">
-        {entries.map(([idx, entrySteps]) => (
-          <EntryCard
-            key={idx}
-            repeatIndex={idx}
-            steps={entrySteps}
-            onEdit={() => {
-              // Find the first step of this entry in the original steps array
-              const firstStep = entrySteps[0];
-              const globalIdx = steps.indexOf(firstStep);
-              onEditEntry(globalIdx >= 0 ? globalIdx : 0);
-            }}
-          />
-        ))}
+        <ProgressiveEntryList
+          entries={entries}
+          steps={steps}
+          manuallyRevealed={manuallyRevealed}
+          onEditEntry={onEditEntry}
+          onAddEntry={handleAddEntry}
+        />
       </div>
     </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Progressive entry list — subscribes to field values to determine visibility
+// ---------------------------------------------------------------------------
+
+interface ProgressiveEntryListProps {
+  entries: [number, WizardStep[]][];
+  steps: WizardStep[];
+  manuallyRevealed: number;
+  onEditEntry: (stepIndex: number) => void;
+  onAddEntry: () => void;
+}
+
+function ProgressiveEntryList({
+  entries,
+  steps,
+  manuallyRevealed,
+  onEditEntry,
+  onAddEntry,
+}: ProgressiveEntryListProps) {
+  // Collect ALL field keys across ALL entries for a single subscription
+  const allFieldKeys = useMemo(() => {
+    const keys: string[] = [];
+    const seen = new Set<string>();
+    for (const [, entrySteps] of entries) {
+      for (const step of entrySteps) {
+        for (const key of step.fieldKeys) {
+          if (!seen.has(key)) {
+            seen.add(key);
+            keys.push(key);
+          }
+        }
+      }
+    }
+    return keys;
+  }, [entries]);
+
+  const allKeysKey = useMemo(() => allFieldKeys.join(','), [allFieldKeys]);
+
+  // Single atom that checks which entries have any filled field
+  const entryFilledAtom = useMemo(
+    () =>
+      atom((get) => {
+        const filledEntries = new Set<number>();
+        for (const [idx, entrySteps] of entries) {
+          for (const step of entrySteps) {
+            for (const key of step.fieldKeys) {
+              const val = get(fieldValueAtomFamily(key));
+              if (isFieldFilled(val)) {
+                filledEntries.add(idx);
+                break;
+              }
+            }
+            if (filledEntries.has(idx)) break;
+          }
+        }
+        return filledEntries;
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [allKeysKey],
+  );
+
+  const filledEntries = useAtomValue(entryFilledAtom);
+
+  // Determine which entries to show:
+  // - Entry 0 always visible
+  // - Entry N visible if Entry N-1 has any filled field OR manually revealed
+  const visibleEntries = useMemo(() => {
+    const result: [number, WizardStep[]][] = [];
+    let revealedByManual = 0;
+
+    for (let i = 0; i < entries.length; i++) {
+      const [idx, entrySteps] = entries[i];
+      const prevIdx = i > 0 ? entries[i - 1][0] : -1;
+
+      if (i === 0) {
+        // Always show first entry
+        result.push([idx, entrySteps]);
+      } else if (filledEntries.has(prevIdx)) {
+        // Previous entry has data, auto-reveal this one
+        result.push([idx, entrySteps]);
+      } else if (revealedByManual < manuallyRevealed) {
+        // Manually revealed
+        result.push([idx, entrySteps]);
+        revealedByManual++;
+      } else {
+        // This and all subsequent entries are hidden
+        break;
+      }
+    }
+    return result;
+  }, [entries, filledEntries, manuallyRevealed]);
+
+  const hasMoreEntries = visibleEntries.length < entries.length;
+
+  return (
+    <>
+      {visibleEntries.map(([idx, entrySteps]) => (
+        <EntryCard
+          key={idx}
+          repeatIndex={idx}
+          steps={entrySteps}
+          onEdit={() => {
+            const firstStep = entrySteps[0];
+            const globalIdx = steps.indexOf(firstStep);
+            onEditEntry(globalIdx >= 0 ? globalIdx : 0);
+          }}
+        />
+      ))}
+
+      {hasMoreEntries && (
+        <button
+          type="button"
+          onClick={onAddEntry}
+          className="
+            flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed
+            border-gray-300 py-3 text-sm font-medium text-gray-500
+            hover:border-blue-400 hover:text-blue-600 transition-colors
+          "
+        >
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+          </svg>
+          Add Entry
+        </button>
+      )}
+    </>
   );
 }
 
@@ -267,20 +398,41 @@ function EntryButtonLabel({ fillRatio }: { fillRatio: number }) {
 
 /** Derive a human-readable group heading from the step titles in the group. */
 export function formatGroupName(name: string, steps: WizardStep[]): string {
-  // Try to extract the entity type from the first step's title.
+  // Try to extract the entity type from step titles.
   // Titles follow patterns like "Employment 1 - Contact", "Residence 1 - Dates".
-  const firstTitle = steps[0]?.title ?? '';
-  const match = firstTitle.match(/^(.+?)\s+\d/);
-  if (match) {
-    const base = match[1].trim();
-    // Pluralize simple words
-    if (base.endsWith('y') && !/[aeiou]y$/i.test(base)) return base.slice(0, -1) + 'ies';
-    if (/(?:s|sh|ch|x|z)$/i.test(base)) return base + 'es';
-    return base + 's';
+  // The first step may be a gate question, so check all steps.
+  for (const step of steps) {
+    const title = step.title ?? '';
+    const match = title.match(/^(.+?)\s+\d/);
+    if (match) {
+      const base = match[1].trim();
+      // Pluralize simple words
+      if (base.endsWith('y') && !/[aeiou]y$/i.test(base)) return base.slice(0, -1) + 'ies';
+      if (/(?:s|sh|ch|x|z)$/i.test(base)) return base + 'es';
+      return base + 's';
+    }
   }
 
   // Fallback: known semantic names
   if (name === 'residency') return 'Residences';
+
+  // Section-based fallback: map group keys like "section22_1", "section_23_4" to names
+  // Extract primary section number (handles section13_5, section_23_4, section22_3_1, etc.)
+  const sectionMatch = name.match(/^section_?(\d+)/);
+  if (sectionMatch) {
+    const secNum = sectionMatch[1];
+    const sectionNames: Record<string, string> = {
+      '5': 'Other Names', '7': 'Contact Information', '8': 'Passports',
+      '9': 'Citizenship', '10': 'Citizenships', '11': 'Residences', '12': 'Schools',
+      '13': 'Employment History', '14': 'Selective Service', '15': 'Military Service',
+      '16': 'Personal References', '17': 'Relationships', '18': 'Relatives',
+      '19': 'Foreign Contacts', '20': 'Foreign Activities',
+      '21': 'Psychological Health', '22': 'Police Records', '23': 'Drug Activity',
+      '24': 'Alcohol Use', '25': 'Investigations & Clearances', '26': 'Financial Records',
+      '27': 'IT Systems', '28': 'Civil Court Actions', '29': 'Associations',
+    };
+    if (sectionNames[secNum]) return sectionNames[secNum];
+  }
 
   // Last resort: clean up the internal name
   const cleaned = name

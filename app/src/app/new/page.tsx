@@ -2,32 +2,21 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { saveMetadata } from "@/lib/persistence/indexeddb-client";
 
 export default function NewFormPage() {
   const router = useRouter();
   const [creating, setCreating] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   async function handleCreateForm() {
     setCreating(true);
-    setError(null);
 
     try {
-      const resp = await fetch("/api/form/new", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pdfVersion: "sf861" }),
-      });
-
-      if (!resp.ok) {
-        const data = await resp.json().catch(() => ({}));
-        throw new Error(data.error || "Failed to create form");
-      }
-
-      const { submissionId } = await resp.json();
+      const submissionId = crypto.randomUUID();
+      await saveMetadata(submissionId, { pdfVersion: "sf861" });
       router.push(`/${submissionId}/identification/section1`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong");
+      console.error("Failed to create form:", err);
       setCreating(false);
     }
   }
@@ -42,9 +31,6 @@ export default function NewFormPage() {
         </p>
 
         <div className="mt-6">
-          {error && (
-            <p className="mb-3 text-sm text-red-600">{error}</p>
-          )}
           <button
             onClick={handleCreateForm}
             disabled={creating}

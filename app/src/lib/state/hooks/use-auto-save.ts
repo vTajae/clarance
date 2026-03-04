@@ -5,9 +5,7 @@
 // ---------------------------------------------------------------------------
 //
 // Watches all field atoms belonging to a given section via the derived
-// `sectionFieldsAtom` and debounces writes to IndexedDB.  Each debounced
-// write also enqueues a pending sync entry so the SyncEngine can push the
-// change to the server later.
+// `sectionFieldsAtom` and debounces writes to IndexedDB.
 //
 // Integrates with the Zustand `appStore` to surface save status in the UI
 // ('saving' -> 'saved' -> 'idle') and exposes `saveNow` for manual flush.
@@ -23,7 +21,6 @@ import type { Atom } from 'jotai';
 
 import {
   saveSectionData,
-  addPendingSync,
 } from '@/lib/persistence/indexeddb-client';
 import { useAppStore } from '@/lib/state/stores/app-store';
 import {
@@ -61,7 +58,7 @@ export interface UseAutoSaveReturn {
  *
  * Subscribes to all field values in the section through a Jotai derived atom.
  * When any field value changes, a debounced save (500 ms) writes the entire
- * section snapshot to IndexedDB and enqueues a pending sync entry.
+ * section snapshot to IndexedDB.
  *
  * @param submissionId  The active submission UUID.
  * @param sectionKey    Which of the 29 SF-86 sections to persist.
@@ -129,7 +126,6 @@ export function useAutoSave(
         const serializable: Record<string, unknown> = data;
 
         await saveSectionData(submissionId, sectionKey, serializable);
-        await addPendingSync(submissionId, sectionKey, serializable);
 
         if (isMountedRef.current) {
           const now = new Date().toISOString();
@@ -234,11 +230,6 @@ export function useAutoSave(
                 `[useAutoSave] Unmount save for "${sectionKey}" failed:`,
                 err instanceof Error ? err.message : err,
               );
-            },
-          );
-          void addPendingSync(submissionId, sectionKey, finalData).catch(
-            () => {
-              // Best-effort; the section data is already in IndexedDB.
             },
           );
         }

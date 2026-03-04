@@ -201,8 +201,14 @@ export function pdfToUi(field: FieldDefinition, pdfValue: string): unknown {
     case 'height':
       return pdfHeightToInches(pdfValue);
 
+    case 'radio':
+      // Radio fields now store the valueMap value (e.g. '2') directly in Jotai,
+      // NOT the label text. So on import, return the PDF value as-is — it IS
+      // the UI value. No reverse mapping needed.
+      return pdfValue;
+
     default:
-      // For radio / select / text / textarea / all others, apply valueMap
+      // For select / text / textarea / all others, apply valueMap
       if (field.valueMap && !hasDedicatedTransform.has(field.uiFieldType)) {
         return reverseValueMap(field, pdfValue);
       }
@@ -250,6 +256,11 @@ export function uiToPdf(field: FieldDefinition, uiValue: unknown): string {
       return typeof uiValue === 'number'
         ? inchesToPdfHeight(uiValue)
         : String(uiValue);
+
+    case 'radio':
+      // Radio fields now store the valueMap value (e.g. '2') directly —
+      // which IS the PDF value. Return it as-is, no forward mapping needed.
+      return String(uiValue);
 
     default:
       if (field.valueMap) {

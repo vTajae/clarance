@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useId, useMemo } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { useFieldValue } from '@/lib/state/hooks/use-field-value';
 import type { BaseFieldProps } from '@/lib/types/form';
 
@@ -60,16 +60,43 @@ export function DateField({
   const [value, setValue] = useFieldValue(semanticKey);
   const [estimated, setEstimated] = useFieldValue(`${semanticKey}.estimated`);
 
-  const iso = typeof value === 'string' ? value : null;
-  const parts = useMemo(() => parseDateParts(iso), [iso]);
+  // Local state for partial input — prevents snap-back when atom is null
+  const [localParts, setLocalParts] = useState(() =>
+    parseDateParts(typeof value === 'string' ? value : null),
+  );
+
+  // Track whether we're the source of the change to avoid circular updates
+  const isLocalChange = useRef(false);
+
+  // Sync atom → local state only on external changes (hydration, import)
+  useEffect(() => {
+    if (isLocalChange.current) {
+      isLocalChange.current = false;
+      return;
+    }
+    const iso = typeof value === 'string' ? value : null;
+    const parsed = parseDateParts(iso);
+    // Only overwrite local state if the atom has a real value
+    // or if all local parts are empty (initial load)
+    if (iso || (!localParts.month && !localParts.day && !localParts.year)) {
+      setLocalParts(parsed);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   const handlePartChange = useCallback(
     (part: 'month' | 'day' | 'year', raw: string) => {
-      const next = { ...parts, [part]: raw };
-      const built = buildIso(next.month, next.day, next.year);
-      setValue(built);
+      setLocalParts((prev) => {
+        const next = { ...prev, [part]: raw };
+        const built = buildIso(next.month, next.day, next.year);
+        if (built) {
+          isLocalChange.current = true;
+          setValue(built);
+        }
+        return next;
+      });
     },
-    [parts, setValue],
+    [setValue],
   );
 
   const inputClasses = `
@@ -94,7 +121,7 @@ export function DateField({
           </label>
           <select
             id={`${id}-month`}
-            value={parts.month}
+            value={localParts.month}
             onChange={(e) => handlePartChange('month', e.target.value)}
             disabled={disabled}
             className={`${inputClasses} w-32`}
@@ -119,7 +146,7 @@ export function DateField({
             inputMode="numeric"
             maxLength={2}
             placeholder="DD"
-            value={parts.day}
+            value={localParts.day}
             onChange={(e) => handlePartChange('day', e.target.value.replace(/\D/g, ''))}
             disabled={disabled}
             className={`${inputClasses} w-16`}
@@ -137,7 +164,7 @@ export function DateField({
             inputMode="numeric"
             maxLength={4}
             placeholder="YYYY"
-            value={parts.year}
+            value={localParts.year}
             onChange={(e) => handlePartChange('year', e.target.value.replace(/\D/g, ''))}
             disabled={disabled}
             className={`${inputClasses} w-20`}

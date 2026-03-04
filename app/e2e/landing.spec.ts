@@ -13,22 +13,19 @@ test.describe('Landing page', () => {
     ).toBeVisible();
 
     // Primary CTAs
-    const startLink = page.getByRole('link', { name: 'Start New Form' });
-    await expect(startLink).toBeVisible();
-    await expect(startLink).toHaveAttribute('href', '/new');
+    const startBtn = page.getByRole('button', { name: 'Start New Form' });
+    await expect(startBtn).toBeVisible();
 
     const importLink = page.getByRole('link', { name: 'Import from PDF' });
     await expect(importLink).toBeVisible();
     await expect(importLink).toHaveAttribute('href', '/import');
   });
 
-  test('navigates to new form page', async ({ page }) => {
+  test('creates form directly from home page', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('link', { name: 'Start New Form' }).click();
-    await page.waitForURL('/new', { timeout: 15_000 });
-    await expect(
-      page.getByRole('heading', { name: 'New SF-86 Form' }),
-    ).toBeVisible();
+    await page.getByRole('button', { name: 'Start New Form' }).click();
+    // Should navigate directly to form (section1)
+    await page.waitForURL('**/identification/section1', { timeout: 15_000 });
   });
 
   test('navigates to import page', async ({ page }) => {

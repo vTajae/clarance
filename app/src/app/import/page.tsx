@@ -5,6 +5,8 @@ import { useState, useCallback } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { saveSectionData } from '@/lib/persistence/indexeddb-client';
 import { useRegistry } from '@/lib/field-registry/use-registry';
+import { pdfToUi } from '@/lib/field-registry/value-transformers';
+import { extractFields } from '@/lib/pdf/pdf-ops';
 
 export default function ImportPage() {
   const router = useRouter();
@@ -39,24 +41,37 @@ export default function ImportPage() {
     setError(null);
 
     try {
-      const formData = new FormData();
-      formData.append('file', file);
+      // Read file as ArrayBuffer and extract fields client-side
+      const arrayBuffer = await file.arrayBuffer();
+      const pdfFields = await extractFields(arrayBuffer);
 
-      const response = await fetch('/api/pdf/import', {
-        method: 'POST',
-        body: formData,
-      });
+      // Map PDF field names → semantic keys using the registry
+      const mappedValues: Record<string, unknown> = {};
+      let mappedCount = 0;
+      let totalExtracted = 0;
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Import failed');
+      for (const [pdfFieldName, pdfValue] of Object.entries(pdfFields)) {
+        if (!pdfValue) continue;
+        totalExtracted++;
+
+        const fieldDef = registry.getByPdfFieldName(pdfFieldName);
+        if (fieldDef) {
+          const uiValue = pdfToUi(fieldDef, pdfValue);
+
+          // Skip unchecked checkboxes
+          if (
+            (fieldDef.uiFieldType === 'checkbox' || fieldDef.uiFieldType === 'branch') &&
+            uiValue === false
+          ) {
+            continue;
+          }
+
+          mappedValues[fieldDef.semanticKey] = uiValue;
+          mappedCount++;
+        }
       }
 
-      const data = await response.json();
-      setStats({
-        mapped: data.mappedCount,
-        total: data.totalExtracted,
-      });
+      setStats({ mapped: mappedCount, total: totalExtracted });
 
       // Create a new submission
       const submissionId = uuidv4();
@@ -64,9 +79,7 @@ export default function ImportPage() {
       // Group extracted values by section and save to IndexedDB
       const valuesBySection = new Map<string, Record<string, unknown>>();
 
-      for (const [semanticKey, value] of Object.entries(
-        data.values as Record<string, unknown>,
-      )) {
+      for (const [semanticKey, value] of Object.entries(mappedValues)) {
         const fieldDef = registry.getBySemanticKey(semanticKey);
         if (!fieldDef) continue;
 
@@ -94,7 +107,7 @@ export default function ImportPage() {
       setStatus('error');
       setError(err instanceof Error ? err.message : 'Import failed');
     }
-  }, [file, router]);
+  }, [file, router, registry]);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4">

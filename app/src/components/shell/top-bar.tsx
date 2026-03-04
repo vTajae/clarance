@@ -4,26 +4,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAppStore } from '@/lib/state/stores/app-store';
 import type { SaveStatus } from '@/lib/state/stores/app-store';
-import type { SyncStatus } from '@/lib/persistence/sync-engine';
 import { useExportPdf } from '@/lib/state/hooks/use-export-pdf';
 import { LayoutModeToggle } from '@/components/wizard/layout-mode-toggle';
-import { SECTION_META, SECTION_GROUPS } from '@/lib/field-registry/types';
-import type { SF86Section, SF86SectionGroup } from '@/lib/field-registry/types';
-import { useWizardNavigation } from '@/lib/wizard/use-wizard-navigation';
-
-const GROUP_LABELS: Record<SF86SectionGroup, string> = {
-  identification: 'Identification',
-  citizenship: 'Citizenship',
-  history: 'History',
-  military: 'Military',
-  relationships: 'Relationships',
-  foreign: 'Foreign',
-  financial: 'Financial',
-  substance: 'Substance',
-  legal: 'Legal',
-  psychological: 'Psychological',
-  review: 'Review',
-};
+import { SECTION_META } from '@/lib/field-registry/types';
+import type { SF86Section } from '@/lib/field-registry/types';
 
 interface TopBarProps {
   submissionId: string;
@@ -32,10 +16,6 @@ interface TopBarProps {
   previewOpen: boolean;
   /** Overall form completion (0-1). */
   completionPercent?: number;
-  /** Server sync status. */
-  syncStatus?: SyncStatus;
-  /** Number of entries waiting to sync. */
-  pendingCount?: number;
 }
 
 const STATUS_MAP: Record<SaveStatus, { label: string; colorClass: string }> = {
@@ -45,36 +25,22 @@ const STATUS_MAP: Record<SaveStatus, { label: string; colorClass: string }> = {
   error: { label: 'Save failed', colorClass: 'text-red-500' },
 };
 
-/** Derive the section group from a section key by checking SECTION_GROUPS. */
-function groupForSection(section: SF86Section): SF86SectionGroup {
-  for (const [group, sections] of Object.entries(SECTION_GROUPS) as [SF86SectionGroup, SF86Section[]][]) {
-    if (sections.includes(section)) return group;
-  }
-  return 'identification';
-}
-
 export function TopBar({
   submissionId,
   onToggleSidebar,
   onTogglePreview,
   previewOpen,
   completionPercent = 0,
-  syncStatus,
-  pendingCount = 0,
 }: TopBarProps) {
   const saveStatus = useAppStore((s) => s.saveStatus);
   const lastSaved = useAppStore((s) => s.lastSaved);
   const storeSection = useAppStore((s) => s.currentSection);
-  const storeSectionGroup = useAppStore((s) => s.currentSectionGroup);
-  const layoutMode = useAppStore((s) => s.layoutMode);
   const { exportPdf, status: exportStatus } = useExportPdf();
-  const { currentStep, currentStepIndex, isReviewMode } = useWizardNavigation();
 
   // Derive section from URL pathname (always current) to avoid stale store reads
   const pathname = usePathname();
   const urlSection = pathname?.split('/').pop() as SF86Section | undefined;
   const currentSection = (urlSection && SECTION_META[urlSection]) ? urlSection : storeSection;
-  const currentSectionGroup = (urlSection && SECTION_META[urlSection]) ? groupForSection(urlSection) : storeSectionGroup;
 
   const pct = Math.round(completionPercent * 100);
   const status = STATUS_MAP[saveStatus];
@@ -155,12 +121,6 @@ export function TopBar({
                 {lastSaved.toLocaleTimeString()}
               </span>
             )}
-            {syncStatus === 'syncing' && (
-              <span className="text-xs text-blue-500 animate-pulse">Syncing...</span>
-            )}
-            {syncStatus === 'error' && pendingCount > 0 && (
-              <span className="text-xs text-orange-500">{pendingCount} pending</span>
-            )}
           </div>
         </div>
 
@@ -196,27 +156,13 @@ export function TopBar({
         </div>
       </div>
 
-      {/* Breadcrumb navigation */}
+      {/* Breadcrumb — section title only */}
       {currentSection !== 'ssnPageHeader' && (
         <nav
           className="flex items-center gap-1 px-4 py-1.5 text-xs text-gray-500 border-t border-gray-100 bg-gray-50/50"
           aria-label="Breadcrumb"
         >
-          <span>{GROUP_LABELS[currentSectionGroup]}</span>
-          <span className="text-gray-300" aria-hidden="true">{' \u203A '}</span>
-          <span>{SECTION_META[currentSection]?.title ?? currentSection}</span>
-          {layoutMode === 'wizard' && (
-            <>
-              <span className="text-gray-300" aria-hidden="true">{' \u203A '}</span>
-              <span className="text-gray-700 font-medium">
-                {isReviewMode
-                  ? 'Review'
-                  : currentStep
-                    ? `Step ${currentStepIndex + 1}: ${currentStep.title}`
-                    : 'Step 1'}
-              </span>
-            </>
-          )}
+          <span className="font-medium text-gray-700">{SECTION_META[currentSection]?.title ?? currentSection}</span>
         </nav>
       )}
     </header>

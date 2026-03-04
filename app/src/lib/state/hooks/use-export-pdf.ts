@@ -3,15 +3,17 @@
 import { useCallback, useState } from 'react';
 import { useStore } from 'jotai';
 import { fieldValueAtomFamily } from '@/lib/state/atoms/field-atoms';
-import type { FieldValue } from '@/lib/state/atoms/field-atoms';
 import { useRegistry } from '@/lib/field-registry/use-registry';
+import { uiToPdf } from '@/lib/field-registry/value-transformers';
 import { evaluateShowWhen } from '@/lib/conditional/expression-evaluator';
+import { fillPdf } from '@/lib/pdf/pdf-ops';
+import { loadTemplate } from '@/lib/pdf/template-loader';
 
 type ExportStatus = 'idle' | 'exporting' | 'error';
 
 /**
- * Hook that collects all field values from the Jotai store and POSTs
- * them to /api/pdf/export to download a filled SF-86 PDF.
+ * Hook that collects all field values from the Jotai store and fills
+ * the SF-86 PDF entirely client-side using pdf-lib.
  */
 export function useExportPdf() {
   const store = useStore();
@@ -27,36 +29,36 @@ export function useExportPdf() {
       }
 
       // Collect all non-null field values, skipping hidden conditional fields
-      const values: Record<string, FieldValue> = {};
+      // and transform UI values → PDF values
+      const pdfFieldValues: Record<string, string> = {};
       const allKeys = registry.getAllSemanticKeys();
 
       for (const key of allKeys) {
         const field = registry.getBySemanticKey(key);
+        if (!field) continue;
+
         // Skip hidden conditional fields
-        if (field?.dependsOn) {
+        if (field.dependsOn) {
           const parentValue = store.get(fieldValueAtomFamily(field.dependsOn));
           if (!evaluateShowWhen(field.showWhen, parentValue)) continue;
         }
+
         const value = store.get(fieldValueAtomFamily(key));
-        if (value !== null && value !== undefined && value !== '') {
-          values[key] = value;
+        if (value === null || value === undefined || value === '') continue;
+
+        // Transform UI value to PDF value
+        const pdfValue = uiToPdf(field, value);
+        if (pdfValue !== '') {
+          pdfFieldValues[field.pdfFieldName] = pdfValue;
         }
       }
 
-      // POST to the export endpoint
-      const response = await fetch('/api/pdf/export', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ values }),
-      });
+      // Load template and fill client-side
+      const templateBytes = await loadTemplate();
+      const filledPdf = await fillPdf(templateBytes, pdfFieldValues);
 
-      if (!response.ok) {
-        const err = await response.json().catch(() => ({ error: 'Export failed' }));
-        throw new Error(err.error || `Export failed (${response.status})`);
-      }
-
-      // Download the PDF
-      const blob = await response.blob();
+      // Trigger browser download
+      const blob = new Blob([filledPdf as BlobPart], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
@@ -70,7 +72,6 @@ export function useExportPdf() {
     } catch (err) {
       console.error('PDF export error:', err);
       setStatus('error');
-      // Reset after 3 seconds
       setTimeout(() => setStatus('idle'), 3000);
     }
   }, [store, registry]);

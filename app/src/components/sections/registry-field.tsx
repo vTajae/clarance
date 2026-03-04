@@ -29,8 +29,13 @@ function RegistryFieldInner({ field }: { field: FieldDefinition }) {
 
   // Convert string[] options to FieldOption[] format.
   // Strip PDF instruction parentheticals from labels (e.g. "NO (If NO, proceed to Section 6)" → "NO")
+  // For radio fields with a valueMap, use the mapped value as the option value
+  // so that conditional showWhen expressions (e.g. === '2') match correctly.
   const fieldOptions: FieldOption[] | undefined = options?.map((opt) => ({
-    value: opt,
+    value:
+      field.uiFieldType === 'radio' && field.valueMap?.[opt] !== undefined
+        ? field.valueMap[opt]
+        : opt,
     label: opt.replace(/\s*\(If\s.*$/i, '').trim() || opt,
   }));
 

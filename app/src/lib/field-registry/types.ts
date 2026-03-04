@@ -167,6 +167,10 @@ export interface FieldDefinition {
    */
   valueMap?: Record<string, string>;
 
+  // -- Wizard exclusion ------------------------------------------------------
+  /** When true, this field is excluded from the wizard and flow-mode renderers (e.g. practitioner-only fields). */
+  omitFromWizard?: boolean;
+
   // -- Metadata --------------------------------------------------------------
   /** Which revision of the SF-86 PDF this mapping targets. */
   pdfVersion?: 'sf861' | 'sf862';

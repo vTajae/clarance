@@ -1,17 +1,13 @@
-// ---------------------------------------------------------------------------
-// Edge-compatible middleware — uses the lightweight auth config (no bcrypt/pg)
-// ---------------------------------------------------------------------------
+import { NextResponse } from 'next/server';
 
-import NextAuth from 'next-auth';
-import { authConfig } from '@/lib/auth/auth.config';
-
-export const { auth: middleware } = NextAuth(authConfig);
-
-export default middleware;
+// Auth removed — app is public, UUID-based.
+// Middleware is kept as a no-op to preserve the matcher (static asset exclusion).
+export default function middleware() {
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: [
-    // Match all paths except static files and Next.js internals
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|pdf)$).*)',
   ],
 };
