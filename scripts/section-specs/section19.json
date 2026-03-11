@@ -1,0 +1,81 @@
+{
+  "section": "section19",
+  "pages": [
+    63,
+    64,
+    65,
+    66
+  ],
+  "fieldCount": 277,
+  "gateFieldCount": 1,
+  "gateFieldKeys": [
+    "foreignContacts.0.RadioButtonList_1"
+  ],
+  "routing": {},
+  "repeatGroups": {
+    "section19_1": {
+      "fieldsPerIndex": 70,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section19_2": {
+      "fieldsPerIndex": 69,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section19_3": {
+      "fieldsPerIndex": 69,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section19_4": {
+      "fieldsPerIndex": 69,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [],
+  "instructions": [
+    {
+      "text": "Complete the following if you responded 'Yes' to have, or have had, close and/or continuing contact with a foreign national.",
+      "y": 120.9,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to have, or have had, close and/or continuing contact with a foreign national.",
+      "y": 78.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to have, or have had, close and/or continuing contact with a foreign national.",
+      "y": 78.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to have, or have had, close and/or continuing contact with a foreign national.",
+      "y": 78.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 1,
+      "yStart": 94.2,
+      "text": "Entry #2"
+    },
+    {
+      "index": 2,
+      "yStart": 94.2,
+      "text": "Entry #3"
+    },
+    {
+      "index": 3,
+      "yStart": 94.2,
+      "text": "Entry #4"
+    }
+  ]
+}

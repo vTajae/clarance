@@ -18,6 +18,8 @@ import {
   injectValues,
   readbackValues,
   getFieldsBySection,
+  flushToIndexedDB,
+  waitForHydration,
   SECTION_META,
 } from './helpers/test-fixtures';
 import { makeSectionValues } from './helpers/field-value-generators';
@@ -77,7 +79,14 @@ for (const cluster of CLUSTERS) {
 
       const valuesBySection: Record<string, Record<string, unknown>> = {};
 
-      // Inject values into each subsection
+      // Inject values into each subsection and persist to IndexedDB.
+      // We must flush to IndexedDB explicitly because:
+      //   1. `injectValues` writes to the in-memory Jotai store only.
+      //   2. The auto-save hook has a 500ms debounce and skips the first render.
+      //   3. `navigateToSection` does a full `page.goto()` which tears down the
+      //      React tree (and the Jotai store) before the debounced save fires.
+      //   4. On the next page load, `useHydrateSection` reads from IndexedDB,
+      //      so the data must already be there.
       let offset = 0;
       for (const section of cluster.sections) {
         await navigateToSection(page, submissionId, section);
@@ -88,11 +97,14 @@ for (const cluster of CLUSTERS) {
 
         const values = makeSectionValues(fields, offset);
         await injectValues(page, values);
+        await flushToIndexedDB(page, submissionId, section, values);
         valuesBySection[section] = values;
         offset += fields.length;
       }
 
-      // Revisit each subsection and verify values persisted
+      // Revisit each subsection and verify values persisted.
+      // After navigation, useHydrateSection loads data from IndexedDB
+      // asynchronously, so we wait for hydration before reading back.
       for (const section of cluster.sections) {
         const expectedValues = valuesBySection[section];
         if (!expectedValues || Object.keys(expectedValues).length === 0) continue;
@@ -101,6 +113,7 @@ for (const cluster of CLUSTERS) {
         await waitForJotaiStore(page);
 
         const keys = Object.keys(expectedValues);
+        await waitForHydration(page, keys);
         const actual = await readbackValues(page, keys);
 
         let matches = 0;

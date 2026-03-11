@@ -11,7 +11,10 @@ export interface WizardStep {
   repeatIndex?: number;
   pdfInstruction?: string;       // PDF instruction text (shown as callout)
   conditionalInstruction?: string; // Routing text ("If yes, provide...")
+  showWhen?: string;             // Direct showWhen expression (for steps with no dependsOn fields)
   sourcePages?: number[];        // PDF pages for "View in PDF" link
+  skipToSection?: string;        // Target section when gate answer triggers skip (e.g. "section6")
+  skipOnValue?: string;          // Gate value that triggers skip (e.g. "NO")
 }
 
 export interface SectionWizardConfig {

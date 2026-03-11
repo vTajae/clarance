@@ -1,0 +1,37 @@
+{
+  "section": "section13C",
+  "pages": [
+    33
+  ],
+  "fieldCount": 1,
+  "gateFieldCount": 0,
+  "gateFieldKeys": [],
+  "routing": {
+    "NO": "section14"
+  },
+  "repeatGroups": {
+    "section13_5": {
+      "fieldsPerIndex": 1,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 13C)",
+      "y": 88.3,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section13C"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 14)",
+      "y": 608.1,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section14"
+    }
+  ],
+  "entries": []
+}

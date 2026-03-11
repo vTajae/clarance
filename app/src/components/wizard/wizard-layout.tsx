@@ -14,6 +14,7 @@ import { WizardStepCard } from './wizard-step-card';
 import { WizardStepIndicator } from './wizard-step-indicator';
 import { WizardReviewPanel } from './wizard-review-panel';
 import { RepeatGroupCards, formatGroupName } from './repeat-group-cards';
+import { getLinkedGroupConfig } from '@/lib/wizard/linked-group-utils';
 import { TimelineCoveragePrompt } from './timeline-coverage-prompt';
 import { SignatureReview } from './signature-review';
 
@@ -143,9 +144,17 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
 
     // Merge groups that derive the same display name to avoid duplicate headings.
     // e.g. "residency", "section11_2", "section11_3" all display as "Residences".
+    // When a linked group config exists, ALL sub-groups merge under the entity label.
+    const linkedConfig = getLinkedGroupConfig(sectionKey);
+    const linkedNames = linkedConfig
+      ? new Set(linkedConfig.groupsBySection[sectionKey] ?? [])
+      : null;
     const mergedGroups = new Map<string, { displayName: string; steps: WizardStep[] }>();
     for (const [groupName, groupSteps] of groups) {
-      const displayName = formatGroupName(groupName, groupSteps);
+      // If this group belongs to a linked entity, use the entity label for all sub-groups
+      const displayName = linkedNames && linkedNames.has(groupName)
+        ? linkedConfig!.entityLabel + 's'
+        : formatGroupName(groupName, groupSteps);
       const existing = mergedGroups.get(displayName);
       if (existing) {
         existing.steps.push(...groupSteps);

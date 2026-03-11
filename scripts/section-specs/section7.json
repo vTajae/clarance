@@ -1,0 +1,31 @@
+{
+  "section": "section7",
+  "pages": [
+    6
+  ],
+  "fieldCount": 17,
+  "gateFieldCount": 0,
+  "gateFieldKeys": [],
+  "routing": {
+    "NO": "section10"
+  },
+  "repeatGroups": {},
+  "questions": [],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 9)",
+      "y": 210.3,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section9"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 10)",
+      "y": 622.0,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section10"
+    }
+  ],
+  "entries": []
+}

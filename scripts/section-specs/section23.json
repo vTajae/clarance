@@ -1,0 +1,335 @@
+{
+  "section": "section23",
+  "pages": [
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111
+  ],
+  "fieldCount": 191,
+  "gateFieldCount": 10,
+  "gateFieldKeys": [
+    "drugActivity.0.RadioButtonList_10",
+    "drugActivity.0.RadioButtonList_103",
+    "drugActivity.0.RadioButtonList_12",
+    "drugActivity.0.RadioButtonList_131",
+    "drugActivity.0.RadioButtonList_172",
+    "drugActivity.0.RadioButtonList_19",
+    "drugActivity.0.RadioButtonList_37",
+    "drugActivity.0.RadioButtonList_69",
+    "drugActivity.0.RadioButtonList_72",
+    "drugActivity.0.RadioButtonList_89"
+  ],
+  "routing": {
+    "NO": "section24"
+  },
+  "repeatGroups": {
+    "section23_1": {
+      "fieldsPerIndex": 23,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section23_2": {
+      "fieldsPerIndex": 25,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section_23_3": {
+      "fieldsPerIndex": 30,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section_23_4": {
+      "fieldsPerIndex": 19,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section_23_5": {
+      "fieldsPerIndex": 26,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section_23_6_1": {
+      "fieldsPerIndex": 25,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section_23_6": {
+      "fieldsPerIndex": 43,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [
+    {
+      "number": "23",
+      "text": "1",
+      "yPosition": 118.4,
+      "fieldKeys": [
+        "drugActivity.0.RadioButtonList_1",
+        "drugActivity.0.RadioButtonList_12",
+        "drugActivity.0.provideAnEstimateOfTheMonthAndYearOfFirstUse_2",
+        "drugActivity.0.isEstimate_3",
+        "drugActivity.0.provideAnEstimateOfTheMonthAndYearOfMost_2",
+        "drugActivity.0.isEstimate_4",
+        "drugActivity.0.provideNatureOfUseFrequencyAndNumberOfTimesUsed_2",
+        "drugActivity.0.RadioButtonList_18",
+        "drugActivity.0.RadioButtonList_19",
+        "drugActivity.0.provideExplanationOfWhyYouIntendOrDoNotIn_2",
+        "drugActivity.0.RadioButtonList_21",
+        "drugActivity.0.provideExplanation_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "23",
+      "text": "2",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "drugActivity.0.provideExplanation_3",
+        "drugActivity.0.provideTheNatureAndFrequencyOfActivity",
+        "drugActivity.0.provideAnEstimateOfTheMonthAndYearOfFirst",
+        "drugActivity.0.isEstimate_5",
+        "drugActivity.0.provideAnEstimateOfTheMonthAndYearOfMost_3",
+        "drugActivity.0.isEstimate_6",
+        "drugActivity.0.provideExplanation_4",
+        "drugActivity.0.RadioButtonList_37",
+        "drugActivity.0.RadioButtonList_38",
+        "drugActivity.0.RadioButtonList_39",
+        "drugActivity.0.RadioButtonList_40",
+        "drugActivity.0.provideTheReasonsWhyYouEngagedInTheActivity_2",
+        "drugActivity.0.RadioButtonList_47"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "23",
+      "text": "3",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "drugActivity.0.isPresent",
+        "drugActivity.0.isPresent_2",
+        "drugActivity.0.provideTheDatesOfInvolvementuseFromDateMonthyear",
+        "drugActivity.0.isEstimate_9",
+        "drugActivity.0.toDateMonthyear",
+        "drugActivity.0.isEstimate_10",
+        "drugActivity.0.provideAnEstimateOfTheNumberOfTimesYouUse",
+        "drugActivity.0.entry2ProvideADescriptionOfYourInvolvement",
+        "drugActivity.0.RadioButtonList_72",
+        "drugActivity.0.provideTheDatesOfInvolvementuseFromDateMonthyear_4",
+        "drugActivity.0.isEstimate_15",
+        "drugActivity.0.toDateMonthyear_4",
+        "drugActivity.0.isEstimate_16",
+        "drugActivity.0.provideAnEstimateOfTheNumberOfTimesYouUse_4",
+        "drugActivity.0.completeTheFollowingIfYouRespondedYesToH_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "23",
+      "text": "4",
+      "yPosition": 290.4,
+      "fieldKeys": [
+        "drugActivity.0.isPresent_3",
+        "drugActivity.0.provideTheDatesOfInvolvementuseFromDateMonthyear_2",
+        "drugActivity.0.isEstimate_11",
+        "drugActivity.0.toDateMonthyear_2",
+        "drugActivity.0.isEstimate_12",
+        "drugActivity.0.isPresent_4",
+        "drugActivity.0.provideTheDatesOfInvolvementuseFromDateMonthyear_3",
+        "drugActivity.0.isEstimate_13",
+        "drugActivity.0.toDateMonthyear_3",
+        "drugActivity.0.isEstimate_14",
+        "drugActivity.0.provideAnEstimateOfTheNumberOfTimesYouUse_2",
+        "drugActivity.0.entry2",
+        "drugActivity.0.RadioButtonList_69",
+        "drugActivity.0.provideAnEstimateOfTheNumberOfTimesYouUse_3",
+        "drugActivity.0.completeTheFollowingIfYouRespondedYesToH"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "23",
+      "text": "5",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "drugActivity.0.isPresent_5",
+        "drugActivity.0.provideTheDatesOfInvolvementuseFromDateMonthyear_5",
+        "drugActivity.0.isEstimate_17",
+        "drugActivity.0.toDateMonthyear_5",
+        "drugActivity.0.isEstimate_18",
+        "drugActivity.0.isPresent_6",
+        "drugActivity.0.provideTheDatesOfInvolvementuseFromDateMonthyear_6",
+        "drugActivity.0.isEstimate_19",
+        "drugActivity.0.toDateMonthyear_6",
+        "drugActivity.0.isEstimate_20",
+        "drugActivity.0.RadioButtonList_89",
+        "drugActivity.0.provideTheReasonsForAndCircumstancesOfThe",
+        "drugActivity.0.completeTheFollowingIfYouRespondedYesToI",
+        "drugActivity.0.RadioButtonList_92",
+        "drugActivity.0.RadioButtonList_93",
+        "drugActivity.0.provideTheReasonsForAndCircumstancesOfThe_2",
+        "drugActivity.0.entry2_2",
+        "drugActivity.0.RadioButtonList_96",
+        "drugActivity.0.RadioButtonList_97"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "23",
+      "text": "6",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "drugActivity.0.RadioButtonList_103",
+        "drugActivity.0.RadioButtonList_104",
+        "drugActivity.0.provideExplanation_7",
+        "drugActivity.0.RadioButtonList_106",
+        "drugActivity.0.aYouHaveIndicatedThatYouDidNotReceive",
+        "drugActivity.0.RadioButtonList_123"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "23",
+      "text": "7",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "drugActivity.0.RadioButtonList_149",
+        "drugActivity.0.provideExplanation_13",
+        "drugActivity.0.RadioButtonList_172",
+        "drugActivity.0.provideTheAddressForThisTreatmentProvider_4",
+        "drugActivity.0.city_4",
+        "drugActivity.0.state_4",
+        "drugActivity.0.country_4",
+        "drugActivity.0.zipCode_4",
+        "drugActivity.0.isPresent_10",
+        "drugActivity.0.provideTheDatesOfTreatmentFromDateMonthyear_4",
+        "drugActivity.0.isEstimate_27",
+        "drugActivity.0.toDateMonthyear_10",
+        "drugActivity.0.isEstimate_28",
+        "drugActivity.0.provideATelephoneNumberForTheTreatmentProvider_4",
+        "drugActivity.0.extension_4",
+        "drugActivity.0.internationalOrDsnPhoneNumber_4",
+        "drugActivity.0.day_4",
+        "drugActivity.0.night_4",
+        "drugActivity.0.provideTheNameOfTheTreatmentProviderLastName_4",
+        "drugActivity.0.firstName_4",
+        "drugActivity.0.RadioButtonList_190",
+        "drugActivity.0.provideExplanation_16"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "Complete the following if you answered  'Yes'  to  in the last seven (7) years  having illegally used a drug or controlled substance.",
+      "y": 158.0,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you answered  'Yes'  to  in the last seven (7) years  having been involved in the illegal purchase, manufacture, cultivation,",
+      "y": 101.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to having  EVER  illegally used or otherwise been  illegally  involved with a drug or controlled substance while",
+      "y": 98.2,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  EVER  illegally used or otherwise been involved with a drug or controlled substance while",
+      "y": 326.3,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to  in the last seven (7) years  having intentionally engaged in the misuse of prescription drugs, regardless",
+      "y": 101.6,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to having  EVER  been ordered, advised, or asked to seek counseling or treatment as a result of your",
+      "y": 99.8,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to having  EVER  been ordered, advised, or asked to seek counseling or treatment as a result of your",
+      "y": 78.0,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 24)",
+      "y": 77.1,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section24"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to having  EVER  voluntarily sought counseling or treatment as a result of your use of a drug or",
+      "y": 97.5,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 172.4,
+      "text": "Entry #1"
+    },
+    {
+      "index": 0,
+      "yStart": 123.9,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 391.6,
+      "text": "Entry #2"
+    },
+    {
+      "index": 1,
+      "yStart": 204.9,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 360.1,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 247.6,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 123.9,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 102.1,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 121.6,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 371.4,
+      "text": "Entry #2"
+    }
+  ]
+}

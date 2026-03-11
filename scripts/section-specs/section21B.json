@@ -1,0 +1,50 @@
+{
+  "section": "section21B",
+  "pages": [
+    90,
+    91
+  ],
+  "fieldCount": 49,
+  "gateFieldCount": 1,
+  "gateFieldKeys": [
+    "mentalHealth.RadioButtonList_71"
+  ],
+  "routing": {
+    "NO": "section21C"
+  },
+  "repeatGroups": {},
+  "questions": [],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 21C)",
+      "y": 75.7,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section21C"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having a court or administrative agency  EVER  ordered you to consult with a mental health professional.",
+      "y": 135.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having a court or administrative agency  EVER  ordered you to consult with a mental health professional.",
+      "y": 79.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 152.9,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 96.6,
+      "text": "Entry #2"
+    }
+  ]
+}

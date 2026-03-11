@@ -173,6 +173,85 @@ export async function injectValues(
   }, values);
 }
 
+/**
+ * Persist values directly to IndexedDB, bypassing the auto-save debounce.
+ *
+ * The app uses an IndexedDB database called 'sf86-form-data' with a 'sections'
+ * object store. Each row is keyed by "submissionId:sectionKey" and has the shape:
+ *   { submissionId, sectionKey, data: Record<semanticKey, value>, version, updatedAt }
+ *
+ * On the next page load, `useHydrateSection` reads from this store and hydrates
+ * the Jotai atoms.  Calling this after `injectValues` ensures the data survives
+ * a full page navigation (page.goto).
+ */
+export async function flushToIndexedDB(
+  page: Page,
+  submissionId: string,
+  sectionKey: string,
+  values: Record<string, unknown>,
+): Promise<void> {
+  await page.evaluate(
+    ({ subId, secKey, vals }) => {
+      return new Promise<void>((resolve, reject) => {
+        const request = indexedDB.open('sf86-form-data', 1);
+
+        request.onupgradeneeded = () => {
+          // If the DB doesn't exist yet, create the stores the app expects
+          const db = request.result;
+          if (!db.objectStoreNames.contains('sections')) {
+            const store = db.createObjectStore('sections');
+            store.createIndex('by-submission', 'submissionId');
+            store.createIndex('by-section', 'sectionKey');
+            store.createIndex('by-updated', 'updatedAt');
+          }
+          if (!db.objectStoreNames.contains('metadata')) {
+            db.createObjectStore('metadata', { keyPath: 'submissionId' });
+          }
+          if (!db.objectStoreNames.contains('pendingSync')) {
+            db.createObjectStore('pendingSync', { autoIncrement: true });
+          }
+        };
+
+        request.onsuccess = () => {
+          const db = request.result;
+          const compositeKey = `${subId}:${secKey}`;
+          const tx = db.transaction('sections', 'readwrite');
+          const store = tx.objectStore('sections');
+
+          // Read existing row to increment version
+          const getReq = store.get(compositeKey);
+          getReq.onsuccess = () => {
+            const existing = getReq.result;
+            const nextVersion = existing ? existing.version + 1 : 1;
+
+            const row = {
+              submissionId: subId,
+              sectionKey: secKey,
+              data: vals,
+              version: nextVersion,
+              updatedAt: new Date().toISOString(),
+            };
+
+            store.put(row, compositeKey);
+          };
+
+          tx.oncomplete = () => {
+            db.close();
+            resolve();
+          };
+          tx.onerror = () => {
+            db.close();
+            reject(tx.error);
+          };
+        };
+
+        request.onerror = () => reject(request.error);
+      });
+    },
+    { subId: submissionId, secKey: sectionKey, vals: values },
+  );
+}
+
 /** Bulk-readback values from the Jotai store. */
 export async function readbackValues(
   page: Page,
@@ -187,6 +266,31 @@ export async function readbackValues(
     }
     return result;
   }, keys);
+}
+
+/**
+ * Wait for IndexedDB hydration to complete by polling the Jotai store
+ * until at least one of the given keys has a non-null value.
+ *
+ * This is needed because `useHydrateSection` loads data from IndexedDB
+ * asynchronously after the component mounts.  `waitForJotaiStore` only
+ * ensures the store object exists, not that hydration has finished.
+ */
+export async function waitForHydration(
+  page: Page,
+  sampleKeys: string[],
+  timeout = 15_000,
+): Promise<void> {
+  await page.waitForFunction(
+    (keys) => {
+      const store = (window as any).__JOTAI_STORE__;
+      const atomFamily = (window as any).__FIELD_VALUE_ATOM_FAMILY__;
+      if (!store || !atomFamily) return false;
+      return keys.some((key: string) => store.get(atomFamily(key)) !== null);
+    },
+    sampleKeys,
+    { timeout },
+  );
 }
 
 /** Navigate to a specific section and wait for heading. */

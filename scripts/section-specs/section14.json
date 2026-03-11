@@ -1,0 +1,50 @@
+{
+  "section": "section14",
+  "pages": [
+    34
+  ],
+  "fieldCount": 5,
+  "gateFieldCount": 1,
+  "gateFieldKeys": [
+    "serviceInfo.0.RadioButtonList_21"
+  ],
+  "routing": {
+    "NO": "section15"
+  },
+  "repeatGroups": {
+    "section14_1": {
+      "fieldsPerIndex": 5,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 15)",
+      "y": 86.1,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section15"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 15.2)",
+      "y": 206.3,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section15"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 241.9,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 460.1,
+      "text": "Entry #2"
+    }
+  ]
+}

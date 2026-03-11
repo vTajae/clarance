@@ -1,0 +1,98 @@
+{
+  "section": "section21D",
+  "pages": [
+    93,
+    94,
+    95
+  ],
+  "fieldCount": 179,
+  "gateFieldCount": 2,
+  "gateFieldKeys": [
+    "mentalHealth.RadioButtonList_181",
+    "mentalHealth.RadioButtonList_314"
+  ],
+  "routing": {
+    "NO": "section21E"
+  },
+  "repeatGroups": {},
+  "questions": [
+    {
+      "number": "21D",
+      "text": "1",
+      "yPosition": 106.9,
+      "fieldKeys": [
+        "mentalHealth.RadioButtonList_314",
+        "mentalHealth.completeTheFollowingIfYouRespondedYesToC",
+        "mentalHealth.provideTheAddressOfTheHealthCareProfessional",
+        "mentalHealth.city_28",
+        "mentalHealth.state_28",
+        "mentalHealth.country_28",
+        "mentalHealth.zipCode_28",
+        "mentalHealth.day_9",
+        "mentalHealth.night_9",
+        "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_5",
+        "mentalHealth.extension_9",
+        "mentalHealth.internationalOrDSNPhoneNumber",
+        "mentalHealth.completeTheFollowingIfYouRespondedYesToC_2",
+        "mentalHealth.provideTheAddressOfTheHealthCareProfessional_2",
+        "mentalHealth.city_29",
+        "mentalHealth.state_29",
+        "mentalHealth.country_29",
+        "mentalHealth.zipCode_29",
+        "mentalHealth.day_10",
+        "mentalHealth.night_10",
+        "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_6",
+        "mentalHealth.extension_10",
+        "mentalHealth.internationalOrDSNPhoneNumber_2",
+        "mentalHealth.completeTheFollowingIfYouRespondedYesToC_3",
+        "mentalHealth.day_11",
+        "mentalHealth.night_11",
+        "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_7",
+        "mentalHealth.extension_11",
+        "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_8"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 21E)",
+      "y": 132.0,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section21E"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having EVER been diagnosed by a physician or other health professional.",
+      "y": 176.9,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having EVER been diagnosed by a physician or other health professional.",
+      "y": 80.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 21E)",
+      "y": 108.2,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section21E"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to currently being in treatment.",
+      "y": 129.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 194.4,
+      "text": "Entry #1"
+    }
+  ]
+}

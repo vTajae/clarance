@@ -1,0 +1,44 @@
+{
+  "section": "section12",
+  "pages": [
+    14,
+    15,
+    16
+  ],
+  "fieldCount": 150,
+  "gateFieldCount": 5,
+  "gateFieldKeys": [
+    "schoolInfo.0.pg2r5",
+    "schoolInfo.0.pg2r5_2",
+    "schoolInfo.0.pg2r5_3",
+    "schoolInfo.pg10r1",
+    "schoolInfo.pg10r2"
+  ],
+  "routing": {},
+  "repeatGroups": {
+    "section_12_2": {
+      "fieldsPerIndex": 59,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section_12_3": {
+      "fieldsPerIndex": 37,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [],
+  "instructions": [],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 123.0,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 76.6,
+      "text": "Entry #2  (Continued)"
+    }
+  ]
+}

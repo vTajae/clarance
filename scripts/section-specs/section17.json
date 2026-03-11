@@ -1,0 +1,281 @@
+{
+  "section": "section17",
+  "pages": [
+    39,
+    40,
+    41,
+    42,
+    43,
+    44
+  ],
+  "fieldCount": 329,
+  "gateFieldCount": 13,
+  "gateFieldKeys": [
+    "relationshipInfo.0.RadioButtonList_117",
+    "relationshipInfo.0.RadioButtonList_118",
+    "relationshipInfo.0.RadioButtonList_12",
+    "relationshipInfo.0.RadioButtonList_151",
+    "relationshipInfo.0.RadioButtonList_184",
+    "relationshipInfo.0.RadioButtonList_22",
+    "relationshipInfo.0.RadioButtonList_268",
+    "relationshipInfo.0.RadioButtonList_278",
+    "relationshipInfo.0.RadioButtonList_301",
+    "relationshipInfo.0.RadioButtonList_311",
+    "relationshipInfo.0.RadioButtonList_60",
+    "relationshipInfo.0.RadioButtonList_70",
+    "relationshipInfo.0.RadioButtonList_83"
+  ],
+  "routing": {
+    "NO": "section18"
+  },
+  "repeatGroups": {
+    "section17_1": {
+      "fieldsPerIndex": 81,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section17_1_2": {
+      "fieldsPerIndex": 35,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section17_2": {
+      "fieldsPerIndex": 33,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section17_2_2": {
+      "fieldsPerIndex": 33,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section17_3": {
+      "fieldsPerIndex": 74,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section17_3_2": {
+      "fieldsPerIndex": 73,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [
+    {
+      "number": "17",
+      "text": "1   Complete the following if you selected \u201c currently in a civil marriage, \u201d \u201c legally recognized civil union,\" or \"legally recognized domestic",
+      "yPosition": 148.5,
+      "fieldKeys": [
+        "relationshipInfo.0.middleName_3",
+        "relationshipInfo.0.suffix_3",
+        "relationshipInfo.0.171CompleteTheFollowingIfYouSelectedCurr",
+        "relationshipInfo.0.firstName_3",
+        "relationshipInfo.0.isEstimate_3",
+        "relationshipInfo.0.provideDateOfBirthMonthdayyear",
+        "relationshipInfo.0.ds1350",
+        "relationshipInfo.0.naturalized",
+        "relationshipInfo.0.i766EmploymentAuthorization",
+        "relationshipInfo.0.notAUsCitizenI551PermanentResident",
+        "relationshipInfo.0.ifThePersonIsForeignBorn",
+        "relationshipInfo.0.other",
+        "relationshipInfo.0.provideUsSocialSecurityNumber",
+        "relationshipInfo.0.provideDocumentNumber",
+        "relationshipInfo.0.notApplicable",
+        "relationshipInfo.0.provideExplanation",
+        "relationshipInfo.0.providePlaceOfBirthCity",
+        "relationshipInfo.0.county",
+        "relationshipInfo.0.state",
+        "relationshipInfo.0.countryRequired",
+        "relationshipInfo.0.provideOtherNamesUsedByYourSpouseSuchAsM_2",
+        "relationshipInfo.0.permanentResidentCardI551",
+        "relationshipInfo.0.derived",
+        "relationshipInfo.0.permanentResidentCardI551_2",
+        "relationshipInfo.0.certificateOfNaturalizationN550OrN570",
+        "relationshipInfo.0.certificateOfCitizenshipN560OrN561",
+        "relationshipInfo.0.usVisaRedFoilNumber",
+        "relationshipInfo.0.i20CertificateOfEligibilityForNonimmigrantf1student",
+        "relationshipInfo.0.ds2019CertificateOfEligibilityOfExchangeVis",
+        "relationshipInfo.0.i94ArrivaldepartureRecord",
+        "relationshipInfo.0.provideDocumentExpirationDateIfApplicable",
+        "relationshipInfo.0.isEstimate_6"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "17",
+      "text": "1   Complete the following if you selected \u201c currently in a civil marriage, \u201d \u201c legally recognized civil union,\" or \"legally recognized domestic",
+      "yPosition": 79.5,
+      "fieldKeys": [
+        "relationshipInfo.0.RadioButtonList_83",
+        "relationshipInfo.0.ifYouHaveIndicatedAnApofpoAddressCompleteA",
+        "relationshipInfo.0.cityOrPostName",
+        "relationshipInfo.0.state_2",
+        "relationshipInfo.0.country",
+        "relationshipInfo.0.zipCode",
+        "relationshipInfo.0.isEstimate_8",
+        "relationshipInfo.0.171CompleteTheFollowingIfYouSelectedMarr",
+        "relationshipInfo.0.county_2",
+        "relationshipInfo.0.state_3",
+        "relationshipInfo.0.country_2",
+        "relationshipInfo.0.provideTelephoneNumber",
+        "relationshipInfo.0.extension",
+        "relationshipInfo.0.provideEmailAddress",
+        "relationshipInfo.0.useMyCurrentTelephoneNumber",
+        "relationshipInfo.0.internationalOrDSNPhoneNumber",
+        "relationshipInfo.0.provideCurrentAddress",
+        "relationshipInfo.0.city",
+        "relationshipInfo.0.state_4",
+        "relationshipInfo.0.country_3",
+        "relationshipInfo.0.zipCode_2",
+        "relationshipInfo.0.provideDateOfSeparationMonthdayyear",
+        "relationshipInfo.0.ifLegallySeparated",
+        "relationshipInfo.0.state_5",
+        "relationshipInfo.0.country_4",
+        "relationshipInfo.0.zipCode_3",
+        "relationshipInfo.0.ifLegallySeparated_2",
+        "relationshipInfo.0.day",
+        "relationshipInfo.0.night",
+        "relationshipInfo.0.useMyCurrentAddress",
+        "relationshipInfo.0.address",
+        "relationshipInfo.0.aPOOrFPO",
+        "relationshipInfo.0.aPOFPOStateCode",
+        "relationshipInfo.0.zipCode_4",
+        "relationshipInfo.0.RadioButtonList_117"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "17",
+      "text": "2   Complete the following if you selected  \"divorced/dissolved\" ,  \"annulled\" , or  \"widowed\" . Provide information about any person from whom you are",
+      "yPosition": 78.9,
+      "fieldKeys": [
+        "relationshipInfo.0.isEstimate_9",
+        "relationshipInfo.0.provideTheCountryiesOfCitizenshipCountry1",
+        "relationshipInfo.0.country2_2",
+        "relationshipInfo.0.middleName_6",
+        "relationshipInfo.0.suffix_6",
+        "relationshipInfo.0.172CompleteTheFollowingIfYouSelectedDivor",
+        "relationshipInfo.0.firstName_6",
+        "relationshipInfo.0.isEstimate_10",
+        "relationshipInfo.0.provideTheDateOfBirthMonthdayyear",
+        "relationshipInfo.0.provideThePlaceOfBirthCity",
+        "relationshipInfo.0.state_6",
+        "relationshipInfo.0.countryRequired_2",
+        "relationshipInfo.0.zipCode_5",
+        "relationshipInfo.0.provideTheLocation",
+        "relationshipInfo.0.state_7",
+        "relationshipInfo.0.country_5",
+        "relationshipInfo.0.RadioButtonList_135",
+        "relationshipInfo.0.provideWhereTheRecordOfDivorcedissolutionOr",
+        "relationshipInfo.0.state_8",
+        "relationshipInfo.0.country_6",
+        "relationshipInfo.0.zipCode_6",
+        "relationshipInfo.0.provideTheDateDivorceddissolvedAnnulledOrWidowed",
+        "relationshipInfo.0.provideTheDateYourCivilMarriage",
+        "relationshipInfo.0.isEstimate_11",
+        "relationshipInfo.0.iDontKnow",
+        "relationshipInfo.0.provideTelephoneNumber_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "17",
+      "text": "2   Complete the following if you selected  \"divorced/dissolved\" ,  \"annulled\" , or  \"widowed\" . Provide information about any person from whom you are",
+      "yPosition": 78.9,
+      "fieldKeys": [
+        "relationshipInfo.0.isEstimate_12",
+        "relationshipInfo.0.provideTheCountryiesOfCitizenshipCountry1_2",
+        "relationshipInfo.0.country2_3",
+        "relationshipInfo.0.middleName_7",
+        "relationshipInfo.0.suffix_7",
+        "relationshipInfo.0.172CompleteTheFollowingIfYouSelectedDivor_2",
+        "relationshipInfo.0.firstName_7",
+        "relationshipInfo.0.isEstimate_13",
+        "relationshipInfo.0.provideTheDateOfBirthMonthdayyear_2",
+        "relationshipInfo.0.provideThePlaceOfBirthCity_2",
+        "relationshipInfo.0.state_10",
+        "relationshipInfo.0.countryRequired_3",
+        "relationshipInfo.0.zipCode_8",
+        "relationshipInfo.0.provideTheLocation_2",
+        "relationshipInfo.0.state_11",
+        "relationshipInfo.0.country_8",
+        "relationshipInfo.0.RadioButtonList_168",
+        "relationshipInfo.0.provideWhereTheRecordOfDivorcedissolutionOr_2",
+        "relationshipInfo.0.state_12",
+        "relationshipInfo.0.country_9",
+        "relationshipInfo.0.zipCode_9",
+        "relationshipInfo.0.provideTheDateDivorcedAnnulledOrWidowed",
+        "relationshipInfo.0.provideTheDateYourCivilMarriage_2",
+        "relationshipInfo.0.isEstimate_14",
+        "relationshipInfo.0.iDontKnow_2",
+        "relationshipInfo.0.provideTelephoneNumber_3"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "17",
+      "text": "3",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "relationshipInfo.0.RadioButtonList_184",
+        "relationshipInfo.0.middleName_10",
+        "relationshipInfo.0.suffix_10",
+        "relationshipInfo.0.completeTheFollowingIfYouPresentlyResideWit",
+        "relationshipInfo.0.firstName_10",
+        "relationshipInfo.0.isEstimate_19",
+        "relationshipInfo.0.provideTheDateOfBirthDateMonthdayyear",
+        "relationshipInfo.0.provideThePlaceOfBirthCity_3",
+        "relationshipInfo.0.state_14",
+        "relationshipInfo.0.countryRequired_4",
+        "relationshipInfo.0.certificateOfNaturalizationN550OrN570_2",
+        "relationshipInfo.0.ds1350_2",
+        "relationshipInfo.0.naturalized_2",
+        "relationshipInfo.0.i766EmploymentAuthorization_2",
+        "relationshipInfo.0.notAUsCitizenI551PermanentResident_2",
+        "relationshipInfo.0.forYourForeignBornCohabitant",
+        "relationshipInfo.0.otherProvideExplanation",
+        "relationshipInfo.0.textfield11",
+        "relationshipInfo.0.permanentResidentCardI551_3",
+        "relationshipInfo.0.derived_2",
+        "relationshipInfo.0.permanentResidentCardI551_4",
+        "relationshipInfo.0.certificateOfCitizenshipN560OrN561_2",
+        "relationshipInfo.0.usVisaRedFoilNumber_2",
+        "relationshipInfo.0.i20CertificateOfEligibilityForNonimmigrantf1student_2",
+        "relationshipInfo.0.ds2019CertificateOfEligibilityOfExchangeVis_2",
+        "relationshipInfo.0.i94ArrivaldepartureRecord_2"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 18)",
+      "y": 74.8,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section18"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 101.4,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 101.4,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 140.8,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 97.2,
+      "text": "Entry #2"
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "section": "section20A",
+  "pages": [
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75
+  ],
+  "fieldCount": 361,
+  "gateFieldCount": 3,
+  "gateFieldKeys": [
+    "foreignActivities.RadioButtonList_1",
+    "foreignActivities.RadioButtonList_101",
+    "foreignActivities.RadioButtonList_344"
+  ],
+  "routing": {},
+  "repeatGroups": {},
+  "questions": [
+    {
+      "number": "20A",
+      "text": "1",
+      "yPosition": 72.9,
+      "fieldKeys": [
+        "foreignActivities.RadioButtonList_1",
+        "foreignActivities.provideHowTheFinancialInterestWasAcquiredS",
+        "foreignActivities.dependentChildren",
+        "foreignActivities.cohabitant",
+        "foreignActivities.spouseOrLegallyRecognizedCivilUniondomesticPartner",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToYou",
+        "foreignActivities.provideTheTypeOfFinancialInterest",
+        "foreignActivities.provideTheCostInUsDollarsAtTimeOfAcquisition",
+        "foreignActivities.isEstimate",
+        "foreignActivities.provideTheCurrentValueInUs",
+        "foreignActivities.isEstimate_2",
+        "foreignActivities.isEstimate_3",
+        "foreignActivities.provideTheDateControlOrOwnershipWasRelinquished",
+        "foreignActivities.notApplicable",
+        "foreignActivities.provideExplanationOfHowInterestControlOrOwn",
+        "foreignActivities.RadioButtonList_30",
+        "foreignActivities.provideDateAcquiredMonthdayyear",
+        "foreignActivities.isEstimate_4"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20A",
+      "text": "2",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "foreignActivities.RadioButtonList_84",
+        "foreignActivities.provideTheDateThisFinancialInterestWasAcquired",
+        "foreignActivities.isEstimate_9",
+        "foreignActivities.provideDetailsRegardingHowTheFinancialIntere",
+        "foreignActivities.firstName_5",
+        "foreignActivities.provideTheNameOfTheIndividualWhoControlsTh",
+        "foreignActivities.provideThisIndividualsRelationshipToYou",
+        "foreignActivities.RadioButtonList_101",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToYou_3",
+        "foreignActivities.provideTheTypeOfFinancialInterest_3",
+        "foreignActivities.provideTheCostInUsDollarsAtTimeOfAcquisition_3",
+        "foreignActivities.isEstimate_10",
+        "foreignActivities.suffix_6",
+        "foreignActivities.middleName_6",
+        "foreignActivities.1ProvideFullNameOfCoownerLastName_3",
+        "foreignActivities.firstName_7",
+        "foreignActivities.provideTheCoownersCurrentAddress_6",
+        "foreignActivities.city_6",
+        "foreignActivities.state_6",
+        "foreignActivities.country_6",
+        "foreignActivities.zipCode_6",
+        "foreignActivities.provideTheCurrentValueInUs_3",
+        "foreignActivities.isEstimate_11",
+        "foreignActivities.isEstimate_12",
+        "foreignActivities.provideTheDateInterestWasSold",
+        "foreignActivities.notApplicable_3",
+        "foreignActivities.provideExplanationIfInterestWasSold",
+        "foreignActivities.dependentChildren_3",
+        "foreignActivities.cohabitant_3",
+        "foreignActivities.spouseOrLegallyRecognizedCivilUniondomesticPartner_3"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20A",
+      "text": "3",
+      "yPosition": 72.9,
+      "fieldKeys": [
+        "foreignActivities.suffix_9",
+        "foreignActivities.middleName_9",
+        "foreignActivities.1ProvideTheFullNameOfCoownerLastName",
+        "foreignActivities.firstName_11",
+        "foreignActivities.provideTheCoownersCurrentAddress_9",
+        "foreignActivities.city_9",
+        "foreignActivities.state_9",
+        "foreignActivities.country_9",
+        "foreignActivities.zipCode_9",
+        "foreignActivities.RadioButtonList_182",
+        "foreignActivities.RadioButtonList_183",
+        "foreignActivities.isEstimate_17",
+        "foreignActivities.provideTheDateOfPurchaseToBeAcquired",
+        "foreignActivities.provideTheNatureOfYourRelationshipWithTheCoowner_6",
+        "foreignActivities.provideYourCoownersCountryiesOfCitizenship_10",
+        "foreignActivities.country2_10",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToYou_5",
+        "foreignActivities.provideTheTypeOfRealEstatePropertySuchAsHome",
+        "foreignActivities.provideHowTheForeignRealEstateWasOrIsToB",
+        "foreignActivities.provideTheCostInUs",
+        "foreignActivities.isEstimate_18",
+        "foreignActivities.country_11",
+        "foreignActivities.city_11",
+        "foreignActivities.provideTheLocationaddressOfPropertyStreetAddress",
+        "foreignActivities.dependentChildren_5",
+        "foreignActivities.cohabitant_5",
+        "foreignActivities.spouseOrLegallyRecognizedCivilUniondomesticPartner_5",
+        "foreignActivities.isEstimate_19",
+        "foreignActivities.provideTheDateSoldIfApplicableMonthdayyear"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20A",
+      "text": "4",
+      "yPosition": 72.9,
+      "fieldKeys": [
+        "foreignActivities.RadioButtonList_254",
+        "foreignActivities.RadioButtonList_255",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesThat",
+        "foreignActivities.ifYesProvideExplanation",
+        "foreignActivities.provideExplanation",
+        "foreignActivities.RadioButtonList_259",
+        "foreignActivities.ifOtherProvideExplanation",
+        "foreignActivities.a",
+        "foreignActivities.isEstimate_23",
+        "foreignActivities.provideTheTotalValueInUs",
+        "foreignActivities.isEstimate_24",
+        "foreignActivities.provideTheReasonThisBenefitWasReceived",
+        "foreignActivities.provideTheNameOfTheCountryProvidingTheBenefit",
+        "foreignActivities.RadioButtonList_289",
+        "foreignActivities.dependentChildren_7",
+        "foreignActivities.cohabitant_7",
+        "foreignActivities.spouseOrLegallyRecognizedCivilUniondomesticPartner_7"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20A",
+      "text": "5",
+      "yPosition": 74.7,
+      "fieldKeys": [
+        "foreignActivities.provideTheAddressOfTheForeignNationalListedAbove",
+        "foreignActivities.city_15",
+        "foreignActivities.state_13",
+        "foreignActivities.country_15",
+        "foreignActivities.zipCode_13",
+        "foreignActivities.suffix_13",
+        "foreignActivities.middleName_13",
+        "foreignActivities.entry2",
+        "foreignActivities.firstName_15",
+        "foreignActivities.provideTheNatureOfYourRelationshipWithTheF",
+        "foreignActivities.isEstimate_37",
+        "foreignActivities.provideTheAmountInUs",
+        "foreignActivities.RadioButtonList_344",
+        "foreignActivities.provideTheAddressOfTheForeignNationalListedAbove_2",
+        "foreignActivities.city_16",
+        "foreignActivities.state_14",
+        "foreignActivities.country_16",
+        "foreignActivities.zipCode_14",
+        "foreignActivities.suffix_14",
+        "foreignActivities.middleName_14",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToP",
+        "foreignActivities.firstName_16",
+        "foreignActivities.provideTheNatureOfYourRelationshipWithTheF_2",
+        "foreignActivities.isEstimate_38",
+        "foreignActivities.provideTheAmountInUs_2",
+        "foreignActivities.provideTheFrequencyOfYourSupport_2",
+        "foreignActivities.provideThisForeignNationalsCountryiesOfCi_2",
+        "foreignActivities.country2_14"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "Complete the following if you responded  'Yes'  to you, your spouse or legally recognized civil union/domestic partner, cohabitant, or dependent children",
+      "y": 99.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to you, your spouse or legally recognized civil union/domestic partner, cohabitant, or dependent children",
+      "y": 77.2,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to providing financial support for any foreign national.",
+      "y": 92.0,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 184.6,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 135.1,
+      "text": "Entry #2"
+    },
+    {
+      "index": 1,
+      "yStart": 97.6,
+      "text": "Entry #2"
+    },
+    {
+      "index": 1,
+      "yStart": 112.2,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 105.8,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 261.5,
+      "text": "Entry #2"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "section": "section21A",
+  "pages": [
+    89
+  ],
+  "fieldCount": 46,
+  "gateFieldCount": 0,
+  "gateFieldKeys": [],
+  "routing": {},
+  "repeatGroups": {},
+  "questions": [],
+  "instructions": [
+    {
+      "text": "Complete the following if you responded  'Yes'  to having a court or administrative agency EVER issuing an order declaring you mentally incompetent.",
+      "y": 78.3,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": []
+}

@@ -38,7 +38,7 @@
       },
       {
         "id": "section10.cond.RadioButtonList_1.0",
-        "title": "Do you now or have you EVER held dual/multiple cit - Details (1/2)",
+        "title": "Dual/Multiple Citizenship Details (1/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "dualCitizenshipInfo.completeTheFollowingIfYouAnsweredYesToHa",
@@ -64,7 +64,7 @@
       },
       {
         "id": "section10.cond.RadioButtonList_1.1",
-        "title": "Do you now or have you EVER held dual/multiple cit - Details (2/2)",
+        "title": "Dual/Multiple Citizenship Details (2/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "dualCitizenshipInfo.isPresent_2",
@@ -97,11 +97,13 @@
           8,
           9
         ],
-        "conditionalInstruction": "10.2   Have you  EVER  been issued a passport (or identity card for travel) by a country other than the U.S.?"
+        "conditionalInstruction": "10.2   Have you  EVER  been issued a passport (or identity card for travel) by a country other than the U.S.?",
+        "skipToSection": "section11",
+        "skipOnValue": "1"
       },
       {
         "id": "section10.cond.RadioButtonList_24.0",
-        "title": "Have you EVER been issued a passport by a non-U.S. - Details (1/5)",
+        "title": "Foreign Passport Details (1/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "dualCitizenshipInfo.completeTheFollowingIfYouAnsweredYesToHa_2",
@@ -127,7 +129,7 @@
       },
       {
         "id": "section10.cond.RadioButtonList_24.1",
-        "title": "Have you EVER been issued a passport by a non-U.S. - Details (2/5)",
+        "title": "Foreign Passport Details (2/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "dualCitizenshipInfo.RadioButtonList_37",
@@ -152,7 +154,7 @@
       },
       {
         "id": "section10.cond.RadioButtonList_24.2",
-        "title": "Have you EVER been issued a passport by a non-U.S. - Details (3/5)",
+        "title": "Foreign Passport Details (3/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "dualCitizenshipInfo.presentRow2",
@@ -177,7 +179,7 @@
       },
       {
         "id": "section10.cond.RadioButtonList_24.3",
-        "title": "Have you EVER been issued a passport by a non-U.S. - Details (4/5)",
+        "title": "Foreign Passport Details (4/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "dualCitizenshipInfo.presentRow4",
@@ -202,7 +204,7 @@
       },
       {
         "id": "section10.cond.RadioButtonList_24.4",
-        "title": "Have you EVER been issued a passport by a non-U.S. - Details (5/5)",
+        "title": "Foreign Passport Details (5/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "dualCitizenshipInfo.presentRow6"
@@ -216,7 +218,7 @@
       },
       {
         "id": "section10.section10_2-0.0",
-        "title": "Entry 1 (1/5)",
+        "title": "Additional Passport Entry (1/5)",
         "guidance": "(Provide the date range that you held this citizenship, beginning with the date it",
         "fieldKeys": [
           "dualCitizenshipInfo.0.completeTheFollowingIfYouAnsweredYesToHa",
@@ -242,7 +244,7 @@
       },
       {
         "id": "section10.section10_2-0.1",
-        "title": "Entry 1 (2/5)",
+        "title": "Additional Passport Entry (2/5)",
         "guidance": "(Provide the date range that you held this citizenship, beginning with the date it",
         "fieldKeys": [
           "dualCitizenshipInfo.0.RadioButtonList_86",
@@ -267,7 +269,7 @@
       },
       {
         "id": "section10.section10_2-0.2",
-        "title": "Entry 1 (3/5)",
+        "title": "Additional Passport Entry (3/5)",
         "guidance": "(Provide the date range that you held this citizenship, beginning with the date it",
         "fieldKeys": [
           "dualCitizenshipInfo.0.presentRow2",
@@ -292,7 +294,7 @@
       },
       {
         "id": "section10.section10_2-0.3",
-        "title": "Entry 1 (4/5)",
+        "title": "Additional Passport Entry (4/5)",
         "guidance": "(Provide the date range that you held this citizenship, beginning with the date it",
         "fieldKeys": [
           "dualCitizenshipInfo.0.presentRow4",
@@ -317,7 +319,7 @@
       },
       {
         "id": "section10.section10_2-0.4",
-        "title": "Entry 1 (5/5)",
+        "title": "Additional Passport Entry (5/5)",
         "guidance": "(Provide the date range that you held this citizenship, beginning with the date it",
         "fieldKeys": [
           "dualCitizenshipInfo.0.presentRow6"
@@ -444,7 +446,7 @@
       },
       {
         "id": "section11.residency-0.0",
-        "title": "Entry 1 (1/3)",
+        "title": "Residence Address (1/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.isPresent",
@@ -470,7 +472,7 @@
       },
       {
         "id": "section11.residency-0.1",
-        "title": "Entry 1 (2/3)",
+        "title": "Residence Address (2/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.cityOrPostName",
@@ -497,7 +499,7 @@
       },
       {
         "id": "section11.residency-0.2",
-        "title": "Entry 1 (3/3)",
+        "title": "Residence Address (3/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.iDontKnow_3",
@@ -631,7 +633,7 @@
       },
       {
         "id": "section11.section11_2-0.0",
-        "title": "Entry 1 (1/3)",
+        "title": "Residence Verification (1/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.isPresent_2",
@@ -657,7 +659,7 @@
       },
       {
         "id": "section11.section11_2-0.1",
-        "title": "Entry 1 (2/3)",
+        "title": "Residence Verification (2/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.cityOrPostName_3",
@@ -684,7 +686,7 @@
       },
       {
         "id": "section11.section11_2-0.2",
-        "title": "Entry 1 (3/3)",
+        "title": "Residence Verification (3/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.iDontKnow_6",
@@ -818,7 +820,7 @@
       },
       {
         "id": "section11.section11_3-0.0",
-        "title": "Entry 1 (1/3)",
+        "title": "Residence Contact (1/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.isPresent_3",
@@ -844,7 +846,7 @@
       },
       {
         "id": "section11.section11_3-0.1",
-        "title": "Entry 1 (2/3)",
+        "title": "Residence Contact (2/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.cityOrPostName_5",
@@ -871,7 +873,7 @@
       },
       {
         "id": "section11.section11_3-0.2",
-        "title": "Entry 1 (3/3)",
+        "title": "Residence Contact (3/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.iDontKnow_9",
@@ -1005,7 +1007,7 @@
       },
       {
         "id": "section11.section11_4-0.0",
-        "title": "Entry 1 (1/3)",
+        "title": "Additional Residence Info (1/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.isPresent_4",
@@ -1031,7 +1033,7 @@
       },
       {
         "id": "section11.section11_4-0.1",
-        "title": "Entry 1 (2/3)",
+        "title": "Additional Residence Info (2/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.cityOrPostName_7",
@@ -1058,7 +1060,7 @@
       },
       {
         "id": "section11.section11_4-0.2",
-        "title": "Entry 1 (3/3)",
+        "title": "Additional Residence Info (3/3)",
         "guidance": "for without breaks. Indicate the actual physical location of your residence, not a Post Office box or a permanent residence when you were not physically",
         "fieldKeys": [
           "residencyInfo.0.iDontKnow_12",
@@ -1115,11 +1117,13 @@
           15,
           16
         ],
-        "conditionalInstruction": "(b)   Have you received a degree or diploma more than 10 years ago?"
+        "conditionalInstruction": "(b)   Have you received a degree or diploma more than 10 years ago?",
+        "skipToSection": "section13A",
+        "skipOnValue": "2"
       },
       {
         "id": "section12.cond.pg10r2.0",
-        "title": "Have you received a degree or diploma more than 10 - Details (1/5)",
+        "title": "Degree/Diploma Details (1/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "schoolInfo.pg10r4",
@@ -1146,7 +1150,7 @@
       },
       {
         "id": "section12.cond.pg10r2.1",
-        "title": "Have you received a degree or diploma more than 10 - Details (2/5)",
+        "title": "Degree/Diploma Details (2/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "schoolInfo.forSchoolsYouAttendedInTheLast3Years",
@@ -1173,7 +1177,7 @@
       },
       {
         "id": "section12.cond.pg10r2.2",
-        "title": "Have you received a degree or diploma more than 10 - Details (3/5)",
+        "title": "Degree/Diploma Details (3/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "schoolInfo.provideEmailAddressForThisPerson",
@@ -1200,7 +1204,7 @@
       },
       {
         "id": "section12.cond.pg10r2.3",
-        "title": "Have you received a degree or diploma more than 10 - Details (4/5)",
+        "title": "Degree/Diploma Details (4/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "schoolInfo.estimateRow2",
@@ -1227,7 +1231,7 @@
       },
       {
         "id": "section12.cond.pg10r2.4",
-        "title": "Have you received a degree or diploma more than 10 - Details (5/5)",
+        "title": "Degree/Diploma Details (5/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "schoolInfo.zipCode_3",
@@ -1328,7 +1332,7 @@
       },
       {
         "id": "section12.section_12_2-0.0",
-        "title": "Entry 1 (1/4)",
+        "title": "School Details - Address & Dates",
         "guidance": "assistance determining the school address, refer to  http://ope.ed.gov/accreditation/search.aspx (Provide City and Country if outside the United States; otherwise,",
         "fieldKeys": [
           "schoolInfo.0.city",
@@ -1354,7 +1358,7 @@
       },
       {
         "id": "section12.section_12_2-0.1",
-        "title": "Entry 1 (2/4)",
+        "title": "School Details - Schedule & Degree",
         "guidance": "assistance determining the school address, refer to  http://ope.ed.gov/accreditation/search.aspx (Provide City and Country if outside the United States; otherwise,",
         "fieldKeys": [
           "schoolInfo.0.night_2",
@@ -1381,7 +1385,7 @@
       },
       {
         "id": "section12.section_12_2-0.2",
-        "title": "Entry 1 (3/4)",
+        "title": "School Details - References",
         "guidance": "assistance determining the school address, refer to  http://ope.ed.gov/accreditation/search.aspx (Provide City and Country if outside the United States; otherwise,",
         "fieldKeys": [
           "schoolInfo.0.zipCode_2",
@@ -1408,7 +1412,7 @@
       },
       {
         "id": "section12.section_12_2-0.3",
-        "title": "Entry 1 (4/4)",
+        "title": "School Details - Contact Info",
         "guidance": "assistance determining the school address, refer to  http://ope.ed.gov/accreditation/search.aspx (Provide City and Country if outside the United States; otherwise,",
         "fieldKeys": [
           "schoolInfo.0.provideEmailAddressForThisPerson_2",
@@ -1468,7 +1472,7 @@
       },
       {
         "id": "section12.section_12_3-0.0",
-        "title": "Entry 1 (1/3)",
+        "title": "Additional School - Type & Details",
         "guidance": "assistance determining the school address, refer to  http://ope.ed.gov/accreditation/search.aspx (Provide City and Country if outside the United States; otherwise,",
         "fieldKeys": [
           "schoolInfo.0.pg10r4_2",
@@ -1495,7 +1499,7 @@
       },
       {
         "id": "section12.section_12_3-0.1",
-        "title": "Entry 1 (2/3)",
+        "title": "Additional School - References",
         "guidance": "assistance determining the school address, refer to  http://ope.ed.gov/accreditation/search.aspx (Provide City and Country if outside the United States; otherwise,",
         "fieldKeys": [
           "schoolInfo.0.forSchoolsYouAttendedInTheLast3Years_3",
@@ -1522,7 +1526,7 @@
       },
       {
         "id": "section12.section_12_3-0.2",
-        "title": "Entry 1 (3/3)",
+        "title": "Additional School - Contact",
         "guidance": "assistance determining the school address, refer to  http://ope.ed.gov/accreditation/search.aspx (Provide City and Country if outside the United States; otherwise,",
         "fieldKeys": [
           "schoolInfo.0.provideTelephoneNumberForThisPersonTelephoneNumber",
@@ -2672,7 +2676,7 @@
       },
       {
         "id": "section13A.section13_3-0.0",
-        "title": "Entry 1",
+        "title": "Employment Entry Details",
         "guidance": "duty station. Provide separate entries for employment activities with the same employer but having different physical addresses. Do not list employment",
         "fieldKeys": [
           "employmentInfo.0.firstName_3",
@@ -2844,7 +2848,7 @@
       },
       {
         "id": "section13A.section13_3-1.0",
-        "title": "Entry 2",
+        "title": "Employment Entry 2 Details",
         "guidance": "duty station. Provide separate entries for employment activities with the same employer but having different physical addresses. Do not list employment",
         "fieldKeys": [
           "employmentInfo.1.firstName_2",
@@ -3016,7 +3020,7 @@
       },
       {
         "id": "section13A.section13_3-2.0",
-        "title": "Entry 3",
+        "title": "Employment Entry 3 Details",
         "guidance": "duty station. Provide separate entries for employment activities with the same employer but having different physical addresses. Do not list employment",
         "fieldKeys": [
           "employmentInfo.2.firstName_2",
@@ -3188,7 +3192,7 @@
       },
       {
         "id": "section13A.section13_3_2-0.0",
-        "title": "Entry 1",
+        "title": "Employment Entry Details",
         "guidance": "duty station. Provide separate entries for employment activities with the same employer but having different physical addresses. Do not list employment",
         "fieldKeys": [
           "employmentInfo.0.firstName",
@@ -3226,7 +3230,7 @@
       },
       {
         "id": "section13A.section13_4-0.cond.RadioButtonList_220.0",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.0.cityOrPostName_7",
@@ -3254,7 +3258,7 @@
       },
       {
         "id": "section13A.section13_4-0.cond.RadioButtonList_220.1",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.0.provideTheDateYouWereFiredMonthyear",
@@ -3282,7 +3286,7 @@
       },
       {
         "id": "section13A.section13_4-0.cond.RadioButtonList_220.2",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.0.provideTheDateYouLeftByMutualAgreementFoll",
@@ -3310,7 +3314,7 @@
       },
       {
         "id": "section13A.section13_4-0.cond.RadioButtonList_220.3",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.0.4ProvideTheReasonsForBeingWarned",
@@ -3392,7 +3396,7 @@
       },
       {
         "id": "section13A.section13_4-1.cond.RadioButtonList_479.0",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.1.cityOrPostName",
@@ -3420,7 +3424,7 @@
       },
       {
         "id": "section13A.section13_4-1.cond.RadioButtonList_479.1",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.1.provideTheDateYouWereFiredMonthyear",
@@ -3448,7 +3452,7 @@
       },
       {
         "id": "section13A.section13_4-1.cond.RadioButtonList_479.2",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.1.provideTheDateYouLeftByMutualAgreementFoll",
@@ -3476,7 +3480,7 @@
       },
       {
         "id": "section13A.section13_4-1.cond.RadioButtonList_479.3",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.1.4ProvideTheReasonsForBeingWarned",
@@ -3558,7 +3562,7 @@
       },
       {
         "id": "section13A.section13_4-2.cond.RadioButtonList_738.0",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.2.cityOrPostName",
@@ -3586,7 +3590,7 @@
       },
       {
         "id": "section13A.section13_4-2.cond.RadioButtonList_738.1",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.2.provideTheDateYouWereFiredMonthyear",
@@ -3614,7 +3618,7 @@
       },
       {
         "id": "section13A.section13_4-2.cond.RadioButtonList_738.2",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.2.provideTheDateYouLeftByMutualAgreementFoll",
@@ -3642,7 +3646,7 @@
       },
       {
         "id": "section13A.section13_4-2.cond.RadioButtonList_738.3",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.2.4ProvideTheReasonsForBeingWarned",
@@ -3724,7 +3728,7 @@
       },
       {
         "id": "section13A.section13_4-3.cond.RadioButtonList_997.0",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.3.cityOrPostName",
@@ -3752,7 +3756,7 @@
       },
       {
         "id": "section13A.section13_4-3.cond.RadioButtonList_997.1",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.3.provideTheDateYouWereFiredMonthyear",
@@ -3780,7 +3784,7 @@
       },
       {
         "id": "section13A.section13_4-3.cond.RadioButtonList_997.2",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.3.provideTheDateYouLeftByMutualAgreementFoll",
@@ -3808,7 +3812,7 @@
       },
       {
         "id": "section13A.section13_4-3.cond.RadioButtonList_997.3",
-        "title": "For this employment, have any adverse issues happe - Details",
+        "title": "Employment Adverse Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "employmentInfo.3.4ProvideTheReasonsForBeingWarned",
@@ -4457,7 +4461,9 @@
         "sourcePages": [
           33
         ],
-        "conditionalInstruction": "Do you have former federal civilian employment, excluding military service, NOT indicated previously, to report?"
+        "conditionalInstruction": "Do you have former federal civilian employment, excluding military service, NOT indicated previously, to report?",
+        "skipToSection": "section13C",
+        "skipOnValue": "2"
       },
       {
         "id": "section13B.section13_5-0.cond.RadioButtonList_1037.0",
@@ -4570,8 +4576,8 @@
     "steps": [
       {
         "id": "section13C.section13_5-0.0",
-        "title": "Entry 1",
-        "guidance": "Section 13B - Employment Activities - Former Federal Service",
+        "title": "Employment Disciplinary Issues",
+        "guidance": "Have you experienced any employment discipline, warnings, reprimands, or other issues in the last 7 years?",
         "fieldKeys": [
           "employmentInfo.0.RadioButtonList_1050"
         ],
@@ -4599,11 +4605,13 @@
         "sourcePages": [
           34
         ],
-        "conditionalInstruction": "Were you born a male after December 31, 1959?"
+        "conditionalInstruction": "Were you born a male after December 31, 1959?",
+        "skipToSection": "section15",
+        "skipOnValue": "2"
       },
       {
         "id": "section14.section14_1-0.cond.RadioButtonList_21.0",
-        "title": "Have you registered with the Selective Service Sys - Details",
+        "title": "Selective Service Registration Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "serviceInfo.0.ifYesProvideRegistrationNumber",
@@ -4639,11 +4647,13 @@
           35,
           36
         ],
-        "conditionalInstruction": "Have you  EVER  served in the U.S. Military?"
+        "conditionalInstruction": "Have you  EVER  served in the U.S. Military?",
+        "skipToSection": "section15",
+        "skipOnValue": "2"
       },
       {
         "id": "section15.section14_1-0.cond.RadioButtonList_5.0",
-        "title": "Have you EVER served in the U.S. Military? - Details",
+        "title": "U.S. Military Service Details (1/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "serviceInfo.0.provideYourServiceNumber",
@@ -4671,7 +4681,7 @@
       },
       {
         "id": "section15.section14_1-0.cond.RadioButtonList_5.1",
-        "title": "Have you EVER served in the U.S. Military? - Details",
+        "title": "U.S. Military Service Details (2/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "serviceInfo.0.otherProvideType",
@@ -4699,7 +4709,7 @@
       },
       {
         "id": "section15.section14_1-0.cond.RadioButtonList_5.2",
-        "title": "Have you EVER served in the U.S. Military? - Details",
+        "title": "U.S. Military Service Details (3/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "serviceInfo.0.provideYourDatesOfServiceFromDateMonthyear_2",
@@ -4737,11 +4747,13 @@
           34,
           35,
           36
-        ]
+        ],
+        "skipToSection": "section15",
+        "skipOnValue": "2"
       },
       {
         "id": "section15.section15_2-0.cond.RadioButtonList_1.0",
-        "title": "Have you EVER been subject to court martial or dis - Details",
+        "title": "Court Martial / Discipline Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "militaryHistoryInfo.0.152CompleteTheFollowingIfYouRespondedYes",
@@ -4782,11 +4794,13 @@
           35,
           36
         ],
-        "conditionalInstruction": "Have you  EVER  served, as a civilian or military member in a foreign country's military, intelligence,"
+        "conditionalInstruction": "Have you  EVER  served, as a civilian or military member in a foreign country's military, intelligence,",
+        "skipToSection": "section16",
+        "skipOnValue": "2"
       },
       {
         "id": "section15.section15_3-0.cond.RadioButtonList_14.0",
-        "title": "Have you EVER served in a foreign military? - Details",
+        "title": "Foreign Military Service Details (1/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "militaryHistoryInfo.0.provideTheNameOfTheForeignOrganization",
@@ -4814,7 +4828,7 @@
       },
       {
         "id": "section15.section15_3-0.cond.RadioButtonList_14.1",
-        "title": "Have you EVER served in a foreign military? - Details",
+        "title": "Foreign Military Service Details (2/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "militaryHistoryInfo.0.firstName",
@@ -4842,7 +4856,7 @@
       },
       {
         "id": "section15.section15_3-0.cond.RadioButtonList_14.2",
-        "title": "Have you EVER served in a foreign military? - Details",
+        "title": "Foreign Military Service Details (3/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "militaryHistoryInfo.0.isEstimate_5",
@@ -4873,11 +4887,13 @@
           35,
           36
         ],
-        "conditionalInstruction": "Do you maintain contact with current or former associates, colleagues, or acquaintances from your service in this organization?"
+        "conditionalInstruction": "Do you maintain contact with current or former associates, colleagues, or acquaintances from your service in this organization?",
+        "skipToSection": "section16",
+        "skipOnValue": "2"
       },
       {
         "id": "section15.section15_3-0.cond.RadioButtonList_41.0",
-        "title": "Do you maintain contact with foreign service assoc - Details",
+        "title": "Foreign Service Contact Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "militaryHistoryInfo.0.specify",
@@ -4905,7 +4921,7 @@
       },
       {
         "id": "section15.section15_3-0.cond.RadioButtonList_41.1",
-        "title": "Do you maintain contact with foreign service assoc - Details",
+        "title": "Foreign Service Contact Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "militaryHistoryInfo.0.provideTheContactsOfficialTitle_2",
@@ -4941,11 +4957,13 @@
           35,
           36
         ],
-        "conditionalInstruction": "Do you maintain contact with current or former associates, colleagues, or acquaintances from your service in this organization?"
+        "conditionalInstruction": "Do you maintain contact with current or former associates, colleagues, or acquaintances from your service in this organization?",
+        "skipToSection": "section16",
+        "skipOnValue": "2"
       },
       {
         "id": "section15.section16_1-0.cond.RadioButtonList_27.0",
-        "title": "Do you have people who can verify your military se - Details",
+        "title": "Military Verifier Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "peopleThatKnow.0.specify",
@@ -4973,7 +4991,7 @@
       },
       {
         "id": "section15.section16_1-0.cond.RadioButtonList_27.1",
-        "title": "Do you have people who can verify your military se - Details",
+        "title": "Military Verifier Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "peopleThatKnow.0.provideTheContactsOfficialTitle_2",
@@ -4996,7 +5014,7 @@
       },
       {
         "id": "section15.section16_1-0.0",
-        "title": "Entry 1 (1/3)",
+        "title": "Military Service - Organization Details",
         "guidance": "The Selective Service website,  www.sss.gov , can help provide the",
         "fieldKeys": [
           "peopleThatKnow.0.provideTheNameOfTheForeignOrganization",
@@ -5022,7 +5040,7 @@
       },
       {
         "id": "section15.section16_1-0.1",
-        "title": "Entry 1 (2/3)",
+        "title": "Military Service - Contact Person",
         "guidance": "The Selective Service website,  www.sss.gov , can help provide the",
         "fieldKeys": [
           "peopleThatKnow.0.firstName",
@@ -5048,7 +5066,7 @@
       },
       {
         "id": "section15.section16_1-0.2",
-        "title": "Entry 1 (3/3)",
+        "title": "Military Service - Additional Info",
         "guidance": "The Selective Service website,  www.sss.gov , can help provide the",
         "fieldKeys": [
           "peopleThatKnow.0.isEstimate_3",
@@ -5069,7 +5087,7 @@
     "steps": [
       {
         "id": "section16.section16_3-0.0",
-        "title": "Entry 1 (1/9)",
+        "title": "First Verifier - Details (1/3)",
         "guidance": "who are collectively aware of your activities outside of your workplace, school, or neighborhood, and whose combined association with you covers  at least",
         "fieldKeys": [
           "peopleThatKnow.0.isPresent_4",
@@ -5093,7 +5111,7 @@
       },
       {
         "id": "section16.section16_3-0.1",
-        "title": "Entry 1 (2/9)",
+        "title": "First Verifier - Details (2/3)",
         "guidance": "who are collectively aware of your activities outside of your workplace, school, or neighborhood, and whose combined association with you covers  at least",
         "fieldKeys": [
           "peopleThatKnow.0.suffix_3",
@@ -5117,7 +5135,7 @@
       },
       {
         "id": "section16.section16_3-0.2",
-        "title": "Entry 1 (3/9)",
+        "title": "First Verifier - Details (3/3)",
         "guidance": "who are collectively aware of your activities outside of your workplace, school, or neighborhood, and whose combined association with you covers  at least",
         "fieldKeys": [
           "peopleThatKnow.0.provideTelephoneNumberForThisPerson",
@@ -5141,7 +5159,7 @@
       },
       {
         "id": "section16.section16_3-0.3",
-        "title": "Entry 1 (4/9)",
+        "title": "Second Verifier - Details (1/3)",
         "guidance": "who are collectively aware of your activities outside of your workplace, school, or neighborhood, and whose combined association with you covers  at least",
         "fieldKeys": [
           "peopleThatKnow.0.isPresent_5",
@@ -5165,7 +5183,7 @@
       },
       {
         "id": "section16.section16_3-0.4",
-        "title": "Entry 1 (5/9)",
+        "title": "Second Verifier - Details (2/3)",
         "guidance": "who are collectively aware of your activities outside of your workplace, school, or neighborhood, and whose combined association with you covers  at least",
         "fieldKeys": [
           "peopleThatKnow.0.suffix_4",
@@ -5189,7 +5207,7 @@
       },
       {
         "id": "section16.section16_3-0.5",
-        "title": "Entry 1 (6/9)",
+        "title": "Second Verifier - Details (3/3)",
         "guidance": "who are collectively aware of your activities outside of your workplace, school, or neighborhood, and whose combined association with you covers  at least",
         "fieldKeys": [
           "peopleThatKnow.0.provideTelephoneNumberForThisPerson_2",
@@ -5213,7 +5231,7 @@
       },
       {
         "id": "section16.section16_3-0.6",
-        "title": "Entry 1 (7/9)",
+        "title": "Third Verifier - Details (1/3)",
         "guidance": "who are collectively aware of your activities outside of your workplace, school, or neighborhood, and whose combined association with you covers  at least",
         "fieldKeys": [
           "peopleThatKnow.0.isPresent_6",
@@ -5237,7 +5255,7 @@
       },
       {
         "id": "section16.section16_3-0.7",
-        "title": "Entry 1 (8/9)",
+        "title": "Third Verifier - Details (2/3)",
         "guidance": "who are collectively aware of your activities outside of your workplace, school, or neighborhood, and whose combined association with you covers  at least",
         "fieldKeys": [
           "peopleThatKnow.0.suffix_5",
@@ -5261,7 +5279,7 @@
       },
       {
         "id": "section16.section16_3-0.8",
-        "title": "Entry 1 (9/9)",
+        "title": "Third Verifier - Details (3/3)",
         "guidance": "who are collectively aware of your activities outside of your workplace, school, or neighborhood, and whose combined association with you covers  at least",
         "fieldKeys": [
           "peopleThatKnow.0.provideTelephoneNumberForThisPerson_3",
@@ -5890,7 +5908,9 @@
           40,
           41
         ],
-        "conditionalInstruction": "Do you presently reside with a person, other than a spouse or legally recognized civil union/domestic"
+        "conditionalInstruction": "Do you presently reside with a person, other than a spouse or legally recognized civil union/domestic",
+        "skipToSection": "section18",
+        "skipOnValue": "2"
       },
       {
         "id": "section17.section17_3-0.cond.RadioButtonList_184.0",
@@ -7922,7 +7942,7 @@
       },
       {
         "id": "section18.section18_2-0.cond.RadioButtonList_86.0",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.0.city_2",
@@ -7950,7 +7970,7 @@
       },
       {
         "id": "section18.section18_2-0.cond.RadioButtonList_86.1",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.0.provideExplanationIfOtherSelected",
@@ -7975,7 +7995,7 @@
       },
       {
         "id": "section18.section18_2-0.0",
-        "title": "Entry 1",
+        "title": "Relative 1 - Additional Details",
         "guidance": "Stepchild, Brother, Sister, Stepbrother, Stepsister, Half-brother, Half-sister, Father-in-law, Mother-in-law, Guardian  and is not deceased.",
         "fieldKeys": [
           "relativesInfo.0.state_2",
@@ -8027,7 +8047,7 @@
       },
       {
         "id": "section18.section18_2-1.cond.RadioButtonList_244.0",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.1.city_2",
@@ -8055,7 +8075,7 @@
       },
       {
         "id": "section18.section18_2-1.cond.RadioButtonList_244.1",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.1.provideExplanationIfOtherSelected",
@@ -8080,7 +8100,7 @@
       },
       {
         "id": "section18.section18_2-1.0",
-        "title": "Entry 2",
+        "title": "Relative 2 - Additional Details",
         "guidance": "Stepchild, Brother, Sister, Stepbrother, Stepsister, Half-brother, Half-sister, Father-in-law, Mother-in-law, Guardian  and is not deceased.",
         "fieldKeys": [
           "relativesInfo.1.state",
@@ -8132,7 +8152,7 @@
       },
       {
         "id": "section18.section18_2-2.cond.RadioButtonList_402.0",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.2.city_2",
@@ -8160,7 +8180,7 @@
       },
       {
         "id": "section18.section18_2-2.cond.RadioButtonList_402.1",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.2.provideExplanationIfOtherSelected",
@@ -8185,7 +8205,7 @@
       },
       {
         "id": "section18.section18_2-2.0",
-        "title": "Entry 3",
+        "title": "Relative 3 - Additional Details",
         "guidance": "Stepchild, Brother, Sister, Stepbrother, Stepsister, Half-brother, Half-sister, Father-in-law, Mother-in-law, Guardian  and is not deceased.",
         "fieldKeys": [
           "relativesInfo.2.state",
@@ -8237,7 +8257,7 @@
       },
       {
         "id": "section18.section18_2-3.cond.RadioButtonList_560.0",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.3.city_2",
@@ -8265,7 +8285,7 @@
       },
       {
         "id": "section18.section18_2-3.cond.RadioButtonList_560.1",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.3.provideExplanationIfOtherSelected",
@@ -8290,7 +8310,7 @@
       },
       {
         "id": "section18.section18_2-3.0",
-        "title": "Entry 4",
+        "title": "Relative 4 - Additional Details",
         "guidance": "Stepchild, Brother, Sister, Stepbrother, Stepsister, Half-brother, Half-sister, Father-in-law, Mother-in-law, Guardian  and is not deceased.",
         "fieldKeys": [
           "relativesInfo.3.state",
@@ -8342,7 +8362,7 @@
       },
       {
         "id": "section18.section18_2-4.cond.RadioButtonList_718.0",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.4.city_2",
@@ -8370,7 +8390,7 @@
       },
       {
         "id": "section18.section18_2-4.cond.RadioButtonList_718.1",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.4.provideExplanationIfOtherSelected",
@@ -8395,7 +8415,7 @@
       },
       {
         "id": "section18.section18_2-4.0",
-        "title": "Entry 5",
+        "title": "Relative 5 - Additional Details",
         "guidance": "Stepchild, Brother, Sister, Stepbrother, Stepsister, Half-brother, Half-sister, Father-in-law, Mother-in-law, Guardian  and is not deceased.",
         "fieldKeys": [
           "relativesInfo.4.state",
@@ -8447,7 +8467,7 @@
       },
       {
         "id": "section18.section18_2-5.cond.RadioButtonList_876.0",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.5.city_2",
@@ -8475,7 +8495,7 @@
       },
       {
         "id": "section18.section18_2-5.cond.RadioButtonList_876.1",
-        "title": "Do you have additional relative information to pro - Details",
+        "title": "Additional Relative Information",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "relativesInfo.5.provideExplanationIfOtherSelected",
@@ -8500,7 +8520,7 @@
       },
       {
         "id": "section18.section18_2-5.0",
-        "title": "Entry 6",
+        "title": "Relative 6 - Additional Details",
         "guidance": "Stepchild, Brother, Sister, Stepbrother, Stepsister, Half-brother, Half-sister, Father-in-law, Mother-in-law, Guardian  and is not deceased.",
         "fieldKeys": [
           "relativesInfo.5.state",
@@ -9471,11 +9491,13 @@
           63,
           64,
           65
-        ]
+        ],
+        "skipToSection": "section20A",
+        "skipOnValue": "1"
       },
       {
         "id": "section19.section19_1-0.cond.RadioButtonList_1.0",
-        "title": "Do you have close foreign national contacts? - Details",
+        "title": "Foreign Contact Gate Details (1/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "foreignContacts.0.completeTheFollowingIfYouRespondedYesToHave",
@@ -9503,7 +9525,7 @@
       },
       {
         "id": "section19.section19_1-0.cond.RadioButtonList_1.1",
-        "title": "Do you have close foreign national contacts? - Details",
+        "title": "Foreign Contact Gate Details (2/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "foreignContacts.0.provideMethodsOfContactCheckAllThatApplyInPerson",
@@ -9531,7 +9553,7 @@
       },
       {
         "id": "section19.section19_1-0.cond.RadioButtonList_1.2",
-        "title": "Do you have close foreign national contacts? - Details",
+        "title": "Foreign Contact Gate Details (3/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "foreignContacts.0.suffixRow1",
@@ -9559,7 +9581,7 @@
       },
       {
         "id": "section19.section19_1-0.cond.RadioButtonList_1.3",
-        "title": "Do you have close foreign national contacts? - Details",
+        "title": "Foreign Contact Gate Details (4/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "foreignContacts.0.suffixRow4",
@@ -9587,7 +9609,7 @@
       },
       {
         "id": "section19.section19_1-0.cond.RadioButtonList_1.4",
-        "title": "Do you have close foreign national contacts? - Details",
+        "title": "Foreign Contact Gate Details (5/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "foreignContacts.0.provideCurrentAddress_2",
@@ -9615,7 +9637,7 @@
       },
       {
         "id": "section19.section19_1-0.cond.RadioButtonList_1.5",
-        "title": "Do you have close foreign national contacts? - Details",
+        "title": "Foreign Contact Gate Details (6/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "foreignContacts.0.provideTheNameOfTheForeignNationalsCurrent_2",
@@ -9640,7 +9662,7 @@
       },
       {
         "id": "section19.section19_2-0.0",
-        "title": "Entry 1 (1/6)",
+        "title": "Foreign Contact Details (1/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.completeTheFollowingIfYouRespondedYesToHave_2",
@@ -9666,7 +9688,7 @@
       },
       {
         "id": "section19.section19_2-0.1",
-        "title": "Entry 1 (2/6)",
+        "title": "Foreign Contact Details (2/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.provideMethodsOfContactCheckAllThatApplyInPerson_2",
@@ -9692,7 +9714,7 @@
       },
       {
         "id": "section19.section19_2-0.2",
-        "title": "Entry 1 (3/6)",
+        "title": "Foreign Contact Details (3/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.suffixRow1_2",
@@ -9718,7 +9740,7 @@
       },
       {
         "id": "section19.section19_2-0.3",
-        "title": "Entry 1 (4/6)",
+        "title": "Foreign Contact Details (4/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.suffixRow4_2",
@@ -9744,7 +9766,7 @@
       },
       {
         "id": "section19.section19_2-0.4",
-        "title": "Entry 1 (5/6)",
+        "title": "Foreign Contact Details (5/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.provideCurrentAddress_4",
@@ -9771,7 +9793,7 @@
       },
       {
         "id": "section19.section19_2-0.5",
-        "title": "Entry 1 (6/6)",
+        "title": "Foreign Contact Details (6/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.provideTheNameOfTheForeignNationalsCurrent_4",
@@ -9795,7 +9817,7 @@
       },
       {
         "id": "section19.section19_3-0.0",
-        "title": "Entry 1 (1/6)",
+        "title": "Contact Methods & History (1/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.completeTheFollowingIfYouRespondedYesToHave_3",
@@ -9821,7 +9843,7 @@
       },
       {
         "id": "section19.section19_3-0.1",
-        "title": "Entry 1 (2/6)",
+        "title": "Contact Methods & History (2/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.provideMethodsOfContactCheckAllThatApplyInPerson_3",
@@ -9847,7 +9869,7 @@
       },
       {
         "id": "section19.section19_3-0.2",
-        "title": "Entry 1 (3/6)",
+        "title": "Contact Methods & History (3/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.suffixRow1_3",
@@ -9873,7 +9895,7 @@
       },
       {
         "id": "section19.section19_3-0.3",
-        "title": "Entry 1 (4/6)",
+        "title": "Contact Methods & History (4/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.suffixRow4_3",
@@ -9899,7 +9921,7 @@
       },
       {
         "id": "section19.section19_3-0.4",
-        "title": "Entry 1 (5/6)",
+        "title": "Contact Methods & History (5/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.provideCurrentAddress_6",
@@ -9926,7 +9948,7 @@
       },
       {
         "id": "section19.section19_3-0.5",
-        "title": "Entry 1 (6/6)",
+        "title": "Contact Methods & History (6/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.provideTheNameOfTheForeignNationalsCurrent_6",
@@ -9950,7 +9972,7 @@
       },
       {
         "id": "section19.section19_4-0.0",
-        "title": "Entry 1 (1/6)",
+        "title": "Contact Address & Employment (1/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.completeTheFollowingIfYouRespondedYesToHave_4",
@@ -9976,7 +9998,7 @@
       },
       {
         "id": "section19.section19_4-0.1",
-        "title": "Entry 1 (2/6)",
+        "title": "Contact Address & Employment (2/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.provideMethodsOfContactCheckAllThatApplyInPerson_4",
@@ -10002,7 +10024,7 @@
       },
       {
         "id": "section19.section19_4-0.2",
-        "title": "Entry 1 (3/6)",
+        "title": "Contact Address & Employment (3/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.suffixRow1_4",
@@ -10028,7 +10050,7 @@
       },
       {
         "id": "section19.section19_4-0.3",
-        "title": "Entry 1 (4/6)",
+        "title": "Contact Address & Employment (4/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.suffixRow4_4",
@@ -10054,7 +10076,7 @@
       },
       {
         "id": "section19.section19_4-0.4",
-        "title": "Entry 1 (5/6)",
+        "title": "Contact Address & Employment (5/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.provideCurrentAddress_8",
@@ -10081,7 +10103,7 @@
       },
       {
         "id": "section19.section19_4-0.5",
-        "title": "Entry 1 (6/6)",
+        "title": "Contact Address & Employment (6/6)",
         "guidance": "whom you, or your spouse, or legally recognized civil union/domestic partner, or cohabitant are bound by affection,",
         "fieldKeys": [
           "foreignContacts.0.provideTheNameOfTheForeignNationalsCurrent_8",
@@ -10142,7 +10164,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_1.0",
-        "title": "Do you have any foreign financial interests? - Details (1/9)",
+        "title": "Foreign Financial Interest - Details (1/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.dependentChildren",
@@ -10169,7 +10191,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_1.1",
-        "title": "Do you have any foreign financial interests? - Details (2/9)",
+        "title": "Foreign Financial Interest - Details (2/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.isEstimate_3",
@@ -10195,7 +10217,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_1.2",
-        "title": "Do you have any foreign financial interests? - Details (3/9)",
+        "title": "Foreign Financial Interest - Details (3/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheCoownersCurrentAddress",
@@ -10221,7 +10243,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_1.3",
-        "title": "Do you have any foreign financial interests? - Details (4/9)",
+        "title": "Foreign Financial Interest - Entry 2 (1/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.state_2",
@@ -10247,7 +10269,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_1.4",
-        "title": "Do you have any foreign financial interests? - Details (5/9)",
+        "title": "Foreign Financial Interest - Entry 2 (2/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideHowTheFinancialInterestWasAcquiredS_2",
@@ -10273,7 +10295,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_1.5",
-        "title": "Do you have any foreign financial interests? - Details (6/9)",
+        "title": "Foreign Financial Interest - Entry 2 (3/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.1ProvideFullNameOfCoownerLastName_2",
@@ -10300,7 +10322,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_1.6",
-        "title": "Do you have any foreign financial interests? - Details (7/9)",
+        "title": "Foreign Financial Interest - Entry 3 (1/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.2ProvideFullNameOfCoownerLastName_2",
@@ -10327,7 +10349,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_1.7",
-        "title": "Do you have any foreign financial interests? - Details (8/9)",
+        "title": "Foreign Financial Interest - Entry 3 (2/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideThisIndividualsRelationshipToYou",
@@ -10353,7 +10375,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_1.8",
-        "title": "Do you have any foreign financial interests? - Details (9/9)",
+        "title": "Foreign Financial Interest - Entry 3 (3/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.state_5",
@@ -10385,7 +10407,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.0",
-        "title": "Have others held foreign financial interests on yo - Details (1/21)",
+        "title": "Others' Foreign Interest - Details (1/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.completeTheFollowingIfYouRespondedYesToYou_3",
@@ -10411,7 +10433,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.1",
-        "title": "Have others held foreign financial interests on yo - Details (2/21)",
+        "title": "Others' Foreign Interest - Details (2/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.notApplicable_3",
@@ -10437,7 +10459,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.2",
-        "title": "Have others held foreign financial interests on yo - Details (3/21)",
+        "title": "Others' Foreign Interest - Details (3/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.country2_6",
@@ -10463,7 +10485,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.3",
-        "title": "Have others held foreign financial interests on yo - Details (4/21)",
+        "title": "Others' Foreign Interest - Details (4/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideDetailsRegardingHowTheFinancialIntere_2",
@@ -10489,7 +10511,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.4",
-        "title": "Have others held foreign financial interests on yo - Details (5/21)",
+        "title": "Others' Foreign Interest - Details (5/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.middleName_8",
@@ -10515,7 +10537,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.5",
-        "title": "Have others held foreign financial interests on yo - Details (6/21)",
+        "title": "Others' Foreign Interest - Details (6/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.middleName_7",
@@ -10542,7 +10564,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.6",
-        "title": "Have others held foreign financial interests on yo - Details (7/21)",
+        "title": "Others' Foreign Interest - Details (7/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.completeTheFollowingIfYouRespondedYesToYou_5",
@@ -10569,7 +10591,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.7",
-        "title": "Have others held foreign financial interests on yo - Details (8/21)",
+        "title": "Others' Foreign Interest - Entry 2 (1/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.isEstimate_19",
@@ -10595,7 +10617,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.8",
-        "title": "Have others held foreign financial interests on yo - Details (9/21)",
+        "title": "Others' Foreign Interest - Entry 2 (2/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.zipCode_9",
@@ -10621,7 +10643,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.9",
-        "title": "Have others held foreign financial interests on yo - Details (10/21)",
+        "title": "Others' Foreign Interest - Entry 2 (3/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.zipCode_10",
@@ -10647,7 +10669,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.10",
-        "title": "Have others held foreign financial interests on yo - Details (11/21)",
+        "title": "Others' Foreign Interest - Entry 2 (4/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheDateOfPurchaseToBeAcquired_2",
@@ -10673,7 +10695,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.11",
-        "title": "Have others held foreign financial interests on yo - Details (12/21)",
+        "title": "Others' Foreign Interest - Entry 2 (5/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.city_12",
@@ -10699,7 +10721,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.12",
-        "title": "Have others held foreign financial interests on yo - Details (13/21)",
+        "title": "Others' Foreign Interest - Entry 2 (6/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.city_13",
@@ -10725,7 +10747,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.13",
-        "title": "Have others held foreign financial interests on yo - Details (14/21)",
+        "title": "Others' Foreign Interest - Entry 2 (7/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.spouseOrLegallyRecognizedCivilUniondomesticPartner_7",
@@ -10752,7 +10774,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.14",
-        "title": "Have others held foreign financial interests on yo - Details (15/21)",
+        "title": "Others' Foreign Interest - Entry 3 (1/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.RadioButtonList_254",
@@ -10779,7 +10801,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.15",
-        "title": "Have others held foreign financial interests on yo - Details (16/21)",
+        "title": "Others' Foreign Interest - Entry 3 (2/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheDateTheBenefitIsExpectedToEnd",
@@ -10806,7 +10828,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.16",
-        "title": "Have others held foreign financial interests on yo - Details (17/21)",
+        "title": "Others' Foreign Interest - Entry 3 (3/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.dependentChildren_8",
@@ -10833,7 +10855,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.17",
-        "title": "Have others held foreign financial interests on yo - Details (18/21)",
+        "title": "Others' Foreign Interest - Entry 3 (4/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.isEstimate_31",
@@ -10860,7 +10882,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.18",
-        "title": "Have others held foreign financial interests on yo - Details (19/21)",
+        "title": "Others' Foreign Interest - Entry 3 (5/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.RadioButtonList_307",
@@ -10887,7 +10909,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.19",
-        "title": "Have others held foreign financial interests on yo - Details (20/21)",
+        "title": "Others' Foreign Interest - Entry 3 (6/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.RadioButtonList_317",
@@ -10913,7 +10935,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_101.20",
-        "title": "Have others held foreign financial interests on yo - Details (21/21)",
+        "title": "Others' Foreign Interest - Entry 3 (7/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.isEstimate_37",
@@ -10943,7 +10965,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_344.0",
-        "title": "Have you EVER owned or plan to own foreign real es - Details (1/2)",
+        "title": "Foreign Real Estate - Details (1/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.suffix_14",
@@ -10969,7 +10991,7 @@
       },
       {
         "id": "section20A.cond.RadioButtonList_344.1",
-        "title": "Have you EVER owned or plan to own foreign real es - Details (2/2)",
+        "title": "Foreign Real Estate - Details (2/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheFrequencyOfYourSupport_2",
@@ -11008,7 +11030,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_375.0",
-        "title": "Have you received benefits from a foreign country? - Details (1/2)",
+        "title": "Foreign Benefits - Details (1/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.entry2ProvideADescriptionOfAdvicesupportProvided",
@@ -11035,7 +11057,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_375.1",
-        "title": "Have you received benefits from a foreign country? - Details (2/2)",
+        "title": "Foreign Benefits - Details (2/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.isEstimate_42"
@@ -11066,7 +11088,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_389.0",
-        "title": "Have you been obligated to a foreign country? - Details (1/2)",
+        "title": "Foreign Obligations - Details (1/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.suffix_17",
@@ -11093,7 +11115,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_389.1",
-        "title": "Have you been obligated to a foreign country? - Details (2/2)",
+        "title": "Foreign Obligations - Details (2/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.middleName_18",
@@ -11127,7 +11149,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_408.0",
-        "title": "Have you provided financial support to foreign nat - Details (1/6)",
+        "title": "Foreign Financial Support (1/6)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.suffix_20",
@@ -11153,7 +11175,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_408.1",
-        "title": "Have you provided financial support to foreign nat - Details (2/6)",
+        "title": "Foreign Financial Support (2/6)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.state_16",
@@ -11179,7 +11201,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_408.2",
-        "title": "Have you provided financial support to foreign nat - Details (3/6)",
+        "title": "Foreign Financial Support (3/6)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideLocationOfWhereThisOccurred",
@@ -11205,7 +11227,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_408.3",
-        "title": "Have you provided financial support to foreign nat - Details (4/6)",
+        "title": "Foreign Financial Support (4/6)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.zipCode_17",
@@ -11231,7 +11253,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_408.4",
-        "title": "Have you provided financial support to foreign nat - Details (5/6)",
+        "title": "Foreign Financial Support (5/6)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheServiceYouProvided",
@@ -11257,7 +11279,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_408.5",
-        "title": "Have you provided financial support to foreign nat - Details (6/6)",
+        "title": "Foreign Financial Support (6/6)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheNatureOfAssociationWithThisBusine_2",
@@ -11294,7 +11316,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_477.0",
-        "title": "Have you been advised/consulted by a foreign entit - Details",
+        "title": "Foreign Advisory - Details",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheCitizenshipsOfThisForeignNational",
@@ -11329,7 +11351,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_484.0",
-        "title": "Have you been employed by a foreign business/organ - Details (1/3)",
+        "title": "Foreign Employment - Details (1/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.completeTheFollowingIfYouRespondedYesToI",
@@ -11355,7 +11377,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_484.1",
-        "title": "Have you been employed by a foreign business/organ - Details (2/3)",
+        "title": "Foreign Employment - Details (2/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.RadioButtonList_510",
@@ -11381,7 +11403,7 @@
       },
       {
         "id": "section20B.cond.RadioButtonList_484.2",
-        "title": "Have you been employed by a foreign business/organ - Details (3/3)",
+        "title": "Foreign Employment - Details (3/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheCityWhereTheEventWasHeld",
@@ -11416,7 +11438,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist2.0",
-        "title": "Have you held political office in a foreign countr - Details (1/5)",
+        "title": "Foreign Political Office (1/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.suffix_24",
@@ -11443,7 +11465,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist2.1",
-        "title": "Have you held political office in a foreign countr - Details (2/5)",
+        "title": "Foreign Political Office (2/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheNamesOfTheForeignRepresentativesI_2",
@@ -11469,7 +11491,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist2.2",
-        "title": "Have you held political office in a foreign countr - Details (3/5)",
+        "title": "Foreign Political Office (3/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.providePlansForFutureContactRow3_2",
@@ -11495,7 +11517,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist2.3",
-        "title": "Have you held political office in a foreign countr - Details (4/5)",
+        "title": "Foreign Political Office (4/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheForeignGovernmentsInvolvedCountry1_2",
@@ -11521,7 +11543,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist2.4",
-        "title": "Have you held political office in a foreign countr - Details (5/5)",
+        "title": "Foreign Political Office (5/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideDateOfMostRecentContactMonthyearRow2",
@@ -11558,7 +11580,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist5.0",
-        "title": "Have you EVER voted in a foreign country's electio - Details (1/7)",
+        "title": "Foreign Voting - Details (1/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.suffix_25",
@@ -11584,7 +11606,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist5.1",
-        "title": "Have you EVER voted in a foreign country's electio - Details (2/7)",
+        "title": "Foreign Voting - Details (2/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.country_23",
@@ -11610,7 +11632,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist5.2",
-        "title": "Have you EVER voted in a foreign country's electio - Details (3/7)",
+        "title": "Foreign Voting - Details (3/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.state_23",
@@ -11636,7 +11658,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist5.3",
-        "title": "Have you EVER voted in a foreign country's electio - Details (4/7)",
+        "title": "Foreign Voting - Details (4/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideThePurposeOfStayInTheUs",
@@ -11662,7 +11684,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist5.4",
-        "title": "Have you EVER voted in a foreign country's electio - Details (5/7)",
+        "title": "Foreign Voting - Details (5/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.city_22",
@@ -11688,7 +11710,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist5.5",
-        "title": "Have you EVER voted in a foreign country's electio - Details (6/7)",
+        "title": "Foreign Voting - Details (6/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheAddressOfTheOrganizationThroughWh_3",
@@ -11714,7 +11736,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist5.6",
-        "title": "Have you EVER voted in a foreign country's electio - Details (7/7)",
+        "title": "Foreign Voting - Details (7/7)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideThePurposeOfYourSponsorshipForTheSp_2",
@@ -11745,7 +11767,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist6.0",
-        "title": "Have you attended foreign conferences/seminars? - Details (1/2)",
+        "title": "Foreign Conferences - Details (1/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.completeTheFollowingIfYouRespondedYesToH_4",
@@ -11771,7 +11793,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist6.1",
-        "title": "Have you attended foreign conferences/seminars? - Details (2/2)",
+        "title": "Foreign Conferences - Details (2/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.toDateMonthyear_9",
@@ -11811,7 +11833,7 @@
       },
       {
         "id": "section20B.cond.radiobuttonlist7.0",
-        "title": "Have you had contact with a foreign government? - Details",
+        "title": "Foreign Government Contact - Details",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.completeTheFollowingIfYouRespondedYesToH_3",
@@ -11887,7 +11909,7 @@
       },
       {
         "id": "section20C.cond.RadioButtonList_677.0",
-        "title": "Have you traveled outside the U.S. in the last 7 y - Details (1/10)",
+        "title": "Foreign Travel - Details (1/10)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.RadioButtonList_678",
@@ -11914,7 +11936,7 @@
       },
       {
         "id": "section20C.cond.RadioButtonList_677.1",
-        "title": "Have you traveled outside the U.S. in the last 7 y - Details (2/10)",
+        "title": "Foreign Travel - Details (2/10)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.visitFamilyOrFriends",
@@ -11941,7 +11963,7 @@
       },
       {
         "id": "section20C.cond.RadioButtonList_677.2",
-        "title": "Have you traveled outside the U.S. in the last 7 y - Details (3/10)",
+        "title": "Foreign Travel - Details (3/10)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.RadioButtonList_692",
@@ -11968,7 +11990,7 @@
       },
       {
         "id": "section20C.cond.RadioButtonList_677.3",
-        "title": "Have you traveled outside the U.S. in the last 7 y - Details (4/10)",
+        "title": "Foreign Travel - Details (4/10)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.tradeShowsConferencesAndSeminars_2",
@@ -11995,7 +12017,7 @@
       },
       {
         "id": "section20C.cond.RadioButtonList_677.4",
-        "title": "Have you traveled outside the U.S. in the last 7 y - Details (5/10)",
+        "title": "Foreign Travel - Details (5/10)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.RadioButtonList_716",
@@ -12022,7 +12044,7 @@
       },
       {
         "id": "section20C.cond.RadioButtonList_677.5",
-        "title": "Have you traveled outside the U.S. in the last 7 y - Details (6/10)",
+        "title": "Foreign Travel - Details (6/10)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.provideTheDatesOfYourTravelToThisCountry_3",
@@ -12049,7 +12071,7 @@
       },
       {
         "id": "section20C.cond.RadioButtonList_677.6",
-        "title": "Have you traveled outside the U.S. in the last 7 y - Details (7/10)",
+        "title": "Foreign Travel - Details (7/10)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.RadioButtonList_762",
@@ -12076,7 +12098,7 @@
       },
       {
         "id": "section20C.cond.RadioButtonList_677.7",
-        "title": "Have you traveled outside the U.S. in the last 7 y - Details (8/10)",
+        "title": "Foreign Travel - Details (8/10)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.RadioButtonList_752",
@@ -12103,7 +12125,7 @@
       },
       {
         "id": "section20C.cond.RadioButtonList_677.8",
-        "title": "Have you traveled outside the U.S. in the last 7 y - Details (9/10)",
+        "title": "Foreign Travel - Details (9/10)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.visitFamilyOrFriends_4",
@@ -12130,7 +12152,7 @@
       },
       {
         "id": "section20C.cond.RadioButtonList_677.9",
-        "title": "Have you traveled outside the U.S. in the last 7 y - Details (10/10)",
+        "title": "Foreign Travel - Details (10/10)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "foreignActivities.RadioButtonList_776",
@@ -12164,11 +12186,13 @@
         "sourcePages": [
           88
         ],
-        "conditionalInstruction": "Has a court or administrative agency  EVER  issued an order declaring you mentally incompetent?"
+        "conditionalInstruction": "Has a court or administrative agency  EVER  issued an order declaring you mentally incompetent?",
+        "skipToSection": "section21A",
+        "skipOnValue": "2"
       },
       {
         "id": "section21.cond.RadioButtonList_1.0",
-        "title": "Do you have a condition affecting judgment or reli - Details (1/2)",
+        "title": "Mental Health Condition - Details (1/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.completeTheFollowingIfYouRespondedYesToH",
@@ -12192,7 +12216,7 @@
       },
       {
         "id": "section21.cond.RadioButtonList_1.1",
-        "title": "Do you have a condition affecting judgment or reli - Details (2/2)",
+        "title": "Mental Health Condition - Details (2/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.city_2",
@@ -12321,11 +12345,13 @@
           90,
           91
         ],
-        "conditionalInstruction": "Has a court or administrative agency  EVER  ordered you to consult with a mental health"
+        "conditionalInstruction": "Has a court or administrative agency  EVER  ordered you to consult with a mental health",
+        "skipToSection": "section21C",
+        "skipOnValue": "2"
       },
       {
         "id": "section21B.cond.RadioButtonList_71.0",
-        "title": "Have you EVER been hospitalized for a mental healt - Details (1/4)",
+        "title": "Mental Health Hospitalization (1/4)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.completeTheFollowingIfYouRespondedYesToH_4",
@@ -12350,7 +12376,7 @@
       },
       {
         "id": "section21B.cond.RadioButtonList_71.1",
-        "title": "Have you EVER been hospitalized for a mental healt - Details (2/4)",
+        "title": "Mental Health Hospitalization (2/4)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.country_11",
@@ -12375,7 +12401,7 @@
       },
       {
         "id": "section21B.cond.RadioButtonList_71.2",
-        "title": "Have you EVER been hospitalized for a mental healt - Details (3/4)",
+        "title": "Mental Health Hospitalization (3/4)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.completeTheFollowingIfYouRespondedYesToH_5",
@@ -12400,7 +12426,7 @@
       },
       {
         "id": "section21B.cond.RadioButtonList_71.3",
-        "title": "Have you EVER been hospitalized for a mental healt - Details (4/4)",
+        "title": "Mental Health Hospitalization (4/4)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.country_14",
@@ -12439,11 +12465,13 @@
         "sourcePages": [
           92
         ],
-        "conditionalInstruction": "Have you  EVER  been hospitalized for a mental health condition?"
+        "conditionalInstruction": "Have you  EVER  been hospitalized for a mental health condition?",
+        "skipToSection": "section21D",
+        "skipOnValue": "2"
       },
       {
         "id": "section21C.cond.RadioButtonList_120.0",
-        "title": "Have you consulted a healthcare professional for m - Details (1/5)",
+        "title": "Healthcare Professional Consultation (1/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.explanation",
@@ -12467,7 +12495,7 @@
       },
       {
         "id": "section21C.cond.RadioButtonList_120.1",
-        "title": "Have you consulted a healthcare professional for m - Details (2/5)",
+        "title": "Healthcare Professional Consultation (2/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.state_16",
@@ -12491,7 +12519,7 @@
       },
       {
         "id": "section21C.cond.RadioButtonList_120.2",
-        "title": "Have you consulted a healthcare professional for m - Details (3/5)",
+        "title": "Healthcare Professional Consultation (3/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.provideTheNameOfTheFacilityWhereTreatmentW_2",
@@ -12515,7 +12543,7 @@
       },
       {
         "id": "section21C.cond.RadioButtonList_120.3",
-        "title": "Have you consulted a healthcare professional for m - Details (4/5)",
+        "title": "Healthcare Professional Consultation (4/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.isEstimate_10",
@@ -12539,7 +12567,7 @@
       },
       {
         "id": "section21C.cond.RadioButtonList_120.4",
-        "title": "Have you consulted a healthcare professional for m - Details (5/5)",
+        "title": "Healthcare Professional Consultation (5/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.provideTheDatesOfTreatmentFromDateMonthyear_4",
@@ -12578,11 +12606,13 @@
           93,
           94,
           95
-        ]
+        ],
+        "skipToSection": "section21E",
+        "skipOnValue": "2"
       },
       {
         "id": "section21D.cond.RadioButtonList_181.0",
-        "title": "Have you received other mental health counseling/t - Details (1/11)",
+        "title": "Other Mental Health Treatment (1/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.completeTheFollowingIfYouRespondedYesToH_10",
@@ -12609,7 +12639,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_181.1",
-        "title": "Have you received other mental health counseling/t - Details (2/11)",
+        "title": "Other Mental Health Treatment (2/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.city_20",
@@ -12636,7 +12666,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_181.2",
-        "title": "Have you received other mental health counseling/t - Details (3/11)",
+        "title": "Other Mental Health Treatment (3/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.internationalOrDsnPhoneNumber",
@@ -12663,7 +12693,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_181.3",
-        "title": "Have you received other mental health counseling/t - Details (4/11)",
+        "title": "Other Mental Health Treatment (4/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.toDateMonthyear_6",
@@ -12690,7 +12720,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_181.4",
-        "title": "Have you received other mental health counseling/t - Details (5/11)",
+        "title": "Other Mental Health Treatment (5/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.state_22",
@@ -12717,7 +12747,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_181.5",
-        "title": "Have you received other mental health counseling/t - Details (6/11)",
+        "title": "Other Mental Health Treatment (6/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_3",
@@ -12744,7 +12774,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_181.6",
-        "title": "Have you received other mental health counseling/t - Details (7/11)",
+        "title": "Other Mental Health Treatment (7/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.day_7",
@@ -12771,7 +12801,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_181.7",
-        "title": "Have you received other mental health counseling/t - Details (8/11)",
+        "title": "Other Mental Health Treatment (8/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_5",
@@ -12797,7 +12827,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_181.8",
-        "title": "Have you received other mental health counseling/t - Details (9/11)",
+        "title": "Other Mental Health Treatment (9/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.zipCode_25",
@@ -12824,7 +12854,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_181.9",
-        "title": "Have you received other mental health counseling/t - Details (10/11)",
+        "title": "Other Mental Health Treatment (10/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.extension_8",
@@ -12851,7 +12881,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_181.10",
-        "title": "Have you received other mental health counseling/t - Details (11/11)",
+        "title": "Other Mental Health Treatment (11/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_8",
@@ -12888,11 +12918,13 @@
           94,
           95
         ],
-        "conditionalInstruction": "Are you currently in treatment?"
+        "conditionalInstruction": "Are you currently in treatment?",
+        "skipToSection": "section21E",
+        "skipOnValue": "2"
       },
       {
         "id": "section21D.cond.RadioButtonList_314.0",
-        "title": "Are you currently in mental health treatment? - Details (1/4)",
+        "title": "Current Mental Health Treatment (1/4)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.RadioButtonList_359",
@@ -12918,7 +12950,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_314.1",
-        "title": "Are you currently in mental health treatment? - Details (2/4)",
+        "title": "Current Mental Health Treatment (2/4)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.day_10",
@@ -12944,7 +12976,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_314.2",
-        "title": "Are you currently in mental health treatment? - Details (3/4)",
+        "title": "Current Mental Health Treatment (3/4)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.night_11",
@@ -12970,7 +13002,7 @@
       },
       {
         "id": "section21D.cond.RadioButtonList_314.3",
-        "title": "Are you currently in mental health treatment? - Details (4/4)",
+        "title": "Current Mental Health Treatment (4/4)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "mentalHealth.completeTheFollowingIfYouRespondedYesToC_4",
@@ -13008,25 +13040,27 @@
           96,
           97
         ],
-        "conditionalInstruction": "Did you ever receive or are you currently receiving counseling or treatment for that condition? (You may choose not to answer this question. However, such"
+        "conditionalInstruction": "Did you ever receive or are you currently receiving counseling or treatment for that condition? (You may choose not to answer this question. However, such",
+        "skipToSection": "section22",
+        "skipOnValue": "3"
       },
       {
         "id": "section21E.cond.RadioButtonList_383.0",
-        "title": "Have you received counseling for other health cond - Details (1/9)",
+        "title": "Other Health Counseling (1/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
+          "mentalHealth.RadioButtonList_360",
           "mentalHealth.ifNoProvideExplanationAndProceedToSection22",
-          "mentalHealth.provideTheNameOfAgencyorganizationfacilityW_5",
-          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_9",
-          "mentalHealth.day_14",
-          "mentalHealth.night_14",
-          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_10",
-          "mentalHealth.extension_14",
-          "mentalHealth.provideTheNameOfAnyAgencyorganizationfacili_5",
-          "mentalHealth.internationalOrDsnPhoneNumber_10",
-          "mentalHealth.day_15",
-          "mentalHealth.night_15",
-          "mentalHealth.isPresent_10"
+          "mentalHealth.day_13",
+          "mentalHealth.night_13",
+          "mentalHealth.isPresent_9",
+          "mentalHealth.ifYouRespondedYesToHavingEverReceivedOr",
+          "mentalHealth.toDateMonthyear_9",
+          "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_10",
+          "mentalHealth.extension_13",
+          "mentalHealth.isEstimate_22",
+          "mentalHealth.isEstimate_23",
+          "mentalHealth.internationalOrDsnPhoneNumber_9"
         ],
         "gateFieldKey": "mentalHealth.RadioButtonList_383",
         "isConditionalBlock": true,
@@ -13034,25 +13068,25 @@
           96,
           97
         ],
-        "pdfInstruction": "consultation or treatment will not disqualify you and is considered to be a positive action.)"
+        "pdfInstruction": "counseling as a result of service as a first responder, service in a military combat environment, having been sexually assaulted or a victim of domestic"
       },
       {
         "id": "section21E.cond.RadioButtonList_383.1",
-        "title": "Have you received counseling for other health cond - Details (2/9)",
+        "title": "Other Health Counseling (2/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
-          "mentalHealth.entry12ProvideTheDatesOfCounselingOrTreatment",
-          "mentalHealth.toDateMonthyear_10",
-          "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_11",
-          "mentalHealth.extension_15",
-          "mentalHealth.isEstimate_24",
-          "mentalHealth.isEstimate_25",
-          "mentalHealth.internationalOrDsnPhoneNumber_11",
-          "mentalHealth.provideTheNameOfTheHealthCareProfessional_2",
-          "mentalHealth.city_34",
-          "mentalHealth.country_34",
-          "mentalHealth.provideTheAddressOfTheHealthCareProfessional_6",
-          "mentalHealth.state_34"
+          "mentalHealth.provideTheNameOfTheHealthCareProfessional",
+          "mentalHealth.city_32",
+          "mentalHealth.country_32",
+          "mentalHealth.provideTheAddressOfTheHealthCareProfessional_5",
+          "mentalHealth.state_32",
+          "mentalHealth.zipCode_32",
+          "mentalHealth.provideTheNameOfAgencyorganizationfacilityW_5",
+          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_9",
+          "mentalHealth.day_14",
+          "mentalHealth.night_14",
+          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_10",
+          "mentalHealth.extension_14"
         ],
         "gateFieldKey": "mentalHealth.RadioButtonList_383",
         "isConditionalBlock": true,
@@ -13063,21 +13097,21 @@
       },
       {
         "id": "section21E.cond.RadioButtonList_383.2",
-        "title": "Have you received counseling for other health cond - Details (3/9)",
+        "title": "Other Health Counseling (3/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
-          "mentalHealth.zipCode_34",
-          "mentalHealth.provideTheNameOfAgencyorganizationfacilityW_6",
-          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_11",
-          "mentalHealth.day_16",
-          "mentalHealth.night_16",
-          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_12",
-          "mentalHealth.extension_16",
-          "mentalHealth.provideTheNameOfAnyAgencyorganizationfacili_6",
-          "mentalHealth.internationalOrDsnPhoneNumber_12",
-          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_12",
-          "mentalHealth.city_35",
-          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_11"
+          "mentalHealth.provideTheNameOfAnyAgencyorganizationfacili_5",
+          "mentalHealth.internationalOrDsnPhoneNumber_10",
+          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_10",
+          "mentalHealth.city_33",
+          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_9",
+          "mentalHealth.state_33",
+          "mentalHealth.country_33",
+          "mentalHealth.zipCode_33",
+          "mentalHealth.day_15",
+          "mentalHealth.night_15",
+          "mentalHealth.isPresent_10",
+          "mentalHealth.entry12ProvideTheDatesOfCounselingOrTreatment"
         ],
         "gateFieldKey": "mentalHealth.RadioButtonList_383",
         "isConditionalBlock": true,
@@ -13089,21 +13123,46 @@
       },
       {
         "id": "section21E.cond.RadioButtonList_383.3",
-        "title": "Have you received counseling for other health cond - Details (4/9)",
+        "title": "Other Health Counseling (4/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
-          "mentalHealth.state_35",
-          "mentalHealth.country_35",
-          "mentalHealth.zipCode_35",
-          "mentalHealth.ifYesProvideExplanation",
-          "mentalHealth.RadioButtonList_423",
-          "mentalHealth.day_17",
-          "mentalHealth.night_17",
-          "mentalHealth.isPresent_11",
-          "mentalHealth.ifYouRespondedYesToHavingEverReceivedOr_2",
-          "mentalHealth.toDateMonthyear_11",
-          "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_12",
-          "mentalHealth.extension_17"
+          "mentalHealth.toDateMonthyear_10",
+          "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_11",
+          "mentalHealth.extension_15",
+          "mentalHealth.isEstimate_24",
+          "mentalHealth.isEstimate_25",
+          "mentalHealth.internationalOrDsnPhoneNumber_11",
+          "mentalHealth.provideTheNameOfTheHealthCareProfessional_2",
+          "mentalHealth.city_34",
+          "mentalHealth.country_34",
+          "mentalHealth.provideTheAddressOfTheHealthCareProfessional_6",
+          "mentalHealth.state_34",
+          "mentalHealth.zipCode_34"
+        ],
+        "gateFieldKey": "mentalHealth.RadioButtonList_383",
+        "isConditionalBlock": true,
+        "sourcePages": [
+          96,
+          97
+        ]
+      },
+      {
+        "id": "section21E.cond.RadioButtonList_383.4",
+        "title": "Other Health Counseling (5/11)",
+        "guidance": "These fields appear because you answered Yes.",
+        "fieldKeys": [
+          "mentalHealth.provideTheNameOfAgencyorganizationfacilityW_6",
+          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_11",
+          "mentalHealth.day_16",
+          "mentalHealth.night_16",
+          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_12",
+          "mentalHealth.extension_16",
+          "mentalHealth.provideTheNameOfAnyAgencyorganizationfacili_6",
+          "mentalHealth.internationalOrDsnPhoneNumber_12",
+          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_12",
+          "mentalHealth.city_35",
+          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_11",
+          "mentalHealth.state_35"
         ],
         "gateFieldKey": "mentalHealth.RadioButtonList_383",
         "isConditionalBlock": true,
@@ -13114,47 +13173,22 @@
         "pdfInstruction": "the United States; otherwise, provide City, State and Zip Code)"
       },
       {
-        "id": "section21E.cond.RadioButtonList_383.4",
-        "title": "Have you received counseling for other health cond - Details (5/9)",
-        "guidance": "These fields appear because you answered Yes.",
-        "fieldKeys": [
-          "mentalHealth.isEstimate_26",
-          "mentalHealth.isEstimate_27",
-          "mentalHealth.internationalOrDsnPhoneNumber_13",
-          "mentalHealth.provideTheNameOfTheHealthCareProfessional_3",
-          "mentalHealth.city_36",
-          "mentalHealth.country_36",
-          "mentalHealth.provideTheAddressOfTheHealthCareProfessional_7",
-          "mentalHealth.state_36",
-          "mentalHealth.zipCode_36",
-          "mentalHealth.provideTheNameOfAgencyorganizationfacilityW_7",
-          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_13",
-          "mentalHealth.day_18"
-        ],
-        "gateFieldKey": "mentalHealth.RadioButtonList_383",
-        "isConditionalBlock": true,
-        "sourcePages": [
-          96,
-          97
-        ]
-      },
-      {
         "id": "section21E.cond.RadioButtonList_383.5",
-        "title": "Have you received counseling for other health cond - Details (6/9)",
+        "title": "Other Health Counseling (6/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
-          "mentalHealth.night_18",
-          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_14",
-          "mentalHealth.extension_18",
-          "mentalHealth.provideTheNameOfAnyAgencyorganizationfacili_7",
-          "mentalHealth.internationalOrDsnPhoneNumber_14",
-          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_14",
-          "mentalHealth.city_37",
-          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_13",
-          "mentalHealth.state_37",
-          "mentalHealth.country_37",
-          "mentalHealth.zipCode_37",
-          "mentalHealth.day_19"
+          "mentalHealth.country_35",
+          "mentalHealth.zipCode_35",
+          "mentalHealth.ifYesProvideExplanation",
+          "mentalHealth.RadioButtonList_423",
+          "mentalHealth.day_17",
+          "mentalHealth.night_17",
+          "mentalHealth.isPresent_11",
+          "mentalHealth.ifYouRespondedYesToHavingEverReceivedOr_2",
+          "mentalHealth.toDateMonthyear_11",
+          "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_12",
+          "mentalHealth.extension_17",
+          "mentalHealth.isEstimate_26"
         ],
         "gateFieldKey": "mentalHealth.RadioButtonList_383",
         "isConditionalBlock": true,
@@ -13166,21 +13200,21 @@
       },
       {
         "id": "section21E.cond.RadioButtonList_383.6",
-        "title": "Have you received counseling for other health cond - Details (7/9)",
+        "title": "Other Health Counseling (7/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
-          "mentalHealth.night_19",
-          "mentalHealth.isPresent_12",
-          "mentalHealth.entry22ProvideTheDatesOfCounselingOrTreatment",
-          "mentalHealth.toDateMonthyear_12",
-          "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_13",
-          "mentalHealth.extension_19",
-          "mentalHealth.isEstimate_28",
-          "mentalHealth.isEstimate_29",
-          "mentalHealth.internationalOrDsnPhoneNumber_15",
-          "mentalHealth.provideTheNameOfTheHealthCareProfessional_4",
-          "mentalHealth.city_38",
-          "mentalHealth.country_38"
+          "mentalHealth.isEstimate_27",
+          "mentalHealth.internationalOrDsnPhoneNumber_13",
+          "mentalHealth.provideTheNameOfTheHealthCareProfessional_3",
+          "mentalHealth.city_36",
+          "mentalHealth.country_36",
+          "mentalHealth.provideTheAddressOfTheHealthCareProfessional_7",
+          "mentalHealth.state_36",
+          "mentalHealth.zipCode_36",
+          "mentalHealth.provideTheNameOfAgencyorganizationfacilityW_7",
+          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_13",
+          "mentalHealth.day_18",
+          "mentalHealth.night_18"
         ],
         "gateFieldKey": "mentalHealth.RadioButtonList_383",
         "isConditionalBlock": true,
@@ -13191,21 +13225,21 @@
       },
       {
         "id": "section21E.cond.RadioButtonList_383.7",
-        "title": "Have you received counseling for other health cond - Details (8/9)",
+        "title": "Other Health Counseling (8/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
-          "mentalHealth.provideTheAddressOfTheHealthCareProfessional_8",
-          "mentalHealth.state_38",
-          "mentalHealth.zipCode_38",
-          "mentalHealth.provideTheNameOfAgencyorganizationfacilityW_8",
-          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_15",
-          "mentalHealth.day_20",
-          "mentalHealth.night_20",
-          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_16",
-          "mentalHealth.extension_20",
-          "mentalHealth.provideTheNameOfAnyAgencyorganizationfacili_8",
-          "mentalHealth.internationalOrDsnPhoneNumber_16",
-          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_16"
+          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_14",
+          "mentalHealth.extension_18",
+          "mentalHealth.provideTheNameOfAnyAgencyorganizationfacili_7",
+          "mentalHealth.internationalOrDsnPhoneNumber_14",
+          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_14",
+          "mentalHealth.city_37",
+          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_13",
+          "mentalHealth.state_37",
+          "mentalHealth.country_37",
+          "mentalHealth.zipCode_37",
+          "mentalHealth.day_19",
+          "mentalHealth.night_19"
         ],
         "gateFieldKey": "mentalHealth.RadioButtonList_383",
         "isConditionalBlock": true,
@@ -13217,16 +13251,46 @@
       },
       {
         "id": "section21E.cond.RadioButtonList_383.8",
-        "title": "Have you received counseling for other health cond - Details (9/9)",
+        "title": "Other Health Counseling (9/11)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
-          "mentalHealth.city_39",
-          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_15",
-          "mentalHealth.state_39",
-          "mentalHealth.country_39",
-          "mentalHealth.zipCode_39",
-          "mentalHealth.ifYesProvideExplanation_2",
-          "mentalHealth.RadioButtonList_485"
+          "mentalHealth.isPresent_12",
+          "mentalHealth.entry22ProvideTheDatesOfCounselingOrTreatment",
+          "mentalHealth.toDateMonthyear_12",
+          "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_13",
+          "mentalHealth.extension_19",
+          "mentalHealth.isEstimate_28",
+          "mentalHealth.isEstimate_29",
+          "mentalHealth.internationalOrDsnPhoneNumber_15",
+          "mentalHealth.provideTheNameOfTheHealthCareProfessional_4",
+          "mentalHealth.city_38",
+          "mentalHealth.country_38",
+          "mentalHealth.provideTheAddressOfTheHealthCareProfessional_8"
+        ],
+        "gateFieldKey": "mentalHealth.RadioButtonList_383",
+        "isConditionalBlock": true,
+        "sourcePages": [
+          96,
+          97
+        ]
+      },
+      {
+        "id": "section21E.cond.RadioButtonList_383.9",
+        "title": "Other Health Counseling (10/11)",
+        "guidance": "These fields appear because you answered Yes.",
+        "fieldKeys": [
+          "mentalHealth.state_38",
+          "mentalHealth.zipCode_38",
+          "mentalHealth.provideTheNameOfAgencyorganizationfacilityW_8",
+          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_15",
+          "mentalHealth.day_20",
+          "mentalHealth.night_20",
+          "mentalHealth.provideTheTelephoneNumberOfTheAgencyorganiz_16",
+          "mentalHealth.extension_20",
+          "mentalHealth.provideTheNameOfAnyAgencyorganizationfacili_8",
+          "mentalHealth.internationalOrDsnPhoneNumber_16",
+          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_16",
+          "mentalHealth.city_39"
         ],
         "gateFieldKey": "mentalHealth.RadioButtonList_383",
         "isConditionalBlock": true,
@@ -13237,46 +13301,19 @@
         "pdfInstruction": "the United States; otherwise, provide City, State and Zip Code)"
       },
       {
-        "id": "section21E.main",
-        "title": "Other Counseling (1/2)",
-        "guidance": "counseling as a result of service as a first responder, service in a military combat environment, having been sexually assaulted or a victim of domestic",
+        "id": "section21E.cond.RadioButtonList_383.10",
+        "title": "Other Health Counseling (11/11)",
+        "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
-          "mentalHealth.RadioButtonList_360",
-          "mentalHealth.day_13",
-          "mentalHealth.night_13",
-          "mentalHealth.isPresent_9",
-          "mentalHealth.ifYouRespondedYesToHavingEverReceivedOr",
-          "mentalHealth.toDateMonthyear_9",
-          "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_10",
-          "mentalHealth.extension_13",
-          "mentalHealth.isEstimate_22",
-          "mentalHealth.isEstimate_23",
-          "mentalHealth.internationalOrDsnPhoneNumber_9",
-          "mentalHealth.provideTheNameOfTheHealthCareProfessional"
+          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_15",
+          "mentalHealth.state_39",
+          "mentalHealth.country_39",
+          "mentalHealth.zipCode_39",
+          "mentalHealth.ifYesProvideExplanation_2",
+          "mentalHealth.RadioButtonList_485"
         ],
-        "sourcePages": [
-          96,
-          97
-        ],
-        "pdfInstruction": "counseling as a result of service as a first responder, service in a military combat environment, having been sexually assaulted or a victim of domestic"
-      },
-      {
-        "id": "section21E.main.1",
-        "title": "Other Counseling (2/2)",
-        "guidance": "counseling as a result of service as a first responder, service in a military combat environment, having been sexually assaulted or a victim of domestic",
-        "fieldKeys": [
-          "mentalHealth.city_32",
-          "mentalHealth.country_32",
-          "mentalHealth.provideTheAddressOfTheHealthCareProfessional_5",
-          "mentalHealth.state_32",
-          "mentalHealth.zipCode_32",
-          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_10",
-          "mentalHealth.city_33",
-          "mentalHealth.provideTheAddressOfAgencyorganizationfacilit_9",
-          "mentalHealth.state_33",
-          "mentalHealth.country_33",
-          "mentalHealth.zipCode_33"
-        ],
+        "gateFieldKey": "mentalHealth.RadioButtonList_383",
+        "isConditionalBlock": true,
         "sourcePages": [
           96,
           97
@@ -13307,7 +13344,7 @@
       },
       {
         "id": "section22.section22_1-0.cond.RadioButtonList_1.0",
-        "title": "Have you had police record issues in the last 7 ye - Details",
+        "title": "Police Record (Last 7 Years) - Sub-Question",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.RadioButtonList_2"
@@ -13323,25 +13360,8 @@
         ]
       },
       {
-        "id": "section22.section22_1-0.gate.RadioButtonList_2",
-        "title": "Other than listed, have you EVER had police record issues?",
-        "guidance": "Answer this question to continue.",
-        "fieldKeys": [
-          "policeRecord.0.RadioButtonList_2"
-        ],
-        "gateFieldKey": "policeRecord.0.RadioButtonList_2",
-        "repeatGroup": "section22_1",
-        "repeatIndex": 0,
-        "sourcePages": [
-          98,
-          99,
-          100
-        ],
-        "conditionalInstruction": "type of law enforcement official?"
-      },
-      {
         "id": "section22.section22_1-0.cond.RadioButtonList_2.0",
-        "title": "Other than listed, have you EVER had police record - Details",
+        "title": "Police Record - Offense Details (1/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.completeTheFollowingIfYouRespondedYesToO",
@@ -13369,7 +13389,7 @@
       },
       {
         "id": "section22.section22_1-0.cond.RadioButtonList_2.1",
-        "title": "Other than listed, have you EVER had police record - Details",
+        "title": "Police Record - Offense Details (2/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.provideTheNameOfTheLawEnforcementAgencyTha",
@@ -13397,7 +13417,7 @@
       },
       {
         "id": "section22.section22_1-0.cond.RadioButtonList_2.2",
-        "title": "Other than listed, have you EVER had police record - Details",
+        "title": "Police Record - Offense Details (3/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.state_3",
@@ -13425,7 +13445,7 @@
       },
       {
         "id": "section22.section22_1-0.cond.RadioButtonList_2.3",
-        "title": "Other than listed, have you EVER had police record - Details",
+        "title": "Police Record - Offense Details (4/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.felonymisdemeanorRow3",
@@ -13468,7 +13488,7 @@
       },
       {
         "id": "section22.section22_2-0.cond.RadioButtonList_49.0",
-        "title": "Were you sentenced as a result of this offense? - Details",
+        "title": "Were you sentenced as a result of this o - Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.d1ProvideADescriptionOfTheSentence",
@@ -13496,7 +13516,7 @@
       },
       {
         "id": "section22.section22_2-0.cond.RadioButtonList_49.1",
-        "title": "Were you sentenced as a result of this offense? - Details",
+        "title": "Were you sentenced as a result of this o - Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.toDateMonthyear_2",
@@ -13566,7 +13586,7 @@
       },
       {
         "id": "section22.section22_3-0.cond.RadioButtonList_67.0",
-        "title": "Other than listed, have you EVER had police record - Details",
+        "title": "Police Record - Offense Details (1/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.completeTheFollowingIfYouRespondedYesToO_2",
@@ -13594,7 +13614,7 @@
       },
       {
         "id": "section22.section22_3-0.cond.RadioButtonList_67.1",
-        "title": "Other than listed, have you EVER had police record - Details",
+        "title": "Police Record - Offense Details (2/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.provideTheNameOfTheLawEnforcementAgencyTha_2",
@@ -13622,7 +13642,7 @@
       },
       {
         "id": "section22.section22_3-0.cond.RadioButtonList_67.2",
-        "title": "Other than listed, have you EVER had police record - Details",
+        "title": "Police Record - Offense Details (3/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.state_6",
@@ -13650,7 +13670,7 @@
       },
       {
         "id": "section22.section22_3-0.cond.RadioButtonList_67.3",
-        "title": "Other than listed, have you EVER had police record - Details",
+        "title": "Police Record - Offense Details (4/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.felonymisdemeanorRow3_2",
@@ -13689,11 +13709,13 @@
           99,
           100
         ],
-        "conditionalInstruction": "Is there currently a domestic violence protective order or restraining order issued against you?"
+        "conditionalInstruction": "Is there currently a domestic violence protective order or restraining order issued against you?",
+        "skipToSection": "section23",
+        "skipOnValue": "2"
       },
       {
         "id": "section22.section22_3_1-0.cond.RadioButtonList_235.0",
-        "title": "Is there a domestic violence protective order agai - Details",
+        "title": "Domestic Violence Protective Order (1/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.completeTheFollowingIfYouRespondedYesToC",
@@ -13721,7 +13743,7 @@
       },
       {
         "id": "section22.section22_3_1-0.cond.RadioButtonList_235.1",
-        "title": "Is there a domestic violence protective order agai - Details",
+        "title": "Domestic Violence Protective Order (2/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.provideTheLocationOfTheCourtOrAgencyThatI_2",
@@ -13749,7 +13771,7 @@
       },
       {
         "id": "section22.section22_3_1-0.cond.RadioButtonList_235.2",
-        "title": "Is there a domestic violence protective order agai - Details",
+        "title": "Domestic Violence Protective Order (3/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.completeTheFollowingIfYouRespondedYesToC_4",
@@ -13790,7 +13812,7 @@
       },
       {
         "id": "section22.section22_4-0.cond.RadioButtonList_114.0",
-        "title": "Were you sentenced as a result of this offense? - Details",
+        "title": "Were you sentenced as a result of this o - Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.d1ProvideADescriptionOfTheSentence_2",
@@ -13818,7 +13840,7 @@
       },
       {
         "id": "section22.section22_4-0.cond.RadioButtonList_114.1",
-        "title": "Were you sentenced as a result of this offense? - Details",
+        "title": "Were you sentenced as a result of this o - Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.toDateMonthyear_4",
@@ -13888,7 +13910,7 @@
       },
       {
         "id": "section22.section22_5-0.cond.RadioButtonList_135.0",
-        "title": "Have you EVER had additional criminal charges/conv - Details",
+        "title": "Additional Criminal Charges (1/5)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.entry1ProvideTheDateOfOffenseMonthyear",
@@ -13916,7 +13938,7 @@
       },
       {
         "id": "section22.section22_5-0.cond.RadioButtonList_135.1",
-        "title": "Have you EVER had additional criminal charges/conv - Details",
+        "title": "Additional Criminal Charges (2/5)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.zipCode_7",
@@ -13944,7 +13966,7 @@
       },
       {
         "id": "section22.section22_5-0.cond.RadioButtonList_135.2",
-        "title": "Have you EVER had additional criminal charges/conv - Details",
+        "title": "Additional Criminal Charges (3/5)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.chargeRow3_3",
@@ -13972,7 +13994,7 @@
       },
       {
         "id": "section22.section22_5-0.cond.RadioButtonList_135.3",
-        "title": "Have you EVER had additional criminal charges/conv - Details",
+        "title": "Additional Criminal Charges (4/5)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.RadioButtonList_164",
@@ -14000,7 +14022,7 @@
       },
       {
         "id": "section22.section22_5-0.cond.RadioButtonList_135.4",
-        "title": "Have you EVER had additional criminal charges/conv - Details",
+        "title": "Additional Criminal Charges (5/5)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.isEstimate_19",
@@ -14036,7 +14058,7 @@
       },
       {
         "id": "section22.section22_6-0.cond.RadioButtonList_212.0",
-        "title": "Were you sentenced as a result of these charges? - Details",
+        "title": "Sentencing Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.b1ProvideADescriptionOfTheSentence_2",
@@ -14064,7 +14086,7 @@
       },
       {
         "id": "section22.section22_6-0.cond.RadioButtonList_212.1",
-        "title": "Were you sentenced as a result of these charges? - Details",
+        "title": "Sentencing Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "policeRecord.0.toDateMonthyear_8",
@@ -14197,40 +14219,6 @@
     "sectionKey": "section23",
     "steps": [
       {
-        "id": "section23.section23_1-0.gate.RadioButtonList_10",
-        "title": "Do you intend to use this substance in the future?",
-        "guidance": "Answer this question to continue.",
-        "fieldKeys": [
-          "drugActivity.0.RadioButtonList_10"
-        ],
-        "gateFieldKey": "drugActivity.0.RadioButtonList_10",
-        "repeatGroup": "section23_1",
-        "repeatIndex": 0,
-        "sourcePages": [
-          105,
-          106,
-          107
-        ],
-        "conditionalInstruction": "Do you intend to use this drug or controlled substance in the future?"
-      },
-      {
-        "id": "section23.section23_1-0.cond.RadioButtonList_10.0",
-        "title": "Do you intend to use this substance in the future? - Details",
-        "guidance": "Provide the details requested.",
-        "fieldKeys": [
-          "drugActivity.0.provideExplanationOfWhyYouIntendOrDoNotIn"
-        ],
-        "gateFieldKey": "drugActivity.0.RadioButtonList_10",
-        "isConditionalBlock": true,
-        "repeatGroup": "section23_1",
-        "repeatIndex": 0,
-        "sourcePages": [
-          105,
-          106,
-          107
-        ]
-      },
-      {
         "id": "section23.section23_1-0.gate.RadioButtonList_12",
         "title": "Have you illegally used drugs in the last 7 years?",
         "guidance": "Answer this question to continue.",
@@ -14248,7 +14236,7 @@
       },
       {
         "id": "section23.section23_1-0.cond.RadioButtonList_12.0",
-        "title": "Have you illegally used drugs in the last 7 years? - Details",
+        "title": "Illegal Drug Use - Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.RadioButtonList_21",
@@ -14261,6 +14249,7 @@
           "drugActivity.0.RadioButtonList_1",
           "drugActivity.0.RadioButtonList_18",
           "drugActivity.0.RadioButtonList_19",
+          "drugActivity.0.provideExplanationOfWhyYouIntendOrDoNotIn_2",
           "drugActivity.0.RadioButtonList_23",
           "drugActivity.0.provideExplanation"
         ],
@@ -14276,7 +14265,7 @@
       },
       {
         "id": "section23.section23_1-0.cond.RadioButtonList_12.1",
-        "title": "Have you illegally used drugs in the last 7 years? - Details",
+        "title": "Illegal Drug Use - Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.provideNatureOfUseFrequencyAndNumberOfTimesUsed",
@@ -14286,43 +14275,10 @@
           "drugActivity.0.isEstimate_2",
           "drugActivity.0.RadioButtonList_2",
           "drugActivity.0.RadioButtonList_9",
-          "drugActivity.0.RadioButtonList_10"
+          "drugActivity.0.RadioButtonList_10",
+          "drugActivity.0.provideExplanationOfWhyYouIntendOrDoNotIn"
         ],
         "gateFieldKey": "drugActivity.0.RadioButtonList_12",
-        "isConditionalBlock": true,
-        "repeatGroup": "section23_1",
-        "repeatIndex": 0,
-        "sourcePages": [
-          105,
-          106,
-          107
-        ]
-      },
-      {
-        "id": "section23.section23_1-0.gate.RadioButtonList_19",
-        "title": "Do you intend to use this substance in the future?",
-        "guidance": "Answer this question to continue.",
-        "fieldKeys": [
-          "drugActivity.0.RadioButtonList_19"
-        ],
-        "gateFieldKey": "drugActivity.0.RadioButtonList_19",
-        "repeatGroup": "section23_1",
-        "repeatIndex": 0,
-        "sourcePages": [
-          105,
-          106,
-          107
-        ],
-        "conditionalInstruction": "Do you intend to use this drug or controlled substance in the future?"
-      },
-      {
-        "id": "section23.section23_1-0.cond.RadioButtonList_19.0",
-        "title": "Do you intend to use this substance in the future? - Details",
-        "guidance": "Provide the details requested.",
-        "fieldKeys": [
-          "drugActivity.0.provideExplanationOfWhyYouIntendOrDoNotIn_2"
-        ],
-        "gateFieldKey": "drugActivity.0.RadioButtonList_19",
         "isConditionalBlock": true,
         "repeatGroup": "section23_1",
         "repeatIndex": 0,
@@ -14350,7 +14306,7 @@
       },
       {
         "id": "section23.section23_2-0.cond.RadioButtonList_37.0",
-        "title": "Have you been involved in illegal drug purchase/tr - Details",
+        "title": "Have you been involved in illegal drug p - Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.RadioButtonList_47",
@@ -14378,7 +14334,7 @@
       },
       {
         "id": "section23.section23_2-0.cond.RadioButtonList_37.1",
-        "title": "Have you been involved in illegal drug purchase/tr - Details",
+        "title": "Have you been involved in illegal drug p - Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.RadioButtonList_48",
@@ -14423,7 +14379,7 @@
       },
       {
         "id": "section23.section_23_3-0.cond.RadioButtonList_69.0",
-        "title": "Have you EVER used drugs while possessing a securi - Details",
+        "title": "Drug Use While Holding Security Clearance - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.completeTheFollowingIfYouRespondedYesToH",
@@ -14458,7 +14414,7 @@
       },
       {
         "id": "section23.section_23_3-0.cond.RadioButtonList_72.0",
-        "title": "Have you EVER used drugs in a law enforcement posi - Details",
+        "title": "Drug Use in Law Enforcement Position - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.completeTheFollowingIfYouRespondedYesToH_2",
@@ -14544,7 +14500,7 @@
       },
       {
         "id": "section23.section_23_4-0.cond.RadioButtonList_89.0",
-        "title": "Have you misused prescription drugs in the last 7  - Details",
+        "title": "Have you misused prescription drugs in t - Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.completeTheFollowingIfYouRespondedYesToI",
@@ -14572,7 +14528,7 @@
       },
       {
         "id": "section23.section_23_4-0.cond.RadioButtonList_89.1",
-        "title": "Have you misused prescription drugs in the last 7  - Details",
+        "title": "Have you misused prescription drugs in t - Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.provideTheDatesOfInvolvementuseFromDateMonthyear_6",
@@ -14611,7 +14567,7 @@
       },
       {
         "id": "section23.section_23_5-0.cond.RadioButtonList_103.0",
-        "title": "Have you EVER been ordered to seek drug counseling - Details",
+        "title": "Court-Ordered Drug Counseling (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.RadioButtonList_104",
@@ -14639,7 +14595,7 @@
       },
       {
         "id": "section23.section_23_5-0.cond.RadioButtonList_103.1",
-        "title": "Have you EVER been ordered to seek drug counseling - Details",
+        "title": "Court-Ordered Drug Counseling (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.zipCode",
@@ -14663,7 +14619,7 @@
       },
       {
         "id": "section23.section_23_5-0.0",
-        "title": "Entry 1",
+        "title": "Drug Counseling Entry",
         "guidance": "We note, with reference to this section, that neither your truthful responses nor information derived from your responses to this section will be used as",
         "fieldKeys": [
           "drugActivity.0.isPresent_7",
@@ -14695,11 +14651,13 @@
           106,
           107
         ],
-        "conditionalInstruction": "Have you  EVER  voluntarily sought counseling or treatment as a result of your use of a drug or"
+        "conditionalInstruction": "Have you  EVER  voluntarily sought counseling or treatment as a result of your use of a drug or",
+        "skipToSection": "section24",
+        "skipOnValue": "2"
       },
       {
         "id": "section23.section_23_6-0.cond.RadioButtonList_172.0",
-        "title": "Have you EVER voluntarily sought drug counseling/t - Details",
+        "title": "Voluntary Drug Counseling (1/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.RadioButtonList_149",
@@ -14727,7 +14685,7 @@
       },
       {
         "id": "section23.section_23_6-0.cond.RadioButtonList_172.1",
-        "title": "Have you EVER voluntarily sought drug counseling/t - Details",
+        "title": "Voluntary Drug Counseling (2/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.provideTheDatesOfTreatmentFromDateMonthyear_4",
@@ -14755,7 +14713,7 @@
       },
       {
         "id": "section23.section_23_6-0.cond.RadioButtonList_172.2",
-        "title": "Have you EVER voluntarily sought drug counseling/t - Details",
+        "title": "Voluntary Drug Counseling (3/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.provideTheNameOfTheTreatmentProviderLastName_3",
@@ -14783,7 +14741,7 @@
       },
       {
         "id": "section23.section_23_6-0.cond.RadioButtonList_172.3",
-        "title": "Have you EVER voluntarily sought drug counseling/t - Details",
+        "title": "Voluntary Drug Counseling (4/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.day_3",
@@ -14822,7 +14780,7 @@
       },
       {
         "id": "section23.section_23_6_1-0.cond.RadioButtonList_131.0",
-        "title": "Did you take action to receive counseling/treatmen - Details",
+        "title": "Counseling Follow-Up (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.aYouHaveIndicatedThatYouDidNotReceive_2",
@@ -14850,7 +14808,7 @@
       },
       {
         "id": "section23.section_23_6_1-0.cond.RadioButtonList_131.1",
-        "title": "Did you take action to receive counseling/treatmen - Details",
+        "title": "Counseling Follow-Up (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "drugActivity.0.isPresent_8",
@@ -14876,7 +14834,7 @@
       },
       {
         "id": "section23.section_23_6_1-0.0",
-        "title": "Entry 1",
+        "title": "Drug Counseling Entry",
         "guidance": "We note, with reference to this section, that neither your truthful responses nor information derived from your responses to this section will be used as",
         "fieldKeys": [
           "drugActivity.0.RadioButtonList_129",
@@ -14912,7 +14870,7 @@
       },
       {
         "id": "section24.cond.RadioButtonList_1.0",
-        "title": "Have you EVER received alcohol counseling or treat - Details (1/3)",
+        "title": "Alcohol Counseling (1/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "alcoholUse.isPresent",
@@ -14938,7 +14896,7 @@
       },
       {
         "id": "section24.cond.RadioButtonList_1.1",
-        "title": "Have you EVER received alcohol counseling or treat - Details (2/3)",
+        "title": "Alcohol Counseling (2/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "alcoholUse.toDateMonthyear_2",
@@ -14964,7 +14922,7 @@
       },
       {
         "id": "section24.cond.RadioButtonList_1.2",
-        "title": "Have you EVER received alcohol counseling or treat - Details (3/3)",
+        "title": "Alcohol Counseling (3/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "alcoholUse.isEstimate_9",
@@ -15007,7 +14965,7 @@
       },
       {
         "id": "section24.section24_2-0.cond.RadioButtonList_42.0",
-        "title": "Have you received additional alcohol counseling? - Details",
+        "title": "Additional Alcohol Counseling (1/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "alcoholUse.0.provideExplanation",
@@ -15035,7 +14993,7 @@
       },
       {
         "id": "section24.section24_2-0.cond.RadioButtonList_42.1",
-        "title": "Have you received additional alcohol counseling? - Details",
+        "title": "Additional Alcohol Counseling (2/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "alcoholUse.0.state",
@@ -15063,7 +15021,7 @@
       },
       {
         "id": "section24.section24_2-0.cond.RadioButtonList_42.2",
-        "title": "Have you received additional alcohol counseling? - Details",
+        "title": "Additional Alcohol Counseling (3/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "alcoholUse.0.toDateMonthyear_2",
@@ -15091,7 +15049,7 @@
       },
       {
         "id": "section24.section24_2-0.cond.RadioButtonList_42.3",
-        "title": "Have you received additional alcohol counseling? - Details",
+        "title": "Additional Alcohol Counseling (4/4)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "alcoholUse.0.day_2",
@@ -15111,7 +15069,7 @@
       },
       {
         "id": "section24.section24_2-0.0",
-        "title": "Entry 1",
+        "title": "Alcohol Counseling Entry",
         "guidance": "In the last seven (7) years  has your use of alcohol had a negative impact on your work performance, your",
         "fieldKeys": [
           "alcoholUse.0.RadioButtonList_38",
@@ -15147,7 +15105,7 @@
       },
       {
         "id": "section24.section24_3-0.cond.RadioButtonList_101.0",
-        "title": "Have you EVER voluntarily sought alcohol counselin - Details",
+        "title": "Voluntary Alcohol Counseling (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "alcoholUse.0.isPresent_4",
@@ -15175,7 +15133,7 @@
       },
       {
         "id": "section24.section24_3-0.cond.RadioButtonList_101.1",
-        "title": "Have you EVER voluntarily sought alcohol counselin - Details",
+        "title": "Voluntary Alcohol Counseling (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "alcoholUse.0.provideTelephoneNumber_4",
@@ -15325,11 +15283,13 @@
           113,
           114
         ],
-        "conditionalInstruction": "Have you  EVER  received counseling or treatment as a result of your use of alcohol in addition to what"
+        "conditionalInstruction": "Have you  EVER  received counseling or treatment as a result of your use of alcohol in addition to what",
+        "skipToSection": "section25",
+        "skipOnValue": "2"
       },
       {
         "id": "section24.section24_4-0.cond.RadioButtonList_142.0",
-        "title": "Have you EVER received additional alcohol counseli - Details",
+        "title": "Additional Alcohol Counseling (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "alcoholUse.0.completeTheFollowingIfYouRespondedYesToH",
@@ -15357,7 +15317,7 @@
       },
       {
         "id": "section24.section24_4-0.cond.RadioButtonList_142.1",
-        "title": "Have you EVER received additional alcohol counseli - Details",
+        "title": "Additional Alcohol Counseling (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "alcoholUse.0.zipCode_8",
@@ -15443,7 +15403,7 @@
       },
       {
         "id": "section25.cond.RadioButtonList_37.0",
-        "title": "Has the U.S. Government investigated your backgrou - Details (1/2)",
+        "title": "Background Investigation Details (1/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "investigationsInfo.completeTheFollowingIfYouRespondedYesToTheUs",
@@ -15468,7 +15428,7 @@
       },
       {
         "id": "section25.cond.RadioButtonList_37.1",
-        "title": "Has the U.S. Government investigated your backgrou - Details (2/2)",
+        "title": "Background Investigation Details (2/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "investigationsInfo.provideTheLevelOfClearanceEligibilityaccessGranted_2",
@@ -15493,7 +15453,7 @@
       },
       {
         "id": "section25.main",
-        "title": "Investigations and Clearances (1/3)",
+        "title": "Investigation Details (1/3)",
         "guidance": "Provide the information requested for Investigations and Clearances.",
         "fieldKeys": [
           "investigationsInfo.ifForeignGovernmentSelectedProvideNameOfGovernment",
@@ -15516,7 +15476,7 @@
       },
       {
         "id": "section25.main.1",
-        "title": "Investigations and Clearances (2/3)",
+        "title": "Investigation Details (2/3)",
         "guidance": "Provide the information requested for Investigations and Clearances.",
         "fieldKeys": [
           "investigationsInfo.usOfficeOfPersonnelManagement",
@@ -15539,7 +15499,7 @@
       },
       {
         "id": "section25.main.2",
-        "title": "Investigations and Clearances (3/3)",
+        "title": "Investigation Details (3/3)",
         "guidance": "Provide the information requested for Investigations and Clearances.",
         "fieldKeys": [
           "investigationsInfo.isEstimate_4",
@@ -15578,7 +15538,7 @@
       },
       {
         "id": "section25.section25_2-0.cond.RadioButtonList_73.0",
-        "title": "Has the U.S. Government granted you a security cle - Details",
+        "title": "Security Clearance Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "investigationsInfo.0.provideTheNameOfTheAgencyThatTookTheAction_2",
@@ -15609,11 +15569,13 @@
           116,
           117
         ],
-        "conditionalInstruction": "Have you  EVER  been debarred from government employment?"
+        "conditionalInstruction": "Have you  EVER  been debarred from government employment?",
+        "skipToSection": "section26",
+        "skipOnValue": "2"
       },
       {
         "id": "section25.section25_2-0.cond.RadioButtonList_78.0",
-        "title": "Has your clearance/access authorization been denie - Details",
+        "title": "Clearance Denial/Revocation Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "investigationsInfo.0.provideAnExplanationOfTheCircumstancesOfThe_4"
@@ -15629,7 +15591,7 @@
       },
       {
         "id": "section25.section25_2-0.0",
-        "title": "Entry 1",
+        "title": "Clearance Entry Details",
         "guidance": "Provide the information requested for Investigations and Clearances.",
         "fieldKeys": [
           "investigationsInfo.0.provideTheNameOfTheAgencyThatTookTheAction",
@@ -15673,7 +15635,7 @@
       },
       {
         "id": "section26.cond.RadioButtonList_4.0",
-        "title": "Have you filed a petition for bankruptcy in the la - Details (1/5)",
+        "title": "Bankruptcy Details (1/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "finances.RadioButtonList_5",
@@ -15699,7 +15661,7 @@
       },
       {
         "id": "section26.cond.RadioButtonList_4.1",
-        "title": "Have you filed a petition for bankruptcy in the la - Details (2/5)",
+        "title": "Bankruptcy Details (2/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "finances.country",
@@ -15725,7 +15687,7 @@
       },
       {
         "id": "section26.cond.RadioButtonList_4.2",
-        "title": "Have you filed a petition for bankruptcy in the la - Details (3/5)",
+        "title": "Bankruptcy Details (3/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "finances.provideTheBankruptcyCourtDocketaccountNumber_2",
@@ -15751,7 +15713,7 @@
       },
       {
         "id": "section26.cond.RadioButtonList_4.3",
-        "title": "Have you filed a petition for bankruptcy in the la - Details (4/5)",
+        "title": "Bankruptcy Details (4/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "finances.middleName_2",
@@ -15777,7 +15739,7 @@
       },
       {
         "id": "section26.cond.RadioButtonList_4.4",
-        "title": "Have you filed a petition for bankruptcy in the la - Details (5/5)",
+        "title": "Bankruptcy Details (5/5)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "finances.zipCode_4",
@@ -15825,7 +15787,7 @@
       },
       {
         "id": "section26.section26_2-0.cond.RadioButtonList_56.0",
-        "title": "Have you experienced financial problems due to gam - Details",
+        "title": "Gambling-Related Financial Problems - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "finances.0.provideAnEstimateOfTheAmountInUs",
@@ -15853,7 +15815,7 @@
       },
       {
         "id": "section26.section26_2-0.cond.RadioButtonList_56.1",
-        "title": "Have you experienced financial problems due to gam - Details",
+        "title": "Gambling-Related Financial Problems - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "finances.0.isEstimate_3",
@@ -15891,7 +15853,7 @@
       },
       {
         "id": "section26.section26_2-0.cond.RadioButtonList_74.0",
-        "title": "Have you failed to file/pay taxes in the last 7 ye - Details",
+        "title": "Tax Filing/Payment Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "finances.0.estimate",
@@ -15919,7 +15881,7 @@
       },
       {
         "id": "section26.section26_2-0.cond.RadioButtonList_74.1",
-        "title": "Have you failed to file/pay taxes in the last 7 ye - Details",
+        "title": "Tax Filing/Payment Issues - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "finances.0.estimate_2",
@@ -16255,7 +16217,9 @@
           119,
           120
         ],
-        "conditionalInstruction": "Other than previously listed, have any of the following happened?"
+        "conditionalInstruction": "Other than previously listed, have any of the following happened?",
+        "skipToSection": "section27",
+        "skipOnValue": "2"
       },
       {
         "id": "section26.section26_8-0.cond.RadioButtonList_193.0",
@@ -16292,11 +16256,13 @@
           119,
           120
         ],
-        "conditionalInstruction": "for any reason?"
+        "conditionalInstruction": "for any reason?",
+        "skipToSection": "section27",
+        "skipOnValue": "2"
       },
       {
         "id": "section26.section26_8-0.cond.RadioButtonList_198.0",
-        "title": "Have you had property repossession or loan default - Details",
+        "title": "Property Repossession/Loan Default - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "finances.0.completeTheFollowingIfYouAnsweredYesToHa_3",
@@ -16324,7 +16290,7 @@
       },
       {
         "id": "section26.section26_8-0.cond.RadioButtonList_198.1",
-        "title": "Have you had property repossession or loan default - Details",
+        "title": "Property Repossession/Loan Default - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "finances.0.notResolved_3",
@@ -16357,11 +16323,13 @@
           118,
           119,
           120
-        ]
+        ],
+        "skipToSection": "section27",
+        "skipOnValue": "2"
       },
       {
         "id": "section26.section26_9-0.cond.RadioButtonList_220.0",
-        "title": "Have you had property repossession or loan default - Details",
+        "title": "Property Repossession/Loan Default - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "finances.0.completeTheFollowingIfYouAnsweredYesToHa_4",
@@ -16389,7 +16357,7 @@
       },
       {
         "id": "section26.section26_9-0.cond.RadioButtonList_220.1",
-        "title": "Have you had property repossession or loan default - Details",
+        "title": "Property Repossession/Loan Default - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "finances.0.notResolved_4",
@@ -16410,7 +16378,7 @@
       },
       {
         "id": "section26.section26_9-0.0",
-        "title": "Entry 1",
+        "title": "Financial Issue Entry",
         "guidance": "In the last seven (7) years  have you failed to file or pay Federal, state, or other taxes when required by law",
         "fieldKeys": [
           "finances.0.provideTheAssociatedLoanaccountNumbersInvolved_4",
@@ -16447,7 +16415,7 @@
       },
       {
         "id": "section27.cond.RadioButtonList_28.0",
-        "title": "Have you illegally accessed IT systems in the last - Details (1/2)",
+        "title": "Illegal IT Access - Details (1/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "technology.completeTheFollowingIfYouRespondedYesToH",
@@ -16472,7 +16440,7 @@
       },
       {
         "id": "section27.cond.RadioButtonList_28.1",
-        "title": "Have you illegally accessed IT systems in the last - Details (2/2)",
+        "title": "Illegal IT Access - Details (2/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "technology.city_3",
@@ -16505,7 +16473,7 @@
       },
       {
         "id": "section27.cond.RadioButtonList_29.0",
-        "title": "Have you illegally modified/destroyed IT systems? - Details (1/2)",
+        "title": "Illegal IT Modification - Details (1/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "technology.completeTheFollowingIfYouRespondedYesToH_2",
@@ -16530,7 +16498,7 @@
       },
       {
         "id": "section27.cond.RadioButtonList_29.1",
-        "title": "Have you illegally modified/destroyed IT systems? - Details (2/2)",
+        "title": "Illegal IT Modification - Details (2/2)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "technology.city",
@@ -16561,11 +16529,13 @@
         "sourcePages": [
           125,
           126
-        ]
+        ],
+        "skipToSection": "section28",
+        "skipOnValue": "2"
       },
       {
         "id": "section27.section27_2-0.cond.RadioButtonList_57.0",
-        "title": "Have you introduced unauthorized hardware/software - Details",
+        "title": "Unauthorized Hardware/Software - Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "technology.0.completeTheFollowingIfYouRespondedYesToH",
@@ -16592,7 +16562,7 @@
       },
       {
         "id": "section27.section27_2-0.cond.RadioButtonList_57.1",
-        "title": "Have you introduced unauthorized hardware/software - Details",
+        "title": "Unauthorized Hardware/Software - Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "technology.0.city_2",
@@ -16626,7 +16596,9 @@
         "gateFieldKey": "civil.RadioButtonList_1",
         "sourcePages": [
           127
-        ]
+        ],
+        "skipToSection": "section29",
+        "skipOnValue": "2"
       },
       {
         "id": "section28.cond.RadioButtonList_1.0",
@@ -16696,7 +16668,7 @@
       },
       {
         "id": "section29.cond.RadioButtonList_1.0",
-        "title": "Have you EVER knowingly engaged in acts of terrori - Details (1/3)",
+        "title": "Acts of Terrorism - Details (1/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "association.completeTheFollowingIfYouRespondedYesToB",
@@ -16723,7 +16695,7 @@
       },
       {
         "id": "section29.cond.RadioButtonList_1.1",
-        "title": "Have you EVER knowingly engaged in acts of terrori - Details (2/3)",
+        "title": "Acts of Terrorism - Details (2/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "association.isEstimate_2",
@@ -16750,7 +16722,7 @@
       },
       {
         "id": "section29.cond.RadioButtonList_1.2",
-        "title": "Have you EVER knowingly engaged in acts of terrori - Details (3/3)",
+        "title": "Acts of Terrorism - Details (3/3)",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "association.isPresent_2",
@@ -16789,7 +16761,7 @@
       },
       {
         "id": "section29.section29_2-0.cond.RadioButtonList_36.0",
-        "title": "Have you engaged in activities to overthrow the U. - Details",
+        "title": "Overthrow Activities - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "association.0.isPresent",
@@ -16827,7 +16799,7 @@
       },
       {
         "id": "section29.section29_2-0.cond.RadioButtonList_42.0",
-        "title": "Have you advocated acts of terrorism or overthrow? - Details",
+        "title": "Terrorism Advocacy - Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "association.0.entry2DescribeTheNatureAndReasonsForTheActivity",
@@ -16855,7 +16827,7 @@
       },
       {
         "id": "section29.section29_2-0.cond.RadioButtonList_42.1",
-        "title": "Have you advocated acts of terrorism or overthrow? - Details",
+        "title": "Terrorism Advocacy - Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "association.0.isPresent_3",
@@ -16876,7 +16848,7 @@
       },
       {
         "id": "section29.section29_2-0.0",
-        "title": "Entry 1",
+        "title": "Association/Terrorism Entry",
         "guidance": "The following pertain to your associations. You are required to answer the questions fully and truthfully, and your failure to do so could be grounds for an",
         "fieldKeys": [
           "association.0.completeTheFollowingIfYouRespondedYesToE",
@@ -16909,7 +16881,7 @@
       },
       {
         "id": "section29.section29_3-0.cond.RadioButtonList_60.0",
-        "title": "Have you been a member of an organization advocati - Details",
+        "title": "Violent Organization Membership - Details (1/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "association.0.completeTheFollowingIfYouRespondedYesToH_2",
@@ -16937,7 +16909,7 @@
       },
       {
         "id": "section29.section29_3-0.cond.RadioButtonList_60.1",
-        "title": "Have you been a member of an organization advocati - Details",
+        "title": "Violent Organization Membership - Details (2/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "association.0.isEstimate_10",
@@ -16965,7 +16937,7 @@
       },
       {
         "id": "section29.section29_3-0.cond.RadioButtonList_60.2",
-        "title": "Have you been a member of an organization advocati - Details",
+        "title": "Violent Organization Membership - Details (3/3)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "association.0.isPresent_6",
@@ -17006,7 +16978,7 @@
       },
       {
         "id": "section29.section29_4-0.cond.RadioButtonList_104.0",
-        "title": "Have you been a member of a totalitarian party? - Details",
+        "title": "Totalitarian Party Membership - Details (1/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "association.0.isPresent_7",
@@ -17034,7 +17006,7 @@
       },
       {
         "id": "section29.section29_4-0.cond.RadioButtonList_104.1",
-        "title": "Have you been a member of a totalitarian party? - Details",
+        "title": "Totalitarian Party Membership - Details (2/2)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "association.0.provideAllPositionsHeldInTheOrganizationIfAny_7",
@@ -17059,7 +17031,7 @@
       },
       {
         "id": "section29.section29_4-0.0",
-        "title": "Entry 1",
+        "title": "Association/Terrorism Entry",
         "guidance": "The following pertain to your associations. You are required to answer the questions fully and truthfully, and your failure to do so could be grounds for an",
         "fieldKeys": [
           "association.0.completeTheFollowingIfYouRespondedYesToB",
@@ -17102,7 +17074,7 @@
       },
       {
         "id": "section29.section29_5-0.cond.RadioButtonList_129.0",
-        "title": "Have you engaged in activities to alter government - Details",
+        "title": "Alter Government by Force - Details",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "association.0.isPresent_9",
@@ -17130,7 +17102,7 @@
       },
       {
         "id": "section29.section29_5-0.0",
-        "title": "Entry 1",
+        "title": "Association/Terrorism Entry",
         "guidance": "The following pertain to your associations. You are required to answer the questions fully and truthfully, and your failure to do so could be grounds for an",
         "fieldKeys": [
           "association.0.completeTheFollowingIfYouRespondedYesToH_3",
@@ -17167,50 +17139,39 @@
     ]
   },
   "section30": {
-    "sectionKey": "section30",
     "steps": [
       {
-        "id": "section30.gate.RadioButtonList_12",
-        "title": "Do you have a condition affecting your judgment or reliability?",
-        "guidance": "Answer this question to continue with Certification / Signature.",
-        "fieldKeys": [
-          "signature.RadioButtonList_12"
-        ],
-        "gateFieldKey": "signature.RadioButtonList_12",
+        "id": "section30-continuation",
+        "title": "Continuation Space",
+        "guidance": "Use this space to continue any answers that required additional space. Include the question number before each answer.",
         "sourcePages": [
-          133,
-          134,
-          135
+          133
         ],
-        "conditionalInstruction": "Does the person under investigation have a condition that could impair his or her judgment, reliability, or trustworthiness?",
-        "pdfInstruction": "Signature My statements on this form, and on any attachments to it, are true, complete, and correct to the best of my knowledge and belief and are made in good faith. I Signature  (Sign in ink) Photocopies of this authorization with my signature are valid. This authorization shall remain in effect so long as I occupy a national security Signature  (Sign in ink) favorably to decisions about your eligibility. Your signature will allow the practitioner(s) to answer only those questions identified below. Photocopies of this authorization with my signature are valid. This authorization is valid for one (1) year from the date signed or upon Signature  (Sign in ink) Signature  (Sign in ink) Photocopies of this authorization with my signature are valid. This authorization shall remain in effect so long as I occupy a Signature  (Sign in ink)"
-      },
-      {
-        "id": "section30.cond.RadioButtonList_12.0",
-        "title": "Do you have a condition affecting your judgment or - Details",
-        "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
-          "signature.ifSo",
-          "signature.whatIsThePrognosis"
-        ],
-        "gateFieldKey": "signature.RadioButtonList_12",
-        "isConditionalBlock": true,
-        "sourcePages": [
-          133,
-          134,
-          135
+          "signature.useTheSpaceBelowToContinueAnswersOrABlank"
         ]
       },
       {
-        "id": "section30.main",
-        "title": "Certification / Signature (1/2)",
-        "guidance": "answer, identify the number of the item and attempt to maintain sequential order and question format.",
+        "id": "section30-certification",
+        "title": "Certification",
+        "pdfInstruction": "My statements on this form, and on any attachments to it, are true, complete, and correct to the best of my knowledge and belief and are made in good faith. I understand that a knowing and willful false statement on this form can be punished by fine or imprisonment or both (18 U.S.C. 1001).",
+        "sourcePages": [
+          133
+        ],
         "fieldKeys": [
-          "signature.useTheSpaceBelowToContinueAnswersOrABlank",
-          "signature.dateSignedMMdDyYYY",
+          "signature.dateSignedMMdDyYYY"
+        ]
+      },
+      {
+        "id": "section30-release-info",
+        "title": "Authorization for Release of Information",
+        "pdfInstruction": "By signing, you authorize investigators to obtain information about you from schools, employers, criminal justice agencies, credit bureaus, consumer reporting agencies, and other sources during your background investigation.",
+        "sourcePages": [
+          134
+        ],
+        "fieldKeys": [
           "signature.fullNameTypeOrPrintLegibly",
           "signature.dateSignedMMdDyYYY_2",
-          "personalInfo.ssn",
           "signature.dateOfBirthMMdDyYYY",
           "signature.otherNamesUsed",
           "signature.currentStreetAddressApt",
@@ -17218,17 +17179,15 @@
           "signature.state",
           "signature.zipCode",
           "signature.telephoneNumber"
-        ],
-        "sourcePages": [
-          133,
-          134,
-          135
         ]
       },
       {
-        "id": "section30.main.1",
-        "title": "Certification / Signature (2/2)",
-        "guidance": "answer, identify the number of the item and attempt to maintain sequential order and question format.",
+        "id": "section30-hipaa",
+        "title": "Medical Release Authorization (HIPAA)",
+        "pdfInstruction": "If you answered \"Yes\" to Section 21, sign this authorization to allow your health practitioner(s) to answer questions about your mental health consultations. This authorization is valid for one year from the date signed.",
+        "sourcePages": [
+          135
+        ],
         "fieldKeys": [
           "signature.fullNameTypeOrPrintLegibly_2",
           "signature.dateSignedMMdDyYYY_3",
@@ -17237,18 +17196,23 @@
           "signature.cityCountry_2",
           "signature.state_2",
           "signature.zipCode_2",
-          "signature.telephoneNumber_2",
-          "signature.datesOfTreatment",
+          "signature.telephoneNumber_2"
+        ]
+      },
+      {
+        "id": "section30-credit",
+        "title": "Fair Credit Reporting Authorization",
+        "pdfInstruction": "By signing, you authorize investigators to obtain consumer and credit report information about you for the purpose of your background investigation.",
+        "sourcePages": [
+          136
+        ],
+        "fieldKeys": [
           "signature.printName",
           "signature.dateSignedMMdDyYYY_4"
-        ],
-        "sourcePages": [
-          133,
-          134,
-          135
         ]
       }
-    ]
+    ],
+    "sectionKey": "section30"
   },
   "section4": {
     "sectionKey": "section4",
@@ -17280,81 +17244,14 @@
         "gateFieldKey": "namesInfo.RadioButtonList_12",
         "sourcePages": [
           5
-        ]
+        ],
+        "skipToSection": "section6",
+        "skipOnValue": "2"
       },
       {
         "id": "section5.cond.RadioButtonList_12.0",
-        "title": "Have you used any other names? - Details (1/3)",
+        "title": "Other Name Details (Entry 1)",
         "guidance": "These fields appear because you answered Yes.",
-        "fieldKeys": [
-          "namesInfo.suffix_2",
-          "namesInfo.1.middleName",
-          "namesInfo.1.firstName",
-          "namesInfo.1.lastName",
-          "namesInfo.isPresent_2",
-          "namesInfo.1.startDate",
-          "namesInfo.1.endDate",
-          "namesInfo.1.reasonChanged",
-          "namesInfo.RadioButtonList_19",
-          "namesInfo.isEstimate_3",
-          "namesInfo.isEstimate_4",
-          "namesInfo.suffix_3"
-        ],
-        "gateFieldKey": "namesInfo.RadioButtonList_12",
-        "isConditionalBlock": true,
-        "sourcePages": [
-          5
-        ]
-      },
-      {
-        "id": "section5.cond.RadioButtonList_12.1",
-        "title": "Have you used any other names? - Details (2/3)",
-        "guidance": "These fields appear because you answered Yes.",
-        "fieldKeys": [
-          "namesInfo.2.middleName",
-          "namesInfo.2.firstName",
-          "namesInfo.2.lastName",
-          "namesInfo.isPresent_3",
-          "namesInfo.2.startDate",
-          "namesInfo.2.endDate",
-          "namesInfo.2.reasonChanged",
-          "namesInfo.RadioButtonList_30",
-          "namesInfo.isEstimate_5",
-          "namesInfo.isEstimate_6",
-          "namesInfo.suffix_4",
-          "namesInfo.3.middleName"
-        ],
-        "gateFieldKey": "namesInfo.RadioButtonList_12",
-        "isConditionalBlock": true,
-        "sourcePages": [
-          5
-        ]
-      },
-      {
-        "id": "section5.cond.RadioButtonList_12.2",
-        "title": "Have you used any other names? - Details (3/3)",
-        "guidance": "These fields appear because you answered Yes.",
-        "fieldKeys": [
-          "namesInfo.3.firstName",
-          "namesInfo.3.lastName",
-          "namesInfo.isPresent_4",
-          "namesInfo.3.startDate",
-          "namesInfo.3.endDate",
-          "namesInfo.3.reasonChanged",
-          "namesInfo.RadioButtonList_41",
-          "namesInfo.isEstimate_7",
-          "namesInfo.isEstimate_8"
-        ],
-        "gateFieldKey": "namesInfo.RadioButtonList_12",
-        "isConditionalBlock": true,
-        "sourcePages": [
-          5
-        ]
-      },
-      {
-        "id": "section5.main",
-        "title": "Other Names Used",
-        "guidance": "PERSONS COMPLETING THIS FORM SHOULD BEGIN WITH THE QUESTIONS BELOW AFTER CAREFULLY READING",
         "fieldKeys": [
           "namesInfo.suffix",
           "namesInfo.0.middleName",
@@ -17366,8 +17263,79 @@
           "namesInfo.0.reasonChanged",
           "namesInfo.RadioButtonList_7",
           "namesInfo.isEstimate",
-          "namesInfo.isEstimate_2"
+          "namesInfo.isEstimate_2",
+          "namesInfo.suffix_2"
         ],
+        "gateFieldKey": "namesInfo.RadioButtonList_12",
+        "isConditionalBlock": true,
+        "sourcePages": [
+          5
+        ]
+      },
+      {
+        "id": "section5.cond.RadioButtonList_12.1",
+        "title": "Other Name Details (Entry 2)",
+        "guidance": "These fields appear because you answered Yes.",
+        "fieldKeys": [
+          "namesInfo.1.middleName",
+          "namesInfo.1.firstName",
+          "namesInfo.1.lastName",
+          "namesInfo.isPresent_2",
+          "namesInfo.1.startDate",
+          "namesInfo.1.endDate",
+          "namesInfo.1.reasonChanged",
+          "namesInfo.RadioButtonList_19",
+          "namesInfo.isEstimate_3",
+          "namesInfo.isEstimate_4",
+          "namesInfo.suffix_3",
+          "namesInfo.2.middleName"
+        ],
+        "gateFieldKey": "namesInfo.RadioButtonList_12",
+        "isConditionalBlock": true,
+        "sourcePages": [
+          5
+        ]
+      },
+      {
+        "id": "section5.cond.RadioButtonList_12.2",
+        "title": "Other Name Details (Entry 3)",
+        "guidance": "These fields appear because you answered Yes.",
+        "fieldKeys": [
+          "namesInfo.2.firstName",
+          "namesInfo.2.lastName",
+          "namesInfo.isPresent_3",
+          "namesInfo.2.startDate",
+          "namesInfo.2.endDate",
+          "namesInfo.2.reasonChanged",
+          "namesInfo.RadioButtonList_30",
+          "namesInfo.isEstimate_5",
+          "namesInfo.isEstimate_6",
+          "namesInfo.suffix_4",
+          "namesInfo.3.middleName",
+          "namesInfo.3.firstName"
+        ],
+        "gateFieldKey": "namesInfo.RadioButtonList_12",
+        "isConditionalBlock": true,
+        "sourcePages": [
+          5
+        ]
+      },
+      {
+        "id": "section5.cond.RadioButtonList_12.3",
+        "title": "Other Name Details (Entry 4)",
+        "guidance": "These fields appear because you answered Yes.",
+        "fieldKeys": [
+          "namesInfo.3.lastName",
+          "namesInfo.isPresent_4",
+          "namesInfo.3.startDate",
+          "namesInfo.3.endDate",
+          "namesInfo.3.reasonChanged",
+          "namesInfo.RadioButtonList_41",
+          "namesInfo.isEstimate_7",
+          "namesInfo.isEstimate_8"
+        ],
+        "gateFieldKey": "namesInfo.RadioButtonList_12",
+        "isConditionalBlock": true,
         "sourcePages": [
           5
         ]
@@ -17451,11 +17419,13 @@
         "sourcePages": [
           6
         ],
-        "conditionalInstruction": "Do you possess a U.S. passport (current or expired)?"
+        "conditionalInstruction": "Do you possess a U.S. passport (current or expired)?",
+        "skipToSection": "section9",
+        "skipOnValue": "2"
       },
       {
         "id": "section8.cond.RadioButtonList_1.0",
-        "title": "Do you possess a U.S. passport (current or expired - Details",
+        "title": "U.S. Passport Details",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "passportInfo.provideTheFollowingInformationForTheMostRecentUs",
@@ -17490,11 +17460,13 @@
         "sourcePages": [
           6,
           7
-        ]
+        ],
+        "skipToSection": "section10",
+        "skipOnValue": "1"
       },
       {
         "id": "section9.cond.RadioButtonList_1.0",
-        "title": "What is your citizenship basis? - Details (1/6)",
+        "title": "Citizenship Details (1/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "citizenshipInfo.explanation",
@@ -17519,7 +17491,7 @@
       },
       {
         "id": "section9.cond.RadioButtonList_1.1",
-        "title": "What is your citizenship basis? - Details (2/6)",
+        "title": "Citizenship Details (2/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "citizenshipInfo.provideTheNameInWhichTheCertificateWasIssued",
@@ -17544,7 +17516,7 @@
       },
       {
         "id": "section9.cond.RadioButtonList_1.2",
-        "title": "What is your citizenship basis? - Details (3/6)",
+        "title": "Citizenship Details (3/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "citizenshipInfo.isEstimate_3",
@@ -17569,7 +17541,7 @@
       },
       {
         "id": "section9.cond.RadioButtonList_1.3",
-        "title": "What is your citizenship basis? - Details (4/6)",
+        "title": "Citizenship Details (4/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "citizenshipInfo.otherProvideExplanation",
@@ -17595,7 +17567,7 @@
       },
       {
         "id": "section9.cond.RadioButtonList_1.4",
-        "title": "What is your citizenship basis? - Details (5/6)",
+        "title": "Citizenship Details (5/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "citizenshipInfo.otherProvideExplanation_2",
@@ -17620,7 +17592,7 @@
       },
       {
         "id": "section9.cond.RadioButtonList_1.5",
-        "title": "What is your citizenship basis? - Details (6/6)",
+        "title": "Citizenship Details (6/6)",
         "guidance": "Provide the details requested.",
         "fieldKeys": [
           "citizenshipInfo.provideExplanation_2",
@@ -17642,22 +17614,8 @@
         ]
       },
       {
-        "id": "section9.gate.RadioButtonList_15",
-        "title": "Were you born on a U.S. military installation?",
-        "guidance": "Answer this question to continue with Citizenship Status.",
-        "fieldKeys": [
-          "citizenshipInfo.RadioButtonList_15"
-        ],
-        "gateFieldKey": "citizenshipInfo.RadioButtonList_15",
-        "sourcePages": [
-          6,
-          7
-        ],
-        "conditionalInstruction": "Were you born on a U.S. military installation?"
-      },
-      {
         "id": "section9.cond.RadioButtonList_15.0",
-        "title": "Were you born on a U.S. military installation? - Details",
+        "title": "Military Installation Birth Details",
         "guidance": "These fields appear because you answered Yes.",
         "fieldKeys": [
           "citizenshipInfo.RadioButtonList_21",

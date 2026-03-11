@@ -89,6 +89,8 @@ export function RepeatGroupCards({
           onEditEntry={onEditEntry}
           onAddEntry={handleAddEntry}
           entityLabel={linkedConfig?.entityLabel}
+          linkedConfig={linkedConfig}
+          sectionKey={sectionKey}
         />
       </div>
     </div>
@@ -106,6 +108,8 @@ interface ProgressiveEntryListProps {
   onEditEntry: (stepIndex: number) => void;
   onAddEntry: () => void;
   entityLabel?: string;
+  linkedConfig?: LinkedGroupConfig | null;
+  sectionKey?: SF86Section;
 }
 
 function ProgressiveEntryList({
@@ -115,6 +119,8 @@ function ProgressiveEntryList({
   onEditEntry,
   onAddEntry,
   entityLabel,
+  linkedConfig,
+  sectionKey,
 }: ProgressiveEntryListProps) {
   // Collect ALL field keys across ALL entries for a single subscription
   const allFieldKeys = useMemo(() => {
@@ -200,6 +206,16 @@ function ProgressiveEntryList({
           steps={entrySteps}
           entityLabel={entityLabel}
           onEdit={() => {
+            // For linked groups, use getEntityStepRange to find the true
+            // first step across ALL linked sub-groups for this entity.
+            if (linkedConfig && sectionKey) {
+              const range = getEntityStepRange(linkedConfig, sectionKey, steps, idx);
+              if (range) {
+                onEditEntry(range.startIdx);
+                return;
+              }
+            }
+            // Fallback for non-linked groups
             const firstStep = entrySteps[0];
             const globalIdx = steps.indexOf(firstStep);
             onEditEntry(globalIdx >= 0 ? globalIdx : 0);

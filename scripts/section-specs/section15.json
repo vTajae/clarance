@@ -1,0 +1,181 @@
+{
+  "section": "section15",
+  "pages": [
+    34,
+    35,
+    36,
+    37
+  ],
+  "fieldCount": 141,
+  "gateFieldCount": 5,
+  "gateFieldKeys": [
+    "militaryHistoryInfo.0.RadioButtonList_1",
+    "militaryHistoryInfo.0.RadioButtonList_14",
+    "militaryHistoryInfo.0.RadioButtonList_41",
+    "peopleThatKnow.0.RadioButtonList_27",
+    "serviceInfo.0.RadioButtonList_5"
+  ],
+  "routing": {
+    "NO": "section16"
+  },
+  "repeatGroups": {
+    "section14_1": {
+      "fieldsPerIndex": 35,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section15_2": {
+      "fieldsPerIndex": 13,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section15_3": {
+      "fieldsPerIndex": 47,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section16_1": {
+      "fieldsPerIndex": 46,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [
+    {
+      "number": "15",
+      "text": "1   Complete the following if you responded  'Yes'  to having served in the U.S. Military.",
+      "yPosition": 227.5,
+      "fieldKeys": [
+        "serviceInfo.0.RadioButtonList_6",
+        "serviceInfo.0.stateOfServiceIfNationalGuard",
+        "serviceInfo.0.RadioButtonList_8",
+        "serviceInfo.0.provideYourDatesOfServiceFromDateMonthyear",
+        "serviceInfo.0.isEstimate",
+        "serviceInfo.0.toDateMonthyear",
+        "serviceInfo.0.isPresent",
+        "serviceInfo.0.isEstimate_2",
+        "serviceInfo.0.provideYourServiceNumber",
+        "serviceInfo.0.RadioButtonList_15",
+        "serviceInfo.0.RadioButtonList_16",
+        "serviceInfo.0.provideTheDateOfDischargeListedMonthyear",
+        "serviceInfo.0.isEstimate_3",
+        "serviceInfo.0.otherProvideType",
+        "serviceInfo.0.provideTheReasonsForTheDischarge",
+        "serviceInfo.0.RadioButtonList_22",
+        "serviceInfo.0.RadioButtonList_23",
+        "serviceInfo.0.stateOfServiceIfNationalGuard_2",
+        "serviceInfo.0.RadioButtonList_25",
+        "serviceInfo.0.provideYourServiceNumber_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "15",
+      "text": "2",
+      "yPosition": 73.2,
+      "fieldKeys": [
+        "militaryHistoryInfo.0.RadioButtonList_1",
+        "militaryHistoryInfo.0.isEstimate",
+        "militaryHistoryInfo.0.152CompleteTheFollowingIfYouRespondedYes",
+        "militaryHistoryInfo.0.provideADescriptionOfTheUniformCodeOfMilit",
+        "militaryHistoryInfo.0.provideTheNameOfTheDisciplinaryProcedure",
+        "militaryHistoryInfo.0.provideTheDescriptionOfTheMilitaryCourtOrO",
+        "militaryHistoryInfo.0.provideTheDescriptionOfTheFinalOutcomeOfTh",
+        "militaryHistoryInfo.0.isEstimate_2",
+        "militaryHistoryInfo.0.152Entry2",
+        "militaryHistoryInfo.0.provideADescriptionOfTheUniformCodeOfMilit_2",
+        "militaryHistoryInfo.0.provideTheNameOfTheDisciplinaryProcedure_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "15",
+      "text": "3",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "militaryHistoryInfo.0.RadioButtonList_14",
+        "militaryHistoryInfo.0.RadioButtonList_15",
+        "militaryHistoryInfo.0.provideYourPeriodOfServiceFromDateMonthyear",
+        "militaryHistoryInfo.0.isEstimate_3",
+        "militaryHistoryInfo.0.toDateMonthyear",
+        "militaryHistoryInfo.0.isEstimate_4",
+        "militaryHistoryInfo.0.isPresent",
+        "militaryHistoryInfo.0.provideTheNameOfTheForeignOrganization",
+        "militaryHistoryInfo.0.provideTheNameOfTheCountry",
+        "militaryHistoryInfo.0.provideTheHighestPositionrankHeld",
+        "militaryHistoryInfo.0.provideDivisiondepartmentofficeInWhichYouServed",
+        "militaryHistoryInfo.0.provideADescriptionOfTheReasonForLeavingTh",
+        "militaryHistoryInfo.0.provideADescriptionOfTheCircumstancesOfYour",
+        "militaryHistoryInfo.0.middleName",
+        "militaryHistoryInfo.0.contact1ProvideTheContactsFullNameLastName",
+        "militaryHistoryInfo.0.firstName",
+        "militaryHistoryInfo.0.suffix",
+        "militaryHistoryInfo.0.RadioButtonList_41",
+        "militaryHistoryInfo.0.specify"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 15)",
+      "y": 86.1,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section15"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 15.2)",
+      "y": 206.3,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section15"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 15.3)",
+      "y": 77.1,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section15"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to In the last seven (7) years, have you been subject to court martial or other disciplinary procedure under the",
+      "y": 106.0,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 16)",
+      "y": 74.8,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section16"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 16)",
+      "y": 303.5,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section16"
+    },
+    {
+      "text": "NO  (If NO, Proceed to Section 16)",
+      "y": 281.0,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section16"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 241.9,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 460.1,
+      "text": "Entry #2"
+    }
+  ]
+}

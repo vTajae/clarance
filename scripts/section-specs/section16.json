@@ -1,0 +1,36 @@
+{
+  "section": "section16",
+  "pages": [
+    38
+  ],
+  "fieldCount": 108,
+  "gateFieldCount": 0,
+  "gateFieldKeys": [],
+  "routing": {},
+  "repeatGroups": {
+    "section16_3": {
+      "fieldsPerIndex": 108,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [],
+  "instructions": [],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 109.9,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 315.1,
+      "text": "Entry #2"
+    },
+    {
+      "index": 2,
+      "yStart": 522.1,
+      "text": "Entry #3"
+    }
+  ]
+}

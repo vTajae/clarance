@@ -1,0 +1,278 @@
+{
+  "section": "section20C",
+  "pages": [
+    84,
+    85,
+    86,
+    87
+  ],
+  "fieldCount": 114,
+  "gateFieldCount": 1,
+  "gateFieldKeys": [
+    "foreignActivities.RadioButtonList_677"
+  ],
+  "routing": {
+    "NO": "section21",
+    "YES": "section21"
+  },
+  "repeatGroups": {},
+  "questions": [
+    {
+      "number": "1",
+      "text": "5",
+      "yPosition": 186.8,
+      "fieldKeys": [
+        "foreignActivities.provideTheDatesOfYourTravelToThisCountry",
+        "foreignActivities.toDateMonthyear_11",
+        "foreignActivities.isPresent_11",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToH_5",
+        "foreignActivities.RadioButtonList_698"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "11",
+      "text": "20",
+      "yPosition": 186.8,
+      "fieldKeys": [],
+      "routing": {}
+    },
+    {
+      "number": "6",
+      "text": "10",
+      "yPosition": 200.3,
+      "fieldKeys": [
+        "foreignActivities.isEstimate_69",
+        "foreignActivities.isEstimate_70",
+        "foreignActivities.ifYesProvideExplanation_7",
+        "foreignActivities.ifYesProvideExplanation_8",
+        "foreignActivities.RadioButtonList_686",
+        "foreignActivities.ifYesProvideExplanation_9",
+        "foreignActivities.RadioButtonList_688",
+        "foreignActivities.ifYesProvideExplanation_10",
+        "foreignActivities.RadioButtonList_690",
+        "foreignActivities.ifYesProvideExplanation_11",
+        "foreignActivities.RadioButtonList_692",
+        "foreignActivities.visitFamilyOrFriends",
+        "foreignActivities.tradeShowsConferencesAndSeminars",
+        "foreignActivities.education",
+        "foreignActivities.tourism",
+        "foreignActivities.volunteerActivities",
+        "foreignActivities.provideThePurposeOfTheTravelToThisCountry",
+        "foreignActivities.other",
+        "foreignActivities.RadioButtonList_706"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "21",
+      "text": "30",
+      "yPosition": 200.3,
+      "fieldKeys": [],
+      "routing": {}
+    },
+    {
+      "number": "1",
+      "text": "5",
+      "yPosition": 137.1,
+      "fieldKeys": [
+        "foreignActivities.provideTheDatesOfYourTravelToThisCountry_2",
+        "foreignActivities.toDateMonthyear_12",
+        "foreignActivities.isPresent_12",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToH_6",
+        "foreignActivities.RadioButtonList_726"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "11",
+      "text": "20",
+      "yPosition": 137.1,
+      "fieldKeys": [],
+      "routing": {}
+    },
+    {
+      "number": "6",
+      "text": "10",
+      "yPosition": 150.6,
+      "fieldKeys": [
+        "foreignActivities.isEstimate_71",
+        "foreignActivities.isEstimate_72",
+        "foreignActivities.ifYesProvideExplanation_14",
+        "foreignActivities.ifYesProvideExplanation_15",
+        "foreignActivities.RadioButtonList_714",
+        "foreignActivities.ifYesProvideExplanation_16",
+        "foreignActivities.RadioButtonList_716",
+        "foreignActivities.ifYesProvideExplanation_17",
+        "foreignActivities.RadioButtonList_718",
+        "foreignActivities.ifYesProvideExplanation_18",
+        "foreignActivities.RadioButtonList_720",
+        "foreignActivities.visitFamilyOrFriends_2",
+        "foreignActivities.tradeShowsConferencesAndSeminars_2",
+        "foreignActivities.education_2",
+        "foreignActivities.tourism_2",
+        "foreignActivities.volunteerActivities_2",
+        "foreignActivities.provideThePurposeOfTheTravelToThisCountry_2",
+        "foreignActivities.other_2",
+        "foreignActivities.RadioButtonList_734"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "21",
+      "text": "30",
+      "yPosition": 150.6,
+      "fieldKeys": [],
+      "routing": {}
+    },
+    {
+      "number": "1",
+      "text": "5",
+      "yPosition": 137.1,
+      "fieldKeys": [
+        "foreignActivities.provideTheDatesOfYourTravelToThisCountry_3",
+        "foreignActivities.toDateMonthyear_13",
+        "foreignActivities.isPresent_13",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToH_7",
+        "foreignActivities.RadioButtonList_754"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "11",
+      "text": "20",
+      "yPosition": 137.1,
+      "fieldKeys": [],
+      "routing": {}
+    },
+    {
+      "number": "6",
+      "text": "10",
+      "yPosition": 150.6,
+      "fieldKeys": [
+        "foreignActivities.isEstimate_73",
+        "foreignActivities.isEstimate_74",
+        "foreignActivities.ifYesProvideExplanation_21",
+        "foreignActivities.ifYesProvideExplanation_22",
+        "foreignActivities.RadioButtonList_742",
+        "foreignActivities.ifYesProvideExplanation_23",
+        "foreignActivities.RadioButtonList_744",
+        "foreignActivities.ifYesProvideExplanation_24",
+        "foreignActivities.RadioButtonList_746",
+        "foreignActivities.ifYesProvideExplanation_25",
+        "foreignActivities.RadioButtonList_748",
+        "foreignActivities.visitFamilyOrFriends_3",
+        "foreignActivities.tradeShowsConferencesAndSeminars_3",
+        "foreignActivities.education_3",
+        "foreignActivities.tourism_3",
+        "foreignActivities.volunteerActivities_3",
+        "foreignActivities.provideThePurposeOfTheTravelToThisCountry_3",
+        "foreignActivities.other_3",
+        "foreignActivities.RadioButtonList_762"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "21",
+      "text": "30",
+      "yPosition": 150.6,
+      "fieldKeys": [],
+      "routing": {}
+    },
+    {
+      "number": "1",
+      "text": "5",
+      "yPosition": 137.1,
+      "fieldKeys": [
+        "foreignActivities.provideTheDatesOfYourTravelToThisCountry_4",
+        "foreignActivities.toDateMonthyear_14",
+        "foreignActivities.isPresent_14",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToH_8",
+        "foreignActivities.RadioButtonList_782"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "11",
+      "text": "20",
+      "yPosition": 137.1,
+      "fieldKeys": [],
+      "routing": {}
+    },
+    {
+      "number": "6",
+      "text": "10",
+      "yPosition": 150.6,
+      "fieldKeys": [
+        "foreignActivities.isEstimate_75",
+        "foreignActivities.isEstimate_76",
+        "foreignActivities.ifYesProvideExplanation_28",
+        "foreignActivities.ifYesProvideExplanation_29",
+        "foreignActivities.RadioButtonList_770",
+        "foreignActivities.ifYesProvideExplanation_30",
+        "foreignActivities.RadioButtonList_772",
+        "foreignActivities.ifYesProvideExplanation_31",
+        "foreignActivities.RadioButtonList_774",
+        "foreignActivities.ifYesProvideExplanation_32",
+        "foreignActivities.RadioButtonList_776",
+        "foreignActivities.visitFamilyOrFriends_4",
+        "foreignActivities.tradeShowsConferencesAndSeminars_4",
+        "foreignActivities.education_4",
+        "foreignActivities.tourism_4",
+        "foreignActivities.volunteerActivities_4",
+        "foreignActivities.provideThePurposeOfTheTravelToThisCountry_4",
+        "foreignActivities.other_4",
+        "foreignActivities.RadioButtonList_790"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "21",
+      "text": "30",
+      "yPosition": 150.6,
+      "fieldKeys": [],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 21)",
+      "y": 74.8,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section21"
+    },
+    {
+      "text": "YES  (If YES, proceed to Section 21)",
+      "y": 97.3,
+      "type": "routing",
+      "triggerValue": "YES",
+      "targetSection": "section21"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having traveled outside the U.S. in the last seven (7) years for other than solely U.S. Government business.",
+      "y": 126.7,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having traveled outside the U.S. in the last seven (7) years for other than solely U.S. Government business.",
+      "y": 76.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having traveled outside the U.S. in the last seven (7) years for other than solely U.S. Government business.",
+      "y": 76.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having traveled outside the U.S. in the last seven (7) years for other than solely U.S. Government business.",
+      "y": 76.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": []
+}

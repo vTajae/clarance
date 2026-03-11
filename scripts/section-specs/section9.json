@@ -1,0 +1,146 @@
+{
+  "section": "section9",
+  "pages": [
+    6,
+    7
+  ],
+  "fieldCount": 78,
+  "gateFieldCount": 2,
+  "gateFieldKeys": [
+    "citizenshipInfo.RadioButtonList_1",
+    "citizenshipInfo.RadioButtonList_15"
+  ],
+  "routing": {
+    "NO": "section10"
+  },
+  "repeatGroups": {},
+  "questions": [
+    {
+      "number": "9",
+      "text": "1   Complete the following if you answered that you are a  U.S. citizen or national by birth, born to U.S. parent(s) in a foreign country .",
+      "yPosition": 399.4,
+      "fieldKeys": [
+        "citizenshipInfo.explanation",
+        "citizenshipInfo.provideDocumentNumberForUsCitizenBornAbroad",
+        "citizenshipInfo.country",
+        "citizenshipInfo.state",
+        "citizenshipInfo.provideThePlaceOfIssuance",
+        "citizenshipInfo.middleName",
+        "citizenshipInfo.provideTheNameInWhichDocumentWasIssuedLastName",
+        "citizenshipInfo.firstName",
+        "citizenshipInfo.suffix",
+        "citizenshipInfo.middleName_2",
+        "citizenshipInfo.provideTheNameInWhichTheCertificateWasIssued",
+        "citizenshipInfo.firstName_2",
+        "citizenshipInfo.suffix_2",
+        "citizenshipInfo.RadioButtonList_15",
+        "citizenshipInfo.provideTheDateTheDocumentWasIssuedMonthdayyear",
+        "citizenshipInfo.isEstimate",
+        "citizenshipInfo.provideYourCertificateOfCitizenshipNumber",
+        "citizenshipInfo.provideTheDateTheCertificateWasIssued",
+        "citizenshipInfo.isEstimate_2",
+        "citizenshipInfo.RadioButtonList_21",
+        "citizenshipInfo.provideTheNameOfTheBase"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "9",
+      "text": "2   Complete the following if you answered that you are a  naturalized U.S. citizen .",
+      "yPosition": 78.9,
+      "fieldKeys": [
+        "citizenshipInfo.state_2",
+        "citizenshipInfo.city",
+        "citizenshipInfo.middleName_3",
+        "citizenshipInfo.provideTheNameInWhichTheCertificateOfNatur",
+        "citizenshipInfo.firstName_3",
+        "citizenshipInfo.suffix_3",
+        "citizenshipInfo.provideTheAddressOfTheCourtThatIssuedTheN",
+        "citizenshipInfo.zipCode",
+        "citizenshipInfo.provideTheDateTheNaturalizationCertificateWasIssued",
+        "citizenshipInfo.isEstimate_3",
+        "citizenshipInfo.provideYourCertificateOfNaturalizationNumber",
+        "citizenshipInfo.provideExplanation",
+        "citizenshipInfo.otherProvideExplanation",
+        "citizenshipInfo.provideTheBasisOfNaturalization",
+        "citizenshipInfo.provideTheNameOfTheCourtThatIssuedTheCert",
+        "citizenshipInfo.92CompleteTheFollowingIfYouAnsweredThatYo",
+        "citizenshipInfo.isEstimate_7",
+        "citizenshipInfo.state_3",
+        "citizenshipInfo.provideTheLocationOfEntryIntoTheUsCity",
+        "citizenshipInfo.provideCountryiesOfPriorCitizenship1Country",
+        "citizenshipInfo.provideYourUs",
+        "citizenshipInfo.RadioButtonList_59",
+        "citizenshipInfo.2Country"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "9",
+      "text": "3   Complete the following if you answered that you are  a derived U.S. citizen .",
+      "yPosition": 353.9,
+      "fieldKeys": [
+        "citizenshipInfo.93CompleteTheFollowingIfYouAnsweredThatY",
+        "citizenshipInfo.provideYourPermanentResidentCardNumberI551",
+        "citizenshipInfo.provideYourCertificateOfCitizenshipNumberN5",
+        "citizenshipInfo.middleName_5",
+        "citizenshipInfo.provideTheNameInWhichTheDocumentWasIssued",
+        "citizenshipInfo.firstName_5",
+        "citizenshipInfo.suffix_5",
+        "citizenshipInfo.provideExplanation_3",
+        "citizenshipInfo.otherProvideExplanation_2",
+        "citizenshipInfo.provideTheBasisOfDerivedCitizenship",
+        "citizenshipInfo.provideTheDateDocumentWasIssuedMonthdayyear_2",
+        "citizenshipInfo.isEstimate_8"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "9",
+      "text": "4   Complete the following if you answered that you are  not a U.S. citizen .",
+      "yPosition": 493.0,
+      "fieldKeys": [
+        "personalInfo.yourSocialSecurityNumberWillAutofillBasedO_3",
+        "citizenshipInfo.provideYourDateOfEntryIntoTheUsMonthdayyear",
+        "citizenshipInfo.isEstimate_4",
+        "citizenshipInfo.94CompleteTheFollowingIfYouAnsweredThatY",
+        "citizenshipInfo.provideTheDateDocumentWasIssuedMonthdayyear",
+        "citizenshipInfo.isEstimate_5",
+        "citizenshipInfo.provideYourAlienRegistrationNumberI551I766",
+        "citizenshipInfo.middleName_4",
+        "citizenshipInfo.provideTheNameInWhichTheCertificateWasIssued_2",
+        "citizenshipInfo.firstName_4",
+        "citizenshipInfo.suffix_4",
+        "citizenshipInfo.provideTheExpirationDateOfVisaMonthdayyear",
+        "citizenshipInfo.provideDocumentNumber",
+        "citizenshipInfo.isEstimate_6",
+        "citizenshipInfo.RadioButtonList_50",
+        "citizenshipInfo.provideExplanation_2",
+        "citizenshipInfo.state_4",
+        "citizenshipInfo.provideYourPlaceOfEntryInTheUsCity",
+        "citizenshipInfo.provideCountryiesOfCitizenship1Country",
+        "citizenshipInfo.2Country_2",
+        "citizenshipInfo.provideTheDocumentExpirationDateI766Only",
+        "citizenshipInfo.isEstimate_9"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 9)",
+      "y": 210.3,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section9"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 10)",
+      "y": 622.0,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section10"
+    }
+  ],
+  "entries": []
+}

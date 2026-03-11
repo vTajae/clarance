@@ -1,0 +1,148 @@
+{
+  "section": "section25",
+  "pages": [
+    116,
+    117
+  ],
+  "fieldCount": 79,
+  "gateFieldCount": 3,
+  "gateFieldKeys": [
+    "investigationsInfo.0.RadioButtonList_73",
+    "investigationsInfo.0.RadioButtonList_78",
+    "investigationsInfo.RadioButtonList_37"
+  ],
+  "routing": {
+    "NO": "section26"
+  },
+  "repeatGroups": {
+    "section25_2": {
+      "fieldsPerIndex": 18,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [
+    {
+      "number": "25",
+      "text": "1",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "investigationsInfo.ifForeignGovernmentSelectedProvideNameOfGovernment",
+        "investigationsInfo.dateTheInvestigationWasCompletedMonthyear",
+        "investigationsInfo.isEstimate",
+        "investigationsInfo.dateTheInvestigationWasCompletedMonthyear_2",
+        "investigationsInfo.provideTheDateClearanceEligibilityaccessWasGranted",
+        "investigationsInfo.isEstimate_2",
+        "investigationsInfo.provideTheDateClearanceEligibilityaccessWasGranted_2",
+        "investigationsInfo.RadioButtonList_37",
+        "investigationsInfo.completeTheFollowingIfYouRespondedYesToTheUs",
+        "investigationsInfo.usDepartmentOfState_2",
+        "investigationsInfo.usOfficeOfPersonnelManagement_2",
+        "investigationsInfo.federalBureauOfInvestigation_2",
+        "investigationsInfo.usDepartmentOfTreasury_2",
+        "investigationsInfo.usDepartmentOfHomelandSecurity_2",
+        "investigationsInfo.foreignGovernment_2",
+        "investigationsInfo.iDontKnow_3",
+        "investigationsInfo.otherProvideExplanation_3",
+        "investigationsInfo.ifOtherProvideExplanation_3",
+        "investigationsInfo.provideTheNameOfAgencyThatIssuedTheClearan_2",
+        "investigationsInfo.provideTheLevelOfClearanceEligibilityaccessGranted_2",
+        "investigationsInfo.confidential_2",
+        "investigationsInfo.secret_2",
+        "investigationsInfo.topSecret_2",
+        "investigationsInfo.sensitiveCompartmentedInformationSci_2",
+        "investigationsInfo.q_2",
+        "investigationsInfo.l_2",
+        "investigationsInfo.iDontKnow_4",
+        "investigationsInfo.otherProvideExplanation_4",
+        "investigationsInfo.ifOtherProvideExplanation_4",
+        "investigationsInfo.issuedByForeignCountry_2",
+        "investigationsInfo.ifUsDepartmentOfTreasuryProvideNameOfBureau"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "25",
+      "text": "2",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "investigationsInfo.0.entry2",
+        "investigationsInfo.0.isEstimate",
+        "investigationsInfo.0.provideTheNameOfTheAgencyThatTookTheAction",
+        "investigationsInfo.0.provideAnExplanationOfTheCircumstancesOfThe",
+        "investigationsInfo.0.RadioButtonList_73",
+        "investigationsInfo.0.completeTheFollowingIfYouRespondedYesToH_2",
+        "investigationsInfo.0.isEstimate_4",
+        "investigationsInfo.0.provideTheNameOfTheAgencyThatTookTheAction_2",
+        "investigationsInfo.0.provideAnExplanationOfTheCircumstancesOfThe_3"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "25",
+      "text": "3",
+      "yPosition": 252.1,
+      "fieldKeys": [
+        "investigationsInfo.0.completeTheFollowingIfYouRespondedYesToH",
+        "investigationsInfo.0.isEstimate_2",
+        "investigationsInfo.0.provideTheDateTheDebarmentOccurredMonthyear",
+        "investigationsInfo.0.entry2_2",
+        "investigationsInfo.0.isEstimate_3",
+        "investigationsInfo.0.provideTheDateTheDebarmentOccurredMonthyear_2",
+        "investigationsInfo.0.provideAnExplanationOfTheCircumstancesOfThe_2",
+        "investigationsInfo.0.RadioButtonList_78",
+        "investigationsInfo.0.provideAnExplanationOfTheCircumstancesOfThe_4"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "Complete the following if you  responded 'Yes' to the U.S. Government (or a foreign government) having investigated your background and/or having",
+      "y": 95.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to having  EVER  had a security clearance eligibility/access authorization denied, suspended, or revoked.",
+      "y": 109.7,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 26)",
+      "y": 254.8,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section26"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to having  EVER  been debarred from government employment.",
+      "y": 271.7,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 121.6,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 373.6,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 285.9,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 346.7,
+      "text": "Entry #2"
+    }
+  ]
+}

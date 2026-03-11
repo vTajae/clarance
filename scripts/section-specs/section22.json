@@ -1,0 +1,193 @@
+{
+  "section": "section22",
+  "pages": [
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "fieldCount": 267,
+  "gateFieldCount": 11,
+  "gateFieldKeys": [
+    "policeRecord.0.RadioButtonList_1",
+    "policeRecord.0.RadioButtonList_114",
+    "policeRecord.0.RadioButtonList_130",
+    "policeRecord.0.RadioButtonList_135",
+    "policeRecord.0.RadioButtonList_2",
+    "policeRecord.0.RadioButtonList_212",
+    "policeRecord.0.RadioButtonList_228",
+    "policeRecord.0.RadioButtonList_235",
+    "policeRecord.0.RadioButtonList_49",
+    "policeRecord.0.RadioButtonList_65",
+    "policeRecord.0.RadioButtonList_67"
+  ],
+  "routing": {
+    "NO": "section23"
+  },
+  "repeatGroups": {
+    "section22_1": {
+      "fieldsPerIndex": 48,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section22_2": {
+      "fieldsPerIndex": 18,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section22_3": {
+      "fieldsPerIndex": 47,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section22_4": {
+      "fieldsPerIndex": 18,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section22_5": {
+      "fieldsPerIndex": 52,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section22_6": {
+      "fieldsPerIndex": 51,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section22_3_1": {
+      "fieldsPerIndex": 33,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [
+    {
+      "number": "22",
+      "text": "1",
+      "yPosition": 109.9,
+      "fieldKeys": [
+        "policeRecord.0.RadioButtonList_1",
+        "policeRecord.0.completeTheFollowingIfYouRespondedYesToO",
+        "policeRecord.0.isEstimate",
+        "policeRecord.0.provideADescriptionOfTheSpecificNatureOfTheOffense",
+        "policeRecord.0.provideTheLocationWhereTheOffenseOccurred",
+        "policeRecord.0.state",
+        "policeRecord.0.country",
+        "policeRecord.0.zipCode",
+        "policeRecord.0.RadioButtonList_11",
+        "policeRecord.0.county_3",
+        "policeRecord.0.domesticViolenceOrACrimeOfViolenceSuchAs",
+        "policeRecord.0.involveFirearmsOrExplosives",
+        "policeRecord.0.involveAlcoholOrDrugs"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "22",
+      "text": "2",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "policeRecord.0.checkAllThatApply_2",
+        "policeRecord.0.involveFirearmsOrExplosives_3",
+        "policeRecord.0.involveAlcoholOrDrugs_3",
+        "policeRecord.0.RadioButtonList_135",
+        "policeRecord.0.RadioButtonList_136",
+        "policeRecord.0.entry1ProvideTheDateOfOffenseMonthyear",
+        "policeRecord.0.isEstimate_15",
+        "policeRecord.0.provideADescriptionOfTheSpecificNatureOfTheOffense_3",
+        "policeRecord.0.provideTheNameOfTheCourt"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "22",
+      "text": "3",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "policeRecord.0.RadioButtonList_235",
+        "policeRecord.0.provideTheDateTheOrderWasIssuedmonthyear",
+        "policeRecord.0.isEstimate_29",
+        "policeRecord.0.completeTheFollowingIfYouRespondedYesToC",
+        "policeRecord.0.provideTheNameOfTheCourtOrAgencyThatIssue",
+        "policeRecord.0.provideTheLocationOfTheCourtOrAgencyThatI",
+        "policeRecord.0.state_9",
+        "policeRecord.0.country_9",
+        "policeRecord.0.zipCode_9",
+        "policeRecord.0.provideTheDateTheOrderWasIssuedMonthyear",
+        "policeRecord.0.isEstimate_30",
+        "policeRecord.0.completeTheFollowingIfYouRespondedYesToC_2",
+        "policeRecord.0.provideTheNameOfTheCourtOrAgencyThatIssue_2",
+        "policeRecord.0.provideTheLocationOfTheCourtOrAgencyThatI_2",
+        "policeRecord.0.state_10",
+        "policeRecord.0.country_10",
+        "policeRecord.0.zipCode_10",
+        "policeRecord.0.completeTheFollowingIfYouRespondedYesToC_3"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "Complete the following if you responded  'Yes'  to one of the following:",
+      "y": 79.2,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to one of the following:",
+      "y": 77.8,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to one of the following:",
+      "y": 77.8,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 23)",
+      "y": 74.8,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section23"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to currently having a domestic violence protective order or restraining order issued against you?",
+      "y": 95.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 220.5,
+      "text": "Entry #1"
+    },
+    {
+      "index": 0,
+      "yStart": 172.3,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 168.0,
+      "text": "Entry #2"
+    },
+    {
+      "index": 1,
+      "yStart": 172.3,
+      "text": "Entry #2"
+    },
+    {
+      "index": 1,
+      "yStart": 75.2,
+      "text": "Entry #2"
+    }
+  ]
+}

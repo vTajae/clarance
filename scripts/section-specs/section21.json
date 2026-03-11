@@ -1,0 +1,38 @@
+{
+  "section": "section21",
+  "pages": [
+    88
+  ],
+  "fieldCount": 24,
+  "gateFieldCount": 1,
+  "gateFieldKeys": [
+    "mentalHealth.RadioButtonList_1"
+  ],
+  "routing": {
+    "NO": "section21B"
+  },
+  "repeatGroups": {},
+  "questions": [],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 21B)",
+      "y": 228.6,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section21B"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having a court or administrative agency  EVER  issuing an order declaring you mentally incompetent.",
+      "y": 247.0,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 264.5,
+      "text": "Entry #1"
+    }
+  ]
+}

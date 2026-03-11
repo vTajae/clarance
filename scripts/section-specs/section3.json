@@ -1,0 +1,24 @@
+{
+  "section": "section3",
+  "pages": [
+    5
+  ],
+  "fieldCount": 4,
+  "gateFieldCount": 0,
+  "gateFieldKeys": [],
+  "routing": {
+    "NO": "section6"
+  },
+  "repeatGroups": {},
+  "questions": [],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 6)",
+      "y": 302.9,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section6"
+    }
+  ],
+  "entries": []
+}

@@ -1,0 +1,260 @@
+{
+  "totalFields": 6197,
+  "genericLabels": 0,
+  "truncatedLabels": 0,
+  "correctionsProposed": 42,
+  "corrections": [
+    {
+      "semanticKey": "employmentInfo.0.provideTheNameOfSomeoneThatCanVerifyYourS",
+      "section": "section13A",
+      "currentLabel": "Provide the name of someone that can verify your self-employment. Last name",
+      "suggestedLabel": "Do you or did you have an APO/FPO address while at this location?"
+    },
+    {
+      "semanticKey": "employmentInfo.0.provideTheNameOfSomeoneThatCanVerifyYourS_2",
+      "section": "section13A",
+      "currentLabel": "Provide the name of someone that can verify your self-employment. Last name",
+      "suggestedLabel": "Do you or did you have an APO/FPO address while at this location?"
+    },
+    {
+      "semanticKey": "employmentInfo.1.provideTheNameOfSomeoneThatCanVerifyYourS",
+      "section": "section13A",
+      "currentLabel": "Provide the name of someone that can verify your self-employment. Last name",
+      "suggestedLabel": "Do you or did you have an APO/FPO address while at this location?"
+    },
+    {
+      "semanticKey": "employmentInfo.2.provideTheNameOfSomeoneThatCanVerifyYourS",
+      "section": "section13A",
+      "currentLabel": "Provide the name of someone that can verify your self-employment. Last name",
+      "suggestedLabel": "Do you or did you have an APO/FPO address while at this location?"
+    },
+    {
+      "semanticKey": "militaryHistoryInfo.0.152CompleteTheFollowingIfYouRespondedYes",
+      "section": "section15",
+      "currentLabel": "15.2 Complete the following if you responded 'Yes' to In the last seven (7) years, have you been subject to court martial or other disciplinary procedure under the Uniform Code of Military Justice (UC",
+      "suggestedLabel": "Court of Inquiry, etc?"
+    },
+    {
+      "semanticKey": "foreignActivities.provideTheCostInUs",
+      "section": "section20A",
+      "currentLabel": "Provide the cost (in U.S. dollars) when sold or expected at time of acquisition.",
+      "suggestedLabel": "Are/were/will there any co-owners of this foreign real estate?"
+    },
+    {
+      "semanticKey": "foreignActivities.provideThePlaceOfBirthForTheSponsoredForei",
+      "section": "section20B",
+      "currentLabel": "Provide the place of birth for the sponsored foreign national. City",
+      "suggestedLabel": "for work, or for permanent residence?"
+    },
+    {
+      "semanticKey": "foreignActivities.provideTheDateOfBirthForTheSponsoredForeig",
+      "section": "section20B",
+      "currentLabel": "Provide the date of birth for the sponsored foreign national. Date (Month/Year)",
+      "suggestedLabel": "for work, or for permanent residence?"
+    },
+    {
+      "semanticKey": "foreignActivities.provideTheDateOfBirthForTheSponsoredForeig_2",
+      "section": "section20B",
+      "currentLabel": "Provide the date of birth for the sponsored foreign national. I don't know",
+      "suggestedLabel": "for work, or for permanent residence?"
+    },
+    {
+      "semanticKey": "foreignActivities.provideTheCurrentStreetAddressOfTheSponsore",
+      "section": "section20B",
+      "currentLabel": "Provide the current street address of the sponsored foreign national. (Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code). Street",
+      "suggestedLabel": "for work, or for permanent residence?"
+    },
+    {
+      "semanticKey": "foreignActivities.provideTheAddressOfTheOrganizationThroughWh",
+      "section": "section20B",
+      "currentLabel": "Provide the address of the organization through which sponsorship was arranged, if applicable. (Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code). Str",
+      "suggestedLabel": "for work, or for permanent residence?"
+    },
+    {
+      "semanticKey": "foreignActivities.provideTheAddressOfTheOrganizationThroughWh_2",
+      "section": "section20B",
+      "currentLabel": "Provide the address of the organization through which sponsorship was arranged, if applicable. (Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code). Not",
+      "suggestedLabel": "for work, or for permanent residence?"
+    },
+    {
+      "semanticKey": "foreignActivities.provideTheNameOfTheOrganizationThroughWhich",
+      "section": "section20B",
+      "currentLabel": "Provide the name of the organization through which sponsorship was arranged, if applicable. Not applicable",
+      "suggestedLabel": "for work, or for permanent residence?"
+    },
+    {
+      "semanticKey": "foreignActivities.provideTheCountryiesOfCitizenshipForTheSp",
+      "section": "section20B",
+      "currentLabel": "Provide the country(ies) of citizenship for the sponsored foreign national. Country #1",
+      "suggestedLabel": "for work, or for permanent residence?"
+    },
+    {
+      "semanticKey": "foreignActivities.provideTheNameOfTheOrganizationThroughWhich_2",
+      "section": "section20B",
+      "currentLabel": "Provide the name of the organization through which sponsorship was arranged, if applicable.",
+      "suggestedLabel": "for work, or for permanent residence?"
+    },
+    {
+      "semanticKey": "foreignActivities.RadioButtonList_696",
+      "section": "section20C",
+      "currentLabel": "Were you threatened/coerced to cooperate with a foreign govt?",
+      "suggestedLabel": "intelligence or security service?"
+    },
+    {
+      "semanticKey": "foreignActivities.RadioButtonList_724",
+      "section": "section20C",
+      "currentLabel": "Were you threatened/coerced to cooperate with a foreign govt?",
+      "suggestedLabel": "intelligence or security service?"
+    },
+    {
+      "semanticKey": "foreignActivities.RadioButtonList_752",
+      "section": "section20C",
+      "currentLabel": "Were you threatened/coerced to cooperate with a foreign govt?",
+      "suggestedLabel": "intelligence or security service?"
+    },
+    {
+      "semanticKey": "foreignActivities.RadioButtonList_780",
+      "section": "section20C",
+      "currentLabel": "Were you threatened/coerced to cooperate with a foreign govt?",
+      "suggestedLabel": "intelligence or security service?"
+    },
+    {
+      "semanticKey": "mentalHealth.RadioButtonList_2",
+      "section": "section21",
+      "currentLabel": "Have you received counseling or treatment for that condition?",
+      "suggestedLabel": "Was this matter appealed to a higher court or administrative agency?"
+    },
+    {
+      "semanticKey": "mentalHealth.provideTheAddressOfTheHealthCareProfessional",
+      "section": "section21D",
+      "currentLabel": "Provide the address of the health care professional.  (Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code). Street",
+      "suggestedLabel": "Are you currently in treatment?"
+    },
+    {
+      "semanticKey": "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_5",
+      "section": "section21D",
+      "currentLabel": "Provide the telephone number of the health care professional. Telephone number",
+      "suggestedLabel": "Are you currently in treatment?"
+    },
+    {
+      "semanticKey": "mentalHealth.provideTheAddressOfTheHealthCareProfessional_2",
+      "section": "section21D",
+      "currentLabel": "Provide the address of the health care professional.  (Provide City and Country if outside the United States; otherwise, provide City, State and Zip Code). Street",
+      "suggestedLabel": "Are you currently in treatment?"
+    },
+    {
+      "semanticKey": "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_6",
+      "section": "section21D",
+      "currentLabel": "Provide the telephone number of the health care professional. Telephone number",
+      "suggestedLabel": "Are you currently in treatment?"
+    },
+    {
+      "semanticKey": "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_7",
+      "section": "section21D",
+      "currentLabel": "Provide the telephone number of the health care professional. Telephone number",
+      "suggestedLabel": "Are you currently in treatment?"
+    },
+    {
+      "semanticKey": "mentalHealth.provideTheTelephoneNumberOfTheHealthCarePr_8",
+      "section": "section21D",
+      "currentLabel": "Provide the telephone number of the health care professional. International or D S N phone number",
+      "suggestedLabel": "Are you currently in treatment?"
+    },
+    {
+      "semanticKey": "policeRecord.0.domesticViolenceOrACrimeOfViolenceSuchAs",
+      "section": "section22",
+      "currentLabel": "Domestic violence or a crime of violence (such as battery or assault) against your child, dependent, cohabitant, spouse or legally recognized civil union/domestic partner, former spouse or legally rec",
+      "suggestedLabel": "Did this offense involve any of the following?"
+    },
+    {
+      "semanticKey": "policeRecord.0.ifConvictionResultedInProbationOrParole",
+      "section": "section22",
+      "currentLabel": "If conviction resulted in probation or parole, provide the dates of probation or parole. Not Applicable",
+      "suggestedLabel": "Were you incarcerated as a result of that sentence for not less than 1 year?"
+    },
+    {
+      "semanticKey": "policeRecord.0.checkAllThatApply",
+      "section": "section22",
+      "currentLabel": "Check all that apply. Domestic violence or a crime of violence (such as battery or assault) against your child, dependent, cohabitant, spouse, former spouse, or someone with whom you share a child in ",
+      "suggestedLabel": "Did this offense involve any of the following?"
+    },
+    {
+      "semanticKey": "policeRecord.0.ifConvictionResultedInProbationOrParole_2",
+      "section": "section22",
+      "currentLabel": "If conviction resulted in probation or parole, provide the dates of probation or parole. Not Applicable",
+      "suggestedLabel": "Were you incarcerated as a result of that sentence for not less than 1 year?"
+    },
+    {
+      "semanticKey": "policeRecord.0.checkAllThatApply_2",
+      "section": "section22",
+      "currentLabel": "Check all that apply.  \rDomestic violence or a crime of violence (such as battery or assault) against your child, dependent, cohabitant, spouse or legally recognized civil union/domestic partner, form",
+      "suggestedLabel": "Did this offense involve any of the following?"
+    },
+    {
+      "semanticKey": "policeRecord.0.ifConvictionResultedInProbationOrParole_3",
+      "section": "section22",
+      "currentLabel": "If conviction resulted in probation or parole, provide the dates of probation or parole. Not applicable",
+      "suggestedLabel": "Were you incarcerated as a result of that sentence for not less than 1 year?"
+    },
+    {
+      "semanticKey": "policeRecord.0.checkAllThatApply_3",
+      "section": "section22",
+      "currentLabel": "Check all that apply.  \rDomestic violence or a crime of violence (such as battery or assault) against your child, dependent, cohabitant, spouse or legally recognized civil union/domestic partner, form",
+      "suggestedLabel": "Did this offense involve any of the following?"
+    },
+    {
+      "semanticKey": "policeRecord.0.ifConvictionResultedInProbationOrParole_4",
+      "section": "section22",
+      "currentLabel": "If conviction resulted in probation or parole, provide the dates of probation or parole. Not applicable",
+      "suggestedLabel": "Were you incarcerated as a result of that sentence for not less than 1 year?"
+    },
+    {
+      "semanticKey": "drugActivity.0.entry2_2",
+      "section": "section23",
+      "currentLabel": "Entry #2. Provide the name of the prescription drug that you misused.",
+      "suggestedLabel": "Was your involvement while possessing a security clearance?"
+    },
+    {
+      "semanticKey": "alcoholUse.0.completeTheFollowingIfYouRespondedYesToH",
+      "section": "section24",
+      "currentLabel": "Complete the following if you responded 'Yes' to having EVER received counseling or treatment as a result of your use of alcohol. Entry #1. Provide the name of the individual counselor or treatment pr",
+      "suggestedLabel": "you have already listed on this form?"
+    },
+    {
+      "semanticKey": "finances.0.inTheLastSeven7Years_7",
+      "section": "section26",
+      "currentLabel": "In the last seven (7) years, you had any possessions or property voluntarily or involuntarily repossessed or foreclosed? (Include financial obligations for which you were the sole debtor, as well as t",
+      "suggestedLabel": "for any reason?"
+    },
+    {
+      "semanticKey": "finances.0.inTheLastSeven7Years_8",
+      "section": "section26",
+      "currentLabel": "In the last seven (7) years, you defaulted on any type of loan? (Include financial obligations for which you were the sole debtor, as well as those for which you were a cosigner or guarantor).",
+      "suggestedLabel": "for any reason?"
+    },
+    {
+      "semanticKey": "finances.0.completeTheFollowingIfYouAnsweredYesToHa_3",
+      "section": "section26",
+      "currentLabel": "Complete the following if you answered 'Yes' to having experienced one or more of the previously stated financial issues. Entry #1. Provide the name of agency/organization/individual to which debt is/",
+      "suggestedLabel": "for any reason?"
+    },
+    {
+      "semanticKey": "finances.0.inTheLastSeven7Years_11",
+      "section": "section26",
+      "currentLabel": "In the last seven (7) years, you had bills or debts turned over to a collection agency? (Include financial obligations for which you were the sole debtor, as well as those for which you were a cosigne",
+      "suggestedLabel": "for any reason?"
+    },
+    {
+      "semanticKey": "finances.0.inTheLastSeven7Years_12",
+      "section": "section26",
+      "currentLabel": "In the last seven (7) years, you had any account or credit card suspended, charged off, or cancelled for failing to pay as agreed? (Include financial obligations for which you were the sole debtor, as",
+      "suggestedLabel": "for any reason?"
+    },
+    {
+      "semanticKey": "association.0.completeTheFollowingIfYouRespondedYesToB",
+      "section": "section29",
+      "currentLabel": "Complete the following if you responded 'Yes' to being or EVER having been a member of an organization that advocates or practices commission of acts of force or violence to discourage others from exe",
+      "suggestedLabel": "United States with the specific intent to further such action?"
+    }
+  ]
+}

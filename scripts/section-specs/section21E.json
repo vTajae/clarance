@@ -1,0 +1,41 @@
+{
+  "section": "section21E",
+  "pages": [
+    96,
+    97
+  ],
+  "fieldCount": 127,
+  "gateFieldCount": 1,
+  "gateFieldKeys": [
+    "mentalHealth.RadioButtonList_383"
+  ],
+  "routing": {},
+  "repeatGroups": {},
+  "questions": [],
+  "instructions": [
+    {
+      "text": "Complete the following if you responded  'Yes'  to having a mental health condition that adversely affects your judgment, reliability, or trustworthiness.",
+      "y": 165.5,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having a mental health condition that adversely affects your judgment, reliability, or trustworthiness.",
+      "y": 77.2,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 242.0,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 94.7,
+      "text": "Entry #2"
+    }
+  ]
+}

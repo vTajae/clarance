@@ -1,0 +1,427 @@
+{
+  "section": "section20B",
+  "pages": [
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83
+  ],
+  "fieldCount": 315,
+  "gateFieldCount": 9,
+  "gateFieldKeys": [
+    "foreignActivities.RadioButtonList_375",
+    "foreignActivities.RadioButtonList_389",
+    "foreignActivities.RadioButtonList_408",
+    "foreignActivities.RadioButtonList_477",
+    "foreignActivities.RadioButtonList_484",
+    "foreignActivities.radiobuttonlist2",
+    "foreignActivities.radiobuttonlist5",
+    "foreignActivities.radiobuttonlist6",
+    "foreignActivities.radiobuttonlist7"
+  ],
+  "routing": {},
+  "repeatGroups": {},
+  "questions": [
+    {
+      "number": "20B",
+      "text": "1",
+      "yPosition": 72.9,
+      "fieldKeys": [
+        "foreignActivities.provideTheNameOfTheIndividualToWhomAdvice",
+        "foreignActivities.firstName_17",
+        "foreignActivities.middleName_15",
+        "foreignActivities.suffix_15",
+        "foreignActivities.provideTheNameOfTheForeignOrganizationOrFo",
+        "foreignActivities.provideTheCountryOfOriginForTheOrganization",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToH",
+        "foreignActivities.provideTheDatesDuringWhichThisAdviceOrSu",
+        "foreignActivities.isEstimate_39",
+        "foreignActivities.toDateMonthyear",
+        "foreignActivities.isPresent",
+        "foreignActivities.isEstimate_40",
+        "foreignActivities.describeWhatCompensation",
+        "foreignActivities.RadioButtonList_375",
+        "foreignActivities.provideTheNameOfTheIndividualToWhomAdvice_2",
+        "foreignActivities.firstName_18",
+        "foreignActivities.middleName_16",
+        "foreignActivities.suffix_16",
+        "foreignActivities.provideTheNameOfTheForeignOrganizationOrFo_2",
+        "foreignActivities.provideTheCountryOfOriginForTheOrganization_2",
+        "foreignActivities.entry2ProvideADescriptionOfAdvicesupportProvided",
+        "foreignActivities.provideTheDatesDuringWhichThisAdviceOrSu_2",
+        "foreignActivities.toDateMonthyear_2",
+        "foreignActivities.isPresent_2",
+        "foreignActivities.describeWhatCompensation_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20B",
+      "text": "2",
+      "yPosition": 426.4,
+      "fieldKeys": [
+        "foreignActivities.RadioButtonList_389",
+        "foreignActivities.suffix_17",
+        "foreignActivities.middleName_17",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToYou_7",
+        "foreignActivities.firstName_19",
+        "foreignActivities.provideTheNameOfTheAgency",
+        "foreignActivities.provideTheCountryWithWhichTheGovernmentOffi",
+        "foreignActivities.provideTheCircumstancesOfRequest",
+        "foreignActivities.provideTheDateOfTheRequestMonthyear",
+        "foreignActivities.isEstimate_43",
+        "foreignActivities.suffix_18",
+        "foreignActivities.middleName_18",
+        "foreignActivities.entry2_2",
+        "foreignActivities.firstName_20",
+        "foreignActivities.provideTheNameOfTheAgency_2",
+        "foreignActivities.provideTheCountryWithWhichTheGovernmentOffi_2",
+        "foreignActivities.provideTheCircumstancesOfRequest_2",
+        "foreignActivities.provideTheDateOfTheRequestMonthyear_2",
+        "foreignActivities.isEstimate_44"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20B",
+      "text": "3",
+      "yPosition": 71.9,
+      "fieldKeys": [
+        "foreignActivities.RadioButtonList_408",
+        "foreignActivities.suffix_19",
+        "foreignActivities.middleName_19",
+        "foreignActivities.entry2_3",
+        "foreignActivities.firstName_21",
+        "foreignActivities.provideADescriptionOfThePositionOffered",
+        "foreignActivities.isEstimate_45",
+        "foreignActivities.provideTheDateWhenThisOfferWasExtendedMonthyear",
+        "foreignActivities.RadioButtonList_416",
+        "foreignActivities.ifNoExplanation",
+        "foreignActivities.provideLocationOfWhereThisOccurred",
+        "foreignActivities.state_15",
+        "foreignActivities.country_17",
+        "foreignActivities.zipCode_15",
+        "foreignActivities.suffix_20",
+        "foreignActivities.middleName_20",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToA",
+        "foreignActivities.firstName_22",
+        "foreignActivities.provideADescriptionOfThePositionOffered_2",
+        "foreignActivities.isEstimate_46",
+        "foreignActivities.provideTheDateWhenThisOfferWasExtendedMonthyear_2",
+        "foreignActivities.RadioButtonList_429",
+        "foreignActivities.ifNoExplanation_2",
+        "foreignActivities.provideLocationOfWhereThisOccurred_2",
+        "foreignActivities.state_16",
+        "foreignActivities.country_18",
+        "foreignActivities.zipCode_16",
+        "foreignActivities.ifYesExplanation",
+        "foreignActivities.ifYesExplanation_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20B",
+      "text": "4",
+      "yPosition": 72.9,
+      "fieldKeys": [
+        "foreignActivities.provideTheFullCurrentAddressOfThisForeignNational",
+        "foreignActivities.city_17",
+        "foreignActivities.state_17",
+        "foreignActivities.country_19",
+        "foreignActivities.zipCode_17",
+        "foreignActivities.suffix_21",
+        "foreignActivities.middleName_21",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToH_2",
+        "foreignActivities.firstName_23",
+        "foreignActivities.provideTheNatureOfAssociationWithThisBusine",
+        "foreignActivities.provideADescriptionOfTheBusinessVenture",
+        "foreignActivities.provideYourRelationshipToThisForeignNational",
+        "foreignActivities.provideTheLengthOfTimeYouHaveBeenInvolved",
+        "foreignActivities.isEstimate_47",
+        "foreignActivities.toDateMonthyear_3",
+        "foreignActivities.isPresent_3",
+        "foreignActivities.isEstimate_48",
+        "foreignActivities.provideTheServiceYouProvided",
+        "foreignActivities.provideADescriptionOfWhatCompensationWasPro",
+        "foreignActivities.provideThePositionYouHeld",
+        "foreignActivities.provideTheFinancialSupportInvolved",
+        "foreignActivities.RadioButtonList_477",
+        "foreignActivities.provideTheCitizenshipsOfThisForeignNational",
+        "foreignActivities.provideTheCitizenshipsOfThisForeignNational_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20B",
+      "text": "5",
+      "yPosition": 73.9,
+      "fieldKeys": [
+        "foreignActivities.RadioButtonList_484",
+        "foreignActivities.entry2ProvideTheNameAndDescriptionOfEvent",
+        "foreignActivities.provideTheCountryWhereTheEventWasHeld",
+        "foreignActivities.provideThePurposeOfTheEvent",
+        "foreignActivities.provideTheNameOfSponsoringOrganization",
+        "foreignActivities.provideTheDatesForTheEventFromDateMonthyear",
+        "foreignActivities.isEstimate_51",
+        "foreignActivities.toDateMonthyear_5",
+        "foreignActivities.isPresent_5",
+        "foreignActivities.isEstimate_52",
+        "foreignActivities.provideTheCityWhereTheEventWasHeld",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToI",
+        "foreignActivities.provideTheCountryWhereTheEventWasHeld_2",
+        "foreignActivities.provideThePurposeOfTheEvent_2",
+        "foreignActivities.provideTheNameOfSponsoringOrganization_2",
+        "foreignActivities.provideTheDatesForTheEventFromDateMonthyear_2",
+        "foreignActivities.isEstimate_53",
+        "foreignActivities.toDateMonthyear_6",
+        "foreignActivities.isPresent_6",
+        "foreignActivities.isEstimate_54",
+        "foreignActivities.provideTheCityWhereTheEventWasHeld_2",
+        "foreignActivities.RadioButtonList_510",
+        "foreignActivities.ifYesSelectedProvideExplanationForEachContact_2",
+        "foreignActivities.contact2Explanation_2",
+        "foreignActivities.contact3Explanation_2",
+        "foreignActivities.contact4Explanation_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20B",
+      "text": "6",
+      "yPosition": 91.2,
+      "fieldKeys": [
+        "foreignActivities.radiobuttonlist2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20B",
+      "text": "7)",
+      "yPosition": 111.1,
+      "fieldKeys": [
+        "foreignActivities.provideTheTypeOfEstablishmentSuchAsEmbassy",
+        "foreignActivities.provideTheLocationOfTheContact_2",
+        "foreignActivities.state_20",
+        "foreignActivities.country_22",
+        "foreignActivities.zipCode_20",
+        "foreignActivities.suffix_24",
+        "foreignActivities.middleName_24",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToY",
+        "foreignActivities.firstName_26",
+        "foreignActivities.provideTheDateOfContactMonthyear",
+        "foreignActivities.isEstimate_55",
+        "foreignActivities.RadioButtonList_550",
+        "foreignActivities.provideThePurposeOfTheSubsequentContactRow1_2",
+        "foreignActivities.provideDateOfMostRecentContactMonthyearRow1_2",
+        "foreignActivities.providePlansForFutureContactRow1_2",
+        "foreignActivities.provideThePurposeOfTheSubsequentContactRow2_2",
+        "foreignActivities.provideDateOfMostRecentContactMonthyearRow2_2",
+        "foreignActivities.providePlansForFutureContactRow2_2",
+        "foreignActivities.provideTheForeignGovernmentsInvolvedCountry1",
+        "foreignActivities.country2_15",
+        "foreignActivities.provideTheNamesOfTheForeignRepresentativesI_2",
+        "foreignActivities.provideThePurposecircumstancesOfContact_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20B",
+      "text": "7",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "foreignActivities.radiobuttonlist5",
+        "foreignActivities.provideThePlaceOfBirthForTheSponsoredForei",
+        "foreignActivities.state_21",
+        "foreignActivities.countryRequired",
+        "foreignActivities.zipCode_21",
+        "foreignActivities.provideTheDateOfBirthForTheSponsoredForeig",
+        "foreignActivities.isEstimate_57",
+        "foreignActivities.suffix_25",
+        "foreignActivities.middleName_25",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToI_2",
+        "foreignActivities.firstName_27",
+        "foreignActivities.provideTheDateOfBirthForTheSponsoredForeig_2",
+        "foreignActivities.provideTheCurrentStreetAddressOfTheSponsore",
+        "foreignActivities.city_19",
+        "foreignActivities.state_22",
+        "foreignActivities.country_23",
+        "foreignActivities.zipCode_22",
+        "foreignActivities.provideTheAddressOfTheOrganizationThroughWh",
+        "foreignActivities.city_20",
+        "foreignActivities.state_23",
+        "foreignActivities.country_24",
+        "foreignActivities.zipCode_23",
+        "foreignActivities.provideTheAddressOfTheOrganizationThroughWh_2",
+        "foreignActivities.provideTheNameOfTheOrganizationThroughWhich",
+        "foreignActivities.provideTheCountryiesOfCitizenshipForTheSp",
+        "foreignActivities.country2_17",
+        "foreignActivities.provideTheNameOfTheOrganizationThroughWhich_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20B",
+      "text": "8",
+      "yPosition": 72.9,
+      "fieldKeys": [
+        "foreignActivities.radiobuttonlist6",
+        "foreignActivities.entry2ProvideThePositionHeld",
+        "foreignActivities.provideYourCurrentEligibilityToHoldPolitical",
+        "foreignActivities.provideTheNameOfTheCountryInvolved_3",
+        "foreignActivities.provideTheReasonsForTheseActivities_3",
+        "foreignActivities.provideTheDatesYouHeldPoliticalOffice",
+        "foreignActivities.isEstimate_65",
+        "foreignActivities.toDateMonthyear_9",
+        "foreignActivities.isPresent_9",
+        "foreignActivities.isEstimate_66",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToH_4",
+        "foreignActivities.provideYourCurrentEligibilityToHoldPolitical_2",
+        "foreignActivities.provideTheNameOfTheCountryInvolved_4",
+        "foreignActivities.provideTheReasonsForTheseActivities_4",
+        "foreignActivities.provideTheDatesYouHeldPoliticalOffice_2",
+        "foreignActivities.isEstimate_67",
+        "foreignActivities.toDateMonthyear_10",
+        "foreignActivities.isPresent_10",
+        "foreignActivities.isEstimate_68"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "20B",
+      "text": "9",
+      "yPosition": 267.9,
+      "fieldKeys": [
+        "foreignActivities.radiobuttonlist7",
+        "foreignActivities.provideYourCurrentEligibilityToVoteInAFore",
+        "foreignActivities.completeTheFollowingIfYouRespondedYesToH_3",
+        "foreignActivities.isEstimate_63",
+        "foreignActivities.provideTheReasonsForTheseActivities",
+        "foreignActivities.provideTheNameOfTheCountryInvolved",
+        "foreignActivities.provideYourCurrentEligibilityToVoteInAFore_2",
+        "foreignActivities.entry2_6",
+        "foreignActivities.isEstimate_64",
+        "foreignActivities.provideTheReasonsForTheseActivities_2",
+        "foreignActivities.provideTheNameOfTheCountryInvolved_2"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  in the last seven (7) years  provided advice or support to any individual associated with a foreign",
+      "y": 110.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to you, your spouse or legally recognized civil union/domestic partner, cohabitant, or any member of your",
+      "y": 469.5,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to any foreign national having  in the last seven (7) years  offered you a job, asked you to work as a",
+      "y": 96.9,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  in the last seven (7) years  been involved in any other type of business venture with a foreign",
+      "y": 96.9,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to  in the last seven (7) years  having attended or participated in any conferences, trade shows, seminars,",
+      "y": 112.8,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to you or any member of your immediate family having  in the last seven (7) years  had any contact with a",
+      "y": 143.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to  in the last seven (7) years  having sponsored any foreign national to come to the U.S. as a student, for",
+      "y": 97.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to  in the last seven (7) years  having sponsored any foreign national to come to the U.S. as a student, for",
+      "y": 77.2,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  EVER  held political office in a foreign country.",
+      "y": 92.0,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  EVER  voted in the election of a foreign country.",
+      "y": 287.2,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 135.0,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 263.4,
+      "text": "Entry #2"
+    },
+    {
+      "index": 1,
+      "yStart": 254.4,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 137.4,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 299.4,
+      "text": "Entry #2"
+    },
+    {
+      "index": 1,
+      "yStart": 452.9,
+      "text": "Entry #2"
+    },
+    {
+      "index": 1,
+      "yStart": 98.4,
+      "text": "Entry #2"
+    },
+    {
+      "index": 1,
+      "yStart": 186.9,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 302.1,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 372.1,
+      "text": "Entry #2"
+    }
+  ]
+}

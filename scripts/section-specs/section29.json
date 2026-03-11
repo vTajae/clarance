@@ -1,0 +1,313 @@
+{
+  "section": "section29",
+  "pages": [
+    128,
+    129,
+    130,
+    131,
+    132
+  ],
+  "fieldCount": 141,
+  "gateFieldCount": 6,
+  "gateFieldKeys": [
+    "association.0.RadioButtonList_104",
+    "association.0.RadioButtonList_129",
+    "association.0.RadioButtonList_36",
+    "association.0.RadioButtonList_42",
+    "association.0.RadioButtonList_60",
+    "association.RadioButtonList_1"
+  ],
+  "routing": {},
+  "repeatGroups": {
+    "section29_2": {
+      "fieldsPerIndex": 26,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section29_3": {
+      "fieldsPerIndex": 33,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section29_4": {
+      "fieldsPerIndex": 33,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section29_5": {
+      "fieldsPerIndex": 16,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [
+    {
+      "number": "29",
+      "text": "1",
+      "yPosition": 119.4,
+      "fieldKeys": [
+        "association.RadioButtonList_1",
+        "association.provideAllPositionsHeldInTheOrganizationIfAny",
+        "association.completeTheFollowingIfYouRespondedYesToB",
+        "association.provideAllContributionsMadeToTheOrganizationIfAny",
+        "association.provideADescriptionOfTheNatureOfAndReasons",
+        "association.provideAllPositionsHeldInTheOrganizationIfAny_2",
+        "association.provideAllContributionsMadeToTheOrganizationIfAny_2",
+        "association.provideTheAddresslocationOfTheOrganization",
+        "association.city",
+        "association.state",
+        "association.country",
+        "association.zipCode",
+        "association.isPresent",
+        "association.provideTheDatesOfYourInvolvementWithTheOrg",
+        "association.isEstimate",
+        "association.toDateMonthyear",
+        "association.isEstimate_2",
+        "association.entry2ProvideTheFullNameOfTheOrganization",
+        "association.provideAllPositionsHeldInTheOrganizationIfAny_4",
+        "association.provideTheAddresslocationOfTheOrganization_2",
+        "association.city_2",
+        "association.state_2",
+        "association.country_2",
+        "association.zipCode_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "29",
+      "text": "2",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "association.0.completeTheFollowingIfYouRespondedYesToE",
+        "association.0.RadioButtonList_36",
+        "association.0.isPresent",
+        "association.0.provideTheDatesForAnySuchActivities",
+        "association.0.isEstimate",
+        "association.0.toDateMonthyear",
+        "association.0.isEstimate_2",
+        "association.0.entry2DescribeTheNatureAndReasonsForTheActivity",
+        "association.0.isPresent_4",
+        "association.0.provideTheDatesForAnySuchActivities_2",
+        "association.0.isEstimate_7",
+        "association.0.toDateMonthyear_4",
+        "association.0.isEstimate_8"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "29",
+      "text": "3",
+      "yPosition": 209.4,
+      "fieldKeys": [
+        "association.0.completeTheFollowingIfYouRespondedYesToH",
+        "association.0.RadioButtonList_42",
+        "association.0.isPresent_2",
+        "association.0.provideTheDatesOfAdvocatingActsOfTerrorism",
+        "association.0.isEstimate_3",
+        "association.0.toDateMonthyear_2",
+        "association.0.isEstimate_4",
+        "association.0.entry2",
+        "association.0.isPresent_3",
+        "association.0.provideTheDatesOfAdvocatingActsOfTerrorism_2",
+        "association.0.isEstimate_5",
+        "association.0.toDateMonthyear_3",
+        "association.0.isEstimate_6"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "29",
+      "text": "4",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "association.0.RadioButtonList_60",
+        "association.0.provideAllPositionsHeldInTheOrganizationIfAny",
+        "association.0.completeTheFollowingIfYouRespondedYesToH_2",
+        "association.0.provideAllContributionsMadeToTheOrganizationIfAny",
+        "association.0.provideADescriptionOfTheNatureOfAndReasons",
+        "association.0.provideAllPositionsHeldInTheOrganizationIfAny_2",
+        "association.0.provideAllContributionsMadeToTheOrganizationIfAny_2",
+        "association.0.provideTheAddresslocationOfTheOrganization",
+        "association.0.city",
+        "association.0.state",
+        "association.0.country",
+        "association.0.zipCode",
+        "association.0.isPresent_5",
+        "association.0.provideTheDatesOfYourInvolvementWithTheOrg",
+        "association.0.isEstimate_9",
+        "association.0.toDateMonthyear_5",
+        "association.0.isEstimate_10",
+        "association.0.entry2ProvideTheFullNameOfTheOrganization",
+        "association.0.provideTheAddresslocationOfTheOrganization_2",
+        "association.0.city_2",
+        "association.0.state_2",
+        "association.0.country_2",
+        "association.0.zipCode_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "29",
+      "text": "5",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "association.0.provideAllPositionsHeldInTheOrganizationIfAny_5",
+        "association.0.completeTheFollowingIfYouRespondedYesToB",
+        "association.0.provideAllContributionsInUs",
+        "association.0.provideADescriptionOfTheNatureOfAndReasons_3",
+        "association.0.provideAllPositionsHeldInTheOrganizationIfAny_6",
+        "association.0.provideAllContributionsMadeToTheOrganizationIfAny_5",
+        "association.0.provideTheAddresslocationOfTheOrganization_3",
+        "association.0.city_3",
+        "association.0.state_3",
+        "association.0.country_3",
+        "association.0.zipCode_3",
+        "association.0.RadioButtonList_104",
+        "association.0.isPresent_7",
+        "association.0.provideTheDatesOfYourInvolvementWithTheOrg_3",
+        "association.0.isEstimate_13",
+        "association.0.toDateMonthyear_7",
+        "association.0.isEstimate_14",
+        "association.0.entry2ProvideTheFullNameOfTheOrganization_2",
+        "association.0.provideTheAddresslocationOfTheOrganization_4",
+        "association.0.city_4",
+        "association.0.state_4",
+        "association.0.country_4",
+        "association.0.zipCode_4"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "29",
+      "text": "6",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "association.0.completeTheFollowingIfYouRespondedYesToH_3",
+        "association.0.RadioButtonList_129",
+        "association.0.isPresent_9",
+        "association.0.provideTheDatesOfSuchActivitiesFromDateMonthyear",
+        "association.0.isEstimate_17",
+        "association.0.toDateMonthyear_9",
+        "association.0.isEstimate_18",
+        "association.0.entry2DescribeTheNatureAndReasonsForTheActivity_2",
+        "association.0.isPresent_10",
+        "association.0.provideTheDatesOfSuchActivitiesFromDateMonthyear_2",
+        "association.0.isEstimate_19",
+        "association.0.toDateMonthyear_10",
+        "association.0.isEstimate_20"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "29",
+      "text": "7",
+      "yPosition": 220.6,
+      "fieldKeys": [
+        "association.0.completeTheFollowingIfYouRespondedYesToH_4",
+        "association.0.entry2ProvideExplanation",
+        "association.0.RadioButtonList_141"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "Complete the following if you responded  'Yes'  to  EVER  having knowingly engaged in any acts of terrorism.",
+      "y": 93.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  EVER  advocated any acts of terrorism or activities designed to overthrow the U.S. Government by",
+      "y": 234.9,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  EVER  been a member of an organization dedicated to the use of violence or force to overthrow the",
+      "y": 108.9,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to being or  EVER  having been a member of an organization that advocates or practices commission of acts of",
+      "y": 108.9,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  EVER  knowingly engaged in activities designed to overthrow the U.S. Government by force.",
+      "y": 90.9,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  EVER  associated with anyone involved in activities to further terrorism.",
+      "y": 237.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 168.9,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 328.6,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 108.1,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 157.6,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 256.6,
+      "text": "Entry #1"
+    },
+    {
+      "index": 0,
+      "yStart": 143.5,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 303.2,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 144.1,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 306.1,
+      "text": "Entry #2"
+    },
+    {
+      "index": 0,
+      "yStart": 105.9,
+      "text": "Entry #1"
+    },
+    {
+      "index": 0,
+      "yStart": 253.6,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 309.9,
+      "text": "Entry #2"
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "section": "section24",
+  "pages": [
+    112,
+    113,
+    114,
+    115
+  ],
+  "fieldCount": 160,
+  "gateFieldCount": 6,
+  "gateFieldKeys": [
+    "alcoholUse.0.RadioButtonList_101",
+    "alcoholUse.0.RadioButtonList_120",
+    "alcoholUse.0.RadioButtonList_122",
+    "alcoholUse.0.RadioButtonList_142",
+    "alcoholUse.0.RadioButtonList_42",
+    "alcoholUse.RadioButtonList_1"
+  ],
+  "routing": {
+    "NO": "section25"
+  },
+  "repeatGroups": {
+    "section24_2": {
+      "fieldsPerIndex": 45,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section24_3": {
+      "fieldsPerIndex": 37,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section24_4": {
+      "fieldsPerIndex": 41,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [
+    {
+      "number": "24",
+      "text": "1",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "alcoholUse.RadioButtonList_1",
+        "alcoholUse.completeTheFollowingIfYouRespondedYesToY",
+        "alcoholUse.isEstimate",
+        "alcoholUse.provideCircumstances",
+        "alcoholUse.provideNegativeImpact",
+        "alcoholUse.isPresent",
+        "alcoholUse.provideDatesOfInvolvementOrUseFromDateMonthyear",
+        "alcoholUse.isEstimate_2",
+        "alcoholUse.toDateMonthyear",
+        "alcoholUse.isEstimate_3",
+        "alcoholUse.completeTheFollowingIfYouRespondedYesToY_2",
+        "alcoholUse.isEstimate_4",
+        "alcoholUse.provideCircumstances_2",
+        "alcoholUse.provideNegativeImpact_2",
+        "alcoholUse.isPresent_2",
+        "alcoholUse.provideDatesOfInvolvementOrUseFromDateMonthyear_2",
+        "alcoholUse.isEstimate_5",
+        "alcoholUse.toDateMonthyear_2",
+        "alcoholUse.isEstimate_6",
+        "alcoholUse.isPresent_3"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "24",
+      "text": "2",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "alcoholUse.0.RadioButtonList_38",
+        "alcoholUse.0.internationalOrDNSPhoneNumber",
+        "alcoholUse.0.day",
+        "alcoholUse.0.night",
+        "alcoholUse.0.RadioButtonList_42",
+        "alcoholUse.0.extension",
+        "alcoholUse.0.provideTelephoneNumber",
+        "alcoholUse.0.provideExplanation",
+        "alcoholUse.0.RadioButtonList_46",
+        "alcoholUse.0.aYouRespondedNoToHavingTakenActionToS",
+        "alcoholUse.0.provideTheFullAddressForTheCounselingtreatm",
+        "alcoholUse.0.city",
+        "alcoholUse.0.state",
+        "alcoholUse.0.country",
+        "alcoholUse.0.zipCode",
+        "alcoholUse.0.provideTheNameOfTheIndividualCounselorOrTr",
+        "alcoholUse.0.isPresent",
+        "alcoholUse.0.bYouRespondedYesToHavingTakenActionTo",
+        "alcoholUse.0.isEstimate",
+        "alcoholUse.0.toDateMonthyear",
+        "alcoholUse.0.isEstimate_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "24",
+      "text": "3",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "alcoholUse.0.provideTheFullAddressOfTheCounselingtreatme",
+        "alcoholUse.0.city_3",
+        "alcoholUse.0.state_3",
+        "alcoholUse.0.country_3",
+        "alcoholUse.0.zipCode_3",
+        "alcoholUse.0.provideTelephoneNumber_3",
+        "alcoholUse.0.extension_3",
+        "alcoholUse.0.internationalOrDNSPhoneNumber_3",
+        "alcoholUse.0.day_3",
+        "alcoholUse.0.night_3",
+        "alcoholUse.0.provideTheNameOfTheIndividualCounselorOrTr_3",
+        "alcoholUse.0.isPresent_3",
+        "alcoholUse.0.entry2",
+        "alcoholUse.0.isEstimate_5",
+        "alcoholUse.0.toDateMonthyear_3",
+        "alcoholUse.0.isEstimate_6",
+        "alcoholUse.0.provideExplanation_5",
+        "alcoholUse.0.RadioButtonList_101",
+        "alcoholUse.0.provideTheFullAddressOfTheCounselingtreatme_2",
+        "alcoholUse.0.city_4",
+        "alcoholUse.0.state_4",
+        "alcoholUse.0.country_4",
+        "alcoholUse.0.zipCode_4",
+        "alcoholUse.0.provideTelephoneNumber_4",
+        "alcoholUse.0.extension_4",
+        "alcoholUse.0.internationalOrDNSPhoneNumber_4",
+        "alcoholUse.0.day_4",
+        "alcoholUse.0.night_4",
+        "alcoholUse.0.provideTheNameOfTheIndividualCounselorOrTr_4",
+        "alcoholUse.0.isPresent_4",
+        "alcoholUse.0.completeTheFollowingIfYouRespondedYesToV",
+        "alcoholUse.0.isEstimate_7",
+        "alcoholUse.0.toDateMonthyear_4",
+        "alcoholUse.0.isEstimate_8",
+        "alcoholUse.0.RadioButtonList_118",
+        "alcoholUse.0.provideExplanation_6"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "24",
+      "text": "4",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "alcoholUse.0.RadioButtonList_120",
+        "alcoholUse.0.explanation",
+        "alcoholUse.0.RadioButtonList_142",
+        "alcoholUse.0.provideTheFullAddressOfTheCounselingtreatme_4",
+        "alcoholUse.0.city_7",
+        "alcoholUse.0.state_7",
+        "alcoholUse.0.country_7",
+        "alcoholUse.0.zipCode_7",
+        "alcoholUse.0.completeTheFollowingIfYouRespondedYesToH",
+        "alcoholUse.0.provideTheAddressOfAgencyorganizationWhereC_3",
+        "alcoholUse.0.city_8",
+        "alcoholUse.0.state_8",
+        "alcoholUse.0.country_8",
+        "alcoholUse.0.zipCode_8",
+        "alcoholUse.0.provideTheAddressOfAgencyorganizationWhereC_4",
+        "alcoholUse.0.isPresent_6",
+        "alcoholUse.0.provideTheDatesOfCounselingOrTreatment_2",
+        "alcoholUse.0.isEstimate_11",
+        "alcoholUse.0.toDateMonthyear_6",
+        "alcoholUse.0.isEstimate_12",
+        "alcoholUse.0.provideTheNameOfAgencyorganizationWhereCoun_2"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "Complete the following if you responded 'Yes' to your alcohol use having had a negative impact on your work performance, your professional or personal",
+      "y": 109.6,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded 'Yes' to having been ordered, advised, or asked to seek counseling or treatment as a result of your use of alcohol.",
+      "y": 95.2,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to voluntarily seeking counseling or treatment.",
+      "y": 94.0,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 25)",
+      "y": 74.8,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section25"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  EVER  received counseling or treatment as a result of your use of alcohol.",
+      "y": 98.5,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 134.5,
+      "text": "Entry #1"
+    },
+    {
+      "index": 0,
+      "yStart": 110.4,
+      "text": "Entry #1"
+    },
+    {
+      "index": 0,
+      "yStart": 111.4,
+      "text": "Entry #1"
+    },
+    {
+      "index": 0,
+      "yStart": 112.6,
+      "text": "Entry #1"
+    }
+  ]
+}

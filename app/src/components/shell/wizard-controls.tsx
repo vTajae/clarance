@@ -38,6 +38,7 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     nextStep: wizNextStep,
     prevStep: wizPrevStep,
     currentStep,
+    skipToSection,
   } = useWizardNavigation(currentSection);
 
   const sectionIndex = ALL_SECTIONS.indexOf(currentSection);
@@ -81,6 +82,12 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
 
   const handleNext = useCallback(() => {
     if (isWizardMode) {
+      // Auto-skip: gate answered with skip value and no more visible steps
+      if (skipToSection) {
+        navigateToSection(skipToSection as SF86Section);
+        return;
+      }
+
       // In wizard mode: advance step or enter review
       if (!isReviewMode && (canGoNext || !isLastStep)) {
         wizNextStep();
@@ -93,7 +100,7 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     if (nextSectionKey) {
       navigateToSection(nextSectionKey);
     }
-  }, [isWizardMode, isReviewMode, canGoNext, isLastStep, wizNextStep, nextSectionKey, navigateToSection]);
+  }, [isWizardMode, isReviewMode, canGoNext, isLastStep, wizNextStep, nextSectionKey, navigateToSection, skipToSection]);
 
   const handleSave = useCallback(() => {
     void storeSaveNow();
@@ -112,10 +119,16 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     ? isReviewMode && isFinalSection
     : isFinalSection;
 
+  const skipSectionTitle = skipToSection
+    ? SECTION_META[skipToSection as SF86Section]?.title
+    : null;
+
   const nextLabel = isWizardMode
-    ? isReviewMode
-      ? isFinalSection ? 'Submit' : 'Next Section'
-      : isLastStep ? 'Review' : 'Next'
+    ? skipToSection
+      ? `Skip to ${skipSectionTitle ?? skipToSection}`
+      : isReviewMode
+        ? isFinalSection ? 'Submit' : 'Next Section'
+        : isLastStep ? 'Review' : 'Next'
     : isFinalSection ? 'Submit' : 'Next';
 
   return (

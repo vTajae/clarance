@@ -1,0 +1,68 @@
+{
+  "section": "section11",
+  "pages": [
+    10,
+    11,
+    12,
+    13
+  ],
+  "fieldCount": 252,
+  "gateFieldCount": 8,
+  "gateFieldKeys": [
+    "residencyInfo.0.RadioButtonList_121",
+    "residencyInfo.0.RadioButtonList_126",
+    "residencyInfo.0.RadioButtonList_184",
+    "residencyInfo.0.RadioButtonList_189",
+    "residencyInfo.0.RadioButtonList_246",
+    "residencyInfo.0.RadioButtonList_251",
+    "residencyInfo.0.RadioButtonList_58",
+    "residencyInfo.0.RadioButtonList_63"
+  ],
+  "routing": {},
+  "repeatGroups": {
+    "residency": {
+      "fieldsPerIndex": 63,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section11_2": {
+      "fieldsPerIndex": 63,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section11_3": {
+      "fieldsPerIndex": 63,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section11_4": {
+      "fieldsPerIndex": 63,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [],
+  "instructions": [],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 187.1,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 92.6,
+      "text": "Entry #2"
+    },
+    {
+      "index": 2,
+      "yStart": 92.6,
+      "text": "Entry #3"
+    },
+    {
+      "index": 3,
+      "yStart": 93.7,
+      "text": "Entry #4"
+    }
+  ]
+}

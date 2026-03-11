@@ -1,0 +1,32 @@
+{
+  "section": "section21C",
+  "pages": [
+    92
+  ],
+  "fieldCount": 61,
+  "gateFieldCount": 1,
+  "gateFieldKeys": [
+    "mentalHealth.RadioButtonList_120"
+  ],
+  "routing": {
+    "NO": "section21D"
+  },
+  "repeatGroups": {},
+  "questions": [],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 21D)",
+      "y": 75.7,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section21D"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  EVER  been hospitalized for a mental health condition",
+      "y": 94.8,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": []
+}

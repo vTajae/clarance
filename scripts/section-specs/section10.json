@@ -1,0 +1,123 @@
+{
+  "section": "section10",
+  "pages": [
+    8,
+    9
+  ],
+  "fieldCount": 122,
+  "gateFieldCount": 2,
+  "gateFieldKeys": [
+    "dualCitizenshipInfo.RadioButtonList_1",
+    "dualCitizenshipInfo.RadioButtonList_24"
+  ],
+  "routing": {
+    "NO": "section11"
+  },
+  "repeatGroups": {
+    "section10_2": {
+      "fieldsPerIndex": 49,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [
+    {
+      "number": "10",
+      "text": "1   Do you now or have you  EVER  held dual/multiple citizenships?",
+      "yPosition": 74.1,
+      "fieldKeys": [
+        "dualCitizenshipInfo.RadioButtonList_1",
+        "dualCitizenshipInfo.completeTheFollowingIfYouAnsweredYesToHa",
+        "dualCitizenshipInfo.howDidYouAcquireThisNonus",
+        "dualCitizenshipInfo.duringWhatPeriodOfTimeDidYouHoldCitizenshi",
+        "dualCitizenshipInfo.isEstimate",
+        "dualCitizenshipInfo.toDateMonthyear",
+        "dualCitizenshipInfo.isPresent",
+        "dualCitizenshipInfo.isEstimate_2",
+        "dualCitizenshipInfo.RadioButtonList_9",
+        "dualCitizenshipInfo.provideExplanation",
+        "dualCitizenshipInfo.RadioButtonList_11",
+        "dualCitizenshipInfo.provideExplanation_2",
+        "dualCitizenshipInfo.howDidYouAcquireThisNonus_2",
+        "dualCitizenshipInfo.duringWhatPeriodOfTimeDidYouHoldCitizenshi_2",
+        "dualCitizenshipInfo.isEstimate_3",
+        "dualCitizenshipInfo.toDateMonthyear_2",
+        "dualCitizenshipInfo.isPresent_2",
+        "dualCitizenshipInfo.isEstimate_4",
+        "dualCitizenshipInfo.RadioButtonList_19",
+        "dualCitizenshipInfo.provideExplanation_3",
+        "dualCitizenshipInfo.provideExplanation_4",
+        "dualCitizenshipInfo.RadioButtonList_22",
+        "dualCitizenshipInfo.entry2ProvideCountryOfCitizenship"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "10",
+      "text": "2   Have you  EVER  been issued a passport (or identity card for travel) by a country other than the U.S.?",
+      "yPosition": 380.4,
+      "fieldKeys": [
+        "dualCitizenshipInfo.RadioButtonList_24",
+        "dualCitizenshipInfo.completeTheFollowingIfYouAnsweredYesToHa_2",
+        "dualCitizenshipInfo.provideTheDateThePassportOrIdentityCardW",
+        "dualCitizenshipInfo.isEstimate_5",
+        "dualCitizenshipInfo.provideThePlaceThePassportOrIdentityCard",
+        "dualCitizenshipInfo.country",
+        "dualCitizenshipInfo.provideTheNameInWhichPassportOrIdentityCa",
+        "dualCitizenshipInfo.firstName",
+        "dualCitizenshipInfo.middleName",
+        "dualCitizenshipInfo.suffix",
+        "dualCitizenshipInfo.provideThePassportOrIdentityCardNumber",
+        "dualCitizenshipInfo.provideThePassportOrIdentityCardExpirationDate",
+        "dualCitizenshipInfo.isEstimate_6",
+        "dualCitizenshipInfo.RadioButtonList_37",
+        "dualCitizenshipInfo.provideTheCountriesToWhichYouTraveledOnThi",
+        "dualCitizenshipInfo.fromDateMonthyearRow1",
+        "dualCitizenshipInfo.estimateRow1",
+        "dualCitizenshipInfo.toDateMonthyearRow1",
+        "dualCitizenshipInfo.estimateRow1_2",
+        "dualCitizenshipInfo.presentRow1",
+        "dualCitizenshipInfo.countryRow2",
+        "dualCitizenshipInfo.fromDateMonthyearRow2",
+        "dualCitizenshipInfo.estimateRow2",
+        "dualCitizenshipInfo.toDateMonthyearRow2",
+        "dualCitizenshipInfo.estimateRow2_2",
+        "dualCitizenshipInfo.presentRow2",
+        "dualCitizenshipInfo.countryRow3",
+        "dualCitizenshipInfo.fromDateMonthyearRow3",
+        "dualCitizenshipInfo.estimateRow3",
+        "dualCitizenshipInfo.toDateMonthyearRow3",
+        "dualCitizenshipInfo.estimateRow3_2",
+        "dualCitizenshipInfo.presentRow3",
+        "dualCitizenshipInfo.countryRow4",
+        "dualCitizenshipInfo.fromDateMonthyearRow4",
+        "dualCitizenshipInfo.estimateRow4",
+        "dualCitizenshipInfo.toDateMonthyearRow4",
+        "dualCitizenshipInfo.estimateRow4_2",
+        "dualCitizenshipInfo.presentRow4"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 11)",
+      "y": 382.8,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section11"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 108.9,
+      "text": "Entry #1"
+    },
+    {
+      "index": 1,
+      "yStart": 243.6,
+      "text": "Entry #2"
+    }
+  ]
+}

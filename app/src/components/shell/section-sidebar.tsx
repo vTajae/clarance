@@ -39,6 +39,12 @@ function parseSectionKey(key: string): { root: string; suffix: string } {
  * - Sections 20A/B/C → grouped under "Section 20 - Foreign Activities"
  * - Section 21 + 21A-E → Section 21 is the parent, 21A-E are children
  */
+/** Format a section key as a short label: "1", "13A", "21E" */
+function sectionNumber(key: SF86Section): string {
+  const { root, suffix } = parseSectionKey(key);
+  return `${root}${suffix}`;
+}
+
 function buildSectionTree(sections: SF86Section[]): SectionNode[] {
   const nodes: SectionNode[] = [];
   const grouped = new Map<string, SF86Section[]>();
@@ -59,55 +65,46 @@ function buildSectionTree(sections: SF86Section[]): SectionNode[] {
     if (consumed.has(sec)) continue;
 
     const { root, suffix } = parseSectionKey(sec);
-
-    // Check if this root has lettered subsections
     const subsections = grouped.get(root);
 
     if (subsections && subsections.length > 0) {
-      // This root has subsections
       if (!suffix) {
-        // This is the parent section itself (e.g. section21)
+        // Parent with its own section (e.g. section21)
         const children = subsections.map((sub) => {
           consumed.add(sub);
-          const meta = SECTION_META[sub]!;
           return {
             key: sub,
-            label: meta.title,
+            label: `${sectionNumber(sub)}. ${SECTION_META[sub]!.title}`,
           };
         });
 
-        const meta = SECTION_META[sec]!;
         nodes.push({
           key: sec,
-          label: meta.title,
+          label: `${root}. ${SECTION_META[sec]!.title}`,
           children,
         });
         consumed.add(sec);
       } else if (!consumed.has(sec)) {
-        // Lettered section without a standalone parent (e.g. 13A, 13B, 13C)
+        // Virtual parent (e.g. 13A, 13B, 13C — no standalone "13")
         const children = subsections.map((sub) => {
           consumed.add(sub);
-          const meta = SECTION_META[sub]!;
           return {
             key: sub,
-            label: meta.title,
+            label: `${sectionNumber(sub)}. ${SECTION_META[sub]!.title}`,
           };
         });
 
-        // Virtual parent label
-        const parentLabel = `Section ${root}`;
         nodes.push({
-          key: null, // virtual parent (no navigable section)
-          label: parentLabel,
+          key: null,
+          label: `Section ${root}`,
           children,
         });
       }
     } else {
-      // Simple section, no subsections
-      const meta = SECTION_META[sec]!;
+      // Simple section
       nodes.push({
         key: sec,
-        label: meta.title,
+        label: `${root}. ${SECTION_META[sec]!.title}`,
         children: [],
       });
       consumed.add(sec);

@@ -52,6 +52,8 @@ export interface WizardNavigationState {
   allSteps: WizardStep[];
   /** The section config for the current section (null if section not found). */
   sectionConfig: SectionWizardConfig | null;
+  /** When the current gate step triggers a skip to another section. */
+  skipToSection: string | null;
 
   /** Advance to the next visible step, or enter review if on the last step. */
   nextStep: () => void;
@@ -177,6 +179,21 @@ export function useWizardNavigation(sectionKey?: SF86Section): WizardNavigationS
   const canGoNext = !inReviewMode && totalVisibleSteps > 0;
   const canGoPrev = inReviewMode || clampedIndex > 0;
 
+  // Detect when current gate step should auto-skip to another section.
+  // This fires when: (1) the step has skipToSection, (2) the gate value matches
+  // skipOnValue, (3) this is the last visible step (all conditional blocks hidden).
+  const skipToSection = useMemo(() => {
+    if (!currentStep?.skipToSection || !currentStep.skipOnValue || !currentStep.gateFieldKey) {
+      return null;
+    }
+    const gateVal = gateValues[currentStep.gateFieldKey];
+    if (gateVal === null || gateVal === undefined || gateVal === '') return null;
+    if (String(gateVal) === currentStep.skipOnValue && isLastStep) {
+      return currentStep.skipToSection;
+    }
+    return null;
+  }, [currentStep, gateValues, isLastStep]);
+
   // -------------------------------------------------------------------------
   // 5. Navigation actions
   // -------------------------------------------------------------------------
@@ -242,6 +259,7 @@ export function useWizardNavigation(sectionKey?: SF86Section): WizardNavigationS
     isReviewMode: inReviewMode,
     allSteps,
     sectionConfig,
+    skipToSection,
     nextStep,
     prevStep,
     goToStep,

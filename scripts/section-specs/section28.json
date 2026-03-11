@@ -1,0 +1,38 @@
+{
+  "section": "section28",
+  "pages": [
+    127
+  ],
+  "fieldCount": 23,
+  "gateFieldCount": 1,
+  "gateFieldKeys": [
+    "civil.RadioButtonList_1"
+  ],
+  "routing": {
+    "NO": "section29"
+  },
+  "repeatGroups": {},
+  "questions": [],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 29)",
+      "y": 77.1,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section29"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having been a party to any public record civil court action(s) not listed elsewhere on this form  in the last",
+      "y": 97.6,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 121.6,
+      "text": "Entry #1"
+    }
+  ]
+}

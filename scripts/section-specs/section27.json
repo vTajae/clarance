@@ -1,0 +1,141 @@
+{
+  "section": "section27",
+  "pages": [
+    125,
+    126
+  ],
+  "fieldCount": 57,
+  "gateFieldCount": 3,
+  "gateFieldKeys": [
+    "technology.0.RadioButtonList_57",
+    "technology.RadioButtonList_28",
+    "technology.RadioButtonList_29"
+  ],
+  "routing": {
+    "NO": "section28"
+  },
+  "repeatGroups": {
+    "section27_2": {
+      "fieldsPerIndex": 19,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [
+    {
+      "number": "27",
+      "text": "1",
+      "yPosition": 119.4,
+      "fieldKeys": [
+        "technology.provideTheLocationWhereTheIncidentTookPlace",
+        "technology.city",
+        "technology.state",
+        "technology.country",
+        "technology.zipCode",
+        "technology.provideADescriptionOfTheActionAdministrative",
+        "technology.estimates",
+        "technology.entry2ProvideTheDateOfTheIncidentMonthyear",
+        "technology.provideADescriptionOfTheNatureOfTheInciden",
+        "technology.RadioButtonList_29",
+        "technology.provideTheLocationWhereTheIncidentTookPlace_4",
+        "technology.city_4",
+        "technology.state_4",
+        "technology.country_4",
+        "technology.zipCode_4",
+        "technology.provideADescriptionOfTheActionAdministrative_4",
+        "technology.estimates_4",
+        "technology.completeTheFollowingIfYouRespondedYesToH_2",
+        "technology.provideADescriptionOfTheNatureOfTheInciden_4"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "27",
+      "text": "2",
+      "yPosition": 387.1,
+      "fieldKeys": [
+        "technology.provideTheLocationWhereTheIncidentTookPlace_2",
+        "technology.city_2",
+        "technology.state_2",
+        "technology.country_2",
+        "technology.zipCode_2",
+        "technology.provideADescriptionOfTheActionAdministrative_2",
+        "technology.estimates_2",
+        "technology.completeTheFollowingIfYouRespondedYesToH",
+        "technology.provideADescriptionOfTheNatureOfTheInciden_2",
+        "technology.provideTheLocationWhereTheIncidentTookPlace_3",
+        "technology.city_3",
+        "technology.state_3",
+        "technology.country_3",
+        "technology.zipCode_3",
+        "technology.provideADescriptionOfTheActionAdministrative_3",
+        "technology.estimates_3",
+        "technology.entry2ProvideTheDateOfTheIncidentMonthyear_2",
+        "technology.provideADescriptionOfTheNatureOfTheInciden_3",
+        "technology.RadioButtonList_28"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "27",
+      "text": "3",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "technology.0.provideTheLocationWhereTheIncidentTookPlace",
+        "technology.0.city",
+        "technology.0.state",
+        "technology.0.country",
+        "technology.0.zipCode",
+        "technology.0.provideADescriptionOfTheActionAdministrative",
+        "technology.0.isEstimate",
+        "technology.0.completeTheFollowingIfYouRespondedYesToH",
+        "technology.0.provideADescriptionOfTheNatureOfTheInciden",
+        "technology.0.provideTheLocationWhereTheIncidentTookPlace_2",
+        "technology.0.city_2",
+        "technology.0.state_2",
+        "technology.0.country_2",
+        "technology.0.zipCode_2",
+        "technology.0.provideADescriptionOfTheActionAdministrative_2",
+        "technology.0.isEstimate_2",
+        "technology.0.entry2ProvideTheDateOfTheIncidentMonthyear",
+        "technology.0.provideADescriptionOfTheNatureOfTheInciden_2",
+        "technology.0.RadioButtonList_57"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  in the last seven (7) years  illegally or without proper authorization entered or attempted to enter into",
+      "y": 144.3,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  in the last seven (7) years  illegally or without authorization, modified, destroyed, manipulated, or",
+      "y": 420.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 28)",
+      "y": 77.1,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section28"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  in the last seven (7) years  introduced, removed, or used hardware, software, or media in",
+      "y": 111.0,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    }
+  ],
+  "entries": [
+    {
+      "index": 0,
+      "yStart": 168.9,
+      "text": "Entry #1"
+    }
+  ]
+}

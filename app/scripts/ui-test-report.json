@@ -1,0 +1,848 @@
+{
+  "timestamp": "2026-03-02T18:52:09.389Z",
+  "submissionId": "da145ba5-f9a0-4e33-99a3-96b1ea60f39b",
+  "summary": {
+    "totalSections": 39,
+    "passed": 39,
+    "failed": 0,
+    "fieldsRendered": 5414,
+    "fieldTypesInteracted": [
+      "text",
+      "select",
+      "checkbox",
+      "radio"
+    ],
+    "consoleErrors": 1
+  },
+  "jotaiStore": {
+    "storeExists": true,
+    "familyExists": true,
+    "canReadAtom": true
+  },
+  "sections": [
+    {
+      "section": "section1",
+      "group": "identification",
+      "status": "passed",
+      "fieldsExpected": 4,
+      "fieldsRendered": 84,
+      "fieldTypesFound": [
+        "text:3",
+        "select:1"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 13
+        }
+      ]
+    },
+    {
+      "section": "section2",
+      "group": "identification",
+      "status": "passed",
+      "fieldsExpected": 2,
+      "fieldsRendered": 84,
+      "fieldTypesFound": [
+        "text:2",
+        "select:1",
+        "checkbox:1"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": false
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 13
+        },
+        {
+          "type": "checkbox",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section3",
+      "group": "identification",
+      "status": "passed",
+      "fieldsExpected": 4,
+      "fieldsRendered": 84,
+      "fieldTypesFound": [
+        "text:2",
+        "select:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 256
+        }
+      ]
+    },
+    {
+      "section": "section4",
+      "group": "identification",
+      "status": "passed",
+      "fieldsExpected": 2,
+      "fieldsRendered": 21,
+      "fieldTypesFound": [
+        "checkbox:1"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "checkbox",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section5",
+      "group": "identification",
+      "status": "passed",
+      "fieldsExpected": 45,
+      "fieldsRendered": 273,
+      "fieldTypesFound": [
+        "text:8",
+        "select:3",
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 13
+        },
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section6",
+      "group": "identification",
+      "status": "passed",
+      "fieldsExpected": 6,
+      "fieldsRendered": 147,
+      "fieldTypesFound": [
+        "text:1",
+        "select:4",
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 15
+        },
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section7",
+      "group": "identification",
+      "status": "passed",
+      "fieldsExpected": 17,
+      "fieldsRendered": 21,
+      "fieldTypesFound": [
+        "text:1"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": false,
+          "error": "locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"text\"]').first()\u001b[22m\n"
+        }
+      ]
+    },
+    {
+      "section": "section8",
+      "group": "citizenship",
+      "status": "passed",
+      "fieldsExpected": 10,
+      "fieldsRendered": 42,
+      "fieldTypesFound": [
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section9",
+      "group": "citizenship",
+      "status": "passed",
+      "fieldsExpected": 78,
+      "fieldsRendered": 357,
+      "fieldTypesFound": [
+        "text:4",
+        "select:2",
+        "radio:11"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 255
+        },
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section10",
+      "group": "citizenship",
+      "status": "passed",
+      "fieldsExpected": 122,
+      "fieldsRendered": 147,
+      "fieldTypesFound": [
+        "text:3",
+        "select:3",
+        "checkbox:1"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": false
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 256
+        },
+        {
+          "type": "checkbox",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section11",
+      "group": "history",
+      "status": "passed",
+      "fieldsExpected": 252,
+      "fieldsRendered": 231,
+      "fieldTypesFound": [
+        "text:3",
+        "checkbox:2",
+        "radio:6"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": false
+        },
+        {
+          "type": "checkbox",
+          "pass": false,
+          "error": "locator.check: Clicking the checkbox did not change its state\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"checkbox\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <input id=\"_r_2_\" type=\"checkbox\" aria-invalid=\"false\" aria-required=\"false\" class=\"↵            mt-0.5 h-4 w-4 rounded border-gray-300 text-blue-600↵            focus:ring-2 focus:ring-blue-500↵            cursor-pointer↵          \"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - forcing action\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\u001b[2m    - click action done\u001b[22m\n\u001b[2m    - waiting for scheduled navigations to finish\u001b[22m\n\u001b[2m    - navigations have finished\u001b[22m\n"
+        },
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section12",
+      "group": "history",
+      "status": "passed",
+      "fieldsExpected": 150,
+      "fieldsRendered": 42,
+      "fieldTypesFound": [
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section13A",
+      "group": "history",
+      "status": "passed",
+      "fieldsExpected": 1036,
+      "fieldsRendered": 231,
+      "fieldTypesFound": [
+        "text:5",
+        "radio:6"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section13B",
+      "group": "history",
+      "status": "passed",
+      "fieldsExpected": 49,
+      "fieldsRendered": 42,
+      "fieldTypesFound": [
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section13C",
+      "group": "history",
+      "status": "passed",
+      "fieldsExpected": 1,
+      "fieldsRendered": 40,
+      "fieldTypesFound": [],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": []
+    },
+    {
+      "section": "section14",
+      "group": "military",
+      "status": "passed",
+      "fieldsExpected": 5,
+      "fieldsRendered": 200,
+      "fieldTypesFound": [],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": []
+    },
+    {
+      "section": "section15",
+      "group": "military",
+      "status": "passed",
+      "fieldsExpected": 141,
+      "fieldsRendered": 360,
+      "fieldTypesFound": [],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": []
+    },
+    {
+      "section": "section16",
+      "group": "relationships",
+      "status": "passed",
+      "fieldsExpected": 108,
+      "fieldsRendered": 120,
+      "fieldTypesFound": [],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": []
+    },
+    {
+      "section": "section17",
+      "group": "relationships",
+      "status": "passed",
+      "fieldsExpected": 329,
+      "fieldsRendered": 320,
+      "fieldTypesFound": [],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": []
+    },
+    {
+      "section": "section18",
+      "group": "relationships",
+      "status": "passed",
+      "fieldsExpected": 964,
+      "fieldsRendered": 126,
+      "fieldTypesFound": [
+        "text:1",
+        "select:2",
+        "checkbox:1",
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 57
+        },
+        {
+          "type": "checkbox",
+          "pass": true
+        },
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section19",
+      "group": "foreign",
+      "status": "passed",
+      "fieldsExpected": 277,
+      "fieldsRendered": 63,
+      "fieldTypesFound": [
+        "select:2",
+        "checkbox:1"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 256
+        },
+        {
+          "type": "checkbox",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section20A",
+      "group": "foreign",
+      "status": "passed",
+      "fieldsExpected": 361,
+      "fieldsRendered": 40,
+      "fieldTypesFound": [],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": []
+    },
+    {
+      "section": "section20B",
+      "group": "foreign",
+      "status": "passed",
+      "fieldsExpected": 315,
+      "fieldsRendered": 147,
+      "fieldTypesFound": [
+        "text:5",
+        "select:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 13
+        }
+      ]
+    },
+    {
+      "section": "section20C",
+      "group": "foreign",
+      "status": "passed",
+      "fieldsExpected": 114,
+      "fieldsRendered": 273,
+      "fieldTypesFound": [
+        "text:4",
+        "select:2",
+        "checkbox:3",
+        "radio:4"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": false
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 13
+        },
+        {
+          "type": "checkbox",
+          "pass": true
+        },
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section26",
+      "group": "financial",
+      "status": "passed",
+      "fieldsExpected": 237,
+      "fieldsRendered": 240,
+      "fieldTypesFound": [],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": []
+    },
+    {
+      "section": "section23",
+      "group": "substance",
+      "status": "passed",
+      "fieldsExpected": 191,
+      "fieldsRendered": 260,
+      "fieldTypesFound": [],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": []
+    },
+    {
+      "section": "section24",
+      "group": "substance",
+      "status": "passed",
+      "fieldsExpected": 160,
+      "fieldsRendered": 180,
+      "fieldTypesFound": [],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": []
+    },
+    {
+      "section": "section22",
+      "group": "legal",
+      "status": "passed",
+      "fieldsExpected": 267,
+      "fieldsRendered": 42,
+      "fieldTypesFound": [
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section25",
+      "group": "legal",
+      "status": "passed",
+      "fieldsExpected": 79,
+      "fieldsRendered": 252,
+      "fieldTypesFound": [
+        "text:6",
+        "select:2",
+        "checkbox:4"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 13
+        },
+        {
+          "type": "checkbox",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section28",
+      "group": "legal",
+      "status": "passed",
+      "fieldsExpected": 23,
+      "fieldsRendered": 42,
+      "fieldTypesFound": [
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section21",
+      "group": "psychological",
+      "status": "passed",
+      "fieldsExpected": 24,
+      "fieldsRendered": 42,
+      "fieldTypesFound": [
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section21A",
+      "group": "psychological",
+      "status": "passed",
+      "fieldsExpected": 46,
+      "fieldsRendered": 147,
+      "fieldTypesFound": [
+        "text:3",
+        "select:1",
+        "checkbox:1",
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": false
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 13
+        },
+        {
+          "type": "checkbox",
+          "pass": true
+        },
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section21B",
+      "group": "psychological",
+      "status": "passed",
+      "fieldsExpected": 49,
+      "fieldsRendered": 42,
+      "fieldTypesFound": [
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section21C",
+      "group": "psychological",
+      "status": "passed",
+      "fieldsExpected": 61,
+      "fieldsRendered": 42,
+      "fieldTypesFound": [
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section21D",
+      "group": "psychological",
+      "status": "passed",
+      "fieldsExpected": 179,
+      "fieldsRendered": 42,
+      "fieldTypesFound": [
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section21E",
+      "group": "psychological",
+      "status": "passed",
+      "fieldsExpected": 127,
+      "fieldsRendered": 63,
+      "fieldTypesFound": [
+        "text:1",
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section27",
+      "group": "review",
+      "status": "passed",
+      "fieldsExpected": 57,
+      "fieldsRendered": 210,
+      "fieldTypesFound": [
+        "text:6",
+        "select:3",
+        "checkbox:1"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 57
+        },
+        {
+          "type": "checkbox",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section29",
+      "group": "review",
+      "status": "passed",
+      "fieldsExpected": 141,
+      "fieldsRendered": 42,
+      "fieldTypesFound": [
+        "text:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "section": "section30",
+      "group": "review",
+      "status": "passed",
+      "fieldsExpected": 27,
+      "fieldsRendered": 273,
+      "fieldTypesFound": [
+        "text:8",
+        "select:3",
+        "radio:2"
+      ],
+      "wizardSteps": 21,
+      "errors": [],
+      "interactionTests": [
+        {
+          "type": "text-input",
+          "pass": false
+        },
+        {
+          "type": "select",
+          "pass": true,
+          "optionCount": 13
+        },
+        {
+          "type": "radio",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [
+    "[SyncEngine] Failed to sync da145ba5-f9a0-4e33-99a3-96b1ea60f39b:section20C (attempt 1/3): Failed to fetch"
+  ]
+}

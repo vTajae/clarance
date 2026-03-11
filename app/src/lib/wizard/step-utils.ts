@@ -204,9 +204,10 @@ export function filterVisibleSteps(
     }
 
     // This is a conditional block. Determine whether the gate condition is met
-    // by finding the showWhen expression from the first conditional field.
+    // by finding the showWhen expression from the first conditional field,
+    // or from the step's own showWhen (for entry-0 fields that lack dependsOn).
     const gateValue = gateValues[step.gateFieldKey] ?? null;
-    const showWhen = findShowWhenForStep(step, registry);
+    const showWhen = findShowWhenForStep(step, registry) ?? step.showWhen;
 
     if (!showWhen) {
       // No showWhen found means we cannot evaluate -- default to visible

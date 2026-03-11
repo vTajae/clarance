@@ -1,0 +1,327 @@
+{
+  "section": "section26",
+  "pages": [
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124
+  ],
+  "fieldCount": 237,
+  "gateFieldCount": 11,
+  "gateFieldKeys": [
+    "finances.0.RadioButtonList_123",
+    "finances.0.RadioButtonList_144",
+    "finances.0.RadioButtonList_168",
+    "finances.0.RadioButtonList_192",
+    "finances.0.RadioButtonList_193",
+    "finances.0.RadioButtonList_198",
+    "finances.0.RadioButtonList_220",
+    "finances.0.RadioButtonList_56",
+    "finances.0.RadioButtonList_74",
+    "finances.0.RadioButtonList_98",
+    "finances.RadioButtonList_4"
+  ],
+  "routing": {
+    "NO": "section27"
+  },
+  "repeatGroups": {
+    "section26_2": {
+      "fieldsPerIndex": 42,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section26_3": {
+      "fieldsPerIndex": 46,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section26_6": {
+      "fieldsPerIndex": 25,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section26_7": {
+      "fieldsPerIndex": 24,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section26_8": {
+      "fieldsPerIndex": 23,
+      "maxIndex": 0,
+      "entryCount": 1
+    },
+    "section26_9": {
+      "fieldsPerIndex": 22,
+      "maxIndex": 0,
+      "entryCount": 1
+    }
+  },
+  "questions": [
+    {
+      "number": "26",
+      "text": "1",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "finances.provideTheBankruptcyCourtDocketaccountNumber",
+        "finances.provideTheDateBankruptcyWasFiledMonthyear",
+        "finances.isEstimate",
+        "finances.RadioButtonList_4",
+        "finances.RadioButtonList_5",
+        "finances.isEstimate_2",
+        "finances.provideTheDateOfBankruptcyDischargeMonthyear",
+        "finances.provideTheDateOfBankruptcyDischarge",
+        "finances.provideTheTotalAmountInUs",
+        "finances.isEstimate_3",
+        "finances.provideTheAddressOfTheCourtInvolved",
+        "finances.city",
+        "finances.state",
+        "finances.country",
+        "finances.zipCode",
+        "finances.suffix",
+        "finances.middleName",
+        "finances.provideTheNameDebtIsRecordedUnderLastName",
+        "finances.firstName",
+        "finances.provideTheAddressOfTheTrusteeForThisBankruptcy",
+        "finances.city_2",
+        "finances.state_2",
+        "finances.country_2",
+        "finances.zipCode_2",
+        "finances.aIfChapter13PreviouslySelected",
+        "finances.provideTheNameOfTheCourtInvolved"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "26",
+      "text": "2",
+      "yPosition": 74.4,
+      "fieldKeys": [
+        "finances.0.RadioButtonList_56",
+        "finances.0.provideADescriptionOfYourFinancialProblemsD",
+        "finances.0.provideAnEstimateOfTheAmountInUs",
+        "finances.0.isPresent",
+        "finances.0.completeTheFollowingIfYouRespondedYesToH",
+        "finances.0.isEstimate",
+        "finances.0.toDateMonthyear",
+        "finances.0.isEstimate_2",
+        "finances.0.ifYouHaveTakenAnyActionsToRectifyYourFi",
+        "finances.0.provideADescriptionOfYourFinancialProblemsD_2",
+        "finances.0.provideAnEstimateOfTheAmountInUs_2",
+        "finances.0.isPresent_2",
+        "finances.0.entry2",
+        "finances.0.isEstimate_3",
+        "finances.0.toDateMonthyear_2",
+        "finances.0.isEstimate_4",
+        "finances.0.ifYouHaveTakenAnyActionsToRectifyYourFi_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "26",
+      "text": "3",
+      "yPosition": 326.4,
+      "fieldKeys": [
+        "finances.0.provideTheYearYouFailedToFileOrPayYourFederal",
+        "finances.0.RadioButtonList_74",
+        "finances.0.RadioButtonList_75",
+        "finances.0.isEstimate_5",
+        "finances.0.provideDateSatisfiedMonthyear",
+        "finances.0.provideDateSatisfiedMonthyearNotApplicable",
+        "finances.0.provideTheFederal",
+        "finances.0.provideADescriptionOfAnyActionsYouHaveTa",
+        "finances.0.provideTheReasonsForYourFailureToFileOr",
+        "finances.0.provideTheTypeOfTaxesYouFailedToFileOrPa",
+        "finances.0.provideTheAmountInUsDollarsOfTheTaxes",
+        "finances.0.isEstimate_6",
+        "finances.0.provideTheYearYouFailedToFileOrPayYourFederal_2",
+        "finances.0.RadioButtonList_86",
+        "finances.0.isEstimate_7",
+        "finances.0.provideDateSatisfiedMonthyear_2",
+        "finances.0.provideDateSatisfiedMonthyearNotApplicable_2",
+        "finances.0.provideTheFederal_2",
+        "finances.0.provideTheReasonsForYourFailureToFileOr_2",
+        "finances.0.provideTheTypeOfTaxesYouFailedToFileOrPa_2",
+        "finances.0.provideTheAmountInUsDollarsOfTheTaxes_2",
+        "finances.0.isEstimate_8",
+        "finances.0.estimate",
+        "finances.0.estimate_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "26",
+      "text": "4",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "finances.0.RadioButtonList_98",
+        "finances.0.provideADescriptionOfAnyActionsYouHaveTa_3",
+        "finances.0.provideTheDateOfYourCounseling",
+        "finances.0.isEstimate_9",
+        "finances.0.completeTheFollowingIfYouRespondedYesToH_2",
+        "finances.0.provideTheAddressOfTheAgencyOrCompany",
+        "finances.0.city",
+        "finances.0.state",
+        "finances.0.country",
+        "finances.0.zipCode",
+        "finances.0.provideTheReasonsForTheCounseling",
+        "finances.0.isEstimate_10",
+        "finances.0.provideTheAmountInUsDollarsOfViolation",
+        "finances.0.provideTheDateOfYourCounseling_2",
+        "finances.0.isEstimate_11",
+        "finances.0.entry2ProvideTheNameOfTheAgencyOrCompany",
+        "finances.0.provideTheAddressOfTheAgencyOrCompany_2",
+        "finances.0.city_2",
+        "finances.0.state_2",
+        "finances.0.country_2",
+        "finances.0.zipCode_2",
+        "finances.0.provideTheReasonsForTheCounseling_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "26",
+      "text": "5",
+      "yPosition": 427.6,
+      "fieldKeys": [
+        "finances.0.RadioButtonList_123",
+        "finances.0.asAResultOfThisCounseling",
+        "finances.0.completeTheFollowingIfYouRespondedYesToB",
+        "finances.0.provideTheLocationOfTheCreditCounselingOrganization",
+        "finances.0.state_3",
+        "finances.0.provideTheTelephoneNumberOfTheCreditCounsel",
+        "finances.0.extension",
+        "finances.0.internationalOrDsnPhoneNumber",
+        "finances.0.day",
+        "finances.0.night",
+        "finances.0.provideTheNameOfTheCreditCounselingOrganiza",
+        "finances.0.asAResultOfThisCounseling_2",
+        "finances.0.entry2ProvideExplanation",
+        "finances.0.provideTheLocationOfTheCreditCounselingOrganization_2",
+        "finances.0.state_4",
+        "finances.0.provideTheTelephoneNumberOfTheCreditCounsel_2",
+        "finances.0.extension_2",
+        "finances.0.internationalOrDsnPhoneNumber_2",
+        "finances.0.day_2",
+        "finances.0.night_2",
+        "finances.0.provideTheNameOfTheCreditCounselingOrganiza_2"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "26",
+      "text": "6",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "finances.0.RadioButtonList_144",
+        "finances.0.provideTheAssociatedLoanaccountNumbersInvolved",
+        "finances.0.identifydescribeTheTypeOfPropertyInvolvedIfAny",
+        "finances.0.completeTheFollowingIfYouAnsweredYesToHa",
+        "finances.0.inTheLastSeven7Years",
+        "finances.0.inTheLastSeven7Years_2",
+        "finances.0.inTheLastSeven7Years_3",
+        "finances.0.youAreCurrentlyDelinquentOnAnyFederalDebt",
+        "finances.0.RadioButtonList_168"
+      ],
+      "routing": {}
+    },
+    {
+      "number": "26",
+      "text": "7",
+      "yPosition": 72.1,
+      "fieldKeys": [
+        "finances.0.RadioButtonList_193",
+        "finances.0.RadioButtonList_198",
+        "finances.0.inTheLastSeven7Years_7",
+        "finances.0.completeTheFollowingIfYouAnsweredYesToHa_3"
+      ],
+      "routing": {}
+    }
+  ],
+  "instructions": [
+    {
+      "text": "Complete the following if you responded  'Yes'  to  in the last seven (7) years  having filed a petition under any chapter of the bankruptcy code.",
+      "y": 94.6,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having  EVER  experienced financial problems due to gambling.",
+      "y": 93.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having failed to file or pay Federal, state, or other taxes when required by law or ordinance.",
+      "y": 349.6,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to having been counseled, warned, or disciplined for violating the terms of agreement for a travel or credit card",
+      "y": 95.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you responded  'Yes'  to being currently utilizing, or seeking assistance from, a credit counseling service or other similar resource to",
+      "y": 449.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you answered  'Yes'  to having experienced one or more of the previously stated financial issues.",
+      "y": 183.1,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "Complete the following if you answered  'Yes'  to having experienced one or more of the previously stated financial issues.",
+      "y": 77.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 27)",
+      "y": 74.8,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section27"
+    },
+    {
+      "text": "Complete the following if you answered  'Yes'  to having experienced one or more of the previously stated financial issues.",
+      "y": 280.6,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 27)",
+      "y": 338.0,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section27"
+    },
+    {
+      "text": "Complete the following if you answered  'Yes'  to having experienced one or more of the previously stated financial issues.",
+      "y": 77.4,
+      "type": "complete_if",
+      "triggerValue": "YES"
+    },
+    {
+      "text": "NO  (If NO, proceed to Section 27)",
+      "y": 134.8,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section27"
+    }
+  ],
+  "entries": [
+    {
+      "index": 1,
+      "yStart": 272.4,
+      "text": "Entry #2"
+    }
+  ]
+}

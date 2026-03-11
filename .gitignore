@@ -60,6 +60,19 @@ Desktop.ini
 *.cert
 credentials.json
 
+# Build artifacts
+.claude/
+app/.cache/
+app/.open-next/
+
+# Test artifacts / screenshots
+app/scripts/wizard-screenshots/
+demo/
+
+# Playwright reports/results
+app/playwright-report/
+app/test-results/
+
 # Legacy
 legacy/
 /.cache

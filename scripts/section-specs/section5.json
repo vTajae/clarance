@@ -1,0 +1,26 @@
+{
+  "section": "section5",
+  "pages": [
+    5
+  ],
+  "fieldCount": 45,
+  "gateFieldCount": 1,
+  "gateFieldKeys": [
+    "namesInfo.RadioButtonList_12"
+  ],
+  "routing": {
+    "NO": "section6"
+  },
+  "repeatGroups": {},
+  "questions": [],
+  "instructions": [
+    {
+      "text": "NO  (If NO, proceed to Section 6)",
+      "y": 302.9,
+      "type": "routing",
+      "triggerValue": "NO",
+      "targetSection": "section6"
+    }
+  ],
+  "entries": []
+}
