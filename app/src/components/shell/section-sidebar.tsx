@@ -1,8 +1,10 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useAtomValue } from 'jotai';
 import { useAppStore } from '@/lib/state/stores/app-store';
+import { sectionCompletionAtom } from '@/lib/state/atoms/field-atoms';
 import {
   ALL_SECTIONS,
   SECTION_META,
@@ -177,7 +179,7 @@ export function SectionSidebar({ submissionId }: SectionSidebarProps) {
                   href={sectionHref(submissionId, node.key!)}
                   aria-current={isActive ? 'step' : undefined}
                   className={`
-                    block w-full px-4 py-2 text-left text-sm transition-colors
+                    flex w-full items-center justify-between px-4 py-2 text-left text-sm transition-colors
                     ${
                       isActive
                         ? 'bg-blue-50 text-blue-800 font-medium border-l-2 border-blue-600'
@@ -185,7 +187,8 @@ export function SectionSidebar({ submissionId }: SectionSidebarProps) {
                     }
                   `}
                 >
-                  {node.label}
+                  <span className="truncate">{node.label}</span>
+                  <CompletionDot section={node.key!} />
                 </Link>
               </li>
             );
@@ -202,7 +205,7 @@ export function SectionSidebar({ submissionId }: SectionSidebarProps) {
                     href={sectionHref(submissionId, node.key)}
                     aria-current={isActive ? 'step' : undefined}
                     className={`
-                      flex-1 px-4 py-2 text-left text-sm transition-colors
+                      flex-1 flex items-center gap-2 px-4 py-2 text-left text-sm transition-colors
                       ${
                         isActive
                           ? 'bg-blue-50 text-blue-800 font-medium border-l-2 border-blue-600'
@@ -212,7 +215,8 @@ export function SectionSidebar({ submissionId }: SectionSidebarProps) {
                       }
                     `}
                   >
-                    {node.label}
+                    <span className="flex-1 truncate">{node.label}</span>
+                    <CompletionDot section={node.key} />
                   </Link>
                 ) : (
                   // Virtual parent (e.g. "Section 13")
@@ -264,7 +268,7 @@ export function SectionSidebar({ submissionId }: SectionSidebarProps) {
                           href={sectionHref(submissionId, child.key)}
                           aria-current={isChildActive ? 'step' : undefined}
                           className={`
-                            block w-full pl-4 pr-4 py-1.5 text-left text-xs transition-colors
+                            flex w-full items-center justify-between pl-4 pr-4 py-1.5 text-left text-xs transition-colors
                             ${
                               isChildActive
                                 ? 'bg-blue-50 text-blue-800 font-medium border-l-2 border-blue-600 -ml-px'
@@ -272,7 +276,8 @@ export function SectionSidebar({ submissionId }: SectionSidebarProps) {
                             }
                           `}
                         >
-                          {child.label}
+                          <span className="truncate">{child.label}</span>
+                          <CompletionDot section={child.key} />
                         </Link>
                       </li>
                     );
@@ -284,5 +289,34 @@ export function SectionSidebar({ submissionId }: SectionSidebarProps) {
         })}
       </ul>
     </nav>
+  );
+}
+
+/** Small completion indicator dot for a section. */
+function CompletionDot({ section }: { section: SF86Section }) {
+  const completionAtom = useMemo(() => sectionCompletionAtom(section), [section]);
+  const completion = useAtomValue(completionAtom);
+
+  if (completion >= 1) {
+    return (
+      <svg className="h-3.5 w-3.5 shrink-0 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Complete">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+      </svg>
+    );
+  }
+  if (completion > 0) {
+    return (
+      <div
+        className="h-2 w-2 shrink-0 rounded-full bg-amber-400"
+        title={`${Math.round(completion * 100)}% complete`}
+        aria-label={`${Math.round(completion * 100)}% complete`}
+      />
+    );
+  }
+  return (
+    <div
+      className="h-2 w-2 shrink-0 rounded-full bg-gray-200"
+      aria-label="Not started"
+    />
   );
 }

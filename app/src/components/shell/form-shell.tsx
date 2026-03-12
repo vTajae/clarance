@@ -9,7 +9,7 @@ import { WizardControls } from './wizard-controls';
 import { PdfPreview, type FieldRect } from './pdf-preview';
 import { useSsnAutoFill } from '@/lib/state/hooks/use-ssn-autofill';
 import { useNameAutoFill } from '@/lib/state/hooks/use-name-autofill';
-import { dirtyFieldsAtom } from '@/lib/state/atoms/field-atoms';
+import { dirtyFieldsAtom, formCompletionAtom } from '@/lib/state/atoms/field-atoms';
 import { useAppStore } from '@/lib/state/stores/app-store';
 
 interface FormShellProps {
@@ -48,6 +48,7 @@ export function FormShell({ submissionId, children }: FormShellProps) {
 
   // -- Warn before tab close if there are unsaved changes ------------------
   const dirtyFields = useAtomValue(dirtyFieldsAtom);
+  const completionPercent = useAtomValue(formCompletionAtom);
   const saveNow = useAppStore((s) => s.saveNow);
 
   useEffect(() => {
@@ -73,6 +74,7 @@ export function FormShell({ submissionId, children }: FormShellProps) {
         onToggleSidebar={toggleSidebar}
         onTogglePreview={togglePreview}
         previewOpen={previewOpen}
+        completionPercent={completionPercent}
       />
 
       {/* Main content area */}

@@ -1,8 +1,9 @@
 'use client';
 
-import { useMemo } from 'react';
 import { ALL_SECTIONS, SECTION_META, type SF86Section } from '@/lib/field-registry/types';
 import { useSectionValidation } from '@/lib/state/hooks/use-section-validation';
+import { useCrossSectionValidation } from '@/lib/state/hooks/use-cross-section-validation';
+import type { CrossSectionIssue } from '@/lib/validation/cross-section';
 
 // Certification text extracted from PDF analysis (section 30)
 const CERTIFICATION_TEXT =
@@ -27,9 +28,14 @@ const REVIEWABLE_SECTIONS = ALL_SECTIONS.filter(
 
 /**
  * Section 30 certification review component.
- * Shows legal certification text and a section-by-section completion summary.
+ * Shows legal certification text, cross-section validation issues,
+ * and a section-by-section completion summary.
  */
 export function SignatureReview() {
+  const crossIssues = useCrossSectionValidation();
+  const errors = crossIssues.filter((i) => i.severity === 'error');
+  const warnings = crossIssues.filter((i) => i.severity === 'warning');
+
   return (
     <div className="mx-auto w-full max-w-2xl space-y-6">
       {/* Certification block */}
@@ -45,6 +51,52 @@ export function SignatureReview() {
         </p>
       </div>
 
+      {/* Cross-section validation issues */}
+      {crossIssues.length > 0 && (
+        <div className="space-y-3">
+          <h4 className="text-sm font-semibold text-gray-900">
+            Cross-Section Checks
+          </h4>
+          {errors.length > 0 && (
+            <div className="rounded-lg border border-red-200 bg-red-50 p-4">
+              <h5 className="text-sm font-semibold text-red-800 mb-2">
+                {errors.length} Error{errors.length !== 1 ? 's' : ''} Found
+              </h5>
+              <ul className="space-y-1.5">
+                {errors.map((issue, idx) => (
+                  <CrossSectionIssueRow key={idx} issue={issue} />
+                ))}
+              </ul>
+            </div>
+          )}
+          {warnings.length > 0 && (
+            <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+              <h5 className="text-sm font-semibold text-amber-800 mb-2">
+                {warnings.length} Warning{warnings.length !== 1 ? 's' : ''}
+              </h5>
+              <ul className="space-y-1.5">
+                {warnings.map((issue, idx) => (
+                  <CrossSectionIssueRow key={idx} issue={issue} />
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+
+      {crossIssues.length === 0 && (
+        <div className="rounded-lg border border-green-200 bg-green-50 p-4">
+          <div className="flex items-center gap-2">
+            <svg className="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-sm font-medium text-green-800">
+              All cross-section consistency checks passed.
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* Section completion summary */}
       <div className="rounded-lg border border-gray-200 bg-white p-6">
         <h4 className="text-sm font-semibold text-gray-900 mb-4">
@@ -57,6 +109,19 @@ export function SignatureReview() {
         </div>
       </div>
     </div>
+  );
+}
+
+function CrossSectionIssueRow({ issue }: { issue: CrossSectionIssue }) {
+  const sectionNames = issue.sections
+    .map((s) => SECTION_META[s as SF86Section]?.title ?? s)
+    .join(', ');
+
+  return (
+    <li className={`text-xs leading-relaxed ${issue.severity === 'error' ? 'text-red-700' : 'text-amber-700'}`}>
+      <span className="font-medium">{issue.message}</span>
+      <span className="text-opacity-70 ml-1">({sectionNames})</span>
+    </li>
   );
 }
 

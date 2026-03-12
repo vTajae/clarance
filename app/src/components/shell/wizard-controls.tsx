@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter, usePathname } from 'next/navigation';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { atom, useAtomValue } from 'jotai';
 import { useAppStore } from '@/lib/state/stores/app-store';
 import { useWizardNavigation } from '@/lib/wizard/use-wizard-navigation';
@@ -14,6 +14,7 @@ import {
   sectionToGroup,
 } from '@/lib/field-registry/types';
 import type { SF86Section } from '@/lib/field-registry/types';
+import { SubmitDialog } from '@/components/wizard/submit-dialog';
 
 interface WizardControlsProps {
   submissionId: string;
@@ -45,6 +46,11 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     currentStep,
     skipToSection,
   } = useWizardNavigation(currentSection);
+
+  // -------------------------------------------------------------------------
+  // Submit dialog state (for final section)
+  // -------------------------------------------------------------------------
+  const [submitDialogOpen, setSubmitDialogOpen] = useState(false);
 
   // -------------------------------------------------------------------------
   // Step validation: track required field completion for the current step
@@ -165,10 +171,15 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
 
     // Section-level advance
     setShowIncompleteWarning(false);
+    if (isFinalSection && isReviewMode) {
+      // Final section in review mode: open submit dialog
+      setSubmitDialogOpen(true);
+      return;
+    }
     if (nextSectionKey) {
       navigateToSection(nextSectionKey);
     }
-  }, [isWizardMode, isReviewMode, canGoNext, isLastStep, wizNextStep, nextSectionKey, navigateToSection, skipToSection, isGateStep, stepCompletion, showIncompleteWarning]);
+  }, [isWizardMode, isReviewMode, canGoNext, isLastStep, wizNextStep, nextSectionKey, navigateToSection, skipToSection, isGateStep, stepCompletion, showIncompleteWarning, isFinalSection]);
 
   const handleSave = useCallback(() => {
     void storeSaveNow();
@@ -201,10 +212,8 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
 
   // Clear warning when step changes
   const prevStepId = currentStep?.id;
-  // Effect: reset warning when step changes
-  useMemo(() => {
+  useEffect(() => {
     setShowIncompleteWarning(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevStepId]);
 
   return (
@@ -289,6 +298,9 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
           )}
         </button>
       </div>
+
+      {/* Submit dialog */}
+      <SubmitDialog open={submitDialogOpen} onClose={() => setSubmitDialogOpen(false)} />
     </div>
   );
 }

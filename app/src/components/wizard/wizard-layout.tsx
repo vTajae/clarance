@@ -17,6 +17,7 @@ import { RepeatGroupCards, formatGroupName } from './repeat-group-cards';
 import { getLinkedGroupConfig } from '@/lib/wizard/linked-group-utils';
 import { TimelineCoveragePrompt } from './timeline-coverage-prompt';
 import { SignatureReview } from './signature-review';
+import { SubmitDialog } from './submit-dialog';
 
 interface WizardLayoutProps {
   sectionKey: SF86Section;
@@ -166,6 +167,14 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
     return { mergedGroups, repeatSteps };
   }, [visibleSteps]);
 
+  // Submit dialog state (section30 final submission)
+  const [submitDialogOpen, setSubmitDialogOpen] = useState(false);
+  const isFinalSection = sectionKey === 'section30';
+
+  const handleSubmit = useCallback(() => {
+    setSubmitDialogOpen(true);
+  }, []);
+
   // When section changes, reset to overview
   const [showRepeatOverview, setShowRepeatOverview] = useState(true);
   const prevSectionRef = useRef(sectionKey);
@@ -291,12 +300,17 @@ export function WizardLayout({ sectionKey }: WizardLayoutProps) {
             sectionTitle={sectionTitle}
             nextSectionTitle={nextSectionTitle}
             onEditStep={goToStep}
-            onContinue={handleContinueToNextSection}
+            onContinue={isFinalSection ? handleSubmit : handleContinueToNextSection}
           />
         </div>
       ) : currentStep ? (
         <WizardStepCard step={currentStep} direction={direction} />
       ) : null}
+
+      {/* Submit dialog for final section */}
+      {isFinalSection && (
+        <SubmitDialog open={submitDialogOpen} onClose={() => setSubmitDialogOpen(false)} />
+      )}
     </div>
   );
 }
