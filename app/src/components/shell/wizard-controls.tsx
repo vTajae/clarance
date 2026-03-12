@@ -1,9 +1,13 @@
 'use client';
 
 import { useRouter, usePathname } from 'next/navigation';
-import { useCallback } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import { atom, useAtomValue } from 'jotai';
 import { useAppStore } from '@/lib/state/stores/app-store';
 import { useWizardNavigation } from '@/lib/wizard/use-wizard-navigation';
+import { useRegistry } from '@/lib/field-registry/use-registry';
+import { fieldValueAtomFamily, type FieldValue } from '@/lib/state/atoms/field-atoms';
+import { computeStepCompletion } from '@/lib/wizard/step-utils';
 import {
   ALL_SECTIONS,
   SECTION_META,
@@ -23,6 +27,7 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
   const goBack = useAppStore((s) => s.goBack);
   const wizardHistory = useAppStore((s) => s.wizardHistory);
   const storeSaveNow = useAppStore((s) => s.saveNow);
+  const registry = useRegistry();
 
   // Derive section from URL to avoid stale store reads
   const urlSection = pathname?.split('/').pop() as SF86Section | undefined;
@@ -40,6 +45,61 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     currentStep,
     skipToSection,
   } = useWizardNavigation(currentSection);
+
+  // -------------------------------------------------------------------------
+  // Step validation: track required field completion for the current step
+  // -------------------------------------------------------------------------
+  const [showIncompleteWarning, setShowIncompleteWarning] = useState(false);
+
+  const requiredKeys = useMemo(() => {
+    if (!currentStep) return [];
+    return currentStep.fieldKeys.filter((key) => {
+      const field = registry.getBySemanticKey(key);
+      return field?.required;
+    });
+  }, [currentStep, registry]);
+
+  const requiredKeysKey = useMemo(() => requiredKeys.join(','), [requiredKeys]);
+
+  const requiredValuesAtom = useMemo(
+    () =>
+      atom((get) => {
+        const values: Record<string, FieldValue> = {};
+        for (const key of requiredKeys) {
+          values[key] = get(fieldValueAtomFamily(key));
+        }
+        return values;
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [requiredKeysKey],
+  );
+
+  const requiredValues = useAtomValue(requiredValuesAtom);
+
+  const stepCompletion = useMemo(() => {
+    if (!currentStep) return 1;
+    return computeStepCompletion(currentStep, registry, (key) => requiredValues[key] ?? null);
+  }, [currentStep, registry, requiredValues]);
+
+  const missingCount = useMemo(() => {
+    if (!currentStep) return 0;
+    let missing = 0;
+    for (const key of requiredKeys) {
+      const val = requiredValues[key];
+      if (val === null || val === undefined || (typeof val === 'string' && val.trim() === '')) {
+        missing++;
+      }
+    }
+    return missing;
+  }, [currentStep, requiredKeys, requiredValues]);
+
+  // Gate-only steps (single field = gate field) should not block navigation
+  const isGateStep = !!(
+    currentStep?.gateFieldKey &&
+    !currentStep.isConditionalBlock &&
+    currentStep.fieldKeys.length === 1 &&
+    currentStep.fieldKeys[0] === currentStep.gateFieldKey
+  );
 
   const sectionIndex = ALL_SECTIONS.indexOf(currentSection);
   const hasPreviousSection = wizardHistory.length > 0 || sectionIndex > 0;
@@ -84,12 +144,19 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     if (isWizardMode) {
       // Auto-skip: gate answered with skip value and no more visible steps
       if (skipToSection) {
+        setShowIncompleteWarning(false);
         navigateToSection(skipToSection as SF86Section);
         return;
       }
 
       // In wizard mode: advance step or enter review
       if (!isReviewMode && (canGoNext || !isLastStep)) {
+        // Soft validation: warn on incomplete non-gate steps (first click shows warning, second click advances)
+        if (!isGateStep && stepCompletion < 1 && !showIncompleteWarning) {
+          setShowIncompleteWarning(true);
+          return;
+        }
+        setShowIncompleteWarning(false);
         wizNextStep();
         return;
       }
@@ -97,10 +164,11 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
     }
 
     // Section-level advance
+    setShowIncompleteWarning(false);
     if (nextSectionKey) {
       navigateToSection(nextSectionKey);
     }
-  }, [isWizardMode, isReviewMode, canGoNext, isLastStep, wizNextStep, nextSectionKey, navigateToSection, skipToSection]);
+  }, [isWizardMode, isReviewMode, canGoNext, isLastStep, wizNextStep, nextSectionKey, navigateToSection, skipToSection, isGateStep, stepCompletion, showIncompleteWarning]);
 
   const handleSave = useCallback(() => {
     void storeSaveNow();
@@ -131,8 +199,23 @@ export function WizardControls({ submissionId }: WizardControlsProps) {
         : isLastStep ? 'Review' : 'Next'
     : isFinalSection ? 'Submit' : 'Next';
 
+  // Clear warning when step changes
+  const prevStepId = currentStep?.id;
+  // Effect: reset warning when step changes
+  useMemo(() => {
+    setShowIncompleteWarning(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [prevStepId]);
+
   return (
     <div className="sticky bottom-0 border-t border-gray-200 bg-white px-4 py-3 sm:px-6" role="navigation" aria-label="Form navigation">
+      {/* Incomplete step warning */}
+      {showIncompleteWarning && isWizardMode && missingCount > 0 && (
+        <div className="mx-auto mb-2 max-w-3xl rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+          <span className="font-medium">{missingCount} required field{missingCount !== 1 ? 's' : ''} incomplete.</span>
+          {' '}Click Next again to skip, or fill in the missing fields.
+        </div>
+      )}
       <div className="mx-auto flex max-w-3xl items-center justify-between gap-2">
         {/* Previous */}
         <button

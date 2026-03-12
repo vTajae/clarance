@@ -186,6 +186,8 @@ export function getStepSummaryFields(
  * - Steps with `isConditionalBlock: true` are visible only when the gate
  *   field's value satisfies the `showWhen` expression of the first
  *   conditional field in the step.
+ * - Verifier steps (section11_2, section_12_2) are hidden when the
+ *   associated residence/school end date is more than 3 years ago.
  *
  * @param steps       All steps for a section (in order).
  * @param gateValues  Current values of all gate fields, keyed by semantic key.
@@ -198,6 +200,11 @@ export function filterVisibleSteps(
   registry: FieldRegistry,
 ): WizardStep[] {
   return steps.filter((step) => {
+    // 3-year verifier rule: hide verifier steps for entries older than 3 years
+    if (step.repeatGroup && step.repeatIndex !== undefined) {
+      if (!isVerifierStepVisible(step, gateValues)) return false;
+    }
+
     // Non-conditional steps (including gate-containing steps) are always visible.
     if (!step.isConditionalBlock || !step.gateFieldKey) {
       return true;
@@ -231,6 +238,63 @@ export function filterVisibleSteps(
 
     return true;
   });
+}
+
+// ---------------------------------------------------------------------------
+// 3-year verifier rule
+// ---------------------------------------------------------------------------
+
+/**
+ * Mapping of verifier repeat groups to the end-date field pattern of
+ * the associated primary entry. The verifier's repeatIndex corresponds
+ * to the entry instance whose end date we need to check.
+ *
+ * Verifier groups use a suffix numbering convention for date fields:
+ *   - residency index 0 → toDateMonthyear
+ *   - residency index 1 → toDateMonthyear_2
+ *   - etc.
+ */
+const VERIFIER_GROUPS: Record<string, { prefix: string; dateField: string }> = {
+  section11_2: { prefix: 'residencyInfo', dateField: 'toDateMonthyear' },
+  section_12_2: { prefix: 'schoolInfo', dateField: 'toDateMonthyear' },
+};
+
+const THREE_YEARS_MS = 3 * 365.25 * 24 * 60 * 60 * 1000;
+
+/**
+ * Returns false if this is a verifier step whose associated entry's end date
+ * is more than 3 years ago. Returns true for all non-verifier steps.
+ */
+function isVerifierStepVisible(
+  step: WizardStep,
+  gateValues: Record<string, FieldValue>,
+): boolean {
+  const group = step.repeatGroup;
+  if (!group) return true;
+
+  const config = VERIFIER_GROUPS[group];
+  if (!config) return true; // not a verifier group
+
+  const idx = step.repeatIndex ?? 0;
+  // Build the date field key for the associated entry.
+  // Index 0 uses the base name, index 1+ uses _2, _3, etc.
+  const suffix = idx === 0 ? '' : `_${idx + 1}`;
+  const dateKey = `${config.prefix}.0.${config.dateField}${suffix}`;
+
+  const dateValue = gateValues[dateKey];
+  if (!dateValue || typeof dateValue !== 'string') {
+    // No date entered yet — show verifier (user hasn't filled dates)
+    return true;
+  }
+
+  const endDate = new Date(dateValue);
+  if (isNaN(endDate.getTime())) return true;
+
+  const now = new Date();
+  const threeYearsAgo = new Date(now.getTime() - THREE_YEARS_MS);
+
+  // Hide verifier steps for entries that ended more than 3 years ago
+  return endDate >= threeYearsAgo;
 }
 
 // ---------------------------------------------------------------------------
@@ -301,6 +365,20 @@ export function extractGateKeys(
         if (gateField?.dependsOn && !seen.has(gateField.dependsOn)) {
           seen.add(gateField.dependsOn);
           result.push(gateField.dependsOn);
+        }
+      }
+    }
+
+    // Subscribe to verifier date fields for the 3-year rule.
+    if (step.repeatGroup && step.repeatIndex !== undefined) {
+      const config = VERIFIER_GROUPS[step.repeatGroup];
+      if (config) {
+        const idx = step.repeatIndex;
+        const suffix = idx === 0 ? '' : `_${idx + 1}`;
+        const dateKey = `${config.prefix}.0.${config.dateField}${suffix}`;
+        if (!seen.has(dateKey)) {
+          seen.add(dateKey);
+          result.push(dateKey);
         }
       }
     }
